@@ -1,0 +1,462 @@
+﻿<?xml version = "1.0" encoding = "utf-8"?>
+<LocalLanguages>
+    <data name="RegisInMobilePassword" xml:space="preserve">
+        <value>รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร</value>
+    </data>
+    <data name="NonexistSecurityCode" xml:space="preserve">
+        <value>รหัสยืนยันไม่ถูกต้อง</value>
+    </data>
+    <data name="InvalidSecurityCode" xml:space="preserve">
+        <value>รหัสยืนยันไม่ถูกต้อง</value>
+    </data>
+    <data name="InvalidCaptchaCode" xml:space="preserve">
+    <value>รหัสยืนยันไม่ถูกต้อง</value>
+    </data>
+    <data name="BonusLogin" xml:space="preserve">
+        <value>Bonus Login</value>
+    </data>
+    <data name="Game_Type_Fishing">
+        <value>Fishing Game</value>
+    </data>
+    <data name="Game_Type_Slot_Game">
+        <value>Slot Game</value>
+    </data>
+    <data name="Game_Type_Orther">
+        <value>Orther Game</value>
+    </data>
+    <data name="BanNick" xml:space="preserve">
+	<value> The account has been locked </value>
+</data>
+    <data name="BanNickForever" xml:space="preserve">
+	<value> The account has been permanently locked </value>
+</data>
+    <!--Region Descript Defender-->
+    <data name="SoloMode_Default" xml:space="preserve">
+        <value> ปืนล่าสัตว์ปลา</value>
+    </data>
+    <data name="SoloMode_Medusa" xml:space="preserve">
+        <value> Gun Medusa</value>
+    </data>
+    <data name="SoloMode_NhanMa" xml:space="preserve">
+        <value> ปืนราศีธนู</value>
+    </data>
+    <data name="SoloMode_Poseidon" xml:space="preserve">
+        <value> Poseidon Gun</value>
+    </data>
+    <data name="SoloMode_Mermaid" xml:space="preserve">
+        <value> Gun Mermaid</value>
+    </data>
+    <data name="SoloMode_Cerberus" xml:space="preserve">
+        <value> Cerberus Gun</value>
+    </data>
+    <data name="SoloMode_Dragon" xml:space="preserve">
+        <value> Dragon gun</value>
+    </data>
+    <data name="SoloMode_Success" xml:space="preserve">
+        <value> ความสำเร็จ</value>
+    </data>
+    <data name="SoloMode_Failed" xml:space="preserve">
+        <value> ความล้มเหลว</value>
+    </data>
+    <data name="SoloMode_InvalidDataInput" xml:space="preserve">
+        <value> ข้อมูลไม่ถูกต้อง</value>
+    </data>
+    <data name="SoloMode_NotHaveGunKind" xml:space="preserve">
+        <value> ผู้ใช้ไม่มีปืนที่เหมาะสม</value>
+    </data>
+    <data name="SoloMode_NotConfigGunKind" xml:space="preserve">
+        <value> ไม่ได้กำหนดค่าปืน</value>
+    </data>
+    <data name="SoloMode_NotConfigGeneration" xml:space="preserve">
+        <value> การสร้างปืนไม่ได้กำหนดค่า</value>
+    </data>
+    <data name="SoloMode_GunLevelMax" xml:space="preserve">
+        <value> ปืนถึงระดับสูงสุด</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveGun" xml:space="preserve">
+        <value> ปืนถูกเลือกด้วยเช่นกัน</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseGun" xml:space="preserve">
+        <value> ไม่สามารถเลือกปืนเดียวกัน</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseGun" xml:space="preserve">
+        <value> อย่าเลือกปืนที่คุณไม่มี</value>
+    </data>
+    <data name="SoloMode_UpdateIsFailed" xml:space="preserve">
+        <value> เกิดข้อผิดพลาดระหว่างกระบวนการอัปเกรด</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultGun" xml:space="preserve">
+        <value> ผู้ใช้มีปืนเริ่มต้นเท่านั้น</value>
+    </data>
+    <data name="SoloMode_NotEnoughLevelToEvolution" xml:space="preserve">
+        <value> ปืนไม่สามารถวิวัฒนาการได้</value>
+    </data>
+    <data name="SoloMode_EvolutionIsFailed" xml:space="preserve">
+        <value> มีข้อผิดพลาดเกี่ยวกับวิวัฒนาการ</value>
+    </data>
+    <data name="SoloMode_NotAnyMineral" xml:space="preserve">
+        <value> ไม่มีเนื้อหา</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseMineral" xml:space="preserve">
+        <value> วัสดุไม่สามารถใช้ได้ในสินค้าคงคลัง</value>
+    </data>
+    <data name="SoloMode_NotConfigMineral" xml:space="preserve">
+        <value> การกำหนดค่าไม่ได้รับการกำหนดค่าในกระเป๋าผู้ใช้</value>
+    </data>
+    <data name="SoloMode_NotAnyMaterial" xml:space="preserve">
+        <value> ผู้ใช้ไม่มีเนื้อหาวิวัฒนาการ</value>
+    </data>
+    <data name="SoloMode_IsContainsChoiseMaterial" xml:space="preserve">
+        <value> วัสดุไม่สามารถใช้ได้ในสินค้าคงคลัง</value>
+    </data>
+    <data name="SoloMode_NotConfigMaterial" xml:space="preserve">
+        <value> ไม่ได้กำหนดค่าวัสดุในกระเป๋าผู้ใช้</value>
+    </data>
+    <data name="SoloMode_MaterialChoiseNotMatchConfig" xml:space="preserve">
+        <value> วัสดุไม่เหมาะสม</value>
+    </data>
+    <data name="SoloMode_NotHaveSkillKind" xml:space="preserve">
+        <value> ไม่มีทักษะนี้</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveSkill" xml:space="preserve">
+        <value> ระบุทักษะที่เลือกไว้มากเกินไป</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseSkill" xml:space="preserve">
+        <value> อย่าเลือกทักษะเดียวกัน</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseSkill" xml:space="preserve">
+        <value> อย่าเลือกทักษะที่คุณไม่มี</value>
+    </data>
+    <data name="SoloMode_WallNotFound" xml:space="preserve">
+        <value> ไม่มีกำแพง</value>
+    </data>
+    <data name="SoloMode_WallInvalidStage" xml:space="preserve">
+        <value> เล่นไปที่หน้าจอเกมเพื่ออนุญาตการอัปเกรด</value>
+    </data>
+    <data name="SoloMode_NotHaveTowerKind" xml:space="preserve">
+        <value> ผู้ใช้ไม่มีหอคอยที่ตรงกัน</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerKind" xml:space="preserve">
+        <value> หอคอยไม่ได้รับการกำหนดค่า</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerGeneration" xml:space="preserve">
+        <value> การสร้างหอคอยไม่ได้รับการกำหนดค่า</value>
+    </data>
+    <data name="SoloMode_TowerLevelMax" xml:space="preserve">
+        <value> หอคอยถึงระดับสูงสุดแล้ว</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveTower" xml:space="preserve">
+        <value> หอคอยถูกเลือกเกินขีด จำกัด ที่ระบุ</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseTower" xml:space="preserve">
+        <value> อย่าเลือกหอคอยเดียวกัน</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseTower" xml:space="preserve">
+        <value> อย่าเลือกหอคอยที่คุณไม่มี</value>
+    </data>
+    <data name="SoloMode_UpdateTowerIsFailed" xml:space="preserve">
+        <value> เกิดข้อผิดพลาดระหว่างกระบวนการอัปเกรด</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultTower" xml:space="preserve">
+        <value> ผู้ใช้มีหอคอยเริ่มต้นเท่านั้น</value>
+    </data>
+    <data name="SoloMode_NotEnoughCoin" xml:space="preserve">
+        <value> ผู้ใช้มีเหรียญไม่เพียงพอ</value>
+    </data>
+    <data name="SoloMode_CheckNotExists" xml:space="preserve">
+        <value> ไม่มีฟังก์ชั่นทดสอบ</value>
+    </data>
+    <data name="Success" xml:space="preserve">
+        <value>ประสบความสำเร็จ</value>
+    </data>
+    <data name="Fail" xml:space="preserve">
+        <value>ความล้มเหลว</value>
+    </data>
+    <data name="Skill" xml:space="preserve">
+        <value>ทักษะ</value>
+    </data>
+    <data name="ConfigFail" xml:space="preserve">
+        <value>ไม่มีการกำหนดค่า</value>
+    </data>
+    <data name="EnoughNotCoins" xml:space="preserve">
+        <value>คุณไม่สามารถซื้อสินค้าได้</value>
+    </data>
+    <data name="InvalidNumber" xml:space="preserve">
+        <value>หมายเลขไม่ถูกต้อง</value>
+    </data>
+    <data name="InvalidMoneyType" xml:space="preserve">
+        <value>ประเภทเงินไม่ถูกต้อง</value>
+    </data>
+    <data name="ContinueBuying" xml:space="preserve">
+        <value>คุณต้องใช้รายการนี้เพื่อทำการซื้อต่อไป</value>
+    </data>
+    <data name="NotHaveExhausted" xml:space="preserve">
+        <value>คุณหมดจำนวนรายการที่ซื้อระหว่างวัน</value>
+    </data>
+    <data name="TheNumberIsTooLimited" xml:space="preserve">
+        <value>จำนวน จำกัด เกินไป</value>
+    </data>
+    <data name="ToBuyANewItem" xml:space="preserve">
+        <value>ในการซื้อสินค้าใหม่โปรดใช้รายการทั้งหมดในสินค้าคงคลัง</value>
+    </data>
+    <data name="YouHaveRunOutOfTimes" xml:space="preserve">
+        <value>คุณหมดเวลาซื้อรายการแล้ว</value>
+    </data>
+    <data name="NoData" xml:space="preserve">
+        <value>ไม่มีข้อมูล</value>
+    </data>
+    <data name="EventEnds" xml:space="preserve">
+        <value>เหตุการณ์จบลงแล้ว</value>
+    </data>
+    <data name="YouMustHaveATurn" xml:space="preserve">
+        <value>คุณต้องมีอย่างน้อย 01 สปินและ {0: #, ## 0} เหรียญเพื่อเข้าร่วม</value>
+    </data>
+    <data name="MustWaitMoreDays" xml:space="preserve">
+        <value>คุณต้องรออีก {0} วันในการโทร</value>
+    </data>
+    <data name="ToDayHasBeenAwarded" xml:space="preserve">
+        <value>รางวัลวันนี้ได้รับรางวัล</value>
+    </data>
+    <data name="HasBeenAwarded" xml:space="preserve">
+        <value>รางวัลที่ได้รับรางวัล</value>
+    </data>
+    <data name="CSKHService" xml:space="preserve">
+        <value>กรุณาติดต่อฝ่ายบริการลูกค้าเพื่อขอความช่วยเหลือ</value>
+    </data>
+    <data name="VipNotRunning" xml:space="preserve">
+        <value>ไม่ได้ใช้งาน vip</value>
+    </data>
+    <data name="AccountNotVip" xml:space="preserve">
+        <value>บัญชีไม่มี vip</value>
+    </data>
+    <data name="YourAccountAwarded" xml:space="preserve">
+        <value>คุณได้รับโบนัส {0} บัญชีของคุณ</value>
+    </data>
+    <data name="YouPromotioned" xml:space="preserve">
+        <value>แนะนำให้คุณ {0}% ตามมูลค่าของบัตร </value>
+    </data>
+    <data name="GameNotConfig" xml:space="preserve">
+        <value>เกมไม่ได้รับการกำหนดค่า</value>
+    </data>
+    <data name="GetDataFail" xml:space="preserve">
+        <value>ทำให้ข้อมูลล้มเหลว</value>
+    </data>
+    <data name="InvalidLocationId" xml:space="preserve">
+        <value>ตำแหน่งไม่ถูกต้อง</value>
+    </data>
+    <data name="InvalidChannel" xml:space="preserve">
+        <value>ช่องไม่ถูกต้อง</value>
+    </data>
+    <data name="UserNotEnoughWatch" xml:space="preserve">
+        <value>ผู้ใช้ดูเกินจำนวนครั้ง</value>
+    </data>
+    <data name="GetDataSuccess_v1" xml:space="preserve">
+        <value>รับข้อมูลสำเร็จ</value>
+    </data>
+    <data name="Orther" xml:space="preserve">
+        <value>อื่น ๆ</value>
+    </data>
+    <data name="Bullet" xml:space="preserve">
+        <value>กระสุน</value>
+    </data>
+    <data name="Guns" xml:space="preserve">
+        <value>ปืน</value>
+    </data>
+    <data name="Effect" xml:space="preserve">
+        <value>ผล</value>
+    </data>
+    <data name="NoItem" xml:space="preserve">
+        <value>ไม่มีรายการ</value>
+    </data>
+    <data name="ItemCannotActive" xml:space="preserve">
+        <value>ยังไม่ได้เปิดใช้งานรายการ</value>
+    </data>
+    <data name="Itemdoesnotexist" xml:space="preserve">
+        <value>ไม่มีรายการ</value>
+    </data>
+    <data name="Buyitemssuccessfully" xml:space="preserve">
+        <value>ซื้อสินค้าสำเร็จ</value>
+    </data>
+    <data name="VipLevelUp" xml:space="preserve">
+        <value>รับรางวัลระดับ VIP ที่ประสบความสำเร็จ</value>
+    </data>
+    <data name="Norewards" xml:space="preserve">
+        <value>ไม่มีรางวัลที่จะได้รับ</value>
+    </data>
+    <data name="Getrewardedfailure" xml:space="preserve">
+        <value>รับรางวัลสำหรับความล้มเหลว</value>
+    </data>
+    <data name="Norewardfound" xml:space="preserve">
+        <value>ไม่พบรางวัลที่จะได้รับ</value>
+    </data>
+    <data name="Pointstoachieve" xml:space="preserve">
+        <value>คะแนนที่จะทำได้</value>
+    </data>
+    <data name="Expshotfish" xml:space="preserve">
+        <value>สัมผัสกับปลาทอด</value>
+    </data>
+    <data name="Accumulatedskill" xml:space="preserve">
+        <value>เทคนิคการสะสม</value>
+    </data>
+    <data name="Transfercoins" xml:space="preserve">
+        <value>โอนเหรียญ</value>
+    </data>
+    <data name="Getacointransfer" xml:space="preserve">
+        <value>รับการโอนเหรียญ</value>
+    </data>
+    <data name="Donatedtimes1" xml:space="preserve">
+        <value>ฟรี 1 ครั้ง</value>
+    </data>
+    <data name="Donatedtimes2" xml:space="preserve">
+        <value>ฟรี 2 ครั้ง</value>
+    </data>
+    <data name="Expcharacter" xml:space="preserve">
+        <value>ตัวละคร Exp</value>
+    </data>
+    <data name="Invalidinputdata" xml:space="preserve">
+        <value>ข้อมูลอินพุตไม่ถูกต้อง</value>
+    </data>
+    <data name="Levelvipup" xml:space="preserve">
+        <value>vip ระดับขึ้น</value>
+    </data>
+    <data name="Accumulatesuccesspoints" xml:space="preserve">
+        <value>สะสมคะแนนความสำเร็จ</value>
+    </data>
+    <data name="Failuretoaccumulatepointsfailed" xml:space="preserve">
+        <value>จุดผิดพลาดล้มเหลว</value>
+    </data>
+    <data name="Youareawardedtoyouraccount" xml:space="preserve">
+        <value>คุณได้รับรางวัล {0} ในบัญชีของคุณ</value>
+    </data>
+    <data name="Addingvipuserinformationfailed" xml:space="preserve">
+        <value>การเพิ่มข้อมูลผู้ใช้ vip ล้มเหลว</value>
+    </data>
+    <data name="Successfullyupdated" xml:space="preserve">
+        <value>อัปเดตข้อมูลสำเร็จ</value>
+    </data>
+    <data name="Emailalreadyexists" xml:space="preserve">
+        <value>อีเมลของคุณมีอยู่แล้ว</value>
+    </data>
+    <data name="Accountdoesnotexist" xml:space="preserve">
+        <value>ไม่มีบัญชี</value>
+    </data>
+    <data name="PleaseComeBackTomorrow" xml:space="preserve">
+        <value>โปรดกลับมาพรุ่งนี้</value>
+    </data>
+    <data name="UserReceivedAReward" xml:space="preserve">
+        <value>ผู้ใช้ได้รับรางวัล</value>
+    </data>
+    <data name="BonusDailyDay" xml:space="preserve">
+        <value>วัน</value>
+    </data>
+    <data name="Bronze" xml:space="preserve">
+        <value>ทองแดง</value>
+    </data>
+    <data name="Silver" xml:space="preserve">
+        <value>เงิน</value>
+    </data>
+    <data name="Ruby" xml:space="preserve">
+        <value>ทับทิม</value>
+    </data>
+    <data name="Emerald" xml:space="preserve">
+        <value>มรกต</value>
+    </data>
+    <data name="Diamond" xml:space="preserve">
+        <value>เพชร</value>
+    </data>
+    <data name="Gold" xml:space="preserve">
+        <value>สีเหลือง</value>
+    </data>
+    <data name="EventDoesNotExist" xml:space="preserve">
+        <value>ไม่มีเหตุการณ์นี้</value>
+    </data>
+    <data name="ChannelInvalid" xml:space="preserve">
+        <value>ช่องไม่ถูกต้อง</value>
+    </data>
+    <data name="UserLimitViews" xml:space="preserve">
+        <value>ผู้ใช้มีจำนวนการดูเกินขีด จำกัด</value>
+    </data>
+    <data name="UserAwarded" xml:space="preserve">
+        <value>ผู้ใช้ได้รับทองคำ</value>
+    </data>
+    <data name="MissionNotComplte" xml:space="preserve">
+        <value>งานไม่เสร็จสมบูรณ์</value>
+    </data>
+    <data name="RewardNotExists" xml:space="preserve">
+        <value>รางวัลที่ได้รับหรือไม่มีอยู่</value>
+    </data>
+    <data name="EventNotYetRun" xml:space="preserve">
+        <value>กิจกรรมยังไม่เกิดขึ้น</value>
+    </data>
+    <data name="ComeBackAt" xml:space="preserve">
+        <value>โปรดกลับมาที่ {0}</value>
+    </data>
+    <data name="CoinNotMatch" xml:space="preserve">
+        <value>เหรียญปัจจุบันไม่ตรงกัน</value>
+    </data>
+    <data name="DevicesFailed" xml:space="preserve">
+        <value>เกินจำนวนอุปกรณ์</value>
+    </data>
+    <data name="UserFailed" xml:space="preserve">
+        <value>เกินจำนวนผู้ใช้</value>
+    </data>
+    <data name="IPFailed" xml:space="preserve">
+        <value>เกินจำนวนไอพี</value>
+    </data>
+    <data name="UserFreeTurn" xml:space="preserve">
+        <value>ผู้ใช้มีเทิร์นฟรี</value>
+    </data>
+    <data name="OldNewSame" xml:space="preserve">
+        <value>รหัสผ่านเก่าและใหม่เหมือนกัน กรุณาตรวจสอบอีกครั้ง</value>
+    </data>
+    <data name="AllowedNotCharacters" xml:space="preserve">
+        <value>รหัสผ่านมีอักขระที่ไม่อนุญาต</value>
+    </data>
+    <data name="HardPassword" xml:space="preserve">
+        <value>โปรดเลือกรหัสผ่านที่ยากขึ้นเพื่อปกป้องบัญชีของคุณ อย่าเลือกรหัสผ่าน</value>
+    </data>
+    <data name="AllowedLimitPassword" xml:space="preserve">
+        <value>รหัสผ่านใหม่ของคุณเกินขีด จำกัด ที่อนุญาต</value>
+    </data>
+    <data name="OldPassWordIsNotCorrect" xml:space="preserve">
+        <value>รหัสผ่านเก่าไม่ถูกต้อง กรุณาติดต่อฝ่ายสนับสนุนหากคุณจำรหัสผ่านไม่ได้</value>
+    </data>
+    <data name="RegisterDateNotReward" xml:space="preserve">
+        <value>วันที่ลงทะเบียนจะไม่ได้รับการยอมรับ</value>
+    </data>
+    <data name="CoinLessThenBonus" xml:space="preserve">
+        <value>เหรียญของคุณต้องน้อยกว่า {0} จึงจะได้รับโบนัส</value>
+    </data>
+    <data name="OutOfStock" xml:space="preserve">
+        <value>บัตรหมด</value>
+    </data>
+    <data name="AccountHasComplete" xml:space="preserve">
+        <value>บัญชีได้เสร็จสิ้นการสอน</value>
+    </data>
+    <data name="CompeleteTutorialBonus" xml:space="preserve">
+        <value>ทำโบนัสการสอนให้สมบูรณ์</value>
+    </data>
+    <data name="ConfigNotExists" xml:space="preserve">
+        <value>กำหนดค่าไม่มีอยู่</value>
+    </data>
+    <data name="AddGoldUserFromEvent" xml:space="preserve">
+        <value>ทองคำฟรีสำหรับผู้ใช้ใหม่</value>
+    </data>
+    <data name="AddGoldUserFromEventError" xml:space="preserve">
+        <value>เกิดข้อผิดพลาดในการให้ Gold แก่ผู้ใช้</value>
+    </data>
+    <data name="DeviceIdAlreadyExist" xml:space="preserve">
+        <value>อุปกรณ์มีอยู่แล้ว</value>
+    </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>ชิปของคุณจะต้องน้อยกว่า 5,000 เพื่อรับรางวัล</value>
+  </data>
+    <data name="RewardsForTheDay" xml:space="preserve">
+    <value>คุณได้รับรางวัลทั้งหมดสำหรับวันนั้น</value>
+  </data>
+    <data name="Failed" xml:space="preserve">
+        <value>ล้มเหลว</value>
+    </data>
+
+    <!--Endregion Descript Defender-->
+</LocalLanguages>

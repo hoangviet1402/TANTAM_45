@@ -1,0 +1,2698 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="About" xml:space="preserve">
+    <value>Introduce</value>
+  </data>
+    <data name="AboutItem1" xml:space="preserve">
+    <value>Each +10 item increases the maximum number of members of the state to 10.</value>
+  </data>
+    <data name="AboutItem2" xml:space="preserve">
+    <value>Shelf life: permanent.</value>
+  </data>
+    <data name="AboutItem3" xml:space="preserve">
+    <value>For example: state level 4 the maximum number of members is 50. Buy 1 item +10 the maximum number of members will be 60.</value>
+  </data>
+    <data name="AcceptAward" xml:space="preserve">
+    <value>Browse reward applications</value>
+  </data>
+    <data name="AcceptGuild" xml:space="preserve">
+    <value>Please join the state</value>
+  </data>
+    <data name="AcceptImgType" xml:space="preserve">
+    <value>Only accept jpg, png, gif images.</value>
+  </data>
+    <data name="AcceptRule" xml:space="preserve">
+    <value>Accept the terms</value>
+  </data>
+    <data name="AcceptRules" xml:space="preserve">
+    <value>Please read and accept the terms of WIN8</value>
+  </data>
+    <data name="AccMTopError" xml:space="preserve">
+    <value>MTop account is incorrect.</value>
+  </data>
+    <data name="AccountFb" xml:space="preserve">
+    <value>FACEBOOK ACCOUNT</value>
+  </data>
+    <data name="AccountHasUpdatedBefore" xml:space="preserve">
+    <value>Your account has been updated before</value>
+  </data>
+    <data name="AccountNoExist" xml:space="preserve">
+    <value>Account does not exist</value>
+  </data>
+    <data name="AccountReceivedFriendInvalid" xml:space="preserve">
+    <value>The account receiving the friend request is invalid</value>
+  </data>
+    <data name="AccountRequestFriendInvalid" xml:space="preserve">
+    <value>Invalid account submission request</value>
+  </data>
+    <data name="AccountUsed" xml:space="preserve">
+    <value>Account already in use. Please choose another name</value>
+  </data>
+    <data name="AccountWeb" xml:space="preserve">
+    <value>WEB ACCOUNT</value>
+  </data>
+    <data name="AccoutEnoughGold" xml:space="preserve">
+    <value>Your main account is not enough Win to transfer</value>
+  </data>
+    <data name="AccVnKashError" xml:space="preserve">
+    <value>VnKash account is not correct.</value>
+  </data>
+    <data name="Agency" xml:space="preserve">
+    <value>AGENCY</value>
+  </data>
+    <data name="And" xml:space="preserve">
+    <value>and</value>
+  </data>
+    <data name="AssCoin" xml:space="preserve">
+    <value>Win accumulation:</value>
+  </data>
+    <data name="Asset" xml:space="preserve">
+    <value>Asset</value>
+  </data>
+    <data name="Avatar" xml:space="preserve">
+    <value>Avatar</value>
+  </data>
+    <data name="AwardActivityGuild" xml:space="preserve">
+    <value>SOCIAL ACTIVITY REWARDS</value>
+  </data>
+    <data name="BackToTop" xml:space="preserve">
+    <value>Come back</value>
+  </data>
+    <data name="BanNickNote" xml:space="preserve">
+    <value>Your account is locked {{0} &lt;/strong&gt; days, from &lt;strong&gt; {1} &lt;/strong&gt; to &lt;strong&gt; {2} &lt;/strong&gt;. Reason: &lt;strong&gt; {3} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="BanNickShowPopup" xml:space="preserve">
+    <value>Your account is locked</value>
+  </data>
+    <data name="BigGuild" xml:space="preserve">
+    <value>DAI BANG</value>
+  </data>
+    <data name="Birthday" xml:space="preserve">
+    <value>Birthday:</value>
+  </data>
+    <data name="BirthdayInvalid" xml:space="preserve">
+    <value>Invalid date of birth</value>
+  </data>
+    <data name="BlackFriday" xml:space="preserve">
+    <value>Black Friday event</value>
+  </data>
+    <data name="BlockAccContactCS" xml:space="preserve">
+    <value>Your account has been locked. Please contact customer care</value>
+  </data>
+    <data name="BlockAccTransferTo" xml:space="preserve">
+    <value>The account you want to transfer is currently locked. Please contact Customer Service</value>
+  </data>
+    <data name="BlockComment" xml:space="preserve">
+    <value>You are banned from discussion.</value>
+  </data>
+    <data name="BlockTranferGold" xml:space="preserve">
+    <value>Your account is locked to Win</value>
+  </data>
+    <data name="BongBong" xml:space="preserve">
+    <value>Balloons</value>
+  </data>
+    <data name="BuildingOffline" xml:space="preserve">
+    <value>Headquarters offline</value>
+  </data>
+    <data name="ButtonDongY" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+    <data name="ButtonLogin" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+    <data name="ButtonTuChoi" xml:space="preserve">
+    <value>Refuse</value>
+  </data>
+    <data name="BuyGoldFail" xml:space="preserve">
+    <value>Win purchase failed, please try again later</value>
+  </data>
+    <data name="BuySuccWithGold" xml:space="preserve">
+    <value>You have successfully purchased with Win number</value>
+  </data>
+    <data name="CanChangeNickNotRegMobile" xml:space="preserve">
+    <value>Cannot change account name - Account has not been registered from mobile phone</value>
+  </data>
+    <data name="Captcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="CaptchaNotNull" xml:space="preserve">
+    <value>Enter the confirmation code</value>
+  </data>
+    <data name="Card" xml:space="preserve">
+    <value>Scratch cards</value>
+  </data>
+    <data name="CardInvalid" xml:space="preserve">
+    <value>Invalid card information, please try again ...</value>
+  </data>
+    <data name="CardValue" xml:space="preserve">
+    <value>Face value of card (USD)</value>
+  </data>
+    <data name="ChangeAvatar" xml:space="preserve">
+    <value>Change Avatar</value>
+  </data>
+    <data name="ChangePass" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+    <data name="ChangePassFail" xml:space="preserve">
+    <value>Confirm password change failed, please try again later!</value>
+  </data>
+    <data name="ChangePassSuccess" xml:space="preserve">
+    <value>Change your password successfully, you can login with a new password!</value>
+  </data>
+    <data name="ChangeXu" xml:space="preserve">
+    <value>Change</value>
+  </data>
+    <data name="Charater" xml:space="preserve">
+    <value>characters</value>
+  </data>
+    <data name="Chart" xml:space="preserve">
+    <value>Chart</value>
+  </data>
+    <data name="Chat" xml:space="preserve">
+    <value>Chat with friends</value>
+  </data>
+    <data name="ChatAll" xml:space="preserve">
+    <value>World</value>
+  </data>
+    <data name="CheckEmailOrderResetPassword" xml:space="preserve">
+    <value>Please check your email to receive a new password</value>
+  </data>
+    <data name="ChoseCard" xml:space="preserve">
+    <value>card type</value>
+  </data>
+    <data name="ChoseCardToExchange" xml:space="preserve">
+    <value>Please select the type of card to change</value>
+  </data>
+    <data name="ChoseCmtDel" xml:space="preserve">
+    <value>You need to select a comment to delete.</value>
+  </data>
+    <data name="ChoseMemberGuild" xml:space="preserve">
+    <value>Please select a member first</value>
+  </data>
+    <data name="ChoseOnlyOneUser" xml:space="preserve">
+    <value>Each user can only appear once in the Win transfer list.</value>
+  </data>
+    <data name="ChoseType" xml:space="preserve">
+    <value>Choose a carrier</value>
+  </data>
+    <data name="Click" xml:space="preserve">
+    <value>Please press the confirmation button to complete the banner upload</value>
+  </data>
+    <data name="CoinHistoryErrorConfirm" xml:space="preserve">
+    <value>Want to submit a confirmation request?</value>
+  </data>
+    <data name="CoinHistoryErrorContent" xml:space="preserve">
+    <value>We have received your request. Please wait.</value>
+  </data>
+    <data name="CoinHistoryErrorRequested" xml:space="preserve">
+    <value>Request</value>
+  </data>
+    <data name="Colm2D" xml:space="preserve">
+    <value>2D column</value>
+  </data>
+    <data name="Comment" xml:space="preserve">
+    <value>COMMENT</value>
+  </data>
+    <data name="ConfirmExclude" xml:space="preserve">
+    <value>Do you want to expel</value>
+  </data>
+    <data name="ConfirmPass" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+    <data name="ConsequenceDisplayNameNotCorrect" xml:space="preserve">
+    <value>Display name "violates the naming method will be temporarily locked and require a new name change</value>
+  </data>
+    <data name="ContactCustomerCare" xml:space="preserve">
+    <value>Please contact Customer Service for assistance</value>
+  </data>
+    <data name="ContentIsNull" xml:space="preserve">
+    <value>No content was found</value>
+  </data>
+    <data name="Coppyright" xml:space="preserve">
+    <value>COPYRIGHT © 2018 win8.club - TERMS OF SERVICE - PRIVACY</value>
+  </data>
+    <data name="CreateAccount" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+    <data name="CreateAccSucc" xml:space="preserve">
+    <value>Account successfully created</value>
+  </data>
+    <data name="CreateComment" xml:space="preserve">
+    <value>Writing Discussion</value>
+  </data>
+    <data name="CreateDate" xml:space="preserve">
+    <value>Founding:</value>
+  </data>
+    <data name="CreateDay" xml:space="preserve">
+    <value>Registration Date:</value>
+  </data>
+    <data name="CreateDeputyGuild" xml:space="preserve">
+    <value>State deputy</value>
+  </data>
+    <data name="CreateGuild" xml:space="preserve">
+    <value>REGISTER GUILD</value>
+  </data>
+    <data name="CreateGuildPlay" xml:space="preserve">
+    <value>Create Guild - Online Cards</value>
+  </data>
+    <data name="CreatePassLv2" xml:space="preserve">
+    <value>Creating a level 2 password failed</value>
+  </data>
+    <data name="CreateViFail" xml:space="preserve">
+    <value>Create Wallet failed</value>
+  </data>
+    <data name="CurrentXu" xml:space="preserve">
+    <value>Current coin</value>
+  </data>
+    <data name="DataNull" xml:space="preserve">
+    <value>Please write rules</value>
+  </data>
+    <data name="DateCreate" xml:space="preserve">
+    <value>Founding</value>
+  </data>
+    <data name="DateTo" xml:space="preserve">
+    <value>To date</value>
+  </data>
+    <data name="DateWin" xml:space="preserve">
+    <value>Victory Day</value>
+  </data>
+    <data name="DaysAllowKickUser" xml:space="preserve">
+    <value>The current date does not allow kick</value>
+  </data>
+    <data name="DealCancelSucc" xml:space="preserve">
+    <value>The transaction was successfully canceled!</value>
+  </data>
+    <data name="DealFail" xml:space="preserve">
+    <value>Transaction failed</value>
+  </data>
+    <data name="DealFailTryAgain" xml:space="preserve">
+    <value>Transaction failed, please try again</value>
+  </data>
+    <data name="DealInvalid" xml:space="preserve">
+    <value>The transaction is invalid</value>
+  </data>
+    <data name="DealSuccess" xml:space="preserve">
+    <value>Successful transaction!</value>
+  </data>
+    <data name="DelBannerSucc" xml:space="preserve">
+    <value>Remove the banner successfully.</value>
+  </data>
+    <data name="DelCmt" xml:space="preserve">
+    <value>Delete Comment</value>
+  </data>
+    <data name="DelectSuccess" xml:space="preserve">
+    <value>Remove the banner successfully</value>
+  </data>
+    <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+    <data name="DeleteComment" xml:space="preserve">
+    <value>Delete Discussion</value>
+  </data>
+    <data name="DepositExchange" xml:space="preserve">
+    <value>Recharge card - redeem reward</value>
+  </data>
+    <data name="DepositGoldFailReason" xml:space="preserve">
+    <value>Win load failed due to</value>
+  </data>
+    <data name="DepositNganLuong" xml:space="preserve">
+    <value>Load the win amount</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>You have successfully loaded</value>
+  </data>
+    <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+    <data name="DialogKeyboard" xml:space="preserve">
+    <value>Virtual Keyboard</value>
+  </data>
+    <data name="DieuKhoan" xml:space="preserve">
+    <value>Terms of use</value>
+  </data>
+    <data name="DisplayNameComplex" xml:space="preserve">
+    <value>The name displays at least 6 characters, up to 32 characters and includes only letters from a-z, A-Z and 0-9.</value>
+  </data>
+    <data name="DisplayNameError" xml:space="preserve">
+    <value>The display name cannot be the same as the Username</value>
+  </data>
+    <data name="DisplayNameExist" xml:space="preserve">
+    <value>Display name already exists</value>
+  </data>
+    <data name="DisplayNameInvalid" xml:space="preserve">
+    <value>Invalid display name</value>
+  </data>
+    <data name="DisplayNameLengthMin6" xml:space="preserve">
+    <value>Display name must be at least 6 characters</value>
+  </data>
+    <data name="DisplayNameNotBadWord" xml:space="preserve">
+    <value>Do not use offensive, overbearing and agitated words</value>
+  </data>
+    <data name="DisplayNameNotNull" xml:space="preserve">
+    <value>Please select "Display name" for yourself</value>
+  </data>
+    <data name="DisplayNameRule" xml:space="preserve">
+    <value>Display name must be at least 3 to 15 characters long, including only characters from a-z, A-Z and 0</value>
+  </data>
+    <data name="DoiGold" xml:space="preserve">
+    <value>Change the win</value>
+  </data>
+    <data name="DoiThuong" xml:space="preserve">
+    <value>CHANGE BONUS - A POSITIVE CHANGE OF GIFTS</value>
+  </data>
+    <data name="DontExchangeSMS" xml:space="preserve">
+    <value>Cannot change because SMS password is being used</value>
+  </data>
+    <data name="EditProfile" xml:space="preserve">
+    <value>Edit information</value>
+  </data>
+    <data name="EmailExists" xml:space="preserve">
+    <value>This e-mail is already taken</value>
+  </data>
+    <data name="EmailNotExists" xml:space="preserve">
+    <value>Email does not exist</value>
+  </data>
+    <data name="EmailWrongFormat" xml:space="preserve">
+    <value>Email entered incorrect format.</value>
+  </data>
+    <data name="ErrorCmt" xml:space="preserve">
+    <value>Error comment</value>
+  </data>
+    <data name="ErrorDeposit" xml:space="preserve">
+    <value>There was an error loading Win. Please contact Customer Service for support!</value>
+  </data>
+    <data name="ErrorInfo" xml:space="preserve">
+    <value>Could not authenticate information</value>
+  </data>
+    <data name="ErrorProcess" xml:space="preserve">
+    <value>Error during processing.</value>
+  </data>
+    <data name="ErrorSytem" xml:space="preserve">
+    <value>System error. Please contact the administrator</value>
+  </data>
+    <data name="EventPage" xml:space="preserve">
+    <value>EVENT</value>
+  </data>
+    <data name="Exchange" xml:space="preserve">
+    <value>CHANGE THE BONUS</value>
+  </data>
+    <data name="ExchangeCardSucc1" xml:space="preserve">
+    <value>You have successfully changed the card &lt;/br&gt;</value>
+  </data>
+    <data name="ExchangeCardSucc2" xml:space="preserve">
+    <value>Serial: &lt;strong style = 'color: green'&gt;</value>
+  </data>
+    <data name="ExchangeCardSucc3" xml:space="preserve">
+    <value>&lt;/br&gt; Card code: &lt;strong style = 'color: green'&gt;</value>
+  </data>
+    <data name="ExchangeCardSucc4" xml:space="preserve">
+    <value>&lt;/br&gt; You can go to the mailbox to review the card code.</value>
+  </data>
+    <data name="ExchangeItem" xml:space="preserve">
+    <value>Congratulations on successfully changing items:</value>
+  </data>
+    <data name="ExchangeNow" xml:space="preserve">
+    <value>Change now</value>
+  </data>
+    <data name="ExchangeSuccess" xml:space="preserve">
+    <value>You have successfully changed the card n Serial:</value>
+  </data>
+    <data name="ExchangeSuccess1" xml:space="preserve">
+    <value>You click on the content of the card code to hold for 3 seconds to perform the character copy.</value>
+  </data>
+    <data name="ExchangeSuccess2" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="ExpNo" xml:space="preserve">
+    <value>Accumulated points:</value>
+  </data>
+    <data name="ExpPoint" xml:space="preserve">
+    <value>Experience points</value>
+  </data>
+    <data name="FacebookFooterCopyright" xml:space="preserve">
+    <value>Copyright © 2018 WIN8 The best gaming community in Cambodia</value>
+  </data>
+    <data name="FacebookFooterEmail" xml:space="preserve">
+    <value>Email: hotro.win8@gmail.com</value>
+  </data>
+    <data name="FacebookFooterHotLine" xml:space="preserve">
+    <value>Hotline: {0}</value>
+  </data>
+    <data name="FacebookHeaderDoi" xml:space="preserve">
+    <value>Redeem Rewards</value>
+  </data>
+    <data name="FacebookHeaderHuongDan" xml:space="preserve">
+    <value>Guide</value>
+  </data>
+    <data name="FacebookLayoutOgDescription" xml:space="preserve">
+    <value>Webgame card game online - Association of online gaming lovers</value>
+  </data>
+    <data name="FacebookLayoutOgTitle" xml:space="preserve">
+    <value>Play cards online, play cards online for free</value>
+  </data>
+    <data name="FacebookLayoutTitle" xml:space="preserve">
+    <value>Play cards online, play cards online for free</value>
+  </data>
+    <data name="FacebookLayoutTwitterDescription" xml:space="preserve">
+    <value>Webgame card game online - Association of online gaming lovers</value>
+  </data>
+    <data name="FacebookLayoutTwitterTitle" xml:space="preserve">
+    <value>Play cards online, play cards online for free</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+    <data name="FailMaxUserTranferGold" xml:space="preserve">
+    <value>Win switch failed. The maximum number of Win users in the day {0} is: {1} Win.</value>
+  </data>
+    <data name="FailTimesToTranfer" xml:space="preserve">
+    <value>Transfer Win to the player {0} failed due to the end of the Win guilds transfer</value>
+  </data>
+    <data name="FailTranferGoldTryAgain" xml:space="preserve">
+    <value>Win switch failed. Please try again later</value>
+  </data>
+    <data name="FailUpdateInfo" xml:space="preserve">
+    <value>Update information failed. Please try again later.</value>
+  </data>
+    <data name="FailUserPlayingGame" xml:space="preserve">
+    <value>Switching Win to the player {0} fails because the user is playing the game</value>
+  </data>
+    <data name="FAQs" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+    <data name="FAQsMobileEmty" xml:space="preserve">
+    <value>Information is updating</value>
+  </data>
+    <data name="FAQsMobileLink" xml:space="preserve">
+    <value>GUIDE</value>
+  </data>
+    <data name="FeatureMaintance" xml:space="preserve">
+    <value>The current function is being maintained. Please try again at</value>
+  </data>
+    <data name="Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+    <data name="FileCheck" xml:space="preserve">
+    <value>Only upload photos in jpg, png, gif format.</value>
+  </data>
+    <data name="FinalAward" xml:space="preserve">
+    <value>Summary and rewards</value>
+  </data>
+    <data name="Finance" xml:space="preserve">
+    <value>State finance</value>
+  </data>
+    <data name="Footer" xml:space="preserve">
+    <value>win8.club © 2018</value>
+  </data>
+    <data name="FormRegisterAccount" xml:space="preserve">
+    <value>Sign up with an account</value>
+  </data>
+    <data name="FormRegisterTitle" xml:space="preserve">
+    <value>Direct registration</value>
+  </data>
+    <data name="Forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+    <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+    <data name="GameBai" xml:space="preserve">
+    <value>Card game</value>
+  </data>
+    <data name="Gender" xml:space="preserve">
+    <value>Sex:</value>
+  </data>
+    <data name="GeneralGuild" xml:space="preserve">
+    <value>State master synthesis</value>
+  </data>
+    <data name="GiftToReaching" xml:space="preserve">
+    <value>Gold Award:</value>
+  </data>
+    <data name="Gold" xml:space="preserve">
+    <value>Win</value>
+  </data>
+    <data name="GoldAccuDay" xml:space="preserve">
+    <value>Win accumulation / day:</value>
+  </data>
+    <data name="GoldAccuMount" xml:space="preserve">
+    <value>Win accumulation / month:</value>
+  </data>
+    <data name="GoldBorrow" xml:space="preserve">
+    <value>Win applicants</value>
+  </data>
+    <data name="GoldGiftLevelUp" xml:space="preserve">
+    <value>VIP Gold Award</value>
+  </data>
+    <data name="GoldGiftLogin" xml:space="preserve">
+    <value>Gold records are talented</value>
+  </data>
+    <data name="GoldGiftVip" xml:space="preserve">
+    <value>Gold shows the birthday of VIP</value>
+  </data>
+    <data name="GoldGuild" xml:space="preserve">
+    <value>Win guilds</value>
+  </data>
+    <data name="GoldInvalidToTranfer" xml:space="preserve">
+    <value>The Win number is invalid when passed to user {0}.</value>
+  </data>
+    <data name="GoldNumberInterger" xml:space="preserve">
+    <value>The win number must be an integer</value>
+  </data>
+    <data name="GoldOwner" xml:space="preserve">
+    <value>Win host state</value>
+  </data>
+    <data name="Guide" xml:space="preserve">
+    <value>Guide</value>
+  </data>
+    <data name="GuidePlay" xml:space="preserve">
+    <value>Instructions for playing games</value>
+  </data>
+    <data name="GuidePlayGameLink" xml:space="preserve">
+    <value>GUIDE</value>
+  </data>
+    <data name="Guild" xml:space="preserve">
+    <value>Guild</value>
+  </data>
+    <data name="GuildAccumulationMemberInfo" xml:space="preserve">
+    <value>Member info</value>
+  </data>
+    <data name="GuildAccumulationPoint" xml:space="preserve">
+    <value>Contribution points</value>
+  </data>
+    <data name="GuildCoinWillReceive" xml:space="preserve">
+    <value>Win expects to receive</value>
+  </data>
+    <data name="GuildCommentDisable" xml:space="preserve">
+    <value>Prohibition of comment</value>
+  </data>
+    <data name="GuildCommentDisableAsk" xml:space="preserve">
+    <value>Do you want to ban this user?</value>
+  </data>
+    <data name="GuildCommentDisabled" xml:space="preserve">
+    <value>Prohibition</value>
+  </data>
+    <data name="GuildCreate" xml:space="preserve">
+    <value>Create a large group</value>
+  </data>
+    <data name="GuildInfoAccumulationByLevel" xml:space="preserve">
+    <value>Contribute information to the level</value>
+  </data>
+    <data name="GuildInputToSearch" xml:space="preserve">
+    <value>Enter a state name to search ...</value>
+  </data>
+    <data name="GuildInviteLink" xml:space="preserve">
+    <value>Invite an invite member</value>
+  </data>
+    <data name="GuildKickMember" xml:space="preserve">
+    <value>Membership categories from large groups</value>
+  </data>
+    <data name="GuildKickMemberAsk" xml:space="preserve">
+    <value>Do you want to kick users out of the state?</value>
+  </data>
+    <data name="GuildListUserReceiveCoin" xml:space="preserve">
+    <value> Member list received</value>
+  </data>
+    <data name="GuildListUserWaiting" xml:space="preserve">
+    <value>Your name, please join the group</value>
+  </data>
+    <data name="GuildMemberCount" xml:space="preserve">
+    <value>Members</value>
+  </data>
+    <data name="GuildMemberLeave" xml:space="preserve">
+    <value>Do you want to leave the state?</value>
+  </data>
+    <data name="GuildMemberList" xml:space="preserve">
+    <value>Member list of members</value>
+  </data>
+    <data name="GuildMemberRemoveAsk" xml:space="preserve">
+    <value>Are you sure you want to delete this member?</value>
+  </data>
+    <data name="GuildMemberTopPayment" xml:space="preserve">
+    <value>Top members loaded</value>
+  </data>
+    <data name="GuildMyGuild" xml:space="preserve">
+    <value>My site</value>
+  </data>
+    <data name="GuildName" xml:space="preserve">
+    <value>Assembly</value>
+  </data>
+    <data name="GuildNewComment" xml:space="preserve">
+    <value>comment.</value>
+  </data>
+    <data name="GuildNewTitle" xml:space="preserve">
+    <value>NEWS &amp; EVENTS</value>
+  </data>
+    <data name="GuildNewView" xml:space="preserve">
+    <value>views.</value>
+  </data>
+    <data name="GuildNotExist" xml:space="preserve">
+    <value>No bang</value>
+  </data>
+    <data name="GuildNotify" xml:space="preserve">
+    <value>Notice</value>
+  </data>
+    <data name="GuildNotifyCreate" xml:space="preserve">
+    <value>Create a notification</value>
+  </data>
+    <data name="GuildNotifyDeleteAsk" xml:space="preserve">
+    <value>Are you sure you want to delete the selected message?</value>
+  </data>
+    <data name="GuildNotifyList" xml:space="preserve">
+    <value>List of notices in the state</value>
+  </data>
+    <data name="GuildOutAsk" xml:space="preserve">
+    <value>Do you want to leave the state?</value>
+  </data>
+    <data name="GuildOwner" xml:space="preserve">
+    <value>Bang owner</value>
+  </data>
+    <data name="GuildPolicy" xml:space="preserve">
+    <value>Association policy</value>
+  </data>
+    <data name="GuildRevenueInfo" xml:space="preserve">
+    <value>State revenue information</value>
+  </data>
+    <data name="GuildSetting" xml:space="preserve">
+    <value>State management</value>
+  </data>
+    <data name="GuildTop" xml:space="preserve">
+    <value>Supreme Council</value>
+  </data>
+    <data name="GuildTopCreateNew" xml:space="preserve">
+    <value>New States</value>
+  </data>
+    <data name="GuildTopMemberAccumulation" xml:space="preserve">
+    <value>Top member statistics</value>
+  </data>
+    <data name="GuildTopRich" xml:space="preserve">
+    <value>Suggested states</value>
+  </data>
+    <data name="GuildTopSuggest" xml:space="preserve">
+    <value>Society suggests</value>
+  </data>
+    <data name="GuildTopVip" xml:space="preserve">
+    <value>TOP MONTHS MONTHS</value>
+  </data>
+    <data name="GuildTopVipPoint" xml:space="preserve">
+    <value>TOP PACKAGE LEVEL</value>
+  </data>
+    <data name="GuildTotalAccumulation" xml:space="preserve">
+    <value>Assembly proposed
+ member </value>
+  </data>
+    <data name="GuildUpdateFanpage" xml:space="preserve">
+    <value>Are you sure you want to update LinkFanpage?</value>
+  </data>
+    <data name="GuildUpdateFanpageError" xml:space="preserve">
+    <value>Fanpage link is invalid</value>
+  </data>
+    <data name="Have" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+    <data name="HistoryCoin" xml:space="preserve">
+    <value>Win history</value>
+  </data>
+    <data name="HistoryCoinNote" xml:space="preserve">
+    <value>Note</value>
+  </data>
+    <data name="HistoryCoinTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+    <data name="HistoryJackpot" xml:space="preserve">
+    <value>History receives JackPot</value>
+  </data>
+    <data name="HistoryMiniBossHopQua" xml:space="preserve">
+    <value>History Touch Gift Box</value>
+  </data>
+    <data name="HistoryMiniBossNhan" xml:space="preserve">
+    <value>Get the prize</value>
+  </data>
+    <data name="HistoryMissionBanCaIncomplete" xml:space="preserve">
+    <value>Not finished</value>
+  </data>
+    <data name="HistoryMissionBanCaProcessing" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+    <data name="HistoryMoney" xml:space="preserve">
+    <value>History of money</value>
+  </data>
+    <data name="HistoryMoneyError" xml:space="preserve">
+    <value>History of the Bible</value>
+  </data>
+    <data name="HistoryNL" xml:space="preserve">
+    <value>History of the Nine</value>
+  </data>
+    <data name="HistoryTranferGold" xml:space="preserve">
+    <value>History of Win</value>
+  </data>
+    <data name="HistoryXu" xml:space="preserve">
+    <value>Win History</value>
+  </data>
+    <data name="Hobpy" xml:space="preserve">
+    <value>Interests:</value>
+  </data>
+    <data name="HomePage" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+    <data name="HowToGetStar" xml:space="preserve">
+    <value>1. How to get there?</value>
+  </data>
+    <data name="HowToGetStarAnswer" xml:space="preserve">
+    <value>Simply just play the game (XT, Ù, TLMN, BTC, Mark, Sniper, Liang) if you win, after the system has collected 5% of the table cost, 1% , the system automatically transfers 15% of the remaining Win.</value>
+  </data>
+    <data name="HowToUseMTOP" xml:space="preserve">
+    <value>How to use MTOP</value>
+  </data>
+    <data name="IdCardsHasNotSpecialChar" xml:space="preserve">
+    <value>The ID card can not contain special characters</value>
+  </data>
+    <data name="IdCardsIsEmpty" xml:space="preserve">
+    <value>ID card should not be blank</value>
+  </data>
+    <data name="IdCardsMustNumber" xml:space="preserve">
+    <value>The ID card must be a numeric character</value>
+  </data>
+    <data name="IdNumberLength" xml:space="preserve">
+    <value>Verify letters from 9 to&gt; 12 digits</value>
+  </data>
+    <data name="IdReasonRemoveMoney" xml:space="preserve">
+    <value>Id Reason minus when player bet</value>
+  </data>
+    <data name="ImgSize" xml:space="preserve">
+    <value>File size &lt;= 500Kb.</value>
+  </data>
+    <data name="InfoCardInvalid" xml:space="preserve">
+    <value>Invalid card information</value>
+  </data>
+    <data name="InfoInvalid" xml:space="preserve">
+    <value>Information is invalid!</value>
+  </data>
+    <data name="Infor" xml:space="preserve">
+    <value>Information</value>
+  </data>
+    <data name="InputAccBaoKim" xml:space="preserve">
+    <value>Please enter Bao Kim account</value>
+  </data>
+    <data name="InputAccMTop" xml:space="preserve">
+    <value>Please enter the MTop account</value>
+  </data>
+    <data name="InputAccReceive" xml:space="preserve">
+    <value>Please enter the code to receive Win</value>
+  </data>
+    <data name="InputAccTransferTo" xml:space="preserve">
+    <value>Please enter the winnings account</value>
+  </data>
+    <data name="InputAccVnKash" xml:space="preserve">
+    <value>Please enter the VnKash account.</value>
+  </data>
+    <data name="InputCapcha" xml:space="preserve">
+    <value>Security code ...</value>
+  </data>
+    <data name="InputCmt" xml:space="preserve">
+    <value>Enter discussion content.</value>
+  </data>
+    <data name="InputConfirmPassWallet" xml:space="preserve">
+    <value>Confirm level 2 password ..</value>
+  </data>
+    <data name="InputDisplayname" xml:space="preserve">
+    <value>Enter display name.</value>
+  </data>
+    <data name="InputFullName" xml:space="preserve">
+    <value>Enter full name.</value>
+  </data>
+    <data name="InputGold" xml:space="preserve">
+    <value>Enter the win number you want to transfer ...</value>
+  </data>
+    <data name="InputIdNumber" xml:space="preserve">
+    <value>Enter the ID.</value>
+  </data>
+    <data name="InputIDOrUsername" xml:space="preserve">
+    <value>Enter your account or login code.</value>
+  </data>
+    <data name="InputMessage" xml:space="preserve">
+    <value>Please enter a message.</value>
+  </data>
+    <data name="InputNewPassWallet" xml:space="preserve">
+    <value>New Level 2 Password ...</value>
+  </data>
+    <data name="InputNickName" xml:space="preserve">
+    <value>Please enter a username</value>
+  </data>
+    <data name="InputNote" xml:space="preserve">
+    <value>Notes ...</value>
+  </data>
+    <data name="InputPassWallet" xml:space="preserve">
+    <value>Level 2 password ...</value>
+  </data>
+    <data name="InputPhoneRequire" xml:space="preserve">
+    <value>Enter the phone.</value>
+  </data>
+    <data name="InputPinCard" xml:space="preserve">
+    <value>Enter card code ...</value>
+  </data>
+    <data name="InputRuleGuild" xml:space="preserve">
+    <value>Please enter the rules.</value>
+  </data>
+    <data name="InputSeri" xml:space="preserve">
+    <value>Enter serial number ...</value>
+  </data>
+    <data name="InputSlogan" xml:space="preserve">
+    <value>Please enter a slogan.</value>
+  </data>
+    <data name="Instruction" xml:space="preserve">
+    <value>GUILDE</value>
+  </data>
+    <data name="Introduce" xml:space="preserve">
+    <value>Introduce yourself:</value>
+  </data>
+    <data name="IntroItem" xml:space="preserve">
+    <value>About the item</value>
+  </data>
+    <data name="IntroUserVip" xml:space="preserve">
+    <value>VIP users have a lot of influence and contributions to the ABCnet community. Therefore, VIP users will benefit from many different benefits such as gold prizes, VIP levels, gold utilities, special offers with gold through agents ...</value>
+  </data>
+    <data name="IntroWeb" xml:space="preserve">
+    <value>About win8.club</value>
+  </data>
+    <data name="IntroWeb1" xml:space="preserve">
+    <value>win8.club is a website</value>
+  </data>
+    <data name="IntroWeb2" xml:space="preserve">
+    <value>One of the top online games</value>
+  </data>
+    <data name="InvalidGold" xml:space="preserve">
+    <value>Win number is invalid</value>
+  </data>
+    <data name="InvalidSign" xml:space="preserve">
+    <value>Chữ ký sai</value>
+  </data>
+    <data name="InvalidUser" xml:space="preserve">
+    <value>Player {0} does not exist</value>
+  </data>
+    <data name="InviteFriend" xml:space="preserve">
+    <value>Invite more friends</value>
+  </data>
+    <data name="InviteFriend1" xml:space="preserve">
+    <value>friend request.</value>
+  </data>
+    <data name="InviteFriend2" xml:space="preserve">
+    <value>Invite more friends</value>
+  </data>
+    <data name="InviteGuild" xml:space="preserve">
+    <value>The invitation to join the state has been sent to this member.</value>
+  </data>
+    <data name="InviteJoinGuild" xml:space="preserve">
+    <value>invitation to join the state.</value>
+  </data>
+    <data name="Item" xml:space="preserve">
+    <value>ITEMS</value>
+  </data>
+    <data name="JoinGuild" xml:space="preserve">
+    <value>Join the state:</value>
+  </data>
+    <data name="KCard" xml:space="preserve">
+    <value>K changed the date</value>
+  </data>
+    <data name="Keywords" xml:space="preserve">
+    <value>Bai online game, list online, play online, game offline</value>
+  </data>
+    <data name="KickMember" xml:space="preserve">
+    <value>Kick off the Bang</value>
+  </data>
+    <data name="LeftGuildCurrent" xml:space="preserve">
+    <value>Please leave the current state first.</value>
+  </data>
+    <data name="LevelNo" xml:space="preserve">
+    <value>Rank:</value>
+  </data>
+    <data name="LimitCmt10" xml:space="preserve">
+    <value>To be able to participate in the comment, the post you have to play the game for at least 10 hours.</value>
+  </data>
+    <data name="LimitTranferGold" xml:space="preserve">
+    <value>Win switch failed. The maximum number of Win Winners in the day {0} is: {1} Win</value>
+  </data>
+    <data name="LimitTranferGoldInGuild" xml:space="preserve">
+    <value>You can only transfer from 10,000 to 500,000 Win.</value>
+  </data>
+    <data name="LimitTranferUser" xml:space="preserve">
+    <value>You can only transfer up to 5 people.</value>
+  </data>
+    <data name="Line" xml:space="preserve">
+    <value>Street</value>
+  </data>
+    <data name="Listdoithe" xml:space="preserve">
+    <value>Card change list</value>
+  </data>
+    <data name="ListExchangeCard" xml:space="preserve">
+    <value>LIST OF BONUS CHANGE</value>
+  </data>
+    <data name="ListGuild" xml:space="preserve">
+    <value>List of guilds</value>
+  </data>
+    <data name="ListMemReGold" xml:space="preserve">
+    <value>The list of applications for Win members</value>
+  </data>
+    <data name="ListSubOwner" xml:space="preserve">
+    <value>DEPARTMENT LIST</value>
+  </data>
+    <data name="LogicError" xml:space="preserve">
+    <value>Logical error</value>
+  </data>
+    <data name="Login" xml:space="preserve">
+    <value>Login with WIN8 account</value>
+  </data>
+    <data name="LoginAgain" xml:space="preserve">
+    <value>Please log in again</value>
+  </data>
+    <data name="LoginAgainTodo" xml:space="preserve">
+    <value>You need to log in again to perform this function.</value>
+  </data>
+    <data name="LoginAgainToTranferGold" xml:space="preserve">
+    <value>Please login again to transfer Win</value>
+  </data>
+    <data name="LoginBy" xml:space="preserve">
+    <value>Sign in with:</value>
+  </data>
+    <data name="LoginError" xml:space="preserve">
+    <value>An error occurred during the login process.</value>
+  </data>
+    <data name="LoginToCmt" xml:space="preserve">
+    <value>You must be logged in to join the discussion.</value>
+  </data>
+    <data name="LoginToDepositMoney" xml:space="preserve">
+    <value>Please login to load the win</value>
+  </data>
+    <data name="LoginToDo" xml:space="preserve">
+    <value>Please login to perform this function.</value>
+  </data>
+    <data name="LogOut" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+    <data name="MakeFriendAlreadyFriend" xml:space="preserve">
+    <value>Make friends</value>
+  </data>
+    <data name="MakeFriendAlreadyRequestFriend" xml:space="preserve">
+    <value>You have been requested by this User</value>
+  </data>
+    <data name="MakeFriendCanNotMakeFriendYourSelf" xml:space="preserve">
+    <value>Can't make friends with yourself</value>
+  </data>
+    <data name="Male" xml:space="preserve">
+    <value>male</value>
+  </data>
+    <data name="ManageGuild" xml:space="preserve">
+    <value>MANAGEMENT BANG</value>
+  </data>
+    <data name="ManagementGuild" xml:space="preserve">
+    <value>State management</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>STUDENT LIST</value>
+  </data>
+    <data name="MessageContentRequired" xml:space="preserve">
+    <value>Please enter a message</value>
+  </data>
+    <data name="MiniGameBVKC" xml:space="preserve">
+    <value>Protect diamonds</value>
+  </data>
+    <data name="MiniGameBvkcOrient" xml:space="preserve">
+    <value>Used in case of portraits</value>
+  </data>
+    <data name="MiniGameChayTronGau" xml:space="preserve">
+    <value>Fleeing Bear</value>
+  </data>
+    <data name="MiniGameChemTraiCay" xml:space="preserve">
+    <value>Cutting fruit</value>
+  </data>
+    <data name="MiniGameChimMoVit" xml:space="preserve">
+    <value>Duckbill</value>
+  </data>
+    <data name="MiniGameChonHuong" xml:space="preserve">
+    <value>Choose the Right Direction</value>
+  </data>
+    <data name="MiniGameCoTuong" xml:space="preserve">
+    <value>Chess</value>
+  </data>
+    <data name="MiniGameCoTuongEasy" xml:space="preserve">
+    <value>Easy Level</value>
+  </data>
+    <data name="MiniGameCoTuongHard" xml:space="preserve">
+    <value>Difficulty Level</value>
+  </data>
+    <data name="MiniGameCoTuongRedo" xml:space="preserve">
+    <value>Go</value>
+  </data>
+    <data name="MiniGameCoTuongType" xml:space="preserve">
+    <value>Chessboard style</value>
+  </data>
+    <data name="MiniGameDoMin" xml:space="preserve">
+    <value>Mine detection</value>
+  </data>
+    <data name="MiniGameEchNhay" xml:space="preserve">
+    <value>Jumping Frog</value>
+  </data>
+    <data name="MiniGameGiuThanh" xml:space="preserve">
+    <value>Keep the City</value>
+  </data>
+    <data name="MiniGameKeoBong" xml:space="preserve">
+    <value>World cotton candy</value>
+  </data>
+    <data name="MiniGameLolita" xml:space="preserve">
+    <value>Lolita aircraft</value>
+  </data>
+    <data name="MiniGameMario" xml:space="preserve">
+    <value>Super Mario</value>
+  </data>
+    <data name="MiniGameMayBay" xml:space="preserve">
+    <value>Combat aircrafts</value>
+  </data>
+    <data name="MiniGameNhanhMat" xml:space="preserve">
+    <value>Fast eye</value>
+  </data>
+    <data name="MiniGameNhaySieuCao" xml:space="preserve">
+    <value>Super High Jump</value>
+  </data>
+    <data name="MiniGameNoiDiem" xml:space="preserve">
+    <value>Matching Similar Points</value>
+  </data>
+    <data name="MiniGameNongTrai" xml:space="preserve">
+    <value>Farm</value>
+  </data>
+    <data name="MiniGameRong" xml:space="preserve">
+    <value>Dragon child and treasure</value>
+  </data>
+    <data name="MiniGameSocNhay" xml:space="preserve">
+    <value>Squirrel Jump</value>
+  </data>
+    <data name="MiniGameTungTrung" xml:space="preserve">
+    <value>Eggs</value>
+  </data>
+    <data name="MinLenghtUser" xml:space="preserve">
+    <value>The username contains at least 3 characters, including characters from a-z A-Z and 0-9</value>
+  </data>
+    <data name="MobileCommentUserMustLogin" xml:space="preserve">
+    <value>You must be logged in to join the discussion.</value>
+  </data>
+    <data name="MobileCommentUserMustPlay" xml:space="preserve">
+    <value>To be able to participate in the comment, the post you have to play the game for at least 10 hours.</value>
+  </data>
+    <data name="MobileCommentUserSend" xml:space="preserve">
+    <value>TO SEND</value>
+  </data>
+    <data name="MobileCommentUserTitle" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+    <data name="MobileCreateGuildbtn" xml:space="preserve">
+    <value>TAO BANG</value>
+  </data>
+    <data name="MobileCreateGuildRule" xml:space="preserve">
+    <value>See the rules for creating guilds &gt;&gt;</value>
+  </data>
+    <data name="MobileGuildDetailChatTitle" xml:space="preserve">
+    <value>Discuss</value>
+  </data>
+    <data name="MobileGuildDetailRuleFinish" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+    <data name="MobileGuildDetailRuleTitle" xml:space="preserve">
+    <value>Rules</value>
+  </data>
+    <data name="MobileGuildDetailTopMember" xml:space="preserve">
+    <value>Top members</value>
+  </data>
+    <data name="MobileGuildDetailUserJoin" xml:space="preserve">
+    <value>User to join</value>
+  </data>
+    <data name="MobileGuildDetailUserNull" xml:space="preserve">
+    <value>No members have applied yet</value>
+  </data>
+    <data name="MobileGuildMemberVipFromDay" xml:space="preserve">
+    <value>Since</value>
+  </data>
+    <data name="MobileGuildMemberVipMember" xml:space="preserve">
+    <value>Member</value>
+  </data>
+    <data name="MobileGuildMemberVipPoint" xml:space="preserve">
+    <value>Point</value>
+  </data>
+    <data name="MobileGuildMemberVipSearch" xml:space="preserve">
+    <value>See</value>
+  </data>
+    <data name="MobileGuildMemberVipTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+    <data name="MoneyMultipleOf" xml:space="preserve">
+    <value>The win number must be a multiple of</value>
+  </data>
+    <data name="MoneyTranferInvalid" xml:space="preserve">
+    <value>The number of win transfers is invalid.</value>
+  </data>
+    <data name="MoneyWin" xml:space="preserve">
+    <value>Win win</value>
+  </data>
+    <data name="More" xml:space="preserve">
+    <value>SEE MORE</value>
+  </data>
+    <data name="MostVibrant" xml:space="preserve">
+    <value>The Best</value>
+  </data>
+    <data name="MostView" xml:space="preserve">
+    <value>Most view</value>
+  </data>
+    <data name="MTK" xml:space="preserve">
+    <value>MTK</value>
+  </data>
+    <data name="MTKIsNotNull" xml:space="preserve">
+    <value>Enter MTK or Nickname ...</value>
+  </data>
+    <data name="MustLogin1" xml:space="preserve">
+    <value>You need</value>
+  </data>
+    <data name="MustLogin2" xml:space="preserve">
+    <value>log in</value>
+  </data>
+    <data name="MustLogin3" xml:space="preserve">
+    <value> New to discussion.</value>
+  </data>
+    <data name="Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+    <data name="NameGuild" xml:space="preserve">
+    <value>State name</value>
+  </data>
+    <data name="NameGuildMaxLenght" xml:space="preserve">
+    <value>Assembly name does not exceed 30 characters.</value>
+  </data>
+    <data name="NameGuildNotEmpty" xml:space="preserve">
+    <value>Assembly name cannot be empty.</value>
+  </data>
+    <data name="NewEvent" xml:space="preserve">
+    <value>NEW EVENT</value>
+  </data>
+    <data name="NewGuild" xml:space="preserve">
+    <value>NEW</value>
+  </data>
+    <data name="NewMessage" xml:space="preserve">
+    <value>new mail.</value>
+  </data>
+    <data name="NewPass" xml:space="preserve">
+    <value>New PIN code</value>
+  </data>
+    <data name="NewPasswordSameOldPassword" xml:space="preserve">
+    <value>New passwords and old passwords are the same</value>
+  </data>
+    <data name="News" xml:space="preserve">
+    <value>NEWS</value>
+  </data>
+    <data name="NewsEvent" xml:space="preserve">
+    <value>News - Events</value>
+  </data>
+    <data name="NichnameEqual" xml:space="preserve">
+    <value>The display name cannot be the same as the username.</value>
+  </data>
+    <data name="Nick" xml:space="preserve">
+    <value>Nick name</value>
+  </data>
+    <data name="NickMail" xml:space="preserve">
+    <value>Nick / Email</value>
+  </data>
+    <data name="NickNameChangedBefore" xml:space="preserve">
+    <value>You have changed your nickname before</value>
+  </data>
+    <data name="NicknameContent" xml:space="preserve">
+    <value>Username must not have accents and special characters.</value>
+  </data>
+    <data name="NickNameExist" xml:space="preserve">
+    <value>This username is already in use, please choose another name</value>
+  </data>
+    <data name="NickNameLeght" xml:space="preserve">
+    <value>Username is at least 3 characters and up to 15 characters.</value>
+  </data>
+    <data name="NicknameNull" xml:space="preserve">
+    <value>Username contains names that are not allowed.</value>
+  </data>
+    <data name="NickNameRule" xml:space="preserve">
+    <value>Nicknames are at least 3 to 15 characters long, include only letters from a-z, A-Z and 0-9.</value>
+  </data>
+    <data name="NickNameWrong" xml:space="preserve">
+    <value>Username is incorrect</value>
+  </data>
+    <data name="NickOrPasswordIsWrong" xml:space="preserve">
+    <value>Username or password incorrect</value>
+  </data>
+    <data name="No" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+    <data name="NoAllowEditArticle" xml:space="preserve">
+    <value>You do not have permission to edit this article!</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="NoEnoughGold" xml:space="preserve">
+    <value>Win numbers are not enough to transfer.</value>
+  </data>
+    <data name="NoEnoughGoldToUser" xml:space="preserve">
+    <value>You do not have enough Win to transfer to player {0}.</value>
+  </data>
+    <data name="NoGuild" xml:space="preserve">
+    <value>You have not joined the state, can not transfer Win Assembly</value>
+  </data>
+    <data name="NoLogin" xml:space="preserve">
+    <value>DO NOT LOG IN</value>
+  </data>
+    <data name="NoRequestMakeFriend" xml:space="preserve">
+    <value>You currently have no friend requests</value>
+  </data>
+    <data name="NotAwarded" xml:space="preserve">
+    <value>Not yet donated</value>
+  </data>
+    <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+    <data name="NotExchangeCard" xml:space="preserve">
+    <value>Cannot redeem rewards. Please contact customer care</value>
+  </data>
+    <data name="NotExchangeFromMTop" xml:space="preserve">
+    <value>Cannot redeem rewards with MTop. Please contact customer care</value>
+  </data>
+    <data name="NotExchangeFromVnKash" xml:space="preserve">
+    <value>Cannot redeem rewards with VnKash. Please contact customer care</value>
+  </data>
+    <data name="NotExitReward" xml:space="preserve">
+    <value>No requests for Win yet</value>
+  </data>
+    <data name="NotFindNewArticle" xml:space="preserve">
+    <value>No introduction article found</value>
+  </data>
+    <data name="NotGrantTodo" xml:space="preserve">
+    <value>You do not have the right to perform this function.</value>
+  </data>
+    <data name="Notify" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+    <data name="NotifyError" xml:space="preserve">
+    <value>Error message</value>
+  </data>
+    <data name="NotInGuild" xml:space="preserve">
+    <value>Not yet joined the state</value>
+  </data>
+    <data name="NotTranferForYour" xml:space="preserve">
+    <value>You cannot transfer Win to yourself.</value>
+  </data>
+    <data name="NotTransfer" xml:space="preserve">
+    <value>You do not have permission to transfer Win!</value>
+  </data>
+    <data name="NotTransferCoinCauseMaxReceived" xml:space="preserve">
+    <value>Cannot switch Win because the user has received a maximum of {0} Win today</value>
+  </data>
+    <data name="NotTransferForThisUser" xml:space="preserve">
+    <value>You cannot transfer Win to this User!</value>
+  </data>
+    <data name="NumberAccept" xml:space="preserve">
+    <value>Number of reviews</value>
+  </data>
+    <data name="NumberMember" xml:space="preserve">
+    <value>Number of members</value>
+  </data>
+    <data name="NumMember" xml:space="preserve">
+    <value>Member:</value>
+  </data>
+    <data name="OAuNewAcc" xml:space="preserve">
+    <value>New account</value>
+  </data>
+    <data name="OAuPlayerNotActive" xml:space="preserve">
+    <value>The player does not activate</value>
+  </data>
+    <data name="OAuSecurityCode" xml:space="preserve">
+    <value>Security Code</value>
+  </data>
+    <data name="OAuSMSCode" xml:space="preserve">
+    <value>SMS security code</value>
+  </data>
+    <data name="OldPass" xml:space="preserve">
+    <value>old password</value>
+  </data>
+    <data name="OneVipPoint" xml:space="preserve">
+    <value>You are prohibited from discussing every 10,000 VND = 1 VIP point when you arrive</value>
+  </data>
+    <data name="OnlineFree" xml:space="preserve">
+    <value>online for free</value>
+  </data>
+    <data name="OnlinePlayGameCard" xml:space="preserve">
+    <value>online - Play card games</value>
+  </data>
+    <data name="OnlyAdminChange" xml:space="preserve">
+    <value>Only admin can change the content</value>
+  </data>
+    <data name="OutGameToTranferGold" xml:space="preserve">
+    <value>Could not transfer Win. You must exit the game</value>
+  </data>
+    <data name="OwnerReviewReward" xml:space="preserve">
+    <value>The host state approves the reward</value>
+  </data>
+    <data name="OwnerSub" xml:space="preserve">
+    <value>BANG VICE</value>
+  </data>
+    <data name="PageNoExist" xml:space="preserve">
+    <value>No pages found</value>
+  </data>
+    <data name="PanNickForever" xml:space="preserve">
+    <value>Your account is permanently locked. Reason: &lt;strong&gt; {0} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="PanNickForeverShowPopup" xml:space="preserve">
+    <value>Your account is permanently locked</value>
+  </data>
+    <data name="PassDifferent" xml:space="preserve">
+    <value>Password is not the same</value>
+  </data>
+    <data name="PassLenghtMax" xml:space="preserve">
+    <value>Password must be max</value>
+  </data>
+    <data name="PassLenghtMin" xml:space="preserve">
+    <value>Password must be at least</value>
+  </data>
+    <data name="PassLv2Wrong" xml:space="preserve">
+    <value>Level 2 password is incorrect</value>
+  </data>
+    <data name="PassMinLenght" xml:space="preserve">
+    <value>Password must contain at least 6 characters</value>
+  </data>
+    <data name="PassNewWeak" xml:space="preserve">
+    <value>New password is too short</value>
+  </data>
+    <data name="PassOldWrong" xml:space="preserve">
+    <value>Old password is not correct. Please contact support if you do not remember your password.</value>
+  </data>
+    <data name="PassRule" xml:space="preserve">
+    <value>{0} must have at least {1} characters ..</value>
+  </data>
+    <data name="PassSMSTimeout" xml:space="preserve">
+    <value>SMS password has expired</value>
+  </data>
+    <data name="PassTooLong" xml:space="preserve">
+    <value>Password is too long</value>
+  </data>
+    <data name="PassUnlockWrong" xml:space="preserve">
+    <value>The password is not correct</value>
+  </data>
+    <data name="PassViWrong" xml:space="preserve">
+    <value>Wallet password is incorrect</value>
+  </data>
+    <data name="Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+    <data name="PasswordIsEmpty" xml:space="preserve">
+    <value>Password is empty {0}</value>
+  </data>
+    <data name="PasswordNotNull" xml:space="preserve">
+    <value>Enter password</value>
+  </data>
+    <data name="Personal" xml:space="preserve">
+    <value>personal</value>
+  </data>
+    <data name="Personality" xml:space="preserve">
+    <value>Character:</value>
+  </data>
+    <data name="Phom" xml:space="preserve">
+    <value>Phew</value>
+  </data>
+    <data name="PhoneIsRequired" xml:space="preserve">
+    <value>Phone number can not be left blank</value>
+  </data>
+    <data name="PhoneLength" xml:space="preserve">
+    <value>Phone numbers are 10 or 11 digits</value>
+  </data>
+    <data name="PhoneMustNumber" xml:space="preserve">
+    <value>Phone number must be a number</value>
+  </data>
+    <data name="Pie2D" xml:space="preserve">
+    <value>2D ring</value>
+  </data>
+    <data name="PinCard" xml:space="preserve">
+    <value>Card number</value>
+  </data>
+    <data name="PlayCardOnline" xml:space="preserve">
+    <value>Play Online Cards</value>
+  </data>
+    <data name="PlayerIsBlockedAcc" xml:space="preserve">
+    <value>The account is being blocked</value>
+  </data>
+    <data name="PlayerUnBlockedAcc" xml:space="preserve">
+    <value>Players are not blocked account</value>
+  </data>
+    <data name="PlayFunny" xml:space="preserve">
+    <value>. Wish you happy gaming</value>
+  </data>
+    <data name="PlayGameMobile" xml:space="preserve">
+    <value>Play mobile games</value>
+  </data>
+    <data name="PointAccuDay" xml:space="preserve">
+    <value>Accumulated points / day:</value>
+  </data>
+    <data name="PointAccuMonth" xml:space="preserve">
+    <value>Accumulated points / month:</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+    <data name="PolicyVip" xml:space="preserve">
+    <value>VIP policy</value>
+  </data>
+    <data name="PrescribeActivitie" xml:space="preserve">
+    <value>Operation regulations</value>
+  </data>
+    <data name="Profile" xml:space="preserve">
+    <value>Personal information:</value>
+  </data>
+    <data name="ProfileBasic" xml:space="preserve">
+    <value>Basic information:</value>
+  </data>
+    <data name="QuantityInvalid" xml:space="preserve">
+    <value>Invalid number</value>
+  </data>
+    <data name="Questions" xml:space="preserve">
+    <value>Frequently asked questions</value>
+  </data>
+    <data name="RegisInMobileAccept" xml:space="preserve">
+    <value>I have read and accepted the terms of WIN8</value>
+  </data>
+    <data name="RegisInMobileBtnRegis" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+    <data name="RegisInMobileConfirmPasswordPH" xml:space="preserve">
+    <value>Enter the password</value>
+  </data>
+    <data name="RegisInMobileDisplayname" xml:space="preserve">
+    <value>Display name cannot be identical to NickName, at least 3 characters.</value>
+  </data>
+    <data name="RegisInMobileDisplaynamePH" xml:space="preserve">
+    <value>Display name</value>
+  </data>
+    <data name="RegisInMobileimgCaptchaPH" xml:space="preserve">
+    <value>Verification</value>
+  </data>
+    <data name="RegisInMobilePassword" xml:space="preserve">
+    <value>Password must be at least 6 characters.</value>
+  </data>
+    <data name="RegisInMobilePasswordPH" xml:space="preserve">
+    <value>password</value>
+  </data>
+    <data name="RegisInMobileUserName" xml:space="preserve">
+    <value>Username is at least 3 characters, including only the letters from a-z, A-Z and 0-9.</value>
+  </data>
+    <data name="RegisInMobileUserNamePH" xml:space="preserve">
+    <value>user name</value>
+  </data>
+    <data name="RegisterSuccess" xml:space="preserve">
+    <value>Sign Up Success</value>
+  </data>
+    <data name="Reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+    <data name="Report2Month" xml:space="preserve">
+    <value>You can only statistic within 2 months</value>
+  </data>
+    <data name="ReportDay" xml:space="preserve">
+    <value>Statistics by day</value>
+  </data>
+    <data name="ReportMonth" xml:space="preserve">
+    <value>Statistics by month</value>
+  </data>
+    <data name="RequestFriendUnknownStatus" xml:space="preserve">
+    <value>Friend request status không rõ</value>
+  </data>
+    <data name="ResFail" xml:space="preserve">
+    <value>Registration failed. Please try again later.</value>
+  </data>
+    <data name="Responsibility" xml:space="preserve">
+    <value>Responsibility</value>
+  </data>
+    <data name="ResSucc" xml:space="preserve">
+    <value>You have successfully registered your account</value>
+  </data>
+    <data name="Reward" xml:space="preserve">
+    <value>Rewards</value>
+  </data>
+    <data name="RightMemGuild" xml:space="preserve">
+    <value>Benefits of</value>
+  </data>
+    <data name="RightOwner" xml:space="preserve">
+    <value>Benefits of</value>
+  </data>
+    <data name="RuleblockAcc" xml:space="preserve">
+    <value>Account lockout policy</value>
+  </data>
+    <data name="RuleComment" xml:space="preserve">
+    <value>To be able to participate in the comment, the post you have to play the game for at least 10 hours.</value>
+  </data>
+    <data name="RuleCreateGuild" xml:space="preserve">
+    <value>CONDITIONS OF ESTABLISHMENT</value>
+  </data>
+    <data name="SaveGold" xml:space="preserve">
+    <value>Win accumulation</value>
+  </data>
+    <data name="SavePoint" xml:space="preserve">
+    <value>Accumulated points</value>
+  </data>
+    <data name="SaveSuccess" xml:space="preserve">
+    <value>Save successfully.</value>
+  </data>
+    <data name="Search" xml:space="preserve">
+    <value>SEARCH</value>
+  </data>
+    <data name="Search2Month" xml:space="preserve">
+    <value>* Support search within 2 months</value>
+  </data>
+    <data name="SearchMember" xml:space="preserve">
+    <value>Search by member state</value>
+  </data>
+    <data name="SecurityCodeAccount" xml:space="preserve">
+    <value>Enter the account security code</value>
+  </data>
+    <data name="SecurityCodeSMS" xml:space="preserve">
+    <value>Enter the SMS security code</value>
+  </data>
+    <data name="SelectImage" xml:space="preserve">
+    <value>No photos selected.</value>
+  </data>
+    <data name="SendComment" xml:space="preserve">
+    <value>Send discussion</value>
+  </data>
+    <data name="SendDiscuss" xml:space="preserve">
+    <value>SEND THE DISCUSSION</value>
+  </data>
+    <data name="SendMail" xml:space="preserve">
+    <value>Send email</value>
+  </data>
+    <data name="Seri" xml:space="preserve">
+    <value>Seri number</value>
+  </data>
+    <data name="SessionLoginOut" xml:space="preserve">
+    <value>The login session has expired.</value>
+  </data>
+    <data name="Show" xml:space="preserve">
+    <value>Display</value>
+  </data>
+    <data name="ShowchangeFromDate" xml:space="preserve">
+    <value>View transactions from day</value>
+  </data>
+    <data name="SinhNhatVip" xml:space="preserve">
+    <value>VIP Birthday</value>
+  </data>
+    <data name="SizeChek" xml:space="preserve">
+    <value>Image capacity must be &lt;= 500Kb</value>
+  </data>
+    <data name="Start" xml:space="preserve">
+    <value>Star:</value>
+  </data>
+    <data name="SubOwner" xml:space="preserve">
+    <value>Making deputy state - Association</value>
+  </data>
+    <data name="SubOwner1" xml:space="preserve">
+    <value>DEPARTMENT 1</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="SuccesUpdate" xml:space="preserve">
+    <value>Update successful!</value>
+  </data>
+    <data name="SuccesUpdateGiftXu" xml:space="preserve">
+    <value>Update successful. You get {0} Win</value>
+  </data>
+    <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+    <data name="Support4room" xml:space="preserve">
+    <value>Support Through Forum</value>
+  </data>
+    <data name="SupportEmail" xml:space="preserve">
+    <value>Email Support</value>
+  </data>
+    <data name="SupportOnline" xml:space="preserve">
+    <value>Online support</value>
+  </data>
+    <data name="SystemMaintenance" xml:space="preserve">
+    <value>The system is under maintenance, please try again.</value>
+  </data>
+    <data name="TGBongBong" xml:space="preserve">
+    <value>Bubble World</value>
+  </data>
+    <data name="ThanksUserComeback" xml:space="preserve">
+    <value>Thank {0} for coming back. You are awarded {1} Win to your account. Go back the next day to continue receiving rewards</value>
+  </data>
+    <data name="Thongbao" xml:space="preserve">
+    <value>Notification !</value>
+  </data>
+    <data name="TienLen" xml:space="preserve">
+    <value>Go ahead</value>
+  </data>
+    <data name="TimeOutLogin" xml:space="preserve">
+    <value>Time out. Please log in again.</value>
+  </data>
+    <data name="TokenExpired" xml:space="preserve">
+    <value>Login expired</value>
+  </data>
+    <data name="TokenNotFound" xml:space="preserve">
+    <value>No login session found</value>
+  </data>
+    <data name="TopDongGop" xml:space="preserve">
+    <value>TOP PACKING</value>
+  </data>
+    <data name="TopExpByMonth" xml:space="preserve">
+    <value>TOP EXPERIENCE</value>
+  </data>
+    <data name="TopGuildTitle" xml:space="preserve">
+    <value>Top guilds</value>
+  </data>
+    <data name="TopTichLuyTitle" xml:space="preserve">
+    <value>TOP ACCUMULATION</value>
+  </data>
+    <data name="TopWin" xml:space="preserve">
+    <value>TOP WINS</value>
+  </data>
+    <data name="TotalAsset" xml:space="preserve">
+    <value>total assets</value>
+  </data>
+    <data name="TotalGold" xml:space="preserve">
+    <value>General Win</value>
+  </data>
+    <data name="TotalTimePlay" xml:space="preserve">
+    <value>Total play time:</value>
+  </data>
+    <data name="TouchAvatarOrderToUpdateInfo" xml:space="preserve">
+    <value>Click on the avatar to update your account protection information</value>
+  </data>
+    <data name="TranferCash" xml:space="preserve">
+    <value>CHANGE THE CARD TO CASH</value>
+  </data>
+    <data name="TranferGift" xml:space="preserve">
+    <value>Gift exchange</value>
+  </data>
+    <data name="TranferGold" xml:space="preserve">
+    <value>Transfer Win</value>
+  </data>
+    <data name="TranferGoldFail" xml:space="preserve">
+    <value>Failure Trading</value>
+  </data>
+    <data name="TranferGoldFromViSucc" xml:space="preserve">
+    <value>Transfer from wallet to successful primary account</value>
+  </data>
+    <data name="TranferGoldGuild" xml:space="preserve">
+    <value>Transfer Win guilds</value>
+  </data>
+    <data name="TranferGoldOwner" xml:space="preserve">
+    <value>Transfer Win of host state</value>
+  </data>
+    <data name="TranferGoldSucc" xml:space="preserve">
+    <value>Transfer Win successfully. You are deducted</value>
+  </data>
+    <data name="TranferGoldToUser" xml:space="preserve">
+    <value>You have successfully transferred Win to the player: {0}.</value>
+  </data>
+    <data name="TranferGoldToViSucc" xml:space="preserve">
+    <value>Transfer win to wallet successfully</value>
+  </data>
+    <data name="TranferInvalidUser" xml:space="preserve">
+    <value>Switching Win to player {0} failed because the sender did not exist</value>
+  </data>
+    <data name="TranferNotGuildLeader" xml:space="preserve">
+    <value>Switching Win for user {0} failed because the sender is not the master state</value>
+  </data>
+    <data name="TranferWalletVnkash" xml:space="preserve">
+    <value>TRANSFER WIN INTO VNKASH.COM</value>
+  </data>
+    <data name="TransferAccountReceivedInvalid" xml:space="preserve">
+    <value>Invalid account received</value>
+  </data>
+    <data name="TransferAccountSendInvalid" xml:space="preserve">
+    <value>Invalid transfer</value>
+  </data>
+    <data name="TransferBothAccountInvalid" xml:space="preserve">
+    <value>Account transfer (receive) is invalid</value>
+  </data>
+    <data name="TransferFailCauseMinCoinRequired" xml:space="preserve">
+    <value>Win switch failed. Amount less than {0} Win</value>
+  </data>
+    <data name="TryPassDifficult" xml:space="preserve">
+    <value>Please choose a harder password to protect your account. Do not select a password</value>
+  </data>
+    <data name="TypeJackPot" xml:space="preserve">
+    <value>JackPot type</value>
+  </data>
+    <data name="TypeMember" xml:space="preserve">
+    <value>Member type:</value>
+  </data>
+    <data name="TypeVip" xml:space="preserve">
+    <value>Vip type</value>
+  </data>
+    <data name="Unknown" xml:space="preserve">
+    <value>Undefined</value>
+  </data>
+    <data name="Update" xml:space="preserve">
+    <value>UPDATE</value>
+  </data>
+    <data name="UpdateDay" xml:space="preserve">
+    <value>Last login date:</value>
+  </data>
+    <data name="UpdateFail" xml:space="preserve">
+    <value>Update information failed. Please try again later.</value>
+  </data>
+    <data name="UpdateInfo1" xml:space="preserve">
+    <value>1. Must update clear personal information so that the Management Board can contact and assist in managing the state. &lt;br&gt;</value>
+  </data>
+    <data name="UpdateInfo2" xml:space="preserve">
+    <value>2. State establishment cost: &lt;span&gt; 1,000,000,000 WIN (1 billion WIN) &lt;/span&gt; &lt;br&gt;</value>
+  </data>
+    <data name="UpdateInfo3" xml:space="preserve">
+    <value>3. The minimum number of members in &lt;span&gt; 3 days &lt;/span&gt; after the establishment is &lt;span&gt; 6 members &lt;/span&gt; (including the State Owner)</value>
+  </data>
+    <data name="UpdateProfileReGold" xml:space="preserve">
+    <value>Win reward. Please update your account to get more Win!</value>
+  </data>
+    <data name="UpdateRuleSucc" xml:space="preserve">
+    <value>Successful update of the rules</value>
+  </data>
+    <data name="UpdateSuccess" xml:space="preserve">
+    <value>Update password successfully</value>
+  </data>
+    <data name="UpLoad" xml:space="preserve">
+    <value>UPLOAD PHOTOS</value>
+  </data>
+    <data name="UploadAvatarFailed" xml:space="preserve">
+    <value>Avatar upload failed</value>
+  </data>
+    <data name="UploadBannerSucc" xml:space="preserve">
+    <value>Successful up banner.</value>
+  </data>
+    <data name="UploadFile" xml:space="preserve">
+    <value>- Only accept tail images: &lt;span&gt; gif, png, jpg &lt;/span&gt;. Smaller size &lt;span&gt; 500KB &lt;/span&gt;. &lt;br&gt;</value>
+  </data>
+    <data name="UploadImgSucc" xml:space="preserve">
+    <value>Upload a successful avatar.</value>
+  </data>
+    <data name="UploadPixel" xml:space="preserve">
+    <value>- It is recommended to upload images with &lt;span&gt; 1: 1 &lt;/span&gt; ratio and minimum &lt;span&gt; 150x150 &lt;/span&gt; pixels.</value>
+  </data>
+    <data name="UserInfoBC3DBoss" xml:space="preserve">
+    <value>Fish boss</value>
+  </data>
+    <data name="UserInfoBC3DGift" xml:space="preserve">
+    <value>Rewards box</value>
+  </data>
+    <data name="UserInfoBC3DInfo" xml:space="preserve">
+    <value>Information</value>
+  </data>
+    <data name="UserInfoBC3DMission" xml:space="preserve">
+    <value>Mission</value>
+  </data>
+    <data name="UserInfoBC3DNewPass" xml:space="preserve">
+    <value>New PIN code</value>
+  </data>
+    <data name="UserInfoBC3DOldPass" xml:space="preserve">
+    <value>Old PIN</value>
+  </data>
+    <data name="UserInfoBC3DThanhTich" xml:space="preserve">
+    <value>Capacity</value>
+  </data>
+    <data name="UserInvalidFormat" xml:space="preserve">
+    <value>Account information incorrect</value>
+  </data>
+    <data name="UserIsNotActivePopupContent" xml:space="preserve">
+    <value>&lt;div class = 'text-center'&gt; Please activate the account &lt;/div&gt;</value>
+  </data>
+    <data name="UserIsNotActivePopupTitle" xml:space="preserve">
+    <value>Account has not been activated yet</value>
+  </data>
+    <data name="UserLoginFailsPopupContent" xml:space="preserve">
+    <value>&lt;div class = 'text-center'&gt; Login failed. Please try again later. &lt;/div&gt;</value>
+  </data>
+    <data name="UserLoginFailsPopupTitle" xml:space="preserve">
+    <value>Login failed</value>
+  </data>
+    <data name="UsernameInvalid" xml:space="preserve">
+    <value>Invalid account name</value>
+  </data>
+    <data name="UsernameIsExist" xml:space="preserve">
+    <value>This username already exists.</value>
+  </data>
+    <data name="UserNotCompareDis" xml:space="preserve">
+    <value>Display name cannot be a nickname of at least 3 characters</value>
+  </data>
+    <data name="UserNotInGuild" xml:space="preserve">
+    <value>Player {0} is not in the guild</value>
+  </data>
+    <data name="UserReceiveInboxInvalid" xml:space="preserve">
+    <value>Invalid account received</value>
+  </data>
+    <data name="UserSendInboxInvalid" xml:space="preserve">
+    <value>Invalid account sent</value>
+  </data>
+    <data name="UserTransferGold" xml:space="preserve">
+    <value>TRANSFER WIN</value>
+  </data>
+    <data name="UserTransferxu" xml:space="preserve">
+    <value>TRANSFER WIN</value>
+  </data>
+    <data name="ValidateCaptcha" xml:space="preserve">
+    <value>Confirmation code is incorrect.</value>
+  </data>
+    <data name="ValidateDisplayName" xml:space="preserve">
+    <value>Display name contains names that are not allowed.</value>
+  </data>
+    <data name="ValidateDisplayNameLeght" xml:space="preserve">
+    <value>Display name at least 3 to 15 characters.</value>
+  </data>
+    <data name="ValidateDisplayNameNull" xml:space="preserve">
+    <value>Display name cannot contain spaces.</value>
+  </data>
+    <data name="ValidatEmail" xml:space="preserve">
+    <value>Invalid email</value>
+  </data>
+    <data name="ValidateNickName" xml:space="preserve">
+    <value>Username cannot contain spaces.</value>
+  </data>
+    <data name="ValidatePass" xml:space="preserve">
+    <value>Password contains characters that are not allowed.</value>
+  </data>
+    <data name="ValidatId" xml:space="preserve">
+    <value>Invalid identity card</value>
+  </data>
+    <data name="ValidatPhone" xml:space="preserve">
+    <value>invalid phone number</value>
+  </data>
+    <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+    <data name="VersionNotMatch" xml:space="preserve">
+    <value>Can't read the picture. This error may be caused by the older version of the browser. Please contact admin for support.</value>
+  </data>
+    <data name="ViBlocked" xml:space="preserve">
+    <value>Wallet is locked</value>
+  </data>
+    <data name="ViEnoghGoldToTranfer" xml:space="preserve">
+    <value>Your wallet is not enough Win to transfer</value>
+  </data>
+    <data name="ViewGold" xml:space="preserve">
+    <value>See Win, accumulated points</value>
+  </data>
+    <data name="ViewGoldAndPoint" xml:space="preserve">
+    <value>WIN THE ACCUMULATION AND SCREENING POINTS</value>
+  </data>
+    <data name="ViNotExist" xml:space="preserve">
+    <value>Your wallet has not been created</value>
+  </data>
+    <data name="VipPointNum" xml:space="preserve">
+    <value>Vip Point</value>
+  </data>
+    <data name="Wait2Minute" xml:space="preserve">
+    <value>and wait 2 minutes!</value>
+  </data>
+    <data name="Wallet" xml:space="preserve">
+    <value>Wallet:</value>
+  </data>
+    <data name="WalletBank" xml:space="preserve">
+    <value>Bank Wallet</value>
+  </data>
+    <data name="WantToMakeFriend" xml:space="preserve">
+    <value>{0} wants to be friends with you</value>
+  </data>
+    <data name="Welcome" xml:space="preserve">
+    <value>Welcome to</value>
+  </data>
+    <data name="Welcome3Cay" xml:space="preserve">
+    <value>Welcome to join WIN8 community</value>
+  </data>
+    <data name="WelcomeNewUser" xml:space="preserve">
+    <value>You are awarded {0} Win bonuses. You click on the avatar icon (avatar) to update the ACCOUNT SECURITY INFORMATION to receive more Win!</value>
+  </data>
+    <data name="WelcomeNewUserHasEventUpdateInfo" xml:space="preserve">
+    <value>You are awarded {0} Win bonuses. You click on the avatar icon (avatar) to update the ACCOUNT SECURITY INFORMATION to receive {1} Win!</value>
+  </data>
+    <data name="WhatCanStarDo" xml:space="preserve">
+    <value>2. What is it used for?</value>
+  </data>
+    <data name="WhatCanStarDoAnswer" xml:space="preserve">
+    <value>With whatever it is, you can change it to: &lt;br /&gt;
+ &lt;div style = " padding-left: 10px; "&gt;
+ + Change to phone scratch card &lt;br /&gt;
++ Change star to Win, 1 star = 1 Win rate
+&lt;/div&gt;
+If you have any questions or suggestions, please contact online support or send a letter to support@win8.club for answers. </value>
+  </data>
+    <data name="WhoBuy" xml:space="preserve">
+    <value>Win you are:</value>
+  </data>
+    <data name="XiTo" xml:space="preserve">
+    <value>Poker element</value>
+  </data>
+    <data name="XuReceive" xml:space="preserve">
+    <value>Win received</value>
+  </data>
+    <data name="XuToAccount" xml:space="preserve">
+    <value>Win into account!</value>
+  </data>
+    <data name="YouAward" xml:space="preserve">
+    <value>. You are awarded</value>
+  </data>
+    <data name="MessageEmpty" xml:space="preserve">
+    <value>No mail</value>
+  </data>
+    <data name="MessageNotFound" xml:space="preserve">
+    <value>The message does not exist</value>
+  </data>
+    <data name="EmailNotEmpty" xml:space="preserve">
+    <value>Email must not be blank</value>
+  </data>
+    <data name="NotEnoughLevelTranferGold" xml:space="preserve">
+    <value>You have not enough game level to transfer Win</value>
+  </data>
+    <data name="FeedbackTitleRequire" xml:space="preserve">
+    <value>The title must contain characters or numbers</value>
+  </data>
+    <data name="FeedbackContentRequire" xml:space="preserve">
+    <value>The content must have at least 10 characters</value>
+  </data>
+    <data name="FeedbackFail" xml:space="preserve">
+    <value>Send a comment that failed, please try again</value>
+  </data>
+    <data name="FeedbackSuccess" xml:space="preserve">
+    <value>Send successfully, thank you for this contribution, wish you a happy game</value>
+  </data>
+    <data name="ExchangeCardSelectCardPls" xml:space="preserve">
+    <value>Please select the type of card to change</value>
+  </data>
+    <data name="ExchangeCardSystemMaintainance" xml:space="preserve">
+    <value>System {0} is under maintenance, please choose another card type</value>
+  </data>
+    <data name="ExchangeCardSuccessMessageTitle" xml:space="preserve">
+    <value>Scratch card {0} {1} changes on {2}</value>
+  </data>
+    <data name="ExchangeCardSuccessMessageContent" xml:space="preserve">
+    <value>You have successfully changed the card n Serial: {0} NP: {1} n Click on the content of the card code to hold 3 seconds to perform the copy of the character</value>
+  </data>
+    <data name="ExchangeCardSuccessNoticeContent" xml:space="preserve">
+    <value>You have successfully changed the card. Please go to Notification -&gt; Message to view card code</value>
+  </data>
+    <data name="ExchangeProductInvalid" xml:space="preserve">
+    <value>The product you want to change is invalid</value>
+  </data>
+    <data name="ExchangeSuccessNoticeContent" xml:space="preserve">
+    <value>You have successfully changed {0}. Please update your account protection information and please contact us at Hotline number ({1}) to receive your reward.</value>
+  </data>
+    <data name="ExchangeSuccessNoticeTitle" xml:space="preserve">
+    <value>You have successfully changed {0}</value>
+  </data>
+    <data name="ExchangeProductInvalidCode" xml:space="preserve">
+    <value>Product code is invalid</value>
+  </data>
+    <data name="SupportText" xml:space="preserve">
+    <value>Any questions please contact {0} for assistance</value>
+  </data>
+    <data name="DepositSuccessAddCoinFailed" xml:space="preserve">
+    <value>Load win successfully. But there was an error in the Win transfer process</value>
+  </data>
+    <data name="ValidateDisplayNameAZ" xml:space="preserve">
+    <value>Display name must not have special characters and characters.</value>
+  </data>
+    <data name="ValidateNickName1" xml:space="preserve">
+    <value>Username must not be blank.</value>
+  </data>
+    <data name="ValidateDisplayNameNotEmpty" xml:space="preserve">
+    <value>Display name cannot be blank.</value>
+  </data>
+    <data name="ValidatePasswordNotEmpty" xml:space="preserve">
+    <value>Password cannot be blank.</value>
+  </data>
+    <data name="ValidationPassword4" xml:space="preserve">
+    <value>Please choose a harder password to protect your account. {0} password cannot be selected.</value>
+  </data>
+    <data name="TurnsInvalid" xml:space="preserve">
+    <value>Invalid play</value>
+  </data>
+    <data name="NewPassword" xml:space="preserve">
+    <value>A new password</value>
+  </data>
+
+
+    <data name="DisplayNameDoDai" xml:space="preserve">
+    <value>Display name must have at least 3 to 15 characters.</value>
+  </data>
+    <data name="DisplayNameKhoangTrang" xml:space="preserve">
+    <value>Display name cannot contain spaces.</value>
+  </data>
+    <data name="DisplayNameNotCorrect" xml:space="preserve">
+    <value>Display name contains invalid charaters.</value>
+  </data>
+    <data name="DisplayNameNotCorrect1" xml:space="preserve">
+    <value>Username cannot be the same as the display name.</value>
+  </data>
+    <data name="DisplayNameNull" xml:space="preserve">
+    <value>Display name cannot be blank</value>
+  </data>
+    <data name="ExistedAccount" xml:space="preserve">
+    <value>Account is already in use. Please choose another name</value>
+  </data>
+    <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+    <data name="GetAvatarSuccess" xml:space="preserve">
+    <value>Get avatar Link successfully</value>
+  </data>
+    <data name="GetMailSuccess" xml:space="preserve">
+    <value>Get Mail List Successfully</value>
+  </data>
+    <data name="GetUserOnlineSuccess" xml:space="preserve">
+    <value>Get user online list successfully</value>
+  </data>
+    <data name="HistoriCoinBanCaSuccess" xml:space="preserve">
+    <value>Get money history  successfully</value>
+  </data>
+    <data name="imageLength" xml:space="preserve">
+    <value>File size &lt;= 500Kb.</value>
+  </data>
+    <data name="InvalidDisplayName" xml:space="preserve">
+    <value>Display name already exists.</value>
+  </data>
+    <data name="InvalidDisplayName2" xml:space="preserve">
+    <value>Invalid display name</value>
+  </data>
+    <data name="InvalidNickName" xml:space="preserve">
+    <value>Invalid account name</value>
+  </data>
+    <data name="isValidExtension" xml:space="preserve">
+    <value>Only accept jpg, png, gif files.</value>
+  </data>
+    <data name="LoginFailed" xml:space="preserve">
+    <value>Login error. Please try again!</value>
+  </data>
+    <data name="LoginSuccess" xml:space="preserve">
+    <value>Logged in successfully</value>
+  </data>
+    <data name="NonExistsFaceAccount" xml:space="preserve">
+    <value>Facebook Account has not been registered</value>
+  </data>
+    <data name="NotHaveMail" xml:space="preserve">
+    <value>You have no mail.</value>
+  </data>
+    <data name="OAuthLoginError" xml:space="preserve">
+    <value>Facebook information is incorrect, please login again</value>
+  </data>
+    <data name="OAuthLoginError1" xml:space="preserve">
+    <value>Facebook information does not match, please try again.</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_NotExistAccount" xml:space="preserve">
+    <value>Account does not exist</value>
+  </data>
+    <data name="RegisterCaptchaInvalid" xml:space="preserve">
+    <value>Invalid captcha</value>
+  </data>
+    <data name="RegisterCaptchaNotExists" xml:space="preserve">
+    <value>Captcha does not exist</value>
+  </data>
+    <data name="RegisterFailed" xml:space="preserve">
+    <value>Registered failed. Please try again later.</value>
+  </data>
+    <data name="UpdateSuccessAddCoin" xml:space="preserve">
+    <value>Update successfully. You are awarded {0} coins to your account!</value>
+  </data>
+    <data name="UserAndPassError" xml:space="preserve">
+    <value>UserName and password are incorrect!</value>
+  </data>
+    <data name="UserInvalit" xml:space="preserve">
+    <value>Cannot authenticate information</value>
+  </data>
+    <data name="UserNameHaveEmpty" xml:space="preserve">
+    <value>Username cannot contain spaces.</value>
+  </data>
+    <data name="UserNameInvalit" xml:space="preserve">
+    <value>Username cannot contain unicode and special characters.</value>
+  </data>
+    <data name="UserNameInvalit2" xml:space="preserve">
+    <value>Username contains invalid characters</value>
+  </data>
+    <data name="UserNameInvalit3" xml:space="preserve">
+    <value>Username cannot be the same as the display name.</value>
+  </data>
+    <data name="UserNameInvalit4" xml:space="preserve">
+    <value>Username already exists</value>
+  </data>
+    <data name="UserNameLenght" xml:space="preserve">
+    <value>Username is at least 3 characters and up to 15 characters.</value>
+  </data>
+    <data name="UserNameNull" xml:space="preserve">
+    <value>Username must not be blank.</value>
+  </data>
+    <data name="ValidationLogin15" xml:space="preserve">
+    <value>System error</value>
+  </data>
+    <data name="ValidationPassword" xml:space="preserve">
+    <value>Enter password.</value>
+  </data>
+    <data name="ValidationPassword2" xml:space="preserve">
+    <value>Password must be at least 6 characters and maximum 15 characters.</value>
+  </data>
+    <data name="ValidationPassword3" xml:space="preserve">
+    <value>Password contains invalid characters</value>
+  </data>
+    <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Change the password</value>
+  </data>
+    <data name="PassNewLable" xml:space="preserve">
+    <value>A new password</value>
+  </data>
+    <data name="PassNewConfirmLable" xml:space="preserve">
+    <value>Enter a new password</value>
+  </data>
+    <data name="ValidationPassword5" xml:space="preserve">
+    <value>The new password does not match</value>
+  </data>
+    <data name="ValidationPhone" xml:space="preserve">
+    <value>Phone number does not exist</value>
+  </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+    <value>Phone number already in use</value>
+  </data>
+    <data name="ValidationPhone3" xml:space="preserve">
+    <value>Invalid phone number</value>
+  </data>
+    <data name="ValidationPhone4" xml:space="preserve">
+    <value>Phone number must not be blank</value>
+  </data>
+    <data name="UpdatePasswordSuccess" xml:space="preserve">
+    <value>Update password successfully</value>
+  </data>
+    <data name="UpdatePasswordError" xml:space="preserve">
+    <value>Password update failed</value>
+  </data>
+    <data name="CaptchaIncorrect" xml:space="preserve">
+    <value>The verification code is not correct, please try again.</value>
+  </data>
+    <data name="ValidationCountryCode" xml:space="preserve">
+    <value>Please select the country code</value>
+  </data>
+    <data name="CountryCodeLabel" xml:space="preserve">
+    <value>Select the country code</value>
+  </data>
+    <data name="PhoneLabel" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+    <data name="ReceiveOTP" xml:space="preserve">
+    <value>Receive OTP code</value>
+  </data>
+    <data name="OTPLabel" xml:space="preserve">
+    <value>Enter the OTP code</value>
+  </data>
+    <data name="UserNameLabel" xml:space="preserve">
+    <value>User name</value>
+  </data>
+    <data name="DisplayNameLabel" xml:space="preserve">
+    <value>Display name</value>
+  </data>
+    <data name="PassWordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+    <data name="ConfirmPhoneTitle" xml:space="preserve">
+    <value>Verify phone number</value>
+  </data>
+    <data name="SDTDaCapNhatTruocDo" xml:space="preserve">
+    <value>Phone number has been updated before</value>
+  </data>
+
+
+    <data name="AuthRegisterChooseAvatarLabel" xml:space="preserve">
+    <value>Please select your representative display name.</value>
+  </data>
+    <data name="AuthRegisterConfirm" xml:space="preserve">
+    <value>OK</value>
+  </data>
+    <data name="AuthRegisterDisplayName" xml:space="preserve">
+    <value>Display name</value>
+  </data>
+    <data name="AuthRegisterHelper" xml:space="preserve">
+    <value>Please select the name of your representative display on abc.net</value>
+  </data>
+    <data name="AuthRegisterNickname" xml:space="preserve">
+    <value>Nickname...</value>
+  </data>
+    <data name="AuthRegisterWelcome" xml:space="preserve">
+    <value>Welcome to abc.net community</value>
+  </data>
+    <data name="BounsUpdateMail" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="BounsUpdateMailHeading" xml:space="preserve">
+    <value>Update email</value>
+  </data>
+    <data name="BounsUpdateMailRequireMsg" xml:space="preserve">
+    <value>&lt;label&gt; Please update your email to receive immediately &lt;span class = "happiness_inner__content - body_inner-alert"&gt; 10,000 Coins &lt;/span&gt; and receive additional gifts for the following events &lt;/label&gt;</value>
+  </data>
+    <data name="BounsUpdateMailSuccess" xml:space="preserve">
+    <value>This account has received rewards</value>
+  </data>
+    <data name="BounsUpdateMailTitle" xml:space="preserve">
+    <value>CHIPS FREE</value>
+  </data>
+    <data name="BounsUpdateMailUpdateEmail" xml:space="preserve">
+    <value>Update email</value>
+  </data>
+    <data name="BounsUpdateMailWelcome" xml:space="preserve">
+    <value>Hello,</value>
+  </data>
+    <data name="EditProfileV2ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+    <data name="EditProfileV2Phone" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+    <data name="EditProfileV2Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+    <data name="ForgetPasswordPhone" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+    <data name="ForgetPasswordTut" xml:space="preserve">
+    <value>Please contact support to retrieve your password.</value>
+  </data>
+    <data name="HistoryKillMiniBoss3DCongra" xml:space="preserve">
+    <value>Winned:</value>
+  </data>
+    <data name="HistoryKillMiniBossCongra" xml:space="preserve">
+    <value>Winned:</value>
+  </data>
+    <data name="HistoryMiniBossOpt_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+    <data name="HistoryMiniBossOpt_Bullet" xml:space="preserve">
+    <value>Bullet</value>
+  </data>
+    <data name="HistoryMiniBossOpt_Card" xml:space="preserve">
+    <value>Card</value>
+  </data>
+    <data name="HistoryMiniBossOpt_Coin" xml:space="preserve">
+    <value>Coin</value>
+  </data>
+    <data name="HistoryMiniBossOpt_Turns" xml:space="preserve">
+    <value>Turn</value>
+  </data>
+    <data name="HistoryMiniBossReceive" xml:space="preserve">
+    <value>Get rewarded</value>
+  </data>
+    <data name="HistoryMissionBanCaBuilding" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+    <data name="HistoryMissionBanCaNoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="HistoryMissionBanCaUnsucess" xml:space="preserve">
+    <value>Unfinished</value>
+  </data>
+    <data name="HistorySpinHit" xml:space="preserve">
+    <value>Winning</value>
+  </data>
+    <data name="HistorySpinMiss" xml:space="preserve">
+    <value>Wrong</value>
+  </data>
+    <data name="HistorySpinOpt_Date" xml:space="preserve">
+    <value>Date Set</value>
+  </data>
+    <data name="HistorySpinOpt_Desc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+    <data name="HistorySpinOpt_Order" xml:space="preserve">
+    <value>Place a bet</value>
+  </data>
+    <data name="HistorySpinOpt_Res" xml:space="preserve">
+    <value>Result</value>
+  </data>
+    <data name="ListGunBossLoading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+    <data name="LuckySpinIntroNodata" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="ManagerAvatarBrowse" xml:space="preserve">
+    <value>Choose picture</value>
+  </data>
+    <data name="ManagerAvatarUpload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+    <data name="OpenAuthConfirmLoginSuccessHeading" xml:space="preserve">
+    <value>LOGGED IN SUCCESSFULLY</value>
+  </data>
+    <data name="OpenAuthConfirmLoginSuccessLabel" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="OpenAuthConfirmLoginTitle" xml:space="preserve">
+    <value>Login</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AccountUserSecure" xml:space="preserve">
+    <value>Account uses security</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AccountUserSMSSecure" xml:space="preserve">
+    <value>Security account using SMS</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertUserHasBeenLocked" xml:space="preserve">
+    <value>Your account is locked</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertUserHasBeenLockedForever" xml:space="preserve">
+    <value>Account has been permanently locked</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertUserLocked" xml:space="preserve">
+    <value>Account is locked</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertUserLockedLongMessage" xml:space="preserve">
+    <value>Your account is locked &lt;strong&gt; {0} &lt;/strong&gt; days, from &lt;strong&gt; {1} &lt;/strong&gt; to &lt;strong&gt; {2} &lt;/strong&gt;. Reason: &lt;strong&gt; {3} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertUserLockedLongMessageForever" xml:space="preserve">
+    <value>Your account is permanently locked. Reason: &lt;strong&gt; {0} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertUserNotActive" xml:space="preserve">
+    <value>Account has not been activated yet</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertUserNotActiveLabel" xml:space="preserve">
+    <value>Please activate your account</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_AlertWrongUsernameOrPass" xml:space="preserve">
+    <value>Email or password is incorrect</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_Failed" xml:space="preserve">
+    <value>Login failed</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_FailedHTML" xml:space="preserve">
+    <value>&lt;div class = 'text-center'&gt; Login failed. Please try again later. &lt;/div&gt;</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_NotExistSecureCode" xml:space="preserve">
+    <value>Security code does not exist</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_OtherUser" xml:space="preserve">
+    <value>User is using another device</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_SuccesAndSecureCode" xml:space="preserve">
+    <value>Success and security code</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_SystemError" xml:space="preserve">
+    <value>System error</value>
+  </data>
+    <data name="OpenAuthConfirmLogin_WrongExistSecureCode" xml:space="preserve">
+    <value>Security code is incorrect</value>
+  </data>
+    <data name="RegisterSuccessTitle" xml:space="preserve">
+    <value>SignUp Success</value>
+  </data>
+    <data name="UserInfo3D_BoxGift" xml:space="preserve">
+    <value>Gift box</value>
+  </data>
+    <data name="UserInfo3D_Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+    <data name="UserInfo3D_ChangeAva" xml:space="preserve">
+    <value>Change Avatar</value>
+  </data>
+    <data name="UserInfo3D_Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+    <data name="UserInfo3D_FishBoss" xml:space="preserve">
+    <value>Boss fish</value>
+  </data>
+    <data name="UserInfo3D_Gem" xml:space="preserve">
+    <value>Gem:</value>
+  </data>
+    <data name="UserInfo3D_History" xml:space="preserve">
+    <value>ACHIEVEMENTS</value>
+  </data>
+    <data name="UserInfo3D_Info" xml:space="preserve">
+    <value>INFORMATION</value>
+  </data>
+    <data name="UserInfo3D_Mission" xml:space="preserve">
+    <value>Mission</value>
+  </data>
+    <data name="UserInfo3D_NewPass" xml:space="preserve">
+    <value>NEW PASSWORD</value>
+  </data>
+    <data name="UserInfo3D_OldPass" xml:space="preserve">
+    <value>OLD PASSWORD</value>
+  </data>
+    <data name="UserInfo3D_Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+    <data name="UsersTichCodeHeading" xml:space="preserve">
+    <value>Event</value>
+  </data>
+    <data name="AuthRegisterAddress" xml:space="preserve">
+    <value>Permanent address</value>
+  </data>
+    <data name="AuthRegisterCaptcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="AuthRegisterCMND" xml:space="preserve">
+    <value>Identity card</value>
+  </data>
+    <data name="AuthRegisterEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+    <data name="AuthRegisterFullName" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+    <data name="AuthRegisterNgayCap" xml:space="preserve">
+    <value>Date of issue</value>
+  </data>
+    <data name="AuthRegisterNgaySinh" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+    <data name="AuthRegisterNoiCap" xml:space="preserve">
+    <value>Issued by</value>
+  </data>
+    <data name="AuthRegisterPassWord" xml:space="preserve">
+    <value>Password</value>
+  </data>
+    <data name="AuthRegisterSDT" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+    <data name="AuthRegisterUserName" xml:space="preserve">
+    <value>User name</value>
+  </data>
+    <data name="EditProfileV2Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+    <data name="SoLuong" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>No</value>
+  </data>
+    <data name="ValidationAddress" xml:space="preserve">
+    <value>Enter Address</value>
+  </data>
+    <data name="ValidationCaptcha" xml:space="preserve">
+    <value>Enter captcha</value>
+  </data>
+    <data name="ValidationCaptcha2" xml:space="preserve">
+    <value>Confirmation code is incorrect.</value>
+  </data>
+    <data name="ValidationCMND" xml:space="preserve">
+    <value>ID card must not be blank and maximum 20 characters</value>
+  </data>
+    <data name="ValidationDateOfBirthday" xml:space="preserve">
+    <value>Enter the date of birth</value>
+  </data>
+    <data name="ValidationDisplayName" xml:space="preserve">
+    <value>Enter the display name.</value>
+  </data>
+    <data name="ValidationDisplayName2" xml:space="preserve">
+    <value>The name displays at least 3 characters, up to 15 characters and includes only letters from a-z, A-Z and 0-9.</value>
+  </data>
+    <data name="ValidationEmail" xml:space="preserve">
+    <value>Enter email.</value>
+  </data>
+    <data name="ValidationFullName" xml:space="preserve">
+    <value>Enter your full name.</value>
+  </data>
+    <data name="ValidationLogin" xml:space="preserve">
+    <value>Please log in again.</value>
+  </data>
+    <data name="ValidationNgayCap" xml:space="preserve">
+    <value>Enter the date of issue.</value>
+  </data>
+    <data name="ValidationNoiCap" xml:space="preserve">
+    <value>Enter the place of issue.</value>
+  </data>
+    <data name="ValidationRegisterError" xml:space="preserve">
+    <value>Registration failed. Please try again later.</value>
+  </data>
+    <data name="ValidationSDT" xml:space="preserve">
+    <value>Enter your phone number.</value>
+  </data>
+    <data name="ValidationSDT2" xml:space="preserve">
+    <value>Phone numbers are not properly formatted.</value>
+  </data>
+    <data name="ValidationUserName" xml:space="preserve">
+    <value>Enter your username.</value>
+  </data>
+    <data name="ValidationUserName2" xml:space="preserve">
+    <value>Username is at least 3 characters, up to 15 characters and only includes characters from a-z, A-Z and 0-9.</value>
+  </data>
+    <data name="ValidationUserName3" xml:space="preserve">
+    <value>This username already exists.</value>
+  </data>
+    <data name="ValidationUserName4" xml:space="preserve">
+    <value>Username contains names that are not allowed.</value>
+  </data>
+    <data name="ValidationUserName5" xml:space="preserve">
+    <value>Username must not contain spaces.</value>
+  </data>
+    <data name="ValidationUserName6" xml:space="preserve">
+    <value>This username already exists.</value>
+  </data>
+    <data name="ValidationDisplayName3" xml:space="preserve">
+    <value>Display name cannot be the same as Username</value>
+  </data>
+    <data name="ValidationDisplayName4" xml:space="preserve">
+    <value>Display name contains names that are not allowed</value>
+  </data>
+    <data name="ValidationDisplayName5" xml:space="preserve">
+    <value>Display name cannot contain spaces.</value>
+  </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>The display name already exists</value>
+  </data>
+    <data name="ValidationEmail2" xml:space="preserve">
+    <value>Invalid email</value>
+  </data>
+    <data name="ValidationLogin10" xml:space="preserve">
+    <value>Security code is incorrect</value>
+  </data>
+    <data name="ValidationLogin11" xml:space="preserve">
+    <value>Security code has been used. Please write down the new security code!</value>
+  </data>
+    <data name="ValidationLogin12" xml:space="preserve">
+    <value>Account does not exist</value>
+  </data>
+    <data name="ValidationLogin13" xml:space="preserve">
+    <value>Security account using SMS</value>
+  </data>
+    <data name="ValidationLogin14" xml:space="preserve">
+    <value>Account uses security</value>
+  </data>
+    <data name="ValidationLogin2" xml:space="preserve">
+    <value>Username or password incorrect</value>
+  </data>
+    <data name="ValidationLogin3" xml:space="preserve">
+    <value>Account is locked</value>
+  </data>
+    <data name="ValidationLogin4" xml:space="preserve">
+    <value>Your account is locked &lt;strong&gt; {0} &lt;/strong&gt; days, from &lt;strong&gt; {1} &lt;/strong&gt; to &lt;strong&gt; {2} &lt;/strong&gt;. Reason: &lt;strong&gt; {3} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="ValidationLogin5" xml:space="preserve">
+    <value>Account has been permanently locked</value>
+  </data>
+    <data name="ValidationLogin6" xml:space="preserve">
+    <value>Your account is permanently locked. Reason: &lt;strong&gt; {0} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="ValidationLogin7" xml:space="preserve">
+    <value>Account has not been activated yet.</value>
+  </data>
+    <data name="ValidationLogin8" xml:space="preserve">
+    <value>User is using another device</value>
+  </data>
+    <data name="ValidationLogin9" xml:space="preserve">
+    <value>Security code does not exist</value>
+  </data>
+    <data name="ValidationRegister1" xml:space="preserve">
+    <value>Unable to register</value>
+  </data>
+    <data name="ValidationRegister2" xml:space="preserve">
+    <value>Could not authenticate information</value>
+  </data>
+    <data name="ValidationUserName7" xml:space="preserve">
+    <value>Account already in use. Please choose another name</value>
+  </data>
+    <data name="ValidationUserName8" xml:space="preserve">
+    <value>This account is Invalid.</value>
+  </data>
+    <data name="AuthRegisterNhapMa" xml:space="preserve">
+    <value>Enter the code</value>
+  </data>
+    <data name="AuthRegisterDoiMatKhau" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+    <data name="ValidationLogin16" xml:space="preserve">
+    <value>Please login to perform this function.</value>
+  </data>
+    <data name="UpdateProfileNote" xml:space="preserve">
+    <value>According to regulations of the State management agency, players need to provide full personal information when registering a gaming account</value>
+  </data>
+    <data name="ErrorMessValidation1" xml:space="preserve">
+    <value>The information you entered is incorrect</value>
+  </data>
+    <data name="ErrorMessValidation10" xml:space="preserve">
+    <value>Incorrect ID card.</value>
+  </data>
+    <data name="ErrorMessValidation2" xml:space="preserve">
+    <value>Your new password exceeds the allowed limit</value>
+  </data>
+    <data name="ErrorMessValidation3" xml:space="preserve">
+    <value>Old password is not correct. Please contact support if you do not remember your password.</value>
+  </data>
+    <data name="ErrorMessValidation4" xml:space="preserve">
+    <value>The name cannot be empty.</value>
+  </data>
+    <data name="ErrorMessValidation5" xml:space="preserve">
+    <value>Place of issue cannot be empty.</value>
+  </data>
+    <data name="ErrorMessValidation6" xml:space="preserve">
+    <value>Address cannot be empty.</value>
+  </data>
+    <data name="ErrorMessValidation7" xml:space="preserve">
+    <value>Invalid phone number.</value>
+  </data>
+    <data name="ErrorMessValidation8" xml:space="preserve">
+    <value>Please select Birthdate.</value>
+  </data>
+    <data name="ErrorMessValidation9" xml:space="preserve">
+    <value>Please select ID card date.</value>
+  </data>
+    <data name="ValidationDisplayName7" xml:space="preserve">
+    <value>Invalid display name.</value>
+  </data>
+    <data name="EmailSupport" xml:space="preserve">
+    <value>Email support</value>
+  </data>
+    <data name="VisitFanpageFacebook" xml:space="preserve">
+    <value>Visit our fanpage game</value>
+  </data>
+    <data name="ErrorMessValidation11" xml:space="preserve">
+    <value>Only allowed to upload the same domain</value>
+  </data>
+    <data name="ErrorMessValidation12" xml:space="preserve">
+    <value>Image upload incorrect</value>
+  </data>
+    <data name="ErrorMessValidation13" xml:space="preserve">
+    <value>Image upload capacity is incorrect</value>
+  </data>
+    <data name="ErrorMessValidation14" xml:space="preserve">
+    <value>You are not eligible to use this function</value>
+  </data>
+    <data name="ErrorMessValidation15" xml:space="preserve">
+    <value>You have successfully uploaded, please wait for the next upload</value>
+  </data>
+    <data name="ErrorMessValidation16" xml:space="preserve">
+    <value>Update your avatar successfully</value>
+  </data>
+    <data name="ErrorMessValidation17" xml:space="preserve">
+    <value>Only accept jpg, png, gif images</value>
+  </data>
+    <data name="ValidationLogin17" xml:space="preserve">
+    <value>Login failed</value>
+  </data>
+    <data name="ValidationLogin18" xml:space="preserve">
+    <value>Please activate your account</value>
+  </data>
+    <data name="ValidationLogin19" xml:space="preserve">
+    <value>Login failed. Please try again later.</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+    <value>Successfully updated</value>
+  </data>
+</LocalLanguages>

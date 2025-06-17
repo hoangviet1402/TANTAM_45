@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="BoxEventScore" xml:space="preserve">
+    <value>Point</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>Account received gift for the first time.</value>
+  </data>
+    <data name="EventAchievementBoss" xml:space="preserve">
+    <value>Boss</value>
+  </data>
+    <data name="EventAchievementBossDescription" xml:space="preserve">
+    <value>Destroy fish boss {0} times</value>
+  </data>
+    <data name="EventAchievementBossName" xml:space="preserve">
+    <value>Destroy fish boss</value>
+  </data>
+    <data name="EventAchievementCaDo" xml:space="preserve">
+    <value>Red fish</value>
+  </data>
+    <data name="EventAchievementGiftBoxDescription" xml:space="preserve">
+    <value>Destroy gift box {0} times</value>
+  </data>
+    <data name="EventAchievementGiftBoxName" xml:space="preserve">
+    <value>Destroy gift box</value>
+  </data>
+    <data name="EventAchievementHopQua" xml:space="preserve">
+    <value>Gift box</value>
+  </data>
+    <data name="EventAchievementItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+    <data name="EventAchievementItemDescription" xml:space="preserve">
+    <value>Use Item {0} times</value>
+  </data>
+    <data name="EventAchievementItemName" xml:space="preserve">
+    <value>Use Item</value>
+  </data>
+    <data name="EventAchievementLoginDescription" xml:space="preserve">
+    <value>Login to shoot fish</value>
+  </data>
+    <data name="EventAchievementLoginName" xml:space="preserve">
+    <value>Login to shoot fish</value>
+  </data>
+    <data name="EventAchievementOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+    <data name="EventAchievementRedFishDescription" xml:space="preserve">
+    <value>Destroy red fish {0} times</value>
+  </data>
+    <data name="EventAchievementRedFishName" xml:space="preserve">
+    <value>Destroy red fish</value>
+  </data>
+    <data name="EventAchievementSkill" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+    <data name="EventAchievementSkillBombDescription" xml:space="preserve">
+    <value>Use bomb skill {0} times</value>
+  </data>
+    <data name="EventAchievementSkillBombName" xml:space="preserve">
+    <value>Use Bomb skill</value>
+  </data>
+    <data name="EventAchievementSkillDescription" xml:space="preserve">
+    <value>Use skill gun {0} times</value>
+  </data>
+    <data name="EventAchievementSkillLaserDescription" xml:space="preserve">
+    <value>Use laser skill gun {0} times</value>
+  </data>
+    <data name="EventAchievementSkillLaserName" xml:space="preserve">
+    <value>Use laser skill gun</value>
+  </data>
+    <data name="EventAchievementSkillName" xml:space="preserve">
+    <value>Use skill guns</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirDescription" xml:space="preserve">
+    <value>Use sound wave skill {0} times</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirName" xml:space="preserve">
+    <value>Use sound wave skill</value>
+  </data>
+    <data name="EventAchievementUpLevelDescription" xml:space="preserve">
+    <value>Level up </value>
+  </data>
+    <data name="EventAchievementUpLevelName" xml:space="preserve">
+    <value>Level up </value>
+  </data>
+    <data name="EventAchivementNotComplete" xml:space="preserve">
+    <value>Incomplete achievements</value>
+  </data>
+    <data name="EventChipCounts" xml:space="preserve">
+    <value>{0} Win</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>Event select invalid key {0}</value>
+  </data>
+    <data name="EventDailyBonusLoginName" xml:space="preserve">
+    <value>Day</value>
+  </data>
+    <data name="EventDontHaveNew" xml:space="preserve">
+    <value>No new events </value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>Enough time to receive gift.</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>You received a gift</value>
+  </data>
+    <data name="EventGetListSuccess" xml:space="preserve">
+    <value>Get event list successfully</value>
+  </data>
+    <data name="EventGiftIsWrong" xml:space="preserve">
+    <value>Gift is wrong</value>
+  </data>
+    <data name="EventGiftNotAvailable" xml:space="preserve">
+    <value>Gift received or not available</value>
+  </data>
+    <data name="EventGiveGiftFail" xml:space="preserve">
+    <value>Give gift failed. Please try again later</value>
+  </data>
+    <data name="EventGiveGiftSuccessAndCheckMail" xml:space="preserve">
+    <value>Give gift successfully. Please check mail.</value>
+  </data>
+    <data name="EventMessageYouHasMoneyFromEve" xml:space="preserve">
+    <value>You get {0} Win from the event.</value>
+  </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>Your Win must be less than 5,000 to receive gift</value>
+  </data>
+    <data name="EventMissionNotComplete" xml:space="preserve">
+    <value>Mission is not completed</value>
+  </data>
+    <data name="EventNoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>Not enough time to receive gift.</value>
+  </data>
+    <data name="EventNotExist" xml:space="preserve">
+    <value>Event does not exist</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>Event is suspended</value>
+  </data>
+    <data name="EventNotTimeUp" xml:space="preserve">
+    <value>It is not time to gift. Please try again later</value>
+  </data>
+    <data name="EventQuicklyRegisterCannotRegisterMore" xml:space="preserve">
+    <value>Cannot register to play now, please register for a new account</value>
+  </data>
+    <data name="EventReceivedGift" xml:space="preserve">
+    <value>Received gift</value>
+  </data>
+    <data name="EventReceiveGiftSuccess" xml:space="preserve">
+    <value>Receive gift successfully</value>
+  </data>
+    <data name="EventReceiveLevelVip" xml:space="preserve">
+    <value>Receive gift for VIP level up</value>
+  </data>
+    <data name="EventSecondCount" xml:space="preserve">
+    <value>{0} seconds</value>
+  </data>
+    <data name="EventSystemMaintainingChooseOther" xml:space="preserve">
+    <value>System {0} is under maintenance, please choose another card type</value>
+  </data>
+    <data name="EventTitleBonusHall" xml:space="preserve">
+    <value>You get {0} to your account</value>
+  </data>
+    <data name="EventTurnsCount" xml:space="preserve">
+    <value>{0} turns</value>
+  </data>
+    <data name="EventTypeCardCount" xml:space="preserve">
+    <value>Card {0} {1} </value>
+  </data>
+    <data name="EventUploadSuccessButFail" xml:space="preserve">
+    <value>Uploaded successfully, the event update failed.</value>
+  </data>
+    <data name="EventVipAnchorPoint" xml:space="preserve">
+    <value>Anchor Point</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>Deposit bonus</value>
+  </data>
+    <data name="EventVipExpFish" xml:space="preserve">
+    <value>Shooting fish Exp</value>
+  </data>
+    <data name="EventVipNotRunning" xml:space="preserve">
+    <value>Vip Not running</value>
+  </data>
+    <data name="EventVipTichLuySkill" xml:space="preserve">
+    <value>Accumulated skill</value>
+  </data>
+    <data name="EventVipTransferChip" xml:space="preserve">
+    <value>Transfer Win</value>
+  </data>
+    <data name="EventPlayGame" xml:space="preserve">
+    <value>Play &amp; receive gifts &lt;br/&gt; on Mobile version</value>
+  </data>
+</LocalLanguages>

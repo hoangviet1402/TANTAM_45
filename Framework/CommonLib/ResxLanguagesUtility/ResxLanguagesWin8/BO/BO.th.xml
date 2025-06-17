@@ -1,0 +1,140 @@
+﻿<?xml version = "1.0" encoding = "utf-8"?>
+<LocalLanguages>
+    <!--Region Descript Defender-->
+    <data name="SoloMode_Default" xml:space="preserve">
+        <value> ปืนล่าสัตว์ปลา</value>
+    </data>
+    <data name="SoloMode_Medusa" xml:space="preserve">
+        <value> Gun Medusa</value>
+    </data>
+    <data name="SoloMode_NhanMa" xml:space="preserve">
+        <value> ปืนราศีธนู</value>
+    </data>
+    <data name="SoloMode_Poseidon" xml:space="preserve">
+        <value> Poseidon</value>
+    </data>
+    <data name="SoloMode_Mermaid" xml:space="preserve">
+        <value> Mermaid</value>
+    </data>
+    <data name="SoloMode_Cerberus" xml:space="preserve">
+        <value> Cerberus</value>
+    </data>
+    <data name="SoloMode_Dragon" xml:space="preserve">
+        <value> Dragon</value>
+    </data>
+    <data name="SoloMode_Success" xml:space="preserve">
+        <value> ความสำเร็จ</value>
+    </data>
+    <data name="SoloMode_Failed" xml:space="preserve">
+        <value> ความล้มเหลว</value>
+    </data>
+    <data name="SoloMode_InvalidDataInput" xml:space="preserve">
+        <value> ข้อมูลไม่ถูกต้อง</value>
+    </data>
+    <data name="SoloMode_NotHaveGunKind" xml:space="preserve">
+        <value> ผู้ใช้ไม่มีปืนที่เหมาะสม</value>
+    </data>
+    <data name="SoloMode_NotConfigGunKind" xml:space="preserve">
+        <value> ไม่ได้กำหนดค่าปืน</value>
+    </data>
+    <data name="SoloMode_NotConfigGeneration" xml:space="preserve">
+        <value> การสร้างปืนไม่ได้กำหนดค่า</value>
+    </data>
+    <data name="SoloMode_GunLevelMax" xml:space="preserve">
+        <value> ปืนถึงระดับสูงสุด</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveGun" xml:space="preserve">
+        <value> ปืนถูกเลือกด้วยเช่นกัน</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseGun" xml:space="preserve">
+        <value> ไม่สามารถเลือกปืนเดียวกัน</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseGun" xml:space="preserve">
+        <value> อย่าเลือกปืนที่คุณไม่มี</value>
+    </data>
+    <data name="SoloMode_UpdateIsFailed" xml:space="preserve">
+        <value> เกิดข้อผิดพลาดระหว่างกระบวนการอัปเกรด</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultGun" xml:space="preserve">
+        <value> ผู้ใช้มีปืนเริ่มต้นเท่านั้น</value>
+    </data>
+    <data name="SoloMode_NotEnoughLevelToEvolution" xml:space="preserve">
+        <value> ปืนไม่สามารถวิวัฒนาการได้</value>
+    </data>
+    <data name="SoloMode_EvolutionIsFailed" xml:space="preserve">
+        <value> มีข้อผิดพลาดเกี่ยวกับวิวัฒนาการ</value>
+    </data>
+    <data name="SoloMode_NotAnyMineral" xml:space="preserve">
+        <value> ไม่มีเนื้อหา</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseMineral" xml:space="preserve">
+        <value> วัสดุไม่สามารถใช้ได้ในสินค้าคงคลัง</value>
+    </data>
+    <data name="SoloMode_NotConfigMineral" xml:space="preserve">
+        <value> การกำหนดค่าไม่ได้รับการกำหนดค่าในกระเป๋าผู้ใช้</value>
+    </data>
+    <data name="SoloMode_NotAnyMaterial" xml:space="preserve">
+        <value> ผู้ใช้ไม่มีเนื้อหาวิวัฒนาการ</value>
+    </data>
+    <data name="SoloMode_IsContainsChoiseMaterial" xml:space="preserve">
+        <value> วัสดุไม่สามารถใช้ได้ในสินค้าคงคลัง</value>
+    </data>
+    <data name="SoloMode_NotConfigMaterial" xml:space="preserve">
+        <value> ไม่ได้กำหนดค่าวัสดุในกระเป๋าผู้ใช้</value>
+    </data>
+    <data name="SoloMode_MaterialChoiseNotMatchConfig" xml:space="preserve">
+        <value> วัสดุไม่เหมาะสม</value>
+    </data>
+    <data name="SoloMode_NotHaveSkillKind" xml:space="preserve">
+        <value> ไม่มีทักษะนี้</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveSkill" xml:space="preserve">
+        <value> ระบุทักษะที่เลือกไว้มากเกินไป</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseSkill" xml:space="preserve">
+        <value> อย่าเลือกทักษะเดียวกัน</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseSkill" xml:space="preserve">
+        <value> อย่าเลือกทักษะที่คุณไม่มี</value>
+    </data>
+    <data name="SoloMode_WallNotFound" xml:space="preserve">
+        <value> ไม่มีกำแพง</value>
+    </data>
+    <data name="SoloMode_WallInvalidStage" xml:space="preserve">
+        <value> เล่นไปที่หน้าจอเกมเพื่ออนุญาตการอัปเกรด</value>
+    </data>
+    <data name="SoloMode_NotHaveTowerKind" xml:space="preserve">
+        <value> ผู้ใช้ไม่มีหอคอยที่ตรงกัน</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerKind" xml:space="preserve">
+        <value> หอคอยไม่ได้รับการกำหนดค่า</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerGeneration" xml:space="preserve">
+        <value> การสร้างหอคอยไม่ได้รับการกำหนดค่า</value>
+    </data>
+    <data name="SoloMode_TowerLevelMax" xml:space="preserve">
+        <value> หอคอยถึงระดับสูงสุดแล้ว</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveTower" xml:space="preserve">
+        <value> หอคอยถูกเลือกเกินขีด จำกัด ที่ระบุ</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseTower" xml:space="preserve">
+        <value> อย่าเลือกหอคอยเดียวกัน</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseTower" xml:space="preserve">
+        <value> อย่าเลือกหอคอยที่คุณไม่มี</value>
+    </data>
+    <data name="SoloMode_UpdateTowerIsFailed" xml:space="preserve">
+        <value> เกิดข้อผิดพลาดระหว่างกระบวนการอัปเกรด</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultTower" xml:space="preserve">
+        <value> ผู้ใช้มีหอคอยเริ่มต้นเท่านั้น</value>
+    </data>
+    <data name="SoloMode_NotEnoughCoin" xml:space="preserve">
+        <value> ผู้ใช้มีเหรียญไม่เพียงพอ</value>
+    </data>
+    <data name="SoloMode_CheckNotExists" xml:space="preserve">
+        <value> ไม่มีฟังก์ชั่นทดสอบ</value>
+    </data>
+    <!--Endregion Descript Defender-->
+</LocalLanguages>

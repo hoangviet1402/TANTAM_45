@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="DisplaynameAvailable" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញរួចហើយ</value>
+  </data>
+    <data name="UserNameInvalit4" xml:space="preserve">
+        <value>ชื่อผู้ใช้นี้มีอยู่แล้ว</value>
+    </data>
+    <data name="RegisterBouns" xml:space="preserve">
+    <value>ขอแสดงความยินดีที่ลงทะเบียนเรียบร้อยแล้ว! ผู้ดูแลระบบจะมอบชิปให้คุณเพื่อเล่นเกม</value>
+  </data>
+    <data name="RegisterBounsTitle" xml:space="preserve">
+    <value>ขอแสดงความยินดีที่ลงทะเบียนเรียบร้อยแล้ว!</value>
+	</data>
+    <data name="Level_LevelUp" xml:space="preserve">
+    <value>คุณได้เลื่อนระดับ</value>
+  </data>
+    <data name="Level_LogPointSuccess" xml:space="preserve">
+    <value>สะสมคะแนนสำเร็จ</value>
+  </data>
+    <data name="Level_LogPointError" xml:space="preserve">
+    <value>ไม่สามารถรับคะแนนในระดับ</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigListGameText" xml:space="preserve">
+    <value>คุณต้องถึงระดับ {0}</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigBanCaRoomText" xml:space="preserve">
+    <value>คุณต้องถึงระดับ {0}</value>
+  </data>
+    <data name="Level_DescriptionUnlockGame" xml:space="preserve">
+    <value>ขอแสดงความยินดีกับการปลดล็อคเกม {0}</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+        <value>อัปเดตข้อมูลสำเร็จ</value>
+    </data>
+    <data name="EmailExists" xml:space="preserve">
+        <value>ได้รับอีเมล์นี้เรียบร้อยแล้ว</value>
+    </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+        <value>หมายเลขโทรศัพท์ที่ใช้อยู่แล้ว</value>
+    </data>
+    <data name="ErrorMessValidation7" xml:space="preserve">
+        <value>หมายเลขโทรศัพท์ไม่ถูกต้อง</value>
+    </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>ชื่อที่แสดงมีอยู่แล้ว</value>
+  </data>
+    <data name="ValidationLogin12" xml:space="preserve">
+    <value>ไม่มีบัญชี</value>
+  </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>ชื่อที่แสดงมีอยู่แล้ว</value>
+  </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์ที่ใช้อยู่แล้ว</value>
+  </data>
+    <data name="EmailExists" xml:space="preserve">
+    <value>ได้รับอีเมล์นี้เรียบร้อยแล้ว</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+    <value>อัปเดตข้อมูลสำเร็จ</value>
+  </data>
+</LocalLanguages>

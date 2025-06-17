@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalLanguages>
+    <data name="CompletedAchievementTitle" xml:space="preserve">
+		<value>ស្វាគមន៍អ្នកបានសម្រេចភារកិច្ច</value>
+	</data>
+    <data name="Achievement_Receive_Infor_NotMatch" xml:space="preserve">
+     <value> ព័ត៌មានមិនត្រឹមត្រូវឬអ្នកបានទទួលរង្វាន់។ </value>
+           </data>
+       
+    <data name="Achievement_Receive_Fail" xml:space="preserve">
+     <value> ទទួលបានរង្វាន់សម្រាប់ការបរាជ័យ។ </value>
+           </data>
+    <data name="Achievement_Total_Win_Slot" xml:space="preserve">
+		<value> សរុបរង្វាន់ឈ្នះ {0} CHIPS​ ក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Total_Bet_Slot" xml:space="preserve">
+		<value> សរុបកាក់ភ្នាល់ឈ្នះ {0} CHIPS​ ក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Total_Turn_Slot" xml:space="preserve">
+		<value> សរុបលើកបង្វិល{0}ដងក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Total_Turn_Win_Slot" xml:space="preserve">
+		<value> សរុបលើកឈ្នះ{0}ដងក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Big_Win_Slot" xml:space="preserve">
+		<value> Big Win {0]ដង​ក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Mega_Win_Slot" xml:space="preserve">
+		<value> Mega Win {0}ដងក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Super_Win_Slot" xml:space="preserve">
+		<value> Super Win {0}ដងក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Total_Win" xml:space="preserve">
+		<value> សរុបរង្វាន់ឈ្នះ {0} CHIPS  </value>
+	</data>
+    <data name="Achievement_Total_Bet" xml:space="preserve">
+		<value> សរុបកាក់ភ្នាល់ {0} CHIPS  </value>
+	</data>
+    <data name="Achievement_Total_Turn" xml:space="preserve">
+		<value> សរុបលើកបង្វិល{0}ដង </value>
+	</data>
+    <data name="Achievement_Total_Turn_Win" xml:space="preserve">
+		<value> សរុបលើកឈ្នះ{0}ដង </value>
+	</data>
+    <data name="Achievement_Big_Win" xml:space="preserve">
+		<value> Big Win {0}ដង </value>
+	</data>
+    <data name="Achievement_Mega_Win" xml:space="preserve">
+		<value> Mega Win {0}ដង </value>
+	</data>
+    <data name="Achievement_Super_Win" xml:space="preserve">
+		<value> Super Win {0}ដង </value>
+	</data>
+    <data name="Achievement_Super_Bonus" xml:space="preserve">
+		<value> Super Bonus {0]ដង </value>
+	</data>
+    <data name="Achievement_Leaderboard_Big_Win" xml:space="preserve">
+		<value> Top {0} ​ ឈ្នះធំក្នុងថ្ងៃ </value>
+	</data>
+    <data name="Achievement_Leaderboard_Total_Big_Win" xml:space="preserve">
+		<value> Top {0} សរុបការឈ្នះធំក្នុងថ្ងៃ </value>
+	</data>
+    <data name="Achievement_Login" xml:space="preserve">
+		<value> បញ្ចូល{0}ដងបន្តបន្ទាប់ </value>
+	</data>
+    <data name="Achievement_Vip_Update" xml:space="preserve">
+		<value> ដំឡើង Vip {0} </value>
+	</data>
+    <data name="Achievement_Win_Jackpot" xml:space="preserve">
+		<value> ឈ្នះ Jackpot {0}ដង </value>
+	</data>
+    <data name="Achievement_Total_Win_Fish" xml:space="preserve">
+		<value> សរុបរង្វាន់ឈ្នះ {0} CHIPS​ ក្នុងហ្គេម </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Fish" xml:space="preserve">
+		<value> សរុបកាក់បាញ់: {0} </value>
+	</data>
+    <data name="Achievement_Total_Fish_Die_One_Turn" xml:space="preserve">
+		<value> សរុបត្រីដែលបាញ់ងាប់ ក្នុង 1 លើក: {0} </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Red_Fish" xml:space="preserve">
+		<value> បាញ់ងាប់{0}ត្រីក្រហម </value>
+	</data>
+    <data name="Achievement_Total_Using_Item" xml:space="preserve">
+		<value> ប្រើ {0} item </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Boss_Fish" xml:space="preserve">
+		<value> បាញ់បាន {0} boss </value>
+	</data>
+    <data name="Achievement_Total_bullet" xml:space="preserve">
+		<value> សរុប {0}​ គ្រាប់បាញ់ចេញ </value>
+	</data>
+    <data name="Achievement_Total_Fish_Die" xml:space="preserve">
+		<value> សរុបបាញ់ត្រីងាប់ : {0} </value>
+	</data>
+    <data name="Achievement_Total_Friends" xml:space="preserve">
+		<value> មាន{0}អ្នក </value>
+	</data>
+    <data name="Achievement_Connect_Facebook" xml:space="preserve">
+		<value> ភ្ជាប់បណ្តាញសង្គម១ដង </value>
+	</data>
+    <data name="Achievement_Add_Friends_Facebook" xml:space="preserve">
+		<value> អញ្ជើញ{0}នាក់ពី Facebook </value>
+	</data>
+    <data name="Achievement_Ios" xml:space="preserve">
+		<value> លេងហ្គេមលើ Ios​ {0}ដង </value>
+	</data>
+    <data name="Achievement_Android" xml:space="preserve">
+		<value> លេងហ្គេមលើ  Android​ {0}ដង </value>
+	</data>
+    <data name="E1806_BonusDailyDayEnum_BonusFirst" xml:space="preserve">
+    <value>ទទួលបានរង្វាន់ជាលើកដំបូង</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>free បញ្ចូល</value>
+  </data>
+
+    <data name="BoxEventScore" xml:space="preserve">
+    <value>ចំណុច</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>គណនីទើបទទួលរង្វាន់លើកដំបូង</value>
+  </data>
+    <data name="EventAchievementBoss" xml:space="preserve">
+    <value>Boss</value>
+  </data>
+    <data name="EventAchievementBossDescription" xml:space="preserve">
+    <value>កម្ចាត់ត្រី boss {0} ដង</value>
+  </data>
+    <data name="EventAchievementBossName" xml:space="preserve">
+    <value>កម្ចាត់ត្រី boss</value>
+  </data>
+    <data name="EventAchievementCaDo" xml:space="preserve">
+    <value>ត្រីក្រហម</value>
+  </data>
+    <data name="EventAchievementGiftBoxDescription" xml:space="preserve">
+    <value>កម្ទេចប្រអប់រង្វាន់ {0}  ដង</value>
+  </data>
+    <data name="EventAchievementGiftBoxName" xml:space="preserve">
+    <value>កម្ទេចប្រអប់រង្វាន់</value>
+  </data>
+    <data name="EventAchievementHopQua" xml:space="preserve">
+    <value>ប្រអប់រង្វាន់</value>
+  </data>
+    <data name="EventAchievementItem" xml:space="preserve">
+    <value>ធាតុ</value>
+  </data>
+    <data name="EventAchievementItemDescription" xml:space="preserve">
+    <value>ប្រើប្រាស់ Item {0} ដង</value>
+  </data>
+    <data name="EventAchievementItemName" xml:space="preserve">
+    <value>ប្រើប្រាស់ Item</value>
+  </data>
+    <data name="EventAchievementLoginDescription" xml:space="preserve">
+    <value>បញ្ចូលហ្គេមបាញ់ត្រី</value>
+  </data>
+    <data name="EventAchievementLoginName" xml:space="preserve">
+    <value>បញ្ចូលហ្គេមបាញ់ត្រី</value>
+  </data>
+    <data name="EventAchievementOther" xml:space="preserve">
+    <value>ផ្សេង</value>
+  </data>
+    <data name="EventAchievementRedFishDescription" xml:space="preserve">
+    <value>កម្ចាត់ត្រីក្រហម  {0} ដង</value>
+  </data>
+    <data name="EventAchievementRedFishName" xml:space="preserve">
+    <value>កម្ចាត់ត្រីក្រហម</value>
+  </data>
+    <data name="EventAchievementSkill" xml:space="preserve">
+    <value>បំណិន</value>
+  </data>
+    <data name="EventAchievementSkillBombDescription" xml:space="preserve">
+    <value>ប្រើប្រាស់ skill គ្រាប់បែក {0} ដង</value>
+  </data>
+    <data name="EventAchievementSkillBombName" xml:space="preserve">
+    <value>ប្រើប្រាស់ skill គ្រាប់បែក</value>
+  </data>
+    <data name="EventAchievementSkillDescription" xml:space="preserve">
+    <value>ប្រើប្រាស់ កំភ្លើង skill {0} ដង</value>
+  </data>
+    <data name="EventAchievementSkillLaserDescription" xml:space="preserve">
+    <value>ប្រើប្រាស់ កំភ្លើង skill laser {0} ដង</value>
+  </data>
+    <data name="EventAchievementSkillLaserName" xml:space="preserve">
+    <value>ប្រើប្រាស់ កំភ្លើង skill laser</value>
+  </data>
+    <data name="EventAchievementSkillName" xml:space="preserve">
+    <value>ប្រើប្រាស់ កំភ្លើង skill</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirDescription" xml:space="preserve">
+    <value>ប្រើប្រាស់ skill រលកសំឡេង {0} ដង</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirName" xml:space="preserve">
+    <value>ប្រើប្រាស់ skill រលកសំឡេង</value>
+  </data>
+    <data name="EventAchievementUpLevelDescription" xml:space="preserve">
+    <value>លើងlevel បាញ់ត្រី</value>
+  </data>
+    <data name="EventAchievementUpLevelName" xml:space="preserve">
+    <value>លើងlevel បាញ់ត្រី</value>
+  </data>
+    <data name="EventAchivementNotComplete" xml:space="preserve">
+    <value>សមទ្ធិលមិនទាន់សម្រេច</value>
+  </data>
+    <data name="EventChipCounts" xml:space="preserve">
+    <value>{0} CHIPS</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍ដែលបានជ្រើសរើសមិនបានផ្គូផ្គង {0} ទេ</value>
+  </data>
+    <data name="EventDailyBonusLoginName" xml:space="preserve">
+    <value>ថ្ងៃ</value>
+  </data>
+    <data name="EventDontHaveNew" xml:space="preserve">
+    <value>មិនទាន់មានព្រឹត្តិការណ៍ថ្មី</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>មានគ្រប់វេលាដើម្បីទទួលរង្វាន់</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>អ្នកបានទទួលរង្វាន់</value>
+  </data>
+    <data name="EventGetListSuccess" xml:space="preserve">
+    <value>យកបញ្ជី event បានសម្រេច</value>
+  </data>
+    <data name="EventGiftIsWrong" xml:space="preserve">
+    <value>រង្វាន់មិនពិត</value>
+  </data>
+    <data name="EventGiftNotAvailable" xml:space="preserve">
+    <value>រង្វាន់បានទទួលរួចហើយឬមិនពិត</value>
+  </data>
+    <data name="EventGiveGiftFail" xml:space="preserve">
+    <value>ផ្ដល់រង្វាន់មិនសម្រេច។ សូមព្យាយាមម្ដងទៀត</value>
+  </data>
+    <data name="EventGiveGiftSuccessAndCheckMail" xml:space="preserve">
+    <value>ផ្ដល់រង្វាន់បានសម្រេច។ សូមពិនិត្យប្រអប់សារ</value>
+  </data>
+    <data name="EventMessageYouHasMoneyFromEve" xml:space="preserve">
+    <value>អ្នកទទួលបាន{0} CHIPS ពីព្រឹត្តិការណ៍</value>
+  </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>ចំនួន CHIPS របស់អ្នកត្រូវតិចជាង ៥០០០ ទើបអាចទទួលរង្វាន់</value>
+  </data>
+    <data name="EventMissionNotComplete" xml:space="preserve">
+    <value>បេសកកម្មមិនទាន់បានបំពេញ</value>
+  </data>
+    <data name="EventNoData" xml:space="preserve">
+    <value>គ្មានទិន្នន័យ</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>មិនមានគ្រប់វេលាដើម្បីទទួលរង្វាន់</value>
+  </data>
+    <data name="EventNotExist" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍នេះមិនពិតទេ</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍កំពុងផ្អាក</value>
+  </data>
+    <data name="EventNotTimeUp" xml:space="preserve">
+    <value>មិនទាន់ដល់វេលាផ្ដល់រង្វាន់។ សូមព្យាយាមម្ដងទៀត</value>
+  </data>
+    <data name="EventQuicklyRegisterCannotRegisterMore" xml:space="preserve">
+    <value>មិនអាចចូលលេងបន្ថែម  សូមចុះឈ្មោះគណនីថ្មី!</value>
+  </data>
+    <data name="EventReceivedGift" xml:space="preserve">
+    <value>បានទទួលរង្វាន់</value>
+  </data>
+    <data name="EventReceiveGiftSuccess" xml:space="preserve">
+    <value>ទទួលរង្វាន់បានសម្រេច</value>
+  </data>
+    <data name="EventReceiveLevelVip" xml:space="preserve">
+    <value>ទទួលរង្វាន់ឡើងដល់ level vip</value>
+  </data>
+    <data name="EventSecondCount" xml:space="preserve">
+    <value>{0} វិនាទី</value>
+  </data>
+    <data name="EventSystemMaintainingChooseOther" xml:space="preserve">
+    <value>ប្រព័ន្ធ{0}កុះពុងរក្សា សូមជ្រើសរើសប្រភេទកាតផ្សេង</value>
+  </data>
+    <data name="EventTitleBonusHall" xml:space="preserve">
+    <value>អ្នកទទួលបាន {0} ចូលក្នុងគណនី</value>
+  </data>
+    <data name="EventTurnsCount" xml:space="preserve">
+    <value>{0} វគ្គបង្វិល</value>
+  </data>
+    <data name="EventTypeCardCount" xml:space="preserve">
+    <value>កាត {0} {1}</value>
+  </data>
+    <data name="EventUploadSuccessButFail" xml:space="preserve">
+    <value>ទាញឡើងបានសម្រេច ប៉ុន្តែ update ព្រឹត្តិការណ៍មានកំហុស</value>
+  </data>
+    <data name="EventVipAccountNoVip" xml:space="preserve">
+    <value>គណនីមិនទាន់មាន  Vip</value>
+  </data>
+    <data name="EventVipAnchorPoint" xml:space="preserve">
+    <value>ពិន្ទុដែលត្រូវសម្រេចបាន</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>free បញ្ចូល</value>
+  </data>
+    <data name="EventVipExpFish" xml:space="preserve">
+    <value>បទពិសោធន៍ថតត្រី</value>
+  </data>
+    <data name="EventVipNotRunning" xml:space="preserve">
+    <value>មិនទាន់ដំណើរ vip</value>
+  </data>
+    <data name="EventVipTichLuySkill" xml:space="preserve">
+    <value>សន្សំក្បាច់</value>
+  </data>
+    <data name="EventVipTransferChip" xml:space="preserve">
+    <value>ប្ដូរ CHIPS</value>
+  </data>
+    <data name="EventOverMaxViewLimit" xml:space="preserve">
+    <value>ការបើករង្វាន់បានផុតកំណត់។ សូមរង់ចាំបង្កាន់ដៃអំណោយបន្ទាប់។</value>
+  </data>
+
+    <!-- #Region E1806_BonusDailyDayEnum-->
+    <data name="E1806_BonusDailyDayEnum_Faile" xml:space="preserve">
+    <value>ទទួលបានរង្វាន់មិនទទួលជោគជ័យ</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusFirst" xml:space="preserve">
+    <value>ទទួលបានរង្វាន់ជាលើកដំបូង</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusInDay" xml:space="preserve">
+    <value>ទទួលបានរង្វាន់នៅថ្ងៃនេះ</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_ResetBonus" xml:space="preserve">
+    <value>កាលបរិច្ឆេទនៃការទទួលបានរង្វាន់គឺមិនតគ្នា</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7Days" xml:space="preserve">
+    <value>ទទួលបានរង្វាន់ជាបន្តបន្ទាប់</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7DaysThen" xml:space="preserve">
+    <value>ទទួលបានរង្វាន់លើសពី 7 ថ្ងៃ</value>
+  </data>
+    <!-- #Endregion E1806_BonusDailyDayEnum-->
+
+
+    <data name="BoxTopEventAppTitle" xml:space="preserve">
+    <value>TOP ព្រឹត្តិការណ៍បាញ់ត្រីប្រមាញ់រង្វាន់</value>
+  </data>
+    <data name="EventNhapMaDuocTienCaptcha" xml:space="preserve">
+    <value>កូដបញ្ជាក់</value>
+  </data>
+    <data name="EventNhapMaDuocTienCode" xml:space="preserve">
+    <value>លេខកូដអំណោយ</value>
+  </data>
+    <data name="EventNhapMaDuocTienConfirm" xml:space="preserve">
+    <value>បញ្ជាក់</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>ថ្ងៃនេះអ្នកបានទទួលរង្វាន់ហើយ។ សម្រាប់ nickឈ្មោះមួយគឺអាចត្រូវបានតែgift code ០១ ក្នុងមួយថ្ងៃ</value>
+  </data>
+    <data name="EventNhapMaDuocTienTitle" xml:space="preserve">
+    <value>បញ្ចូល GIFT CODE ទទួលទឹកប្រាក់</value>
+  </data>
+    <data name="JackpotMetaDesc" xml:space="preserve">
+    <value>បាញ់ត្រី​២០១៨ ក្ដៅៗ។ លេងផ្ទាល់នៅលើ Website ឬ Mobile ដោយមិនបាច់ដំឡើង។</value>
+  </data>
+    <data name="JackpotPlay" xml:space="preserve">
+    <value>លេង JACKPOT</value>
+  </data>
+    <data name="JackpotTitle" xml:space="preserve">
+    <value>បាញ់ត្រី</value>
+  </data>
+    <data name="ListEvent3DHeading" xml:space="preserve">
+    <value>ចំណងជើង</value>
+  </data>
+    <data name="ListEvent3DMessageNoData" xml:space="preserve">
+    <value>គ្មានទិន្នន័យ!</value>
+  </data>
+    <data name="ListEvent3DSubTitle" xml:space="preserve">
+    <value>លេខកូដអំណោយ</value>
+  </data>
+    <data name="ListEvent3DTitle" xml:space="preserve">
+    <value>សារុប&lt;br /&gt;ផ្ដល់រង្វាន់</value>
+  </data>
+    <data name="ListEvent_Event" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍</value>
+  </data>
+    <data name="ListEvent_Gala" xml:space="preserve">
+    <value>ផ្ដល់រង្វាន់</value>
+  </data>
+    <data name="ListEvent_GiftCode" xml:space="preserve">
+    <value>លេខកូដអំណោយ</value>
+  </data>
+    <data name="ListEvent_Heading" xml:space="preserve">
+    <value>ចំណងជើង</value>
+  </data>
+    <data name="ListEvent_MessageNodata" xml:space="preserve">
+    <value>គ្មានទិន្នន័យ!</value>
+  </data>
+    <data name="ListTongKetTraoGiaiHeading" xml:space="preserve">
+    <value>ចំណងជើង</value>
+  </data>
+    <data name="ListTongKetTraoGiaiMessageNodata" xml:space="preserve">
+    <value>គ្មានទិន្នន័យ!</value>
+  </data>
+    <data name="ListTongKetTraoGiaiTitle" xml:space="preserve">
+    <value>បញ្ចូលកាត-ដូររង្វាន់បាញ់ត្រីប្រមាញ់រង្វាន់</value>
+  </data>
+    <data name="ShareSocialMetaDesc" xml:space="preserve">
+    <value>បាញ់ត្រី​២០១៨ ក្ដៅៗ។ លេងផ្ទាល់នៅលើ Website ឬ Mobile ដោយមិនបាច់ដំឡើង។</value>
+  </data>
+    <data name="ShareSocialShareAction" xml:space="preserve">
+    <value>ចែករំលែក</value>
+  </data>
+    <data name="ShareSocialSharing" xml:space="preserve">
+    <value>ចែករំលែកនឹងមិត្តភក្ដិ៖</value>
+  </data>
+    <data name="ShareSocialTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="ShareSocial_CongraFB" xml:space="preserve">
+    <value>អ្នកទទួលបានរង្វាន់ពីព្រឹត្តិការណ៍ចែករំលែកfacebook ទទួលរង្វាន់</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>លេខលំដាប់</value>
+  </data>
+    <data name="Top" xml:space="preserve">
+    <value>TOP</value>
+  </data>
+    <data name="EventNull" xml:space="preserve">
+    <value>មិនទាន់មានព្រឹត្តិការណ៍ណាឡើយ</value>
+  </data>
+    <data name="CoinChange" xml:space="preserve">
+    <value>ការផ្លាស់ប្តូរកាក់</value>
+  </data>
+    <data name="CurrentCoin" xml:space="preserve">
+    <value>កាក់បច្ចុប្បន្ន</value>
+  </data>
+    <data name="Errror1" xml:space="preserve">
+    <value>កំហុសមួយបានកើតឡើងកំឡុងពេលកំពុងទាញយកបញ្ជី។</value>
+  </data>
+    <data name="Noted" xml:space="preserve">
+    <value>ចំណាំ</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>ពេលវេលា</value>
+  </data>
+    <data name="GuiTinNhan" xml:space="preserve">
+    <value>ផ្ញើរសារ</value>
+  </data>
+    <data name="HopThu" xml:space="preserve">
+    <value>ប្រអប់សំបុត្រ</value>
+  </data>
+    <data name="KhongCoThu" xml:space="preserve">
+    <value>គ្មានសំបុត្រថ្មី !!!</value>
+  </data>
+    <data name="NgayGui" xml:space="preserve">
+    <value>កាលបរិច្ឆេទ</value>
+  </data>
+    <data name="NguoiGui" xml:space="preserve">
+    <value>អ្នកផ្ញើរ</value>
+  </data>
+    <data name="DatCuoc" xml:space="preserve">
+    <value>ភ្នាល់</value>
+  </data>
+    <data name="KetQua" xml:space="preserve">
+    <value>លទ្ធផល</value>
+  </data>
+    <data name="MoTa" xml:space="preserve">
+    <value>ការពិពណ៌នា</value>
+  </data>
+    <data name="NgayDat" xml:space="preserve">
+    <value>កាលបរិច្ឆេទ</value>
+  </data>
+    <data name="Trat" xml:space="preserve">
+    <value>កញ្ញា</value>
+  </data>
+    <data name="Trung" xml:space="preserve">
+    <value>ឈ្នះ</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>សារ</value>
+  </data>
+    <data name="GiftCodeValidation1" xml:space="preserve">
+    <value>លេខកូដដែលអ្នកបានបញ្ចូលមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="GiftCodeValidation2" xml:space="preserve">
+    <value>ថ្ងៃនេះអ្នកទទួលបានរង្វាន់។ 1 សម្មតិកម្មអាចទទួលបានតែ 1 លេខកូដក្នុងមួយថ្ងៃប៉ុណ្ណោះ</value>
+  </data>
+    <data name="GiftCodeValidation3" xml:space="preserve">
+    <value>ប្រើអំណោយ GiftCode</value>
+  </data>
+    <data name="GiftCodeValidation4" xml:space="preserve">
+    <value>លេខកូដអំណោយដែលអ្នកបានបញ្ចូលមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="GiftCodeValidation5" xml:space="preserve">
+    <value>អ្នកត្រូវបានទទួលរង្វាន់ {0} CHIPS ។ ព្រឹត្តិការណ៍ឈ្នះបញ្ចូលកូដប្រាក់។ 1 សម្មតិកម្មអាចឈ្នះលេខកូដអំណោយ 1 ក្នុងមួយថ្ងៃ។</value>
+  </data>
+    <data name="GiftCodeValidation6" xml:space="preserve">
+    <value>លេខកូដអំណោយមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="GiftCodeValidation7" xml:space="preserve">
+    <value>GiftCode មិនមានទេ</value>
+  </data>
+    <data name="GiftCodeValidation8" xml:space="preserve">
+    <value>GiftCode ត្រូវបានចាក់សោ</value>
+  </data>
+    <data name="GiftCodeValidation9" xml:space="preserve">
+    <value>បូក CHIPS បានបរាជ័យ</value>
+  </data>
+    <data name="GiftCodeLabel" xml:space="preserve">
+    <value>GiftCode</value>
+  </data>
+    <data name="GiftCodeLabelPH" xml:space="preserve">
+    <value>បញ្ចូលលេខកូដអំណោយ</value>
+  </data>
+    <data name="GiftCodeReceive" xml:space="preserve">
+    <value>ទទួល</value>
+  </data>
+    <data name="ScreenCaptureGame_UserMaxInDay" xml:space="preserve">
+    <value>លើសចំនួនដងដែលអនុញ្ញាតរហូតដល់ {០} / ថ្ងៃ</value>
+  </data>
+    <data name="ScreenCaptureGame_UserNextTime" xml:space="preserve">
+    <value>ប្រតិបត្ដិការលឿនពេកសូមរង់ចាំ {0} ដើម្បីដាក់ស្នើម្តងទៀត</value>
+  </data>
+    <data name="ScreenCaptureGame_DeviceMaxInDay" xml:space="preserve">
+    <value>លើសចំនួនដងដែលអនុញ្ញាតរហូតដល់ {០} / ថ្ងៃ</value>
+  </data>
+    <data name="ScreenCaptureGame_DeviceNextTime" xml:space="preserve">
+    <value>ប្រតិបត្ដិការលឿនពេកសូមរង់ចាំ {0} ដើម្បីដាក់ស្នើម្តងទៀត</value>
+  </data>
+    <data name="ScreenCaptureGame_UploadFail" xml:space="preserve">
+    <value>ការផ្ទុកបានបរាជ័យ</value>
+  </data>
+</LocalLanguages>

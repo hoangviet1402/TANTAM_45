@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Reason_2" xml:space="preserve">
+    <value>充IAP</value>
+  </data>
+    <data name="Reason_40" xml:space="preserve">
+    <value>购买物品</value>
+  </data>
+    <data name="Reason_48" xml:space="preserve">
+    <value>购买壁纸</value>
+  </data>
+    <data name="Reason_49" xml:space="preserve">
+    <value>买头像</value>
+  </data>
+    <data name="Reason_68" xml:space="preserve">
+    <value>当州处于等级时捐出胜利</value>
+  </data>
+    <data name="Reason_70" xml:space="preserve">
+    <value>当用户在充Win时上传成员资格类型时给予胜利</value>
+  </data>
+    <data name="Reason_89" xml:space="preserve">
+    <value>赠送予胜利等级</value>
+  </data>
+    <data name="Reason_102" xml:space="preserve">
+    <value>赠送Win登录</value>
+  </data>
+    <data name="Reason_105" xml:space="preserve">
+    <value>买感情</value>
+  </data>
+    <data name="Reason_108" xml:space="preserve">
+    <value>胜利转移给朋友</value>
+  </data>
+    <data name="Reason_116" xml:space="preserve">
+    <value>在VIP会员之间转账</value>
+  </data>
+    <data name="Reason_117" xml:space="preserve">
+    <value>向会员转移社会资金</value>
+  </data>
+    <data name="Reason_118" xml:space="preserve">
+    <value>充胜利</value>
+  </data>
+    <data name="Reason_119" xml:space="preserve">
+    <value>管理员捐赠了胜利</value>
+  </data>
+    <data name="Reason_133" xml:space="preserve">
+    <value>免费赢在线射鱼</value>
+  </data>
+    <data name="Reason_142" xml:space="preserve">
+    <value>促进充胜利</value>
+  </data>
+    <data name="Reason_143" xml:space="preserve">
+    <value>获得成就</value>
+  </data>
+    <data name="Reason_161" xml:space="preserve">
+    <value>促销充赢得VIP用户</value>
+  </data>
+    <data name="Reason_162" xml:space="preserve">
+    <value>在您有更多乐趣事件，可以为新用户提供金牌</value>
+  </data>
+    <data name="Reason_166" xml:space="preserve">
+    <value>赠送胜利以注册打开ID</value>
+  </data>
+    <data name="Reason_168" xml:space="preserve">
+    <value>赠送胜利在一个新的用户事件</value>
+  </data>
+    <data name="Reason_169" xml:space="preserve">
+    <value>为赢得顶级VIP的用户赠送胜利</value>
+  </data>
+    <data name="Reason_171" xml:space="preserve">
+    <value>每天赠送胜利</value>
+  </data>
+    <data name="Reason_173" xml:space="preserve">
+    <value>管理员扣除胜利</value>
+  </data>
+    <data name="Reason_174" xml:space="preserve">
+    <value>通过短信充货币</value>
+  </data>
+    <data name="Reason_175" xml:space="preserve">
+    <value>登录应用程序射鱼</value>
+  </data>
+    <data name="Reason_176" xml:space="preserve">
+    <value>赢得大奖</value>
+  </data>
+    <data name="Reason_178" xml:space="preserve">
+    <value>赠送胜利每日登录手机</value>
+  </data>
+    <data name="Reason_179" xml:space="preserve">
+    <value>积分收奖励</value>
+  </data>
+    <data name="Reason_180" xml:space="preserve">
+    <value>赠送胜利邀请脸书上的朋友</value>
+  </data>
+    <data name="Reason_181" xml:space="preserve">
+    <value>朋友在脸书上注册时给予胜利</value>
+  </data>
+    <data name="Reason_182" xml:space="preserve">
+    <value>促销第一次充</value>
+  </data>
+    <data name="Reason_183" xml:space="preserve">
+    <value>当用户不断登录时给予胜利</value>
+  </data>
+    <data name="Reason_184" xml:space="preserve">
+    <value>在app 脸书跟fanpage页面一样获胜</value>
+  </data>
+    <data name="Reason_187" xml:space="preserve">
+    <value>当新用户用完捐款时给予胜利 </value>
+  </data>
+    <data name="Reason_188" xml:space="preserve">
+    <value>为新用户初次注册给予胜利</value>
+  </data>
+    <data name="Reason_189" xml:space="preserve">
+    <value>为用户登录mobile黄金时间给予胜利</value>
+  </data>
+    <data name="Reason_190" xml:space="preserve">
+    <value>为用户登录mobile黄金日给予胜利</value>
+  </data>
+    <data name="Reason_191" xml:space="preserve">
+    <value>从雅虎广告中注册赠送胜利</value>
+  </data>
+    <data name="Reason_192" xml:space="preserve">
+    <value>更新信息时给予胜利</value>
+  </data>
+    <data name="Reason_197" xml:space="preserve">
+    <value>促销充胜利短信</value>
+  </data>
+    <data name="Reason_198" xml:space="preserve">
+    <value>促销充IAP</value>
+  </data>
+    <data name="Reason_213" xml:space="preserve">
+    <value>玩射击鱼游戏</value>
+  </data>
+    <data name="Reason_300" xml:space="preserve">
+    <value>为新用户给予胜利</value>
+  </data>
+    <data name="Reason_301" xml:space="preserve">
+    <value>退胜利事件给予大于小于红利</value>
+  </data>
+    <data name="Reason_302" xml:space="preserve">
+    <value>改变胜利</value>
+  </data>
+    <data name="Reason_303" xml:space="preserve">
+    <value>换卡</value>
+  </data>
+    <data name="Reason_306" xml:space="preserve">
+    <value>兑换奖品旋转号码</value>
+  </data>
+    <data name="Reason_307" xml:space="preserve">
+    <value>累积奖金供应系统</value>
+  </data>
+    <data name="Reason_311" xml:space="preserve">
+    <value>通过Google电子货币包存款</value>
+  </data>
+    <data name="Reason_312" xml:space="preserve">
+    <value>通过Apple Store充值</value>
+  </data>
+    <data name="Reason_313" xml:space="preserve">
+    <value>建立公会</value>
+  </data>
+    <data name="Reason_314" xml:space="preserve">
+    <value>撤</value>
+  </data>
+    <data name="Reason_315" xml:space="preserve">
+    <value>充值</value>
+  </data>
+    <data name="Reason_316" xml:space="preserve">
+    <value>主办将货币转移给用户</value>
+  </data>
+    <data name="Reason_318" xml:space="preserve">
+    <value>用户结束射击鱼游戏</value>
+  </data>
+    <data name="Reason_319" xml:space="preserve">
+    <value>用户玩射击鱼游戏</value>
+  </data>
+    <data name="Reason_320" xml:space="preserve">
+    <value>从主办获得胜利</value>
+  </data>
+    <data name="Reason_321" xml:space="preserve">
+    <value>为本办捐赠2％的销售额给主办</value>
+  </data>
+    <data name="Reason_322" xml:space="preserve">
+    <value>为该办月分销售额的3％赠送充最多胜利的人</value>
+  </data>
+    <data name="Reason_325" xml:space="preserve">
+    <value>进入游戏室玩无法成功之后向用户退胜利</value>
+  </data>
+    <data name="Reason_326" xml:space="preserve">
+    <value>管理员取消兑换请求后，向用户退胜利</value>
+  </data>
+    <data name="Reason_327" xml:space="preserve">
+    <value>狩猎老板鱼的奖金</value>
+  </data>
+    <data name="Reason_328" xml:space="preserve">
+    <value>赠送用户在黄金时间登录</value>
+  </data>
+    <data name="Reason_329" xml:space="preserve">
+    <value>给用户胜利活动退款</value>
+  </data>
+    <data name="Reason_330" xml:space="preserve">
+    <value>赠送用户注册射鱼游戏狩奖品</value>
+  </data>
+    <data name="Reason_331" xml:space="preserve">
+    <value>赠送用户登录射鱼游戏狩奖品</value>
+  </data>
+    <data name="Reason_332" xml:space="preserve">
+    <value>在待侯室等射鱼游戏时给予胜利</value>
+  </data>
+    <data name="Reason_333" xml:space="preserve">
+    <value>获得日常任务的奖励</value>
+  </data>
+    <data name="Reason_334" xml:space="preserve">
+    <value>脸书分享奖金</value>
+  </data>
+    <data name="Reason_335" xml:space="preserve">
+    <value>赢大奖系统</value>
+  </data>
+    <data name="Reason_336" xml:space="preserve">
+    <value>因换卡失败而退款</value>
+  </data>
+    <data name="Reason_337" xml:space="preserve">
+    <value>捐货币完成射击鱼的任务</value>
+  </data>
+    <data name="Reason_338" xml:space="preserve">
+    <value>给货币上升级射击鱼</value>
+  </data>
+    <data name="Reason_342" xml:space="preserve">
+    <value>用户将货币转移给另一个用户</value>
+  </data>
+    <data name="Reason_343" xml:space="preserve">
+    <value>用户收到货币从另一个用户转</value>
+  </data>
+    <data name="Reason_344" xml:space="preserve">
+    <value>管理员返回射击鱼的胜利</value>
+  </data>
+    <data name="Reason_345" xml:space="preserve">
+    <value>管理员返回lather的胜利</value>
+  </data>
+    <data name="Reason_347" xml:space="preserve">
+    <value>会办的奖金总结</value>
+  </data>
+    <data name="Reason_350" xml:space="preserve">
+    <value>捐赢得游戏旋转</value>
+  </data>
+    <data name="Reason_351" xml:space="preserve">
+    <value>赢得乌龟游戏的奖品</value>
+  </data>
+    <data name="Reason_352" xml:space="preserve">
+    <value>赢得事件输入代码获得货币</value>
+  </data>
+    <data name="Reason_353" xml:space="preserve">
+    <value>赢得竞技场比赛</value>
+  </data>
+    <data name="Reason_355" xml:space="preserve">
+    <value>玩射击3D鱼</value>
+  </data>
+    <data name="Reason_356" xml:space="preserve">
+    <value>射击3D鱼结束</value>
+  </data>
+    <data name="Reason_357" xml:space="preserve">
+    <value>玩移动射击3D鱼</value>
+  </data>
+    <data name="Reason_358" xml:space="preserve">
+    <value>移动射击3D鱼结束</value>
+  </data>
+    <data name="Reason_359" xml:space="preserve">
+    <value>获得日常任务的奖励</value>
+  </data>
+    <data name="Reason_404" xml:space="preserve">
+    <value>玩迷你硬币游戏</value>
+  </data>
+    <data name="Reason_406" xml:space="preserve">
+    <value>玩迷你惩罚游戏</value>
+  </data>
+    <data name="Reason_407" xml:space="preserve">
+    <value>黄金时段促销</value>
+  </data>
+    <data name="Reason_408" xml:space="preserve">
+    <value>玩迷你Fortunes88游戏</value>
+  </data>
+    <data name="Reason_409" xml:space="preserve">
+    <value>玩累积奖金游戏</value>
+  </data>
+    <data name="Reason_410" xml:space="preserve">
+    <value>玩XengLuxury游戏</value>
+  </data>
+    <data name="Reason_412" xml:space="preserve">
+    <value>玩金龙老虎机游戏</value>
+  </data>
+    <data name="Reason_413" xml:space="preserve">
+    <value>玩三国老虎机游戏</value>
+  </data>
+    <data name="Reason_418" xml:space="preserve">
+    <value>玩野兽游戏</value>
+  </data>
+    <data name="Reason_419" xml:space="preserve">
+    <value>玩财富游戏</value>
+  </data>
+    <data name="Reason_420" xml:space="preserve">
+    <value>玩Pachinko机器人游戏</value>
+  </data>
+    <data name="Reason_422" xml:space="preserve">
+    <value>玩武士游戏</value>
+  </data>
+    <data name="Reason_423" xml:space="preserve">
+    <value>玩游戏Super 777</value>
+  </data>
+    <data name="Reason_424" xml:space="preserve">
+    <value>金龟游戏 Mini</value>
+  </data>
+    <data name="Reason_425" xml:space="preserve">
+    <value>玩游戏Monopoly Million Dollar</value>
+  </data>
+    <data name="Reason_426" xml:space="preserve">
+    <value>玩游戏Diamonds Links</value>
+  </data>
+    <data name="Reason_428" xml:space="preserve">
+    <value>玩游戏Candy</value>
+  </data>
+    <data name="Reason_430" xml:space="preserve">
+    <value>玩游戏Fantastic Beasts</value>
+  </data>
+    <data name="Reason_501" xml:space="preserve">
+    <value>赢得幸运转过来</value>
+  </data>
+    <data name="Reason_502" xml:space="preserve">
+    <value>买幸运转过来</value>
+  </data>
+    <data name="Reason_503" xml:space="preserve">
+    <value>玩lather游戏</value>
+  </data>
+    <data name="Reason_504" xml:space="preserve">
+    <value>Paypal</value>
+  </data>
+    <data name="Reason_36" xml:space="preserve">
+    <value>玩战士游戏</value>
+  </data>
+    <data name="Reason_43" xml:space="preserve">
+    <value>玩Phỏm</value>
+  </data>
+    <data name="Reason_44" xml:space="preserve">
+    <value>扑克游戏</value>
+  </data>
+    <data name="Reason_202" xml:space="preserve">
+    <value>玩神圣的游戏</value>
+  </data>
+    <data name="Reason_203" xml:space="preserve">
+    <value>玩Rampage游戏</value>
+  </data>
+    <data name="Reason_211" xml:space="preserve">
+    <value>玩飞盘游戏</value>
+  </data>
+    <data name="Reason_999" xml:space="preserve">
+    <value>发生log因为Id不存在</value>
+  </data>
+    <data name="Reason_417" xml:space="preserve">
+    <value>Play BigSmall Mini</value>
+  </data>
+    <data name="Reason_50" xml:space="preserve">
+    <value>Play BigSmall</value>
+  </data>
+    <data name="Reason_210" xml:space="preserve">
+    <value>Play MysteryNum</value>
+  </data>
+</LocalLanguages>

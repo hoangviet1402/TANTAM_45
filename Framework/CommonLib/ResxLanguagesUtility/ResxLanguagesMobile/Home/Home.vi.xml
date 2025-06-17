@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+    <data name="DisplaynameAvailable" xml:space="preserve">
+    <value>Tên hiển thị đã tồn tại</value>
+  </data>
+    <data name="AccountalreadyinusePleasechooseanothername" xml:space="preserve">
+    <value>Tài khoản đã được sử dụng. Bạn vui lòng chọn tên khác</value>
+  </data>
+    <data name="CaptchaDoesnotexist" xml:space="preserve">
+    <value>Captcha không hợp lệ</value>
+  </data>
+    <data name="CaptchaInvalid" xml:space="preserve">
+    <value>Captcha không hợp lệ</value>
+  </data>
+    <data name="ConfigFail" xml:space="preserve">
+    <value>Cấu hình không tồn tại</value>
+  </data>
+    <data name="Display3to20characters" xml:space="preserve">
+    <value>Tên hiển thị ít nhất từ 3 đến 20 ký tự.</value>
+  </data>
+    <data name="Displaynamecannotspaces" xml:space="preserve">
+    <value>Tên hiển thị không được để khoảng trắng</value>
+  </data>
+    <data name="Displaynamemusthavespecialcharacterscharacters" xml:space="preserve">
+    <value>Tên hiển thị không được có dấu và ký tự đặc biệt</value>
+  </data>
+    <data name="Displaynamenotallowed" xml:space="preserve">
+    <value>Tên hiển thị chứa các từ không được phép.</value>
+  </data>
+    <data name="EmailIncorrect" xml:space="preserve">
+    <value>Email không chính xác</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>Thất bại</value>
+  </data>
+    <data name="IncorrectIDcard" xml:space="preserve">
+    <value>CMND không chính xác</value>
+  </data>
+    <data name="Invalidaccountname" xml:space="preserve">
+    <value>Tên tài khoản không hợp lệ</value>
+  </data>
+    <data name="Invaliddisplayname" xml:space="preserve">
+    <value>Tên hiển thị không hợp lệ</value>
+  </data>
+    <data name="RegistrationfailedPleasetryagainlater" xml:space="preserve">
+    <value>Đăng ký thất bại. Vui lòng thử lại sau.</value>
+  </data>
+    <data name="SignUpSuccess" xml:space="preserve">
+    <value>Đăng ký thành công</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Thành công</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>Lỗi hệ thống</value>
+  </data>
+    <data name="Usernamecannotbethesameasaccountname" xml:space="preserve">
+    <value>Tên đăng nhập không được giống tên tài khoản</value>
+  </data>
+    <data name="Usernamecannotspaces" xml:space="preserve">
+    <value>Tên đăng nhập không được để khoảng trắng</value>
+  </data>
+    <data name="Usernamemustnothaveaccentsandspecialcharacters" xml:space="preserve">
+    <value>Tên đăng nhập không được có dấu và ký tự đặc biệt</value>
+  </data>
+    <data name="UserNamepasswordincorrect" xml:space="preserve">
+    <value>UserName và mật khẩu không đúng</value>
+  </data>
+    <data name="CommingSoon" xml:space="preserve">
+    <value>Tính năng đang phát triển</value>
+  </data>
+    <data name="CreateSuccess" xml:space="preserve">
+    <value>Khởi tạo thành công</value>
+  </data>
+    <data name="SuccessfullyTransaction" xml:space="preserve">
+    <value>Nạp thành công nhưng có lỗi trong quá trình chuyển xu</value>
+  </data>
+    <data name="TransactionFailed" xml:space="preserve">
+    <value>Nạp xu không thành công</value>
+  </data>
+    <data name="Transactionisprocessed" xml:space="preserve">
+    <value>Giao dịch đang được xử lý</value>
+  </data>
+    <data name="Transactionnotfound" xml:space="preserve">
+    <value>Không tìm thấy giao dịch</value>
+  </data>
+    <data name="Transactionnotfoundinsystem" xml:space="preserve">
+    <value>Không tìm thấy giao dịch trong hệ thống</value>
+  </data>
+    <data name="Transactionprocessing" xml:space="preserve">
+    <value>Giao dịch đang xử lý</value>
+  </data>
+    <data name="Transactionprocessingfailed" xml:space="preserve">
+    <value>Xử lý giao dịch không thành công</value>
+  </data>
+    <data name="TransactionSuccess" xml:space="preserve">
+    <value>Nạp xu thành công</value>
+  </data>
+    <data name="CreateFail" xml:space="preserve">
+    <value>Khởi tạo không thành công</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>Chức năng đang bảo trì</value>
+  </data>
+    <data name="GetSuccessfulCaptcha" xml:space="preserve">
+    <value>Lấy captcha thành công</value>
+  </data>
+    <data name="InvalidDataInput" xml:space="preserve">
+    <value>Dữ liệu không hợp lệ</value>
+  </data>
+    <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>Tài khoản không tồn tại</value>
+  </data>
+    <data name="GetTheListSuccessfully" xml:space="preserve">
+    <value>Lấy danh sách thành công</value>
+  </data>
+    <data name="GetTheConfigSuccessfully" xml:space="preserve">
+    <value>Lấy config thành công</value>
+  </data>
+    <data name="GetTheLinkSuccessfully" xml:space="preserve">
+    <value>Lấy link thành công</value>
+  </data>
+    <data name="GetTheLinkFailed" xml:space="preserve">
+    <value>Lấy link thất bại</value>
+  </data>
+    <data name="TheGameDoesNotExistContainHasHtml5" xml:space="preserve">
+    <value>Game không tồn tại hoặc game không chứa HasHtml5</value>
+  </data>
+    <data name="SKIPAndPort" xml:space="preserve">
+    <value>Không lấy được SK IPAndPort</value>
+  </data>
+    <data name="InvalidSerialNumber" xml:space="preserve">
+    <value>Số seri không hợp lệ</value>
+  </data>
+    <data name="InvalidScratchCardCode" xml:space="preserve">
+    <value>Mã thẻ cào không hợp lệ</value>
+  </data>
+    <data name="ErrorDuringProcessing" xml:space="preserve">
+    <value>Lỗi trong quá trình xử lý. </value>
+  </data>
+    <data name="InvalidCardInformation" xml:space="preserve">
+    <value>Thông tin thẻ không hợp lệ (Code: {0})</value>
+  </data>
+    <data name="InvalidCardNotInformation" xml:space="preserve">
+    <value>Thông tin thẻ không hợp lệ, vui lòng thử lại...</value>
+  </data>
+    <data name="GetTheListOfFailures" xml:space="preserve">
+    <value>Lấy danh sách thất bại</value>
+  </data>
+    <data name="YouWantToLoad" xml:space="preserve">
+    <value>Bạn có muốn nạp {0} với giá {1}K?</value>
+  </data>
+    <data name="SMSChargingSystem" xml:space="preserve">
+    <value>Hệ thống nạp xu bằng SMS đang bảo trì!</value>
+  </data>
+    <data name="InvalidSMSInformation" xml:space="preserve">
+    <value>Thông tin SMS không hợp lệ</value>
+  </data>
+    <data name="CardToChange" xml:space="preserve">
+    <value>Vui lòng chọn loại thẻ cần đổi</value>
+  </data>
+    <data name="SystemIsUnderMaintenance" xml:space="preserve">
+    <value>Hệ thống {0} đang bảo trì, vui lòng chọn loại thẻ khác</value>
+  </data>
+    <data name="CannotRedeemRewards" xml:space="preserve">
+    <value>Không thể đổi thưởng. Vui lòng liên hệ chăm sóc khách hàng</value>
+  </data>
+    <data name="TheSystemMaintenance" xml:space="preserve">
+    <value>Hệ thống đang được bảo trì, vui lòng thử lại sau</value>
+  </data>
+    <data name="TheRewardIsNotTrue" xml:space="preserve">
+    <value>Phần thưởng không đúng</value>
+  </data>
+    <data name="ItIsNotTimeToAward" xml:space="preserve">
+    <value>Chưa tới thời điểm trao thưởng. Vui lòng thử lại sau</value>
+  </data>
+    <data name="AwardsAreNotSuccessful" xml:space="preserve">
+    <value>Trao thưởng không thành công. Vui lòng thử lại sau</value>
+  </data>
+    <data name="AwardedSuccessfully" xml:space="preserve">
+    <value>Đã trao thưởng thành công. Vui lòng kiểm tra hòm thư</value>
+  </data>
+    <data name="CannotAuthenticateInformation" xml:space="preserve">
+    <value>Không thể xác thực thông tin</value>
+  </data>
+    <data name="FacebookIncorrect" xml:space="preserve">
+    <value>Thông tin facebook không chính xác, vui lòng đăng nhập lại</value>
+  </data>
+    <data name="FunctionDoesNotExist" xml:space="preserve">
+    <value>Chức năng không tồn tại</value>
+  </data>
+    <data name="IncorrectCode" xml:space="preserve">
+    <value>Mã xác nhận không khớp</value>
+  </data>
+    <data name="UpdateInformationFailed" xml:space="preserve">
+    <value>Update thông tin thất bại. Vui lòng thử lại sau.</value>
+  </data>
+    <data name="UpdateSuccessful" xml:space="preserve">
+    <value>Cập nhật thành công. Bạn được tặng {0} xu vào tài khoản!</value>
+  </data>
+    <data name="VerificationCodeDoesNotExist" xml:space="preserve">
+    <value>Mã xác nhận không tồn tại</value>
+  </data>
+    <data name="ErrorImage" xml:space="preserve">
+    <value>Phải có định dạng jpg, png, gif</value>
+  </data>
+    <data name="ErrorimageSize" xml:space="preserve">
+    <value>Dung lượng hình nhỏ hơn 500kb</value>
+  </data>
+    <data name="UploadAvatarSuccess" xml:space="preserve">
+    <value>Up avatar thành công</value>
+  </data>
+    <data name="NoEvents" xml:space="preserve">
+    <value>Chưa có sự kiện</value>
+  </data>
+    <data name="NoDataRequested" xml:space="preserve">
+    <value>Không có dữ liệu bạn yêu cầu</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>Tin nhắn</value>
+  </data>
+    <data name="NoNewInstructions" xml:space="preserve">
+    <value>Chưa có hướng dẫn mới</value>
+  </data>
+    <data name="EmailorPasswordIncorrect" xml:space="preserve">
+    <value>Email hoặc mật khẩu không chính xác</value>
+  </data>
+    <data name="AccountLocked" xml:space="preserve">
+    <value>Tài khoản đã bị khóa</value>
+  </data>
+    <data name="AccountPermanentlyLocked" xml:space="preserve">
+    <value>Tài khoản đã bị khóa vĩnh viễn</value>
+  </data>
+    <data name="AccountActivatedYet" xml:space="preserve">
+    <value>Tài khoản chưa được kích hoạt</value>
+  </data>
+    <data name="UserAnotherDevice" xml:space="preserve">
+    <value>User đang dùng máy khác</value>
+  </data>
+    <data name="SecurityCodeDoesNotExist" xml:space="preserve">
+    <value>Mã bảo vệ không tồn tại</value>
+  </data>
+    <data name="SecurityCodeIncorrect" xml:space="preserve">
+    <value>Mã bảo mật không chính xác</value>
+  </data>
+    <data name="SecurityCodeUsed" xml:space="preserve">
+    <value>Mã bảo vệ đã được sử dụng. Vui lòng soạn tin lấy lại mã bảo vệ mới!</value>
+  </data>
+    <data name="FacebookAccountNotRegistered" xml:space="preserve">
+    <value>Tài Khoản Facebook chưa được đăng ký</value>
+  </data>
+    <data name="LoggedSuccessfully" xml:space="preserve">
+    <value>Đăng nhập thành công</value>
+  </data>
+    <data name="LoginError" xml:space="preserve">
+    <value>Lỗi đăng nhập. Vui lòng thử lại!</value>
+  </data>
+    <data name="FacebookInformationIncorrect" xml:space="preserve">
+    <value>Thông tin facebook không chính xác, vui lòng đăng nhập lại</value>
+  </data>
+    <data name="FacebookInformationNotMatch" xml:space="preserve">
+    <value>Thông tin facebook không khớp, vui lòng thử lại..</value>
+  </data>
+    <data name="DisplayNameAlreadyExists" xml:space="preserve">
+    <value> Tên hiện thị đã tồn tại</value>
+  </data>
+    <data name="Display3to15characters" xml:space="preserve">
+    <value>Tên hiển thị ít nhất từ 3 đến 15 ký tự.</value>
+  </data>
+    <data name="AccountAlreadyUse" xml:space="preserve">
+    <value>Tài khoản đã được sử dụng. Bạn vui lòng chọn tên khác</value>
+  </data>
+    <data name="RegistrationFailed" xml:space="preserve">
+    <value>Đăng ký thất bại. Vui lòng thử lại sau.</value>
+  </data>
+    <data name="UsernameAvailable" xml:space="preserve">
+    <value>Tên đăng nhập đã tồn tại</value>
+  </data>
+    <data name="ValidUsername" xml:space="preserve">
+    <value>Tên đăng nhập hợp lệ</value>
+  </data>
+    <data name="YouNotCoinHistory" xml:space="preserve">
+    <value>Bạn chưa có lịch sử xu</value>
+  </data>
+    <data name="GetAvatarSuccessfully" xml:space="preserve">
+    <value>Lấy Link avatar thành công</value>
+  </data>
+    <data name="YouHaveNoMail" xml:space="preserve">
+    <value>Bạn chưa có thư</value>
+  </data>
+    <data name="InvalidAccount1" xml:space="preserve">
+    <value>Tài khoản không hợp lệ (code -1)</value>
+  </data>
+    <data name="InformationIsIncorrect" xml:space="preserve">
+    <value>Thông tin không chính xác, vui lòng đăng nhập lại</value>
+  </data>
+    <data name="AccountLinked" xml:space="preserve">
+    <value>Tài khoản bạn muốn link đã được sử dụng cho ID: {0} bạn có muốn đăng xuất và chuyển sang tài khoản đó không</value>
+  </data>
+    <data name="TieuDeTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>Tiêu đề vượt quá  {0} kí tự.</value>
+  </data>
+    <data name="NoiDungTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>Nội dung vượt quá {0} kí tự.</value>
+  </data>
+    <data name="KhongTheGuiTinNhanChoMinh" xml:space="preserve">
+    <value>Bạn không thể gửi tin nhắn cho chính bạn!</value>
+  </data>
+    <data name="TKNhanTinNhanKTonTai" xml:space="preserve">
+    <value>Tài khoản nhận tin nhắn không tồn tại!</value>
+  </data>
+    <data name="TaiKhoanNhanTinNhanBiKhoa" xml:space="preserve">
+    <value>Tài khoản bạn muốn gửi tin nhắn hiện đã bị khoá!</value>
+  </data>
+    <data name="ErrorMessCustomservice" xml:space="preserve">
+    <value>Vui lòng liên hệ CSKH để được hỗ trợ.</value>
+  </data>
+    <data name="TinNhanDaDuocGui" xml:space="preserve">
+    <value>Tin nhắn đã được gửi tới {0} - {1} !!!</value>
+  </data>
+    <data name="SuDungHetLuotGuiTinNhan" xml:space="preserve">
+    <value>Bạn đã sử dụng hết số lần gửi tin nhắn.</value>
+  </data>
+    <data name="NhapTKNhanTinNhan" xml:space="preserve">
+    <value>Vui Lòng nhập tài khoản nhận</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>Hôm nay bạn đã trúng thưởng rồi. 1 nick chỉ được trúng 1 gift code trong ngày</value>
+  </data>
+    <data name="HistoriCoinBanCaSuccess" xml:space="preserve">
+    <value>Lấy thông tin lịch sử tiền thành công</value>
+  </data>
+    <data name="AcceptImgType" xml:space="preserve">
+    <value>Chỉ chấp nhận ảnh jpg,png,gif.</value>
+  </data>
+    <data name="ImgSize" xml:space="preserve">
+    <value>Dung lượng file &lt;= 500Kb.</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>Event chọn không hợp lệ key {0}</value>
+  </data>
+    <data name="GetChipFromTheEvent" xml:space="preserve">
+    <value>Bạn được nhận {0} Xu từ sự kiện.</value>
+  </data>
+    <data name="HavebeenAwardedChip" xml:space="preserve">
+    <value>Bạn đã được tặng {0} Chips. Thắng sự kiện Nhập mã được tiền. 1 nick chỉ được trúng 1 gift code trong ngày.</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>Chưa đủ thời gian nhận thưởng.</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>Đủ thời gian nhận thưởng.</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>Tài khoản mới nhận thưởng lần đầu.</value>
+  </data>
+    <data name="ErrorMessInvalidInformation" xml:space="preserve">
+    <value>Thông tin không hợp lệ</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>Chưa đăng nhập hoặc bị đăng nhập tại máy khác</value>
+  </data>
+    <data name="TurnsInvalid" xml:space="preserve">
+    <value>Lượt chơi không hợp lệ</value>
+  </data>
+    <data name="ErrorMessValidation2" xml:space="preserve">
+    <value>Lượt quay đã hết hạn</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>Bạn đã nhận thưởng</value>
+  </data>
+    <data name="OutOfChips" xml:space="preserve">
+    <value>Hết chips</value>
+  </data>
+    <data name="ConfigSuccess" xml:space="preserve">
+    <value>Lấy thông tin cấu hình thành công</value>
+  </data>
+    <data name="CoinACcountIsNotEnough" xml:space="preserve">
+    <value>Số xu trong tài khoản không đủ để thực hiện giao dịch</value>
+  </data>
+    <data name="AmountTransferChipsDivided" xml:space="preserve">
+    <value>Số tiền chuyển phải từ {0} Chips và chia hết cho 10.000!</value>
+  </data>
+    <data name="AmountTransferSmaller" xml:space="preserve">
+    <value>Số tiền chuyển phải nhỏ hơn</value>
+  </data>
+    <data name="TransferChipsSuccess" xml:space="preserve">
+    <value>Chuyển chips thành công. {0} nhận được {1}.</value>
+  </data>
+    <data name="VipPromotionForYou" xml:space="preserve">
+    <value>Khuyến mãi VIP dành riêng cho bạn</value>
+  </data>
+    <data name="IPLimit" xml:space="preserve">
+    <value>IP đã vượt quá số lần nhận thưởng</value>
+  </data>
+    <data name="DeviceLimit" xml:space="preserve">
+    <value>Device đã vượt quá số lần nhận thưởng</value>
+  </data>
+    <data name="ConfigNotExists" xml:space="preserve">
+    <value>Configuration does not exist.</value>
+  </data>
+</LocalLanguages>

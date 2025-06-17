@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Reason_2" xml:space="preserve">
+    <value>Add IAP</value>
+  </data>
+    <data name="Reason_40" xml:space="preserve">
+    <value>Buy Item</value>
+  </data>
+    <data name="Reason_48" xml:space="preserve">
+    <value>Buy background</value>
+  </data>
+    <data name="Reason_49" xml:space="preserve">
+    <value>Buy avatar</value>
+  </data>
+    <data name="Reason_68" xml:space="preserve">
+    <value>Get Win when association Level up</value>
+  </data>
+    <data name="Reason_70" xml:space="preserve">
+    <value>Get Win when user membership level up when adding Win</value>
+  </data>
+    <data name="Reason_89" xml:space="preserve">
+    <value>Get Win when level up </value>
+  </data>
+    <data name="Reason_102" xml:space="preserve">
+    <value>Get Win when login</value>
+  </data>
+    <data name="Reason_105" xml:space="preserve">
+    <value>Buy Emotion</value>
+  </data>
+    <data name="Reason_108" xml:space="preserve">
+    <value>Transfer Win to friends</value>
+  </data>
+    <data name="Reason_116" xml:space="preserve">
+    <value>Transfer money between VIP members</value>
+  </data>
+    <data name="Reason_117" xml:space="preserve">
+    <value>Transfer of Associaion Funds to Members</value>
+  </data>
+    <data name="Reason_118" xml:space="preserve">
+    <value>Add Win</value>
+  </data>
+    <data name="Reason_119" xml:space="preserve">
+    <value>Admin gives Win</value>
+  </data>
+    <data name="Reason_133" xml:space="preserve">
+    <value>Free Win for online shooting fish</value>
+  </data>
+    <data name="Reason_142" xml:space="preserve">
+    <value>Deposit bonus</value>
+  </data>
+    <data name="Reason_143" xml:space="preserve">
+    <value>Get achievements</value>
+  </data>
+    <data name="Reason_161" xml:space="preserve">
+    <value>Deposit bonus for VIP User</value>
+  </data>
+    <data name="Reason_162" xml:space="preserve">
+    <value>Give gold to new users in the event of more friends more fun</value>
+  </data>
+    <data name="Reason_166" xml:space="preserve">
+    <value>Give Win when register with OpenID</value>
+  </data>
+    <data name="Reason_168" xml:space="preserve">
+    <value>Give Win for new user event</value>
+  </data>
+    <data name="Reason_169" xml:space="preserve">
+    <value>Give Win to users who race top vip</value>
+  </data>
+    <data name="Reason_171" xml:space="preserve">
+    <value>Daily Win bonus</value>
+  </data>
+    <data name="Reason_173" xml:space="preserve">
+    <value>Admin deducts Win</value>
+  </data>
+    <data name="Reason_174" xml:space="preserve">
+    <value>Add money via sms</value>
+  </data>
+    <data name="Reason_175" xml:space="preserve">
+    <value>Login to fish shooting app</value>
+  </data>
+    <data name="Reason_176" xml:space="preserve">
+    <value>Win Jackpot</value>
+  </data>
+    <data name="Reason_178" xml:space="preserve">
+    <value>Give Win daily login for mobile</value>
+  </data>
+    <data name="Reason_179" xml:space="preserve">
+    <value>Attendance bonus</value>
+  </data>
+    <data name="Reason_180" xml:space="preserve">
+    <value>Give Win for inviting friends on facebook</value>
+  </data>
+    <data name="Reason_181" xml:space="preserve">
+    <value>Give Win when friends register on facebook</value>
+  </data>
+    <data name="Reason_182" xml:space="preserve">
+    <value>First deposit bonus</value>
+  </data>
+    <data name="Reason_183" xml:space="preserve">
+    <value>Give Win when users log in regularly</value>
+  </data>
+    <data name="Reason_184" xml:space="preserve">
+    <value>Give Win for user like fanpage on facebook app</value>
+  </data>
+    <data name="Reason_187" xml:space="preserve">
+    <value>Give Win when the user runs out of gift - new user</value>
+  </data>
+    <data name="Reason_188" xml:space="preserve">
+    <value>Give Win user adding card registration</value>
+  </data>
+    <data name="Reason_189" xml:space="preserve">
+    <value>Give Win for login on prime time on mobile</value>
+  </data>
+    <data name="Reason_190" xml:space="preserve">
+    <value>Give Win for login on prime day on mobile</value>
+  </data>
+    <data name="Reason_191" xml:space="preserve">
+    <value>Give Win for registration from Yahoo ads</value>
+  </data>
+    <data name="Reason_192" xml:space="preserve">
+    <value>Give Win when updating information</value>
+  </data>
+    <data name="Reason_197" xml:space="preserve">
+    <value>Bonus for adding Win by sms</value>
+  </data>
+    <data name="Reason_198" xml:space="preserve">
+    <value>Bonus for adding IAP </value>
+  </data>
+    <data name="Reason_213" xml:space="preserve">
+    <value>Play Fish Shooting game</value>
+  </data>
+    <data name="Reason_300" xml:space="preserve">
+    <value>Give Win For New User</value>
+  </data>
+    <data name="Reason_301" xml:space="preserve">
+    <value>Give Win for Tai Xiu Bonus Event</value>
+  </data>
+    <data name="Reason_302" xml:space="preserve">
+    <value>Exchange Win</value>
+  </data>
+    <data name="Reason_303" xml:space="preserve">
+    <value>Exchange card</value>
+  </data>
+    <data name="Reason_306" xml:space="preserve">
+    <value>Exchange spin bonus</value>
+  </data>
+    <data name="Reason_307" xml:space="preserve">
+    <value>Gold supply system for jackpot</value>
+  </data>
+    <data name="Reason_311" xml:space="preserve">
+    <value>Add money  via Google Wallet</value>
+  </data>
+    <data name="Reason_312" xml:space="preserve">
+    <value>Add money via Apple Store</value>
+  </data>
+    <data name="Reason_313" xml:space="preserve">
+    <value>Create association</value>
+  </data>
+    <data name="Reason_314" xml:space="preserve">
+    <value>Withdraw</value>
+  </data>
+    <data name="Reason_315" xml:space="preserve">
+    <value>Add</value>
+  </data>
+    <data name="Reason_316" xml:space="preserve">
+    <value>Owner transfers money to the user</value>
+  </data>
+    <data name="Reason_318" xml:space="preserve">
+    <value>User ends fish shooting game</value>
+  </data>
+    <data name="Reason_319" xml:space="preserve">
+    <value>User plays fish shooting game</value>
+  </data>
+    <data name="Reason_320" xml:space="preserve">
+    <value>Get Win from the owner</value>
+  </data>
+    <data name="Reason_321" xml:space="preserve">
+    <value>Give 2% of revenue of association for the owner</value>
+  </data>
+    <data name="Reason_322" xml:space="preserve">
+    <value>Give 3% of revenue of association for user who added the most Win</value>
+  </data>
+    <data name="Reason_325" xml:space="preserve">
+    <value>Give Win to user after entering room failed</value>
+  </data>
+    <data name="Reason_326" xml:space="preserve">
+    <value>Give Win to user after admin canceled exchange request</value>
+  </data>
+    <data name="Reason_327" xml:space="preserve">
+    <value>Reward for hunting fish boss</value>
+  </data>
+    <data name="Reason_328" xml:space="preserve">
+    <value>Give Win to user in prime time Event</value>
+  </data>
+    <data name="Reason_329" xml:space="preserve">
+    <value>Give Win to user in refund Event</value>
+  </data>
+    <data name="Reason_330" xml:space="preserve">
+    <value>Give Win to user who registered shooting fish game</value>
+  </data>
+    <data name="Reason_331" xml:space="preserve">
+    <value>Give Win to user who logged in shooting fish game</value>
+  </data>
+    <data name="Reason_332" xml:space="preserve">
+    <value>Give Win when back to waiting room in shooting fish game</value>
+  </data>
+    <data name="Reason_333" xml:space="preserve">
+    <value>Receive rewards for daily tasks</value>
+  </data>
+    <data name="Reason_334" xml:space="preserve">
+    <value>Facebook share bonus</value>
+  </data>
+    <data name="Reason_335" xml:space="preserve">
+    <value>System rewards Jackpot Win</value>
+  </data>
+    <data name="Reason_336" xml:space="preserve">
+    <value>Refund due to card exchange failed</value>
+  </data>
+    <data name="Reason_337" xml:space="preserve">
+    <value>Give money for completing shooting fish mission</value>
+  </data>
+    <data name="Reason_338" xml:space="preserve">
+    <value>Give money for shooting fish level up</value>
+  </data>
+    <data name="Reason_342" xml:space="preserve">
+    <value>User transferd money to another user</value>
+  </data>
+    <data name="Reason_343" xml:space="preserve">
+    <value>User received money from another user</value>
+  </data>
+    <data name="Reason_344" xml:space="preserve">
+    <value>Admin gives Win Shoot Fish</value>
+  </data>
+    <data name="Reason_345" xml:space="preserve">
+    <value>Admin gives Win Lather</value>
+  </data>
+    <data name="Reason_347" xml:space="preserve">
+    <value>Association summary bonus</value>
+  </data>
+    <data name="Reason_350" xml:space="preserve">
+    <value>Give Win for spin in game </value>
+  </data>
+    <data name="Reason_351" xml:space="preserve">
+    <value>Win Xoc Rua Game prize</value>
+  </data>
+    <data name="Reason_352" xml:space="preserve">
+    <value>Win event of entering code getting money</value>
+  </data>
+    <data name="Reason_353" xml:space="preserve">
+    <value>Win arena game</value>
+  </data>
+    <data name="Reason_355" xml:space="preserve">
+    <value>Play shooting fish 3D</value>
+  </data>
+    <data name="Reason_356" xml:space="preserve">
+    <value>End shooting fish 3D</value>
+  </data>
+    <data name="Reason_357" xml:space="preserve">
+    <value>Play shooting fish 3D for mobile</value>
+  </data>
+    <data name="Reason_358" xml:space="preserve">
+    <value>End shooting fish 3D for mobile</value>
+  </data>
+    <data name="Reason_359" xml:space="preserve">
+    <value>Get reward for daily tasks</value>
+  </data>
+    <data name="Reason_404" xml:space="preserve">
+    <value>Play Mini Xeng game</value>
+  </data>
+    <data name="Reason_406" xml:space="preserve">
+    <value>Play Mini Penalty game</value>
+  </data>
+    <data name="Reason_407" xml:space="preserve">
+    <value>Prime time bonus</value>
+  </data>
+    <data name="Reason_408" xml:space="preserve">
+    <value>Play Mini Fortunes88 game</value>
+  </data>
+    <data name="Reason_409" xml:space="preserve">
+    <value>Play Jackpot game</value>
+  </data>
+    <data name="Reason_410" xml:space="preserve">
+    <value>Play XengLuxury game</value>
+  </data>
+    <data name="Reason_412" xml:space="preserve">
+    <value>Play Golden Dragon Slot game</value>
+  </data>
+    <data name="Reason_413" xml:space="preserve">
+    <value>Play Three Kingdoms Slot Game</value>
+  </data>
+    <data name="Reason_418" xml:space="preserve">
+    <value>Play Than Thu game</value>
+  </data>
+    <data name="Reason_419" xml:space="preserve">
+    <value>Play Than Tai game </value>
+  </data>
+    <data name="Reason_420" xml:space="preserve">
+    <value>Play Pachinko Robot game</value>
+  </data>
+    <data name="Reason_422" xml:space="preserve">
+    <value>Play Samurai game</value>
+  </data>
+    <data name="Reason_423" xml:space="preserve">
+    <value>Play Super 777 game</value>
+  </data>
+    <data name="Reason_424" xml:space="preserve">
+    <value>Play Golden Turtle Mini game</value>
+  </data>
+    <data name="Reason_425" xml:space="preserve">
+    <value>Play Monopoly Million Dollar game</value>
+  </data>
+    <data name="Reason_426" xml:space="preserve">
+    <value>Play Diamonds Links game</value>
+  </data>
+    <data name="Reason_428" xml:space="preserve">
+    <value>Play Candy game</value>
+  </data>
+    <data name="Reason_430" xml:space="preserve">
+    <value>Play Fantastic Beasts game</value>
+  </data>
+    <data name="Reason_501" xml:space="preserve">
+    <value>Win Lucky Spin</value>
+  </data>
+    <data name="Reason_502" xml:space="preserve">
+    <value>Buy Lucky Spin Turn</value>
+  </data>
+    <data name="Reason_503" xml:space="preserve">
+    <value>Play Lather game</value>
+  </data>
+    <data name="Reason_999" xml:space="preserve">
+    <value>Log generated because IdReason does not exist</value>
+  </data>
+
+    <data name="Reason_36" xml:space="preserve">
+    <value>Play Chinese Poker Game</value>
+  </data>
+    <data name="Reason_43" xml:space="preserve">
+    <value>Play Tala Game</value>
+  </data>
+    <data name="Reason_44" xml:space="preserve">
+    <value>Play HongKong Poker Game</value>
+  </data>
+    <data name="Reason_202" xml:space="preserve">
+    <value>Play Three Cards Poker Game</value>
+  </data>
+    <data name="Reason_203" xml:space="preserve">
+    <value>Play Northern Poker Game</value>
+  </data>
+    <data name="Reason_211" xml:space="preserve">
+    <value>Play Odd Even Game</value>
+  </data>
+
+    <data name="Reason_504" xml:space="preserve">
+    <value>Paypal</value>
+  </data>
+    <data name="Reason_417" xml:space="preserve">
+    <value>Play BigSmall Mini</value>
+  </data>
+    <data name="Reason_50" xml:space="preserve">
+    <value>Play BigSmall</value>
+  </data>
+    <data name="Reason_210" xml:space="preserve">
+    <value>Play MysteryNum</value>
+  </data>
+</LocalLanguages>

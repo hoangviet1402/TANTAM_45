@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Please_deposit_more_to_withdraw" xml:space="preserve">
+    <value>សូមបញ្ចូលបន្ថែមដើម្បីបានប្ដូរ</value>
+  </data>
+    <data name="DepositCardAmountNotAllow" xml:space="preserve">
+    <value>ចំណាំ៖ ទទួលតែកាតណាដែលមានតម្លៃ {0} រាល់តម្លៃផ្សេងនឹងមិនបានសងមកវិញនិងមិនបានបូក Win</value>
+  </data>
+    <data name="DepositCardIsUsed" xml:space="preserve">
+    <value>កាតបានប្រើសប្រាស់រួចហើយ</value>
+  </data>
+    <data name="DepositCreateTransactionFail" xml:space="preserve">
+    <value>កំហុសក្នុងពេលប្រត្តិបតិការ។សូមព្យាយាមម្ដងទៀត</value>
+  </data>
+    <data name="DepositDelayTime" xml:space="preserve">
+    <value>រាល់ការបញ្ចូលកាតត្រូវឃ្លាតគ្នា {0} នាទី</value>
+  </data>
+    <data name="DepositErrorCauseBlockMultipleFailed" xml:space="preserve">
+    <value>កំហុសក្នុងការបញ្ចូលកាត។សូមព្យាយាមម្ដងទៀត</value>
+  </data>
+    <data name="DepositMultipleFailed" xml:space="preserve">
+    <value>អ្នកបានបញចូលខុស {0} ដងក្នុង  {1} នាទី។ សូមរង់ចាំក្នុងមួយរយៈដើម្បីដល់វេនបន្ទាប់</value>
+  </data>
+    <data name="DepositSelectCardAmountWrong" xml:space="preserve">
+    <value>អ្នកបានជ្រើសរើសតម្លៃកាតខុស។ សូមទាក់ទងនឹង  សេវាកម្ម​អតិថិជន ដើម្បីទទួលជំនួយ</value>
+  </data>
+    <data name="DepositSmsTelcoNoSupport" xml:space="preserve">
+    <value>ប្រព័ន្ធមិនជំនួយ</value>
+  </data>
+    <data name="DepositSmsTelcoValueNoSupport" xml:space="preserve">
+    <value>តម្លៃមិនពិត</value>
+  </data>
+    <data name="DepositSupportText" xml:space="preserve">
+    <value>&lt;br /&gt;រាល់ចំងល់សូមទាក់ទង &lt;a href=\"mailto:{0}\"&gt;{1}&lt;/a&gt; ដើម្បីទទួលបានចំនួយ.&lt;br/&gt;ឬក៏ទាក់ទងជាមួយ សេវាកម្ម​អតិថិជន</value>
+  </data>
+    <data name="DepositTransactionChargeWithCallback" xml:space="preserve">
+    <value>កាតរបស់អ្នកមិនត្រូវបានទទួលស្គាល់ Win នឹងបានបូកចូលគណនីរបស់អ្នក សូមរង់ចាំមួយភ្លេត</value>
+        <comment>Thẻ sẽ được nạp trong 2 phút. Sau 2 phút Chip sẽ được tự động cộng vào tài khoản của bạn</comment>
+  </data>
+    <data name="DepositTransactionError" xml:space="preserve">
+    <value>កំហុសក្នុងការបញ្ចូលកាត។សូមព្យាយាមម្ដងទៀត(Code={0})</value>
+  </data>
+    <data name="DepositTransactionTimeOut" xml:space="preserve">
+    <value>ប្រត្តិបតិការបានផុតសុពលភាព។ សូមទាក់ទង  Admin ដើម្បីទទួលបានជំនួយ</value>
+  </data>
+    <data name="DoiThuongCardOutOfLimit" xml:space="preserve">
+    <value>អ្នកបានអស់កម្រិតដូរកាតក្នុងថ្ងៃនេះ ។សូមត្រឡប់មកវិញនៅថ្ងៃស្អែក</value>
+  </data>
+    <data name="DoiThuongCardOutOfRangeTime" xml:space="preserve">
+    <value>សូមអ្ញញ្ជើញអ្នកជ្រើសរើសកាតបន្ទាប់ក្រោយ{0} នាទី។សូម អរគុណ</value>
+  </data>
+    <data name="DoiThuongCardStockRunOut" xml:space="preserve">
+    <value>អស់ប័ណ្ណភាគហ៊ុន</value>
+  </data>
+    <data name="DoiThuongCardSuccess" xml:space="preserve">
+    <value>សំណូមពរដូរកាត {0} ({1} USD) របស់អ្នកបានសម្រេច។​កាតរបស់អ្នកនឹងបានផ្ញើរចូលប្រអប់សារឯកជនបន្តិចទៀតនេះ!</value>
+  </data>
+    <data name="DoiThuongCardSuccessReview" xml:space="preserve">
+    <value>សំណូមពរដូរកាត {0} ({1} USD) របស់អ្នកបានសម្រេច។​សូមអ្នករង់ចាំAdmin ពិនិត្យ។​កាតរបស់អ្នកនឹងបានផ្ញើរចូលប្រអប់សារឯកជនបន្តិចទៀតនេះ!</value>
+  </data>
+    <data name="DoiThuongCreateTranlogError" xml:space="preserve">
+    <value>កំហុសពេលបង្កើតប្រត្តិបតិការ</value>
+  </data>
+    <data name="DoiThuongMaintainance" xml:space="preserve">
+    <value>មុខងារកំពុងបានរក្សា សូមព្យាយាមម្ដងទៀតនៅពេលក្រោយ</value>
+  </data>
+    <data name="DoiThuongMaintainanceUpdate" xml:space="preserve">
+    <value>មុខងារនេះកំពុងបានរក្សាដំឡើង។ សូមព្យាយាមម្ដងទៀតនៅពេលក្រោយ</value>
+  </data>
+    <data name="DoiThuongNotEnoughGoldOffset" xml:space="preserve">
+    <value>អ្នកមិនមានគ្រប់ចំនួនបន្សល់ {0:#,##0} Win ក្រោយពេលដូរ</value>
+  </data>
+    <data name="DoiThuongRequireVipLevel" xml:space="preserve">
+    <value>អ្នកត្រូវមានកម្រិត Vip Silver ទើបអាចដូរកាត</value>
+  </data>
+    <data name="DoiThuongUpdateCoinError" xml:space="preserve">
+    <value>កំហុសពេលដំឡើងចំនួនបន្សល់របស់គណនី</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>គ្មានទិន្នន័យ</value>
+  </data>
+    <data name="DepositGetProductMethodInvalid" xml:space="preserve">
+    <value>មិនអាចកំណត់វិធីសាស្ត្រទូទាត់</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>បានផ្ទុកដោយជោគជ័យ {0: N0} ឈ្នះ</value>
+  </data>
+    <data name="DepositSuccessAddVipFailed" xml:space="preserve">
+    <value>បានផ្ទុកដោយជោគជ័យ {0: N0} ឈ្នះ។ ប៉ុន្តែមានកំហុសក្នុងការដំណើរការចំណុច vip</value>
+  </data>
+    <data name="DepositSuccessAddCoinVipFailed" xml:space="preserve">
+    <value>ផ្ទុកជ័យជម្នះដោយជោគជ័យ។ ប៉ុន្តែមានកំហុសឆ្គងមួយនៅក្នុងដំណើរការផ្ទេរវីនដូនិងដំណើរការវីប</value>
+  </data>
+    <data name="NumberDepositOnDay" xml:space="preserve">
+    <value>សូមត្រឡប់មកវិញនៅថ្ងៃស្អែក</value>
+  </data>
+    <data name="SuccessButAddGoldFail" xml:space="preserve">
+    <value>ផ្ទុកដោយជោគជ័យប៉ុន្តែមានកំហុសក្នុងដំណើរផ្ទេរ Win</value>
+  </data>
+    <data name="Pending" xml:space="preserve">
+    <value>ប្រតិបត្តិការកំពុងដំណើរការ។</value>
+  </data>
+    <data name="TransactionNotExists" xml:space="preserve">
+    <value>រកមិនឃើញប្រតិបត្តិការនៅក្នុងប្រព័ន្ធ។</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>ចំនួនឈ្នះនៅក្នុងគណនីគឺមិនគ្រប់គ្រាន់ទេដើម្បីធ្វើប្រតិបត្តិការ</value>
+  </data>
+
+
+    <data name="ChonNhaMang" xml:space="preserve">
+    <value>ជ្រើសរើសបណ្តាញស៊ីមកាតរបស់អ្នក</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="CuPhap" xml:space="preserve">
+    <value>វាក្យសម្ពន្ធ</value>
+  </data>
+    <data name="DepositAlert_Card" xml:space="preserve">
+    <value>ផ្ទុកសេចក្តីជូនដំណឹង</value>
+  </data>
+    <data name="DepositAlert_CardError" xml:space="preserve">
+    <value>មានកំហុសក្នុងការផ្ទុកកាតសូមព្យាយាមម្តងទៀតពេលក្រោយ</value>
+  </data>
+    <data name="DepositBaoKim" xml:space="preserve">
+    <value>BaoKim</value>
+  </data>
+    <data name="DepositCode_Input2" xml:space="preserve">
+    <value>បញ្ចូលកូដ</value>
+  </data>
+    <data name="DepositConfirm" xml:space="preserve">
+    <value>បញ្ជាក់</value>
+  </data>
+    <data name="DepositInputCaptcha" xml:space="preserve">
+    <value>បញ្ចូលអក្សរ</value>
+  </data>
+    <data name="DepositMoneyCost2" xml:space="preserve">
+    <value>តម្លៃមុខ</value>
+  </data>
+    <data name="DepositSms" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+    <data name="DepositSmsGui" xml:space="preserve">
+    <value>បានផ្ញើ</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>ពិនិត្យចេញ</value>
+  </data>
+    <data name="DoiThuongMaXacNhan" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="DoiThuongPhiChuyen" xml:space="preserve">
+    <value>ថ្លៃផ្ទេរ</value>
+  </data>
+    <data name="DoiThuongSoTienChuyen" xml:space="preserve">
+    <value>ចំនួនការផ្ទេរ CHIPS</value>
+  </data>
+    <data name="DoiThuongSoXuHienCo" xml:space="preserve">
+    <value>ចំនួន CHIPS ដែលមាន</value>
+  </data>
+    <data name="DoiThuongTaiKhoan" xml:space="preserve">
+    <value>គណនី</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>គណនីត្រូវបានទទួល</value>
+  </data>
+    <data name="DoiThuongTenTaiKhoan" xml:space="preserve">
+    <value>ឈ្មោះគណនី</value>
+  </data>
+    <data name="DoiThuongThucHien" xml:space="preserve">
+    <value>ធ្វើ</value>
+  </data>
+    <data name="DoiThuongXu" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="DoiThuongXuBiTru" xml:space="preserve">
+    <value>CHIPS ដក</value>
+  </data>
+    <data name="GhiChuNapSMS" xml:space="preserve">
+    <value>&lt;ul&gt; &lt;li&gt; ដំណើរការរយៈពេល 30 វិនាទី - 60 វិនាទី &lt;/ li&gt; &lt;li&gt; ចំណាំគម្លាតនៃវាក្យសម្ព័ន្ធ &lt;/ li&gt; &lt;li&gt; ពិនិត្យមើលលេខសម្គាល់ឱ្យបានគ្រប់គ្រាន់ប្រសិនបើលេខសម្គាល់មិនត្រឹមត្រូវត្រូវបានបញ្ចូលវានឹងមិនត្រូវបានបន្ថែមទេ។ CHIPS &lt;/ li&gt; &lt;/ ul&gt;</value>
+  </data>
+    <data name="GhiChuNapSMS1" xml:space="preserve">
+    <value>ផ្ទុក SMS CHIPS ដោយបណ្តាញ</value>
+  </data>
+    <data name="GhiChuNapSMS2" xml:space="preserve">
+    <value>អ្នកគួរកត់សម្គាល់វាក្យសម្ព័ន្ធត្រឹមត្រូវដូចខាងក្រោម:</value>
+  </data>
+    <data name="GhiChuNapSMSMobile" xml:space="preserve">
+    <value>&lt;ul&gt; &lt;li&gt; ដំណើរការរយៈពេល 30 វិនាទី - 60 វិនាទី &lt;/ li&gt; &lt;li&gt; ចំណាំគម្លាតនៃវាក្យសម្ព័ន្ធ &lt;/ li&gt; &lt;li&gt; ពិនិត្យមើលលេខសម្គាល់ឱ្យបានគ្រប់គ្រាន់ប្រសិនបើលេខសម្គាល់មិនត្រឹមត្រូវត្រូវបានបញ្ចូលវានឹងមិនត្រូវបានបន្ថែមទេ។ CHIPS &lt;/ li&gt; &lt;/ ul&gt;</value>
+  </data>
+    <data name="MenhGia" xml:space="preserve">
+    <value>តម្លៃមុខ</value>
+  </data>
+    <data name="ValidationCaptcha2" xml:space="preserve">
+    <value>កូដផ្ទៀងផ្ទាត់គឺមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="ValidationMenhGiaThe" xml:space="preserve">
+    <value>សូមជ្រើសរើសតម្លៃកាត</value>
+  </data>
+    <data name="ValidationPayment" xml:space="preserve">
+    <value>សូមបញ្ចូលកូដសៀរៀលនិងកាត</value>
+  </data>
+    <data name="ValidationPayment2" xml:space="preserve">
+    <value>សូមចូលដើម្បីផ្ទុកកាត</value>
+  </data>
+    <data name="ValidationPayment3" xml:space="preserve">
+    <value>មិនមានគណនី</value>
+  </data>
+    <data name="ValidationPayment4" xml:space="preserve">
+    <value>ព័ត៌មានកាតមិនត្រឹមត្រូវ (កូដ: {0})</value>
+  </data>
+    <data name="ValidationPayment5" xml:space="preserve">
+    <value>កំហុសកំឡុងដំណើរការ {0}</value>
+  </data>
+    <data name="ValidationPayment6" xml:space="preserve">
+    <value>ព័ត៌មានប័ណ្ណមិនត្រឹមត្រូវសូមព្យាយាមម្តងទៀត</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+    <data name="LogCardTransNapGoldSuccess" xml:space="preserve">
+    <value>ទទួលបានទឹកប្រាក់ {0} កាតប្រាក់ដោយជោគជ័យ។ អ្នកទទួលបានរង្វាន់ &lt;strong&gt; {1} &lt;/strong&gt; បញ្ចូលទៅក្នុងគណនី</value>
+  </data>
+
+    <data name="AccountReceiveNotExists" xml:space="preserve">
+    <value>គណនីទទួលមិនមានទេ</value>
+  </data>
+    <data name="AccountTransferMoneyLockedOut" xml:space="preserve">
+    <value>បច្ចុប្បន្នគណនីដែលអ្នកចង់ផ្ទេរប្រាក់ត្រូវបានចាក់សោរ!</value>
+  </data>
+    <data name="AccountTransferNotYetVip" xml:space="preserve">
+    <value>គណនីដែលអ្នកចង់ផ្ទេរមិនទាន់បានមកដល់ VIP នៅឡើយទេ</value>
+  </data>
+    <data name="AccountTransferVipLevelNotSatisfactory" xml:space="preserve">
+    <value>គណនីដែលអ្នកចង់ផ្ទេរទៅកម្រិត VIP គឺមិនពេញចិត្ត</value>
+  </data>
+    <data name="ValidAccount" xml:space="preserve">
+    <value>គណនីត្រឹមត្រូវ</value>
+  </data>
+    <data name="NumberOfTransferDivisible" xml:space="preserve">
+    <value>ចំនួននៃការផ្លាស់ទីត្រូវតែត្រូវបានបែងចែកដោយ{0}!</value>
+  </data>
+    <data name="NumberOfMovesSmaller" xml:space="preserve">
+    <value>ចំនួននៃការផ្លាស់ទីត្រូវតែតូចជាង{0}!</value>
+  </data>
+    <data name="LoginSession" xml:space="preserve">
+    <value>អ្នកបានដល់ចុងបញ្ចប់នៃវេនចូល</value>
+  </data>
+    <data name="CannotTransferCoinYourSeft" xml:space="preserve">
+    <value>អ្នកមិនអាចផ្ទេរកាក់ទៅខ្លួនអ្នកបានទេ</value>
+  </data>
+    <data name="AccountTransferLockedPleaseCSKH" xml:space="preserve">
+    <value>គណនីដែលអ្នកចង់ផ្ទេរកាក់បច្ចុប្បន្នត្រូវបានចាក់សោ។ សូមទាក់ទងសេវាអតិថិជន</value>
+  </data>
+    <data name="AccountNotRoleCoinTransfer" xml:space="preserve">
+    <value>អ្នកគ្មានសិទ្ធិផ្ទេរកាក់ទេ!</value>
+  </data>
+    <data name="AccountIsNotEnoughMakeTransaction" xml:space="preserve">
+    <value>ចំនួនកាក់នៅក្នុងគណនីមិនគ្រប់គ្រាន់ដើម្បីធ្វើប្រតិបត្តិការទេ</value>
+  </data>
+    <data name="TransferCoinSuccessfully" xml:space="preserve">
+    <value>ផ្ទេរកាក់ដោយជោគជ័យ</value>
+  </data>
+    <data name="AccountLockTransferGold" xml:space="preserve">
+     <value>គណនីរបស់អ្នកបច្ចុប្បន្នត្រូវបានចាក់សោចេញពី CHIPS </value>
+  </data>
+    <data name="AccountNotYetVip" xml:space="preserve">
+     <value>គណនីរបស់អ្នកមិនទាន់បានទៅដល់ VIP </value>
+  </data>
+    <data name="AccountRequiredVip" xml:space="preserve">
+     <value>កម្រិតនៃគណនី VIP របស់អ្នកមិនពេញចិត្ត </value>
+  </data>
+    <data name="AccountExceedTransferOrTransferGold" xml:space="preserve">
+     <value>អ្នកលើសពីចំនួនប្រតិបត្តិការឬចំនួនទឹកប្រាក់ដែលត្រូវបានអនុញ្ញាតក្នុងកំឡុងពេលថ្ងៃ </value>
+  </data>
+    <data name="TitleMessBonusDepoistFisrt" xml:space="preserve">
+    <value>ការដំឡើងប្រាក់កក់លើកដំបូង</value>
+  </data>
+    <data name="ContentMessBonusDepoistFisrt" xml:space="preserve">
+    <value>អ្នកទទួលបាន​ប្រូម៉ូសិន​ 10%​ នៅពេលដែលបញ្ចូលលុយទិញកាក់លីេកដំបូង។តោះយីេងលេងហ្គេមសប្បាយទាំងអស់គ្នា!</value>
+  </data>
+    <data name="ContentNoteDeposit" xml:space="preserve">
+    <value>ក្រោយពេលការដោះដូរបានសម្រេច សូមរង់ចាំ 5 - 15' Chips នឹងបូកចូលក្នុងគណនី។រាល់ចម្ងល់ឬត្រូវការជំនួយបន្ថែមសូមទាក់ទងតាមអស័យដ្ឋាន email:live777.help@gmail.com</value>
+  </data>
+
+    <data name="FsCashOut_MinWithdraw" xml:space="preserve">
+    <value> បានដកយ៉ាងហោចណាស់ ${0} </value>
+  </data>
+    <data name="FsCashOut_MessageValidation" xml:space="preserve">
+      <value> ចំនួនកាក់របស់អ្នកមិនគ្រប់គ្រាន់ដើម្បីដក </value>
+  </data>
+    <data name="FsCashOut_MessageValidation1" xml:space="preserve">
+      <value> កូដគណនីស្លាយមិនត្រឹមត្រូវ </value>
+  </data>
+    <data name="FsCashOut_MessageValidation2" xml:space="preserve">
+      <value> អ្នកបានលើសចំនួនដងនៃថ្ងៃរហូតដល់ {0} ដង / ថ្ងៃ </value>
+    </data>
+    <data name="FsCashOut_MessageValidation3" xml:space="preserve">
+      <value> ចំនួនអ្នកប្រើប្រាស់បានផ្លាស់ប្តូរនៅក្នុងថ្ងៃអតិបរមា {0} អ្នកប្រើប្រាស់ / ថ្ងៃ </value>
+  </data>
+    <data name="FsCashOut_MessageValidation4" xml:space="preserve">
+    <value>សមតុល្យបន្ទាប់ពីការដកប្រាក់ត្រូវតែយ៉ាងហោចណាស់ {0} កាក់</value>
+  </data>
+    <data name="FsCashOut_MessageValidation5" xml:space="preserve">
+    <value>អ្នកត្រូវការបញ្ចូលកាក់យ៉ាងហោចណាស់{0}ដងដើម្បីអនុវត្តមុខងារនេះ</value>
+  </data>
+    <data name="FsCashOut_RequestSuccess" xml:space="preserve">
+      <value>ស្នើសុំដកប្រាក់ពីកាបូប: {0}@WING ${1} បានបញ្ចប់	</value>
+  </data>
+    <data name="FsCashOut_RequestSuccess2" xml:space="preserve">
+    <value>សំណើការដកប្រាក់ជោគជ័យ</value>
+  </data>
+    <data name="FsCashOut_HistoryCashOutTitle" xml:space="preserve">
+      <value> ប្រវត្តិ </value>
+  </data>
+    <data name="FsCashOut_HistoryCashOut_Col_Amount" xml:space="preserve">
+      <value> ចំនួនទឹកប្រាក់ </value>
+  </data>
+    <data name="FsCashOut_HistoryCashOut_Col_Status" xml:space="preserve">
+      <value> ស្ថានភាព </value>
+  </data>
+    <data name="FsCashOut_Status_DescRequest" xml:space="preserve">
+      <value> បានផ្ញើសំណើរ </value>
+  </data>
+    <data name="FsCashOut_Status_DescSuccess" xml:space="preserve">
+      <value> ជោគជ័យ </value>
+  </data>
+    <data name="FsCashOut_Status_DescCancel" xml:space="preserve">
+      <value> ច្រានចោល </value>
+  </data>
+    <data name="FsCashOut_Status_DescProcessing" xml:space="preserve">
+      <value> ដំណើរការ </value>
+  </data>
+    <data name="FsCashOut_Status_DescError" xml:space="preserve">
+      <value> កំហុស </value>
+  </data>
+    <data name="FsCashOut_Status_DescCallbackReturnError" xml:space="preserve">
+      <value> កំហុសហៅមកវិញ </value>
+  </data>
+
+    <data name="FsCashOut_lableSoDu" xml:space="preserve">
+    <value>ចំនួនប្រាក់របស់អ្នកគឺ &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt;  (ស្មើនឹង &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; ${1}&lt;/strong&gt;)</value>
+  </data>
+    <data name="FsCashOut_lableTyGia" xml:space="preserve">
+    <value>អត្រាប្តូរប្រាក់: &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt; = &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; ${1}&lt;/strong&gt;</value>
+  </data>
+    <data name="FsCashOut_lableSoDu2" xml:space="preserve">
+    <value>ចំនួនប្រាក់របស់អ្នកគឺ &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt;  (ស្មើនឹង &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; {1}{2}&lt;/strong&gt;)</value>
+  </data>
+    <data name="FsCashOut_lableTyGia2" xml:space="preserve">
+    <value>អត្រាប្តូរប្រាក់: &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt; = &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; {1}{2}&lt;/strong&gt;</value>
+  </data>
+    <data name="FsCashOut_lableBanMuonRutBnhieu" xml:space="preserve">
+    <value>អ្នកចង់ដកចំនួនប៉ុន្មាន?</value>
+  </data>
+    <data name="FsCashOut_lableChonMenhGia" xml:space="preserve">
+    <value>សូមជ្រើសយក</value>
+  </data>
+    <data name="FsCashOut_btnNext" xml:space="preserve">
+    <value>បន្ត</value>
+  </data>
+    <data name="FsCashOut_btnBack" xml:space="preserve">
+    <value>ថយក្រោយ</value>
+  </data>
+    <data name="FsCashOut_btnRutTien" xml:space="preserve">
+    <value>ដកប្រាក់</value>
+  </data>
+    <data name="FsCashOut_lableDienTKWing" xml:space="preserve">
+    <value>សូមបំពេញលេខគណនីកាបូបវីងរបស់អ្នក</value>
+  </data>
+    <data name="FsCashOut_lableDienPhone" xml:space="preserve">
+    <value>សូមបំពេញលេខទូរស័ព្ទរបស់អ្នក</value>
+  </data>
+    <data name="FsCashOut_lableSupport" xml:space="preserve">
+    <value>អ្នកអាចទទួលជំនួយអនឡាញ់ដោយចុចនៅទីនេះ</value>
+  </data>
+
+    <data name="FsCashOut_CoinAndAmountNotMatch" xml:space="preserve">
+    <value>CHIPS និងចំនួនទឹកប្រាក់មិនត្រូវគ្នាសូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។.</value>
+  </data>
+
+    <data name="FsCashOut_Status_ErrorSubtractGold" xml:space="preserve">
+    <value> មានកំហុសនៅពេលដកហូត CHIPS សូមព្យាយាមម្តងទៀតពេលក្រោយ។</value>
+</data>
+    <data name="FsCashOut_Status_EnoughGold" xml:space="preserve">
+    <value> មិនមាន CHIPS គ្រប់គ្រាន់</value>
+</data>
+
+
+    <data name="FsCashOut_MessageValidationType" xml:space="preserve">
+    <value> រភេទទទេឬមិនត្រឹមត្រូវ </value>
+</data>
+
+    <data name="FsCashOut_MessageValidationAddress" xml:space="preserve">
+    <value>អាសយដ្ឋានទិន្នផលមិនត្រឹមត្រូវ: អាសយដ្ឋានមិនល្អ [{0}] គួរតែមាន 40 តួអក្សរ។</value>
+</data>
+
+    <data name="FsCashOut_Amount" xml:space="preserve">
+    <value>Amount</value>
+</data>
+    <data name="FsCashOut_Type" xml:space="preserve">
+    <value>Type</value>
+</data>
+    <data name="FsCashOut_CoinAddress" xml:space="preserve">
+    <value>(**)Address code</value>
+</data>
+
+    <data name="FsCashOut_Coinleast" xml:space="preserve">
+    <value>អ្នកត្រូវការយ៉ាងហោចណាស់ {0} CHIPS ដើម្បីដកប្រាក់</value>
+  </data>
+    <data name="DepositCoin_Step1" xml:space="preserve">
+    <value>&lt;strong&gt;ជំហានទី១៖&lt;/strong&gt; បង្កើតគណនី ETH លើ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano.com&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain.info&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase.com&lt;/a&gt;,(បង្កើតកាបូប ETH ដូចម្ដេច?)&lt;/a&gt;</value>
+  </data>
+    <data name="DepositCoin_Step2" xml:space="preserve">
+    <value>&lt;strong&gt;ជំហានទី២៖&lt;/strong&gt; ពេលអ្នកមានកាបូប ETH ជាស្រេច>> ចុច ដក ក្នុងកាបូបអេឡិចត្រូនិចនិងបញ្ចូល ETH ចំនួនសរុបដើម្បីដកចេញទិញ ​CHIPS &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;javascript:&quot; onclick=&quot;ClientWebHelper.ShowPopUpArticleDetail(&#39;GUIDE&#39;,{1})&quot;&gt;(តើទិញ CHIPS នៅ  {0} ដូចម្ដេច?)&lt;/a&gt;&lt;br /&gt;</value>
+  </data>
+    <data name="DepositCoin_Step2_Note" xml:space="preserve">
+    <value>​(*)អាសយដ្ឋានកូដគឺជាគណនី ETH របស់អ្នកនៅលើ​Live777.com {0}</value>
+  </data>
+    <data name="DepositCoin_Step3" xml:space="preserve">
+    <value>&lt;strong&gt;ជំហានទី៣៖ &lt;/strong&gt; រង់ចាំ 1 - 5 នាទី ដើម្បីសម្រេចការដោះដូរហើយពិនិត្យមើលប្រវត្តិ Chips ដែលអ្នកទិញ។.&lt;br /&gt;បើអ្នកមិនទទួលបាន chips ក្រោយ 5 នាទី សូមទាក់ទងយើងខ្ញុំតាម email:</value>
+  </data>
+    <data name="WithdrawCoin_Step1" xml:space="preserve">
+    <value>&lt;strong&gt;ជំហានទី១៖&lt;/strong&gt; បង្កើតគណនី ETH លើ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano.com&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain.info&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase.com&lt;/a&gt; (បង្កើតកាបូប ETH ដូចម្ដេច?)&lt;/a&gt;</value>
+  </data>
+    <data name="WithdrawCoin_Step2" xml:space="preserve">
+    <value>&lt;strong&gt;ជំហានទី២៖&lt;/strong&gt; ជ្រើសយកចំនួនប្រាក់សរុបដែលអ្នកចង់ដកក្នុងកាបូបអេឡិចត្រូនិចរបស់អ្នក  {0}  នឹងដក Chips យោងទៅតាមប្រាក់អេឡិចត្រូនិចដែលអ្នកចង់ដក។. ផ្ដិតអាសយដ្ឋានកូដកាបូបអេឡិចត្រូនិចរបស់អ្នក &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;javascript:&quot; onclick=&quot;ClientWebHelper.ShowPopUpArticleDetail(&#39;GUIDE&#39;,{1})&quot;&gt;(តើដក ETH ពី {0} ដូចម្ដេច?)&lt;/a&gt;</value>
+  </data>
+    <data name="WithdrawCoin_Step2_Note" xml:space="preserve">
+    <value>(**)អាសយដ្ឋានកូដគឺជាគណនី ETH របស់អ្នកនៅលើ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano&lt;/a&gt;/ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain&lt;/a&gt;/ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase&lt;/a&gt;/ …</value>
+  </data>
+    <data name="WithdrawCoin_Step3" xml:space="preserve">
+    <value>&lt;strong&gt;ជំហានទី៣៖ &lt;/strong&gt; ចុច "Submit" ហើយរង់ចាំ  5 - 15 នាទី ដើម្បីសម្រេចការដោះដូរហើយពិនិត្យមើលកាបូបរបស់អ្នក.&lt;br /&gt;បើអ្នកមិនទទួលបាន chips ក្រោយ 15 នាទី សូមទាក់ទងយើងខ្ញុំតាម email:</value>
+  </data>
+
+
+    <data name="WithdrawCoin_FsCashOut_RateCashInAndCashOutForUser" xml:space="preserve">
+    <value>សរុបការដកប្រាក់ក្នុងថ្ងៃ / អ្នកប្រើតិចជាង 2,5 ក់</value>
+  </data>
+
+    <data name="FsCashOut_RateCashInAndCashOutForServer" xml:space="preserve">
+    <value>សូមព្យាយាមម្តងទៀតនៅថ្ងៃស្អែក</value>
+  </data>
+    <data name="FsCashOut_Account_IsBanWithdraw" xml:space="preserve">
+    <value>Account Is Ban Withdraw</value>
+  </data>
+    <data name="DepositCoin_Noted" xml:space="preserve">
+    <value>កត់ចំណាំ៖ អាសយដ្ឋានកាបូបនៅ Live777.com ប្រើបានតែមួយដងក្នុង១ដងបញ្ចូល។ ការបញ្ចូលបន្ទាប់អ្នកលេង refresh  ដើម្បីទទួលអាសយដ្ឋានថ្មីណា!</value>
+  </data>
+
+    <data name="Tab_TitleDeposit" xml:space="preserve">
+    <value>បញ្ចូល</value>
+  </data>
+    <data name="Tab_TitleWithDraw" xml:space="preserve">
+    <value>ដក</value>
+  </data>
+    <data name="Tab_TitleHistoryWithDraw" xml:space="preserve">
+    <value>ប្រវត្តិដក</value>
+  </data>
+    <data name="Tab_TitleDepositETH" xml:space="preserve">
+    <value>បញ្ចូល ETH</value>
+  </data>
+    <data name="Tab_TitleWithDrawETH" xml:space="preserve">
+    <value>ប្រវត្តិដក ETH</value>
+  </data>
+
+    <data name="Deposit_btnBuy" xml:space="preserve">
+    <value>ទិញ</value>
+  </data>
+</LocalLanguages>

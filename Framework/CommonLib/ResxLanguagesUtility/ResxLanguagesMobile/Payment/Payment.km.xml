@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="MessageFirstPurchase" xml:space="preserve">
+    <value>ផ្ដល់ជូនថែម {0}% ​CHIPS រង្វាន់អោយការបញ្ចូល CHIPS លើកដំបូង</value>
+  </data>
+    <data name="Please_deposit_more_to_withdraw" xml:space="preserve">
+    <value>សូមបញ្ចូលបន្ថែមដើម្បីបានប្ដូរ</value>
+  </data>
+</LocalLanguages>

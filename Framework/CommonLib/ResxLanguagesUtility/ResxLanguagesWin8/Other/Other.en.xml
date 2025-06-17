@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="AcceptInvite" xml:space="preserve">
+    <value>Accepted the invitation</value>
+  </data>
+    <data name="AccountIsBlocked" xml:space="preserve">
+    <value>Account is locked</value>
+  </data>
+    <data name="AccountIsBlockedForever" xml:space="preserve">
+    <value>Account has been permanently locked</value>
+  </data>
+    <data name="AccoutHasBeenUpdated" xml:space="preserve">
+    <value>Account has been updated before.</value>
+  </data>
+    <data name="ActiveAccountFail" xml:space="preserve">
+    <value>You have activated the account unsuccessfully.</value>
+  </data>
+    <data name="ActiveAccountSuccess" xml:space="preserve">
+    <value>You have successfully activated your account.</value>
+  </data>
+    <data name="ActiveSuccessAndSecurityCode" xml:space="preserve">
+    <value>You have successfully activated. Your security code is:</value>
+  </data>
+    <data name="AddFriendFail" xml:space="preserve">
+    <value>Make friends fail. Please try again.</value>
+  </data>
+    <data name="AddFriendSuccess" xml:space="preserve">
+    <value>Make friends successful.</value>
+  </data>
+    <data name="ArticleCreate" xml:space="preserve">
+    <value>Enter a title.</value>
+  </data>
+    <data name="ArticleInputContent" xml:space="preserve">
+    <value>Write content.</value>
+  </data>
+    <data name="ArticleMaxLength" xml:space="preserve">
+    <value>The title is up to 190 characters.</value>
+  </data>
+    <data name="BetSuccess" xml:space="preserve">
+    <value>Congratulations on your successful bet of {0} bet type, bet number is: {1} with Win number: {2}.</value>
+  </data>
+    <data name="BetWithGold" xml:space="preserve">
+    <value>{0} - {1} bet {2} number: {3} with win bet is: {4}. IPAddress: {5} - UserAgent: {6}</value>
+  </data>
+    <data name="BuyGoldFail" xml:space="preserve">
+    <value>Buying gold is not successful.{0}</value>
+  </data>
+    <data name="BuyGoldSuccess" xml:space="preserve">
+    <value>You have successfully purchased Gold with {0} and {1} VipPoint. Wish you happy gaming</value>
+  </data>
+    <data name="CannotAddBySeftForFriend" xml:space="preserve">
+    <value>Can't make friends.</value>
+  </data>
+    <data name="CannotChangeTypeOfJackpot" xml:space="preserve">
+    <value>Changing the Jackpot type is not allowed</value>
+  </data>
+    <data name="CannotPlayGameMustExit" xml:space="preserve">
+    <value>Cannot bet Lottery. You must exit the game</value>
+  </data>
+    <data name="CannotPlayGameMustExit2" xml:space="preserve">
+    <value>and wait 2 minutes!</value>
+  </data>
+    <data name="CannotSendEmailForSeft" xml:space="preserve">
+    <value>Unable to send email to yourself.</value>
+  </data>
+    <data name="Card" xml:space="preserve">
+    <value>SCRATCH CARDS</value>
+  </data>
+    <data name="ChangeCardAmountSuccess" xml:space="preserve">
+    <value>You have successfully changed the card &lt;br /&gt;</value>
+  </data>
+    <data name="ChangeLanguageSuccess" xml:space="preserve">
+    <value>Change language successfully !!!</value>
+  </data>
+    <data name="CheckReceiveEmail" xml:space="preserve">
+    <value>Please check the recipient email again.</value>
+  </data>
+    <data name="ChooseType" xml:space="preserve">
+    <value>Select category.</value>
+  </data>
+    <data name="ComeBackLater" xml:space="preserve">
+    <value>Please come back later.</value>
+  </data>
+    <data name="CommentFailCauseHourPlay" xml:space="preserve">
+    <value>Comment failed, Your gaming time is not enough to comment.</value>
+  </data>
+    <data name="ConfigNotExist" xml:space="preserve">
+    <value>Configuration does not exist</value>
+  </data>
+    <data name="CongraGift" xml:space="preserve">
+    <value>Congratulations on winning {0} Win!</value>
+  </data>
+    <data name="CongraGiftLater" xml:space="preserve">
+    <value>Wish you luck next time !</value>
+  </data>
+    <data name="CreateNewSecurityCodeFail" xml:space="preserve">
+    <value>Create new security code failed, please try again later.</value>
+  </data>
+    <data name="DataUpdatedInvalid" xml:space="preserve">
+    <value>Incorrect update data.</value>
+  </data>
+    <data name="DataValid" xml:space="preserve">
+    <value>Valid information!</value>
+  </data>
+    <data name="DeclineInvite" xml:space="preserve">
+    <value>Do not accept the invitation</value>
+  </data>
+    <data name="DeleteMessageSuccess" xml:space="preserve">
+    <value>Remove successful messages.</value>
+  </data>
+    <data name="DepoAmountDistance" xml:space="preserve">
+    <value>Win must be greater than 100,000 and be a multiple of 10,000</value>
+  </data>
+    <data name="DepoChooseCardType" xml:space="preserve">
+    <value>Select scratch card type</value>
+  </data>
+    <data name="DepoEnterAmount" xml:space="preserve">
+    <value>Enter the number of numbers to load</value>
+  </data>
+    <data name="DepoIDInvalid" xml:space="preserve">
+    <value>Invalid account code</value>
+  </data>
+    <data name="DepoIdMustbeNum" xml:space="preserve">
+    <value>Account code must be a number</value>
+  </data>
+    <data name="DepoInputIDCharge" xml:space="preserve">
+    <value>Enter the account account code</value>
+  </data>
+    <data name="DepoNotChooseTypePay" xml:space="preserve">
+    <value>You have not selected a payment method</value>
+  </data>
+    <data name="DepoPinCard" xml:space="preserve">
+    <value>PinCard</value>
+  </data>
+    <data name="DepoPinWrong" xml:space="preserve">
+    <value>Invalid scratch card code</value>
+  </data>
+    <data name="DepoSerial" xml:space="preserve">
+    <value>Serial</value>
+  </data>
+    <data name="DepoSerialWrong" xml:space="preserve">
+    <value>Invalid serial number</value>
+  </data>
+    <data name="DepositOnceToComment" xml:space="preserve">
+    <value>To be able to participate in the comment, you must load the card at least once.</value>
+  </data>
+    <data name="DontHaveAnyJackpot" xml:space="preserve">
+    <value>You have no turns to turn the jackpot!</value>
+  </data>
+    <data name="EmailOrPassWrong" xml:space="preserve">
+    <value>Email or password is incorrect.</value>
+  </data>
+    <data name="ErrorInPlay" xml:space="preserve">
+    <value>Error during the bet process, please try again later.</value>
+  </data>
+    <data name="ErrorInPlaying" xml:space="preserve">
+    <value>An error occurred while playing</value>
+  </data>
+    <data name="ErrorInRandomGift" xml:space="preserve">
+    <value>There was an error during the spin</value>
+  </data>
+    <data name="EventNotRunYet" xml:space="preserve">
+    <value>The event has not yet taken place</value>
+  </data>
+    <data name="ExecuteFailContactCS" xml:space="preserve">
+    <value>Error during processing, please contact customer care.</value>
+  </data>
+    <data name="ExitProtectModeFail" xml:space="preserve">
+    <value>You have canceled the protection function unsuccessfully.</value>
+  </data>
+    <data name="ExitProtectModeSuccess" xml:space="preserve">
+    <value>You have canceled the protection function successfully.</value>
+  </data>
+    <data name="FailInPlay" xml:space="preserve">
+    <value>Bet failed, please try again later.</value>
+  </data>
+    <data name="FailInSendingEmail" xml:space="preserve">
+    <value>Error during sending mail.</value>
+  </data>
+    <data name="FailInSendRequest" xml:space="preserve">
+    <value>Error during sending friend invitation.</value>
+  </data>
+    <data name="FailInUploadingImage" xml:space="preserve">
+    <value>Error during image upload.</value>
+  </data>
+    <data name="FormatMoney" xml:space="preserve">
+    <value>USD</value>
+  </data>
+    <data name="GetListFail" xml:space="preserve">
+    <value>Get the list failed!</value>
+  </data>
+    <data name="GetListSuccessfully" xml:space="preserve">
+    <value>Get the list successfully!</value>
+  </data>
+    <data name="GetListUserOnlineSuccess" xml:space="preserve">
+    <value>Get the list of successful online users</value>
+  </data>
+    <data name="GiftIsNotFound" xml:space="preserve">
+    <value>No gifts found.Please try again later.</value>
+  </data>
+    <data name="GuildInputName" xml:space="preserve">
+    <value>Assembly name cannot be empty.</value>
+  </data>
+    <data name="GuildMinGold" xml:space="preserve">
+    <value>The minimum number of Win for guild registration is:</value>
+  </data>
+    <data name="GuildNameCannotHave" xml:space="preserve">
+    <value>Guild name cannot contain the word '</value>
+  </data>
+    <data name="GuildNameCannotHave2" xml:space="preserve">
+    <value>' at the beginning of the name!</value>
+  </data>
+    <data name="GuildNameIsExist" xml:space="preserve">
+    <value>The guild name already exists.</value>
+  </data>
+    <data name="GuildNameMaxLength" xml:space="preserve">
+    <value>The guild name does not exceed 30 characters.</value>
+  </data>
+    <data name="GuildNameNotSpecialCharacter" xml:space="preserve">
+    <value>Do not use special characters</value>
+  </data>
+    <data name="GuildWelcomeNew" xml:space="preserve">
+    <value>Welcome to the new guild mechanism</value>
+  </data>
+    <data name="HasBeenAFriends" xml:space="preserve">
+    <value>Already friends.</value>
+  </data>
+    <data name="HelloAll" xml:space="preserve">
+    <value>Hello all of you</value>
+  </data>
+    <data name="InputCodeWrong" xml:space="preserve">
+    <value>You entered the wrong code.</value>
+  </data>
+    <data name="InputManyTimes" xml:space="preserve">
+    <value>You have entered more than the specified time.</value>
+  </data>
+    <data name="InviteUserId" xml:space="preserve">
+    <value>User invited code.</value>
+  </data>
+    <data name="JoinedInOtherGuild" xml:space="preserve">
+    <value>You joined another state.</value>
+  </data>
+    <data name="JoinOtherGuildOrWatingApprove" xml:space="preserve">
+    <value>You joined another state.Or the state you created is pending review.</value>
+  </data>
+    <data name="LeaderMustBeUpdateBeforeCreateGuild" xml:space="preserve">
+    <value>The host state must update personal information before registering for the Guild. &lt;br /&gt; (Click &lt;a href='{0}' target='_blank'&gt; here &lt;/a&gt; to update information)</value>
+  </data>
+    <data name="MessageInput" xml:space="preserve">
+    <value>Please enter a message.</value>
+  </data>
+    <data name="MessageInputContentEmail" xml:space="preserve">
+    <value>Please enter your message.</value>
+  </data>
+    <data name="MessageTitle" xml:space="preserve">
+    <value>Message</value>
+  </data>
+    <data name="MinAmount" xml:space="preserve">
+    <value>The number must be greater than 0</value>
+  </data>
+    <data name="MinPlayAmoutGame" xml:space="preserve">
+    <value>Your winnings are not enough to bet. Please adjust win bet again.</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>Data not available</value>
+  </data>
+    <data name="NoDataRequest" xml:space="preserve">
+    <value>No data you requested.</value>
+  </data>
+    <data name="NoNewArticle" xml:space="preserve">
+    <value>There are no new articles.</value>
+  </data>
+    <data name="NotFoundArticle" xml:space="preserve">
+    <value>Did not find the article.</value>
+  </data>
+    <data name="NotFoundUser" xml:space="preserve">
+    <value>Error: User not found.</value>
+  </data>
+    <data name="NotLogginOrOtherDevice" xml:space="preserve">
+    <value>Not logged in or logged in at another machine.</value>
+  </data>
+    <data name="NotPlayYet" xml:space="preserve">
+    <value>You have not yet joined the bet.</value>
+  </data>
+    <data name="NotUpdateInfo" xml:space="preserve">
+    <value>Not updated personal information.</value>
+  </data>
+    <data name="NotUsingAction" xml:space="preserve">
+    <value>You do not use this function.</value>
+  </data>
+    <data name="PassInput" xml:space="preserve">
+    <value>Please enter a password</value>
+  </data>
+    <data name="PassMinLength" xml:space="preserve">
+    <value>Password at least 6 characters.</value>
+  </data>
+    <data name="PassReInputWrong" xml:space="preserve">
+    <value>Confirm password does not match.</value>
+  </data>
+    <data name="PlayAmoutMin" xml:space="preserve">
+    <value>Minimum bet {0} Win.</value>
+  </data>
+    <data name="PlayTimeIsExpire" xml:space="preserve">
+    <value>The time has expired.</value>
+  </data>
+    <data name="RegisteredRound" xml:space="preserve">
+    <value>You have registered to participate in the tour.</value>
+  </data>
+    <data name="RegisterGuildFail" xml:space="preserve">
+    <value>Guild registration failed, please try again later.</value>
+  </data>
+    <data name="RegisterGuildSuccess" xml:space="preserve">
+    <value>Successful to register this guild.</value>
+  </data>
+    <data name="RegisterRoundFail" xml:space="preserve">
+    <value>Registration is not successful. To register for the Tournament you must have 5 million gold or more in your account</value>
+  </data>
+    <data name="RegisterRoundSuccess" xml:space="preserve">
+    <value>Congratulations on successful registration. &lt;br/&gt; The system will switch</value>
+  </data>
+    <data name="RegisterRoundSuccess2" xml:space="preserve">
+    <value>Gold to the tournament account. &lt;br/&gt; Wish you luck to win.</value>
+  </data>
+    <data name="RegisterTimeIsExpired" xml:space="preserve">
+    <value>The registration period has expired.</value>
+  </data>
+    <data name="RemoveArticleIsNotPermission" xml:space="preserve">
+    <value>You do not have sufficient rights to delete this article.</value>
+  </data>
+    <data name="RemoveArticleSuccess" xml:space="preserve">
+    <value>Delete the article successfully.</value>
+  </data>
+    <data name="RemoveMemberFail" xml:space="preserve">
+    <value>Discard failure, please try again later.</value>
+  </data>
+    <data name="RemoveMemberSuccess" xml:space="preserve">
+    <value>Remove members successfully !</value>
+  </data>
+    <data name="RemoveMessageFail" xml:space="preserve">
+    <value>Delete failure, please try again later.</value>
+  </data>
+    <data name="RequestHasBeenSent" xml:space="preserve">
+    <value>The friend information has been sent.</value>
+  </data>
+    <data name="ResetSecurityCodeFail" xml:space="preserve">
+    <value>You have failed to reset the security code.</value>
+  </data>
+    <data name="ResetSecurityCodeSuccess" xml:space="preserve">
+    <value>You have successfully reset the protection code. New password:</value>
+  </data>
+    <data name="RoundGiftIsExpire" xml:space="preserve">
+    <value>Turns have expired</value>
+  </data>
+    <data name="RoundGiftIsInvalid" xml:space="preserve">
+    <value>Invalid turns</value>
+  </data>
+    <data name="RoundIsPlaying" xml:space="preserve">
+    <value>The round is going on.</value>
+  </data>
+    <data name="SecurityCodeInvalid" xml:space="preserve">
+    <value>Security code is not correct</value>
+  </data>
+    <data name="SecurityCodeIsExpire" xml:space="preserve">
+    <value>Your security code has expired.</value>
+  </data>
+    <data name="SecurityCodeIsWrong" xml:space="preserve">
+    <value>Security code is incorrect</value>
+  </data>
+    <data name="SecurityCodeNotExist" xml:space="preserve">
+    <value>Security code does not exist</value>
+  </data>
+    <data name="SecuritySMSTemplate" xml:space="preserve">
+    <value>You have not compelled to activate account protection by sms. Please compose the message according to the syntax: GOLD MBV MTK send to 8038</value>
+  </data>
+    <data name="SendMailFail" xml:space="preserve">
+    <value>Send email failed, please try again later.</value>
+  </data>
+    <data name="SendMailSuccess" xml:space="preserve">
+    <value>Successful mailing.</value>
+  </data>
+    <data name="SendTksFail" xml:space="preserve">
+    <value>You have sent unsuccessful thanks.</value>
+  </data>
+    <data name="SendTksSuccess" xml:space="preserve">
+    <value>Thank you for your success.</value>
+  </data>
+    <data name="SuccessAndHaveSecurityCode" xml:space="preserve">
+    <value>Success and security code</value>
+  </data>
+    <data name="TitleSeo" xml:space="preserve">
+    <value>Play online card game, play cards online - Win8</value>
+  </data>
+    <data name="TransferStarFail" xml:space="preserve">
+    <value>The transfer process failed, please try again later</value>
+  </data>
+    <data name="UnfriendFail" xml:space="preserve">
+    <value>Unfriend failed.Please try again.</value>
+  </data>
+    <data name="UnfriendSuccess" xml:space="preserve">
+    <value>Unfriend successfully.</value>
+  </data>
+    <data name="UpcommingRegister" xml:space="preserve">
+    <value>Please come back later to register.</value>
+  </data>
+    <data name="UpdateAccSuccessAndReceiveGold" xml:space="preserve">
+    <value>Account updated successfully and awarded Gold.</value>
+  </data>
+    <data name="UpdateNotSuccess" xml:space="preserve">
+    <value>The update process failed.</value>
+  </data>
+    <data name="UpdatePassFail" xml:space="preserve">
+    <value>Password update failed !!!</value>
+  </data>
+    <data name="UpdatePassSuccess" xml:space="preserve">
+    <value>Update password successfully !!!</value>
+  </data>
+    <data name="UpdatePublicAccFail" xml:space="preserve">
+    <value>Update of public account failed</value>
+  </data>
+    <data name="UpdatePublicAccSuccess" xml:space="preserve">
+    <value>Successful public account update</value>
+  </data>
+    <data name="UpdateSecurityAccFail" xml:space="preserve">
+    <value>Update the protection account successfully.</value>
+  </data>
+    <data name="UploadAnimateImgMustBeSilver" xml:space="preserve">
+    <value>In order to upload animations, the type of user must be at Silver level or above</value>
+  </data>
+    <data name="UploadFail" xml:space="preserve">
+    <value>Upload failed, please try again later.</value>
+  </data>
+    <data name="UploadSuccess" xml:space="preserve">
+    <value>Upload successfully.</value>
+  </data>
+    <data name="UserHasBeenInvite" xml:space="preserve">
+    <value>You have already been invited by this User!</value>
+  </data>
+    <data name="UserIsInOtherDevice" xml:space="preserve">
+    <value>User is using another device</value>
+  </data>
+    <data name="WaitingToNextComment" xml:space="preserve">
+    <value>Please wait a moment before commenting further.</value>
+  </data>
+    <data name="WalCurrentPass" xml:space="preserve">
+    <value>Enter the wallet's current password</value>
+  </data>
+    <data name="WalGoldMin" xml:space="preserve">
+    <value>Gold must be greater than 0</value>
+  </data>
+    <data name="WalNewPass" xml:space="preserve">
+    <value>Enter your new password</value>
+  </data>
+    <data name="WalNotChooseTransferType" xml:space="preserve">
+    <value>No gold transfer method has been selected</value>
+  </data>
+    <data name="YourTurnsIsExpireAt" xml:space="preserve">
+    <value>Your spin has expired at</value>
+  </data>
+
+
+    <data name="AcceptInviteJoin" xml:space="preserve">
+    <value>Accept the invitation to join the state</value>
+  </data>
+    <data name="ActionFail" xml:space="preserve">
+    <value>Operation failed, please try again later.</value>
+  </data>
+    <data name="AtLeastTenHourToComment" xml:space="preserve">
+    <value>To be able to participate in the comment, the post you have to play the game for at least 10 hours.</value>
+  </data>
+    <data name="BillionGold" xml:space="preserve">
+    <value>Billions of Gold</value>
+  </data>
+    <data name="CharacterIsMaxOfLength" xml:space="preserve">
+    <value>Number of characters exceeds the limit</value>
+  </data>
+    <data name="CommentAllow" xml:space="preserve">
+    <value>win8 club, facebook com, google com, win8</value>
+  </data>
+    <data name="CommentFail" xml:space="preserve">
+    <value>Bình luận không thành công.</value>
+  </data>
+    <data name="CommentFailCauseBanning" xml:space="preserve">
+    <value>Comment failed.</value>
+  </data>
+    <data name="CommentInDayPassover" xml:space="preserve">
+    <value>Number of comments in the day exceeds the limit</value>
+  </data>
+    <data name="CommentSuccess" xml:space="preserve">
+    <value>Successful comment.</value>
+  </data>
+    <data name="ContentIsNotAllow" xml:space="preserve">
+    <value>Content inappropriate.</value>
+  </data>
+    <data name="CreateDeputyIsFail" xml:space="preserve">
+    <value>The vice guild failed, please try again later.</value>
+  </data>
+    <data name="DeclineInviteJoin" xml:space="preserve">
+    <value>Do not join the guild</value>
+  </data>
+    <data name="DeleteCommentFail" xml:space="preserve">
+    <value>Delete failed.Please try again later</value>
+  </data>
+    <data name="DeputyChooseIsNotAMember" xml:space="preserve">
+    <value>The member who chooses to be the deputy guild is not a member of this guild.</value>
+  </data>
+    <data name="DeputyCreateSuccess" xml:space="preserve">
+    <value>Successfully deputy vice of guild.</value>
+  </data>
+    <data name="DeputyIsFull" xml:space="preserve">
+    <value>Your state has enough vice of guild.</value>
+  </data>
+    <data name="DeputyRemoveSuccess" xml:space="preserve">
+    <value>Delete successful vice of guild.</value>
+  </data>
+    <data name="DontHaveComment" xml:space="preserve">
+    <value>No comment.</value>
+  </data>
+    <data name="DontHaveMember" xml:space="preserve">
+    <value>No member in guild yet.</value>
+  </data>
+    <data name="DontPermissionToAction" xml:space="preserve">
+    <value>You are not authorized to perform this function.</value>
+  </data>
+    <data name="EnterGoldToGive" xml:space="preserve">
+    <value>Enter the number of Gold you want to transfer.</value>
+  </data>
+    <data name="ErrorInDataAccess" xml:space="preserve">
+    <value>Error during data processing, please try again later.</value>
+  </data>
+    <data name="ExecuteRegisterGoldFail" xml:space="preserve">
+    <value>Gold processing failed, please try again later.</value>
+  </data>
+    <data name="GuildCoinWillReceive" xml:space="preserve">
+    <value>Win is expected to be received</value>
+  </data>
+    <data name="GuildCreateDate" xml:space="preserve">
+    <value>Date created:</value>
+  </data>
+    <data name="GuildDate" xml:space="preserve">
+    <value>Day</value>
+  </data>
+    <data name="GuildFromDayAU" xml:space="preserve">
+    <value>From date</value>
+  </data>
+    <data name="GuildInfoAccumulationByLevel" xml:space="preserve">
+    <value>Information contributed by level</value>
+  </data>
+    <data name="GuildIsNotExist" xml:space="preserve">
+    <value>The guild does not exist.</value>
+  </data>
+    <data name="GuildMember" xml:space="preserve">
+    <value>Member</value>
+  </data>
+    <data name="GuildMemberCoinLog" xml:space="preserve">
+    <value>Statistics win contributions</value>
+  </data>
+    <data name="GuildMemberPlayGame" xml:space="preserve">
+    <value>Members play games</value>
+  </data>
+    <data name="GuildMemberRegister" xml:space="preserve">
+    <value>Join this guild</value>
+  </data>
+    <data name="GuildNameLengthAlert" xml:space="preserve">
+    <value>Guild name must be at least 6 characters, including only characters from az, AZ and 0-9.</value>
+  </data>
+    <data name="GuildNotify" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+    <data name="GuildNotifyCreate" xml:space="preserve">
+    <value>Create a notification</value>
+  </data>
+    <data name="GuildNotifyList" xml:space="preserve">
+    <value>List of announcements in this guild</value>
+  </data>
+    <data name="GuildOwner" xml:space="preserve">
+    <value>Guild owner:</value>
+  </data>
+    <data name="GuildOwnerReward" xml:space="preserve">
+    <value>Win host guild:</value>
+  </data>
+    <data name="GuildPoint" xml:space="preserve">
+    <value>Point</value>
+  </data>
+    <data name="GuildPolicy" xml:space="preserve">
+    <value>Guild policy</value>
+  </data>
+    <data name="GuildReportMemberVip" xml:space="preserve">
+    <value>VIP score statistics</value>
+  </data>
+    <data name="GuildSearchBtn" xml:space="preserve">
+    <value>Search</value>
+  </data>
+    <data name="GuildSetting" xml:space="preserve">
+    <value>Guild management</value>
+  </data>
+    <data name="GuildToDayAU" xml:space="preserve">
+    <value>To date</value>
+  </data>
+    <data name="GuildTopMemberAccumulation" xml:space="preserve">
+    <value>Win statistics of members in guild contributions in the month</value>
+  </data>
+    <data name="GuildTotalAccumulation" xml:space="preserve">
+    <value>Total win accumulated</value>
+  </data>
+    <data name="GuildTotalAU" xml:space="preserve">
+    <value>Quantity online</value>
+  </data>
+    <data name="GuildTotalContribution" xml:space="preserve">
+    <value>Monthly contribution point:</value>
+  </data>
+    <data name="HistoryMiniBossNhan" xml:space="preserve">
+    <value>Get rewarded</value>
+  </data>
+    <data name="Hour" xml:space="preserve">
+    <value>hours</value>
+  </data>
+    <data name="InputCmt" xml:space="preserve">
+    <value>Enter discussion content.</value>
+  </data>
+    <data name="InputGuildPolicy" xml:space="preserve">
+    <value>Please enter guild rules.</value>
+  </data>
+    <data name="InvalidData" xml:space="preserve">
+    <value>The requested data is invalid.</value>
+  </data>
+    <data name="InviteJoinGuild" xml:space="preserve">
+    <value>Invite to join the guild</value>
+  </data>
+    <data name="LeaderNotBeLeftInGuild" xml:space="preserve">
+    <value>The Master of Guild cannot leave the state by itself.</value>
+  </data>
+    <data name="LevelGuild" xml:space="preserve">
+    <value>Level</value>
+  </data>
+    <data name="LinkFanpage" xml:space="preserve">
+    <value>Link Fanpage</value>
+  </data>
+    <data name="ListGuildMemberRegister" xml:space="preserve">
+    <value>User asks to join the guild</value>
+  </data>
+    <data name="ListInvitedMember" xml:space="preserve">
+    <value>List of invited members</value>
+  </data>
+    <data name="LogginIsExpire" xml:space="preserve">
+    <value>The login session has expired.</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>Member</value>
+  </data>
+    <data name="MemberHasLeftGuild" xml:space="preserve">
+    <value>The member has left the guild.</value>
+  </data>
+    <data name="MemberIsLeaderOfGuild" xml:space="preserve">
+    <value>The selected member is Master of guild.</value>
+  </data>
+    <data name="MemeberAlreadyDeputy" xml:space="preserve">
+    <value>The member is the vice of guild.</value>
+  </data>
+    <data name="MemeberNotADeputy" xml:space="preserve">
+    <value>Member is no longer vice of guild</value>
+  </data>
+    <data name="MillionGold" xml:space="preserve">
+    <value>Million Gold</value>
+  </data>
+    <data name="Minute" xml:space="preserve">
+    <value>minute</value>
+  </data>
+    <data name="MustBeLoginToAction" xml:space="preserve">
+    <value>You need to be logged in to perform this function.</value>
+  </data>
+    <data name="NotInGuild" xml:space="preserve">
+    <value>You have not joined the guild.</value>
+  </data>
+    <data name="NotPermissionToDeputyCreate" xml:space="preserve">
+    <value>You do not have the right to make vice of guilds.</value>
+  </data>
+    <data name="NotRequireResGift" xml:space="preserve">
+    <value>No gold requests yet.</value>
+  </data>
+    <data name="RecevicedInvite" xml:space="preserve">
+    <value>Received an invitation</value>
+  </data>
+    <data name="RegisterToGiftFail" xml:space="preserve">
+    <value>You have failed to win.</value>
+  </data>
+    <data name="RegisterToGiftSuccess" xml:space="preserve">
+    <value>You have successfully rewarded.</value>
+  </data>
+    <data name="RemoveCommentFail" xml:space="preserve">
+    <value>Delete Comment failed, please try again later.</value>
+  </data>
+    <data name="RemoveCommentSuccess" xml:space="preserve">
+    <value>Delete successful comment.</value>
+  </data>
+    <data name="RemoveDeputyIsFail" xml:space="preserve">
+    <value>Delete the vice guild failed, please try again later.</value>
+  </data>
+    <data name="RudeCommentList" xml:space="preserve">
+    <value>dog, idiot, cock, cunt, ass ass, hole, hole, fuck, dkm, dm, cmnr, vl, idiot, dit me, cheek, vkl, con cac, scattered, clgt, clmm, slut, fuck mom, jerking, fuck, fuck, slut, whore, bitch, dug, penis, chickpea cheeks, bede, con cac, lon me, cheek cheek, bald, pinch, ass, sour ass, mother bean, scrotum, breast, breasts , chubby, shit, dud, cunt, fuck, dcm, dick, xvideo com, xxx, vlxx com, vlxx tv, sexhtv com, net movie, xvideos com, soclo net, moviesexporn com, heomup com, ket die, 3cay xtgem com</value>
+  </data>
+    <data name="SentInvite" xml:space="preserve">
+    <value>Invitation sent</value>
+  </data>
+    <data name="TotalCmt" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+    <data name="TotalExpInGuild" xml:space="preserve">
+    <value>Total experience points:</value>
+  </data>
+    <data name="TotalGoldInGuild" xml:space="preserve">
+    <value>Total contribution:</value>
+  </data>
+    <data name="VipPointNumGuild" xml:space="preserve">
+    <value>Vip point:</value>
+  </data>
+    <data name="YourAreNotALeader" xml:space="preserve">
+    <value>You are not the master guild</value>
+  </data>
+
+
+    <data name="BaoTri" xml:space="preserve">
+    <value>Maintenance function</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>The number of coins in the account is not enough to make the transaction</value>
+  </data>
+    <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+    <data name="GoldenMinMoney" xml:space="preserve">
+    <value>Your Win must be less than 5,000 to receive rewards</value>
+  </data>
+    <data name="IsCorrectCaptcha" xml:space="preserve">
+    <value>Captcha does not match!</value>
+  </data>
+    <data name="MaxTransfer" xml:space="preserve">
+    <value>Transfer amount must be less than {0}</value>
+  </data>
+    <data name="MinimumGoldTransfer" xml:space="preserve">
+    <value>Amount transferred must be from {0} Win and divisible by 10,000!</value>
+  </data>
+    <data name="NotExitCaptcha" xml:space="preserve">
+    <value>Captcha does not exist!</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>System error</value>
+  </data>
+    <data name="TransferSuccess" xml:space="preserve">
+    <value>Transferred Win Successfully. {0} received {1}.</value>
+  </data>
+</LocalLanguages>

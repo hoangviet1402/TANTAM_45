@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns="http://schemas.xmlsoap.org/disco/">
+    <contractRef ref="http://api.hoiquan.net/FileUploadSvc.asmx?wsdl" docRef="http://api.hoiquan.net/FileUploadSvc.asmx"
+                 xmlns="http://schemas.xmlsoap.org/disco/scl/"/>
+    <soap xmlns:q1="http://tempuri.org/" address="http://api.hoiquan.net/FileUploadSvc.asmx"
+          binding="q1:FileUploadSvcSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/"/>
+    <soap xmlns:q2="http://tempuri.org/" address="http://api.hoiquan.net/FileUploadSvc.asmx"
+          binding="q2:FileUploadSvcSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/"/>
+</discovery>

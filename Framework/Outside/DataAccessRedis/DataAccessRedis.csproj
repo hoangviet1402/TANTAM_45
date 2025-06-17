@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{F9AB6722-79EE-4D54-A104-C69FFAB3A8A6}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>DataAccessRedis</RootNamespace>
+        <AssemblyName>DataAccessRedis</AssemblyName>
+        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <SccProjectName>
+        </SccProjectName>
+        <SccLocalPath>
+        </SccLocalPath>
+        <SccAuxPath>
+        </SccAuxPath>
+        <SccProvider>
+        </SccProvider>
+        <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Inside\Pxxx\</SolutionDir>
+        <RestorePackages>true</RestorePackages>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\..\CommonLib\EntityFramework.dll</HintPath>
+        </Reference>
+        <Reference Include="log4net">
+            <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+        </Reference>
+        <Reference Include="log4net.Fakes">
+            <HintPath>FakesAssemblies\log4net.Fakes.dll</HintPath>
+        </Reference>
+        <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\..\CommonLib\Logger\bin\Debug\Logger.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"/>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"/>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>..\..\..\DBOL\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="StackExchange.Redis.StrongName">
+            <HintPath>..\..\packages\StackExchange.Redis.StrongName.1.2.6\lib\net45\StackExchange.Redis.StrongName.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Configuration"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Web"/>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Connected\MyRedis.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Connected\RedisConfigModel.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Connected\RedisFactory.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Constant\RedisCommon.cs"/>
+        <Compile Include="Constant\RedisConstants.cs"/>
+        <Compile Include="DaoRedisFactory.cs"/>
+        <Compile Include="Dao\Achievement\Achievement.cs"/>
+        <Compile Include="Dao\EventDao\E1806_CardSpin.cs"/>
+        <Compile Include="Dao\EventDao\E1810_FreeSpin.cs"/>
+        <Compile Include="Dao\EventDao\EventInfoDao.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Dao\Minigame\JackPot.cs"/>
+        <Compile Include="Dao\ServerGame\ServerGame.cs"/>
+        <Compile Include="Dao\SystemManagementDao\BanCaRedis.cs"/>
+        <Compile Include="Dao\WebDao\AccountRedis.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Dao\WebDao\AssociationMemberDao.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Dao\WebDao\AssociationRedis.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Dao\WebDao\FriendRedisDao.cs"/>
+        <Compile Include="Infrastructure\IRedisRepository.cs"/>
+        <Compile Include="Model\CacheDefaultData.cs"/>
+        <Compile Include="Model\SyncData.cs"/>
+        <Compile Include="Model\BanCa.cs"/>
+        <Compile Include="Model\AccountMember.cs"/>
+        <Compile Include="Model\AssociationMember.cs"/>
+        <Compile Include="Model\EventMember.cs"/>
+        <Compile Include="Model\Event\EventInfo.cs"/>
+        <Compile Include="Model\RankingBoxEnum.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\EntitiesObject\EntitiesObject.csproj">
+            <Project>{70248680-8ea1-42ed-b418-2880cbf774b0}</Project>
+            <Name>EntitiesObject</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <Fakes Include="Fakes\log4net.fakes"/>
+    </ItemGroup>
+    <ItemGroup>
+        <WCFMetadata Include="Service References\"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

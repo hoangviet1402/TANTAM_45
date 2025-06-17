@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+    <data name="DisplaynameAvailable" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញរួចហើយ</value>
+  </data>
+    <data name="Transactionisprocessed" xml:space="preserve">
+    <value>ប្រតិបត្តិការកំពុងត្រូវបានដំណើរការ</value>
+  </data>
+    <data name="Transactionnotfound" xml:space="preserve">
+    <value>រកមិនឃើញប្រតិបត្តិការ</value>
+  </data>
+    <data name="Transactionnotfoundinsystem" xml:space="preserve">
+    <value>រកមិនឃើញប្រតិបត្តិការនៅក្នុងប្រព័ន្ធ</value>
+  </data>
+    <data name="Transactionprocessing" xml:space="preserve">
+    <value>ប្រតិបត្តិការកំពុងដំណើរការ</value>
+  </data>
+    <data name="Transactionprocessingfailed" xml:space="preserve">
+    <value>ដំណើរការប្រតិបត្តិការបានបរាជ័យ</value>
+  </data>
+    <data name="TransactionSuccess" xml:space="preserve">
+    <value>ការទូទាត់ដោយជោគជ័យនៃកាក់</value>
+  </data>
+    <data name="CreateFail" xml:space="preserve">
+    <value>ការចាប់ផ្ដើមបានបរាជ័យ</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>មុខងារត្រូវបានថែទាំ</value>
+  </data>
+    <data name="GetSuccessfulCaptcha" xml:space="preserve">
+    <value>ទទួលបានជោគជ័យ captcha</value>
+  </data>
+    <data name="InvalidDataInput" xml:space="preserve">
+    <value>ទិន្នន័យមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>មិនមានគណនី</value>
+  </data>
+    <data name="GetTheListSuccessfully" xml:space="preserve">
+    <value>ទទួលបានបញ្ជីដោយជោគជ័យ</value>
+  </data>
+    <data name="GetTheConfigSuccessfully" xml:space="preserve">
+    <value>ទទួលបានការកំណត់រចនាសម្ព័ន្ធជោគជ័យ</value>
+  </data>
+    <data name="GetTheLinkSuccessfully" xml:space="preserve">
+    <value>ទទួលបានតំណដោយជោគជ័យ</value>
+  </data>
+    <data name="GetTheLinkFailed" xml:space="preserve">
+    <value>ទទួលបានតំណបរាជ័យ</value>
+  </data>
+    <data name="TheGameDoesNotExistContainHasHtml5" xml:space="preserve">
+    <value>ល្បែងមិនមានឬហ្គេមមិនមាន HasHtml5 ទេ</value>
+  </data>
+    <data name="SKIPAndPort" xml:space="preserve">
+    <value>មិនអាចរកឃើញ SK IPAndPort</value>
+  </data>
+    <data name="InvalidSerialNumber" xml:space="preserve">
+    <value>លេខសៀរៀលមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="InvalidScratchCardCode" xml:space="preserve">
+    <value>កូដកាតកោសមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="ErrorDuringProcessing" xml:space="preserve">
+    <value>កំហុសក្នុងដំណើរការ។</value>
+  </data>
+    <data name="InvalidCardInformation" xml:space="preserve">
+    <value>ព័ត៌មានកាតមិនត្រឹមត្រូវ (កូដ: {0})</value>
+  </data>
+    <data name="InvalidCardNotInformation" xml:space="preserve">
+    <value>ព័ត៌មានប័ណ្ណមិនត្រឹមត្រូវសូមព្យាយាមម្តងទៀត ...</value>
+  </data>
+    <data name="GetTheListOfFailures" xml:space="preserve">
+    <value>ទទួលបានបញ្ជីនៃការបរាជ័យ</value>
+  </data>
+    <data name="YouWantToLoad" xml:space="preserve">
+    <value>តើអ្នកចង់ផ្ទុក {0} នៅ {1} K?</value>
+  </data>
+    <data name="SMSChargingSystem" xml:space="preserve">
+    <value>ប្រព័ន្ធសាកថ្មសារ SMS កំពុងស្ថិតនៅក្រោមការថែទាំ!</value>
+  </data>
+    <data name="InvalidSMSInformation" xml:space="preserve">
+    <value>ព័ត៌មាន SMS មិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="CardToChange" xml:space="preserve">
+    <value>សូមជ្រើសរើសប្រភេទកាតដើម្បីផ្លាស់ប្តូរ</value>
+  </data>
+    <data name="SystemIsUnderMaintenance" xml:space="preserve">
+    <value>ប្រព័ន្ធ {0} កំពុងថែទាំសូមជ្រើសរើសប្រភេទកាតផ្សេងទៀត</value>
+  </data>
+    <data name="CannotRedeemRewards" xml:space="preserve">
+    <value>មិនអាចផ្តោះប្តូរយករង្វាន់បានទេ។ សូមទាក់ទងការថែទាំអតិថិជន</value>
+  </data>
+    <data name="TheSystemMaintenance" xml:space="preserve">
+    <value>ប្រព័ន្ធកំពុងស្ថិតក្នុងការថែទាំសូមព្យាយាមម្តងទៀតពេលក្រោយ</value>
+  </data>
+    <data name="TheRewardIsNotTrue" xml:space="preserve">
+    <value>រង្វាន់គឺមិនពិតទេ</value>
+  </data>
+    <data name="ItIsNotTimeToAward" xml:space="preserve">
+    <value>វាមិនមែនជាពេលវេលាដើម្បីផ្តល់រង្វាន់។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ</value>
+  </data>
+    <data name="AwardsAreNotSuccessful" xml:space="preserve">
+    <value>រង្វាន់មិនបានជោគជ័យ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ</value>
+  </data>
+    <data name="AwardedSuccessfully" xml:space="preserve">
+    <value>ទទួលបានជោគជ័យ។ សូមពិនិត្យមើលប្រអប់សំបុត្ររបស់អ្នក</value>
+  </data>
+    <data name="CannotAuthenticateInformation" xml:space="preserve">
+    <value>មិនអាចផ្ទៀងផ្ទាត់ព័ត៌មាន</value>
+  </data>
+    <data name="FacebookIncorrect" xml:space="preserve">
+    <value>ព័ត៌មានហ្វេសប៊ុកមិនត្រឹមត្រូវសូមចូលម្តងទៀត</value>
+  </data>
+    <data name="FunctionDoesNotExist" xml:space="preserve">
+    <value>អនុគមន៍មិនមានទេ</value>
+  </data>
+    <data name="IncorrectCode" xml:space="preserve">
+    <value>កូដផ្ទៀងផ្ទាត់មិនត្រូវគ្នា</value>
+  </data>
+    <data name="UpdateInformationFailed" xml:space="preserve">
+    <value>ការធ្វើបច្ចុប្បន្នភាពព័ត៌មានបានបរាជ័យ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។</value>
+  </data>
+    <data name="UpdateSuccessful" xml:space="preserve">
+    <value>បានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ។ អ្នកត្រូវបានផ្តល់ {0} សេនក្នុងគណនីរបស់អ្នក!</value>
+  </data>
+    <data name="VerificationCodeDoesNotExist" xml:space="preserve">
+    <value>មិនមានកូដផ្ទៀងផ្ទាត់</value>
+  </data>
+    <data name="ErrorImage" xml:space="preserve">
+    <value>ត្រូវតែជាទម្រង់ jpg, png, gif</value>
+  </data>
+    <data name="ErrorimageSize" xml:space="preserve">
+    <value>សមត្ថភាពរូបភាពតិចជាង 500 គីឡូបៃ</value>
+  </data>
+    <data name="UploadAvatarSuccess" xml:space="preserve">
+    <value>រូបតំនាងឡើងខ្ពស់ទទួលបានជោគជ័យ</value>
+  </data>
+    <data name="AccountalreadyinusePleasechooseanothername" xml:space="preserve">
+    <value>គណនីកំពុងប្រើរួចហើយ។ សូមជ្រើសរើសឈ្មោះផ្សេងទៀត</value>
+  </data>
+    <data name="CaptchaDoesnotexist" xml:space="preserve">
+    <value>ឃ្លាំងសម្ងាត់មិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="CaptchaInvalid" xml:space="preserve">
+    <value>ឃ្លាំងសម្ងាត់មិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="ConfigFail" xml:space="preserve">
+    <value>ការកំណត់រចនាសម្ព័ន្ធមិនមានទេ</value>
+  </data>
+    <data name="Display3to20characters" xml:space="preserve">
+    <value>បង្ហាញឈ្មោះយ៉ាងហោចណាស់ 3 ទៅ 20 តួអក្សរ។</value>
+  </data>
+    <data name="Displaynamecannotspaces" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញមិនអាចទទេបានទេ</value>
+  </data>
+    <data name="Displaynamemusthavespecialcharacterscharacters" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញមិនត្រូវមានតួអក្សរនិងតួអក្សរពិសេសទេ</value>
+  </data>
+    <data name="Displaynamenotallowed" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញមានពាក្យដែលមិនត្រូវបានអនុញ្ញាត។</value>
+  </data>
+    <data name="EmailIncorrect" xml:space="preserve">
+    <value>អ៊ីមែលមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>បរាជ័យ</value>
+  </data>
+    <data name="IncorrectIDcard" xml:space="preserve">
+    <value>កាតសម្គាល់មិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="Invalidaccountname" xml:space="preserve">
+    <value>ឈ្មោះគណនីមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="Invaliddisplayname" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="RegistrationfailedPleasetryagainlater" xml:space="preserve">
+    <value>ការចុះឈ្មោះបានបរាជ័យ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។</value>
+  </data>
+    <data name="SignUpSuccess" xml:space="preserve">
+    <value>ការចុះឈ្មោះដែលជោគជ័យ</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>ជោគជ័យ</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>កំហុសប្រព័ន្ធ</value>
+  </data>
+    <data name="Usernamecannotbethesameasaccountname" xml:space="preserve">
+    <value>មោះអ្នកប្រើមិនអាចដូចគ្នានឹងឈ្មោះគណនីទេ</value>
+  </data>
+    <data name="Usernamecannotspaces" xml:space="preserve">
+    <value>ឈ្មោះអ្នកប្រើមិនអាចទុកចន្លោះ</value>
+  </data>
+    <data name="Usernamemustnothaveaccentsandspecialcharacters" xml:space="preserve">
+    <value>ឈ្មោះអ្នកប្រើមិនត្រូវមានសញ្ញាសង្កត់សំឡេងនិងតួអក្សរពិសេសឡើយ</value>
+  </data>
+    <data name="UserNamepasswordincorrect" xml:space="preserve">
+    <value>ឈ្មោះអ្នកប្រើនិងពាក្យសម្ងាត់មិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="CommingSoon" xml:space="preserve">
+    <value>លក្ខណៈពិសេសកំពុងកើនឡើង</value>
+  </data>
+    <data name="CreateSuccess" xml:space="preserve">
+    <value>ចាប់ផ្តើមដំណើរការជោគជ័យ</value>
+  </data>
+    <data name="SuccessfullyTransaction" xml:space="preserve">
+    <value>ផ្ទុកដោយជោគជ័យប៉ុន្តែមានកំហុសក្នុងដំណើរការផ្ទេរកាក់</value>
+  </data>
+    <data name="TransactionFailed" xml:space="preserve">
+    <value>បានបរាជ័យក្នុងការផ្ទុកកាក់</value>
+  </data>
+    <data name="NoEvents" xml:space="preserve">
+    <value>មិនមានព្រឹត្តិការណ៍នៅឡើយទេ</value>
+  </data>
+    <data name="NoDataRequested" xml:space="preserve">
+    <value>គ្មានទិន្នន័យដែលអ្នកបានស្នើ</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>សារ</value>
+  </data>
+    <data name="NoNewInstructions" xml:space="preserve">
+    <value>គ្មានការណែនាំថ្មីនៅឡើយទេ</value>
+  </data>
+    <data name="EmailorPasswordIncorrect" xml:space="preserve">
+    <value>អ៊ីមែលឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="AccountLocked" xml:space="preserve">
+    <value>គណនីត្រូវបានចាក់សោ</value>
+  </data>
+    <data name="AccountPermanentlyLocked" xml:space="preserve">
+    <value>គណនីត្រូវបានជាប់សោជាអចិន្ត្រៃយ៍</value>
+  </data>
+    <data name="AccountActivatedYet" xml:space="preserve">
+    <value>គណនីមិនទាន់ត្រូវបានសកម្មនៅឡើយ</value>
+  </data>
+    <data name="UserAnotherDevice" xml:space="preserve">
+    <value>អ្នកប្រើកំពុងប្រើឧបករណ៍ផ្សេង</value>
+  </data>
+    <data name="SecurityCodeDoesNotExist" xml:space="preserve">
+    <value>លេខកូដសុវត្ថិភាពមិនមានទេ</value>
+  </data>
+    <data name="SecurityCodeIncorrect" xml:space="preserve">
+    <value>លេខកូដសុវត្ថិភាពមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="SecurityCodeUsed" xml:space="preserve">
+    <value>លេខកូដសុវត្ថិភាពត្រូវបានប្រើ។ សូមសរសេរកូដសុវត្ថិភាពថ្មី!</value>
+  </data>
+    <data name="FacebookAccountNotRegistered" xml:space="preserve">
+    <value>គណនីហ្វេសប៊ុកមិនត្រូវបានចុះឈ្មោះ</value>
+  </data>
+    <data name="LoggedSuccessfully" xml:space="preserve">
+    <value>ចូលបានជោគជ័យ</value>
+  </data>
+    <data name="LoginError" xml:space="preserve">
+    <value>កំហុសក្នុងការចូល។ សូមព្យាយាមម្តងទៀត!</value>
+  </data>
+    <data name="FacebookInformationIncorrect" xml:space="preserve">
+    <value>ព័ត៌មានហ្វេសប៊ុកមិនត្រឹមត្រូវសូមចូលម្តងទៀត</value>
+  </data>
+    <data name="FacebookInformationNotMatch" xml:space="preserve">
+    <value>ព័ត៌មានហ្វេសប៊ុកមិនត្រូវគ្នាសូមព្យាយាមម្តងទៀត។</value>
+  </data>
+    <data name="DisplayNameAlreadyExists" xml:space="preserve">
+    <value> ឈ្មោះបង្ហាញរួចហើយ</value>
+  </data>
+    <data name="Display3to15characters" xml:space="preserve">
+    <value>បង្ហាញឈ្មោះយ៉ាងហោចណាស់ 3 ទៅ 15 តួអក្សរ។</value>
+  </data>
+    <data name="AccountAlreadyUse" xml:space="preserve">
+    <value>គណនីកំពុងប្រើរួចហើយ។ សូមជ្រើសរើសឈ្មោះផ្សេងទៀត</value>
+  </data>
+    <data name="RegistrationFailed" xml:space="preserve">
+    <value>ការចុះឈ្មោះបានបរាជ័យ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។</value>
+  </data>
+    <data name="UsernameAvailable" xml:space="preserve">
+    <value>មានឈ្មោះអ្នកប្រើរួចហើយ</value>
+  </data>
+    <data name="ValidUsername" xml:space="preserve">
+    <value>ឈ្មោះត្រឹមត្រូវ</value>
+  </data>
+    <data name="YouNotCoinHistory" xml:space="preserve">
+    <value>អ្នកមិនមានប្រវត្តិប្រាក់កាក់ទេ</value>
+  </data>
+    <data name="GetAvatarSuccessfully" xml:space="preserve">
+    <value>ទទួលបានរូបតំណាងតំណភ្ជាប់ដោយជោគជ័យ</value>
+  </data>
+    <data name="YouHaveNoMail" xml:space="preserve">
+    <value>អ្នកមិនមានសំបុត្រទេ</value>
+  </data>
+    <data name="InvalidAccount1" xml:space="preserve">
+    <value>គណនីមិនត្រឹមត្រូវ (កូដ -1)</value>
+  </data>
+    <data name="InformationIsIncorrect" xml:space="preserve">
+    <value>ព័ត៌មានមិនត្រឹមត្រូវសូមចូលម្តងទៀត</value>
+  </data>
+    <data name="AccountLinked" xml:space="preserve">
+    <value>ចេញនិងប្ដូរមកគណនីនោះទេ?</value>
+  </data>
+    <data name="TieuDeTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>ចំណងជើងលើសពីតួអក្សរ {0} ។</value>
+  </data>
+    <data name="NoiDungTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>មាតិកាលើសពីតួអក្សរ {0} ។</value>
+  </data>
+    <data name="KhongTheGuiTinNhanChoMinh" xml:space="preserve">
+    <value>អ្នកមិនអាចផ្ញើរសារទៅខ្លួនអ្នកបានទេ!</value>
+  </data>
+    <data name="TKNhanTinNhanKTonTai" xml:space="preserve">
+    <value>គណនីដែលទទួលបានសារមិនមាន</value>
+  </data>
+    <data name="TaiKhoanNhanTinNhanBiKhoa" xml:space="preserve">
+    <value>គណនីដែលអ្នកចង់ផ្ញើសារទៅឥឡូវត្រូវបានចាក់សោ!</value>
+  </data>
+    <data name="ErrorMessCustomservice" xml:space="preserve">
+    <value>សូមទំនាក់ទំនងសេវាបម្រើអតិថិជនដើម្បីទទួលបានជំនួយ។</value>
+  </data>
+    <data name="TinNhanDaDuocGui" xml:space="preserve">
+    <value>សារត្រូវបានផ្ញើទៅ {0} - {1} !!!</value>
+  </data>
+    <data name="SuDungHetLuotGuiTinNhan" xml:space="preserve">
+    <value>អ្នកបានប្រើចំនួនសារដែលបានផ្ញើ។</value>
+  </data>
+    <data name="NhapTKNhanTinNhan" xml:space="preserve">
+    <value>សូមបញ្ចូលគណនីទទួល</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>ថ្ងៃនេះអ្នកបានទទួលរង្វាន់ហើយ។ សម្រាប់ nickឈ្មោះមួយគឺអាចត្រូវបានតែgift code ០១ ក្នុងមួយថ្ងៃ</value>
+  </data>
+    <data name="HistoriCoinBanCaSuccess" xml:space="preserve">
+    <value>យកព័ត៏មានប្រវត្តិទឹកប្រាក់បានសម្រេច</value>
+  </data>
+    <data name="AcceptImgType" xml:space="preserve">
+    <value>ផ្ទុករូបភាពឡើងជាទម្រង់ jpg, png, gif</value>
+  </data>
+    <data name="ImgSize" xml:space="preserve">
+    <value>ទំហំរូបភាពត្រូវតែ &lt;= 500Kb</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍ដែលបានជ្រើសរើសមិនបានផ្គូផ្គង {0} ទេ</value>
+  </data>
+    <data name="GetChipFromTheEvent" xml:space="preserve">
+    <value>អ្នកទទួលបាន {0} Chip ពីព្រឹត្តិការណ៍។</value>
+  </data>
+    <data name="HavebeenAwardedChip" xml:space="preserve">
+    <value>អ្នកត្រូវបានទទួលរង្វាន់ {0} ។ ព្រឹត្តិការណ៍ឈ្នះបញ្ចូលកូដប្រាក់។ 1 សម្មតិកម្មអាចឈ្នះលេខកូដអំណោយ 1 ក្នុងមួយថ្ងៃ។</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>មិនមានគ្រប់វេលាដើម្បីទទួលរង្វាន់</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>មានគ្រប់វេលាដើម្បីទទួលរង្វាន់</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>គណនីទើបទទួលរង្វាន់លើកដំបូង</value>
+  </data>
+    <data name="ErrorMessInvalidInformation" xml:space="preserve">
+    <value>ព័ត៌មានមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>មិនបានឡុកអ៊ីនឬចូលក្នុងម៉ាស៊ីនផ្សេង</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>ไม่ได้ลงชื่อเข้าใช้หรือลงชื่อเข้าใช้ที่เครื่องอื่น</value>
+  </data>
+    <data name="TurnsInvalid" xml:space="preserve">
+    <value>លេងមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="ErrorMessValidation2" xml:space="preserve">
+    <value>វេនបានផុតកំណត់</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>អ្នកបានទទួលរង្វាន់</value>
+  </data>
+    <data name="OutOfChips" xml:space="preserve">
+    <value>ចេញពីបន្ទះសៀគ្វី</value>
+  </data>
+    <data name="ConfigSuccess" xml:space="preserve">
+    <value>ទទួលបានព័ត៌មាននៃការកំណត់រចនាសម្ព័ន្ធដោយជោគជ័យ</value>
+  </data>
+    <data name="CoinACcountIsNotEnough" xml:space="preserve">
+    <value>ចំនួនកាក់នៅក្នុងគណនីមិនគ្រប់គ្រាន់ដើម្បីធ្វើប្រតិបត្តិការទេ</value>
+  </data>
+    <data name="AmountTransferChipsDivided" xml:space="preserve">
+    <value>ចំនួនទឹកប្រាក់ត្រូវផ្ទេរពី {0} ឈីបនិងបែងចែកដោយ 10,000 ។</value>
+  </data>
+    <data name="AmountTransferSmaller" xml:space="preserve">
+    <value>ចំនួនទឹកប្រាក់ផ្ទេរត្រូវតិចជាង</value>
+  </data>
+    <data name="TransferChipsSuccess" xml:space="preserve">
+    <value>បញ្ជូនបន្ទះសៀគ្វីដោយជោគជ័យ។ {0} បានទទួល {1} ។</value>
+  </data>
+    <data name="VipPromotionForYou" xml:space="preserve">
+    <value>ការផ្ដល់ជូនពិសេស VIP សម្រាប់អ្នក</value>
+  </data>
+    <data name="IPLimit" xml:space="preserve">
+    <value>IP បានលើសចំនួនទឹកប្រាក់ដែលទទួលបាន</value>
+  </data>
+    <data name="DeviceLimit" xml:space="preserve">
+    <value>ឧបករណ៍បានលើសចំនួនទឹកប្រាក់ដែលទទួលបាន</value>
+  </data>
+    <data name="ConfigNotExists" xml:space="preserve">
+    <value>ការកំណត់រចនាសម្ព័ន្ធមិនមានទេ</value>
+  </data>
+</LocalLanguages>

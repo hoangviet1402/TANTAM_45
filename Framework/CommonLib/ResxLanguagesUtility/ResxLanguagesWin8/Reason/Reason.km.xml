@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Reason_168">
+        <value>ជូន Win event user ថ្មី</value>
+    </data>
+    <data name="Reason_169">
+        <value>ជូន Win ឱ្យ user ប្រណាំង top vip</value>
+    </data>
+    <data name="Reason_171">
+        <value>ជូន Win ប្រចាំថ្ងៃ</value>
+    </data>
+    <data name="Reason_173">
+        <value>Admin ដក Win</value>
+    </data>
+    <data name="Reason_174">
+        <value>បញ្ចូឡប្រាក់តាម sms</value>
+    </data>
+    <data name="Reason_175">
+        <value>បញ្ចូល app បាញ់ត្រី</value>
+    </data>
+    <data name="Reason_176">
+        <value>ឈ្នះ Jackpot</value>
+    </data>
+    <data name="Reason_178">
+        <value>ជូន Winចូលក្នុងថ្ងៃសម្រាប់ mobile</value>
+    </data>
+    <data name="Reason_179">
+        <value>រាប់ឈ្មោះទទួលរង្វាន់</value>
+    </data>
+    <data name="Reason_180">
+        <value>ជូន Win អញ្ចើញមិត្តលើ facebook</value>
+    </data>
+    <data name="Reason_181">
+        <value>ជូន Winពេលមិត្តភក្តិចុះឈ្មោះលើ facebook</value>
+    </data>
+    <data name="Reason_182">
+        <value>ជូនរង្វាន់ជាពិសេសសម្រាប់ការបញ្ចូលកាតលើកដំបូង</value>
+    </data>
+    <data name="Reason_183">
+        <value>ជូន Winពេល user ចូលជាបន្តបន្ទាប់</value>
+    </data>
+    <data name="Reason_184">
+        <value>ជូន Win like fanpageលើ app fb</value>
+    </data>
+    <data name="Reason_187">
+        <value>ជូន Win khi user អស់លើកជូន - user ថ្មី</value>
+    </data>
+    <data name="Reason_188">
+        <value>ជូន Win user ថ្មីចុះឈ្មោះបញ្ចូលកាតលើកដំបូង</value>
+    </data>
+    <data name="Reason_189">
+        <value>ជូន Win user បញ្ចូលក្នុង mobile ក្នុងម៉ោងមាស</value>
+    </data>
+    <data name="Reason_190">
+        <value>ជូន Win បញ្ចូលថ្ងៃមាសក្នុង Mobile</value>
+    </data>
+    <data name="Reason_191">
+        <value>ជូន Win ចុះឈ្មោះពីការផ្ាសយពាណិជ្ជកម្មលើ Yahoo</value>
+    </data>
+    <data name="Reason_192">
+        <value>ជូន Win khi updateពព័ត៌មាន</value>
+    </data>
+    <data name="Reason_197">
+        <value>ជូនរង្វាន់ពិសេសសម្រាប់ការបញ្ចូល Win sms</value>
+    </data>
+    <data name="Reason_198">
+        <value>ជូនរង្វាន់ពិសេសសម្រាប់ការបញ្ចូល IAP</value>
+    </data>
+    <data name="Reason_213">
+        <value>លេងហ្គេមបាញ់ត្រី</value>
+    </data>
+    <data name="Reason_300">
+        <value>ជូន Win ឱ្យ User ថ្មី</value>
+    </data>
+    <data name="Reason_301">
+        <value>សង Win Event BONUS TaiXiu</value>
+    </data>
+    <data name="Reason_302">
+        <value>ដូរ Win</value>
+    </data>
+    <data name="Reason_303">
+        <value>ដូរកាត</value>
+    </data>
+    <data name="Reason_306">
+        <value>ដូររង្វាន់បង្វិលលេខ</value>
+    </data>
+    <data name="Reason_307">
+        <value>ប្រព័ន្ធផ្គត់ផ្គង់មាសសម្រាប់ jackpot</value>
+    </data>
+    <data name="Reason_311">
+        <value>បញ្ចូលប្រាក់តាម Google Wallet</value>
+    </data>
+    <data name="Reason_312">
+        <value>បញ្ចូលប្រាក់តាម Apple Store</value>
+    </data>
+    <data name="Reason_313">
+        <value>បង្កើតក្រុម</value>
+    </data>
+    <data name="Reason_314">
+        <value>ដក</value>
+    </data>
+    <data name="Reason_315">
+        <value>បញ្ចូល</value>
+    </data>
+    <data name="Reason_316">
+        <value>ប្រធានក្រុមផ្ទេរប្រាក់ឱ្យ user</value>
+    </data>
+    <data name="Reason_318">
+        <value>Userបញ្ចប់ហ្គេមបាញ់ត្រី</value>
+    </data>
+    <data name="Reason_319">
+        <value>User លេងហ្គេមបាញ់ត្រី</value>
+    </data>
+    <data name="Reason_320">
+        <value>ទទួល Win ពីប្រធានក្រុម</value>
+    </data>
+    <data name="Reason_321">
+        <value>ជូន ២% នៃការបញ្ចូលក្នុងខែរបស់អ្នកលេងក្នុងក្រុមទៅឱ្យប្រធានក្រុម</value>
+    </data>
+    <data name="Reason_322">
+        <value>ជូន ៣% នៃការបញ្ចូលក្នុងខែរបស់អ្នកលេងក្នុងក្រុមទៅឱ្យអ្នកដែលបញ្ចូល Win ស្រើនបំផុតក្នុងក្រុម</value>
+    </data>
+    <data name="Reason_325">
+        <value>សង Win ឱ្យ user ក្រោយពីចូលបន្ទប់លេងមិនបានសម្រេច</value>
+    </data>
+    <data name="Reason_326">
+        <value>សង Win ឱ្យ user ក្រោយពី admin បោះបង់ការស្នើដូររង្វាន់</value>
+    </data>
+    <data name="Reason_327">
+        <value>ជូនរង្វាន់ បាញ់ត្រី boss</value>
+    </data>
+    <data name="Reason_328">
+        <value>ជុន Win ឱ្យ user Event បញ្ចូលក្នុងម៉ោហមាស</value>
+    </data>
+    <data name="Reason_329">
+        <value>ជុន Win ឱ្យ user Event សងប្រាក់វិញ</value>
+    </data>
+    <data name="Reason_330">
+        <value>ជូន Win user ចុះឈ្មោះហ្គេមបាញ់ត្រីដូរយករង្វាន់</value>
+    </data>
+    <data name="Reason_331">
+        <value>ជូន Win user ចូលហ្គេមបាញ់ត្រីបានរង្វាន់</value>
+    </data>
+    <data name="Reason_332">
+        <value>ជូន Win ពេលចេញពីបន្ទប់បាញ់ត្រី</value>
+    </data>
+    <data name="Reason_333">
+        <value>ទទួលបានរង្វាន់សម្រាប់ការងារប្រចាំថ្ងៃ</value>
+    </data>
+    <data name="Reason_334">
+        <value>រង្វាន់ share facebook</value>
+    </data>
+    <data name="Reason_335">
+        <value>ប្រព័ន្ធរង្វាន់ Win jackpot</value>
+    </data>
+    <data name="Reason_336">
+        <value>ការសងប្រាក់វិញដោយសារតែការប្តូរកាតបានបរាជ័យ</value>
+    </data>
+    <data name="Reason_337">
+        <value>ជូនប្រាក់ពេលបានសម្រេចការងារបាញ់ត្រី</value>
+    </data>
+    <data name="Reason_338">
+        <value>ជូនប្រាក់ពេលឡើង level បាញ់ត្រី</value>
+    </data>
+    <data name="Reason_342">
+        <value>User ផ្ទេរមាសឱ្យ user ផ្សេង</value>
+    </data>
+    <data name="Reason_343">
+        <value>User ទទួលប្រាក់ពី user ផ្សេងទៀតផ្ទេមក</value>
+    </data>
+    <data name="Reason_344">
+        <value>Admin សង Win បាញ់ត្រី</value>
+    </data>
+    <data name="Reason_345">
+        <value>Admin សង Win Lather</value>
+    </data>
+    <data name="Reason_347">
+        <value>រង្វាន់សរុបនៃក្រុម</value>
+    </data>
+    <data name="Reason_350">
+        <value>ជូន Win រង្វង់បង្វិលក្នុងហ្គេម</value>
+    </data>
+    <data name="Reason_351">
+        <value>ឈ្នះរង្វាន់ក្នុងហ្គេម សុករួ</value>
+    </data>
+    <data name="Reason_352">
+        <value>ឈ្នះព្រឹត្ដិការណ៍បញ្ចូលកាតទទួលបានប្រាក់</value>
+    </data>
+    <data name="Reason_353">
+        <value>ឈ្នះហ្គេមនៃការប្រកួត</value>
+    </data>
+    <data name="Reason_355">
+        <value>លេងបាញ់ត្រី 3D</value>
+    </data>
+    <data name="Reason_356">
+        <value>បញ្ចប់ការលេងបាញ់ត្រី 3D</value>
+    </data>
+    <data name="Reason_357">
+        <value>លេងបាញ់ត្រី 3D mobile</value>
+    </data>
+    <data name="Reason_358">
+        <value>បញ្ចប់ការលេងបាញ់ត្រី 3D mobile</value>
+    </data>
+    <data name="Reason_359">
+        <value>ទទួលបានរង្វាន់សម្រាប់ការងារប្រចាំថ្ងៃ</value>
+    </data>
+    <data name="Reason_404">
+        <value>លេងហ្គេម Mini Xeng</value>
+    </data>
+    <data name="Reason_406">
+        <value>លេងហ្គេម Mini Penalty</value>
+    </data>
+    <data name="Reason_407">
+        <value>ជូនរង្វាន់ពិសេសក្នុងឧកាសមាស</value>
+    </data>
+    <data name="Reason_408">
+        <value>លេងហ្គេម Mini Fortunes88</value>
+    </data>
+    <data name="Reason_409">
+        <value>លេងហ្គេម Jackpot</value>
+    </data>
+    <data name="Reason_410">
+        <value>លេងហ្គេម XengLuxury</value>
+    </data>
+    <data name="Reason_412">
+        <value>លេងហ្គេម នាគមាស Slot</value>
+    </data>
+    <data name="Reason_413">
+        <value>លេងហ្គេម តាមក្វឹក Slot</value>
+    </data>
+    <data name="Reason_418">
+        <value>លេងហ្គេម ថឹនធូ</value>
+    </data>
+    <data name="Reason_419">
+        <value>លេងហ្គេម ថឹនតាយ</value>
+    </data>
+    <data name="Reason_420">
+        <value>លេងហ្គេម Pachinko Robot</value>
+    </data>
+    <data name="Reason_422">
+        <value>លេងហ្គេម Samurai</value>
+    </data>
+    <data name="Reason_423">
+        <value>លេងហ្គេម Super 777</value>
+    </data>
+    <data name="Reason_424">
+        <value>លេងហ្គេម អណ្ដើកមាស Mini</value>
+    </data>
+    <data name="Reason_425">
+        <value>លេងហ្គេម Monopoly Million Dollar</value>
+    </data>
+    <data name="Reason_426">
+        <value>លេងហ្គេម Diamonds Links</value>
+    </data>
+    <data name="Reason_428">
+        <value>លេងហ្គេម Candy</value>
+    </data>
+    <data name="Reason_430">
+        <value>លេងហ្គេម Fantastic Beasts</value>
+    </data>
+    <data name="Reason_501">
+        <value>ឈ្នះរង្វង់បង្វិលផ្សងសំណាង</value>
+    </data>
+    <data name="Reason_502">
+        <value>ទិញលើកបង្វិលផ្សងសំណាង</value>
+    </data>
+    <data name="Reason_503">
+        <value>លេងហ្គេម Lather</value>
+    </data>
+    <data name="Reason_999">
+        <value>Log កើតឡើងដោយ IdReason មិនមាន</value>
+    </data>
+    <data name="Reason_504">
+        <value>Paypal</value>
+    </data>
+</LocalLanguages>

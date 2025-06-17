@@ -1,0 +1,1263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Data\Up\BanCaMobileApi</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/22/2013 08:43:40</publishTime>
+    </File>
+    <File Include="bin/BanCaMobileApi.dll">
+      <publishTime>02/26/2020 13:47:03</publishTime>
+    </File>
+    <File Include="bin/BussinessObject.dll">
+      <publishTime>02/26/2020 13:43:48</publishTime>
+    </File>
+    <File Include="bin/BussinessObject.XmlSerializers.dll">
+      <publishTime>02/26/2020 13:43:54</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>02/26/2020 13:43:32</publishTime>
+    </File>
+    <File Include="bin/DataAccessMongo.dll">
+      <publishTime>02/26/2020 13:43:39</publishTime>
+    </File>
+    <File Include="bin/DataAccessRedis.dll">
+      <publishTime>02/26/2020 13:43:29</publishTime>
+    </File>
+    <File Include="bin/DbConfig.dll">
+      <publishTime>02/26/2020 13:43:40</publishTime>
+    </File>
+    <File Include="bin/EntitiesObject.dll">
+      <publishTime>02/26/2020 13:43:20</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/11/2013 09:10:04</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>09/11/2013 09:10:04</publishTime>
+    </File>
+    <File Include="bin/HqCardckStockApi.dll">
+      <publishTime>01/21/2020 11:07:23</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>11/23/2013 10:04:16</publishTime>
+    </File>
+    <File Include="bin/Logger.dll">
+      <publishTime>02/26/2020 13:43:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>06/26/2018 21:43:38</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Core.dll">
+      <publishTime>06/26/2018 21:43:38</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>06/26/2018 21:43:38</publishTime>
+    </File>
+    <File Include="bin/MyConfig.dll">
+      <publishTime>02/26/2020 13:43:22</publishTime>
+    </File>
+    <File Include="bin/MyMemCache.dll">
+      <publishTime>02/26/2020 13:43:27</publishTime>
+    </File>
+    <File Include="bin/MyUtility.dll">
+      <publishTime>02/26/2020 13:43:35</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/18/2017 13:57:10</publishTime>
+    </File>
+    <File Include="bin/ResxLanguagesUtility.dll">
+      <publishTime>02/26/2020 13:43:39</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Common.dll">
+      <publishTime>09/06/2017 12:18:22</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Interfaces.dll">
+      <publishTime>09/06/2017 12:17:30</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Redis.dll">
+      <publishTime>09/06/2017 12:02:24</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Text.dll">
+      <publishTime>09/06/2017 04:38:18</publishTime>
+    </File>
+    <File Include="bin/ShareGameApi.dll">
+      <publishTime>10/13/2017 17:24:57</publishTime>
+    </File>
+    <File Include="bin/StackExchange.Redis.dll">
+      <publishTime>08/01/2017 12:19:14</publishTime>
+    </File>
+    <File Include="bin/StackExchange.Redis.StrongName.dll">
+      <publishTime>08/01/2017 12:20:24</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Extensions.dll">
+      <publishTime>07/24/2015 14:15:58</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/24/2015 14:15:58</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Primitives.dll">
+      <publishTime>07/24/2015 14:15:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>08/22/2018 11:55:25</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>08/22/2018 11:56:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>09/04/2013 02:27:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/14/2017 13:53:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/TopupCardApi.dll">
+      <publishTime>02/26/2020 13:43:41</publishTime>
+    </File>
+    <File Include="bin/VnkashApi.dll">
+      <publishTime>01/21/2020 11:07:21</publishTime>
+    </File>
+    <File Include="bin/WalletApi.dll">
+      <publishTime>10/17/2019 11:15:48</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/17/2013 17:03:52</publishTime>
+    </File>
+    <File Include="bin/WebUtility.dll">
+      <publishTime>02/26/2020 13:43:21</publishTime>
+    </File>
+    <File Include="Content/Css/bootstrap.css">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/Css/gioithieugame.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Css/hover.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Css/jquery.mCustomScrollbar.css">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/Css/Landing.css">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/Css/lather.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Css/MyStyle.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Css/owl.carousel.css">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/Css/radialmenu.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Css/slide.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Images/Avatar/noimage.gif">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Content/Images/sprite.png">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/css/font-awesome.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/css/font-awesome.min.css">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/fonts/fontawesome-webfont.eot">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/fonts/fontawesome-webfont.svg">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/fonts/fontawesome-webfont.ttf">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/fonts/fontawesome-webfont.woff">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/fonts/fontawesome-webfont.woff2">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/font-awesome/fonts/FontAwesome.otf">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/Plugin/snow.js">
+      <publishTime>04/11/2018 15:55:45</publishTime>
+    </File>
+    <File Include="Content/scripts/bootstrap.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/bootstrap.min.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/changeaward.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/common.js">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/commonV2.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/enscroll-0.6.2.min.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa.rar">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/Font.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/gif.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/gown.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/gownextends.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/iesupport.js">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/jquery.min.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/pixi-extra-filters.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/pixi-multistyle-text.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/pixi-particles.js">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/pixi.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/pixiextends.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/proton-2.1.0.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/require.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasBackground.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasBackground.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasBackgroundOriginal.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasBanCaGeneral.json">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasBanCaGeneral.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasButton.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasButton.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasButtonOriginal.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasEffects.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasEffects.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasEffectsOriginal.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasListBoard.json">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasListBoard.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasLoadingDefault.json">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasLoadingDefault.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasLoadingDefaultOriginal.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasLobby.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasLobby.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasMobileLogin.json">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasMobileLogin.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasMobileLoginOriginal.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopup.json">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopup.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopupMyInfo.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopupMyInfo.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopupNapXu.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopupNapXu.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopupReward.json">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/AtlasPopupReward.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBackgroundBanCa.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBackgroundBanCa.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBackgroundBanCaOriginal.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBanCaGeneral.json">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBanCaGeneral.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBaseStation.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBaseStation.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBoss32.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBoss32.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBoss32Original.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBoss33.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBoss33.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBoss33Original.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBossMini.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBossMini.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasBossOriginal.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasEffects.json">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasEffects.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasFish.json">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasFish.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasFishOriginal.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasGun.json">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasGun.png">
+      <publishTime>04/11/2018 15:55:37</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasWaves.json">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasWaves.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/AtlasWavesOriginal.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/banca/shoot_1.png">
+      <publishTime>04/11/2018 15:55:36</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/bct/AtlasLoadingDefault.json">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/bct/AtlasLoadingDefault.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/bct/AtlasLoadingDefaultOriginal.png">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/atlas/Shortcut to Resources.lnk">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/BossBlood.fnt">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/BossBlood.ltr">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/BossBlood.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/CoinWin.fnt">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/CoinWin.ltr">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/CoinWin.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/EffectFont.fnt">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/EffectFont.ltr">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/EffectFont.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/OPENSANS-BOLD.TTF">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/PopupHeader.fnt">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/PopupHeader.ltr">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/PopupHeader.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/RoomTypeFont.fnt">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/RoomTypeFont.ltr">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/RoomTypeFont.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/TAHOMABD.TTF">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/TopHitBoss.fnt">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/TopHitBoss.ltr">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/TopHitBoss.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/UVNBAISAU_R.TTF">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/UVNHUONGQUE.fnt">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/UVNHUONGQUE.ltr">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/fonts/UVNHUONGQUE.png">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/BanTrungCaLon.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/BanTrungCaLon.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/BanTrungCaThuong.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/BanTrungCaThuong.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic1.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic1.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic2.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic2.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic3.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic3.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic4.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bgmusic4.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bom.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bom.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bosscome1.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bosscome1.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bosscome2.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/bosscome2.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/Boss_Death.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/CaChet.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/CaChet.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/CaDoXuatHien.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/CaDoXuatHien.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/CaTranXuatHien.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/DoiSung.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/DoiSung.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/GayChoang.mp3">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/GayChoang.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/SungBan.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/SungBan.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/SungBan_DoiPhuong.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/wave.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/banca/wave.mysound">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/Sanh_bgmusic.mp3">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/default/sounds/Sanh_bgmusic.mysound">
+      <publishTime>04/11/2018 15:55:38</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/AeonTheme.js">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/assets/aeon/aeon_desktop.json">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/assets/aeon/aeon_desktop.png">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/assets/aeon/aeon_desktop.xml">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/assets/metalworks/metalworks.json">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/assets/metalworks/metalworks.png">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/assets/metalworks/metalworks.xml">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/MetalWorksMobileTheme.js">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/ShapeTheme.js">
+      <publishTime>04/11/2018 15:55:39</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/resources/themes/xml_to_json.py">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/soundjs-NEXT.combined.js">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/stats.js">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/TweenMax.js">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/utf8-regex.js">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/lib/utf8.js">
+      <publishTime>04/11/2018 15:55:35</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/configs/gameconfigs/BanCaConfig.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/configs/PreLoaderConfig.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/controllers/GlobalComponentsController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/controllers/GlobalListenerController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/controllers/PopupController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/controllers/ScreenController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/controllers/SoundController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/controllers/StorageController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/BanCa.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/controllers/DisplayController.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/controllers/SoundController.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/keys/JSONKeys.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/keys/RequestKeys.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/models/GameBoard.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/models/UserOnlineModel.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/handlers/GameNotifyInfoHandler.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/handlers/JoinServerGameInfoHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/handlers/KickUserOutGameHandler.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/handlers/LoginGameHandler.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/handlers/PopupHandler.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/handlers/PopupTopHitBoss.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/handlers/UserActionHandler.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/ReceiveController.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/sockets/RequestController.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/button/BtnChoiceGun.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compobasestation/CompoBaseStation.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compobossheal/CompoBossHeal.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compobullet/CompoBullet.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compochangegun/CompoChangeGun.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/BatMonKimToa.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/BattleField.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/BatTranDo.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/EntityCaTran.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/HaiHangCaNho.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/KimBinhMaiTranPhap.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/LuongNghiTranPhap.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/Scene4.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/Scene7.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/Scene8.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/TamLongThanPhuc.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/compocatran/UyenUongTranPhap.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/EntityBoss.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/EntityBossMini.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/EntityCa.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/EntityCaLobby.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogroupca/EntityCaShadow.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compogun/CompoGun.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compoheader/CompoHeader.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compolockline/CompoLockLine.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compotooltipgun/CompoToolTipGun.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/components/compotooltiplockfish/CompoTooltipLockFish.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/bosscomingeffect/BossComingEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/bosseffects/BossBloodLoseEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/bossminicomingeffect/GiftComingEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/bossminirewardeffect/BossMiniRewardEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/catrancomingeffect/CaTranComingEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/coinwineffect/GroupCoinWinEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/fishdieparticle/FishDieParticle.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/fishstuneffect/FishStunEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/fishstuneffect/StunTextEffect.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/banca/ui/effects/transferscreen/TransferScreen.js">
+      <publishTime>04/11/2018 15:55:41</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/games/IGame.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/keys/ErrorCode.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/keys/GlobalConstants.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/keys/JSONKeys.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/keys/RequestKeys.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/keys/VariableKeys.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/Main.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/PreLoader.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/core/MessageHelper.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/core/Socket.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/GetServerGameInfoHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/IHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/KickUserHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/LoginMasterHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/MissionHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/PopupHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/PopupTopHitBoss.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/UpdateUserAvatarHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/UpdateUserCoinHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/handler/UserOnlineHandler.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/ReceiveController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/RequestController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/sockets/SocketController.js">
+      <publishTime>04/11/2018 15:55:40</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/buttons/Button.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/buttons/ButtonJackpot.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/buttons/ButtonSpinRound.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/CompoAvatar.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/CompoFooter.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/compologin/CompoLogin.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/compologin/CompoRegister.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/CompoNotifyGame.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/compopagingcontainer/BtnPaging.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/compopagingcontainer/PageContent.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/compopagingcontainer/PagingContainer.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/comporank/CompoRank.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/comporank/ItemListRank.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/compotophitboss/CompoTopHitBoss.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/compotophitboss/ItemTopHitBoss.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/GeneralComponent.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/ImageLoader.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/Loading.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/Particle.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/components/ProtonParticle.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/GeneralPopup.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupevent/ItemEvent.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupevent/PopupEvent.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupmailbox/ItemMailBox.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupmailbox/PopupMailBox.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupmission/ItemMission.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupmission/PopupMission.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupnapxu/PopupNapXu.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popuprank/ItemRank.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popuprank/PopupRank.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupreward/PopupReward.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupshownotify/PopupNotify.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupsupport/ItemPhoneNumber.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupsupport/ItemPhoneViber.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupsupport/PopupSupport.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popuptutorial/ItemTutorial.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popuptutorial/PopupTutorial.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupuseronline/ItemPoupUserOnline.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/popups/popupuseronline/PopupUserOnline.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/screens/GameScreen.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/screens/GeneralScreen.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/screens/LoadingScreen.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/screens/LobbyScreen.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/ui/screens/LoginScreen.js">
+      <publishTime>04/11/2018 15:55:42</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/AppInfo.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/FontLibrary.js">
+      <publishTime>04/11/2018 15:55:43</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/ResourceManager.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/resourceregister/ResourceBanCa.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/resourceregister/ResourceGeneral.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/BrowserUtils.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/DateUtils.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/Dictionary.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/EnterFrameUtils.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/FileUtils.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/NumberUtils.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/StringUtils.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/TimerMgame.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameBanCa/src/utils/utilities/Utilities.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/GameMini/src/Main.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery-1.11.2.min.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery-ui.min.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.collapsible.min.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.dialog.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.mCustomScrollbar.concat.min.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.mobile-1.2.1.min.js">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.nicescroll.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.nicescroll.min.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.slimscroll.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.ui.touch-punch.min.js">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.validate.min.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/jsrender.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/lather.js">
+      <publishTime>04/11/2018 15:55:34</publishTime>
+    </File>
+    <File Include="Content/scripts/main.js">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/modernizr-2.6.2.js">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/owl.carousel.min.js">
+      <publishTime>04/11/2018 15:55:44</publishTime>
+    </File>
+    <File Include="Content/scripts/propeller.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/require.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="Content/scripts/resizeWindows.js">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/respond.js">
+      <publishTime>04/11/2018 15:55:32</publishTime>
+    </File>
+    <File Include="Content/scripts/respond.min.js">
+      <publishTime>04/11/2018 15:55:33</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/11/2018 15:55:49</publishTime>
+    </File>
+    <File Include="MyConfig/MyConfig.config">
+      <publishTime>02/26/2020 10:01:37</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/29/2019 18:21:19</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.9.2.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.9.2.min.js">
+      <publishTime>04/11/2018 15:55:49</publishTime>
+    </File>
+    <File Include="Scripts/knockout-3.2.0.debug.js">
+      <publishTime>04/11/2018 15:55:49</publishTime>
+    </File>
+    <File Include="Scripts/knockout-3.2.0.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/WebApiTestClient.js">
+      <publishTime>04/11/2018 15:55:48</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>10/31/2017 14:58:16</publishTime>
+    </File>
+    <File Include="Views/Event/BoxTop.cshtml">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Views/Event/EventDetailMobile.cshtml">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>04/11/2018 15:55:30</publishTime>
+    </File>
+    <File Include="Views/Shared/_BoxEventAjax.cshtml">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>04/11/2018 15:55:30</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>04/11/2018 15:55:31</publishTime>
+    </File>
+    <File Include="Web References/UploadFileService/Reference.map">
+      <publishTime>04/11/2018 15:55:46</publishTime>
+    </File>
+    <File Include="Web References/UploadFileService/UploadImageResult.datasource">
+      <publishTime>04/11/2018 15:55:46</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/26/2020 13:47:22</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

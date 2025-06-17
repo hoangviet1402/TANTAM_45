@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_412" xml:space="preserve">
+    <value>POKER SOLO</value>
+  </data>
+    <data name="Game_2001" xml:space="preserve">
+    <value>Onet fruit</value>
+  </data>
+    <data name="Game_2002" xml:space="preserve">
+    <value>BonusOnline</value>
+  </data>
+    <data name="Game_-1" xml:space="preserve">
+    <value>Bonus Wheel</value>
+  </data>
+    <data name="Game_434" xml:space="preserve">
+    <value>Black Jack</value>
+  </data>
+    <data name="Game_Type_Fishing">
+        <value>Fishing Game</value>
+    </data>
+    <data name="Game_Type_Slot_Game">
+        <value>Slot Game</value>
+    </data>
+    <data name="Game_500">
+        <value>เกมส์ตกปลา</value>
+    </data>
+    <data name="Game_425">
+        <value>TEXAS HOLD 'EM POKER</value>
+    </data>
+    <data name="Game_424">
+        <value>DIAMONDS LINK</value>
+    </data>
+    <data name="Game_423">
+        <value>MONOPOLY</value>
+    </data>
+    <data name="Game_420">
+        <value>ซามูไรสล็อต</value>
+    </data>
+    <data name="Game_419">
+        <value>ชาวอินเดียฝัน</value>
+    </data>
+    <data name="Game_417">
+        <value>เทพเจ้าแห่งโชคลาภ</value>
+    </data>
+    <data name="Game_416">
+        <value>มังกรทอง</value>
+    </data>
+    <data name="Game_411">
+        <value>สามอาณาจักร</value>
+    </data>
+    <data name="Game_410">
+        <value>เขี้ยวทองคำ</value>
+    </data>
+    <data name="Game_409">
+        <value>คู่-คี</value>
+    </data>
+    <data name="Game_408">
+        <value>สล็อตโชคดี</value>
+    </data>
+    <data name="Game_407">
+        <value>แจ็คพอต</value>
+    </data>
+    <data name="Game_406">
+        <value>88 ฆ้อง</value>
+    </data>
+    <data name="Game_402">
+        <value>บาร์สล็อต</value>
+    </data>
+    <data name="Game_209">
+        <value>XOC DIA</value>
+    </data>
+    <data name="Game_201">
+        <value>สลาฟ</value>
+    </data>
+    <data name="Game_200">
+        <value>LIENG</value>
+    </data>
+    <data name="Game_48">
+        <value>ไฮโล</value>
+    </data>
+    <data name="Game_42">
+        <value>โป๊กเกอร์</value>
+    </data>
+    <data name="Game_41">
+        <value>ดัมมี่</value>
+    </data>
+    <data name="Game_40">
+        <value>ไปต่อ</value>
+    </data>
+    <data name="Game_34">
+        <value>รอบเกม</value>
+    </data>
+    <data name="Game_1">
+        <value>หมุนวงล้อโชคดี</value>
+    </data>
+    <data name="Game_3">
+        <value>หมุนวงล้อโชคดี</value>
+    </data>
+
+    <data name="Game_421">
+        <value>ซุปเปอร์777</value>
+    </data>
+    <data name="Game_422">
+        <value>โชคลาภ</value>
+    </data>
+    <data name="Game_423">
+        <value>มหาเศรษฐี</value>
+    </data>
+    <data name="Game_424">
+        <value>เพชร</value>
+    </data>
+
+    <data name="Game_428">
+        <value>DRACULA</value>
+    </data>
+    <data name="Game_429">
+        <value>PACMAN</value>
+    </data>
+    <data name="Game_430">
+        <value>BIGTWO</value>
+    </data>
+    <data name="Game_431">
+        <value>BACCARAT</value>
+    </data>
+
+    <data name="Game_433">
+        <value>TEANG LEN</value>
+    </data>
+    <data name="Game_426">
+        <value>CANDY</value>
+    </data>
+    <data name="Game_418">
+        <value>PACHINKO ROBOT</value>
+    </data>
+    <data name="Game_45">
+        <value>BIG SMALL</value>
+    </data>
+    <data name="Game_208">
+        <value>MYSTERY NUM</value>
+    </data>
+    <data name="Game_432">
+        <value>BLACKJACK</value>
+    </data>
+</LocalLanguages>

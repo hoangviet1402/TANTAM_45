@@ -1,0 +1,141 @@
+﻿<?xml version = "1.0" encoding = "utf-8"?>
+<LocalLanguages>
+    <!--Region Descript Defender-->
+    <data name="SoloMode_Default" xml:space="preserve">
+        <value>កាំភ្លើងម៉ាញ់ត្រី</value>
+    </data>
+    <data name="SoloMode_Medusa" xml:space="preserve">
+        <value>Medusa</value>
+    </data>
+    <data name="SoloMode_NhanMa" xml:space="preserve">
+        <value>Sagittarius</value>
+    </data>
+    <data name="SoloMode_Poseidon" xml:space="preserve">
+        <value>Poseidon</value>
+    </data>
+    <data name="SoloMode_Mermaid" xml:space="preserve">
+        <value>មន្តស្នេហ៍មូយ</value>
+    </data>
+    <data name="SoloMode_Cerberus" xml:space="preserve">
+        <value>Cerberus</value>
+    </data>
+    <data name="SoloMode_Dragon" xml:space="preserve">
+        <value>កាំភ្លើងនាគ</value>
+    </data>
+    <data name="SoloMode_Success" xml:space="preserve">
+        <value>ជោគជ័យ</value>
+    </data>
+    <data name="SoloMode_Failed" xml:space="preserve">
+        <value>បរាជ័យ</value>
+    </data>
+    <data name="SoloMode_InvalidDataInput" xml:space="preserve">
+        <value>ទិន្នន័យមិនត្រឹមត្រូវ</value>
+    </data>
+    <data name="SoloMode_NotHaveGunKind" xml:space="preserve">
+        <value>អ្នកប្រើមិនមានកាំភ្លើងសមរម្យទេ</value>
+    </data>
+    <data name="SoloMode_NotConfigGunKind" xml:space="preserve">
+        <value>កាំមិនត្រូវបានកំណត់រចនាសម្ព័ន្ធ</value>
+    </data>
+    <data name="SoloMode_NotConfig Generation" xml:space="preserve">
+        <value>ការបង្កើតកាំភ្លើងមិនត្រូវបានកំណត់រចនាសម្ព័ន្ធ</value>
+    </data>
+    <data name="SoloMode_GunLevelMax" xml:space="preserve">
+        <value>កាំភ្លើងបានទៅដល់កម្រិតអតិបរមា</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveGun" xml:space="preserve">
+        <value>កាំភ្លើងត្រូវបានជ្រើសរើសយ៉ាងជាក់លាក់</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseGun" xml:space="preserve">
+        <value>មិនអាចជ្រើសរើសកាំភ្លើងដូចគ្នា</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseGun" xml:space="preserve">
+        <value>កុំជ្រើសរើសកាំភ្លើងដែលអ្នកមិនមាន។</value>
+    </data>
+    <data name="SoloMode_UpdateIsFailed" xml:space="preserve">
+        <value>មានកំហុសក្នុងដំណើរការធ្វើឱ្យប្រសើរឡើង</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultGun" xml:space="preserve">
+        <value>អ្នកប្រើមានតែកាំភ្លើងលំនាំដើម។</value>
+    </data>
+    <data name="SoloMode_NotEnoughLevelToEvolution" xml:space="preserve">
+        <value>កាំភ្លើងមិនអាចវិវត្ត</value>
+    </data>
+    <data name="SoloMode_EvolutionIsFailed" xml:space="preserve">
+        <value>មានកំហុសវិវត្តន៍</value>
+    </data>
+    <data name="SoloMode_NotAnyMineral" xml:space="preserve">
+        <value>គ្មានសម្ភារៈ។</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseMineral" xml:space="preserve">
+        <value>មិនមានសម្ភារៈនៅក្នុងស្តុក</value>
+    </data>
+    <data name="SoloMode_NotConfigMineral" xml:space="preserve">
+        <value>ការកំណត់រចនាសម្ព័ន្ធមិនត្រូវបានកំណត់នៅក្នុងហោប៉ៅអ្នកប្រើ</value>
+    </data>
+    <data name="SoloMode_NotAnyMaterial" xml:space="preserve">
+        <value>អ្នកប្រើប្រាស់មិនមានសម្ភារៈវិវត្តន៍ទេ</value>
+    </data>
+    <data name="SoloMode_IsContainsChooseMaterial" xml:space="preserve">
+        <value>មិនមានសម្ភារៈនៅក្នុងស្តុក</value>
+    </data>
+    <data name="SoloMode_NotConfigMaterial" xml:space="preserve">
+        <value>មិនបានកំណត់រចនាសម្ព័ន្ធសម្ភារៈនៅក្នុងកាបូបអ្នកប្រើ</value>
+    </data>
+    <data name="SoloMode_MaterialChoiseNotMatchConfig" xml:space="preserve">
+        <value>សម្ភារៈមិនសមរម្យ</value>
+    </data>
+    <data name="SoloMode_NotHaveSkillKind" xml:space="preserve">
+        <value>មិនមានជំនាញនេះទេ</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveSkill" xml:space="preserve">
+        <value>ជំនាញដែលបានជ្រើសរើសត្រូវបានបញ្ជាក់ផងដែរ</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseSkill" xml:space="preserve">
+        <value>កុំជ្រើសរើសជំនាញដូចគ្នា។</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseSkill" xml:space="preserve">
+        <value>កុំជ្រើសរើសជំនាញដែលអ្នកមិនមាន។</value>
+    </data>
+    <data name="SoloMode_WallNotFound" xml:space="preserve">
+        <value>ជញ្ជាំងមិនមានទេ</value>
+    </data>
+    <data name="SoloMode_WallInvalidStage" xml:space="preserve">
+        <value>លេងទៅអេក្រង់ហ្គេមដើម្បីអនុញ្ញាតិឱ្យប្រសើរឡើង</value>
+    </data>
+    <data name="SoloMode_NotHaveTowerKind" xml:space="preserve">
+        <value>អ្នកប្រើគ្មានប៉មផ្គូផ្គង</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerKind" xml:space="preserve">
+        <value>ប៉មមិនត្រូវបានកំណត់រចនាសម្ព័ន្ធទេ</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerGeneration" xml:space="preserve">
+        <value>ជំនាន់ប៉មមិនត្រូវបានតំឡើង</value>
+    </data>
+    <data name="SoloMode_TowerLevelMax" xml:space="preserve">
+        <value>ប៉មបានឈានដល់កម្រិតអតិបរមា</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveTower" xml:space="preserve">
+        <value>ប៉មត្រូវបានជ្រើសលើសពីកំនត់ជាក់លាក់</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseTower" xml:space="preserve">
+        <value>កុំជ្រើសប៉មដដែល</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseTower" xml:space="preserve">
+        <value>កុំជ្រើសរើសអាគារដែលអ្នកមិនមាន។</value>
+    </data>
+    <data name="SoloMode_UpdateTowerIsFailed" xml:space="preserve">
+        <value>មានកំហុសក្នុងដំណើរការធ្វើឱ្យប្រសើរឡើង</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultTower" xml:space="preserve">
+        <value>អ្នកប្រើតែប៉ុណ្ណោះមានប៉មលំនាំដើម</value>
+    </data>
+    <data name="SoloMode_NotEnoughCoin" xml:space="preserve">
+        <value>អ្នកប្រើមិនមានកាក់គ្រប់គ្រាន់ទេ។</value>
+    </data>
+    <data name="SoloMode_CheckNotExists" xml:space="preserve">
+        <value>មុខងារតេស្តមិនមានទេ</value>
+    </data>
+    <!--Endregion Descript Defender-->
+</LocalLanguages>
+  

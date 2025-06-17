@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalLanguages>
+    <data name="ConfigNotExists" xml:space="preserve">
+        <value>Config Not Exists</value>
+    </data>
+    <data name="GetDataSuccess_v1" xml:space="preserve">
+        <value>Get the data success</value>
+    </data>
+    <data name="RegisInMobilePassword" xml:space="preserve">
+        <value>密码必须至少6个字符。</value>
+    </data>
+    <data name="Pointstoachieve" xml:space="preserve">
+        <value>Points to achieve</value>
+    </data>
+    <data name="Failed" xml:space="preserve">
+        <value>Failed</value>
+    </data>
+    <data name="Fail" xml:space="preserve">
+        <value>Fail</value>
+    </data>
+    <data name="EventNotYetRun" xml:space="preserve">
+        <value>The event has not yet taken place</value>
+    </data>
+    <data name="AddGoldUserFromEvent" xml:space="preserve">
+        <value>Free Gold for new users</value>
+    </data>
+    <data name="AddGoldUserFromEventError" xml:space="preserve">
+        <value>Error giving Gold to user</value>
+    </data>
+    <data name="RegisterDateNotReward" xml:space="preserve">
+        <value>The registration date will not be accepted</value>
+    </data>
+    <data name="Skill" xml:space="preserve">
+		<value>Skill</value>
+	</data>
+    <data name="NonexistSecurityCode" xml:space="preserve">
+        <value>验证码不正确。</value>
+    </data>
+    <data name="InvalidCaptchaCode" xml:space="preserve">
+		<value>验证码不正确。</value>
+	</data>
+    <data name="InvalidSecurityCode" xml:space="preserve">
+        <value>验证码不正确.</value>
+    </data>
+    <data name="Bullet" xml:space="preserve">
+		<value>Bullet</value>
+	</data>
+    <data name="Effect" xml:space="preserve">
+		<value>Effect</value>
+	</data>
+    <data name="BonusLogin" xml:space="preserve">
+		<value>Bonus Login</value>
+	</data>
+    <data name="Game_Type_Fishing">
+        <value>Fishing Game</value>
+    </data>
+    <data name="Game_Type_Slot_Game">
+        <value>Slot Game</value>
+    </data>
+    <data name="Game_Type_Orther">
+        <value>Orther Game</value>
+    </data>
+    <data name="CompletedAchievementTitle" xml:space="preserve">
+		<value> Congratulations on completing the task </value>
+	</data>
+    <data name="NoData" xml:space="preserve">
+		<value>No data</value>
+	</data>
+    <data name="Success" xml:space="preserve">
+		<value>Success</value>
+	</data>
+    <data name="ConfigFail" xml:space="preserve">
+		<value>Config does not exist</value>
+	</data>
+    <data name="Achievement_Total_Win" xml:space="preserve">
+		<value> Total winnings: {0} </value>
+	</data>
+    <data name="Achievement_Total_Bet" xml:space="preserve">
+		<value> Total bets: {0} </value>
+	</data>
+    <data name="Guns" xml:space="preserve">
+		<value>Guns</value>
+	</data>
+    <data name="Achievement_Total_Turn" xml:space="preserve">
+		<value> Total turns: {0} </value>
+	</data>
+    <data name="Achievement_Total_Turn_Win" xml:space="preserve">
+		<value> Total Wins: {0} </value>
+	</data>
+    <data name="Achievement_Big_Win" xml:space="preserve">
+		<value> Big Win: {0} </value>
+	</data>
+    <data name="Achievement_Mega_Win" xml:space="preserve">
+		<value> Mega Win: {0} </value>
+	</data>
+    <data name="Achievement_Super_Win" xml:space="preserve">
+		<value> Super Win: {0} </value>
+	</data>
+    <data name="Achievement_Super_Bonus" xml:space="preserve">
+		<value> Super Bonus: {0} </value>
+	</data>
+    <data name="Achievement_Leaderboard_Big_Win" xml:space="preserve">
+		<value> Top won {0} big in the day </value>
+	</data>
+    <data name="Achievement_Leaderboard_Total_Big_Win" xml:space="preserve">
+		<value> Top won {0} big in the day </value>
+	</data>
+    <data name="Achievement_Login" xml:space="preserve">
+		<value> Sign in {0} times in a row </value>
+	</data>
+    <data name="Achievement_Vip_Update" xml:space="preserve">
+		<value> Upgrade Vip {0} </value>
+	</data>
+    <data name="Achievement_Win_Jackpot" xml:space="preserve">
+		<value> Win the Jackpot {0} </value>
+	</data>
+    <data name="Achievement_Total_Win_Fish" xml:space="preserve">
+		<value> Total win {0} </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Fish" xml:space="preserve">
+		<value> Total coins {0} </value>
+	</data>
+    <data name="Achievement_Total_Fish_Die_One_Turn" xml:space="preserve">
+		<value> Total fish killed in one go: {0} </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Red_Fish" xml:space="preserve">
+		<value> Shoot and kill {0} red fish </value>
+	</data>
+    <data name="Achievement_Total_Using_Item" xml:space="preserve">
+		<value> Use {0} item </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Boss_Fish" xml:space="preserve">
+		<value> Target {0} kill the boss </value>
+	</data>
+    <data name="Achievement_Total_bullet" xml:space="preserve">
+		<value> Total {0} bullets </value>
+	</data>
+    <data name="Achievement_Total_Fish_Die" xml:space="preserve">
+		<value> Total {0} dead fish </value>
+	</data>
+    <data name="Achievement_Total_Friends" xml:space="preserve">
+		<value> Has {0} friends </value>
+	</data>
+    <data name="Achievement_Connect_Facebook" xml:space="preserve">
+		<value> Social networking {0} times </value>
+	</data>
+    <data name="Achievement_Add_Friends_Facebook" xml:space="preserve">
+		<value> Invite {0} friends from Facebook </value>
+	</data>
+    <data name="Achievement_Ios" xml:space="preserve">
+		<value> Play the game on Ios {0} times </value>
+	</data>
+    <data name="Achievement_Android" xml:space="preserve">
+		<value> Playing games on Android {0} times </value>
+	</data>
+</LocalLanguages>

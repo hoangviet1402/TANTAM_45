@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <!--Region Descript Defender-->
+    <data name="SoloMode_Default" xml:space="preserve">
+        <value>鱼狩猎枪</value>
+    </data>
+    <data name="SoloMode_Medusa" xml:space="preserve">
+        <value>Gun Medusa</value>
+    </data>
+    <data name="SoloMode_NhanMa" xml:space="preserve">
+        <value>射手座枪</value>
+    </data>
+    <data name="SoloMode_Poseidon" xml:space="preserve">
+        <value>波塞冬枪</value>
+    </data>
+    <data name="SoloMode_Mermaid" xml:space="preserve">
+        <value>枪美人鱼</value>
+    </data>
+    <data name="SoloMode_Cerberus" xml:space="preserve">
+        <value>Cerberus Gun</value>
+    </data>
+    <data name="SoloMode_Dragon" xml:space="preserve">
+        <value>龙枪</value>
+    </data>
+    <data name="SoloMode_Success" xml:space="preserve">
+        <value>成功</value>
+    </data>
+    <data name="SoloMode_Failed" xml:space="preserve">
+        <value>失败</value>
+    </data>
+    <data name="SoloMode_InvalidDataInput" xml:space="preserve">
+        <value>无效数据</value>
+    </data>
+    <data name="SoloMode_NotHaveGunKind" xml:space="preserve">
+        <value>用户没有合适的枪</value>
+    </data>
+    <data name="SoloMode_NotConfigGunKind" xml:space="preserve">
+        <value>枪未配置</value>
+    </data>
+    <data name="SoloMode_NotConfigGeneration" xml:space="preserve">
+        <value>未配置枪支生成</value>
+    </data>
+    <data name="SoloMode_GunLevelMax" xml:space="preserve">
+        <value>枪已达到最大值</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveGun" xml:space="preserve">
+        <value>选择枪太</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseGun" xml:space="preserve">
+        <value>无法选择相同的枪</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseGun" xml:space="preserve">
+        <value>不要选择你没有的枪。</value>
+    </data>
+    <data name="SoloMode_UpdateIsFailed" xml:space="preserve">
+        <value>升级过程中出错</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultGun" xml:space="preserve">
+        <value>用户只有默认枪。</value>
+    </data>
+    <data name="SoloMode_NotEnoughLevelToEvolution" xml:space="preserve">
+        <value>枪无法进化</value>
+    </data>
+    <data name="SoloMode_EvolutionIsFailed" xml:space="preserve">
+        <value>有进化错误</value>
+    </data>
+    <data name="SoloMode_NotAnyMineral" xml:space="preserve">
+        <value>没有可用的材料。</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseMineral" xml:space="preserve">
+        <value>库存中的物料不可用</value>
+    </data>
+    <data name="SoloMode_NotConfigMineral" xml:space="preserve">
+        <value>尚未在用户口袋中配置</value>
+    </data>
+    <data name="SoloMode_NotAnyMaterial" xml:space="preserve">
+        <value>用户没有进化材料</value>
+    </data>
+    <data name="SoloMode_IsContainsChoiseMaterial" xml:space="preserve">
+        <value>库存中的物料不可用</value>
+    </data>
+    <data name="SoloMode_NotConfigMaterial" xml:space="preserve">
+        <value>未配置用户包中的材料</value>
+    </data>
+    <data name="SoloMode_MaterialChoiseNotMatchConfig" xml:space="preserve">
+        <value>材料不合适</value>
+    </data>
+    <data name="SoloMode_NotHaveSkillKind" xml:space="preserve">
+        <value>没有此技能</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveSkill" xml:space="preserve">
+        <value>所选技能指定</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseSkill" xml:space="preserve">
+        <value>不要选择相同的技能。</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseSkill" xml:space="preserve">
+        <value>不要选择你没有的技能。</value>
+    </data>
+    <data name="SoloMode_WallNotFound" xml:space="preserve">
+        <value> Wall不存在</value>
+    </data>
+    <data name="SoloMode_WallInvalidStage" xml:space="preserve">
+        <value>播放到游戏屏幕以允许升级</value>
+    </data>
+    <data name="SoloMode_NotHaveTowerKind" xml:space="preserve">
+        <value>用户没有匹配的塔</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerKind" xml:space="preserve">
+        <value>塔尚未配置</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerGeneration" xml:space="preserve">
+        <value>尚未配置塔生成</value>
+    </data>
+    <data name="SoloMode_TowerLevelMax" xml:space="preserve">
+        <value>塔已达到其最高水平</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveTower" xml:space="preserve">
+        <value>塔的选择超出指定的限制</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseTower" xml:space="preserve">
+        <value>不要选择相同的塔</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseTower" xml:space="preserve">
+        <value>不要选择你没有的塔。</value>
+    </data>
+    <data name="SoloMode_UpdateTowerIsFailed" xml:space="preserve">
+        <value>升级过程中出错</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultTower" xml:space="preserve">
+        <value>用户只有默认塔</value>
+    </data>
+    <data name="SoloMode_NotEnoughCoin" xml:space="preserve">
+        <value>用户没有足够的硬币。</value>
+    </data>
+    <data name="SoloMode_CheckNotExists" xml:space="preserve">
+        <value>测试功能不存在</value>
+    </data>
+    <!--Endregion Descript Defender-->
+</LocalLanguages>

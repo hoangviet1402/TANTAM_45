@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="AcceptedSuccessfully" xml:space="preserve">
+    <value>Chấp nhận lời mời thành công</value>
+  </data>
+    <data name="CantSendRequestFriend" xml:space="preserve">
+    <value>Không thể gửi lời mời do số lượng bạn đã đầy</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>Thất bại</value>
+  </data>
+    <data name="InvalidQuantity" xml:space="preserve">
+    <value>Số lượng không hợp lệ</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>Không có dữ liệu</value>
+  </data>
+    <data name="NoFriendsFound" xml:space="preserve">
+    <value>Không có bạn nào được tìm thấy</value>
+  </data>
+    <data name="PersonFriend" xml:space="preserve">
+    <value>User này đã là bạn</value>
+  </data>
+    <data name="RejectSuccessfully" xml:space="preserve">
+    <value>Từ chối lời mời thành công</value>
+  </data>
+    <data name="RewardeUserInviteFriend" xml:space="preserve">
+    <value>Thưởng User mời bạn</value>
+  </data>
+    <data name="SentThisPerson" xml:space="preserve">
+    <value>Đã gửi lời mời kết bạn đến người này</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>Chức năng đang bảo trì</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Thành công</value>
+  </data>
+    <data name="UnlockVip" xml:space="preserve">
+    <value>Mở khóa khi đạt Vip</value>
+  </data>
+    <data name="UserCannotSendInvitationsToUser" xml:space="preserve">
+    <value>Bạn không thể gửi lời mời cho chính bạn</value>
+  </data>
+    <data name="UserHasNoFriendInvitation" xml:space="preserve">
+    <value>User không có lời mời kết bạn</value>
+  </data>
+    <data name="UserHaveFriendInvitation" xml:space="preserve">
+    <value>Bạn có {0} lời mời kết bạn!</value>
+  </data>
+    <data name="UserHaveRunOutOfRewarded" xml:space="preserve">
+    <value>Bạn đã hết số lần nhận thưởng</value>
+  </data>
+    <data name="UserMustInviteEnough" xml:space="preserve">
+    <value>Bạn phải mời đủ {0} người trở lên mới nhận được quà</value>
+  </data>
+    <data name="UserNotExists" xml:space="preserve">
+    <value>User không tồn tại</value>
+  </data>
+    <data name="ContentIsNotAllow" xml:space="preserve">
+    <value>Nội dung không phù hợp.</value>
+  </data>
+</LocalLanguages>

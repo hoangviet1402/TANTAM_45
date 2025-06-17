@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_412" xml:space="preserve">
+    <value>POKER SOLO</value>
+  </data>
+    <data name="Game_2001" xml:space="preserve">
+    <value>Onet fruit</value>
+  </data>
+    <data name="Game_2002" xml:space="preserve">
+    <value>BonusOnline</value>
+  </data>
+    <data name="Game_-1" xml:space="preserve">
+    <value>Bonus Wheel</value>
+  </data>
+    <data name="Game_434" xml:space="preserve">
+    <value>Black Jack</value>
+  </data>
+    <data name="Game_Type_Fishing">
+        <value>Fishing Game</value>
+    </data>
+    <data name="Game_Type_Slot_Game">
+        <value>Slot Game</value>
+    </data>
+    <data name="Game_500">
+        <value>Fishing Arcade</value>
+    </data>
+    <data name="Game_425">
+        <value>TEXAS HOLD 'EM POKER</value>
+    </data>
+    <data name="Game_424">
+        <value>DIAMONDS LINK</value>
+    </data>
+    <data name="Game_423">
+        <value>MONOPOLY</value>
+    </data>
+    <data name="Game_420">
+        <value>SAMURAI</value>
+    </data>
+    <data name="Game_419">
+        <value>INDIAN DREAMING</value>
+    </data>
+    <data name="Game_417">
+        <value>GOD OF WEALTH</value>
+    </data>
+    <data name="Game_416">
+        <value>AMAZING ANIMALS</value>
+    </data>
+    <data name="Game_411">
+        <value>THREE KINGDOMS</value>
+    </data>
+    <data name="Game_410">
+        <value>GOLDEN DRAGON</value>
+    </data>
+    <data name="Game_409">
+        <value>CAO RUA</value>
+    </data>
+    <data name="Game_408">
+        <value>LUCKY</value>
+    </data>
+    <data name="Game_407">
+        <value>JACKPOT</value>
+    </data>
+    <data name="Game_406">
+        <value>GONG</value>
+    </data>
+    <data name="Game_402">
+        <value>BAR</value>
+    </data>
+    <data name="Game_209">
+        <value>ODD-EVEN</value>
+    </data>
+    <data name="Game_201">
+        <value>NORTHERN POKER</value>
+    </data>
+    <data name="Game_200">
+        <value>LIENG</value>
+    </data>
+    <data name="Game_48">
+        <value>SICBO</value>
+    </data>
+    <data name="Game_42">
+        <value>HONGKONG POKER</value>
+    </data>
+    <data name="Game_41">
+        <value>TALA</value>
+    </data>
+    <data name="Game_40">
+        <value>SOUTHERN POKER</value>
+    </data>
+    <data name="Game_34">
+        <value>CHINESE POKER</value>
+    </data>
+    <data name="Game_1">
+        <value>LUCKY SPIN</value>
+    </data>
+    <data name="Game_3">
+        <value>LUCKY SPIN</value>
+    </data>
+
+    <data name="Game_421">
+        <value>SUPER 777</value>
+    </data>
+    <data name="Game_422">
+        <value>SUPER FORTUNE</value>
+    </data>
+    <data name="Game_424">
+        <value>DIAMOND</value>
+    </data>
+    <data name="Game_423">
+        <value>MONOPOLY</value>
+    </data>
+    <data name="Game_428">
+        <value>DRACULA</value>
+    </data>
+    <data name="Game_429">
+        <value>PACMAN</value>
+    </data>
+    <data name="Game_430">
+        <value>BIGTWO</value>
+    </data>
+    <data name="Game_431">
+        <value>BACCARAT</value>
+    </data>
+
+    <data name="Game_433">
+        <value>TEANG LEN</value>
+    </data>
+    <data name="Game_426">
+        <value>CANDY</value>
+    </data>
+    <data name="Game_418">
+        <value>PACHINKO ROBOT</value>
+    </data>
+    <data name="Game_45">
+        <value>BIG SMALL</value>
+    </data>
+    <data name="Game_208">
+        <value>MYSTERY NUM</value>
+    </data>
+    <data name="Game_432">
+        <value>BLACKJACK</value>
+    </data>
+</LocalLanguages>

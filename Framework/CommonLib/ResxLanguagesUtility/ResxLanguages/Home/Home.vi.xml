@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="GetConfigBanCa_AlertGetMessageError" xml:space="preserve">
+    <value>Có lỗi trong quá trình lấy dữ liệu. Vui lòng thử lại sau</value>
+  </data>
+    <data name="GetConfigBanCa_AlertLoginOther" xml:space="preserve">
+    <value>Tài khoản này đang được đăng nhập \n ở một máy khác</value>
+  </data>
+    <data name="IndexTitle" xml:space="preserve">
+    <value>Trang Chủ</value>
+  </data>
+    <data name="LoginForgot" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+  </data>
+    <data name="LoginPass" xml:space="preserve">
+    <value>MẬT KHẨU</value>
+  </data>
+    <data name="LoginTitle" xml:space="preserve">
+    <value>ĐĂNG NHẬP</value>
+  </data>
+    <data name="LoginUsername" xml:space="preserve">
+    <value>TÊN ĐĂNG NHẬP</value>
+  </data>
+    <data name="PlayGameAppTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="PlayGameIndexTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="PlayGameTitle" xml:space="preserve">
+    <value>Chơi game Bắn Cá</value>
+  </data>
+    <data name="RegisterAddress" xml:space="preserve">
+    <value>Địa chỉ thường trú</value>
+  </data>
+    <data name="RegisterCaptcha" xml:space="preserve">
+    <value>Nhập mã</value>
+  </data>
+    <data name="RegisterCMND" xml:space="preserve">
+    <value>CMND</value>
+  </data>
+    <data name="RegisterCMNDCreateDate" xml:space="preserve">
+    <value>Ngày cấp</value>
+  </data>
+    <data name="RegisterCMNDFrom" xml:space="preserve">
+    <value>Nơi cấp</value>
+  </data>
+    <data name="RegisterDateOfBirth" xml:space="preserve">
+    <value>Ngày sinh</value>
+  </data>
+    <data name="RegisterDisplay" xml:space="preserve">
+    <value>Tên hiển thị</value>
+  </data>
+    <data name="RegisterFullName" xml:space="preserve">
+    <value>Họ tên</value>
+  </data>
+    <data name="RegisterPass" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+    <data name="RegisterPhone" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+    <data name="RegisterPrivateEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+    <data name="RegisterTitle" xml:space="preserve">
+    <value>Đăng Ký</value>
+  </data>
+    <data name="RegisterUsername" xml:space="preserve">
+    <value>Tên đăng nhập</value>
+  </data>
+    <data name="ShowPopupGuideDetail_Error" xml:space="preserve">
+    <value>Có lỗi xãy ra trong quá trình lấy danh sách.</value>
+  </data>
+    <data name="ShowPopupGuide_ErrorList" xml:space="preserve">
+    <value>Có lỗi xãy ra trong quá trình lấy danh sách.</value>
+  </data>
+    <data name="HomeLoginOther" xml:space="preserve">
+    <value>Đăng nhập/Đăng ký bằng :</value>
+  </data>
+    <data name="ShowPopupGuideDetailSTT" xml:space="preserve">
+    <value>STT</value>
+  </data>
+    <data name="ShowPopupGuideDetailTitle" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+    <data name="ErrorMessAccountNotExists" xml:space="preserve">
+    <value>Tài khoản không tồn tại</value>
+  </data>
+    <data name="ErrorMessConfigNotExists" xml:space="preserve">
+    <value>Cấu hình không tồn tại</value>
+  </data>
+    <data name="ErrorMessCustomservice" xml:space="preserve">
+    <value>Vui lòng liên hệ CSKH để được hỗ trợ.</value>
+  </data>
+    <data name="ErrorMessGetListFaild" xml:space="preserve">
+    <value>Lấy danh sách không thành công!</value>
+  </data>
+    <data name="ErrorMessGetListSuccess" xml:space="preserve">
+    <value>Lấy danh sách thành công.</value>
+  </data>
+    <data name="ErrorMessInvalidInformation" xml:space="preserve">
+    <value>Thông tin không hợp lệ</value>
+  </data>
+    <data name="ErrorMessInvaliInput" xml:space="preserve">
+    <value>Dữ liệu không hợp lệ</value>
+  </data>
+    <data name="ErrorMessNoData" xml:space="preserve">
+    <value>Không có dữ liệu.</value>
+  </data>
+    <data name="ErrorMessNotLoginOrLoginOther" xml:space="preserve">
+    <value>Chưa đăng nhập hoặc đăng nhập tại máy khác.</value>
+  </data>
+    <data name="ErrorMessServerError" xml:space="preserve">
+    <value>Lỗi máy chủ</value>
+  </data>
+    <data name="ErrorMessServerMaintenance" xml:space="preserve">
+    <value>Máy chủ bảo trì</value>
+  </data>
+    <data name="ErrorMessSuccess" xml:space="preserve">
+    <value>Thành công</value>
+  </data>
+    <data name="CaptchaIncorrect" xml:space="preserve">
+    <value>Mã xác nhận không chính xác.</value>
+  </data>
+    <data name="Content" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>Kiểm Tra</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>Tài Khoản Nhận</value>
+  </data>
+    <data name="ErrorMessFuctionMaintenance" xml:space="preserve">
+    <value>Chức năng đang bảo trì, vui lòng thử lại sau !!!</value>
+  </data>
+    <data name="ErrorMessOpenVip" xml:space="preserve">
+    <value>Mở khóa khi đạt vip {0}</value>
+  </data>
+    <data name="KhongTheGuiTinNhanChoMinh" xml:space="preserve">
+    <value>Bạn không thể gửi tin nhắn cho chính bạn!</value>
+  </data>
+    <data name="MaTaiKhoan" xml:space="preserve">
+    <value>Mã tài khoản</value>
+  </data>
+    <data name="NoiDungKhongPhuHop" xml:space="preserve">
+    <value>Nội dung không phù hợp.</value>
+  </data>
+    <data name="NoiDungTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>Nội dung vượt quá {0} kí tự.</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>Vui lòng đăng nhập để thực hiện chức năng này !!!</value>
+  </data>
+    <data name="Send" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+    <data name="SendingMess" xml:space="preserve">
+    <value>Đang gửi tin nhắn của bạn...</value>
+  </data>
+    <data name="SendMessOther" xml:space="preserve">
+    <value>Gửi tin khác</value>
+  </data>
+    <data name="SendUserOther" xml:space="preserve">
+    <value>Gửi user khác</value>
+  </data>
+    <data name="SuDungHetLuotGuiTinNhan" xml:space="preserve">
+    <value>Bạn đã sử dụng hết số lần gửi tin nhắn.</value>
+  </data>
+    <data name="TaiKhoanNhanTinNhanBiKhoa" xml:space="preserve">
+    <value>Tài khoản bạn muốn gửi tin nhắn hiện đã bị khoá!</value>
+  </data>
+    <data name="ThongTinNguoiNhan" xml:space="preserve">
+    <value>*Thông tin người nhận</value>
+  </data>
+    <data name="TieuDeTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>Tiêu đề vượt quá  {0} kí tự.</value>
+  </data>
+    <data name="TinNhanDaDuocGui" xml:space="preserve">
+    <value>Tin nhắn đã được gửi tới {0} - {1} !!!</value>
+  </data>
+    <data name="Title" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+    <data name="EnableJSAlert" xml:space="preserve">
+    <value>Vui lòng bật javascript để tiếp tục. &lt;br/&gt;&lt;a target="_blank" href="https://www.enable-javascript.com/"&gt;Hướng dẫn mở javascript&lt;/a&gt;</value>
+  </data>
+    <data name="ErrorMessProcessing" xml:space="preserve">
+    <value>Có lỗi xảy ra trong quá trình xử lý</value>
+  </data>
+    <data name="CashOut_ChonNganHang" xml:space="preserve">
+    <value>Chọn ngân hàng</value>
+  </data>
+    <data name="CashOut_ChuTKNganHang" xml:space="preserve">
+    <value>Tên chủ tài khoản</value>
+  </data>
+    <data name="CashOut_MaTK" xml:space="preserve">
+    <value>Mã tài khoản Wing của bạn</value>
+  </data>
+    <data name="CashOut_PHChuTKNganHang" xml:space="preserve">
+    <value>Ví dụ: Khan Sapang</value>
+  </data>
+    <data name="CashOut_PhiRut" xml:space="preserve">
+    <value>Phí rút</value>
+  </data>
+    <data name="CashOut_PHMaTK" xml:space="preserve">
+    <value>Điền chính xác mã Wing vào đây</value>
+  </data>
+    <data name="CashOut_PHSoTKNganHang" xml:space="preserve">
+    <value>Điền chính xác tài khoản ngân hàng của bạn vào đây</value>
+  </data>
+    <data name="CashOut_PHSoWinMuonRut" xml:space="preserve">
+    <value>Điền số win muốn rút vào đây</value>
+  </data>
+    <data name="CashOut_Rut" xml:space="preserve">
+    <value>Rút</value>
+  </data>
+    <data name="CashOut_SoTKNganHang" xml:space="preserve">
+    <value>Số tài khoản ngân hàng của bạn</value>
+  </data>
+    <data name="CashOut_SoUSDNhanDc" xml:space="preserve">
+    <value>Số USD nhận được</value>
+  </data>
+    <data name="CashOut_SoWinMuonRut" xml:space="preserve">
+    <value>Số win muốn rút</value>
+  </data>
+    <data name="CashOut_TyleDoi" xml:space="preserve">
+    <value>Tỷ lệ quy đổi</value>
+  </data>
+    <data name="CashOut_Validation1" xml:space="preserve">
+    <value>Vui lòng nhập số Win muốn rút, và phải lớn hơn 0</value>
+  </data>
+    <data name="CashOut_Validation2" xml:space="preserve">
+    <value>Số USD nhận được phải lớn hơn 0</value>
+  </data>
+    <data name="CashOut_Validation3" xml:space="preserve">
+    <value>Vui lòng nhập mã tài khoản Win của bạn</value>
+  </data>
+    <data name="CashOut_Validation4" xml:space="preserve">
+    <value>Vui lòng nhập số tài khoàn ngân hàng của bạn</value>
+  </data>
+    <data name="CashOut_Validation5" xml:space="preserve">
+    <value>Vui lòng nhập tên chủ tài khoản</value>
+  </data>
+    <data name="CashOut_Validation6" xml:space="preserve">
+    <value>Vui lòng chọn ngân hàng</value>
+  </data>
+    <data name="ErrorMessCaptcha" xml:space="preserve">
+    <value>Vui lòng nhập mã xác nhận</value>
+  </data>
+    <data name="Notification" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+    <data name="ErrorMessFaild" xml:space="preserve">
+    <value>Thất bại</value>
+  </data>
+    <data name="RegisterAgree" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+    <data name="AgreeToTermsOfService" xml:space="preserve">
+    <value>Tôi đồng ý</value>
+  </data>
+    <data name="ValidationAgreeToTermsOfService" xml:space="preserve">
+    <value>Vui lòng đồng ý với điều khoản và chính sách của chúng tôi !</value>
+  </data>
+    <data name="DieuKhoan" xml:space="preserve">
+    <value>Điều khoản sử dụng</value>
+  </data>
+    <data name="Privatcy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+    <data name="Term" xml:space="preserve">
+    <value>Term</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+    <data name="ConfirmLabel" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+    <data name="TKNhanTinNhanKTonTai" xml:space="preserve">
+    <value>Tài khoản nhận tin nhắn không tồn tại!</value>
+  </data>
+    <data name="NhapTKNhanTinNhan" xml:space="preserve">
+    <value>Vui Lòng nhập tài khoản nhận</value>
+  </data>
+</LocalLanguages>

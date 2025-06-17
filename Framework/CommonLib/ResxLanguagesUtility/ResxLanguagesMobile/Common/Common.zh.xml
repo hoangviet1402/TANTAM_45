@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="CodeError" xml:space="preserve">
+    <value>错误</value>
+  </data>
+    <data name="CodeFail" xml:space="preserve">
+    <value>发生错误，请稍后再试。</value>
+  </data>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>无效数据</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="CodeInvalidSign" xml:space="preserve">
+    <value>签名错误</value>
+  </data>
+    <data name="CodeSuccess" xml:space="preserve">
+    <value>成功</value>
+  </data>
+    <data name="CodeTokenExpire" xml:space="preserve">
+    <value>代币已过期</value>
+  </data>
+    <data name="CodeTokenNotExist" xml:space="preserve">
+    <value>令牌不存在</value>
+  </data>
+    <data name="CodeApiNotExist" xml:space="preserve">
+    <value>Api不存在。</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>请登录以使用此功能。</value>
+  </data>
+    <data name="BtnUpdate" xml:space="preserve">
+    <value>更新</value>
+  </data>
+    <data name="UpdateSuccess" xml:space="preserve">
+    <value>更新成功</value>
+  </data>
+    <data name="UpdateFaild" xml:space="preserve">
+    <value>更新失败</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>没有数据</value>
+  </data>
+    <data name="FunctionMaintainance" xml:space="preserve">
+    <value>维护功能，请稍后再试。</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>该活动暂停</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>未登录或登录其他计算机</value>
+  </data>
+    <data name="HasErrorContactCustomService" xml:space="preserve">
+    <value>发生错误，请联系在线支持部门寻求帮助</value>
+  </data>
+    <data name="FunctionDeveloping" xml:space="preserve">
+    <value>功能正在发展</value>
+  </data>
+    <data name="ValidDataTextRegis" xml:space="preserve">
+    <value>请仅使用字母（a-z），数字（0-9）</value>
+  </data>
+</LocalLanguages>

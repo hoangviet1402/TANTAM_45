@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="CashOutNotEnoughGold" xml:space="preserve">
+    <text>Account balance is not enough to make transactions!</text>
+  </data>
+</LocalLanguages>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="UserNameInvalit4" xml:space="preserve">
+        <value>Username already exists</value>
+    </data>
+    <data name="RegisterBouns" xml:space="preserve">
+    <value>祝贺成功注册！管理员会给你{0} CHIPS来玩游戏</value>
+  </data>
+    <data name="RegisterBounsTitle" xml:space="preserve">
+    <value>祝賀成功註冊！</value>
+	</data>
+    <data name="Level_LevelUp" xml:space="preserve">
+    <value>你已经升级了</value>
+  </data>
+    <data name="Level_LogPointSuccess" xml:space="preserve">
+    <value>成功累积积分水平</value>
+  </data>
+    <data name="Level_LogPointError" xml:space="preserve">
+    <value>未能获得等级积分</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigListGameText" xml:space="preserve">
+    <value>你需要达到{0}级</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigBanCaRoomText" xml:space="preserve">
+    <value>你需要达到{0}级</value>
+  </data>
+    <data name="Level_DescriptionUnlockGame" xml:space="preserve">
+    <value>恭喜解锁游戏{0}</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+        <value>成功更新信息</value>
+    </data>
+    <data name="EmailExists" xml:space="preserve">
+        <value>该E-mail已经采取</value>
+    </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+        <value>电话号码已被使用</value>
+    </data>
+    <data name="ErrorMessValidation7" xml:space="preserve">
+        <value>电话号码无效。</value>
+    </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>显示名称已存在</value>
+  </data>
+    <data name="ValidationLogin12" xml:space="preserve">
+    <value>帐户不存在</value>
+  </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>显示名称已存在</value>
+  </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+    <value>Phone number already in use</value>
+  </data>
+    <data name="EmailExists" xml:space="preserve">
+    <value>该E-mail已经采取</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+    <value>成功更新信息</value>
+  </data>
+</LocalLanguages>

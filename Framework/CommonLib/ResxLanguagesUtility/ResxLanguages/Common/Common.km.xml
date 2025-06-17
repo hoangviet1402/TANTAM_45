@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>គណនីមិនសមស្រប</value>
+  </data>
+    <data name="CodeError" xml:space="preserve">
+    <value>កំហុសមួយបានកើតឡើងសូមព្យាយាមម្តងទៀតពេលក្រោយ។</value>
+  </data>
+    <data name="CodeFail" xml:space="preserve">
+    <value>បរាជ័យ</value>
+  </data>
+    <data name="CodeSuccess" xml:space="preserve">
+    <value>ជោគជ័យ</value>
+  </data>
+    <data name="CodeTokenExpire" xml:space="preserve">
+    <value>Token បានផុតសុពលភាព</value>
+  </data>
+    <data name="CodeInvalidSign" xml:space="preserve">
+    <value>ខុសហត្ថាលេខា</value>
+  </data>
+    <data name="CodeTokenNotExist" xml:space="preserve">
+    <value>Token មិនពិត</value>
+  </data>
+    <data name="CodeApiNotExist" xml:space="preserve">
+    <value>Api មិនមានទេ។</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>សូមចូលដើម្បីប្រើមុខងារនេះ។</value>
+  </data>
+    <data name="BtnUpdate" xml:space="preserve">
+    <value>ធ្វើបច្ចុប្បន្នភាព</value>
+  </data>
+    <data name="UpdateSuccess" xml:space="preserve">
+    <value>បានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ</value>
+  </data>
+    <data name="UpdateFaild" xml:space="preserve">
+    <value>ការធ្វើបច្ចុប្បន្នភាពបានបរាជ័យ</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>មិនមានទិន្នន័យ</value>
+  </data>
+    <data name="FunctionMaintainance" xml:space="preserve">
+    <value>មុខងារស្ថិតនៅក្រោមការថែទាំសូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍នេះត្រូវបានផ្អាក</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>មិនបានឡុកអ៊ីនឬចូលក្នុងម៉ាស៊ីនផ្សេង</value>
+  </data>
+    <data name="HasErrorContactCustomService" xml:space="preserve">
+    <value>កំហុសមួយបានកើតឡើងសូមទាក់ទងការគាំទ្រលើអ៊ីនធឺណិតដើម្បីទទួលជំនួយ</value>
+  </data>
+</LocalLanguages>

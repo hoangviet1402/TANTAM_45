@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="MessageFirstPurchase" xml:space="preserve">
+    <value>{0}% tặng thêm xu đi nạp lần đầu</value>
+  </data>
+    <data name="Please_deposit_more_to_withdraw" xml:space="preserve">
+    <value>Vui lòng nạp thêm để được đổi</value>
+  </data>
+</LocalLanguages>
+
+

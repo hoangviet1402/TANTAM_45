@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="GetConfigBanCa_AlertGetMessageError" xml:space="preserve">
+    <value>There was an error retrieving the data. Please try again later</value>
+  </data>
+    <data name="GetConfigBanCa_AlertLoginOther" xml:space="preserve">
+    <value>This account is being logged in on another computer</value>
+  </data>
+    <data name="IndexTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+    <data name="LoginForgot" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+    <data name="LoginPass" xml:space="preserve">
+    <value>PASSWORD</value>
+  </data>
+    <data name="LoginTitle" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+    <data name="LoginUsername" xml:space="preserve">
+    <value>USERNAME</value>
+  </data>
+    <data name="PlayGameAppTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="PlayGameIndexTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="PlayGameTitle" xml:space="preserve">
+    <value>Play Fish Shoot game</value>
+  </data>
+    <data name="RegisterAddress" xml:space="preserve">
+    <value>Permanent address</value>
+  </data>
+    <data name="RegisterCaptcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="RegisterCMND" xml:space="preserve">
+    <value>ID</value>
+  </data>
+    <data name="RegisterCMNDCreateDate" xml:space="preserve">
+    <value>Date of issue</value>
+  </data>
+    <data name="RegisterCMNDFrom" xml:space="preserve">
+    <value>Issued by</value>
+  </data>
+    <data name="RegisterDateOfBirth" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+    <data name="RegisterDisplay" xml:space="preserve">
+    <value>Display name</value>
+  </data>
+    <data name="RegisterFullName" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+    <data name="RegisterPass" xml:space="preserve">
+    <value>Password</value>
+  </data>
+    <data name="RegisterPhone" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+    <data name="RegisterPrivateEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+    <data name="RegisterTitle" xml:space="preserve">
+    <value>Register</value>
+  </data>
+    <data name="RegisterUsername" xml:space="preserve">
+    <value>User name</value>
+  </data>
+    <data name="ShowPopupGuideDetail_Error" xml:space="preserve">
+    <value>An error occurred during the process of retrieving the list.</value>
+  </data>
+    <data name="ShowPopupGuide_ErrorList" xml:space="preserve">
+    <value>An error occurred during the process of retrieving the list.</value>
+  </data>
+    <data name="HomeLoginOther" xml:space="preserve">
+    <value>Login / Register with:</value>
+  </data>
+    <data name="ShowPopupGuideDetailSTT" xml:space="preserve">
+    <value>No</value>
+  </data>
+    <data name="ShowPopupGuideDetailTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="ErrorMessAccountNotExists" xml:space="preserve">
+    <value>Account does not exist</value>
+  </data>
+    <data name="ErrorMessConfigNotExists" xml:space="preserve">
+    <value>Configuration does not exist.</value>
+  </data>
+    <data name="ErrorMessCustomservice" xml:space="preserve">
+    <value>Please contact Customer Service for assistance.</value>
+  </data>
+    <data name="ErrorMessGetListFaild" xml:space="preserve">
+    <value>Get the list failed!</value>
+  </data>
+    <data name="ErrorMessGetListSuccess" xml:space="preserve">
+    <value>Get the list successfully.</value>
+  </data>
+    <data name="ErrorMessInvalidInformation" xml:space="preserve">
+    <value>Invalid information</value>
+  </data>
+    <data name="ErrorMessInvaliInput" xml:space="preserve">
+    <value>Invalid data</value>
+  </data>
+    <data name="ErrorMessNoData" xml:space="preserve">
+    <value>No data.</value>
+  </data>
+    <data name="ErrorMessNotLoginOrLoginOther" xml:space="preserve">
+    <value>Not logged in or logged in at another machine.</value>
+  </data>
+    <data name="ErrorMessServerError" xml:space="preserve">
+    <value>Server error</value>
+  </data>
+    <data name="ErrorMessServerMaintenance" xml:space="preserve">
+    <value>Server maintenance</value>
+  </data>
+    <data name="ErrorMessSuccess" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="CaptchaIncorrect" xml:space="preserve">
+    <value>Captcha is incorrect</value>
+  </data>
+    <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>Check</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>Accounts receive</value>
+  </data>
+    <data name="ErrorMessFuctionMaintenance" xml:space="preserve">
+    <value>Function under maintenance, please try again later !!!</value>
+  </data>
+    <data name="ErrorMessOpenVip" xml:space="preserve">
+    <value>Unlock reaching vip {0}</value>
+  </data>
+    <data name="KhongTheGuiTinNhanChoMinh" xml:space="preserve">
+    <value>Cannot send message to yourself</value>
+  </data>
+    <data name="MaTaiKhoan" xml:space="preserve">
+    <value>Account ID</value>
+  </data>
+    <data name="NoiDungKhongPhuHop" xml:space="preserve">
+    <value>Invalid content</value>
+  </data>
+    <data name="NoiDungTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>The content exceeds {0} characters.</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>Please login to perform this function !!!</value>
+  </data>
+    <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+    <data name="SendingMess" xml:space="preserve">
+    <value>Sending your message ...</value>
+  </data>
+    <data name="SendMessOther" xml:space="preserve">
+    <value>Send another message</value>
+  </data>
+    <data name="SendUserOther" xml:space="preserve">
+    <value>Send to other user</value>
+  </data>
+    <data name="SuDungHetLuotGuiTinNhan" xml:space="preserve">
+    <value>You have used up the number of messages sent.</value>
+  </data>
+    <data name="TaiKhoanNhanTinNhanBiKhoa" xml:space="preserve">
+    <value>The account you want to send the message to is now locked!</value>
+  </data>
+    <data name="ThongTinNguoiNhan" xml:space="preserve">
+    <value>*Thông tin người nhận</value>
+  </data>
+    <data name="TieuDeTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>The title exceeds {0} characters.</value>
+  </data>
+    <data name="TinNhanDaDuocGui" xml:space="preserve">
+    <value>The message has been sent to {0} - {1} !!!</value>
+  </data>
+    <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="EnableJSAlert" xml:space="preserve">
+    <value>Please enable javascript to continue. &lt;br/&gt; &lt;a target="_blank" href="https://www.enable-javascript.com/"&gt; Instructions for opening javascript &lt;/a&gt;</value>
+  </data>
+    <data name="ErrorMessProcessing" xml:space="preserve">
+    <value>An error occurred during processing</value>
+  </data>
+    <data name="CashOut_ChonNganHang" xml:space="preserve">
+    <value>Choose a bank</value>
+  </data>
+    <data name="CashOut_ChuTKNganHang" xml:space="preserve">
+    <value>Account name</value>
+  </data>
+    <data name="CashOut_MaTK" xml:space="preserve">
+    <value>Your Wing account code</value>
+  </data>
+    <data name="CashOut_PHChuTKNganHang" xml:space="preserve">
+    <value>For example: Khan Sapang</value>
+  </data>
+    <data name="CashOut_PhiRut" xml:space="preserve">
+    <value>Withdrawal fee</value>
+  </data>
+    <data name="CashOut_PHMaTK" xml:space="preserve">
+    <value>Enter the correct Wing code here</value>
+  </data>
+    <data name="CashOut_PHSoTKNganHang" xml:space="preserve">
+    <value>Enter your bank account exactly here</value>
+  </data>
+    <data name="CashOut_PHSoWinMuonRut" xml:space="preserve">
+    <value>Enter the number of winnings you want to withdraw here</value>
+  </data>
+    <data name="CashOut_Rut" xml:space="preserve">
+    <value>Withdraw</value>
+  </data>
+    <data name="CashOut_SoTKNganHang" xml:space="preserve">
+    <value>Your bank account number</value>
+  </data>
+    <data name="CashOut_SoUSDNhanDc" xml:space="preserve">
+    <value>The amount of USD received</value>
+  </data>
+    <data name="CashOut_SoWinMuonRut" xml:space="preserve">
+    <value>Number of winnings you want to withdraw</value>
+  </data>
+    <data name="CashOut_TyleDoi" xml:space="preserve">
+    <value>Conversion rate</value>
+  </data>
+    <data name="CashOut_Validation1" xml:space="preserve">
+    <value>Please enter the number of Win you want to withdraw, and must be greater than 0</value>
+  </data>
+    <data name="CashOut_Validation2" xml:space="preserve">
+    <value>The amount of USD received must be greater than 0</value>
+  </data>
+    <data name="CashOut_Validation3" xml:space="preserve">
+    <value>Please enter your Win account code</value>
+  </data>
+    <data name="CashOut_Validation4" xml:space="preserve">
+    <value>Please enter your bank account number</value>
+  </data>
+    <data name="CashOut_Validation5" xml:space="preserve">
+    <value>Please enter the account holder name</value>
+  </data>
+    <data name="CashOut_Validation6" xml:space="preserve">
+    <value>Please select a bank</value>
+  </data>
+    <data name="ErrorMessCaptcha" xml:space="preserve">
+    <value>Please enter the verification code</value>
+  </data>
+    <data name="Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+    <data name="ErrorMessFaild" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+    <data name="RegisterAgree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+    <data name="AgreeToTermsOfService" xml:space="preserve">
+    <value>I agree with the</value>
+  </data>
+    <data name="ValidationAgreeToTermsOfService" xml:space="preserve">
+    <value>Please agree with our term &amp; policy before your next step !</value>
+  </data>
+    <data name="DieuKhoan" xml:space="preserve">
+    <value>Terms of use</value>
+  </data>
+    <data name="Privatcy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+    <data name="Term" xml:space="preserve">
+    <value>Term</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+    <data name="ConfirmLabel" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+    <data name="TKNhanTinNhanKTonTai" xml:space="preserve">
+    <value>The account receiving the message does not exist!</value>
+  </data>
+    <data name="NhapTKNhanTinNhan" xml:space="preserve">
+    <value>Please enter the receiving account</value>
+  </data>
+</LocalLanguages>

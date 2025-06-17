@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="UserNameInvalit4" xml:space="preserve">
+        <value>Tên đăng nhập đã tồn tại.</value>
+    </data>
+    <data name="RegisterBouns" xml:space="preserve">
+    <value>Chúc mừng bạn đã đăng ký thành công! Admin tặng bạn {0} CHIPS trải nghiệm game</value>
+  </data>
+    <data name="RegisterBounsTitle" xml:space="preserve">
+    <value>Đăng ký thành công</value>
+	</data>
+    <data name="Level_LevelUp" xml:space="preserve">
+    <value>Bạn đã lên cấp</value>
+  </data>
+    <data name="Level_LogPointSuccess" xml:space="preserve">
+    <value>Tích điểm cấp độ thành công</value>
+  </data>
+    <data name="Level_LogPointError" xml:space="preserve">
+    <value>Tích điểm cấp độ thất bại</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigListGameText" xml:space="preserve">
+    <value>Bạn cần đạt cấp độ {0}</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigBanCaRoomText" xml:space="preserve">
+    <value>Bạn cần đạt cấp độ {0}</value>
+  </data>
+    <data name="Level_DescriptionUnlockGame" xml:space="preserve">
+    <value>Chúc mừng bạn đã mở khóa game {0}</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+        <value>Cập nhật thông tin thành công</value>
+    </data>
+    <data name="EmailExists" xml:space="preserve">
+        <value>E-mail này đã được sử dụng</value>
+    </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+        <value>Số điện thoại đã được sử dụng</value>
+    </data>
+    <data name="ErrorMessValidation7" xml:space="preserve">
+        <value>Số điện thoại không hợp lệ.</value>
+    </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>Tên hiển thị đã tồn tại</value>
+  </data>
+    <data name="ValidationLogin12" xml:space="preserve">
+    <value>Tài khoản không tồn tại</value>
+  </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>Tên hiển thị đã tồn tại</value>
+  </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+    <value>Số điện thoại đã được sử dụng</value>
+  </data>
+    <data name="EmailExists" xml:space="preserve">
+    <value>E-mail này đã được sử dụng</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+    <value>Cập nhật thông tin thành công</value>
+  </data>
+</LocalLanguages>

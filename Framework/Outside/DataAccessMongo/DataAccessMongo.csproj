@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{017C3054-DE4B-42B1-8799-2E0E52CAFF03}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>DataAccessMongo</RootNamespace>
+        <AssemblyName>DataAccessMongo</AssemblyName>
+        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <TargetFrameworkProfile/>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="MongoDB.Bson">
+            <HintPath>..\..\packages\MongoDB.Bson.2.7.0\lib\net45\MongoDB.Bson.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\..\packages\MongoDB.Driver.2.7.0\lib\net45\MongoDB.Driver.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver.Core, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\..\packages\MongoDB.Driver.Core.2.7.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Configuration"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Web"/>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Net.Http"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Base\MongoBb.cs"/>
+        <Compile Include="Base\MongoFactory.cs"/>
+        <Compile Include="DaoMongoFactory.cs"/>
+        <Compile Include="Enum\CollectionName.cs"/>
+        <Compile Include="Enum\UserCollection\UserResponseEnum.cs"/>
+        <Compile Include="Helper\MongoCommon.cs"/>
+        <Compile Include="Model\AchievementCollections\CompletedAchievementInfoModel.cs"/>
+        <Compile Include="Model\AchievementCollections\AchievementConfig.cs"/>
+        <Compile Include="Model\Defender\SM_UserInfoModel.cs"/>
+        <Compile Include="Model\E2003_LogAllEventStatusCollection\E2003_LogAllEventStatusMongoModel.cs"/>
+        <Compile Include="Model\LogUserPlayGame\LogUserPlayGameModel.cs"/>
+        <Compile Include="Model\RequestLogCollection\RequestLogModel.cs"/>
+        <Compile Include="Model\UserCollections\UserResponseModel.cs"/>
+        <Compile Include="Model\UserCollections\UserModel.cs"/>
+        <Compile Include="Model\UserInfoCollection\UserInfoModel.cs"/>
+        <Compile Include="Model\UserLoginLogCollection\UserLoginLogModel.cs"/>
+        <Compile Include="Model\UserShowAward\UserShowAwardModel.cs"/>
+        <Compile Include="Module\AchievementCollectionsDao\AchievementCollectionDao.cs"/>
+        <Compile Include="Module\Defender\Defender.cs"/>
+        <Compile Include="Module\Defender\IDefender.cs"/>
+        <Compile Include="Module\E2003_LogAllEventStatusCollection\E2003LogAllEventStatus.cs"/>
+        <Compile Include="Module\E2003_LogAllEventStatusCollection\IE2003LogAllEventStatus.cs"/>
+        <Compile Include="Module\LogUserPlayGame\ILogUserPlayGame.cs"/>
+        <Compile Include="Module\LogUserPlayGame\LogUserPlayGame.cs"/>
+        <Compile Include="Module\RequestLogCollection\IRequestLog.cs"/>
+        <Compile Include="Module\RequestLogCollection\RequestLog.cs"/>
+        <Compile Include="Module\UserCollections\IUser.cs"/>
+        <Compile Include="Module\UserCollections\User.cs"/>
+        <Compile Include="Module\UserInfoCollection\IUserInfo.cs"/>
+        <Compile Include="Module\UserInfoCollection\UserInfo.cs"/>
+        <Compile Include="Module\UserLoginLogCollection\IUserLoginLog.cs"/>
+        <Compile Include="Module\UserLoginLogCollection\UserLoginLog.cs"/>
+        <Compile Include="Module\UserShowAward\IUserShowAward.cs"/>
+        <Compile Include="Module\UserShowAward\UserShowAward.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\CommonLib\MyUtility\MyUtility.csproj">
+            <Project>{D8D0B6F9-8542-4FDD-95B2-78B4F8E7C213}</Project>
+            <Name>MyUtility</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="packages.config"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

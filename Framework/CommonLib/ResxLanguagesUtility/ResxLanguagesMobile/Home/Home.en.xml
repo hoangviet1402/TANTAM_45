@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+    <data name="DisplaynameAvailable" xml:space="preserve">
+    <value>The display name already exists</value>
+  </data>
+    <data name="AccountalreadyinusePleasechooseanothername" xml:space="preserve">
+    <value>Account already in use. Please choose another name</value>
+  </data>
+    <data name="CaptchaDoesnotexist" xml:space="preserve">
+    <value>Captcha does not exist</value>
+  </data>
+    <data name="CaptchaInvalid" xml:space="preserve">
+    <value>Captcha Invalid</value>
+  </data>
+    <data name="ConfigFail" xml:space="preserve">
+    <value>Config does not exist</value>
+  </data>
+    <data name="Display3to20characters" xml:space="preserve">
+    <value>Display name at least 3 to 20 characters.</value>
+  </data>
+    <data name="Displaynamecannotspaces" xml:space="preserve">
+    <value>Display name cannot contain spaces.</value>
+  </data>
+    <data name="Displaynamemusthavespecialcharacterscharacters" xml:space="preserve">
+    <value>Display name must not have special characters and characters</value>
+  </data>
+    <data name="Displaynamenotallowed" xml:space="preserve">
+    <value>Display name contains words that are not allowed.</value>
+  </data>
+    <data name="EmailIncorrect" xml:space="preserve">
+    <value>Email is incorrect</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+    <data name="IncorrectIDcard" xml:space="preserve">
+    <value>Incorrect ID card</value>
+  </data>
+    <data name="Invalidaccountname" xml:space="preserve">
+    <value>Invalid account name</value>
+  </data>
+    <data name="Invaliddisplayname" xml:space="preserve">
+    <value>Invalid display name</value>
+  </data>
+    <data name="RegistrationfailedPleasetryagainlater" xml:space="preserve">
+    <value>Registration failed. Please try again later.</value>
+  </data>
+    <data name="SignUpSuccess" xml:space="preserve">
+    <value>Sign Up Success</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Successfully</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>System Error</value>
+  </data>
+    <data name="Usernamecannotbethesameasaccountname" xml:space="preserve">
+    <value>Username cannot be the same as account name</value>
+  </data>
+    <data name="Usernamecannotspaces" xml:space="preserve">
+    <value>Username cannot contain spaces.</value>
+  </data>
+    <data name="Usernamemustnothaveaccentsandspecialcharacters" xml:space="preserve">
+    <value>Username must not have accents and special characters</value>
+  </data>
+    <data name="UserNamepasswordincorrect" xml:space="preserve">
+    <value>UserName and password are incorrect</value>
+  </data>
+    <data name="CommingSoon" xml:space="preserve">
+    <value>Comming Soon</value>
+  </data>
+    <data name="CreateSuccess" xml:space="preserve">
+    <value>Create Success</value>
+  </data>
+    <data name="SuccessfullyTransaction" xml:space="preserve">
+    <value>Successfully Transaction but error in the coin transfer process</value>
+  </data>
+    <data name="TransactionFailed" xml:space="preserve">
+    <value>Transaction Failed</value>
+  </data>
+    <data name="Transactionisprocessed" xml:space="preserve">
+    <value>Transaction is processed</value>
+  </data>
+    <data name="Transactionnotfound" xml:space="preserve">
+    <value>Transaction not found</value>
+  </data>
+    <data name="Transactionnotfoundinsystem" xml:space="preserve">
+    <value>Transaction not found in system</value>
+  </data>
+    <data name="Transactionprocessing" xml:space="preserve">
+    <value>Transaction processing</value>
+  </data>
+    <data name="Transactionprocessingfailed" xml:space="preserve">
+    <value>Transaction processing failed</value>
+  </data>
+    <data name="TransactionSuccess" xml:space="preserve">
+    <value>Transaction Success</value>
+  </data>
+    <data name="CreateFail" xml:space="preserve">
+    <value>Create Failed</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>Server Maintenance</value>
+  </data>
+    <data name="GetSuccessfulCaptcha" xml:space="preserve">
+    <value>Get successful captcha</value>
+  </data>
+    <data name="InvalidDataInput" xml:space="preserve">
+    <value>Invalid data</value>
+  </data>
+    <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>Account does not exist</value>
+  </data>
+    <data name="GetTheListSuccessfully" xml:space="preserve">
+    <value>Get the list of successes</value>
+  </data>
+    <data name="GetTheConfigSuccessfully" xml:space="preserve">
+    <value>Get the config successfully</value>
+  </data>
+    <data name="GetTheLinkSuccessfully" xml:space="preserve">
+    <value>Get the link successfully</value>
+  </data>
+    <data name="GetTheLinkFailed" xml:space="preserve">
+    <value>Get the link failed</value>
+  </data>
+    <data name="TheGameDoesNotExistContainHasHtml5" xml:space="preserve">
+    <value>The game does not exist or the game does not contain HasHtml5</value>
+  </data>
+    <data name="SKIPAndPort" xml:space="preserve">
+    <value>SK IPAndPort cannot be obtained</value>
+  </data>
+    <data name="InvalidSerialNumber" xml:space="preserve">
+    <value>Invalid serial number</value>
+  </data>
+    <data name="InvalidScratchCardCode" xml:space="preserve">
+    <value>Invalid scratch card code</value>
+  </data>
+    <data name="ErrorDuringProcessing" xml:space="preserve">
+    <value>Error during processing.</value>
+  </data>
+    <data name="InvalidCardInformation" xml:space="preserve">
+    <value>Invalid card information (Code: {0})</value>
+  </data>
+    <data name="InvalidCardNotInformation" xml:space="preserve">
+    <value>Invalid card information, please try again ...</value>
+  </data>
+    <data name="GetTheListOfFailures" xml:space="preserve">
+    <value>Get the list of failures</value>
+  </data>
+    <data name="YouWantToLoad" xml:space="preserve">
+    <value>Do you want to load {0} at {1} K?</value>
+  </data>
+    <data name="SMSChargingSystem" xml:space="preserve">
+    <value>SMS charging system is under maintenance!</value>
+  </data>
+    <data name="InvalidSMSInformation" xml:space="preserve">
+    <value>Invalid SMS information</value>
+  </data>
+    <data name="CardToChange" xml:space="preserve">
+    <value>Please select the type of card to change</value>
+  </data>
+    <data name="SystemIsUnderMaintenance" xml:space="preserve">
+    <value>System {0} is under maintenance, please choose another card type</value>
+  </data>
+    <data name="CannotRedeemRewards" xml:space="preserve">
+    <value>Cannot redeem rewards. Please contact customer care</value>
+  </data>
+    <data name="TheSystemMaintenance" xml:space="preserve">
+    <value>The system is under maintenance, please try again later</value>
+  </data>
+    <data name="TheRewardIsNotTrue" xml:space="preserve">
+    <value>The reward is not true</value>
+  </data>
+    <data name="ItIsNotTimeToAward" xml:space="preserve">
+    <value>It is not time to award. Please try again later</value>
+  </data>
+    <data name="AwardsAreNotSuccessful" xml:space="preserve">
+    <value>Awards are not successful. Please try again later</value>
+  </data>
+    <data name="AwardedSuccessfully" xml:space="preserve">
+    <value>Awarded successfully. Please check your inbox</value>
+  </data>
+    <data name="CannotAuthenticateInformation" xml:space="preserve">
+    <value>Cannot authenticate information</value>
+  </data>
+    <data name="FacebookIncorrect" xml:space="preserve">
+    <value>Facebook information is incorrect, please login again</value>
+  </data>
+    <data name="FunctionDoesNotExist" xml:space="preserve">
+    <value>Function does not exist</value>
+  </data>
+    <data name="IncorrectCode" xml:space="preserve">
+    <value>Incorrect code</value>
+  </data>
+    <data name="UpdateInformationFailed" xml:space="preserve">
+    <value>Update information failed. Please try again later.</value>
+  </data>
+    <data name="UpdateSuccessful" xml:space="preserve">
+    <value>Update successful. You are given {0} cents to your account!</value>
+  </data>
+    <data name="VerificationCodeDoesNotExist" xml:space="preserve">
+    <value>Verification code does not exist</value>
+  </data>
+    <data name="ErrorImage" xml:space="preserve">
+    <value>Must be in jpg, png, gif format</value>
+  </data>
+    <data name="ErrorimageSize" xml:space="preserve">
+    <value>Image capacity is less than 500kb</value>
+  </data>
+    <data name="UploadAvatarSuccess" xml:space="preserve">
+    <value>Upload avatar success</value>
+  </data>
+    <data name="NoEvents" xml:space="preserve">
+    <value>No Events</value>
+  </data>
+    <data name="NoDataRequested" xml:space="preserve">
+    <value>No data you requested</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+    <data name="NoNewInstructions" xml:space="preserve">
+    <value>No new instructions</value>
+  </data>
+    <data name="EmailorPasswordIncorrect" xml:space="preserve">
+    <value>Email or password is incorrect</value>
+  </data>
+    <data name="AccountLocked" xml:space="preserve">
+    <value>Account is locked</value>
+  </data>
+    <data name="AccountPermanentlyLocked" xml:space="preserve">
+    <value>Account has been permanently locked</value>
+  </data>
+    <data name="AccountActivatedYet" xml:space="preserve">
+    <value>Account has not been activated yet</value>
+  </data>
+    <data name="UserAnotherDevice" xml:space="preserve">
+    <value>User is using another device</value>
+  </data>
+    <data name="SecurityCodeDoesNotExist" xml:space="preserve">
+    <value>Security code does not exist</value>
+  </data>
+    <data name="SecurityCodeIncorrect" xml:space="preserve">
+    <value>Security code is incorrect</value>
+  </data>
+    <data name="SecurityCodeUsed" xml:space="preserve">
+    <value>Security code has been used. Please write down the new security code!</value>
+  </data>
+    <data name="FacebookAccountNotRegistered" xml:space="preserve">
+    <value>Facebook Account has not been registered</value>
+  </data>
+    <data name="LoggedSuccessfully" xml:space="preserve">
+    <value>Login successfully</value>
+  </data>
+    <data name="LoginError" xml:space="preserve">
+    <value>Login error. Please try again!</value>
+  </data>
+    <data name="FacebookInformationIncorrect" xml:space="preserve">
+    <value>Facebook information is incorrect, please login again</value>
+  </data>
+    <data name="FacebookInformationNotMatch" xml:space="preserve">
+    <value>Facebook information does not match, please try again ..</value>
+  </data>
+    <data name="DisplayNameAlreadyExists" xml:space="preserve">
+    <value> The display name already exists</value>
+  </data>
+    <data name="Display3to15characters" xml:space="preserve">
+    <value>Display name at least 3 to 15 characters.</value>
+  </data>
+    <data name="AccountAlreadyUse" xml:space="preserve">
+    <value>Account already in use. Please choose another name</value>
+  </data>
+    <data name="RegistrationFailed" xml:space="preserve">
+    <value>Registration failed. Please try again later.</value>
+  </data>
+    <data name="UsernameAvailable" xml:space="preserve">
+    <value>Username available</value>
+  </data>
+    <data name="ValidUsername" xml:space="preserve">
+    <value>Valid username</value>
+  </data>
+    <data name="YouNotCoinHistory" xml:space="preserve">
+    <value>You do not have coin history yet</value>
+  </data>
+    <data name="GetAvatarSuccessfully" xml:space="preserve">
+    <value>Get the Link avatar successfully</value>
+  </data>
+    <data name="YouHaveNoMail" xml:space="preserve">
+    <value>You have no mail</value>
+  </data>
+    <data name="InvalidAccount1" xml:space="preserve">
+    <value>Invalid account (code -1)</value>
+  </data>
+    <data name="InformationIsIncorrect" xml:space="preserve">
+    <value>Information is incorrect, please login again</value>
+  </data>
+    <data name="AccountLinked" xml:space="preserve">
+    <value>The account you want the link to have been used for ID: {0} do you want to log out and switch to that account</value>
+  </data>
+    <data name="TieuDeTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>The title exceeds {0} characters.</value>
+  </data>
+    <data name="NoiDungTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>The content exceeds {0} characters.</value>
+  </data>
+    <data name="KhongTheGuiTinNhanChoMinh" xml:space="preserve">
+    <value>Cannot send message to yourself</value>
+  </data>
+    <data name="TKNhanTinNhanKTonTai" xml:space="preserve">
+    <value>The account receiving the message does not exist!</value>
+  </data>
+    <data name="TaiKhoanNhanTinNhanBiKhoa" xml:space="preserve">
+    <value>The account you want to send the message to is now locked!</value>
+  </data>
+    <data name="ErrorMessCustomservice" xml:space="preserve">
+    <value>Please contact Customer Service for assistance.</value>
+  </data>
+    <data name="TinNhanDaDuocGui" xml:space="preserve">
+    <value>The message has been sent to {0} - {1} !!!</value>
+  </data>
+    <data name="SuDungHetLuotGuiTinNhan" xml:space="preserve">
+    <value>You have used up the number of messages sent.</value>
+  </data>
+    <data name="NhapTKNhanTinNhan" xml:space="preserve">
+    <value>Please enter the receiving account</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>You have won today. 1 nick can only win 1 gift code per day</value>
+  </data>
+    <data name="HistoriCoinBanCaSuccess" xml:space="preserve">
+    <value>Get money history  successfully</value>
+  </data>
+    <data name="AcceptImgType" xml:space="preserve">
+    <value>Only accept jpg, png, gif images.</value>
+  </data>
+    <data name="ImgSize" xml:space="preserve">
+    <value>File size &lt;= 500Kb.</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>Event select invalid key {0}</value>
+  </data>
+    <data name="GetChipFromTheEvent" xml:space="preserve">
+    <value>You get {0} Xu from the event.</value>
+  </data>
+    <data name="HavebeenAwardedChip" xml:space="preserve">
+    <value>You have been awarded {0} Chip. Win event Enter the money code. 1 nick can only win 1 gift code in a day.</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>Not enough time to receive gift.</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>Enough time to receive gift.</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>Account received gift for the first time.</value>
+  </data>
+    <data name="ErrorMessInvalidInformation" xml:space="preserve">
+    <value>Invalid information</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>Not logged in or logged in at another machine</value>
+  </data>
+    <data name="TurnsInvalid" xml:space="preserve">
+    <value>Invalid play</value>
+  </data>
+    <data name="ErrorMessValidation2" xml:space="preserve">
+    <value>Turns have expired</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>You received a gift</value>
+  </data>
+    <data name="OutOfChips" xml:space="preserve">
+    <value>Out of chips</value>
+  </data>
+    <data name="ConfigSuccess" xml:space="preserve">
+    <value>Get the configuration information successfully</value>
+  </data>
+    <data name="CoinACcountIsNotEnough" xml:space="preserve">
+    <value>The number of coins in the account is not enough to make the transaction</value>
+  </data>
+    <data name="AmountTransferChipsDivided" xml:space="preserve">
+    <value>The amount must be transferred from {0} Chips and divided by 10,000!</value>
+  </data>
+    <data name="AmountTransferSmaller" xml:space="preserve">
+    <value>The transfer amount must be smaller</value>
+  </data>
+    <data name="TransferChipsSuccess" xml:space="preserve">
+    <value>Transfer chips successfully. {0} received {1}.</value>
+  </data>
+    <data name="VipPromotionForYou" xml:space="preserve">
+    <value>VIP promotion exclusively for you</value>
+  </data>
+    <data name="IPLimit" xml:space="preserve">
+    <value>IP has exceeded the number of bonuses received</value>
+  </data>
+    <data name="DeviceLimit" xml:space="preserve">
+    <value>Device has exceeded the number of bonuses received</value>
+  </data>
+
+    <data name="ConfigNotExists" xml:space="preserve">
+    <value>Configuration does not exist.</value>
+  </data>
+</LocalLanguages>

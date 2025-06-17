@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_412" xml:space="preserve">
+    <value>POKER SOLO</value>
+  </data>
+    <data name="Game_2001" xml:space="preserve">
+    <value>Onet fruit</value>
+  </data>
+    <data name="Game_2002" xml:space="preserve">
+    <value>BonusOnline</value>
+  </data>
+    <data name="Game_-1" xml:space="preserve">
+    <value>Bonus Wheel</value>
+  </data>
+    <data name="Game_434" xml:space="preserve">
+    <value>Black Jack</value>
+  </data>
+    <data name="Game_Type_Fishing">
+        <value>Fishing Game</value>
+    </data>
+    <data name="Game_Type_Slot_Game">
+        <value>Slot Game</value>
+    </data>
+    <data name="Game_500">
+        <value>เกมส์ตกปลา</value>
+    </data>
+    <data name="Game_425">
+        <value>TEXAS HOLD 'EM POKER</value>
+    </data>
+    <data name="Game_424">
+        <value>DIAMONDS LINK</value>
+    </data>
+    <data name="Game_423">
+        <value>MONOPOLY</value>
+    </data>
+    <data name="Game_420">
+        <value>武士</value>
+    </data>
+    <data name="Game_419">
+        <value>土人</value>
+    </data>
+    <data name="Game_417">
+        <value>财神</value>
+    </data>
+    <data name="Game_416">
+        <value>神兽</value>
+    </data>
+    <data name="Game_411">
+        <value>三国</value>
+    </data>
+    <data name="Game_410">
+        <value>金龙</value>
+    </data>
+    <data name="Game_409">
+        <value>CAO RUA</value>
+    </data>
+    <data name="Game_408">
+        <value>豪华</value>
+    </data>
+    <data name="Game_407">
+        <value>翻相</value>
+    </data>
+    <data name="Game_406">
+        <value>88 锣</value>
+    </data>
+    <data name="Game_402">
+        <value>酒吧插槽</value>
+    </data>
+    <data name="Game_421">
+        <value>超 777</value>
+    </data>
+    <data name="Game_422">
+        <value>超级财富</value>
+    </data>
+
+    <data name="Game_423">
+        <value>亿万富翁</value>
+    </data>
+    <data name="Game_424">
+        <value>钻石</value>
+    </data>
+    <data name="Game_209">
+        <value>摇牌</value>
+    </data>
+    <data name="Game_201">
+        <value>叁</value>
+    </data>
+    <data name="Game_200">
+        <value>LIENG</value>
+    </data>
+    <data name="Game_48">
+        <value>大于小于</value>
+    </data>
+    <data name="Game_42">
+        <value>扑克</value>
+    </data>
+    <data name="Game_41">
+        <value>合约式桥牌</value>
+    </data>
+    <data name="Game_40">
+        <value>前走</value>
+    </data>
+    <data name="Game_34">
+        <value>十三张</value>
+    </data>
+    <data name="Game_1">
+        <value>LUCKY SPIN</value>
+    </data>
+    <data name="Game_3">
+        <value>LUCKY SPIN</value>
+    </data>
+    <data name="Game_428">
+        <value>DRACULA</value>
+    </data>
+    <data name="Game_429">
+        <value>PACMAN</value>
+    </data>
+    <data name="Game_430">
+        <value>BIGTWO</value>
+    </data>
+    <data name="Game_431">
+        <value>BACCARAT</value>
+    </data>
+
+    <data name="Game_433">
+        <value>TEANG LEN</value>
+    </data>
+    <data name="Game_426">
+        <value>CANDY</value>
+    </data>
+    <data name="Game_418">
+        <value>PACHINKO ROBOT</value>
+    </data>
+    <data name="Game_45">
+        <value>BIG SMALL</value>
+    </data>
+    <data name="Game_208">
+        <value>MYSTERY NUM</value>
+    </data>
+    <data name="Game_432">
+        <value>BLACKJACK</value>
+    </data>
+</LocalLanguages>

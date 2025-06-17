@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="AcceptedSuccessfully" xml:space="preserve">
+    <value>Accepted the invitation successfully</value>
+  </data>
+    <data name="CantSendRequestFriend" xml:space="preserve">
+    <value>Can't send invitation because your quantity is full</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+    <data name="InvalidQuantity" xml:space="preserve">
+    <value>Invalid quantity</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+    <data name="NoFriendsFound" xml:space="preserve">
+    <value>No friends found</value>
+  </data>
+    <data name="PersonFriend" xml:space="preserve">
+    <value>This person is already a friend</value>
+  </data>
+    <data name="RejectSuccessfully" xml:space="preserve">
+    <value>Reject the invitation successfully</value>
+  </data>
+    <data name="RewardeUserInviteFriend" xml:space="preserve">
+    <value>Rewarde user invite friend</value>
+  </data>
+    <data name="SentThisPerson" xml:space="preserve">
+    <value>Has sent a friend invitation to this person</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>Server Maintenance</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="UnlockVip" xml:space="preserve">
+    <value>Unlock when placing vip</value>
+  </data>
+    <data name="UserCannotSendInvitationsToUser" xml:space="preserve">
+    <value>You cannot send invitations to yourself</value>
+  </data>
+    <data name="UserHasNoFriendInvitation" xml:space="preserve">
+    <value>User has no friend invitation</value>
+  </data>
+    <data name="UserHaveFriendInvitation" xml:space="preserve">
+    <value>You have {0} friend invitation!</value>
+  </data>
+    <data name="UserHaveRunOutOfRewarded" xml:space="preserve">
+    <value>You have run out of rewarded</value>
+  </data>
+    <data name="UserMustInviteEnough" xml:space="preserve">
+    <value>You must invite enough {0} the person who is new to receive the gift</value>
+  </data>
+    <data name="UserNotExists" xml:space="preserve">
+    <value>User does not exist</value>
+  </data>
+    <data name="ContentIsNotAllow" xml:space="preserve">
+    <value>Content inappropriate.</value>
+  </data>
+</LocalLanguages>

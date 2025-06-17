@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="AcceptInvite" xml:space="preserve">
+    <value>Đã chấp nhận lời mời</value>
+  </data>
+    <data name="AccountIsBlocked" xml:space="preserve">
+    <value>Tài khoản đã bị khóa</value>
+  </data>
+    <data name="AccountIsBlockedForever" xml:space="preserve">
+    <value>Tài khoản đã bị khóa vĩnh viễn</value>
+  </data>
+    <data name="AccoutHasBeenUpdated" xml:space="preserve">
+    <value>Tài khoản đã được cập nhật trước đó.</value>
+  </data>
+    <data name="ActiveAccountFail" xml:space="preserve">
+    <value>Bạn đã kích hoạt tài khoản không thành công.</value>
+  </data>
+    <data name="ActiveAccountSuccess" xml:space="preserve">
+    <value>Bạn đã kích hoạt tài khoản thành công.</value>
+  </data>
+    <data name="ActiveSuccessAndSecurityCode" xml:space="preserve">
+    <value>Bạn đã kích hoạt thành công. Mã bảo mật của bạn là: </value>
+  </data>
+    <data name="AddFriendFail" xml:space="preserve">
+    <value>Kết bạn thất bại. Vui lòng thử lại.</value>
+  </data>
+    <data name="AddFriendSuccess" xml:space="preserve">
+    <value>Kết bạn thành công.</value>
+  </data>
+    <data name="ArticleCreate" xml:space="preserve">
+    <value>Nhập tiêu đề.</value>
+  </data>
+    <data name="ArticleInputContent" xml:space="preserve">
+    <value>Nhập nội dung.</value>
+  </data>
+    <data name="ArticleMaxLength" xml:space="preserve">
+    <value>Tiêu đề tối đa 190 kí tự.</value>
+  </data>
+    <data name="BetSuccess" xml:space="preserve">
+    <value>Chúc mừng bạn đã đặt cược thành công loại cược {0}, số đặt cược là: {1} với số Win: {2}.</value>
+  </data>
+    <data name="BetWithGold" xml:space="preserve">
+    <value>{0}-{1} đã đặt cược {2} số: {3} với win cược là: {4}. IPAddress: {5} - UserAgent: {6}</value>
+  </data>
+    <data name="BuyGoldFail" xml:space="preserve">
+    <value>Mua gold không thành công. {0}</value>
+  </data>
+    <data name="BuyGoldSuccess" xml:space="preserve">
+    <value>Bạn đã mua thành công với số Gold là {0} và {1} VipPoint . Chúc bạn chơi game vui vẻ</value>
+  </data>
+    <data name="CannotAddBySeftForFriend" xml:space="preserve">
+    <value>Không thể kết bạn chính mình.</value>
+  </data>
+    <data name="CannotChangeTypeOfJackpot" xml:space="preserve">
+    <value>Không được phép thay đổi loại Jackpot</value>
+  </data>
+    <data name="CannotPlayGameMustExit" xml:space="preserve">
+    <value>Không thể đặt cược Lô đề. Bạn phải thoát khỏi game </value>
+  </data>
+    <data name="CannotPlayGameMustExit2" xml:space="preserve">
+    <value> và chờ 2 phút!</value>
+  </data>
+    <data name="CannotSendEmailForSeft" xml:space="preserve">
+    <value>Không thể gửi email cho chính mình.</value>
+  </data>
+    <data name="Card" xml:space="preserve">
+    <value>THẺ CÀO </value>
+  </data>
+    <data name="ChangeCardAmountSuccess" xml:space="preserve">
+    <value>Bạn đã đổi thẻ thành công &lt;br /&gt;</value>
+  </data>
+    <data name="ChangeLanguageSuccess" xml:space="preserve">
+    <value>Thay đổi ngôn ngữ thành công</value>
+  </data>
+    <data name="CheckReceiveEmail" xml:space="preserve">
+    <value>Bạn hãy kiểm tra lại email người nhận.</value>
+  </data>
+    <data name="ChooseType" xml:space="preserve">
+    <value>Chọn phân loại.</value>
+  </data>
+    <data name="ComeBackLater" xml:space="preserve">
+    <value>Vui lòng quay lại sau.</value>
+  </data>
+    <data name="CommentFailCauseHourPlay" xml:space="preserve">
+    <value>Comment thất bại, Thời gian chơi game của bạn chưa đủ để tham gia comment.</value>
+  </data>
+    <data name="ConfigNotExist" xml:space="preserve">
+    <value>Cấu hình không tồn tại</value>
+  </data>
+    <data name="CongraGift" xml:space="preserve">
+    <value>Chúc mừng bạn đã trúng thưởng {0} Win !</value>
+  </data>
+    <data name="CongraGiftLater" xml:space="preserve">
+    <value>Chúc bạn may mắn lần sau !</value>
+  </data>
+    <data name="CreateNewSecurityCodeFail" xml:space="preserve">
+    <value>Tạo mới mã bảo mật thất bại, xin vui lòng thử lại sau.</value>
+  </data>
+    <data name="DataUpdatedInvalid" xml:space="preserve">
+    <value>Dữ liệu cập nhật không đúng.</value>
+  </data>
+    <data name="DataValid" xml:space="preserve">
+    <value>Thông tin hợp lệ!</value>
+  </data>
+    <data name="DeclineInvite" xml:space="preserve">
+    <value>Không chấp nhận lời mời</value>
+  </data>
+    <data name="DeleteMessageSuccess" xml:space="preserve">
+    <value>Loại bỏ tin nhắn thành công.</value>
+  </data>
+    <data name="DepoAmountDistance" xml:space="preserve">
+    <value>Win phải lớn hơn 100.000 và là bội số của 10.000</value>
+  </data>
+    <data name="DepoChooseCardType" xml:space="preserve">
+    <value>Chọn loại thẻ cào</value>
+  </data>
+    <data name="DepoEnterAmount" xml:space="preserve">
+    <value>Nhập số win cần nạp</value>
+  </data>
+    <data name="DepoIDInvalid" xml:space="preserve">
+    <value>Mã tài khoản không hợp lệ</value>
+  </data>
+    <data name="DepoIdMustbeNum" xml:space="preserve">
+    <value>Mã tài khoản phải là số</value>
+  </data>
+    <data name="DepoInputIDCharge" xml:space="preserve">
+    <value>Nhập mã tài khoản nạp</value>
+  </data>
+    <data name="DepoNotChooseTypePay" xml:space="preserve">
+    <value>Bạn chưa chọn phương thức thanh toán</value>
+  </data>
+    <data name="DepoPinCard" xml:space="preserve">
+    <value>PinCard</value>
+  </data>
+    <data name="DepoPinWrong" xml:space="preserve">
+    <value>Mã thẻ cào không hợp lệ</value>
+  </data>
+    <data name="DepoSerial" xml:space="preserve">
+    <value>Serial</value>
+  </data>
+    <data name="DepoSerialWrong" xml:space="preserve">
+    <value>Số seri không hợp lệ</value>
+  </data>
+    <data name="DepositOnceToComment" xml:space="preserve">
+    <value>Để có thể tham gia comment, Bạn phải nạp thẻ ít nhất 1 lần.</value>
+  </data>
+    <data name="DontHaveAnyJackpot" xml:space="preserve">
+    <value>Bạn không có lượt quay jackpot nào!</value>
+  </data>
+    <data name="EmailOrPassWrong" xml:space="preserve">
+    <value>Email hoặc mật khẩu không đúng.</value>
+  </data>
+    <data name="ErrorInPlay" xml:space="preserve">
+    <value>Lỗi trong quá trình đặt cược, vui lòng thử lại sau.</value>
+  </data>
+    <data name="ErrorInPlaying" xml:space="preserve">
+    <value>Có lỗi xảy ra trong quá trình chơi</value>
+  </data>
+    <data name="ErrorInRandomGift" xml:space="preserve">
+    <value>Có lỗi trong quá trình quay thưởng</value>
+  </data>
+    <data name="EventNotRunYet" xml:space="preserve">
+    <value>Sự kiện chưa diễn ra</value>
+  </data>
+    <data name="ExecuteFailContactCS" xml:space="preserve">
+    <value>Lỗi trong quá trình xử lý, vui lòng liên hệ bộ phận chăm sóc khách hàng.</value>
+  </data>
+    <data name="ExitProtectModeFail" xml:space="preserve">
+    <value>Bạn đã hủy chức năng bảo vệ không thành công.</value>
+  </data>
+    <data name="ExitProtectModeSuccess" xml:space="preserve">
+    <value>Bạn đã hủy chức năng bảo vệ thành công.</value>
+  </data>
+    <data name="FailInPlay" xml:space="preserve">
+    <value>Đặt cược không thành công, vui lòng thử lại sau.</value>
+  </data>
+    <data name="FailInSendingEmail" xml:space="preserve">
+    <value>Lỗi trong quá trình gửi mail.</value>
+  </data>
+    <data name="FailInSendRequest" xml:space="preserve">
+    <value>Lỗi trong quá trình gửi lời mời kết bạn.</value>
+  </data>
+    <data name="FailInUploadingImage" xml:space="preserve">
+    <value>Lỗi trong quá trình upload hình.</value>
+  </data>
+    <data name="FormatMoney" xml:space="preserve">
+    <value>USD</value>
+  </data>
+    <data name="GetListFail" xml:space="preserve">
+    <value>Lấy danh sách không thành công!</value>
+  </data>
+    <data name="GetListSuccessfully" xml:space="preserve">
+    <value>Lấy danh sách thành công!</value>
+  </data>
+    <data name="GetListUserOnlineSuccess" xml:space="preserve">
+    <value>Lấy danh sách user đang online thành công</value>
+  </data>
+    <data name="GiftIsNotFound" xml:space="preserve">
+    <value>Không tìm thấy quà tặng. Vui lòng thử lại sau.</value>
+  </data>
+    <data name="GuildInputName" xml:space="preserve">
+    <value>Tên bang hội không được bỏ trống.</value>
+  </data>
+    <data name="GuildMinGold" xml:space="preserve">
+    <value>Số Win tối thiểu để đăng ký bang hội là: </value>
+  </data>
+    <data name="GuildNameCannotHave" xml:space="preserve">
+    <value>Tên bang hội không thể chứa từ '</value>
+  </data>
+    <data name="GuildNameCannotHave2" xml:space="preserve">
+    <value>' ở đầu tên!</value>
+  </data>
+    <data name="GuildNameIsExist" xml:space="preserve">
+    <value>Tên bang hội đã tồn tại.</value>
+  </data>
+    <data name="GuildNameMaxLength" xml:space="preserve">
+    <value>Tên bang hội không quá 30 kí tự.</value>
+  </data>
+    <data name="GuildNameNotSpecialCharacter" xml:space="preserve">
+    <value>Không sử dụng các ký tự đặc biệt</value>
+  </data>
+    <data name="GuildWelcomeNew" xml:space="preserve">
+    <value>Chào mừng bạn đến với cơ chế bang hội mới</value>
+  </data>
+    <data name="HasBeenAFriends" xml:space="preserve">
+    <value>Đã kết bạn rồi.</value>
+  </data>
+    <data name="HelloAll" xml:space="preserve">
+    <value>Xin chào tất cả các bạn </value>
+  </data>
+    <data name="InputCodeWrong" xml:space="preserve">
+    <value>Bạn đã nhập sai mã code.</value>
+  </data>
+    <data name="InputManyTimes" xml:space="preserve">
+    <value>Bạn đã nhập quá lần quy định.</value>
+  </data>
+    <data name="InviteUserId" xml:space="preserve">
+    <value>Mã user được mời.</value>
+  </data>
+    <data name="JoinedInOtherGuild" xml:space="preserve">
+    <value>Bạn đã tham gia bang khác.</value>
+  </data>
+    <data name="JoinOtherGuildOrWatingApprove" xml:space="preserve">
+    <value>Bạn đã tham gia bang khác. Hoặc bang bạn tạo đang chờ xét duyệt.</value>
+  </data>
+    <data name="LeaderMustBeUpdateBeforeCreateGuild" xml:space="preserve">
+    <value>Bang chủ phải cập nhật thông tin cá nhân trước khi đăng ký Bang Hội.&lt;br /&gt;(Click &lt;a href='{0}' target='_blank'&gt;vào đây&lt;/a&gt; để cập nhật thông tin)</value>
+  </data>
+    <data name="MessageInput" xml:space="preserve">
+    <value>Xin vui lòng nhập lời nhắn.</value>
+  </data>
+    <data name="MessageInputContentEmail" xml:space="preserve">
+    <value>Xin vui lòng nhập nội dung thư.</value>
+  </data>
+    <data name="MessageTitle" xml:space="preserve">
+    <value>Tin nhắn</value>
+  </data>
+    <data name="MinAmount" xml:space="preserve">
+    <value>Số lượng phải lớn hơn 0</value>
+  </data>
+    <data name="MinPlayAmoutGame" xml:space="preserve">
+    <value>Số win của bạn không đủ để tham gia cược. Vui lòng điều chỉnh lại win cược.</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>Dữ liệu không có</value>
+  </data>
+    <data name="NoDataRequest" xml:space="preserve">
+    <value>Không có dữ liệu bạn yêu cầu.</value>
+  </data>
+    <data name="NoNewArticle" xml:space="preserve">
+    <value>Không có bài viết nào mới.</value>
+  </data>
+    <data name="NotFoundArticle" xml:space="preserve">
+    <value>Không tìm thấy bài viết.</value>
+  </data>
+    <data name="NotFoundUser" xml:space="preserve">
+    <value>Lỗi: Không tìm thấy user.</value>
+  </data>
+    <data name="NotLogginOrOtherDevice" xml:space="preserve">
+    <value>Chưa đăng nhập hoặc đăng nhập tại máy khác.</value>
+  </data>
+    <data name="NotPlayYet" xml:space="preserve">
+    <value>Bạn chưa tham gia cược.</value>
+  </data>
+    <data name="NotUpdateInfo" xml:space="preserve">
+    <value>Chưa cập nhật thông tin cá nhân.</value>
+  </data>
+    <data name="NotUsingAction" xml:space="preserve">
+    <value>Bạn không sử dụng chức năng này.</value>
+  </data>
+    <data name="PassInput" xml:space="preserve">
+    <value>Vui lòng nhập mật khẩu</value>
+  </data>
+    <data name="PassMinLength" xml:space="preserve">
+    <value>Mật khẩu ít nhất 6 ký tự.</value>
+  </data>
+    <data name="PassReInputWrong" xml:space="preserve">
+    <value>Xác nhận mật khẩu không khớp.</value>
+  </data>
+    <data name="PlayAmoutMin" xml:space="preserve">
+    <value>Cược tối thiểu {0} Win.</value>
+  </data>
+    <data name="PlayTimeIsExpire" xml:space="preserve">
+    <value>Đã hết thời gian đặt cược.</value>
+  </data>
+    <data name="RegisteredRound" xml:space="preserve">
+    <value>Bạn đã đăng kí tham gia tour đấu.</value>
+  </data>
+    <data name="RegisterGuildFail" xml:space="preserve">
+    <value>Đăng ký bang hội thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="RegisterGuildSuccess" xml:space="preserve">
+    <value>Đăng ký bang thành công.</value>
+  </data>
+    <data name="RegisterRoundFail" xml:space="preserve">
+    <value>Đăng ký tham gia không thành công.Để đăng ký tham gia Giải Đấu bạn phải có 5 triệu gold trở lên trong tài khoản</value>
+  </data>
+    <data name="RegisterRoundSuccess" xml:space="preserve">
+    <value>Chúc mừng bạn đã đăng ký thành công.&lt;br/&gt;Hệ thống sẽ chuyển </value>
+  </data>
+    <data name="RegisterRoundSuccess2" xml:space="preserve">
+    <value> Gold sang tài khoản giải đấu.&lt;br/&gt;Chúc bạn may mắn giành chiến thắng.</value>
+  </data>
+    <data name="RegisterTimeIsExpired" xml:space="preserve">
+    <value>Đã hết thời gian đăng kí.</value>
+  </data>
+    <data name="RemoveArticleIsNotPermission" xml:space="preserve">
+    <value>Bạn không đủ quyền để xóa bài viết này.</value>
+  </data>
+    <data name="RemoveArticleSuccess" xml:space="preserve">
+    <value>Xóa bài viết thành công.</value>
+  </data>
+    <data name="RemoveMemberFail" xml:space="preserve">
+    <value>Loại bỏ thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="RemoveMemberSuccess" xml:space="preserve">
+    <value>Loại bỏ thành viên thành công.</value>
+  </data>
+    <data name="RemoveMessageFail" xml:space="preserve">
+    <value>Loại bỏ thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="RequestHasBeenSent" xml:space="preserve">
+    <value>Thông tin kết bạn đã được gửi.</value>
+  </data>
+    <data name="ResetSecurityCodeFail" xml:space="preserve">
+    <value>Bạn đã reset mã bảo vệ không thành công.</value>
+  </data>
+    <data name="ResetSecurityCodeSuccess" xml:space="preserve">
+    <value>Bạn đã reset mã bảo vệ thành công. Mã bảo mật mới: </value>
+  </data>
+    <data name="RoundGiftIsExpire" xml:space="preserve">
+    <value>Lượt quay đã hết hạn</value>
+  </data>
+    <data name="RoundGiftIsInvalid" xml:space="preserve">
+    <value>Lượt quay không hợp lệ</value>
+  </data>
+    <data name="RoundIsPlaying" xml:space="preserve">
+    <value>Vòng đấu đang diễn ra.</value>
+  </data>
+    <data name="SecurityCodeInvalid" xml:space="preserve">
+    <value>รหัสความปลอดภัยไม่ถูกต้อง</value>
+  </data>
+    <data name="SecurityCodeIsExpire" xml:space="preserve">
+    <value>Mã bảo mật của bạn đã hết hạn.</value>
+  </data>
+    <data name="SecurityCodeIsWrong" xml:space="preserve">
+    <value>Mã bảo mật không chính xác</value>
+  </data>
+    <data name="SecurityCodeNotExist" xml:space="preserve">
+    <value>Mã bảo vệ không tồn tại</value>
+  </data>
+    <data name="SecuritySMSTemplate" xml:space="preserve">
+    <value>Bạn Chưa soạn tin kích hoạt bảo vệ tài khoản bằng sms. Hãy soạn tin theo cú pháp: GOLD MBV MTK gửi 8038</value>
+  </data>
+    <data name="SendMailFail" xml:space="preserve">
+    <value>Gửi thư thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="SendMailSuccess" xml:space="preserve">
+    <value>Gửi thư thành công.</value>
+  </data>
+    <data name="SendTksFail" xml:space="preserve">
+    <value>Bạn đã gửi lời cảm ơn không thành công.</value>
+  </data>
+    <data name="SendTksSuccess" xml:space="preserve">
+    <value>Bạn đã gửi lời cảm ơn thành công.</value>
+  </data>
+    <data name="SuccessAndHaveSecurityCode" xml:space="preserve">
+    <value>Thành công và có mã bảo vệ</value>
+  </data>
+    <data name="TitleSeo" xml:space="preserve">
+    <value>Chơi game bài online, đánh bài online - Win8</value>
+  </data>
+    <data name="TransferStarFail" xml:space="preserve">
+    <value>Quá trình chuyển sao không thành công, vui lòng thử lại sau</value>
+  </data>
+    <data name="UnfriendFail" xml:space="preserve">
+    <value>Hủy kết bạn thất bại. Vui lòng thử lại.</value>
+  </data>
+    <data name="UnfriendSuccess" xml:space="preserve">
+    <value>Hủy kết bạn thành công.</value>
+  </data>
+    <data name="UpcommingRegister" xml:space="preserve">
+    <value>Sắp tới giờ đăng kí bạn vui lòng quay lại sau.</value>
+  </data>
+    <data name="UpdateAccSuccessAndReceiveGold" xml:space="preserve">
+    <value>Tài khoản cập nhật thành công và được tặng Gold.</value>
+  </data>
+    <data name="UpdateNotSuccess" xml:space="preserve">
+    <value>Quá trình cập nhật không thành công.</value>
+  </data>
+    <data name="UpdatePassFail" xml:space="preserve">
+    <value>Cập nhật mật khẩu không thành công !!!</value>
+  </data>
+    <data name="UpdatePassSuccess" xml:space="preserve">
+    <value>Cập nhật mật khẩu thành công !!!</value>
+  </data>
+    <data name="UpdatePublicAccFail" xml:space="preserve">
+    <value>Cập nhật tài khoản public không thành công</value>
+  </data>
+    <data name="UpdatePublicAccSuccess" xml:space="preserve">
+    <value>Cập nhật tài khoản public thành công</value>
+  </data>
+    <data name="UpdateSecurityAccFail" xml:space="preserve">
+    <value>Cập nhật tài khoản bảo vệ thành công.</value>
+  </data>
+    <data name="UploadAnimateImgMustBeSilver" xml:space="preserve">
+    <value>Để up ảnh động,loại user phải từ cấp Silver trở lên</value>
+  </data>
+    <data name="UploadFail" xml:space="preserve">
+    <value>Upload thất bại, xin vui lòng thử lại sau.</value>
+  </data>
+    <data name="UploadSuccess" xml:space="preserve">
+    <value>Upload thành công.</value>
+  </data>
+    <data name="UserHasBeenInvite" xml:space="preserve">
+    <value>Bạn đã được User này mời rồi!</value>
+  </data>
+    <data name="UserIsInOtherDevice" xml:space="preserve">
+    <value>User đang dùng máy khác</value>
+  </data>
+    <data name="WaitingToNextComment" xml:space="preserve">
+    <value>Vui lòng chờ một lát trước khi comment tiếp.</value>
+  </data>
+    <data name="WalCurrentPass" xml:space="preserve">
+    <value>Nhập mật khẩu hiện tại của ví</value>
+  </data>
+    <data name="WalGoldMin" xml:space="preserve">
+    <value>Số gold phải lớn hơn 0</value>
+  </data>
+    <data name="WalNewPass" xml:space="preserve">
+    <value>Nhập mật khẩu mới</value>
+  </data>
+    <data name="WalNotChooseTransferType" xml:space="preserve">
+    <value>Chưa chọn phương thức chuyển gold</value>
+  </data>
+    <data name="YourTurnsIsExpireAt" xml:space="preserve">
+    <value>Lượt quay của bạn đã hết hạn vào lúc </value>
+  </data>
+
+
+    <data name="AcceptInviteJoin" xml:space="preserve">
+    <value>Chấp nhận lời mời gia nhập bang</value>
+  </data>
+    <data name="ActionFail" xml:space="preserve">
+    <value>Thao tác thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="AtLeastTenHourToComment" xml:space="preserve">
+    <value>Để có thể tham gia bình luận, đăng bài bạn phải chơi game tối thiểu là 10 giờ.</value>
+  </data>
+    <data name="BillionGold" xml:space="preserve">
+    <value>Tỷ Gold</value>
+  </data>
+    <data name="CharacterIsMaxOfLength" xml:space="preserve">
+    <value>Số ký tự vượt quá giới hạn</value>
+  </data>
+    <data name="CommentAllow" xml:space="preserve">
+    <value>wing club, facebook com, google com, wing</value>
+  </data>
+    <data name="CommentFail" xml:space="preserve">
+    <value>Bình luận không thành công.</value>
+  </data>
+    <data name="CommentFailCauseBanning" xml:space="preserve">
+    <value>Bình luận thất bại, Bạn đang bị cấm thảo luận.</value>
+  </data>
+    <data name="CommentInDayPassover" xml:space="preserve">
+    <value>Số comment trong ngày vượt quá giới hạn</value>
+  </data>
+    <data name="CommentSuccess" xml:space="preserve">
+    <value>Bình luận thành công.</value>
+  </data>
+    <data name="ContentIsNotAllow" xml:space="preserve">
+    <value>Nội dung không phù hợp.</value>
+  </data>
+    <data name="CreateDeputyIsFail" xml:space="preserve">
+    <value>Lập bang phó thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="DeclineInviteJoin" xml:space="preserve">
+    <value>Không gia nhập bang hội</value>
+  </data>
+    <data name="DeleteCommentFail" xml:space="preserve">
+    <value>Xóa không thành công. Vui lòng thử lại sau</value>
+  </data>
+    <data name="DeputyChooseIsNotAMember" xml:space="preserve">
+    <value>Thành viên chọn làm bang phó không phải là thành viên của bang.</value>
+  </data>
+    <data name="DeputyCreateSuccess" xml:space="preserve">
+    <value>Lập bang phó thành công.</value>
+  </data>
+    <data name="DeputyIsFull" xml:space="preserve">
+    <value>Bang của bạn đã đủ số lượng bang phó.</value>
+  </data>
+    <data name="DeputyRemoveSuccess" xml:space="preserve">
+    <value>Xóa bang phó thành công.</value>
+  </data>
+    <data name="DontHaveComment" xml:space="preserve">
+    <value>Không có bình luận.</value>
+  </data>
+    <data name="DontHaveMember" xml:space="preserve">
+    <value>Chưa có bang viên.</value>
+  </data>
+    <data name="DontPermissionToAction" xml:space="preserve">
+    <value>Bạn không đủ quyền thực hiện chức năng này.</value>
+  </data>
+    <data name="EnterGoldToGive" xml:space="preserve">
+    <value>Nhập số Gold muốn chuyển.</value>
+  </data>
+    <data name="ErrorInDataAccess" xml:space="preserve">
+    <value>Lỗi trong quá trình xử lý dữ liệu, xin thử lại sau.</value>
+  </data>
+    <data name="ExecuteRegisterGoldFail" xml:space="preserve">
+    <value>Xử lý ứng gold không thành công, xin thử lại sau.</value>
+  </data>
+    <data name="GuildCoinWillReceive" xml:space="preserve">
+    <value>Win dự kiến được nhận</value>
+  </data>
+    <data name="GuildCreateDate" xml:space="preserve">
+    <value>Ngày tạo:</value>
+  </data>
+    <data name="GuildDate" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+    <data name="GuildFromDayAU" xml:space="preserve">
+    <value>Từ ngày</value>
+  </data>
+    <data name="GuildInfoAccumulationByLevel" xml:space="preserve">
+    <value>Thông tin đóng góp theo level</value>
+  </data>
+    <data name="GuildIsNotExist" xml:space="preserve">
+    <value>Bang hội không tồn tại.</value>
+  </data>
+    <data name="GuildMember" xml:space="preserve">
+    <value>Thành viên</value>
+  </data>
+    <data name="GuildMemberCoinLog" xml:space="preserve">
+    <value>Thống kê win đóng góp</value>
+  </data>
+    <data name="GuildMemberPlayGame" xml:space="preserve">
+    <value>Thành viên chơi game</value>
+  </data>
+    <data name="GuildMemberRegister" xml:space="preserve">
+    <value>Xin gia nhập bang</value>
+  </data>
+    <data name="GuildNameLengthAlert" xml:space="preserve">
+    <value>Tên bang hội ít nhất 6 ký tự, chỉ bao gồm ký tự từ a-z, A-Z và 0-9.</value>
+  </data>
+    <data name="GuildNotify" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+    <data name="GuildNotifyCreate" xml:space="preserve">
+    <value>Tạo thông báo</value>
+  </data>
+    <data name="GuildNotifyList" xml:space="preserve">
+    <value>Danh sách thông báo trong bang</value>
+  </data>
+    <data name="GuildOwner" xml:space="preserve">
+    <value>Bang chủ:</value>
+  </data>
+    <data name="GuildOwnerReward" xml:space="preserve">
+    <value>Win bang chủ nhận:</value>
+  </data>
+    <data name="GuildPoint" xml:space="preserve">
+    <value>Điểm</value>
+  </data>
+    <data name="GuildPolicy" xml:space="preserve">
+    <value>Chính sách bang hội</value>
+  </data>
+    <data name="GuildReportMemberVip" xml:space="preserve">
+    <value>Thống kê điểm VIP</value>
+  </data>
+    <data name="GuildSearchBtn" xml:space="preserve">
+    <value>Tìm Kiếm</value>
+  </data>
+    <data name="GuildSetting" xml:space="preserve">
+    <value>Quản lý bang hội</value>
+  </data>
+    <data name="GuildToDayAU" xml:space="preserve">
+    <value>Tới ngày</value>
+  </data>
+    <data name="GuildTopMemberAccumulation" xml:space="preserve">
+    <value>Thống kê win đóng góp của các thành viên trong tháng</value>
+  </data>
+    <data name="GuildTotalAccumulation" xml:space="preserve">
+    <value>Tổng win tích lũy</value>
+  </data>
+    <data name="GuildTotalAU" xml:space="preserve">
+    <value>Số lượng online</value>
+  </data>
+    <data name="GuildTotalContribution" xml:space="preserve">
+    <value>Điểm đóng góp tháng:</value>
+  </data>
+    <data name="HistoryMiniBossNhan" xml:space="preserve">
+    <value>Nhận thưởng</value>
+  </data>
+    <data name="Hour" xml:space="preserve">
+    <value> giờ</value>
+  </data>
+    <data name="InputCmt" xml:space="preserve">
+    <value>Nhập nội dung thảo luận.</value>
+  </data>
+    <data name="InputGuildPolicy" xml:space="preserve">
+    <value>Vui lòng nhập nội quy bang hội.</value>
+  </data>
+    <data name="InvalidData" xml:space="preserve">
+    <value>Dữ liệu yêu cầu không hợp lệ.</value>
+  </data>
+    <data name="InviteJoinGuild" xml:space="preserve">
+    <value>Mời gia nhập bang hội</value>
+  </data>
+    <data name="LeaderNotBeLeftInGuild" xml:space="preserve">
+    <value>Bang chủ không thể tự rời bang.</value>
+  </data>
+    <data name="LevelGuild" xml:space="preserve">
+    <value>Level</value>
+  </data>
+    <data name="LinkFanpage" xml:space="preserve">
+    <value>Link Fanpage</value>
+  </data>
+    <data name="ListGuildMemberRegister" xml:space="preserve">
+    <value>User xin gia nhập bang</value>
+  </data>
+    <data name="ListInvitedMember" xml:space="preserve">
+    <value>Danh sách thành viên được mời</value>
+  </data>
+    <data name="LogginIsExpire" xml:space="preserve">
+    <value>Phiên đăng nhập đã hết hạn.</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>Thành viên</value>
+  </data>
+    <data name="MemberHasLeftGuild" xml:space="preserve">
+    <value>Thành viên đã rời khỏi bang.</value>
+  </data>
+    <data name="MemberIsLeaderOfGuild" xml:space="preserve">
+    <value>Thành viên được chọn đang là bang chủ.</value>
+  </data>
+    <data name="MemeberAlreadyDeputy" xml:space="preserve">
+    <value>Thành viên đã là bang phó.</value>
+  </data>
+    <data name="MemeberNotADeputy" xml:space="preserve">
+    <value>Thành viên không còn là bang phó</value>
+  </data>
+    <data name="MillionGold" xml:space="preserve">
+    <value>Triệu Gold</value>
+  </data>
+    <data name="Minute" xml:space="preserve">
+    <value> phút</value>
+  </data>
+    <data name="MustBeLoginToAction" xml:space="preserve">
+    <value>Bạn cần phải đăng nhập để thực hiện chức năng này.</value>
+  </data>
+    <data name="NotInGuild" xml:space="preserve">
+    <value>Bạn chưa gia nhập bang.</value>
+  </data>
+    <data name="NotPermissionToDeputyCreate" xml:space="preserve">
+    <value>Bạn không đủ quyền lập bang phó.</value>
+  </data>
+    <data name="NotRequireResGift" xml:space="preserve">
+    <value>Chưa có yêu cầu ứng gold.</value>
+  </data>
+    <data name="RecevicedInvite" xml:space="preserve">
+    <value>Đã nhận lời mời</value>
+  </data>
+    <data name="RegisterToGiftFail" xml:space="preserve">
+    <value>Bạn đã ứng thưởng không thành công.</value>
+  </data>
+    <data name="RegisterToGiftSuccess" xml:space="preserve">
+    <value>Bạn đã ứng thưởng thành công.</value>
+  </data>
+    <data name="RemoveCommentFail" xml:space="preserve">
+    <value>Xóa Comment thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="RemoveCommentSuccess" xml:space="preserve">
+    <value>Xóa bình luận thành công.</value>
+  </data>
+    <data name="RemoveDeputyIsFail" xml:space="preserve">
+    <value>Xóa bang phó thất bại, xin thử lại sau.</value>
+  </data>
+    <data name="RudeCommentList" xml:space="preserve">
+    <value>chó,ngu,cặc,lồn,thông ass,lỗ đít,lỗ nhị,đéo,dkm,dm,cmnr,vl,đù,dit me,má,vkl,con cac,vãi,clgt,clmm,đĩ,đụ mẹ,cặt,đụ,fuck,slut,whore,bitch,dug,penis,đậu xanh rau má,bede,con cac,lon me,đù má,á đù,éo,đít,chua đít,đậu mẹ,bìu,vú,dú,đệch,cứt,cức,đm,lồn,địt,dcm,cặc,xvideo com,xxx,vlxx com,vlxx tv,sexhtv com,dphim net,xvideos com,soclo net,phimsexporn com, heomup com,nung ket,chó chết,3cay xtgem com</value>
+  </data>
+    <data name="SentInvite" xml:space="preserve">
+    <value>Đã gửi lời mời</value>
+  </data>
+    <data name="TotalCmt" xml:space="preserve">
+    <value>Bình luận</value>
+  </data>
+    <data name="TotalExpInGuild" xml:space="preserve">
+    <value>Tổng điểm kinh nghiệm: </value>
+  </data>
+    <data name="TotalGoldInGuild" xml:space="preserve">
+    <value>Tổng đóng góp: </value>
+  </data>
+    <data name="VipPointNumGuild" xml:space="preserve">
+    <value>Điểm Vip:</value>
+  </data>
+    <data name="YourAreNotALeader" xml:space="preserve">
+    <value>Bạn không phải là bang chủ</value>
+  </data>
+
+
+    <data name="BaoTri" xml:space="preserve">
+    <value>ฟังก์ชั่นบำรุงรักษา</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>จำนวนเหรียญในบัญชีไม่เพียงพอที่จะทำภารกิจ</value>
+  </data>
+    <data name="Failed" xml:space="preserve">
+    <value>ล้มเหลว</value>
+  </data>
+    <data name="GoldenMinMoney" xml:space="preserve">
+    <value>จำนวน Win ของคุณต้องน้อยกว่า 5,000 เพื่อสามารถรับรางวัล</value>
+  </data>
+    <data name="IsCorrectCaptcha" xml:space="preserve">
+    <value>รหัสยืนยันไม่ตรง</value>
+  </data>
+    <data name="MaxTransfer" xml:space="preserve">
+    <value>จำนวนเงินโอนต้องน้อยกว่า {0}</value>
+  </data>
+    <data name="MinimumGoldTransfer" xml:space="preserve">
+    <value>จำนวนเงินโอนต้องจาก {0} เหรียญและหารด้วย 10.000</value>
+  </data>
+    <data name="NotExitCaptcha" xml:space="preserve">
+    <value>รหัสยืนยันไม่มีอยู่</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>สำเร็จ</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>ระบบเกิดความผิดพลาด</value>
+  </data>
+    <data name="TransferSuccess" xml:space="preserve">
+    <value>การโอนชิปสำเร็จ {0} ได้รับ {1}</value>
+  </data>
+</LocalLanguages>

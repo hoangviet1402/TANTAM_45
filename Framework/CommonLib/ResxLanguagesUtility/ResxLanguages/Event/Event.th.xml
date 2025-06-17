@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="BoxEventScore" xml:space="preserve">
+    <value>จุด</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>บัญชีรับรางวัลครั้งแรก</value>
+  </data>
+    <data name="EventAchievementBoss" xml:space="preserve">
+    <value>บอส</value>
+  </data>
+    <data name="EventAchievementBossDescription" xml:space="preserve">
+    <value>ฃ่าปลาบอส{0} รอบ</value>
+  </data>
+    <data name="EventAchievementBossName" xml:space="preserve">
+    <value>ฃ่าปลาบอส</value>
+  </data>
+    <data name="EventAchievementCaDo" xml:space="preserve">
+    <value>ปลาแดง</value>
+  </data>
+    <data name="EventAchievementGiftBoxDescription" xml:space="preserve">
+    <value>ฆ่ากล่องของขวัญ {0} ครั้ง</value>
+  </data>
+    <data name="EventAchievementGiftBoxName" xml:space="preserve">
+    <value>ของขวัญ</value>
+  </data>
+    <data name="EventAchievementHopQua" xml:space="preserve">
+    <value>ของขวัญ</value>
+  </data>
+    <data name="EventAchievementItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+    <data name="EventAchievementItemDescription" xml:space="preserve">
+    <value>ใช้ Item{0} รอบ</value>
+  </data>
+    <data name="EventAchievementItemName" xml:space="preserve">
+    <value>ใช้ Item</value>
+  </data>
+    <data name="EventAchievementLoginDescription" xml:space="preserve">
+    <value>เข้าสู่ระบบเพื่อยิงปลา</value>
+  </data>
+    <data name="EventAchievementLoginName" xml:space="preserve">
+    <value>เข้าสู่ระบบเพื่อยิงปลา</value>
+  </data>
+    <data name="EventAchievementOther" xml:space="preserve">
+    <value>อื่น</value>
+  </data>
+    <data name="EventAchievementRedFishDescription" xml:space="preserve">
+    <value>ฃ่าปลาแดง {0} รอบ </value>
+  </data>
+    <data name="EventAchievementRedFishName" xml:space="preserve">
+    <value>ฃ่าปลาแดง</value>
+  </data>
+    <data name="EventAchievementSkill" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+    <data name="EventAchievementSkillBombDescription" xml:space="preserve">
+    <value>ใช้ skill Bom {0} รอบ </value>
+  </data>
+    <data name="EventAchievementSkillBombName" xml:space="preserve">
+    <value>ใช้ skill Bom</value>
+  </data>
+    <data name="EventAchievementSkillDescription" xml:space="preserve">
+    <value>ใช้ปืน skill {0} รอบ </value>
+  </data>
+    <data name="EventAchievementSkillLaserDescription" xml:space="preserve">
+    <value>ใช้ปืน skill laser  {0} รอบ </value>
+  </data>
+    <data name="EventAchievementSkillLaserName" xml:space="preserve">
+    <value>ใช้ปืน skill laser</value>
+  </data>
+    <data name="EventAchievementSkillName" xml:space="preserve">
+    <value>ใช้ปืน skill </value>
+  </data>
+    <data name="EventAchievementSkillWaveAirDescription" xml:space="preserve">
+    <value>ใช้ skillคลื่นเสียง {0} รอบ </value>
+  </data>
+    <data name="EventAchievementSkillWaveAirName" xml:space="preserve">
+    <value>ใช้ skillคลื่นเสียง</value>
+  </data>
+    <data name="EventAchievementUpLevelDescription" xml:space="preserve">
+    <value>ขึ้น level ยิงปลา</value>
+  </data>
+    <data name="EventAchievementUpLevelName" xml:space="preserve">
+    <value>ขึ้น level ยิงปลา</value>
+  </data>
+    <data name="EventAchivementNotComplete" xml:space="preserve">
+    <value>ความสำเร็จที่ยังไม่เสร็จ</value>
+  </data>
+    <data name="EventChipCounts" xml:space="preserve">
+    <value>{0} Win</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>อีเวนด์ที่เลือกไม่ถูกต้อง key {0} </value>
+  </data>
+    <data name="EventDailyBonusLoginName" xml:space="preserve">
+    <value>วัน</value>
+  </data>
+    <data name="EventDontHaveNew" xml:space="preserve">
+    <value>อีเวนด์ที่เลือกไม่ถูกต้อง</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>ไม่มีงานกิจกรรมใหม่</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>เวลาเพียงพอที่จะรับรางวัล</value>
+  </data>
+    <data name="EventGetListSuccess" xml:space="preserve">
+    <value>รับรายการอีเวนด์สำเร็จ</value>
+  </data>
+    <data name="EventGiftIsWrong" xml:space="preserve">
+    <value>รางวัลไม่ถูกต้อง</value>
+  </data>
+    <data name="EventGiftNotAvailable" xml:space="preserve">
+    <value>รางวัลได้รับหรึอไม่มี</value>
+  </data>
+    <data name="EventGiveGiftFail" xml:space="preserve">
+    <value>มอบรางวัลไม่สำเร็จ กรุณาลองใหม่</value>
+  </data>
+    <data name="EventGiveGiftSuccessAndCheckMail" xml:space="preserve">
+    <value>ได้มอบรางวัลเรียบร้อยแล้ว กรุณาตรวจสอบกล่องจดหมายของคุณ</value>
+  </data>
+    <data name="EventMessageYouHasMoneyFromEve" xml:space="preserve">
+    <value>คุณได้รับ {0} ชิปจากกิจกรรม</value>
+  </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>ชิปของคุณจะต้องน้อยกว่า 5,000 เพื่อรับรางวัล</value>
+  </data>
+    <data name="EventMissionNotComplete" xml:space="preserve">
+    <value>ภารกิจยังไม่เสร็จ</value>
+  </data>
+    <data name="EventNoData" xml:space="preserve">
+    <value>ไม่ข้อมูล</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>เวลาไม่เพียงพอที่จะรับรางวัล</value>
+  </data>
+    <data name="EventNotExist" xml:space="preserve">
+    <value>อีเวนด์ไม่มีอยู่</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>กิจกรรมกำลังหยุดชะงักชั่วคราว</value>
+  </data>
+    <data name="EventNotTimeUp" xml:space="preserve">
+    <value>ไม่ถึงเวลาที่จะมอบรางวัล การุณาลองอีกครั้งในภายหลัง</value>
+  </data>
+    <data name="EventQuicklyRegisterCannotRegisterMore" xml:space="preserve">
+    <value>ไม่สามารถลงทะเบียนเพื่อเล่นได้ในขณะนี้กรุณาลงทะเบียนสำหรับบัญชีใหม่</value>
+  </data>
+    <data name="EventReceivedGift" xml:space="preserve">
+    <value>ได้รับรางวัล</value>
+  </data>
+    <data name="EventReceiveGiftSuccess" xml:space="preserve">
+    <value>รับรางวัลสำเร็จ</value>
+  </data>
+    <data name="EventReceiveLevelVip" xml:space="preserve">
+    <value>รับรางวัลขึ้น level vip</value>
+  </data>
+    <data name="EventSecondCount" xml:space="preserve">
+    <value>{0} วินาที</value>
+  </data>
+    <data name="EventSystemMaintainingChooseOther" xml:space="preserve">
+    <value>ระบบ {0} อยู่ระหว่างการบำรุงรักษากกกกกรุณาเลือกประเภทบัตรอื่น</value>
+  </data>
+    <data name="EventTitleBonusHall" xml:space="preserve">
+    <value>คุณได้มอบ {0} เข้าบัญชี</value>
+  </data>
+    <data name="EventTurnsCount" xml:space="preserve">
+    <value>{0} รอบหมุน</value>
+  </data>
+    <data name="EventTypeCardCount" xml:space="preserve">
+    <value>บัตร {0} {1}</value>
+  </data>
+    <data name="EventUploadSuccessButFail" xml:space="preserve">
+    <value>อัปโหลดสำเร็จ แต่การอัปเดตกิจกรรมล้มเหลว</value>
+  </data>
+    <data name="EventVipAnchorPoint" xml:space="preserve">
+    <value>คะแนนต้องได้</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>โปรโมชั่นเติมเงิน</value>
+  </data>
+    <data name="EventVipExpFish" xml:space="preserve">
+    <value>ประสบการณ์ยิงปลา</value>
+  </data>
+    <data name="EventVipNotRunning" xml:space="preserve">
+    <value>ไม่ได้ใช้ Vip</value>
+  </data>
+    <data name="EventVipTichLuySkill" xml:space="preserve">
+    <value>การสะสมวิธี</value>
+  </data>
+    <data name="EventVipTransferChip" xml:space="preserve">
+    <value>โอน Win</value>
+  </data>
+
+    <!-- #Region E1806_BonusDailyDayEnum-->
+    <data name="E1806_BonusDailyDayEnum_Faile" xml:space="preserve">
+    <value>การรับรางวัลไม่สำเร็จ</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusFirst" xml:space="preserve">
+    <value>รับรางวัลเป็นครั้งแรก</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusInDay" xml:space="preserve">
+    <value>ได้รับรางวัลในวันนี้</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_ResetBonus" xml:space="preserve">
+    <value>วันที่ของรางวัลไม่ต่อเนื่อง</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7Days" xml:space="preserve">
+    <value>รับรางวัลวันติดต่อกัน</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7DaysThen" xml:space="preserve">
+    <value>รับรางวัลมากกว่า 7 วัน</value>
+  </data>
+    <!-- #Endregion E1806_BonusDailyDayEnum-->
+
+
+    <data name="BoxTopEventAppTitle" xml:space="preserve">
+    <value>ท็อปอีเว้นท์ยิงปลาล่ารางวัล</value>
+  </data>
+    <data name="EventNhapMaDuocTienCaptcha" xml:space="preserve">
+    <value>รหัสยืนยัน</value>
+  </data>
+    <data name="EventNhapMaDuocTienCode" xml:space="preserve">
+    <value>รหัสโค้ด:</value>
+  </data>
+    <data name="EventNhapMaDuocTienConfirm" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>วันนี้คุณได้รับรางวัลแล้ว แต่ละบัญชีได้รับกิ๊ฟโค้ดครั้งเดียวต่อวันนะคะ</value>
+  </data>
+    <data name="EventNhapMaDuocTienTitle" xml:space="preserve">
+    <value>กรอกกิ๊ฟโค้ด รับชิปฟรี</value>
+  </data>
+    <data name="JackpotMetaDesc" xml:space="preserve">
+    <value>เกมส์ยิงปลา 2018 สุดฮิต เล่นออนไลน์ในคอมพิวเตอร์หรือมือถึอด้วยไม่ต้องการติดตั้ง</value>
+  </data>
+    <data name="JackpotPlay" xml:space="preserve">
+    <value>เล่นแจ๊กพอต</value>
+  </data>
+    <data name="JackpotTitle" xml:space="preserve">
+    <value>ยิงปลา</value>
+  </data>
+    <data name="ListEvent3DHeading" xml:space="preserve">
+    <value>หัวข้อ</value>
+  </data>
+    <data name="ListEvent3DMessageNoData" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+    <data name="ListEvent3DSubTitle" xml:space="preserve">
+    <value>กิ๊ฟโค้ด</value>
+  </data>
+    <data name="ListEvent3DTitle" xml:space="preserve">
+    <value>สรุป&lt;br /&gt;การมอบรางวัล</value>
+  </data>
+    <data name="ListEvent_Event" xml:space="preserve">
+    <value>อีเว้นท์</value>
+  </data>
+    <data name="ListEvent_Gala" xml:space="preserve">
+    <value>แจกรางวัล</value>
+  </data>
+    <data name="ListEvent_GiftCode" xml:space="preserve">
+    <value>กิ๊ฟโค้ด</value>
+  </data>
+    <data name="ListEvent_Heading" xml:space="preserve">
+    <value>หัวข้อ</value>
+  </data>
+    <data name="ListEvent_MessageNodata" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+    <data name="ListTongKetTraoGiaiHeading" xml:space="preserve">
+    <value>หัวข้อ</value>
+  </data>
+    <data name="ListTongKetTraoGiaiMessageNodata" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+    <data name="ListTongKetTraoGiaiTitle" xml:space="preserve">
+    <value>เติมเงิน - แลกรางวัลเกมส์ยิงปลาล่ารางวัล</value>
+  </data>
+    <data name="ShareSocialMetaDesc" xml:space="preserve">
+    <value>เกมส์ยิงปลา 2018 สุดฮิต เล่นออนไลน์ในคอมพิวเตอร์หรือมือถึอด้วยไม่ต้องการติดตั้ง</value>
+  </data>
+    <data name="ShareSocialShareAction" xml:space="preserve">
+    <value>แชร์</value>
+  </data>
+    <data name="ShareSocialSharing" xml:space="preserve">
+    <value>แชร์กับเพื่อน</value>
+  </data>
+    <data name="ShareSocialTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="ShareSocial_CongraFB" xml:space="preserve">
+    <value>คุณได้รับรางวัลจากกีจกรรมแชร์เกมส์บนเฟสบุ๊ก</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>หมายเลขสั่งซื้อ</value>
+  </data>
+    <data name="Top" xml:space="preserve">
+    <value>สูงสุด</value>
+  </data>
+    <data name="EventNull" xml:space="preserve">
+    <value>ยังไม่มีกิจกรรม</value>
+  </data>
+    <data name="CoinChange" xml:space="preserve">
+    <value>เหรียญเปลี่ยนแปลง</value>
+  </data>
+    <data name="CurrentCoin" xml:space="preserve">
+    <value>เหรียญปัจจุบัน</value>
+  </data>
+    <data name="Errror1" xml:space="preserve">
+    <value>มีข้อผิดพลาดเกิดขึ้นในระหว่างกระบวนการดึงรายการ</value>
+  </data>
+    <data name="GuiTinNhan" xml:space="preserve">
+    <value>ส่งข้อความ</value>
+  </data>
+    <data name="HopThu" xml:space="preserve">
+    <value>ตู้จดหมาย</value>
+  </data>
+    <data name="KhongCoThu" xml:space="preserve">
+    <value>ไม่มีจดหมายใหม่ !!!</value>
+  </data>
+    <data name="NgayGui" xml:space="preserve">
+    <value>วันที่ส่ง</value>
+  </data>
+    <data name="NguoiGui" xml:space="preserve">
+    <value>ผู้ส่ง</value>
+  </data>
+    <data name="Noted" xml:space="preserve">
+    <value>เด่น</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>เวลา</value>
+  </data>
+    <data name="DatCuoc" xml:space="preserve">
+    <value>เดิมพัน</value>
+  </data>
+    <data name="KetQua" xml:space="preserve">
+    <value>ผล</value>
+  </data>
+    <data name="MoTa" xml:space="preserve">
+    <value>ลักษณะ</value>
+  </data>
+    <data name="NgayDat" xml:space="preserve">
+    <value>วันที่</value>
+  </data>
+    <data name="Trat" xml:space="preserve">
+    <value>นางสาว</value>
+  </data>
+    <data name="Trung" xml:space="preserve">
+    <value>การชนะ</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>ข่าวสาร</value>
+  </data>
+</LocalLanguages>

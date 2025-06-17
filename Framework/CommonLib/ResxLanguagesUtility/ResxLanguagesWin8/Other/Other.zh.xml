@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="AcceptInvite" xml:space="preserve">
+    <value>接受邀请</value>
+  </data>
+    <data name="AccountIsBlocked" xml:space="preserve">
+    <value>帐户被锁定</value>
+  </data>
+    <data name="AccountIsBlockedForever" xml:space="preserve">
+    <value>帐户已被永久锁定</value>
+  </data>
+    <data name="AccoutHasBeenUpdated" xml:space="preserve">
+    <value>帐户已更新。</value>
+  </data>
+    <data name="ActiveAccountFail" xml:space="preserve">
+    <value>您已成功激活帐户。</value>
+  </data>
+    <data name="ActiveAccountSuccess" xml:space="preserve">
+    <value>您已成功激活帐户。</value>
+  </data>
+    <data name="ActiveSuccessAndSecurityCode" xml:space="preserve">
+    <value>您已成功激活。 您的安全代码是：</value>
+  </data>
+    <data name="AddFriendFail" xml:space="preserve">
+    <value>让朋友失败。 请再试一次。</value>
+  </data>
+    <data name="AddFriendSuccess" xml:space="preserve">
+    <value>交朋友成功。</value>
+  </data>
+    <data name="ArticleCreate" xml:space="preserve">
+    <value>输入标题。</value>
+  </data>
+    <data name="ArticleInputContent" xml:space="preserve">
+    <value>输入内容。</value>
+  </data>
+    <data name="ArticleMaxLength" xml:space="preserve">
+    <value>标题最多190个字符。</value>
+  </data>
+    <data name="BetSuccess" xml:space="preserve">
+    <value>恭喜您成功下注{0}投注类型，投注数为：{1}，赢号码为：{2}。</value>
+  </data>
+    <data name="BetWithGold" xml:space="preserve">
+    <value>{0}  -  {1}下注{2}号码：{3}赢得赌注是：{4}。 IPAddress：{5}  -  UserAgent：{6}</value>
+  </data>
+    <data name="BuyGoldFail" xml:space="preserve">
+    <value>购买黄金并不成功。{0}</value>
+  </data>
+    <data name="BuyGoldSuccess" xml:space="preserve">
+    <value>您已使用{0}和{1} VipPoint成功购买了Gold。 祝你玩得开心</value>
+  </data>
+    <data name="CannotAddBySeftForFriend" xml:space="preserve">
+    <value>不能交朋友。</value>
+  </data>
+    <data name="CannotChangeTypeOfJackpot" xml:space="preserve">
+    <value>不允许更改累积奖金类型</value>
+  </data>
+    <data name="CannotPlayGameMustExit" xml:space="preserve">
+    <value>不能下注彩票。 你必须退出游戏</value>
+  </data>
+    <data name="CannotPlayGameMustExit2" xml:space="preserve">
+    <value>并等待2分钟！</value>
+  </data>
+    <data name="CannotSendEmailForSeft" xml:space="preserve">
+    <value>无法向您自己发送电子邮件。</value>
+  </data>
+    <data name="Card" xml:space="preserve">
+    <value>刮板卡</value>
+  </data>
+    <data name="ChangeCardAmountSuccess" xml:space="preserve">
+    <value>您已成功更换了该卡&lt;br /&gt;</value>
+  </data>
+    <data name="ChangeLanguageSuccess" xml:space="preserve">
+    <value>成功的语言变化</value>
+  </data>
+    <data name="CheckReceiveEmail" xml:space="preserve">
+    <value>请再次检查收件人电子邮件。</value>
+  </data>
+    <data name="ChooseType" xml:space="preserve">
+    <value>选择类别。</value>
+  </data>
+    <data name="ComeBackLater" xml:space="preserve">
+    <value>请稍后再来。</value>
+  </data>
+    <data name="CommentFailCauseHourPlay" xml:space="preserve">
+    <value>评论失败，您的游戏时间不足以发表评论。</value>
+  </data>
+    <data name="ConfigNotExist" xml:space="preserve">
+    <value>配置不存在</value>
+  </data>
+    <data name="CongraGift" xml:space="preserve">
+    <value>恭喜赢得{0}胜利！</value>
+  </data>
+    <data name="CongraGiftLater" xml:space="preserve">
+    <value>祝好运下次！</value>
+  </data>
+    <data name="CreateNewSecurityCodeFail" xml:space="preserve">
+    <value>创建新的安全代码失败，请稍后再试。</value>
+  </data>
+    <data name="DataValid" xml:space="preserve">
+    <value>有效信息！</value>
+  </data>
+    <data name="DeclineInvite" xml:space="preserve">
+    <value>不接受邀请</value>
+  </data>
+    <data name="DeleteMessageSuccess" xml:space="preserve">
+    <value>删除成功的消息。</value>
+  </data>
+    <data name="DepoAmountDistance" xml:space="preserve">
+    <value>Win必须大于100,000并且是10,000的倍数</value>
+  </data>
+    <data name="DepoEnterAmount" xml:space="preserve">
+    <value>输入要加载的数字</value>
+  </data>
+    <data name="DepoIDInvalid" xml:space="preserve">
+    <value>帐户代码无效</value>
+  </data>
+    <data name="DepoInputIDCharge" xml:space="preserve">
+    <value>输入帐户帐户代码</value>
+  </data>
+    <data name="DepoNotChooseTypePay" xml:space="preserve">
+    <value>您尚未选择付款方式</value>
+  </data>
+    <data name="DepoPinCard" xml:space="preserve">
+    <value>PinCard</value>
+  </data>
+    <data name="DepoPinWrong" xml:space="preserve">
+    <value>无效的刮刮卡代码</value>
+  </data>
+    <data name="DepoSerial" xml:space="preserve">
+    <value>串行</value>
+  </data>
+    <data name="DepoSerialWrong" xml:space="preserve">
+    <value>序列号无效</value>
+  </data>
+    <data name="DepositOnceToComment" xml:space="preserve">
+    <value>为了能够参与评论，您必须至少加载一次卡片。</value>
+  </data>
+    <data name="DontHaveAnyJackpot" xml:space="preserve">
+    <value>你没有轮到中奖！</value>
+  </data>
+    <data name="EmailOrPassWrong" xml:space="preserve">
+    <value>电子邮件或密码不正确。</value>
+  </data>
+    <data name="ErrorInPlay" xml:space="preserve">
+    <value>在投注过程中出错，请稍后再试。</value>
+  </data>
+    <data name="ErrorInPlaying" xml:space="preserve">
+    <value>播放时发生错误</value>
+  </data>
+    <data name="ErrorInRandomGift" xml:space="preserve">
+    <value>旋转过程中出错</value>
+  </data>
+    <data name="EventNotRunYet" xml:space="preserve">
+    <value>该事件尚未发生</value>
+  </data>
+    <data name="ExecuteFailContactCS" xml:space="preserve">
+    <value>加工过程中出错，请联系客服。</value>
+  </data>
+    <data name="ExitProtectModeFail" xml:space="preserve">
+    <value>您已取消保护功能失败。</value>
+  </data>
+    <data name="ExitProtectModeSuccess" xml:space="preserve">
+    <value>您已成功取消保护功能。</value>
+  </data>
+    <data name="FailInPlay" xml:space="preserve">
+    <value>投注失败，请稍后再试。</value>
+  </data>
+    <data name="FailInSendingEmail" xml:space="preserve">
+    <value>发送邮件时出错。</value>
+  </data>
+    <data name="FailInSendRequest" xml:space="preserve">
+    <value>发送好友邀请时出错。</value>
+  </data>
+    <data name="FailInUploadingImage" xml:space="preserve">
+    <value>图像上传时出错。</value>
+  </data>
+    <data name="FormatMoney" xml:space="preserve">
+    <value>美元</value>
+  </data>
+    <data name="GetListFail" xml:space="preserve">
+    <value>获取列表失败！</value>
+  </data>
+    <data name="GetListSuccessfully" xml:space="preserve">
+    <value> 成功获取列表！</value>
+  </data>
+    <data name="GetListUserOnlineSuccess" xml:space="preserve">
+    <value>获取成功在线用户的列表</value>
+  </data>
+    <data name="GiftIsNotFound" xml:space="preserve">
+    <value>找不到礼物。 请稍后再试。</value>
+  </data>
+    <data name="GuildInputName" xml:space="preserve">
+    <value> 程序集名称不能为空。</value>
+  </data>
+    <data name="GuildMinGold" xml:space="preserve">
+    <value>公会注册的最低赢额是：</value>
+  </data>
+    <data name="GuildNameCannotHave" xml:space="preserve">
+    <value>公会名称不能包含'</value>
+  </data>
+    <data name="GuildNameCannotHave2" xml:space="preserve">
+    <value>在名字的开头！</value>
+  </data>
+    <data name="GuildNameIsExist" xml:space="preserve">
+    <value>公会名称已存在。</value>
+  </data>
+    <data name="GuildNameMaxLength" xml:space="preserve">
+    <value>公会名称不超过30个字符。</value>
+  </data>
+    <data name="GuildNameNotSpecialCharacter" xml:space="preserve">
+    <value>不要使用特殊字符</value>
+  </data>
+    <data name="GuildWelcomeNew" xml:space="preserve">
+    <value>欢迎来到新的公会机制</value>
+  </data>
+    <data name="HasBeenAFriends" xml:space="preserve">
+    <value>已经是朋友了。</value>
+  </data>
+    <data name="HelloAll" xml:space="preserve">
+    <value>大家好</value>
+  </data>
+    <data name="InputCodeWrong" xml:space="preserve">
+    <value>您输入了错误的代码。</value>
+  </data>
+    <data name="InputManyTimes" xml:space="preserve">
+    <value>您输入的时间超过了指定的时间。</value>
+  </data>
+    <data name="InviteUserId" xml:space="preserve">
+    <value>用户邀请的代码。</value>
+  </data>
+    <data name="JoinedInOtherGuild" xml:space="preserve">
+    <value>你加入了另一个州。</value>
+  </data>
+    <data name="JoinOtherGuildOrWatingApprove" xml:space="preserve">
+    <value>你加入了另一个州。 或者您创建的州正在等待审核。</value>
+  </data>
+    <data name="LeaderMustBeUpdateBeforeCreateGuild" xml:space="preserve">
+    <value>主办国必须在注册公会之前更新个人信息。&lt;br /&gt;（点击&lt;a href='{0}' target='_blank'&gt;此处&lt;/a&gt;以更新信息）</value>
+  </data>
+    <data name="MessageInput" xml:space="preserve">
+    <value>请输入消息。</value>
+  </data>
+    <data name="MessageInputContentEmail" xml:space="preserve">
+    <value>请输入您的信息。</value>
+  </data>
+    <data name="MessageTitle" xml:space="preserve">
+    <value>信息</value>
+  </data>
+    <data name="MinAmount" xml:space="preserve">
+    <value>该数字必须大于0</value>
+  </data>
+    <data name="MinPlayAmoutGame" xml:space="preserve">
+    <value>你的奖金不足以下注。 请再次调整下注。</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>数据不可用</value>
+  </data>
+    <data name="NoDataRequest" xml:space="preserve">
+    <value>没有您要求的数据。</value>
+  </data>
+    <data name="NoNewArticle" xml:space="preserve">
+    <value>没有新文章。</value>
+  </data>
+    <data name="NotFoundArticle" xml:space="preserve">
+    <value>找不到帖子。</value>
+  </data>
+    <data name="NotFoundUser" xml:space="preserve">
+    <value>错误：找不到用户。</value>
+  </data>
+    <data name="NotLogginOrOtherDevice" xml:space="preserve">
+    <value>未登录或登录其他计算机。</value>
+  </data>
+    <data name="NotPlayYet" xml:space="preserve">
+    <value>你还没加入赌注。</value>
+  </data>
+    <data name="NotUpdateInfo" xml:space="preserve">
+    <value>未更新的个人信息。</value>
+  </data>
+    <data name="NotUsingAction" xml:space="preserve">
+    <value>您不使用此功能。</value>
+  </data>
+    <data name="PassInput" xml:space="preserve">
+    <value>请输入密码</value>
+  </data>
+    <data name="PassMinLength" xml:space="preserve">
+    <value>密码至少6个字符。</value>
+  </data>
+    <data name="PassReInputWrong" xml:space="preserve">
+    <value>确认密码不匹配。</value>
+  </data>
+    <data name="PlayAmoutMin" xml:space="preserve">
+    <value>最低赌注{0}胜利。</value>
+  </data>
+    <data name="PlayTimeIsExpire" xml:space="preserve">
+    <value>时间到了。</value>
+  </data>
+    <data name="RegisteredRound" xml:space="preserve">
+    <value>您已注册参加此次旅行。</value>
+  </data>
+    <data name="RegisterGuildFail" xml:space="preserve">
+    <value>公会注册失败，请稍后再试。</value>
+  </data>
+    <data name="RegisterGuildSuccess" xml:space="preserve">
+    <value>成功的国家注册。</value>
+  </data>
+    <data name="RegisterRoundFail" xml:space="preserve">
+    <value>注册不成功。要注册锦标赛，您的账户中必须有500万或更多金币</value>
+  </data>
+    <data name="RegisterRoundSuccess" xml:space="preserve">
+    <value>祝贺注册成功。&lt;br/&gt;系统将切换</value>
+  </data>
+    <data name="RegisterRoundSuccess2" xml:space="preserve">
+    <value>锦标赛账号金。祝你好运。</value>
+  </data>
+    <data name="RegisterTimeIsExpired" xml:space="preserve">
+    <value>注册期已过。</value>
+  </data>
+    <data name="RemoveArticleIsNotPermission" xml:space="preserve">
+    <value>您没有足够的权限删除此文章。</value>
+  </data>
+    <data name="RemoveArticleSuccess" xml:space="preserve">
+    <value>成功删除文章。</value>
+  </data>
+    <data name="RemoveMemberFail" xml:space="preserve">
+    <value>丢弃失败，请稍后再试。</value>
+  </data>
+    <data name="RemoveMemberSuccess" xml:space="preserve">
+    <value>消除成功的会员。</value>
+  </data>
+    <data name="RemoveMessageFail" xml:space="preserve">
+    <value>丢弃失败，请稍后再试。</value>
+  </data>
+    <data name="RequestHasBeenSent" xml:space="preserve">
+    <value>朋友信息已发送。</value>
+  </data>
+    <data name="ResetSecurityCodeFail" xml:space="preserve">
+    <value>您无法重置安全代码。</value>
+  </data>
+    <data name="ResetSecurityCodeSuccess" xml:space="preserve">
+    <value>您已成功重置保护代码。 新安全码：</value>
+  </data>
+    <data name="RoundGiftIsExpire" xml:space="preserve">
+    <value>轮到了</value>
+  </data>
+    <data name="RoundGiftIsInvalid" xml:space="preserve">
+    <value>转弯无效</value>
+  </data>
+    <data name="RoundIsPlaying" xml:space="preserve">
+    <value>这一轮正在进行中。</value>
+  </data>
+    <data name="SecurityCodeInvalid" xml:space="preserve">
+    <value>安全代码不正确</value>
+  </data>
+    <data name="SecurityCodeIsExpire" xml:space="preserve">
+    <value>您的安全代码已过期。</value>
+  </data>
+    <data name="SecurityCodeIsWrong" xml:space="preserve">
+    <value>安全码不正确</value>
+  </data>
+    <data name="SecurityCodeNotExist" xml:space="preserve">
+    <value>安全代码不存在</value>
+  </data>
+    <data name="SecuritySMSTemplate" xml:space="preserve">
+    <value>您没有强制通过短信激活帐户保护。 请根据语法撰写消息：GOLD MBV MTK发送到8038</value>
+  </data>
+    <data name="SendMailFail" xml:space="preserve">
+    <value>邮件失败，请稍后再试。</value>
+  </data>
+    <data name="SendMailSuccess" xml:space="preserve">
+    <value>成功发送邮件。</value>
+  </data>
+    <data name="SendTksFail" xml:space="preserve">
+    <value>你发送了不成功的谢谢。</value>
+  </data>
+    <data name="SendTksSuccess" xml:space="preserve">
+    <value>谢谢你的成功。</value>
+  </data>
+    <data name="SuccessAndHaveSecurityCode" xml:space="preserve">
+    <value>成功和安全代码</value>
+  </data>
+    <data name="TitleSeo" xml:space="preserve">
+    <value>玩在线纸牌游戏，在线玩牌 - Win8</value>
+  </data>
+    <data name="TransferStarFail" xml:space="preserve">
+    <value>转移过程失败，请稍后再试</value>
+  </data>
+    <data name="UnfriendFail" xml:space="preserve">
+    <value>取消朋友失败。 请再试一次。</value>
+  </data>
+    <data name="UnfriendSuccess" xml:space="preserve">
+    <value>成功取消朋友。</value>
+  </data>
+    <data name="UpcommingRegister" xml:space="preserve">
+    <value>请稍后再回来注册。</value>
+  </data>
+    <data name="UpdateAccSuccessAndReceiveGold" xml:space="preserve">
+    <value>帐户已成功更新并获得金奖。</value>
+  </data>
+    <data name="UpdateNotSuccess" xml:space="preserve">
+    <value>更新过程失败。</value>
+  </data>
+    <data name="UpdatePassFail" xml:space="preserve">
+    <value>密码更新失败！</value>
+  </data>
+    <data name="UpdatePassSuccess" xml:space="preserve">
+    <value>更新密码成功!!!</value>
+  </data>
+    <data name="UpdatePublicAccFail" xml:space="preserve">
+    <value>更新公共帐户失败</value>
+  </data>
+    <data name="UpdatePublicAccSuccess" xml:space="preserve">
+    <value>成功的公共帐户更新</value>
+  </data>
+    <data name="UpdateSecurityAccFail" xml:space="preserve">
+    <value>成功更新保护帐户。</value>
+  </data>
+    <data name="UploadAnimateImgMustBeSilver" xml:space="preserve">
+    <value>要上传动画，用户类型必须来自Silver级别</value>
+  </data>
+    <data name="UploadFail" xml:space="preserve">
+    <value>上传失败，请稍后再试。</value>
+  </data>
+    <data name="UploadSuccess" xml:space="preserve">
+    <value>上传成功。</value>
+  </data>
+    <data name="UserHasBeenInvite" xml:space="preserve">
+    <value>您已被此用户邀请！</value>
+  </data>
+    <data name="UserIsInOtherDevice" xml:space="preserve">
+    <value>用户正在使用其他设备</value>
+  </data>
+    <data name="WaitingToNextComment" xml:space="preserve">
+    <value>请稍等片刻再评论一下。</value>
+  </data>
+    <data name="WalCurrentPass" xml:space="preserve">
+    <value>输入钱包的当前密码</value>
+  </data>
+    <data name="WalGoldMin" xml:space="preserve">
+    <value>黄金必须大于0</value>
+  </data>
+    <data name="WalNewPass" xml:space="preserve">
+    <value>输入新密码</value>
+  </data>
+    <data name="WalNotChooseTransferType" xml:space="preserve">
+    <value>没有选择黄金转移方法</value>
+  </data>
+    <data name="YourTurnsIsExpireAt" xml:space="preserve">
+    <value>你的旋转已经到期了</value>
+  </data>
+    <data name="DataUpdatedInvalid" xml:space="preserve">
+    <value>更新数据不正确。</value>
+  </data>
+    <data name="DepoChooseCardType" xml:space="preserve">
+    <value>选择刮刮卡类型</value>
+  </data>
+    <data name="DepoIdMustbeNum" xml:space="preserve">
+    <value>帐户代码必须是数字</value>
+  </data>
+
+
+    <data name="AcceptInviteJoin" xml:space="preserve">
+    <value>接受加入州的邀请</value>
+  </data>
+    <data name="ActionFail" xml:space="preserve">
+    <value>操作失败，请稍后再试。</value>
+  </data>
+    <data name="AtLeastTenHourToComment" xml:space="preserve">
+    <value>为了能够参与评论，你必须在游戏中玩至少10个小时。</value>
+  </data>
+    <data name="BillionGold" xml:space="preserve">
+    <value>数十亿金币</value>
+  </data>
+    <data name="CharacterIsMaxOfLength" xml:space="preserve">
+    <value>字符数超出限制</value>
+  </data>
+    <data name="CommentAllow" xml:space="preserve">
+    <value>翼俱乐部，facebook com，谷歌com，翼</value>
+  </data>
+    <data name="CommentFail" xml:space="preserve">
+    <value>评论失败。</value>
+  </data>
+    <data name="CommentFailCauseBanning" xml:space="preserve">
+    <value>评论失败，您被禁止讨论。</value>
+  </data>
+    <data name="CommentInDayPassover" xml:space="preserve">
+    <value>当天的评论数量超出限制</value>
+  </data>
+    <data name="CommentSuccess" xml:space="preserve">
+    <value>成功的评论。</value>
+  </data>
+    <data name="ContentIsNotAllow" xml:space="preserve">
+    <value>内容不合适。</value>
+  </data>
+    <data name="CreateDeputyIsFail" xml:space="preserve">
+    <value>副州失败，请稍后再试。</value>
+  </data>
+    <data name="DeclineInviteJoin" xml:space="preserve">
+    <value>不加入公会</value>
+  </data>
+    <data name="DeleteCommentFail" xml:space="preserve">
+    <value>删除失败。请稍后再试</value>
+  </data>
+    <data name="DeputyChooseIsNotAMember" xml:space="preserve">
+    <value>选择成为副州的成员不是该州的成员。</value>
+  </data>
+    <data name="DeputyCreateSuccess" xml:space="preserve">
+    <value>成功副副。</value>
+  </data>
+    <data name="DeputyIsFull" xml:space="preserve">
+    <value>你的州有足够的副州。</value>
+  </data>
+    <data name="DeputyRemoveSuccess" xml:space="preserve">
+    <value>删除成功的副州。</value>
+  </data>
+    <data name="DontHaveComment" xml:space="preserve">
+    <value>没有评论。</value>
+  </data>
+    <data name="DontHaveMember" xml:space="preserve">
+    <value>还没有成员国。</value>
+  </data>
+    <data name="DontPermissionToAction" xml:space="preserve">
+    <value>您无权执行此功能。</value>
+  </data>
+    <data name="EnterGoldToGive" xml:space="preserve">
+    <value>输入您要转移的黄金数量。</value>
+  </data>
+    <data name="ErrorInDataAccess" xml:space="preserve">
+    <value>数据处理过程中出错，请稍后再试。</value>
+  </data>
+    <data name="ExecuteRegisterGoldFail" xml:space="preserve">
+    <value>黄金加工失败，请稍后再试。</value>
+  </data>
+    <data name="GuildCoinWillReceive" xml:space="preserve">
+    <value>预计将获得胜利</value>
+  </data>
+    <data name="GuildCreateDate" xml:space="preserve">
+    <value>创建日期：</value>
+  </data>
+    <data name="GuildDate" xml:space="preserve">
+    <value>天</value>
+  </data>
+    <data name="GuildFromDayAU" xml:space="preserve">
+    <value>从那天起</value>
+  </data>
+    <data name="GuildInfoAccumulationByLevel" xml:space="preserve">
+    <value>水平贡献的信息</value>
+  </data>
+    <data name="GuildIsNotExist" xml:space="preserve">
+    <value>公会不存在。</value>
+  </data>
+    <data name="GuildMember" xml:space="preserve">
+    <value>成员</value>
+  </data>
+    <data name="GuildMemberCoinLog" xml:space="preserve">
+    <value>统计赢得贡献</value>
+  </data>
+    <data name="GuildMemberPlayGame" xml:space="preserve">
+    <value>会员玩游戏</value>
+  </data>
+    <data name="GuildMemberRegister" xml:space="preserve">
+    <value>请加入该州</value>
+  </data>
+    <data name="GuildNameLengthAlert" xml:space="preserve">
+    <value>公会名称必须至少为6个字符，包括az，AZ和0-9中的字符。</value>
+  </data>
+    <data name="GuildNotify" xml:space="preserve">
+    <value>通知</value>
+  </data>
+    <data name="GuildNotifyCreate" xml:space="preserve">
+    <value>创建通知</value>
+  </data>
+    <data name="GuildNotifyList" xml:space="preserve">
+    <value>该州的公告清单</value>
+  </data>
+    <data name="GuildOwner" xml:space="preserve">
+    <value>国家所有者：</value>
+  </data>
+    <data name="GuildOwnerReward" xml:space="preserve">
+    <value>赢得主持人状态：</value>
+  </data>
+    <data name="GuildPoint" xml:space="preserve">
+    <value>点</value>
+  </data>
+    <data name="GuildPolicy" xml:space="preserve">
+    <value>协会政策</value>
+  </data>
+    <data name="GuildReportMemberVip" xml:space="preserve">
+    <value>VIP分数统计</value>
+  </data>
+    <data name="GuildSearchBtn" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+    <data name="GuildSetting" xml:space="preserve">
+    <value>行会管理</value>
+  </data>
+    <data name="GuildToDayAU" xml:space="preserve">
+    <value>来吧</value>
+  </data>
+    <data name="GuildTopMemberAccumulation" xml:space="preserve">
+    <value>赢取当月会员捐款的统计数据</value>
+  </data>
+    <data name="GuildTotalAccumulation" xml:space="preserve">
+    <value>总胜利累计</value>
+  </data>
+    <data name="GuildTotalAU" xml:space="preserve">
+    <value>在线数量</value>
+  </data>
+    <data name="GuildTotalContribution" xml:space="preserve">
+    <value>每月贡献点：</value>
+  </data>
+    <data name="HistoryMiniBossNhan" xml:space="preserve">
+    <value>获得奖励</value>
+  </data>
+    <data name="Hour" xml:space="preserve">
+    <value>小时</value>
+  </data>
+    <data name="InputCmt" xml:space="preserve">
+    <value>输入讨论内容。</value>
+  </data>
+    <data name="InputGuildPolicy" xml:space="preserve">
+    <value>请输入公会规则。</value>
+  </data>
+    <data name="InvalidData" xml:space="preserve">
+    <value>请求的数据无效。</value>
+  </data>
+    <data name="InviteJoinGuild" xml:space="preserve">
+    <value>邀请加入公会</value>
+  </data>
+    <data name="LeaderNotBeLeftInGuild" xml:space="preserve">
+    <value>东道国不能自己离开这个州。</value>
+  </data>
+    <data name="LevelGuild" xml:space="preserve">
+    <value>水平</value>
+  </data>
+    <data name="LinkFanpage" xml:space="preserve">
+    <value>链接粉丝页面</value>
+  </data>
+    <data name="ListGuildMemberRegister" xml:space="preserve">
+    <value>用户要求加入该州</value>
+  </data>
+    <data name="ListInvitedMember" xml:space="preserve">
+    <value>受邀成员名单</value>
+  </data>
+    <data name="LogginIsExpire" xml:space="preserve">
+    <value>登录会话已过期。</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>成员</value>
+  </data>
+    <data name="MemberHasLeftGuild" xml:space="preserve">
+    <value>该成员离开了该州。</value>
+  </data>
+    <data name="MemberIsLeaderOfGuild" xml:space="preserve">
+    <value>所选成员是主持人状态。</value>
+  </data>
+    <data name="MemeberAlreadyDeputy" xml:space="preserve">
+    <value>该成员是副国家。</value>
+  </data>
+    <data name="MemeberNotADeputy" xml:space="preserve">
+    <value>成员不再是副国家</value>
+  </data>
+    <data name="MillionGold" xml:space="preserve">
+    <value>万金</value>
+  </data>
+    <data name="Minute" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+    <data name="MustBeLoginToAction" xml:space="preserve">
+    <value>您需要登录才能执行此功能。</value>
+  </data>
+    <data name="NotInGuild" xml:space="preserve">
+    <value>你还没有加入这个州。</value>
+  </data>
+    <data name="NotPermissionToDeputyCreate" xml:space="preserve">
+    <value>你没有权利建立副国家。</value>
+  </data>
+    <data name="NotRequireResGift" xml:space="preserve">
+    <value>还没有黄金要求。</value>
+  </data>
+    <data name="RecevicedInvite" xml:space="preserve">
+    <value>收到了邀请</value>
+  </data>
+    <data name="RegisterToGiftFail" xml:space="preserve">
+    <value>你未能获胜。</value>
+  </data>
+    <data name="RegisterToGiftSuccess" xml:space="preserve">
+    <value>你已成功获得奖励。</value>
+  </data>
+    <data name="RemoveCommentFail" xml:space="preserve">
+    <value>删除评论失败，请稍后再试。</value>
+  </data>
+    <data name="RemoveCommentSuccess" xml:space="preserve">
+    <value>删除成功的评论。</value>
+  </data>
+    <data name="RemoveDeputyIsFail" xml:space="preserve">
+    <value>删除副状态失败，请稍后再试。</value>
+  </data>
+    <data name="RudeCommentList" xml:space="preserve">
+    <value>狗，白痴，公鸡，屄，屁股屁股，孔，孔，他妈的，dkm，dm，cmnr，vl，白痴，dit我，脸颊，vkl，con cac，分散，clgt，clmm，荡妇，他妈妈，抽搐，他妈的，他妈的，荡妇，妓女，婊子，挖，阴茎，鹰嘴豆脸颊，bede，con cac，lon我，脸颊脸颊，秃头，捏，屁股，酸屁股，母亲豆，阴囊，乳房，乳房，胖乎乎，狗屎，哑巴，屄，他妈的，dcm，迪克，xvideo com，xxx，vlxx com，vlxx tv，sexhtv com，net movie，xvideos com，soclo net，moviesexporn com，heomup com，ket die，3cay xtgem com</value>
+  </data>
+    <data name="SentInvite" xml:space="preserve">
+    <value>邀请已发送</value>
+  </data>
+    <data name="TotalCmt" xml:space="preserve">
+    <value>备注</value>
+  </data>
+    <data name="TotalExpInGuild" xml:space="preserve">
+    <value>总经验值：</value>
+  </data>
+    <data name="TotalGoldInGuild" xml:space="preserve">
+    <value>总贡献：</value>
+  </data>
+    <data name="VipPointNumGuild" xml:space="preserve">
+    <value>贵宾点：</value>
+  </data>
+    <data name="YourAreNotALeader" xml:space="preserve">
+    <value>你不是主国</value>
+  </data>
+
+
+    <data name="BaoTri" xml:space="preserve">
+    <value>维护功能</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>帐户中的硬币数量不足以进行交易</value>
+  </data>
+    <data name="Failed" xml:space="preserve">
+    <value>失败</value>
+  </data>
+    <data name="GoldenMinMoney" xml:space="preserve">
+    <value>您的获奖号码必须少于5,000才能获得奖品</value>
+  </data>
+    <data name="IsCorrectCaptcha" xml:space="preserve">
+    <value>验证码不匹配！</value>
+  </data>
+    <data name="MaxTransfer" xml:space="preserve">
+    <value>转移金额必须小于{0}</value>
+  </data>
+    <data name="MinimumGoldTransfer" xml:space="preserve">
+    <value>金额必须从{0}硬币转换而且可以被整除10,000！</value>
+  </data>
+    <data name="NotExitCaptcha" xml:space="preserve">
+    <value>验证码不存在！</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>系统错误</value>
+  </data>
+    <data name="TransferSuccess" xml:space="preserve">
+    <value>成功转移硬币。 {0}收到{1}。</value>
+  </data>
+</LocalLanguages>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="Friend_FriendNotExist" xml:space="preserve">
+    <value>ទេអ្នក!</value>
+  </data>
+    <data name="Friend_FriendApproveSuccess" xml:space="preserve">
+    <value>ទទួលយកការអញ្ជើញដោយជោគជ័យ!</value>
+  </data>
+    <data name="Friend_FriendError1" xml:space="preserve">
+    <value>បានផ្ញើការអញ្ជើញមិត្តភក្តិសម្រាប់អ្នកប្រើនេះពីមុន។</value>
+  </data>
+    <data name="Friend_FriendError2" xml:space="preserve">
+    <value>មនុស្សនេះជាមិត្តរបស់អ្នករួចទៅហើយ។</value>
+  </data>
+    <data name="Friend_FriendFull" xml:space="preserve">
+    <value>មិនអាចផ្ញើការអញ្ជើញបានទេព្រោះលេខរបស់អ្នកពេញ!</value>
+  </data>
+    <data name="Friend_FriendNoData" xml:space="preserve">
+    <value>មិនមានទិន្នន័យ</value>
+  </data>
+    <data name="Friend_FriendNoInvitation" xml:space="preserve">
+    <value>អ្នកប្រើគ្មានការអញ្ជើញមិត្ត</value>
+  </data>
+    <data name="Friend_FriendNotYou" xml:space="preserve">
+    <value>អ្នកមិនអាចផ្ញើការអញ្ជើញទៅខ្លួនអ្នកបានទេ។</value>
+  </data>
+    <data name="Friend_FriendNumberInvitaion" xml:space="preserve">
+    <value>អ្នកមាន {0} សំណើមិត្តភក្តិ!</value>
+  </data>
+    <data name="Friend_FriendRejectSuccess" xml:space="preserve">
+    <value>បដិសេធការអញ្ជើញដោយជោគជ័យ!</value>
+  </data>
+    <data name="Friend_FriendRequiredLevel" xml:space="preserve">
+    <value>ដោះសោពេលទៅដល់ VIP {0}</value>
+  </data>
+    <data name="Friend_FriendSearchNoData" xml:space="preserve">
+    <value>គ្មានមិត្តភក្តិបានរកឃើញ!</value>
+  </data>
+    <data name="Friend_FriendSeverError" xml:space="preserve">
+    <value>កំហុសម៉ាស៊ីនមេ!</value>
+  </data>
+    <data name="Friend_FriendUserNotExists" xml:space="preserve">
+    <value>អ្នកប្រើមិនមានទេ។</value>
+  </data>
+</LocalLanguages>

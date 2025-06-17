@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{C44E23C0-3A87-4A01-BC44-EA6310E42CD0}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>ResxLanguagesUtility</RootNamespace>
+        <AssemblyName>ResxLanguagesUtility</AssemblyName>
+        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <Deterministic>true</Deterministic>
+        <TargetFrameworkProfile/>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="log4net">
+            <HintPath>..\Logger\bin\Debug\log4net.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.ComponentModel.DataAnnotations"/>
+        <Reference Include="System.Configuration"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Web"/>
+        <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Net.Http"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Enums\ResxLanguagesEnum.cs"/>
+        <Compile Include="Helper\ResxLanguageValidationAttributeHelper.cs"/>
+        <Compile Include="Helper\ResxLanguageDescriptionAttributeHelper.cs"/>
+        <Compile Include="ResxLanguages.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="ResxLanguagesMobile\Account\Account.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Account\Account.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Account\Account.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Account\Account.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Account\Account.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\BO\BO.en.xml"/>
+        <Content Include="ResxLanguagesMobile\BO\BO.km.xml"/>
+        <Content Include="ResxLanguagesMobile\BO\BO.th.xml"/>
+        <Content Include="ResxLanguagesMobile\BO\BO.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\BO\BO.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Cashout\Cashout.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Cashout\Cashout.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Cashout\Cashout.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Cashout\Cashout.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Cashout\Cashout.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Common\Common.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Common\Common.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Common\Common.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Common\Common.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Common\Common.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Event\Event.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Event\Event.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Event\Event.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Event\Event.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Event\Event.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Game\Game.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Game\Game.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Game\Game.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Game\Game.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Game\Game.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Guild\Guild.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Guild\Guild.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Guild\Guild.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Guild\Guild.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Guild\Guild.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Home\Home.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Home\Home.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Home\Home.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Home\Home.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Home\Home.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Other\Other.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Other\Other.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Other\Other.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Other\Other.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Other\Other.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Payment\Payment.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Payment\Payment.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Payment\Payment.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Payment\Payment.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Payment\Payment.zh.xml"/>
+        <Content Include="ResxLanguagesMobile\Reason\Reason.en.xml"/>
+        <Content Include="ResxLanguagesMobile\Reason\Reason.km.xml"/>
+        <Content Include="ResxLanguagesMobile\Reason\Reason.th.xml"/>
+        <Content Include="ResxLanguagesMobile\Reason\Reason.vi.xml"/>
+        <Content Include="ResxLanguagesMobile\Reason\Reason.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Account\Account.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Account\Account.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Account\Account.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Account\Account.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Account\Account.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\BO\BO.en.xml"/>
+        <Content Include="ResxLanguagesWin8\BO\BO.km.xml"/>
+        <Content Include="ResxLanguagesWin8\BO\BO.th.xml"/>
+        <Content Include="ResxLanguagesWin8\BO\BO.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\BO\BO.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Cashout\Cashout.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Cashout\Cashout.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Cashout\Cashout.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Cashout\Cashout.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Cashout\Cashout.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Common\Common.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Common\Common.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Common\Common.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Common\Common.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Common\Common.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Event\Event.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Event\Event.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Event\Event.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Event\Event.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Event\Event.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Game\Game.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Game\Game.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Game\Game.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Game\Game.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Game\Game.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Guild\Guild.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Guild\Guild.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Guild\Guild.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Guild\Guild.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Guild\Guild.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Home\Home.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Home\Home.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Home\Home.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Home\Home.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Home\Home.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Other\Other.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Other\Other.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Other\Other.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Other\Other.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Other\Other.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Payment\Payment.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Payment\Payment.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Payment\Payment.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Payment\Payment.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Payment\Payment.zh.xml"/>
+        <Content Include="ResxLanguagesWin8\Reason\Reason.en.xml"/>
+        <Content Include="ResxLanguagesWin8\Reason\Reason.km.xml"/>
+        <Content Include="ResxLanguagesWin8\Reason\Reason.th.xml"/>
+        <Content Include="ResxLanguagesWin8\Reason\Reason.vi.xml"/>
+        <Content Include="ResxLanguagesWin8\Reason\Reason.zh.xml"/>
+        <Content Include="ResxLanguages\BO\BO.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\BO\BO.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\BO\BO.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\BO\BO.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\BO\BO.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Cashout\Cashout.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Cashout\Cashout.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Cashout\Cashout.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Cashout\Cashout.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Cashout\Cashout.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Guild\Guild.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Guild\Guild.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Guild\Guild.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Guild\Guild.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Guild\Guild.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Other\Other.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Other\Other.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Other\Other.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Other\Other.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Other\Other.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Payment\Payment.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Payment\Payment.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Payment\Payment.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Payment\Payment.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Payment\Payment.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Home\Home.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Home\Home.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Home\Home.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Home\Home.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Home\Home.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Event\Event.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Event\Event.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Event\Event.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Event\Event.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Event\Event.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Reason\Reason.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Reason\Reason.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Reason\Reason.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Reason\Reason.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Reason\Reason.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Game\Game.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Game\Game.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Game\Game.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Game\Game.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Game\Game.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Account\Account.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Account\Account.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Account\Account.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Account\Account.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Account\Account.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Common\Common.zh.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Common\Common.th.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Common\Common.km.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Common\Common.en.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="ResxLanguages\Common\Common.vi.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <Content Include="Readme.txt"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\DBOL\MyConfig\MyConfig.csproj">
+            <Project>{bcfb0f50-3bf8-4309-b0da-9fe00e0741fb}</Project>
+            <Name>MyConfig</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\Logger\Logger.csproj">
+            <Project>{0a3f6882-0d95-485c-93cf-b5c69d20f09b}</Project>
+            <Name>Logger</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\WebUtility\WebUtility.csproj">
+            <Project>{f8a5c35a-0ca3-4c84-ac2e-0927214f1886}</Project>
+            <Name>WebUtility</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}"/>
+    </ItemGroup>
+    <ItemGroup/>
+    <ItemGroup>
+        <WCFMetadata Include="Connected Services\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="ResxLanguagesWin8\Game\Game.zh.xml.bak"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>

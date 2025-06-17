@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Reason_427" xml:space="preserve">
+		<value>Play Poker</value>
+	</data>
+    <data name="Reason_526" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_527" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_528" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_2001" xml:space="preserve">
+		<value>Onet fruit</value>
+	</data>
+    <data name="Reason_210" xml:space="preserve">
+		<value>เล่นเกม Mystery Num</value>
+	</data>
+    <data name="Reason_414" xml:space="preserve">
+		<value>เล่นเกม Poker Slot</value>
+	</data>
+    <data name="Reason_433" xml:space="preserve">
+		<value>เล่นเกม Baccarat</value>
+	</data>
+    <data name="Reason_2" xml:space="preserve">
+		<value>โหลด IAP</value>
+	</data>
+    <data name="Reason_434" xml:space="preserve">
+		<value>เล่นเกม BlackJack</value>
+	</data>
+    <data name="Reason_520" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_129" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_102" xml:space="preserve">
+		<value>บริจาค Xu เพื่อเข้าสู่ระบบ</value>
+	</data>
+    <data name="Reason_435" xml:space="preserve">
+		<value>Play TEANG LEN</value>
+	</data>
+    <data name="Reason_2" xml:space="preserve">
+    <value>โหลด IAP</value>
+  </data>
+    <data name="Reason_40" xml:space="preserve">
+    <value>ซื้อสินค้า</value>
+  </data>
+    <data name="Reason_48" xml:space="preserve">
+    <value>ซื้อ Hinh Nien</value>
+  </data>
+    <data name="Reason_49" xml:space="preserve">
+    <value>ซื้ออวตาร</value>
+  </data>
+    <data name="Reason_50" xml:space="preserve">
+    <value>เล่นเกม Sic Bo</value>
+  </data>
+    <data name="Reason_51" xml:space="preserve">
+    <value>เล่นเกม Xoc</value>
+  </data>
+    <data name="Reason_68" xml:space="preserve">
+    <value>บริจาคเหรียญเมื่อรัฐเข้าสู่ระดับ _TH</value>
+  </data>
+    <data name="Reason_70" xml:space="preserve">
+    <value>บริจาคเหรียญเมื่อผู้ใช้พิมพ์สมาชิกเมื่อชาร์จเหรียญ</value>
+  </data>
+    <data name="Reason_89" xml:space="preserve">
+    <value>บริจาคเหรียญขึ้นระดับ</value>
+  </data>
+    <data name="Reason_524" xml:space="preserve">
+    <value>บริจาคเหรียญขึ้นระดับ.</value>
+  </data>
+    <data name="Reason_102" xml:space="preserve">
+    <value>บริจาค Xu เพื่อเข้าสู่ระบบ</value>
+  </data>
+    <data name="Reason_105" xml:space="preserve">
+    <value>ซื้ออารมณ์</value>
+  </data>
+    <data name="Reason_108" xml:space="preserve">
+    <value>โอนเหรียญให้เพื่อน</value>
+  </data>
+    <data name="Reason_116" xml:space="preserve">
+    <value>โอนเงินระหว่าง สมาชิก VIP</value>
+  </data>
+    <data name="Reason_117" xml:space="preserve">
+    <value>โอนเงินให้สมาคมเพื่อสมาชิก</value>
+  </data>
+    <data name="Reason_118" xml:space="preserve">
+    <value>โหลด</value>
+  </data>
+    <data name="Reason_119" xml:space="preserve">
+    <value>ผู้ดูแลบริจาคเหรียญ</value>
+  </data>
+    <data name="Reason_133" xml:space="preserve">
+    <value>บริจาคเหรียญยิงปลาออนไลน์</value>
+  </data>
+    <data name="Reason_142" xml:space="preserve">
+    <value>โปรโมชั่นสำหรับโปรโมชั่น</value>
+  </data>
+    <data name="Reason_143" xml:space="preserve">
+    <value>รับความสำเร็จ</value>
+  </data>
+    <data name="Reason_161" xml:space="preserve">
+    <value>มอบทองให้กับผู้ใช้ cu เหตุการณ์พวกเขามีความสนุกสนานมากขึ้น</value>
+  </data>
+    <data name="Reason_162" xml:space="preserve">
+    <value>มอบทองคำให้กับผู้ใช้ใหม่ในกรณีที่คุณสนุกสนานมากขึ้น</value>
+  </data>
+    <data name="Reason_166" xml:space="preserve">
+    <value>ฟรี Xu ลงทะเบียนกับ OpenID</value>
+  </data>
+    <data name="Reason_168" xml:space="preserve">
+    <value>ใหม่ผู้ใช้เหตุการณ์ Xu</value>
+  </data>
+    <data name="Reason_169" xml:space="preserve">
+    <value>บริจาคเหรียญให้กับผู้ใช้ที่แข่งวีไอพีชั้นนำ</value>
+  </data>
+    <data name="Reason_171" xml:space="preserve">
+    <value>บริจาคเหรียญทุกวัน</value>
+  </data>
+    <data name="Reason_173" xml:space="preserve">
+    <value>ผู้ดูแลระบบลบเหรียญ</value>
+  </data>
+    <data name="Reason_174" xml:space="preserve">
+    <value>เติมเงินผ่าน SMS</value>
+  </data>
+    <data name="Reason_175" xml:space="preserve">
+    <value>บันทึกแอป Fish Shot</value>
+  </data>
+    <data name="Reason_176" xml:space="preserve">
+    <value>รับรางวัลแจ็คพอต</value>
+  </data>
+    <data name="Reason_178" xml:space="preserve">
+    <value>บริจาค Xu เข้าสู่ระบบทุกวันสำหรับมือถือ</value>
+  </data>
+    <data name="Reason_179" xml:space="preserve">
+    <value>คะแนนสะสม</value>
+  </data>
+    <data name="Reason_180" xml:space="preserve">
+    <value>บริจาคเหรียญเพื่อเชิญเพื่อน ๆ บน facebook</value>
+  </data>
+    <data name="Reason_181" xml:space="preserve">
+    <value>บริจาคเหรียญเมื่อเพื่อน ๆ ลงทะเบียนบน facebook</value>
+  </data>
+    <data name="Reason_182" xml:space="preserve">
+    <value>KM เมื่อผู้ใช้โหลดบัตรแรก (user fb)</value>
+  </data>
+    <data name="Reason_183" xml:space="preserve">
+    <value>บริจาคเหรียญเมื่อผู้ใช้เข้าสู่ระบบอย่างต่อเนื่อง</value>
+  </data>
+    <data name="Reason_184" xml:space="preserve">
+    <value>บริจาคเหรียญเช่นหน้าแฟนเพจของแอป</value>
+  </data>
+    <data name="Reason_187" xml:space="preserve">
+    <value>บริจาคเหรียญเมื่อผู้ใช้หมดเงินบริจาค - ผู้ใช้ใหม่</value>
+  </data>
+    <data name="Reason_188" xml:space="preserve">
+    <value>มอบบัตรผู้ใช้ใหม่พร้อมการลงทะเบียนครั้งแรก</value>
+  </data>
+    <data name="Reason_189" xml:space="preserve">
+    <value>ให้เวลาเข้าสู่ระบบมือถือ Xu</value>
+  </data>
+    <data name="Reason_190" xml:space="preserve">
+    <value>Gift Xu เข้าสู่ระบบใน Mobile Gold Day</value>
+  </data>
+    <data name="Reason_191" xml:space="preserve">
+    <value>Xu ฟรีลงทะเบียนจากการโฆษณาของ Yahoo</value>
+  </data>
+    <data name="Reason_192" xml:space="preserve">
+    <value>ให้ Xu เมื่อมีการอัพเดทข้อมูล</value>
+  </data>
+    <data name="Reason_197" xml:space="preserve">
+    <value>โปรโมชั่นโหลดเหรียญ sms</value>
+  </data>
+    <data name="Reason_198" xml:space="preserve">
+    <value>โปรโมชันการโหลด IAP</value>
+  </data>
+    <data name="Reason_213" xml:space="preserve">
+    <value>เล่น Fish Shoot เกม</value>
+  </data>
+    <data name="Reason_300" xml:space="preserve">
+    <value>เหรียญใหม่สำหรับผู้ใช้</value>
+  </data>
+    <data name="Reason_301" xml:space="preserve">
+    <value>จ่ายโบนัสกิจกรรม TaiXiu</value>
+  </data>
+    <data name="Reason_302" xml:space="preserve">
+    <value>เปลี่ยนเหรียญ</value>
+  </data>
+    <data name="Reason_303" xml:space="preserve">
+    <value>เปลี่ยนบัตร</value>
+  </data>
+    <data name="Reason_306" xml:space="preserve">
+    <value>ไถ่ถอนหมุน</value>
+  </data>
+    <data name="Reason_307" xml:space="preserve">
+    <value>ระบบจ่ายทองสำหรับแจ็คพอต</value>
+  </data>
+    <data name="Reason_311" xml:space="preserve">
+    <value>ฝากเงินผ่าน Google Wallet</value>
+  </data>
+    <data name="Reason_312" xml:space="preserve">
+    <value>เติมเงินผ่าน Apple Store</value>
+  </data>
+    <data name="Reason_313" xml:space="preserve">
+    <value>สร้างกิลด์</value>
+  </data>
+    <data name="Reason_314" xml:space="preserve">
+    <value>ถอนตัว</value>
+  </data>
+    <data name="Reason_315" xml:space="preserve">
+    <value>ภาระ</value>
+  </data>
+    <data name="Reason_316" xml:space="preserve">
+    <value>สถานะโฮสต์โอนเงินให้กับผู้ใช้</value>
+  </data>
+    <data name="Reason_318" xml:space="preserve">
+    <value>ผู้ใช้เกมยิงปลาจบ</value>
+  </data>
+    <data name="Reason_319" xml:space="preserve">
+    <value>ผู้ใช้เล่นเกมยิงปลา</value>
+  </data>
+    <data name="Reason_320" xml:space="preserve">
+    <value>รับเหรียญจากสถานะโฮสต์</value>
+  </data>
+    <data name="Reason_321" xml:space="preserve">
+    <value>บริจาค 2% ของยอดขายสถานะสำหรับสถานะบ้าน</value>
+  </data>
+    <data name="Reason_322" xml:space="preserve">
+    <value>บริจาค 3% ของยอดขายรายเดือนของรัฐสำหรับคนที่มีผลมากที่สุดของรัฐ</value>
+  </data>
+    <data name="Reason_325" xml:space="preserve">
+    <value>การชำระเงินสำหรับผู้ใช้หลังจากเข้าห้องเด็กเล่นล้มเหลว</value>
+  </data>
+    <data name="Reason_326" xml:space="preserve">
+    <value>ชำระเงินสำหรับผู้ใช้หลังจากผู้ดูแลระบบยกเลิกการร้องขอเพื่อแลก</value>
+  </data>
+    <data name="Reason_327" xml:space="preserve">
+    <value>สนุกกับการตกปลาบอส</value>
+  </data>
+    <data name="Reason_328" xml:space="preserve">
+    <value>บริจาคเหรียญให้กับผู้ใช้งานที่เข้าสู่ระบบในชั่วโมงทอง</value>
+  </data>
+    <data name="Reason_329" xml:space="preserve">
+    <value>บริจาคเหรียญให้กับผู้ใช้คืนเงินในกิจกรรม</value>
+  </data>
+    <data name="Reason_330" xml:space="preserve">
+    <value>บริจาคเหรียญให้ผู้ใช้ลงทะเบียนเพื่อเล่นเกมล่าสัตว์และมอบรางวัลปลา</value>
+  </data>
+    <data name="Reason_331" xml:space="preserve">
+    <value>บริจาคเกมล็อกอินของผู้ใช้เหรียญยิงรางวัลการล่าปลา</value>
+  </data>
+    <data name="Reason_332" xml:space="preserve">
+    <value>บริจาคเหรียญเมื่อไปที่ห้องรอยิงปลา</value>
+  </data>
+    <data name="Reason_333" xml:space="preserve">
+    <value>รับรางวัลสำหรับงานประจำวัน</value>
+  </data>
+    <data name="Reason_334" xml:space="preserve">
+    <value>โบนัสแชร์ Facebook</value>
+  </data>
+    <data name="Reason_335" xml:space="preserve">
+    <value>ระบบรางวัลแจ็คพอตทองคำ</value>
+  </data>
+    <data name="Reason_336" xml:space="preserve">
+    <value>การคืนเงินเนื่องจากการแลกเปลี่ยนบัตรล้มเหลว</value>
+  </data>
+    <data name="Reason_337" xml:space="preserve">
+    <value>บริจาคเงินเพื่อทำภารกิจยิงปลาให้สำเร็จ</value>
+  </data>
+    <data name="Reason_338" xml:space="preserve">
+    <value>ให้เงินกับด่าน Fish Shoot</value>
+  </data>
+    <data name="Reason_342" xml:space="preserve">
+    <value>ผู้ใช้โอนเงินให้กับผู้ใช้อื่น</value>
+  </data>
+    <data name="Reason_343" xml:space="preserve">
+    <value>ผู้ใช้รับเงินจากผู้ใช้รายอื่น</value>
+  </data>
+    <data name="Reason_344" xml:space="preserve">
+    <value>ผู้ดูแลระบบจ่ายสำหรับ Shoot Fish</value>
+  </data>
+    <data name="Reason_345" xml:space="preserve">
+    <value>ผู้ดูแลจ่าย Lather</value>
+  </data>
+    <data name="Reason_347" xml:space="preserve">
+    <value>โบนัสเพื่อสรุปกิลด์</value>
+  </data>
+    <data name="Reason_350" xml:space="preserve">
+    <value>เหรียญฟรีในเกม</value>
+  </data>
+    <data name="Reason_351" xml:space="preserve">
+    <value>รางวัลชนะเลิศ Game Xóc Turtle</value>
+  </data>
+    <data name="Reason_352" xml:space="preserve">
+    <value>รับรางวัลกิจกรรมการป้อนรหัสเงิน</value>
+  </data>
+    <data name="Reason_353" xml:space="preserve">
+    <value>ชนะเกมอารีน่า</value>
+  </data>
+    <data name="Reason_355" xml:space="preserve">
+    <value>เล่นยิงปลา 3D</value>
+  </data>
+    <data name="Reason_356" xml:space="preserve">
+    <value>เสร็จสิ้นการถ่ายภาพปลา 3D</value>
+  </data>
+    <data name="Reason_357" xml:space="preserve">
+    <value>เล่นยิงปลามือถือ 3 มิติ</value>
+  </data>
+    <data name="Reason_358" xml:space="preserve">
+    <value>เสร็จสิ้นการถ่ายภาพปลามือถือ 3 มิติ</value>
+  </data>
+    <data name="Reason_359" xml:space="preserve">
+    <value>รับรางวัลสำหรับงานประจำวัน</value>
+  </data>
+    <data name="Reason_404" xml:space="preserve">
+    <value>เล่น Mini Xeng เกม</value>
+  </data>
+    <data name="Reason_406" xml:space="preserve">
+    <value>เล่น Mini Penalty เกม</value>
+  </data>
+    <data name="Reason_407" xml:space="preserve">
+    <value>โปรโมชั่น Golden Hour</value>
+  </data>
+    <data name="Reason_408" xml:space="preserve">
+    <value>เล่น Mini Fortunes88 เกม</value>
+  </data>
+    <data name="Reason_409" xml:space="preserve">
+    <value>เล่นเกมแจ็คพอต</value>
+  </data>
+    <data name="Reason_410" xml:space="preserve">
+    <value>เล่นเกม XengLuxury</value>
+  </data>
+    <data name="Reason_412" xml:space="preserve">
+    <value>เล่นเกม Golden Dragon Slot</value>
+  </data>
+    <data name="Reason_413" xml:space="preserve">
+    <value>เล่นเกมสล็อตสามก๊ก</value>
+  </data>
+    <data name="Reason_418" xml:space="preserve">
+    <value>เล่นเกม Beast</value>
+  </data>
+    <data name="Reason_419" xml:space="preserve">
+    <value>เล่นเกมแห่งโชคชะตา</value>
+  </data>
+    <data name="Reason_420" xml:space="preserve">
+    <value>เล่น Tho Dan เกม</value>
+  </data>
+    <data name="Reason_423" xml:space="preserve">
+    <value>เล่นเกม Super 777</value>
+  </data>
+    <data name="Reason_424" xml:space="preserve">
+    <value>เล่นเกม Mini Gold Turtle</value>
+  </data>
+    <data name="Reason_425" xml:space="preserve">
+    <value>เล่นเกม Monopoly Million Dollar</value>
+  </data>
+    <data name="Reason_426" xml:space="preserve">
+    <value>เล่นเกม Diamonds Links</value>
+  </data>
+    <data name="Reason_428" xml:space="preserve">
+    <value>เล่นเกม Candy</value>
+  </data>
+    <data name="Reason_430" xml:space="preserve">
+    <value>เล่น Fantastic Beasts เกม</value>
+  </data>
+    <data name="Reason_501" xml:space="preserve">
+    <value>ชนะรางวัล Lucky Spin</value>
+  </data>
+    <data name="Reason_502" xml:space="preserve">
+    <value>ซื้อ Lucky Spin Round</value>
+  </data>
+    <data name="Reason_503" xml:space="preserve">
+    <value>เกม Choi Lather</value>
+  </data>
+    <data name="Reason_504" xml:space="preserve">
+    <value>Paypal</value>
+  </data>
+    <data name="Reason_36" xml:space="preserve">
+    <value>เล่นเกมนักรบ</value>
+  </data>
+    <data name="Reason_43" xml:space="preserve">
+    <value>เล่นPhỏm</value>
+  </data>
+    <data name="Reason_44" xml:space="preserve">
+    <value>เกมโป๊กเกอร์</value>
+  </data>
+    <data name="Reason_202" xml:space="preserve">
+    <value>เล่นเกม Sacred</value>
+  </data>
+    <data name="Reason_203" xml:space="preserve">
+    <value>เล่นเกม Rampage</value>
+  </data>
+    <data name="Reason_211" xml:space="preserve">
+    <value>เล่นเกม Frisbee</value>
+  </data>
+    <data name="Reason_518" xml:space="preserve">
+    <value>รับชมโฆษณาโบนัส</value>
+  </data>
+    <data name="Reason_421" xml:space="preserve">
+    <value>เล่นเกมอะบอริจิน</value>
+  </data>
+    <data name="Reason_436" xml:space="preserve">
+		<value>เล่นเกม Kdam Klouk</value>
+	</data>
+    <data name="Reason_517" xml:space="preserve">
+		<value>เกี่ยวกับการสอน</value>
+	</data>
+    <data name="Reason_156" xml:space="preserve">
+		<value>เข้าร่วมการแข่งขัน</value>
+	</data>
+    <data name="Reason_360" xml:space="preserve">
+		<value>รางวัลสุดยอดของการแข่งขัน</value>
+	</data>
+    <data name="Reason_50" xml:space="preserve">
+		<value>เล่นเกม  BigSmall</value>
+	</data>
+</LocalLanguages>

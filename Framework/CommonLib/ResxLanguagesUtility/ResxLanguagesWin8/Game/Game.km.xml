@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_500">
+        <value>ល្បែកម្រិតឡើងនេសាទ</value>
+    </data>
+    <data name="Game_425">
+        <value>ពេជ្រ</value>
+    </data>
+    <data name="Game_424">
+        <value>មហាសេដ្ឋី</value>
+    </data>
+    <data name="Game_423">
+        <value>សាមូរ៉ៃ</value>
+    </data>
+    <data name="Game_420">
+        <value>ជនជាតិដើម</value>
+    </data>
+    <data name="Game_419">
+        <value>ទេវតា</value>
+    </data>
+    <data name="Game_417">
+        <value>នាគមាស</value>
+    </data>
+    <data name="Game_416">
+        <value>សាមកុក</value>
+    </data>
+    <data name="Game_411">
+        <value>ទេវតាសត្វព្រៃ</value>
+    </data>
+    <data name="Game_410">
+        <value>កោសអណ្ដើក</value>
+    </data>
+    <data name="Game_409">
+        <value>សំណាង</value>
+    </data>
+    <data name="Game_408">
+        <value></value>
+    </data>
+    <data name="Game_407">
+        <value></value>
+    </data>
+    <data name="Game_406">
+        <value>ផ្លែឈើ</value>
+    </data>
+    <data name="Game_402">
+        <value>ក្រឡុកចាន</value>
+    </data>
+    <data name="Game_209">
+        <value>សឹមឡុក</value>
+    </data>
+    <data name="Game_201">
+        <value>លៀង</value>
+    </data>
+    <data name="Game_200">
+        <value>តាយស៊ីវ</value>
+    </data>
+    <data name="Game_48">
+        <value>ស៊ីតូ</value>
+    </data>
+    <data name="Game_42">
+        <value>ផម</value>
+    </data>
+    <data name="Game_41">
+        <value>ទៀនលេន</value>
+    </data>
+    <data name="Game_40">
+        <value>ម៉ូវបិញ</value>
+    </data>
+    <data name="Game_34">
+        <value>សំណាង</value>
+    </data>
+    <data name="Game__1">
+        <value>LUCKY SPIN</value>
+    </data>
+    <data name="Game__3">
+        <value>LUCKY SPIN</value>
+    </data>
+</LocalLanguages>

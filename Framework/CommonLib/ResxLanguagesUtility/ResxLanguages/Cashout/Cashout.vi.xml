@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <data name="CashOutNotEnoughGold" xml:space="preserve">
+    <text>Số dư tài khoản không đủ để thực hiện giao dịch!</text>
+  </data>
+</root>

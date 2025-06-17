@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Reason_2">
+        <value>Nạp IAP _TH</value>
+    </data>
+    <data name="Reason_40">
+        <value>Mua Item _TH</value>
+    </data>
+    <data name="Reason_48">
+        <value>Mua Hinh Nen _TH</value>
+    </data>
+    <data name="Reason_49">
+        <value>Mua avatar _TH</value>
+    </data>
+    <data name="Reason_50">
+        <value>Chơi Game Tài Xỉu _TH</value>
+    </data>
+    <data name="Reason_51">
+        <value>Chơi Game Xóc Dĩa _TH</value>
+    </data>
+    <data name="Reason_68">
+        <value>Tặng Xu khi bang lên Level _TH</value>
+    </data>
+    <data name="Reason_70">
+        <value>Tặng xu khi user lên loại thành viên khi nạp xu _TH</value>
+    </data>
+    <data name="Reason_89">
+        <value>Tặng Xu Lên Level _TH</value>
+    </data>
+    <data name="Reason_102">
+        <value>Tặng Xu đăng nhập _TH</value>
+    </data>
+    <data name="Reason_105">
+        <value>Mua Emotion _TH</value>
+    </data>
+    <data name="Reason_108">
+        <value>Chuyển xu cho bạn bè _TH</value>
+    </data>
+    <data name="Reason_116">
+        <value>Chuyển tiền giữa các thành viên VIP _TH</value>
+    </data>
+    <data name="Reason_117">
+        <value>Chuyển Tiền Bang Hội cho Thành viên _TH</value>
+    </data>
+    <data name="Reason_118">
+        <value>Nạp Xu _TH</value>
+    </data>
+    <data name="Reason_119">
+        <value>Admin tặng xu _TH</value>
+    </data>
+    <data name="Reason_133">
+        <value>Tặng xu online bắn cá _TH</value>
+    </data>
+    <data name="Reason_142">
+        <value>Khuyến mãi nạp Xu _TH</value>
+    </data>
+    <data name="Reason_143">
+        <value>Nhận thành tựu _TH</value>
+    </data>
+    <data name="Reason_161">
+        <value>Tặng gold cho user cu event them ban them vui _TH</value>
+    </data>
+    <data name="Reason_162">
+        <value>Tặng gold cho user mới trong event thêm bạn them vui _TH</value>
+    </data>
+    <data name="Reason_166">
+        <value>Tặng Xu đăng ký bằng OpenID _TH</value>
+    </data>
+    <data name="Reason_168">
+        <value>Tặng Xu event user mới _TH</value>
+    </data>
+    <data name="Reason_169">
+        <value>Tặng xu cho user đua top vip _TH</value>
+    </data>
+    <data name="Reason_171">
+        <value>Tặng Xu hằng ngày _TH</value>
+    </data>
+    <data name="Reason_173">
+        <value>Admin trừ xu _TH</value>
+    </data>
+    <data name="Reason_174">
+        <value>Nạp tiền qua sms _TH</value>
+    </data>
+    <data name="Reason_175">
+        <value>Đăng nhập app bắn cá _TH</value>
+    </data>
+    <data name="Reason_176">
+        <value>Thắng Jackpot _TH</value>
+    </data>
+    <data name="Reason_178">
+        <value>Tặng Xu đăng nhập hàng ngày cho mobile _TH</value>
+    </data>
+    <data name="Reason_179">
+        <value>Điểm danh nhận thưởng _TH</value>
+    </data>
+    <data name="Reason_180">
+        <value>Tặng xu mời bạn bè trên facebook _TH</value>
+    </data>
+    <data name="Reason_181">
+        <value>Tặng xu khi bạn bè đăng ký trên facebook _TH</value>
+    </data>
+    <data name="Reason_182">
+        <value>KM khi user nạp thẻ đầu tiên (user fb) _TH</value>
+    </data>
+    <data name="Reason_183">
+        <value>Tặng Xu khi user đăng nhập liên tục _TH</value>
+    </data>
+    <data name="Reason_184">
+        <value>Tặng Xu like fanpage trên app fb _TH</value>
+    </data>
+    <data name="Reason_187">
+        <value>Tặng Xu khi user hết lượt tặng - user mới _TH</value>
+    </data>
+    <data name="Reason_188">
+        <value>Tặng Xu user mới đăng ký nạp thẻ đầu tiên _TH</value>
+    </data>
+    <data name="Reason_189">
+        <value>Tặng Xu user đăng nhập mobile giờ vàng _TH</value>
+    </data>
+    <data name="Reason_190">
+        <value>Tặng Xu đăng nhập ngày vàng Mobile _TH</value>
+    </data>
+    <data name="Reason_191">
+        <value>Tặng Xu đăng ký từ quảng cáo Yahoo _TH</value>
+    </data>
+    <data name="Reason_192">
+        <value>Tặng Xu khi cập nhật thông tin _TH</value>
+    </data>
+    <data name="Reason_197">
+        <value>Khuyến mãi nạp xu sms _TH</value>
+    </data>
+    <data name="Reason_198">
+        <value>Khuyến mãi nạp IAP _TH</value>
+    </data>
+    <data name="Reason_213">
+        <value>Chơi game Bắn Cá _TH</value>
+    </data>
+    <data name="Reason_300">
+        <value>Tặng Xu Cho User Mới _TH</value>
+    </data>
+    <data name="Reason_301">
+        <value>Trả Xu Event BONUS TaiXiu _TH</value>
+    </data>
+    <data name="Reason_302">
+        <value>Đổi Xu _TH</value>
+    </data>
+    <data name="Reason_303">
+        <value>Đổi thẻ _TH</value>
+    </data>
+    <data name="Reason_306">
+        <value>Đổi thưởng quay số _TH</value>
+    </data>
+    <data name="Reason_307">
+        <value>Hệ thống cấp gold cho jackpot _TH</value>
+    </data>
+    <data name="Reason_311">
+        <value>Nạp tiền qua Google Wallet _TH</value>
+    </data>
+    <data name="Reason_312">
+        <value>Nạp tiền qua Apple Store _TH</value>
+    </data>
+    <data name="Reason_313">
+        <value>Tạo bang hội _TH</value>
+    </data>
+    <data name="Reason_314">
+        <value>Rút _TH</value>
+    </data>
+    <data name="Reason_315">
+        <value>Nạp _TH</value>
+    </data>
+    <data name="Reason_316">
+        <value>Bang chủ chuyển tiền cho user _TH</value>
+    </data>
+    <data name="Reason_318">
+        <value>User kết thúc game bắn cá _TH</value>
+    </data>
+    <data name="Reason_319">
+        <value>User chơi game bắn cá _TH</value>
+    </data>
+    <data name="Reason_320">
+        <value>Nhận xu từ bang chủ _TH</value>
+    </data>
+    <data name="Reason_321">
+        <value>Tặng 2% doanh số trong tháng của bang cho bang chủ _TH</value>
+    </data>
+    <data name="Reason_322">
+        <value>Tặng 3% doanh số trong tháng của bang cho người nạp xu nhiều nhất bang _TH</value>
+    </data>
+    <data name="Reason_325">
+        <value>Trả xu cho user sau khi vào phòng chơi không thành công _TH</value>
+    </data>
+    <data name="Reason_326">
+        <value>Trả xu cho user sau khi admin hủy yêu cầu đổi thưởng _TH</value>
+    </data>
+    <data name="Reason_327">
+        <value>Thưởng săn cá boss _TH</value>
+    </data>
+    <data name="Reason_328">
+        <value>Tặng xu cho user Event đăng nhập giờ vàng _TH</value>
+    </data>
+    <data name="Reason_329">
+        <value>Tặng xu cho user Event hoàn tiền _TH</value>
+    </data>
+    <data name="Reason_330">
+        <value>Tặng xu user đăng ký game bắn cá săn thưởng _TH</value>
+    </data>
+    <data name="Reason_331">
+        <value>Tặng xu user đăng nhập game Bắn cá săn thưởng _TH</value>
+    </data>
+    <data name="Reason_332">
+        <value>Tặng xu khi ra phòng chờ bắn cá _TH</value>
+    </data>
+    <data name="Reason_333">
+        <value>Nhận thưởng nhiệm vụ hằng ngày _TH</value>
+    </data>
+    <data name="Reason_334">
+        <value>Thưởng share facebook _TH</value>
+    </data>
+    <data name="Reason_335">
+        <value>Hệ thống thưởng gold jackpot _TH</value>
+    </data>
+    <data name="Reason_336">
+        <value>Hoàn tiền do đổi thẻ không thành công _TH</value>
+    </data>
+    <data name="Reason_337">
+        <value>Tặng tiền hoàn thành nhiệm vụ Bắn Cá _TH</value>
+    </data>
+    <data name="Reason_338">
+        <value>Tặng tiền lên level Bắn Cá _TH</value>
+    </data>
+    <data name="Reason_342">
+        <value>User chuyển tiền cho user khác _TH</value>
+    </data>
+    <data name="Reason_343">
+        <value>User nhận tiền từ user khác chuyển qua _TH</value>
+    </data>
+    <data name="Reason_344">
+        <value>Admin trả xu Bắn Cá _TH</value>
+    </data>
+    <data name="Reason_345">
+        <value>Admin trả xu Lather _TH</value>
+    </data>
+    <data name="Reason_347">
+        <value>Thưởng tổng kết bang hội _TH</value>
+    </data>
+    <data name="Reason_350">
+        <value>Tặng xu vòng quay trong game _TH</value>
+    </data>
+    <data name="Reason_351">
+        <value>Trúng thưởng Game Xóc Rùa _TH</value>
+    </data>
+    <data name="Reason_352">
+        <value>Thắng sự kiện nhập mã được tiền _TH</value>
+    </data>
+    <data name="Reason_353">
+        <value>Thắng game đấu trường _TH</value>
+    </data>
+    <data name="Reason_355">
+        <value>Chơi bắn cá 3D _TH</value>
+    </data>
+    <data name="Reason_356">
+        <value>Kết thúc bắn cá 3D _TH</value>
+    </data>
+    <data name="Reason_357">
+        <value>Chơi bắn cá 3D mobile _TH</value>
+    </data>
+    <data name="Reason_358">
+        <value>Kết thúc bắn cá 3D mobile _TH</value>
+    </data>
+    <data name="Reason_359">
+        <value>Nhận thưởng nhiệm vụ hằng ngày _TH</value>
+    </data>
+    <data name="Reason_404">
+        <value>Chơi game Mini Xeng _TH</value>
+    </data>
+    <data name="Reason_406">
+        <value>Chơi game Mini Penalty _TH</value>
+    </data>
+    <data name="Reason_407">
+        <value>Khuyến Mãi Giờ Vàng _TH</value>
+    </data>
+    <data name="Reason_408">
+        <value>Chơi game Mini Fortunes88 _TH</value>
+    </data>
+    <data name="Reason_409">
+        <value>Chơi game Jackpot _TH</value>
+    </data>
+    <data name="Reason_410">
+        <value>Chơi game XengLuxury _TH</value>
+    </data>
+    <data name="Reason_412">
+        <value>Chơi game Rồng Vàng Slot _TH</value>
+    </data>
+    <data name="Reason_413">
+        <value>Chơi Game Tam Quốc Slot _TH</value>
+    </data>
+    <data name="Reason_418">
+        <value>Chơi game Thần Thú _TH</value>
+    </data>
+    <data name="Reason_419">
+        <value>Chơi game Thần Tài _TH</value>
+    </data>
+    <data name="Reason_420">
+        <value>Chơi game Tho Dan _TH</value>
+    </data>
+    <data name="Reason_423">
+        <value>Chơi game Super 777 _TH</value>
+    </data>
+    <data name="Reason_424">
+        <value>Chơi game Rùa Vàng Mini _TH</value>
+    </data>
+    <data name="Reason_425">
+        <value>Chơi game Monopoly Million Dollar _TH</value>
+    </data>
+    <data name="Reason_426">
+        <value>Chơi game Diamonds Links _TH</value>
+    </data>
+    <data name="Reason_428">
+        <value>Chơi game Candy _TH</value>
+    </data>
+    <data name="Reason_430">
+        <value>Chơi game Fantastic Beasts _TH</value>
+    </data>
+    <data name="Reason_501">
+        <value>Thắng Vòng Quay May Mắn _TH</value>
+    </data>
+    <data name="Reason_502">
+        <value>Mua Lượt Vòng Quay May Mắn _TH</value>
+    </data>
+    <data name="Reason_503">
+        <value>Choi Game Lather _TH</value>
+    </data>
+    <data name="Reason_504">
+        <value>Paypal</value>
+    </data>
+</LocalLanguages>

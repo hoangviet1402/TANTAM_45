@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalLanguages>
+    <data name="CompletedAchievementTitle" xml:space="preserve">
+		<value>Congratulation! You have completed the mission</value>
+	</data>
+    <data name="Achievement_Receive_Infor_NotMatch" xml:space="preserve">
+     <value> The information is invalid or you have received the reward </value>
+           </data>
+       
+    <data name="Achievement_Receive_Fail" xml:space="preserve">
+     <value> Receiving a reward for failure </value>
+           </data>
+    <data name="Achievement_Total_Win_Slot" xml:space="preserve">
+		<value> Total Win {0} CHIPS in game </value>
+	</data>
+    <data name="Achievement_Total_Bet_Slot" xml:space="preserve">
+		<value> Total Bet {0} CHIPS in game </value>
+	</data>
+    <data name="Achievement_Total_Turn_Slot" xml:space="preserve">
+		<value> Total Round Play {0} turn in game </value>
+	</data>
+    <data name="Achievement_Total_Turn_Win_Slot" xml:space="preserve">
+		<value> Total Round Win {0} turn in game </value>
+	</data>
+    <data name="Achievement_Big_Win_Slot" xml:space="preserve">
+		<value> Big Win {0} time in game </value>
+	</data>
+    <data name="Achievement_Mega_Win_Slot" xml:space="preserve">
+		<value> Mega Win {0} time in game </value>
+	</data>
+    <data name="Achievement_Super_Win_Slot" xml:space="preserve">
+		<value> Super Win {0} time in game </value>
+	</data>
+    <data name="Achievement_Total_Win" xml:space="preserve">
+		<value> Total Win {0} CHIPS </value>
+	</data>
+    <data name="Achievement_Total_Bet" xml:space="preserve">
+		<value> Total Bet {0} CHIPS </value>
+	</data>
+    <data name="Achievement_Total_Turn" xml:space="preserve">
+		<value> Total Round Play ({0} time) </value>
+	</data>
+    <data name="Achievement_Total_Turn_Win" xml:space="preserve">
+		<value> Total Round Win ({0} time) </value>
+	</data>
+    <data name="Achievement_Big_Win" xml:space="preserve">
+		<value> Big Win {0} time </value>
+	</data>
+    <data name="Achievement_Mega_Win" xml:space="preserve">
+		<value> Mega Win {0} time </value>
+	</data>
+    <data name="Achievement_Super_Win" xml:space="preserve">
+		<value> Super Win {0} time </value>
+	</data>
+    <data name="Achievement_Super_Bonus" xml:space="preserve">
+		<value> Super Bonus {0} time </value>
+	</data>
+    <data name="Achievement_Leaderboard_Big_Win" xml:space="preserve">
+		<value> Top {0} big win of the day </value>
+	</data>
+    <data name="Achievement_Leaderboard_Total_Big_Win" xml:space="preserve">
+		<value> Top {0} Total Big Win during the day </value>
+	</data>
+    <data name="Achievement_Login" xml:space="preserve">
+		<value> You have logged in {0} times </value>
+	</data>
+    <data name="Achievement_Vip_Update" xml:space="preserve">
+		<value> Vip {0} Upgrade </value>
+	</data>
+    <data name="Achievement_Win_Jackpot" xml:space="preserve">
+		<value> Win Jackpot {0} times </value>
+	</data>
+    <data name="Achievement_Total_Win_Fish" xml:space="preserve">
+		<value> Total wins {0} CHIPS in the game </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Fish" xml:space="preserve">
+		<value> Total Chips Shooting: {0} </value>
+	</data>
+    <data name="Achievement_Total_Fish_Die_One_Turn" xml:space="preserve">
+		<value> Total Fish Dead in 1 turn: {0} </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Red_Fish" xml:space="preserve">
+		<value> Defeat {0} red fish </value>
+	</data>
+    <data name="Achievement_Total_Using_Item" xml:space="preserve">
+		<value> Use {0} items </value>
+	</data>
+    <data name="Achievement_Total_Shoot_Boss_Fish" xml:space="preserve">
+		<value> Defeat {0} BOSS </value>
+	</data>
+    <data name="Achievement_Total_bullet" xml:space="preserve">
+		<value> Total {0} bullets has been shot out </value>
+	</data>
+    <data name="Achievement_Total_Fish_Die" xml:space="preserve">
+		<value> Total Fish Defeat: {0} </value>
+	</data>
+    <data name="Achievement_Total_Friends" xml:space="preserve">
+		<value> Have {0} friends </value>
+	</data>
+    <data name="Achievement_Connect_Facebook" xml:space="preserve">
+		<value> Connect the social network {0} time </value>
+	</data>
+    <data name="Achievement_Add_Friends_Facebook" xml:space="preserve">
+		<value> Invite {0} friends from Facebook </value>
+	</data>
+    <data name="Achievement_Ios" xml:space="preserve">
+		<value> Play the game on IOS {0} time </value>
+	</data>
+    <data name="Achievement_Android" xml:space="preserve">
+		<value> Play the game on Android {0} time </value>
+	</data>
+    <data name="E1806_BonusDailyDayEnum_BonusFirst" xml:space="preserve">
+    <value>Get rewarded for the first time</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>Deposit bonus</value>
+  </data>
+
+    <data name="BoxEventScore" xml:space="preserve">
+    <value>Point</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>Account received gift for the first time.</value>
+  </data>
+    <data name="EventAchievementBoss" xml:space="preserve">
+    <value>Boss</value>
+  </data>
+    <data name="EventAchievementBossDescription" xml:space="preserve">
+    <value>Destroy fish boss {0} times</value>
+  </data>
+    <data name="EventAchievementBossName" xml:space="preserve">
+    <value>Destroy fish boss</value>
+  </data>
+    <data name="EventAchievementCaDo" xml:space="preserve">
+    <value>Red fish</value>
+  </data>
+    <data name="EventAchievementGiftBoxDescription" xml:space="preserve">
+    <value>Destroy gift box {0} times</value>
+  </data>
+    <data name="EventAchievementGiftBoxName" xml:space="preserve">
+    <value>Destroy gift box</value>
+  </data>
+    <data name="EventAchievementHopQua" xml:space="preserve">
+    <value>Gift box</value>
+  </data>
+    <data name="EventAchievementItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+    <data name="EventAchievementItemDescription" xml:space="preserve">
+    <value>Use Item {0} times</value>
+  </data>
+    <data name="EventAchievementItemName" xml:space="preserve">
+    <value>Use Item</value>
+  </data>
+    <data name="EventAchievementLoginDescription" xml:space="preserve">
+    <value>Login to shoot fish</value>
+  </data>
+    <data name="EventAchievementLoginName" xml:space="preserve">
+    <value>Login to shoot fish</value>
+  </data>
+    <data name="EventAchievementOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+    <data name="EventAchievementRedFishDescription" xml:space="preserve">
+    <value>Destroy red fish {0} times</value>
+  </data>
+    <data name="EventAchievementRedFishName" xml:space="preserve">
+    <value>Destroy red fish</value>
+  </data>
+    <data name="EventAchievementSkill" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+    <data name="EventAchievementSkillBombDescription" xml:space="preserve">
+    <value>Use bomb skill {0} times</value>
+  </data>
+    <data name="EventAchievementSkillBombName" xml:space="preserve">
+    <value>Use Bomb skill</value>
+  </data>
+    <data name="EventAchievementSkillDescription" xml:space="preserve">
+    <value>Use skill gun {0} times</value>
+  </data>
+    <data name="EventAchievementSkillLaserDescription" xml:space="preserve">
+    <value>Use laser skill gun {0} times</value>
+  </data>
+    <data name="EventAchievementSkillLaserName" xml:space="preserve">
+    <value>Use laser skill gun</value>
+  </data>
+    <data name="EventAchievementSkillName" xml:space="preserve">
+    <value>Use skill guns</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirDescription" xml:space="preserve">
+    <value>Use sound wave skill {0} times</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirName" xml:space="preserve">
+    <value>Use sound wave skill</value>
+  </data>
+    <data name="EventAchievementUpLevelDescription" xml:space="preserve">
+    <value>Level up </value>
+  </data>
+    <data name="EventAchievementUpLevelName" xml:space="preserve">
+    <value>Level up </value>
+  </data>
+    <data name="EventAchivementNotComplete" xml:space="preserve">
+    <value>Incomplete achievements</value>
+  </data>
+    <data name="EventChipCounts" xml:space="preserve">
+    <value>{0} CHIPS</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>Event select invalid key {0}</value>
+  </data>
+    <data name="EventDailyBonusLoginName" xml:space="preserve">
+    <value>Day</value>
+  </data>
+    <data name="EventDontHaveNew" xml:space="preserve">
+    <value>No new events </value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>Enough time to receive gift.</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>You received a gift</value>
+  </data>
+    <data name="EventGetListSuccess" xml:space="preserve">
+    <value>Get event list successfully</value>
+  </data>
+    <data name="EventGiftIsWrong" xml:space="preserve">
+    <value>Gift is wrong</value>
+  </data>
+    <data name="EventGiftNotAvailable" xml:space="preserve">
+    <value>Gift received or not available</value>
+  </data>
+    <data name="EventGiveGiftFail" xml:space="preserve">
+    <value>Give gift failed. Please try again later</value>
+  </data>
+    <data name="EventGiveGiftSuccessAndCheckMail" xml:space="preserve">
+    <value>Give gift successfully. Please check mail.</value>
+  </data>
+    <data name="EventMessageYouHasMoneyFromEve" xml:space="preserve">
+    <value>You get {0} CHIPS from the event.</value>
+  </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>Your CHIPS must be less than 5,000 to receive gift</value>
+  </data>
+    <data name="EventMissionNotComplete" xml:space="preserve">
+    <value>Mission is not completed</value>
+  </data>
+    <data name="EventNoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>Not enough time to receive gift.</value>
+  </data>
+    <data name="EventNotExist" xml:space="preserve">
+    <value>Event does not exist</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>Event is suspended</value>
+  </data>
+    <data name="EventNotTimeUp" xml:space="preserve">
+    <value>It is not time to gift. Please try again later</value>
+  </data>
+    <data name="EventQuicklyRegisterCannotRegisterMore" xml:space="preserve">
+    <value>Cannot register to play now, please register for a new account</value>
+  </data>
+    <data name="EventReceivedGift" xml:space="preserve">
+    <value>Received gift</value>
+  </data>
+    <data name="EventReceiveGiftSuccess" xml:space="preserve">
+    <value>Receive gift successfully</value>
+  </data>
+    <data name="EventReceiveLevelVip" xml:space="preserve">
+    <value>Receive gift for VIP level up</value>
+  </data>
+    <data name="EventSecondCount" xml:space="preserve">
+    <value>{0} seconds</value>
+  </data>
+    <data name="EventSystemMaintainingChooseOther" xml:space="preserve">
+    <value>System {0} is under maintenance, please choose another card type</value>
+  </data>
+    <data name="EventTitleBonusHall" xml:space="preserve">
+    <value>You get {0} to your account</value>
+  </data>
+    <data name="EventTurnsCount" xml:space="preserve">
+    <value>{0} turns</value>
+  </data>
+    <data name="EventTypeCardCount" xml:space="preserve">
+    <value>Card {0} {1} </value>
+  </data>
+    <data name="EventUploadSuccessButFail" xml:space="preserve">
+    <value>Uploaded successfully, the event update failed.</value>
+  </data>
+    <data name="EventVipAnchorPoint" xml:space="preserve">
+    <value>Anchor Point</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>Deposit bonus</value>
+  </data>
+    <data name="EventVipExpFish" xml:space="preserve">
+    <value>Shooting fish Exp</value>
+  </data>
+    <data name="EventVipNotRunning" xml:space="preserve">
+    <value>Vip Not running</value>
+  </data>
+    <data name="EventVipTichLuySkill" xml:space="preserve">
+    <value>Accumulated skill</value>
+  </data>
+    <data name="EventVipTransferChip" xml:space="preserve">
+    <value>Transfer CHIPS</value>
+  </data>
+
+    <!-- #Region E1806_BonusDailyDayEnum-->
+    <data name="E1806_BonusDailyDayEnum_Faile" xml:space="preserve">
+    <value>Receiving rewards is not successful</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusFirst" xml:space="preserve">
+    <value>Get rewarded for the first time</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusInDay" xml:space="preserve">
+    <value>Received reward today</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_ResetBonus" xml:space="preserve">
+    <value>The date of receiving the prize is not consecutive</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7Days" xml:space="preserve">
+    <value>Receive consecutive day rewards</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7DaysThen" xml:space="preserve">
+    <value>Receive rewards for more than 7 days</value>
+  </data>
+    <!-- #Endregion E1806_BonusDailyDayEnum-->
+
+
+    <data name="BoxTopEventAppTitle" xml:space="preserve">
+    <value>Top shooting events for hunting fish.</value>
+  </data>
+    <data name="EventNhapMaDuocTienCaptcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="EventNhapMaDuocTienCode" xml:space="preserve">
+    <value>Gift code</value>
+  </data>
+    <data name="EventNhapMaDuocTienConfirm" xml:space="preserve">
+    <value>CONFIRM</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>You have won today. 1 nick can only CHIPS 1 gift code per day</value>
+  </data>
+    <data name="EventNhapMaDuocTienTitle" xml:space="preserve">
+    <value>GIFT IMPORT CODE RECEIVING MONEY</value>
+  </data>
+    <data name="JackpotMetaDesc" xml:space="preserve">
+    <value>Shoot Hot 2018 Fish. Play Directly On Website Or Mobile No Installation Required.</value>
+  </data>
+    <data name="JackpotPlay" xml:space="preserve">
+    <value>PLAY JACKPOT</value>
+  </data>
+    <data name="JackpotTitle" xml:space="preserve">
+    <value>Shoot Fish</value>
+  </data>
+    <data name="ListEvent3DHeading" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="ListEvent3DMessageNoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="ListEvent3DSubTitle" xml:space="preserve">
+    <value>Gift Code</value>
+  </data>
+    <data name="ListEvent3DTitle" xml:space="preserve">
+    <value>SUMMARY &lt;br /&gt; AWARDS</value>
+  </data>
+    <data name="ListEvent_Event" xml:space="preserve">
+    <value>EVENT</value>
+  </data>
+    <data name="ListEvent_Gala" xml:space="preserve">
+    <value>AWARDS</value>
+  </data>
+    <data name="ListEvent_GiftCode" xml:space="preserve">
+    <value>Gift Code</value>
+  </data>
+    <data name="ListEvent_Heading" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="ListEvent_MessageNodata" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="ListTongKetTraoGiaiHeading" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="ListTongKetTraoGiaiMessageNodata" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="ListTongKetTraoGiaiTitle" xml:space="preserve">
+    <value>Recharge - redeem reward hunting fish</value>
+  </data>
+    <data name="ShareSocialMetaDesc" xml:space="preserve">
+    <value>Shoot Hot 2018 Fish. Play Directly On Website Or Mobile No Installation Required.</value>
+  </data>
+    <data name="ShareSocialShareAction" xml:space="preserve">
+    <value>Share</value>
+  </data>
+    <data name="ShareSocialSharing" xml:space="preserve">
+    <value>Share with friends:</value>
+  </data>
+    <data name="ShareSocialTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="ShareSocial_CongraFB" xml:space="preserve">
+    <value>You receive a reward from the sharing event of receiving a gift</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>No</value>
+  </data>
+    <data name="Top" xml:space="preserve">
+    <value>TOP</value>
+  </data>
+    <data name="EventNull" xml:space="preserve">
+    <value>There are no events yet</value>
+  </data>
+    <data name="CoinChange" xml:space="preserve">
+    <value>Change</value>
+  </data>
+    <data name="CurrentCoin" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+    <data name="Errror1" xml:space="preserve">
+    <value>An error occurred during the process of retrieving the list.</value>
+  </data>
+    <data name="Noted" xml:space="preserve">
+    <value>Note</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+    <data name="GuiTinNhan" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+    <data name="HopThu" xml:space="preserve">
+    <value>Mailbox</value>
+  </data>
+    <data name="KhongCoThu" xml:space="preserve">
+    <value>No new mail !!!</value>
+  </data>
+    <data name="NgayGui" xml:space="preserve">
+    <value>Sent date</value>
+  </data>
+    <data name="NguoiGui" xml:space="preserve">
+    <value>Sender</value>
+  </data>
+    <data name="DatCuoc" xml:space="preserve">
+    <value>Bet</value>
+  </data>
+    <data name="KetQua" xml:space="preserve">
+    <value>Result</value>
+  </data>
+    <data name="MoTa" xml:space="preserve">
+    <value>Description</value>
+  </data>
+    <data name="NgayDat" xml:space="preserve">
+    <value>Date</value>
+  </data>
+    <data name="Trat" xml:space="preserve">
+    <value>Miss</value>
+  </data>
+    <data name="Trung" xml:space="preserve">
+    <value>Winning</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+    <data name="GiftCodeValidation1" xml:space="preserve">
+    <value>The code you entered is incorrect</value>
+  </data>
+    <data name="GiftCodeValidation2" xml:space="preserve">
+    <value>Today you got a reward. 1 nick can only receive 1 gift code during the day</value>
+  </data>
+    <data name="GiftCodeValidation3" xml:space="preserve">
+    <value>Used GiftCode</value>
+  </data>
+    <data name="GiftCodeValidation4" xml:space="preserve">
+    <value>The GiftCode you entered is incorrect</value>
+  </data>
+    <data name="GiftCodeValidation5" xml:space="preserve">
+    <value>You have been awarded {0} CHIPS. Win event Enter the money code. 1 nick can only win 1 gift code in a day.</value>
+  </data>
+    <data name="GiftCodeValidation6" xml:space="preserve">
+    <value>GiftCode is invalid</value>
+  </data>
+    <data name="GiftCodeValidation7" xml:space="preserve">
+    <value>GiftCode does not exist</value>
+  </data>
+    <data name="GiftCodeValidation8" xml:space="preserve">
+    <value>GiftCode has been locked</value>
+  </data>
+    <data name="GiftCodeValidation9" xml:space="preserve">
+    <value>Plus CHIPS failed</value>
+  </data>
+    <data name="GiftCodeLabel" xml:space="preserve">
+    <value>GiftCode</value>
+  </data>
+    <data name="GiftCodeLabelPH" xml:space="preserve">
+    <value>Enter GiftCode</value>
+  </data>
+    <data name="GiftCodeReceive" xml:space="preserve">
+    <value>Receive</value>
+  </data>
+    <data name="ScreenCaptureGame_UserMaxInDay" xml:space="preserve">
+    <value>Exceeded the number of allowed times, up to {0} / day</value>
+  </data>
+    <data name="ScreenCaptureGame_UserNextTime" xml:space="preserve">
+    <value>Operation is too fast, please wait {0} minutes to resubmit</value>
+  </data>
+    <data name="ScreenCaptureGame_DeviceMaxInDay" xml:space="preserve">
+    <value>Exceeded the number of allowed times, up to {0} / day</value>
+  </data>
+    <data name="ScreenCaptureGame_DeviceNextTime" xml:space="preserve">
+    <value>Operation is too fast, please wait {0} minutes to resubmit</value>
+  </data>
+    <data name="ScreenCaptureGame_UploadFail" xml:space="preserve">
+    <value>Upload failed</value>
+  </data>
+</LocalLanguages>

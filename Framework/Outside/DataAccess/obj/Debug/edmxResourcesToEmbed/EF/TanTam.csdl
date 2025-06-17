@@ -1,0 +1,1115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TanTamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TanTamEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="Ins_Account_CreateForEmployees">
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="Role" Mode="In" Type="Int32" />
+      <Parameter Name="AccountId" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_CreatePass">
+      <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_CreatePassFornewEmployee">
+      <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_EmployeesInfoInCompany" ReturnType="Collection(TanTamModel.Ins_Account_EmployeesInfoInCompany_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_GetAllCompany" ReturnType="Collection(TanTamModel.Ins_Account_GetAllCompany_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_GetInfor" ReturnType="Collection(TanTamModel.Ins_Account_GetInfor_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_GetTokensByEmployeeID" ReturnType="Collection(TanTamModel.Ins_Account_GetTokensByEmployeeID_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_InsertTokens">
+      <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
+      <Parameter Name="JwtID" Mode="In" Type="String" />
+      <Parameter Name="RefreshToken" Mode="In" Type="String" />
+      <Parameter Name="LifeTime" Mode="In" Type="Int32" />
+      <Parameter Name="Ip" Mode="In" Type="String" />
+      <Parameter Name="Imie" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_Login" ReturnType="Collection(TanTamModel.Ins_Account_Login_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_Register">
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="PhoneCode" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="DeviceId" Mode="In" Type="String" />
+      <Parameter Name="AccountID" Mode="InOut" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="InOut" Type="Int32" />
+      <Parameter Name="EmployeeAccountMapID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_RevokeToken">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Ip" Mode="In" Type="String" />
+      <Parameter Name="Imie" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_UpdateFullName" ReturnType="Collection(TanTamModel.Ins_Account_UpdateFullName_Result)">
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="IsUsePhone" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_UpdatePass">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="OldPass" Mode="In" Type="String" />
+      <Parameter Name="NeedSetPassword" Mode="In" Type="Int32" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_UpdateToken_JwtID">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="JwtID" Mode="In" Type="String" />
+      <Parameter Name="Ip" Mode="In" Type="String" />
+      <Parameter Name="Imie" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Account_Validata" ReturnType="Collection(TanTamModel.Ins_Account_Validata_Result)">
+      <Parameter Name="AccountName" Mode="In" Type="String" />
+      <Parameter Name="IsUsePhone" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Business_GetList" ReturnType="Collection(TanTamModel.Ins_Business_GetList_Result)" />
+    <FunctionImport Name="Ins_ComPany_CreateSetupStep">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Company_GetEmployeeID" ReturnType="Collection(TanTamModel.Ins_Company_GetEmployeeID_Result)">
+      <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Company_GetInfor" ReturnType="Collection(TanTamModel.Ins_Company_GetInfor_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Company_GetInforAccount" ReturnType="Collection(TanTamModel.Ins_Company_GetInforAccount_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Company_GetSetupStep" ReturnType="Collection(TanTamModel.Ins_Company_GetSetupStep_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Company_UpdateInfoWhenSinup">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Alias" Mode="In" Type="String" />
+      <Parameter Name="ComPany_Latitude" Mode="In" Type="Int32" />
+      <Parameter Name="ComPany_Longitude" Mode="In" Type="Int32" />
+      <Parameter Name="ComPany_Number_Employee" Mode="In" Type="String" />
+      <Parameter Name="ComPany_Address" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="HearAbout" Mode="In" Type="String" />
+      <Parameter Name="UsePurpose" Mode="In" Type="String" />
+      <Parameter Name="BusinesFieldIds" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ComPany_UpdateSetupStep">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyBranch_Create">
+      <Parameter Name="BranchName" Mode="In" Type="String" />
+      <Parameter Name="BranchAddress" Mode="In" Type="String" />
+      <Parameter Name="RegionId" Mode="In" Type="String" />
+      <Parameter Name="IsOnboarding" Mode="In" Type="Int32" />
+      <Parameter Name="Latitude" Mode="In" Type="Int32" />
+      <Parameter Name="Longitude" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="Alias" Mode="In" Type="String" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyBranch_CreateMultiple">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="BranchNames" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyBranch_GetAllByCompany" ReturnType="Collection(TanTamModel.Ins_CompanyBranch_GetAllByCompany_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="PerPage" Mode="In" Type="Int32" />
+      <Parameter Name="Total" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyBranch_GetAllInfor" ReturnType="Collection(TanTamModel.Ins_CompanyBranch_GetAllInfor_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyBranch_GetInfor" ReturnType="Collection(TanTamModel.Ins_CompanyBranch_GetInfor_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyDepartment_Create">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyDepartment_CreateInAllBranchId" ReturnType="Collection(TanTamModel.Ins_CompanyDepartment_CreateInAllBranchId_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Alias" Mode="In" Type="String" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyDepartment_CreateMultipleInAllBranches">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="DepartmentNames" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyDepartment_GetAll" ReturnType="Collection(TanTamModel.Ins_CompanyDepartment_GetAll_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyPosition_Create">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="DepartmentId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyPosition_CreateInAllBranchId" ReturnType="Collection(TanTamModel.Ins_CompanyPosition_CreateInAllBranchId_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Alias" Mode="In" Type="String" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="ExpYear" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_AddIntoBranch">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
+      <Parameter Name="IsPrimary" Mode="In" Type="Boolean" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_Create">
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="EmployeesCode" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="PhoneCode" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="Role" Mode="In" Type="Int32" />
+      <Parameter Name="DeviceId" Mode="In" Type="String" />
+      <Parameter Name="EmployeeAccountId" Mode="InOut" Type="Int32" />
+      <Parameter Name="IsNewUser" Mode="InOut" Type="Int32" />
+      <Parameter Name="NeedSetPassword" Mode="InOut" Type="Int32" />
+      <Parameter Name="NeedSetCompany" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_Delete">
+      <Parameter Name="EmployeeAccountId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_GetAll" ReturnType="Collection(TanTamModel.Ins_Employee_GetAll_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="Page" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_GetEmployeeID" ReturnType="Collection(TanTamModel.Ins_Employee_GetEmployeeID_Result)">
+      <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_GetLastEmployeeCode" ReturnType="Collection(String)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_GetList" ReturnType="Collection(TanTamModel.Ins_Employee_GetList_Result)">
+      <Parameter Name="company_id" Mode="In" Type="Int32" />
+      <Parameter Name="page" Mode="In" Type="Int32" />
+      <Parameter Name="page_size" Mode="In" Type="Int32" />
+      <Parameter Name="start_date" Mode="In" Type="DateTime" />
+      <Parameter Name="end_date" Mode="In" Type="DateTime" />
+      <Parameter Name="is_no_need_timekeeping" Mode="In" Type="Boolean" />
+      <Parameter Name="TotalRecords" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_GetShiftsInBranch" ReturnType="Collection(TanTamModel.Ins_Employee_GetShiftsInBranch_Result)">
+      <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_GetTokensByEmployeeID">
+      <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_MultiDelete">
+      <Parameter Name="EmployeeAccountIds" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_ResetPass">
+      <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Employee_UpdateDetails">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="EmployeeCode" Mode="In" Type="String" />
+      <Parameter Name="DisplayOrder" Mode="In" Type="Int32" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="PhoneCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_Branch_Create" ReturnType="Collection(TanTamModel.Ins_Shift_Branch_Create_Result)">
+      <Parameter Name="ShiftID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="BranchID" Mode="In" Type="Int32" />
+      <Parameter Name="IsInsertOne" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_Create">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="NameNosign" Mode="In" Type="String" />
+      <Parameter Name="ShiftKey" Mode="In" Type="String" />
+      <Parameter Name="Coefficient" Mode="In" Type="Decimal" />
+      <Parameter Name="MinimumWorkingHour" Mode="In" Type="Decimal" />
+      <Parameter Name="Note" Mode="In" Type="String" />
+      <Parameter Name="EarlyCheckOut" Mode="In" Type="Int32" />
+      <Parameter Name="LatelyCheckIn" Mode="In" Type="Int32" />
+      <Parameter Name="MaxLateCheckInOutMinute" Mode="In" Type="Int32" />
+      <Parameter Name="MinSoonCheckInOutMinute" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="Type" Mode="In" Type="String" />
+      <Parameter Name="SortIndex" Mode="In" Type="Int32" />
+      <Parameter Name="IsOvertimeShift" Mode="In" Type="Int32" />
+      <Parameter Name="MealCoefficient" Mode="In" Type="Decimal" />
+      <Parameter Name="Timezone" Mode="In" Type="String" />
+      <Parameter Name="ShiftId" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_CreateTimeInOutConfig" ReturnType="Collection(TanTamModel.Ins_Shift_CreateTimeInOutConfig_Result)">
+      <Parameter Name="ShiftId" Mode="In" Type="Int32" />
+      <Parameter Name="StartHourId" Mode="In" Type="Int32" />
+      <Parameter Name="StartMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="EndHourId" Mode="In" Type="Int32" />
+      <Parameter Name="EndMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="StartCheckInMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="EndCheckInMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="StartCheckOutMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="EndCheckOutMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="StartCheckInHourId" Mode="In" Type="Int32" />
+      <Parameter Name="EndCheckInHourId" Mode="In" Type="Int32" />
+      <Parameter Name="StartCheckOutHourId" Mode="In" Type="Int32" />
+      <Parameter Name="EndCheckOutHourId" Mode="In" Type="Int32" />
+      <Parameter Name="MaxLateCheckInOutMinute" Mode="In" Type="Int32" />
+      <Parameter Name="MinSoonCheckInOutMinute" Mode="In" Type="Int32" />
+      <Parameter Name="Lang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_CreateTimeRestConfig" ReturnType="Collection(TanTamModel.Ins_Shift_CreateTimeRestConfig_Result)">
+      <Parameter Name="ShiftId" Mode="In" Type="Int32" />
+      <Parameter Name="RestStartHourId" Mode="In" Type="Int32" />
+      <Parameter Name="RestStartMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="RestEndHourId" Mode="In" Type="Int32" />
+      <Parameter Name="RestEndMinuteId" Mode="In" Type="Int32" />
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_Get_Status_Clock_In_Out_Shift" ReturnType="Collection(TanTamModel.Ins_Shift_Get_Status_Clock_In_Out_Shift_Result)">
+      <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_GetTimekeeper_logLastest" ReturnType="Collection(TanTamModel.Ins_Shift_GetTimekeeper_logLastest_Result)">
+      <Parameter Name="EmployeeShiftID" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeeAccountMapID" Mode="In" Type="Int32" />
+      <Parameter Name="LogTime" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ShiftAssignment_Branch_Create" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_Branch_Create_Result)">
+      <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="BranchID" Mode="In" Type="Int32" />
+      <Parameter Name="IsInsertOne" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ShiftAssignment_Create">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="ShiftID" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="SortIndex" Mode="In" Type="Int32" />
+      <Parameter Name="AutoApprove" Mode="In" Type="Int32" />
+      <Parameter Name="PayrollConfigType" Mode="In" Type="String" />
+      <Parameter Name="AssignmentTypeObj" Mode="In" Type="String" />
+      <Parameter Name="GenerateTimekeepingTypeObj" Mode="In" Type="String" />
+      <Parameter Name="Type" Mode="In" Type="String" />
+      <Parameter Name="ShiftAssignmentId" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ShiftAssignment_CreateAssignment">
+      <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
+      <Parameter Name="ShiftID" Mode="In" Type="Int32" />
+      <Parameter Name="Label" Mode="In" Type="String" />
+      <Parameter Name="DateOfWeek" Mode="In" Type="Int32" />
+      <Parameter Name="AssignmentID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ShiftAssignment_Department_Create" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_Department_Create_Result)">
+      <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="DepartmentID" Mode="In" Type="Int32" />
+      <Parameter Name="IsInsertOne" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ShiftAssignment_Position_Create" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_Position_Create_Result)">
+      <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="PositionID" Mode="In" Type="Int32" />
+      <Parameter Name="IsInsertOne" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_CreateTaskFieldWithOptions">
+      <Parameter Name="object_id" Mode="In" Type="Int32" />
+      <Parameter Name="title" Mode="In" Type="String" />
+      <Parameter Name="title_nosign" Mode="In" Type="String" />
+      <Parameter Name="add_to_lib" Mode="In" Type="Boolean" />
+      <Parameter Name="notify_when_value_changed" Mode="In" Type="Boolean" />
+      <Parameter Name="field_key" Mode="In" Type="String" />
+      <Parameter Name="is_default" Mode="In" Type="Boolean" />
+      <Parameter Name="created_user_id" Mode="In" Type="Int32" />
+      <Parameter Name="sort_index" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="object_sort_index" Mode="In" Type="Int32" />
+      <Parameter Name="object_active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_CreatorInfo" ReturnType="Collection(TanTamModel.Ins_Task_CreatorInfo_Result)">
+      <Parameter Name="task_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_GetTaskGroupsByTaskId" ReturnType="Collection(TanTamModel.Ins_Task_GetTaskGroupsByTaskId_Result)">
+      <Parameter Name="task_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_Group_Create" ReturnType="Collection(TanTamModel.Ins_Task_Group_Create_Result)">
+      <Parameter Name="bundle_id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="color" Mode="In" Type="String" />
+      <Parameter Name="position" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_List" ReturnType="Collection(TanTamModel.Ins_Task_List_Result)">
+      <Parameter Name="task_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_ManagersByTask" ReturnType="Collection(TanTamModel.Ins_Task_ManagersByTask_Result)">
+      <Parameter Name="task_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_Sub_Create" ReturnType="Collection(TanTamModel.Ins_Task_Sub_Create_Result)">
+      <Parameter Name="title" Mode="In" Type="String" />
+      <Parameter Name="alias" Mode="In" Type="String" />
+      <Parameter Name="bundle_id" Mode="In" Type="Int32" />
+      <Parameter Name="created_user_id" Mode="In" Type="Int32" />
+      <Parameter Name="position" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_Sub_ListByBundle" ReturnType="Collection(TanTamModel.Ins_Task_Sub_ListByBundle_Result)">
+      <Parameter Name="BundleId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_UsersByTask" ReturnType="Collection(TanTamModel.Ins_Task_UsersByTask_Result)">
+      <Parameter Name="task_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_UsersByUser" ReturnType="Collection(TanTamModel.Ins_Task_UsersByUser_Result)">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Tasks_Create">
+      <Parameter Name="title" Mode="In" Type="String" />
+      <Parameter Name="created_user_obj" Mode="In" Type="Int32" />
+      <Parameter Name="default_view" Mode="In" Type="String" />
+      <Parameter Name="color" Mode="In" Type="String" />
+      <Parameter Name="department_ids" Mode="In" Type="String" />
+      <Parameter Name="position_ids" Mode="In" Type="String" />
+      <Parameter Name="branch_ids" Mode="In" Type="String" />
+      <Parameter Name="user_ids" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Time_GetList" ReturnType="Collection(TanTamModel.Ins_Time_GetList_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_ChangePassword">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="old_password" Mode="In" Type="String" />
+      <Parameter Name="new_password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_Count" ReturnType="Collection(Int32)">
+      <Parameter Name="search" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+      <Parameter Name="department_id" Mode="In" Type="Int32" />
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_Create">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="phone_number" Mode="In" Type="String" />
+      <Parameter Name="full_name" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+      <Parameter Name="department_id" Mode="In" Type="Int32" />
+      <Parameter Name="position_id" Mode="In" Type="Int32" />
+      <Parameter Name="branch_id" Mode="In" Type="Int32" />
+      <Parameter Name="company_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_GetDetail" ReturnType="Collection(TanTamModel.Ins_User_GetDetail_Result)">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="company_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_GetList" ReturnType="Collection(TanTamModel.Ins_User_GetList_Result)">
+      <Parameter Name="page" Mode="In" Type="Int32" />
+      <Parameter Name="limit" Mode="In" Type="Int32" />
+      <Parameter Name="search" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+      <Parameter Name="department_id" Mode="In" Type="Int32" />
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_IsEmailExist" ReturnType="Collection(Int32)">
+      <Parameter Name="email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_IsPhoneExist" ReturnType="Collection(Int32)">
+      <Parameter Name="phone_number" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_IsUsernameExist" ReturnType="Collection(Int32)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="phone_number" Mode="In" Type="String" />
+      <Parameter Name="full_name" Mode="In" Type="String" />
+      <Parameter Name="avatar_url" Mode="In" Type="String" />
+      <Parameter Name="is_active" Mode="In" Type="Boolean" />
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+      <Parameter Name="department_id" Mode="In" Type="Int32" />
+      <Parameter Name="position_id" Mode="In" Type="Int32" />
+      <Parameter Name="branch_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_UpdateProfile">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="birth_date" Mode="In" Type="DateTime" />
+      <Parameter Name="gender" Mode="In" Type="Int32" />
+      <Parameter Name="bio" Mode="In" Type="String" />
+      <Parameter Name="skills" Mode="In" Type="String" />
+      <Parameter Name="join_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_User_UpdateStatus">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="is_active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Sel_CompanyBranch_GetIds" ReturnType="Collection(Int32)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sel_CompanyDepartment_GetCreated">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
+    <Property Type="Int32" Name="EmployeeAccountMapId" Nullable="false" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeesInfoId" Nullable="true" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="PasswordHash" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="IsNewUser" Nullable="false" />
+    <Property Type="Boolean" Name="NeedSetPassword" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Account_GetAllCompany_Result">
+    <Property Type="Int32" Name="EmployeeAccountMapId" Nullable="false" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeesInfoId" Nullable="true" />
+    <Property Type="String" Name="EmployeesFullName" Nullable="true" MaxLength="256" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="PasswordHash" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="IsNewUser" Nullable="false" />
+    <Property Type="Boolean" Name="NeedSetPassword" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CompanyId" Nullable="true" />
+    <Property Type="String" Name="CompanyFullName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Prefix" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CompanyCreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TotalEmployees" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="CompanyIsActive" Nullable="true" />
+    <Property Type="Int32" Name="CreateStep" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Account_GetInfor_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PhoneFull" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="TotalCompany" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Ins_Account_GetTokensByEmployeeID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="JwtID" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RefreshToken" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="Expires" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Ip" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeesInfoId" Nullable="true" />
+    <Property Type="Boolean" Name="CompanyIsActive" Nullable="true" />
+    <Property Type="Boolean" Name="AccountIsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Account_Login_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeesInfoId" Nullable="true" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="PasswordHash" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="IsNewUser" Nullable="false" />
+    <Property Type="Boolean" Name="NeedSetPassword" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="Ins_Account_UpdateFullName_Result">
+    <Property Type="Int32" Name="EmployeeAccountMapID" Nullable="true" />
+    <Property Type="Int32" Name="CompanyId" Nullable="true" />
+    <Property Type="Int32" Name="AccountID" Nullable="true" />
+    <Property Type="String" Name="AccountRole" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Ins_Account_Validata_Result">
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="TotalCompany" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Business_GetList_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Business" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BusinessType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IndexNum" Nullable="true" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="Ins_Company_GetEmployeeID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeesInfoId" Nullable="true" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="PasswordHash" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="IsNewUser" Nullable="false" />
+    <Property Type="Boolean" Name="NeedSetPassword" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="Ins_Company_GetInfor_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Prefix" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TotalEmployees" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="CreateStep" Nullable="false" />
+    <Property Type="Int32" Name="Latitude" Nullable="true" />
+    <Property Type="Int32" Name="Longitude" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HearAbout" Nullable="true" MaxLength="550" />
+    <Property Type="String" Name="UsePurpose" Nullable="true" MaxLength="550" />
+    <Property Type="String" Name="BusinesFieldIds" Nullable="true" MaxLength="550" />
+    <Property Type="Int32" Name="GetStartedStep" Nullable="true" />
+    <Property Type="Int32" Name="FirstStepModalOff" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Company_GetInforAccount_Result">
+    <Property Type="Int32" Name="EmployeeAccountMapId" Nullable="false" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeesInfoId" Nullable="true" />
+    <Property Type="String" Name="EmployeesFullName" Nullable="true" MaxLength="256" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="PasswordHash" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="IsNewUser" Nullable="false" />
+    <Property Type="Boolean" Name="NeedSetPassword" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PhoneFull" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="AccountIsActive" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAtCreatedAt" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="TotalCompany" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Ins_Company_GetSetupStep_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="true" />
+    <Property Type="Int32" Name="Code" Nullable="true" />
+    <Property Type="Int32" Name="Weight" Nullable="true" />
+    <Property Type="Boolean" Name="IsDone" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_CompanyBranch_GetAllByCompany_Result">
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="Latitude" Nullable="true" />
+    <Property Type="Int32" Name="Longitude" Nullable="true" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Province" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="District" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="IsOnboarding" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsHeadquarter" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="Ins_CompanyBranch_GetAllInfor_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Prefix" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TotalEmployees" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="CreateStep" Nullable="false" />
+    <Property Type="Int32" Name="Latitude" Nullable="true" />
+    <Property Type="Int32" Name="Longitude" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HearAbout" Nullable="true" MaxLength="550" />
+    <Property Type="String" Name="UsePurpose" Nullable="true" MaxLength="550" />
+    <Property Type="String" Name="BusinesFieldIds" Nullable="true" MaxLength="550" />
+    <Property Type="Int32" Name="GetStartedStep" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_CompanyBranch_GetInfor_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Prefix" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TotalEmployees" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="CreateStep" Nullable="false" />
+    <Property Type="Int32" Name="Latitude" Nullable="true" />
+    <Property Type="Int32" Name="Longitude" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HearAbout" Nullable="true" MaxLength="550" />
+    <Property Type="String" Name="UsePurpose" Nullable="true" MaxLength="550" />
+    <Property Type="String" Name="BusinesFieldIds" Nullable="true" MaxLength="550" />
+    <Property Type="Int32" Name="GetStartedStep" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_CompanyDepartment_CreateInAllBranchId_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="CompanyId" Nullable="true" />
+    <Property Type="Int32" Name="BranchId" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_CompanyDepartment_GetAll_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="String" Name="DepartmentName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ParentId" Nullable="true" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="IsHead" Nullable="true" />
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="Ins_CompanyPosition_CreateInAllBranchId_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="CompanyId" Nullable="true" />
+    <Property Type="Int32" Name="BranchId" Nullable="true" />
+    <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Employee_GetAll_Result">
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="60" />
+    <Property Type="Int32" Name="UserRole" Nullable="true" />
+    <Property Type="Int32" Name="Branch" Nullable="true" />
+    <Property Type="Int32" Name="Department" Nullable="true" />
+    <Property Type="Int32" Name="Title" Nullable="true" />
+    <Property Type="Boolean" Name="EmployeeAccountMapIsActive" Nullable="false" />
+    <Property Type="Boolean" Name="AccountIsActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Ins_Employee_GetEmployeeID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeesInfoId" Nullable="true" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Boolean" Name="EmployeeMapIsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsNewUser" Nullable="false" />
+    <Property Type="Boolean" Name="NeedSetPassword" Nullable="false" />
+    <Property Type="DateTime" Name="EmployeeMapCreatedAt" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Gender" Nullable="true" />
+    <Property Type="Int32" Name="DisplayOrder" Nullable="true" />
+    <Property Type="String" Name="ContactAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Skype" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Facebook" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EmergencyName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EmergencyMobile" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmergencyLandline" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmergencyRelation" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmergencyAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Province" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="District" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Ward" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PermanentAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Hometown" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="CurrentAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="IdentityCard" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="IdentityCardCreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IdentityCardPlace" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PassportID" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="PassporCreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="PassporExp" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PassporPlace" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BankHolder" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="BankAccount" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BankName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="BankBranch" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TaxIdentification" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="EmployeesInfoCreatedAt" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="AccountIsActive" Nullable="false" />
+    <Property Type="String" Name="DeviceId" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Ins_Employee_GetList_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="UserId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="RegionId" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="BranchId" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="DepartmentId" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="PositionId" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Identification" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="IsNoNeedTimekeeping" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Employee_GetShiftsInBranch_Result">
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="Int32" Name="ShiftAssignmentID" Nullable="false" />
+    <Property Type="Int32" Name="ShiftId" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="SortIndex" Nullable="false" />
+    <Property Type="Int32" Name="AutoApprove" Nullable="false" />
+    <Property Type="String" Name="Assignments" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="MealCoefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="GenerateTimekeepingTypeObj" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AssignmentTypeObj" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PayrollConfigType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ShiftAssignmentType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ShiftName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ShiftKey" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Coefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="MinimumWorkingHour" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="Note" Nullable="true" />
+    <Property Type="Int32" Name="EarlyCheckOut" Nullable="false" />
+    <Property Type="Int32" Name="LatelyCheckIn" Nullable="false" />
+    <Property Type="Int32" Name="MaxLateCheckInOutMinute" Nullable="false" />
+    <Property Type="Int32" Name="MinSoonCheckInOutMinute" Nullable="false" />
+    <Property Type="Int32" Name="ShiftStatus" Nullable="false" />
+    <Property Type="String" Name="ShiftType" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SortIndex1" Nullable="false" />
+    <Property Type="Int32" Name="IsOvertimeShift" Nullable="false" />
+    <Property Type="Decimal" Name="MealCoefficient1" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="Timezone" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NameNosign" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="Ins_Shift_Branch_Create_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ShiftID" Nullable="false" />
+    <Property Type="Int32" Name="BranchID" Nullable="false" />
+    <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Shift_CreateTimeInOutConfig_Result">
+    <Property Type="Int32" Name="ShiftID" Nullable="false" />
+    <Property Type="Int32" Name="StartHourID" Nullable="true" />
+    <Property Type="Int32" Name="StartHourValue" Nullable="true" />
+    <Property Type="String" Name="StartHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="StartMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="StartMinuteValue" Nullable="true" />
+    <Property Type="String" Name="StartMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartMinuteType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndHourID" Nullable="true" />
+    <Property Type="Int32" Name="EndHourValue" Nullable="true" />
+    <Property Type="String" Name="EndHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="EndMinuteValue" Nullable="true" />
+    <Property Type="String" Name="EndMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndMinuteType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="StartCheckInHourID" Nullable="true" />
+    <Property Type="Int32" Name="StartCheckInHourValue" Nullable="true" />
+    <Property Type="String" Name="StartCheckInHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartCheckInHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="StartCheckInMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="StartCheckInMinuteValue" Nullable="true" />
+    <Property Type="String" Name="StartCheckInMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartCheckInMinuteType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndCheckInHourID" Nullable="true" />
+    <Property Type="Int32" Name="EndCheckInHourValue" Nullable="true" />
+    <Property Type="String" Name="EndCheckInHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndCheckInHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndCheckInMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="EndCheckInMinuteValue" Nullable="true" />
+    <Property Type="String" Name="EndCheckInMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndCheckInMinuteType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="StartCheckOutHourID" Nullable="true" />
+    <Property Type="Int32" Name="StartCheckOutHourValue" Nullable="true" />
+    <Property Type="String" Name="StartCheckOutHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartCheckOutHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="StartCheckOutMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="StartCheckOutMinuteValue" Nullable="true" />
+    <Property Type="String" Name="StartCheckOutMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartCheckOutMinuteType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndCheckOutHourID" Nullable="true" />
+    <Property Type="Int32" Name="EndCheckOutHourValue" Nullable="true" />
+    <Property Type="String" Name="EndCheckOutHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndCheckOutHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndCheckOutMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="EndCheckOutMinuteValue" Nullable="true" />
+    <Property Type="String" Name="EndCheckOutMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndCheckOutMinuteType" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="Ins_Shift_CreateTimeRestConfig_Result">
+    <Property Type="Int32" Name="ShiftID" Nullable="false" />
+    <Property Type="Int32" Name="StartHourID" Nullable="true" />
+    <Property Type="Int32" Name="StartHourValue" Nullable="true" />
+    <Property Type="String" Name="StartHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="StartMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="StartMinuteValue" Nullable="true" />
+    <Property Type="String" Name="StartMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="StartMinuteType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndHourID" Nullable="true" />
+    <Property Type="Int32" Name="EndHourValue" Nullable="true" />
+    <Property Type="String" Name="EndHourName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndHourType" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EndMinuteID" Nullable="true" />
+    <Property Type="Int32" Name="EndMinuteValue" Nullable="true" />
+    <Property Type="String" Name="EndMinuteName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="EndMinuteType" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="Ins_Shift_Get_Status_Clock_In_Out_Shift_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ShiftAssignmentID" Nullable="false" />
+    <Property Type="Int32" Name="PositionID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Ins_Shift_GetTimekeeper_logLastest_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="LogTime" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ClockType" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeShiftID" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeAccountMapID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_ShiftAssignment_Branch_Create_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BranchID" Nullable="false" />
+    <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_ShiftAssignment_Department_Create_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="false" />
+    <Property Type="String" Name="DepartmentName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Color" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_ShiftAssignment_Position_Create_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PositionID" Nullable="false" />
+    <Property Type="String" Name="PositionName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Color" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_CreatorInfo_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="username" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="identification" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="branch_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_GetTaskGroupsByTaskId_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="task_id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="index" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_Group_Create_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="index" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_List_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="icon" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="favored" Nullable="true" />
+    <Property Type="String" Name="view_id" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="is_archived" Nullable="true" />
+    <Property Type="Int32" Name="created_user_id" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="String" Name="default_deadline_time" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="default_start_time" Nullable="false" MaxLength="5" />
+    <Property Type="Int32" Name="task_done" Nullable="false" />
+    <Property Type="Int32" Name="task_count" Nullable="false" />
+    <Property Type="Int32" Name="task_overdue" Nullable="false" />
+    <Property Type="Int32" Name="user_count" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_ManagersByTask_Result">
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="department_id" Nullable="true" />
+    <Property Type="Int32" Name="branch_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_Sub_Create_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="ordinal_number" Nullable="true" />
+    <Property Type="Int32" Name="bundle_id" Nullable="true" />
+    <Property Type="Int32" Name="sort_index" Nullable="true" />
+    <Property Type="Int32" Name="private_sort_index" Nullable="true" />
+    <Property Type="String" Name="title" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="title_nosign" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="description" Nullable="true" />
+    <Property Type="String" Name="alias" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="shop_id" Nullable="true" />
+    <Property Type="Int32" Name="created_user_id" Nullable="true" />
+    <Property Type="DateTime" Name="deadline" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="start_date" Nullable="true" />
+    <Property Type="Int32" Name="duration" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_Sub_ListByBundle_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="ordinal_number" Nullable="true" />
+    <Property Type="Int32" Name="bundle_id" Nullable="true" />
+    <Property Type="Int32" Name="sort_index" Nullable="true" />
+    <Property Type="Int32" Name="private_sort_index" Nullable="true" />
+    <Property Type="String" Name="title" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="title_nosign" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="description" Nullable="true" />
+    <Property Type="String" Name="alias" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="shop_id" Nullable="true" />
+    <Property Type="Int32" Name="created_user_id" Nullable="true" />
+    <Property Type="DateTime" Name="deadline" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="start_date" Nullable="true" />
+    <Property Type="Int32" Name="duration" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_UsersByTask_Result">
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="department_id" Nullable="true" />
+    <Property Type="Int32" Name="branch_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_UsersByUser_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="identification" Nullable="true" />
+    <Property Type="Int32" Name="branch_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Time_GetList_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="Value" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Lang" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="IsHour" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Ins_User_GetDetail_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PhoneFull" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="AccountIsActive" Nullable="false" />
+    <Property Type="DateTime" Name="AccountCreatedAt" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="EmployeeAccountMapId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="String" Name="CompanyFullName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="UserIsActive" Nullable="false" />
+    <Property Type="String" Name="PasswordHash" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="IsNewUser" Nullable="false" />
+    <Property Type="Boolean" Name="NeedSetPassword" Nullable="false" />
+    <Property Type="DateTime" Name="UserCreatedAt" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeInfoId" Nullable="true" />
+    <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Gender" Nullable="true" />
+    <Property Type="String" Name="ContactAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Skype" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Facebook" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EmergencyName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EmergencyMobile" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmergencyLandline" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmergencyRelation" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmergencyAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Province" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="District" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Ward" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PermanentAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Hometown" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="CurrentAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="IdentityCard" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="IdentityCardCreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IdentityCardPlace" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PassportID" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="PassporCreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="PassporExp" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PassporPlace" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BankHolder" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="BankAccount" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BankName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="BankBranch" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TaxIdentification" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Ins_User_GetList_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="Role" Nullable="true" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Gender" Nullable="true" />
+  </ComplexType>
+</Schema>

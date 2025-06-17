@@ -1,0 +1,1959 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="About" xml:space="preserve">
+    <value>介绍</value>
+  </data>
+    <data name="AboutItem1" xml:space="preserve">
+    <value>每个+10项目将州的最大成员数增加到10。</value>
+  </data>
+    <data name="AboutItem2" xml:space="preserve">
+    <value>保质期：永久性。</value>
+  </data>
+    <data name="AboutItem3" xml:space="preserve">
+    <value>例如：州级别4最大成员数为50.购买1项+10最大成员数将为60。</value>
+  </data>
+    <data name="AcceptAward" xml:space="preserve">
+    <value>浏览奖励申请</value>
+  </data>
+    <data name="AcceptGuild" xml:space="preserve">
+    <value>请加入该州</value>
+  </data>
+    <data name="AcceptImgType" xml:space="preserve">
+    <value>只接受jpg，png，gif图片。</value>
+  </data>
+    <data name="AcceptRule" xml:space="preserve">
+    <value>យល់ព្រមតាមលក្ខខណ្ឌ</value>
+  </data>
+    <data name="AcceptRules" xml:space="preserve">
+    <value>请阅读并接受Win8的条款</value>
+  </data>
+    <data name="AccMTopError" xml:space="preserve">
+    <value>MTop帐户不正确。</value>
+  </data>
+    <data name="AccountFb" xml:space="preserve">
+    <value>FACEBOOK帐户</value>
+  </data>
+    <data name="AccountHasUpdatedBefore" xml:space="preserve">
+    <value>您的帐户已使用之前的信息进行了更新</value>
+  </data>
+    <data name="AccountNoExist" xml:space="preserve">
+    <value>帐户不存在</value>
+  </data>
+    <data name="AccountReceivedFriendInvalid" xml:space="preserve">
+    <value>收到邀请的帐户无效</value>
+  </data>
+    <data name="AccountRequestFriendInvalid" xml:space="preserve">
+    <value>发送邀请的帐户无效</value>
+  </data>
+    <data name="AccountUsed" xml:space="preserve">
+    <value>帐户已在使用中。 请选择其他名称</value>
+  </data>
+    <data name="AccountWeb" xml:space="preserve">
+    <value>网络帐户</value>
+  </data>
+    <data name="AccoutEnoughGold" xml:space="preserve">
+    <value>您的主帐户不够Win转移</value>
+  </data>
+    <data name="AccVnKashError" xml:space="preserve">
+    <value>VnKash帐户不正确。</value>
+  </data>
+    <data name="Agency" xml:space="preserve">
+    <value>经销商</value>
+  </data>
+    <data name="And" xml:space="preserve">
+    <value>和</value>
+  </data>
+    <data name="AssCoin" xml:space="preserve">
+    <value>赢得积累：</value>
+  </data>
+    <data name="Asset" xml:space="preserve">
+    <value>资产</value>
+  </data>
+    <data name="Avatar" xml:space="preserve">
+    <value>个人资料图片</value>
+  </data>
+    <data name="AwardActivityGuild" xml:space="preserve">
+    <value>社会活动奖励</value>
+  </data>
+    <data name="BackToTop" xml:space="preserve">
+    <value>ត្រលប់ទៅ</value>
+  </data>
+    <data name="BanNickNote" xml:space="preserve">
+    <value>您的帐户已锁定&lt;strong&gt; {0} &lt;/ strong&gt;天，从&lt;strong&gt; {1} &lt;/ strong&gt;到&lt;strong&gt; {2} &lt;/ strong&gt;。 原因：&lt;strong&gt; {3} &lt;/ strong&gt;。&lt;br/&gt;如有任何问题，请联系在线支持部门获取答案。</value>
+  </data>
+    <data name="BanNickShowPopup" xml:space="preserve">
+    <value>您的帐户已被锁定</value>
+  </data>
+    <data name="BigGuild" xml:space="preserve">
+    <value>戴邦</value>
+  </data>
+    <data name="Birthday" xml:space="preserve">
+    <value>出生日期：</value>
+  </data>
+    <data name="BirthdayInvalid" xml:space="preserve">
+    <value>出生日期无效</value>
+  </data>
+    <data name="BlackFriday" xml:space="preserve">
+    <value>黑色星期五活动</value>
+  </data>
+    <data name="BlockAccContactCS" xml:space="preserve">
+    <value>您的帐户已被锁定。 请联系客户服务中心</value>
+  </data>
+    <data name="BlockAccTransferTo" xml:space="preserve">
+    <value>您要转帐的帐户目前已被锁定。 请联系客户服务</value>
+  </data>
+    <data name="BlockComment" xml:space="preserve">
+    <value>你被禁止讨论。</value>
+  </data>
+    <data name="BlockTranferGold" xml:space="preserve">
+    <value>您的帐户已锁定为Win</value>
+  </data>
+    <data name="BongBong" xml:space="preserve">
+    <value>泡泡</value>
+  </data>
+    <data name="BuildingOffline" xml:space="preserve">
+    <value>总部离线</value>
+  </data>
+    <data name="ButtonDongY" xml:space="preserve">
+    <value>同意</value>
+  </data>
+    <data name="ButtonLogin" xml:space="preserve">
+    <value>注册</value>
+  </data>
+    <data name="ButtonTuChoi" xml:space="preserve">
+    <value>垃圾</value>
+  </data>
+    <data name="BuyGoldFail" xml:space="preserve">
+    <value>赢购买失败，请稍后再试</value>
+  </data>
+    <data name="BuySuccWithGold" xml:space="preserve">
+    <value>您已使用Win号码成功购买</value>
+  </data>
+    <data name="CanChangeNickNotRegMobile" xml:space="preserve">
+    <value>无法更改昵称 - 帐户未在移动设备上注册</value>
+  </data>
+    <data name="Captcha" xml:space="preserve">
+    <value>验证码</value>
+  </data>
+    <data name="CaptchaNotNull" xml:space="preserve">
+    <value>输入确认码</value>
+  </data>
+    <data name="Card" xml:space="preserve">
+    <value>刮刮卡</value>
+  </data>
+    <data name="CardInvalid" xml:space="preserve">
+    <value>卡信息无效，请重试...</value>
+  </data>
+    <data name="CardValue" xml:space="preserve">
+    <value>卡面值（美元）</value>
+  </data>
+    <data name="ChangeAvatar" xml:space="preserve">
+    <value>改变头像</value>
+  </data>
+    <data name="ChangePass" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+    <data name="ChangePassFail" xml:space="preserve">
+    <value>确认密码更改失败，请稍后再试！</value>
+  </data>
+    <data name="ChangePassSuccess" xml:space="preserve">
+    <value>成功更改密码，您可以使用新密码登录！</value>
+  </data>
+    <data name="ChangeXu" xml:space="preserve">
+    <value>ការផ្លាស់ប្តូរ</value>
+  </data>
+    <data name="Charater" xml:space="preserve">
+    <value>人物</value>
+  </data>
+    <data name="Chart" xml:space="preserve">
+    <value>图</value>
+  </data>
+    <data name="Chat" xml:space="preserve">
+    <value>和朋友聊天</value>
+  </data>
+    <data name="ChatAll" xml:space="preserve">
+    <value>世界</value>
+  </data>
+    <data name="CheckEmailOrderResetPassword" xml:space="preserve">
+    <value>请检查您的电子邮件以获取新密码</value>
+  </data>
+    <data name="ChoseCard" xml:space="preserve">
+    <value>卡片类型</value>
+  </data>
+    <data name="ChoseCardToExchange" xml:space="preserve">
+    <value>请选择要更改的卡类型</value>
+  </data>
+    <data name="ChoseCmtDel" xml:space="preserve">
+    <value>您需要选择要删除的评论。</value>
+  </data>
+    <data name="ChoseMemberGuild" xml:space="preserve">
+    <value>请先选择会员</value>
+  </data>
+    <data name="ChoseOnlyOneUser" xml:space="preserve">
+    <value>每个用户只能在Win转移列表中出现一次。</value>
+  </data>
+    <data name="ChoseType" xml:space="preserve">
+    <value>选择承运人</value>
+  </data>
+    <data name="Click" xml:space="preserve">
+    <value>请按确认按钮完成横幅上传</value>
+  </data>
+    <data name="CoinHistoryErrorConfirm" xml:space="preserve">
+    <value>ចង់ផ្ញើសំណើឆែកកាត?</value>
+  </data>
+    <data name="CoinHistoryErrorContent" xml:space="preserve">
+    <value>យើងបានទទួលសំណើរបស់អ្នក។ សូមរង់ចាំប្រព័ន្ធដំណើរការ។</value>
+  </data>
+    <data name="CoinHistoryErrorRequested" xml:space="preserve">
+    <value>សួរថា</value>
+  </data>
+    <data name="Colm2D" xml:space="preserve">
+    <value>2D列</value>
+  </data>
+    <data name="Comment" xml:space="preserve">
+    <value>评论</value>
+  </data>
+    <data name="ConfirmExclude" xml:space="preserve">
+    <value>你想开除吗？</value>
+  </data>
+    <data name="ConfirmPass" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+    <data name="ConsequenceDisplayNameNotCorrect" xml:space="preserve">
+    <value>违反命名方法的“显示名称”将暂时锁定，并需要更改新名称</value>
+  </data>
+    <data name="ContactCustomerCare" xml:space="preserve">
+    <value>请联系客户服务以获取帮助</value>
+  </data>
+    <data name="ContentIsNull" xml:space="preserve">
+    <value>找不到内容</value>
+  </data>
+    <data name="Coppyright" xml:space="preserve">
+    <value>COPYRIGHT©2018 Win8  - 服务条款 - 隐私权</value>
+  </data>
+    <data name="CreateAccount" xml:space="preserve">
+    <value>创建一个帐户</value>
+  </data>
+    <data name="CreateAccSucc" xml:space="preserve">
+    <value>创建一个成功的帐户</value>
+  </data>
+    <data name="CreateComment" xml:space="preserve">
+    <value>写作讨论</value>
+  </data>
+    <data name="CreateDate" xml:space="preserve">
+    <value>成立日期：</value>
+  </data>
+    <data name="CreateDay" xml:space="preserve">
+    <value>注册日期：</value>
+  </data>
+    <data name="CreateDeputyGuild" xml:space="preserve">
+    <value>国家副手</value>
+  </data>
+    <data name="CreateGuild" xml:space="preserve">
+    <value>注册组装</value>
+  </data>
+    <data name="CreateGuildPlay" xml:space="preserve">
+    <value>创建公会 - 在线卡</value>
+  </data>
+    <data name="CreatePassLv2" xml:space="preserve">
+    <value>创建2级密码失败</value>
+  </data>
+    <data name="CreateViFail" xml:space="preserve">
+    <value>创建电子钱包失败</value>
+  </data>
+    <data name="CurrentXu" xml:space="preserve">
+    <value>Win បច្ចុប្បន្ន</value>
+  </data>
+    <data name="DataNull" xml:space="preserve">
+    <value>请写规则</value>
+  </data>
+    <data name="DateCreate" xml:space="preserve">
+    <value>成立日期</value>
+  </data>
+    <data name="DateTo" xml:space="preserve">
+    <value>来吧</value>
+  </data>
+    <data name="DateWin" xml:space="preserve">
+    <value>胜利日</value>
+  </data>
+    <data name="DaysAllowKickUser" xml:space="preserve">
+    <value>当前日期不允许踢</value>
+  </data>
+    <data name="DealCancelSucc" xml:space="preserve">
+    <value>交易成功取消！</value>
+  </data>
+    <data name="DealFail" xml:space="preserve">
+    <value>交易失败</value>
+  </data>
+    <data name="DealFailTryAgain" xml:space="preserve">
+    <value>交易失败，请再试一次</value>
+  </data>
+    <data name="DealInvalid" xml:space="preserve">
+    <value>该交易无效</value>
+  </data>
+    <data name="DealSuccess" xml:space="preserve">
+    <value>交易成功！</value>
+  </data>
+    <data name="DelBannerSucc" xml:space="preserve">
+    <value>成功删除横幅。</value>
+  </data>
+    <data name="DelCmt" xml:space="preserve">
+    <value>删除评论</value>
+  </data>
+    <data name="DelectSuccess" xml:space="preserve">
+    <value>成功删除横幅</value>
+  </data>
+    <data name="Delete" xml:space="preserve">
+    <value>明确</value>
+  </data>
+    <data name="DeleteComment" xml:space="preserve">
+    <value>删除讨论</value>
+  </data>
+    <data name="DepositExchange" xml:space="preserve">
+    <value>充值卡 - 兑换奖励</value>
+  </data>
+    <data name="DepositGoldFailReason" xml:space="preserve">
+    <value>Win load因失败而失败</value>
+  </data>
+    <data name="DepositNganLuong" xml:space="preserve">
+    <value>加载获胜金额</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>您已成功加载</value>
+  </data>
+    <data name="Detail" xml:space="preserve">
+    <value>详细</value>
+  </data>
+    <data name="DialogKeyboard" xml:space="preserve">
+    <value>虚拟键盘</value>
+  </data>
+    <data name="DieuKhoan" xml:space="preserve">
+    <value>使用条款</value>
+  </data>
+    <data name="DisplayNameComplex" xml:space="preserve">
+    <value>名称显示至少6个字符，最多32个字符，仅包含来自a-z，A-Z和0-9的字母。</value>
+  </data>
+    <data name="DisplayNameError" xml:space="preserve">
+    <value>显示名称不能与用户名相同</value>
+  </data>
+    <data name="DisplayNameExist" xml:space="preserve">
+    <value>显示名称已存在</value>
+  </data>
+    <data name="DisplayNameInvalid" xml:space="preserve">
+    <value>显示名称无效</value>
+  </data>
+    <data name="DisplayNameLengthMin6" xml:space="preserve">
+    <value>“显示名称”必须至少为6个字符</value>
+  </data>
+    <data name="DisplayNameNotBadWord" xml:space="preserve">
+    <value>不要使用冒犯性，霸道和激动的话语</value>
+  </data>
+    <data name="DisplayNameNotNull" xml:space="preserve">
+    <value>请为自己选择“显示名称”</value>
+  </data>
+    <data name="DisplayNameRule" xml:space="preserve">
+    <value>昵称长度至少为3到15个字符，仅包含来自a-z，A-Z和0的字符</value>
+  </data>
+    <data name="DoiGold" xml:space="preserve">
+    <value>改变胜利</value>
+  </data>
+    <data name="DoiThuong" xml:space="preserve">
+    <value>改变奖金 - 礼物的积极变化</value>
+  </data>
+    <data name="DontExchangeSMS" xml:space="preserve">
+    <value>因为正在使用SMS密码而无法更改</value>
+  </data>
+    <data name="EditProfile" xml:space="preserve">
+    <value>编辑信息</value>
+  </data>
+    <data name="EmailExists" xml:space="preserve">
+    <value>此电子邮件已在使用中</value>
+  </data>
+    <data name="EmailNotExists" xml:space="preserve">
+    <value>电子邮件不存在</value>
+  </data>
+    <data name="EmailWrongFormat" xml:space="preserve">
+    <value>电邮输入的格式不正确</value>
+  </data>
+    <data name="ErrorCmt" xml:space="preserve">
+    <value>错误评论</value>
+  </data>
+    <data name="ErrorDeposit" xml:space="preserve">
+    <value>加载Win时出错。 请联系客户服务以获取支持！</value>
+  </data>
+    <data name="ErrorInfo" xml:space="preserve">
+    <value>无法验证信息</value>
+  </data>
+    <data name="ErrorProcess" xml:space="preserve">
+    <value>处理过程中出错。</value>
+  </data>
+    <data name="ErrorSytem" xml:space="preserve">
+    <value>系统错误。 请联系管理员</value>
+  </data>
+    <data name="EventPage" xml:space="preserve">
+    <value>活动</value>
+  </data>
+    <data name="Exchange" xml:space="preserve">
+    <value>改变奖金</value>
+  </data>
+    <data name="ExchangeCardSucc1" xml:space="preserve">
+    <value>您已成功更改了卡&lt;/ br&gt;</value>
+  </data>
+    <data name="ExchangeCardSucc2" xml:space="preserve">
+    <value>序列号：&lt;strong style ='color：green'&gt;</value>
+  </data>
+    <data name="ExchangeCardSucc3" xml:space="preserve">
+    <value>&lt;/ br&gt;卡片代码：&lt;strong style ='color：green'&gt;</value>
+  </data>
+    <data name="ExchangeCardSucc4" xml:space="preserve">
+    <value>&lt;/ br&gt;您可以转到邮箱查看卡片代码。</value>
+  </data>
+    <data name="ExchangeItem" xml:space="preserve">
+    <value>祝贺您成功更换商品：</value>
+  </data>
+    <data name="ExchangeNow" xml:space="preserve">
+    <value>现在改变</value>
+  </data>
+    <data name="ExchangeSuccess" xml:space="preserve">
+    <value>您已成功更改了卡片序列：</value>
+  </data>
+    <data name="ExchangeSuccess1" xml:space="preserve">
+    <value>单击卡代码的内容以保留3秒钟以执行字符复制。</value>
+  </data>
+    <data name="ExchangeSuccess2" xml:space="preserve">
+    <value>成功了!!!</value>
+  </data>
+    <data name="ExpNo" xml:space="preserve">
+    <value>累计积分：</value>
+  </data>
+    <data name="ExpPoint" xml:space="preserve">
+    <value>经验值</value>
+  </data>
+    <data name="FacebookFooterCopyright" xml:space="preserve">
+    <value>版权所有©2018 Win8柬埔寨最好的游戏社</value>
+  </data>
+    <data name="FacebookFooterEmail" xml:space="preserve">
+    <value>电子邮件：hotro.wingclub@gmail.com</value>
+  </data>
+    <data name="FacebookFooterHotLine" xml:space="preserve">
+    <value>热线：{0}</value>
+  </data>
+    <data name="FacebookHeaderDoi" xml:space="preserve">
+    <value>兑换奖励</value>
+  </data>
+    <data name="FacebookHeaderHuongDan" xml:space="preserve">
+    <value>引导</value>
+  </data>
+    <data name="FacebookLayoutOgDescription" xml:space="preserve">
+    <value>Webgame在线游戏 - 在线游戏爱好者协会</value>
+  </data>
+    <data name="FacebookLayoutOgTitle" xml:space="preserve">
+    <value>在线玩牌，免费在线玩牌</value>
+  </data>
+    <data name="FacebookLayoutTitle" xml:space="preserve">
+    <value>在线玩牌，免费在线玩牌</value>
+  </data>
+    <data name="FacebookLayoutTwitterDescription" xml:space="preserve">
+    <value>Webgame在线游戏 - 在线游戏爱好者协会</value>
+  </data>
+    <data name="FacebookLayoutTwitterTitle" xml:space="preserve">
+    <value>在线玩牌，免费在线玩牌</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>失败</value>
+  </data>
+    <data name="FailMaxUserTranferGold" xml:space="preserve">
+    <value>Win开关失败。 当天{0}中的最大Win用户数为：{1} Win。</value>
+  </data>
+    <data name="FailTimesToTranfer" xml:space="preserve">
+    <value>由于Win公会转移结束，转移到玩家{0}的Win失败</value>
+  </data>
+    <data name="FailTranferGoldTryAgain" xml:space="preserve">
+    <value>Win开关失败。 请稍后再试</value>
+  </data>
+    <data name="FailUpdateInfo" xml:space="preserve">
+    <value>更新信息失败。 请稍后再试。</value>
+  </data>
+    <data name="FailUserPlayingGame" xml:space="preserve">
+    <value>将Win切换到播放器{0}失败，因为用户正在玩游戏</value>
+  </data>
+    <data name="FAQs" xml:space="preserve">
+    <value>常见问题解答</value>
+  </data>
+    <data name="FAQsMobileEmty" xml:space="preserve">
+    <value>信息正在更新</value>
+  </data>
+    <data name="FAQsMobileLink" xml:space="preserve">
+    <value>路线</value>
+  </data>
+    <data name="FeatureMaintance" xml:space="preserve">
+    <value>目前的功能正在维持。 请再试一次</value>
+  </data>
+    <data name="Female" xml:space="preserve">
+    <value>女性</value>
+  </data>
+    <data name="FileCheck" xml:space="preserve">
+    <value>仅以jpg，png，gif格式上传照片。</value>
+  </data>
+    <data name="FinalAward" xml:space="preserve">
+    <value>សង្ខេបនិងរង្វាន់</value>
+  </data>
+    <data name="Finance" xml:space="preserve">
+    <value>国家财政</value>
+  </data>
+    <data name="Footer" xml:space="preserve">
+    <value>Win8 © 2018</value>
+  </data>
+    <data name="FormRegisterAccount" xml:space="preserve">
+    <value>使用帐户注册</value>
+  </data>
+    <data name="FormRegisterTitle" xml:space="preserve">
+    <value>直接注册</value>
+  </data>
+    <data name="Forum" xml:space="preserve">
+    <value>平台</value>
+  </data>
+    <data name="From" xml:space="preserve">
+    <value>从</value>
+  </data>
+    <data name="GameBai" xml:space="preserve">
+    <value>纸牌游戏</value>
+  </data>
+    <data name="Gender" xml:space="preserve">
+    <value>性别：</value>
+  </data>
+    <data name="GeneralGuild" xml:space="preserve">
+    <value>国家大师综合</value>
+  </data>
+    <data name="GiftToReaching" xml:space="preserve">
+    <value>ពិន្ទុរង្វាន់មាស:</value>
+  </data>
+    <data name="Gold" xml:space="preserve">
+    <value>Win</value>
+  </data>
+    <data name="GoldAccuDay" xml:space="preserve">
+    <value>赢得积累/天：</value>
+  </data>
+    <data name="GoldAccuMount" xml:space="preserve">
+    <value>赢得积累/月：</value>
+  </data>
+    <data name="GoldBorrow" xml:space="preserve">
+    <value>赢得申请人</value>
+  </data>
+    <data name="GoldGiftLevelUp" xml:space="preserve">
+    <value>ពានរង្វាន់មាសកម្រិត VIP</value>
+  </data>
+    <data name="GoldGiftLogin" xml:space="preserve">
+    <value>កំណត់ត្រាមាសមានទេពកោសល្យ</value>
+  </data>
+    <data name="GoldGiftVip" xml:space="preserve">
+    <value>មាសបង្ហាញពីថ្ងៃកំណើត VIP</value>
+  </data>
+    <data name="GoldGuild" xml:space="preserve">
+    <value>赢得公会</value>
+  </data>
+    <data name="GoldInvalidToTranfer" xml:space="preserve">
+    <value>传递给用户{0}时，Win编号无效。</value>
+  </data>
+    <data name="GoldNumberInterger" xml:space="preserve">
+    <value>获胜数必须是整数</value>
+  </data>
+    <data name="GoldOwner" xml:space="preserve">
+    <value>赢得主持州</value>
+  </data>
+    <data name="Guide" xml:space="preserve">
+    <value>ការណែនាំ</value>
+  </data>
+    <data name="GuidePlay" xml:space="preserve">
+    <value>玩游戏的说明</value>
+  </data>
+    <data name="GuidePlayGameLink" xml:space="preserve">
+    <value>路线</value>
+  </data>
+    <data name="Guild" xml:space="preserve">
+    <value>砰</value>
+  </data>
+    <data name="GuildAccumulationMemberInfo" xml:space="preserve">
+    <value>ព័ត៌មានសមាជិក</value>
+  </data>
+    <data name="GuildAccumulationPoint" xml:space="preserve">
+    <value>ចំណុចរួមចំណែក</value>
+  </data>
+    <data name="GuildCoinWillReceive" xml:space="preserve">
+    <value>Win រំពឹងថានឹងទទួលបាន</value>
+  </data>
+    <data name="GuildCommentDisable" xml:space="preserve">
+    <value>ការហាមឃាត់ការអត្ថាធិប្បាយ</value>
+  </data>
+    <data name="GuildCommentDisableAsk" xml:space="preserve">
+    <value>តើអ្នកចង់ហាមអ្នកប្រើនេះទេ?</value>
+  </data>
+    <data name="GuildCommentDisabled" xml:space="preserve">
+    <value>ការហាមឃាត់</value>
+  </data>
+    <data name="GuildCreate" xml:space="preserve">
+    <value>បង្កើតក្រុមធំ</value>
+  </data>
+    <data name="GuildInfoAccumulationByLevel" xml:space="preserve">
+    <value>រួមចំណែកព័ត៌មានតាមកម្រិត</value>
+  </data>
+    <data name="GuildInputToSearch" xml:space="preserve">
+    <value>បញ្ចូលឈ្មោះរបស់រដ្ឋដើម្បីស្វែងរក …</value>
+  </data>
+    <data name="GuildInviteLink" xml:space="preserve">
+    <value>ភ្ជាប់សមាជិកអញ្ជើញ</value>
+  </data>
+    <data name="GuildKickMember" xml:space="preserve">
+    <value>ប្រភេទសមាជិកពីក្រុមធំ</value>
+  </data>
+    <data name="GuildKickMemberAsk" xml:space="preserve">
+    <value>តើអ្នកចង់ទាត់អ្នកប្រើចេញពីរដ្ឋមែនទេ? </value>
+  </data>
+    <data name="GuildListUserReceiveCoin" xml:space="preserve">
+    <value> បញ្ជីសមាជិកបានទទួល</value>
+  </data>
+    <data name="GuildListUserWaiting" xml:space="preserve">
+    <value>បញ្ជីឈ្មោះអ្នកសូមចូលរួមក្នុងក្រុម</value>
+  </data>
+    <data name="GuildMemberCount" xml:space="preserve">
+    <value>成员</value>
+  </data>
+    <data name="GuildMemberLeave" xml:space="preserve">
+    <value>你想离开这个州吗？</value>
+  </data>
+    <data name="GuildMemberList" xml:space="preserve">
+    <value>公会成员名单</value>
+  </data>
+    <data name="GuildMemberRemoveAsk" xml:space="preserve">
+    <value>តើអ្នកពិតជាចង់លុបសមាជិកនេះមែនទេ?</value>
+  </data>
+    <data name="GuildMemberTopPayment" xml:space="preserve">
+    <value>សមាជិកជាន់ខ្ពស់ផ្ទុកកាត</value>
+  </data>
+    <data name="GuildMyGuild" xml:space="preserve">
+    <value>គេហទំព័ររបស់ខ្ញុំ</value>
+  </data>
+    <data name="GuildName" xml:space="preserve">
+    <value>公会</value>
+  </data>
+    <data name="GuildNewComment" xml:space="preserve">
+    <value>注释。</value>
+  </data>
+    <data name="GuildNewTitle" xml:space="preserve">
+    <value>新闻与活动</value>
+  </data>
+    <data name="GuildNewView" xml:space="preserve">
+    <value>观点。</value>
+  </data>
+    <data name="GuildNotExist" xml:space="preserve">
+    <value>没有国家</value>
+  </data>
+    <data name="GuildNotify" xml:space="preserve">
+    <value>សេចក្តីជូនដំណឹង</value>
+  </data>
+    <data name="GuildNotifyCreate" xml:space="preserve">
+    <value>បង្កើតការជូនដំណឹង</value>
+  </data>
+    <data name="GuildNotifyDeleteAsk" xml:space="preserve">
+    <value>តើអ្នកប្រាកដថាអ្នកចង់លុបសារដែលបានជ្រើសរើសទេ?</value>
+  </data>
+    <data name="GuildNotifyList" xml:space="preserve">
+    <value>បញ្ជីសេចក្តីជូនដំណឹងនៅក្នុងរដ្ឋ</value>
+  </data>
+    <data name="GuildOutAsk" xml:space="preserve">
+    <value>តើអ្នកចង់ចាកចេញពីរដ្ឋមែនទេ?</value>
+  </data>
+    <data name="GuildOwner" xml:space="preserve">
+    <value>国家主人</value>
+  </data>
+    <data name="GuildPolicy" xml:space="preserve">
+    <value>គោលនយោបាយសមាគម</value>
+  </data>
+    <data name="GuildRevenueInfo" xml:space="preserve">
+    <value>ព័ត៌មានលក់</value>
+  </data>
+    <data name="GuildSetting" xml:space="preserve">
+    <value>គ្រប់គ្រងរដ្ឋ</value>
+  </data>
+    <data name="GuildTop" xml:space="preserve">
+    <value>រដ្ឋសភាកំពូល</value>
+  </data>
+    <data name="GuildTopCreateNew" xml:space="preserve">
+    <value>Bang ថ្មី</value>
+  </data>
+    <data name="GuildTopMemberAccumulation" xml:space="preserve">
+    <value>ស្ថិតិកាក់ដែលបានផ្តល់ដោយសមាជិក</value>
+  </data>
+    <data name="GuildTopRich" xml:space="preserve">
+    <value>កំពូលនៃរដ្ឋ</value>
+  </data>
+    <data name="GuildTopSuggest" xml:space="preserve">
+    <value>សង្គមបានស្នើ</value>
+  </data>
+    <data name="GuildTopVip" xml:space="preserve">
+    <value>最高成员月</value>
+  </data>
+    <data name="GuildTopVipPoint" xml:space="preserve">
+    <value>TOP PACKED THE LEVEL</value>
+  </data>
+    <data name="GuildTotalAccumulation" xml:space="preserve">
+    <value>សង្គមបានស្នើ
+កំពូលសមាជិកប្រចាំខែ</value>
+  </data>
+    <data name="GuildUpdateFanpage" xml:space="preserve">
+    <value>តើអ្នកប្រាកដជាចង់ធ្វើបច្ចុប្បន្នភាព LinkFanpage មែនទេ?</value>
+  </data>
+    <data name="GuildUpdateFanpageError" xml:space="preserve">
+    <value>Link Fanpage មិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="Have" xml:space="preserve">
+    <value>有</value>
+  </data>
+    <data name="HistoryCoin" xml:space="preserve">
+    <value>赢得历史</value>
+  </data>
+    <data name="HistoryCoinNote" xml:space="preserve">
+    <value>ចំណាំ</value>
+  </data>
+    <data name="HistoryCoinTime" xml:space="preserve">
+    <value>ពេលវេលា</value>
+  </data>
+    <data name="HistoryJackpot" xml:space="preserve">
+    <value>接收JackPot的历史</value>
+  </data>
+    <data name="HistoryMiniBossHopQua" xml:space="preserve">
+    <value>ប្រវត្តិសាស្រ្តប៉ះប្រអប់អំណោយ</value>
+  </data>
+    <data name="HistoryMiniBossNhan" xml:space="preserve">
+    <value>ទទួលបានរង្វាន់</value>
+  </data>
+    <data name="HistoryMissionBanCaIncomplete" xml:space="preserve">
+    <value>មិនបានបញ្ចប់</value>
+  </data>
+    <data name="HistoryMissionBanCaProcessing" xml:space="preserve">
+    <value>កំពុងដំណើរការ</value>
+  </data>
+    <data name="HistoryMoney" xml:space="preserve">
+    <value>ប្រវត្តិរបស់ប្រាក់</value>
+  </data>
+    <data name="HistoryMoneyError" xml:space="preserve">
+    <value>ប្រវត្តិសាស្រ្តនៃព្រះគម្ពីរ</value>
+  </data>
+    <data name="HistoryNL" xml:space="preserve">
+    <value>Ngan Luong的历史</value>
+  </data>
+    <data name="HistoryTranferGold" xml:space="preserve">
+    <value>赢得转会历史</value>
+  </data>
+    <data name="HistoryXu" xml:space="preserve">
+    <value>赢得历史</value>
+  </data>
+    <data name="Hobpy" xml:space="preserve">
+    <value>爱好：</value>
+  </data>
+    <data name="HomePage" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+    <data name="HowToGetStar" xml:space="preserve">
+    <value>1.我怎么得到它？</value>
+  </data>
+    <data name="HowToGetStarAnswer" xml:space="preserve">
+    <value>这很简单，如果你赢了，只需加入纸牌游戏（XT，Buzz，TLMN，BTC，Shield，Storm，Lie），系统收取5％的游戏桌费，1％的公会费 ，系统如何自动转移15％的剩余Win。</value>
+  </data>
+    <data name="HowToUseMTOP" xml:space="preserve">
+    <value>使用MTOP的说明</value>
+  </data>
+    <data name="IdCardsHasNotSpecialChar" xml:space="preserve">
+    <value>身份证不能包含特殊字符</value>
+  </data>
+    <data name="IdCardsIsEmpty" xml:space="preserve">
+    <value>身份证不能为空白</value>
+  </data>
+    <data name="IdCardsMustNumber" xml:space="preserve">
+    <value>身份证必须是数字字符</value>
+  </data>
+    <data name="IdNumberLength" xml:space="preserve">
+    <value>身份证9  - &gt; 12位数</value>
+  </data>
+    <data name="IdReasonRemoveMoney" xml:space="preserve">
+    <value>原因ID除了玩家下注时获胜</value>
+  </data>
+    <data name="ImgSize" xml:space="preserve">
+    <value>文件大小&lt;= 500Kb。</value>
+  </data>
+    <data name="InfoCardInvalid" xml:space="preserve">
+    <value>卡信息无效</value>
+  </data>
+    <data name="InfoInvalid" xml:space="preserve">
+    <value>信息无效！</value>
+  </data>
+    <data name="Infor" xml:space="preserve">
+    <value>信息</value>
+  </data>
+    <data name="InputAccBaoKim" xml:space="preserve">
+    <value>请输入宝金账号</value>
+  </data>
+    <data name="InputAccMTop" xml:space="preserve">
+    <value>请输入一个MTop帐户</value>
+  </data>
+    <data name="InputAccReceive" xml:space="preserve">
+    <value>请输入Win帐户代码</value>
+  </data>
+    <data name="InputAccTransferTo" xml:space="preserve">
+    <value>请输入您的赢取帐户</value>
+  </data>
+    <data name="InputAccVnKash" xml:space="preserve">
+    <value>请输入VnKash帐户。</value>
+  </data>
+    <data name="InputCapcha" xml:space="preserve">
+    <value>安全码......</value>
+  </data>
+    <data name="InputCmt" xml:space="preserve">
+    <value>输入讨论内容。</value>
+  </data>
+    <data name="InputConfirmPassWallet" xml:space="preserve">
+    <value>确认密码等级2 ..</value>
+  </data>
+    <data name="InputDisplayname" xml:space="preserve">
+    <value>输入显示名称。</value>
+  </data>
+    <data name="InputFullName" xml:space="preserve">
+    <value>输入您的全名。</value>
+  </data>
+    <data name="InputGold" xml:space="preserve">
+    <value>输入胜利数...</value>
+  </data>
+    <data name="InputIdNumber" xml:space="preserve">
+    <value>输入您的身份证。</value>
+  </data>
+    <data name="InputIDOrUsername" xml:space="preserve">
+    <value>输入您的帐户代码或用户名。</value>
+  </data>
+    <data name="InputMessage" xml:space="preserve">
+    <value>请输入消息。</value>
+  </data>
+    <data name="InputNewPassWallet" xml:space="preserve">
+    <value>新的2级密码......</value>
+  </data>
+    <data name="InputNickName" xml:space="preserve">
+    <value>请输入您的用户名</value>
+  </data>
+    <data name="InputNote" xml:space="preserve">
+    <value>备注......</value>
+  </data>
+    <data name="InputPassWallet" xml:space="preserve">
+    <value>2级密码......</value>
+  </data>
+    <data name="InputPhoneRequire" xml:space="preserve">
+    <value>进入手机。</value>
+  </data>
+    <data name="InputPinCard" xml:space="preserve">
+    <value>输入卡号...</value>
+  </data>
+    <data name="InputRuleGuild" xml:space="preserve">
+    <value>请输入规则。</value>
+  </data>
+    <data name="InputSeri" xml:space="preserve">
+    <value>输入序列号......</value>
+  </data>
+    <data name="InputSlogan" xml:space="preserve">
+    <value>请输入一个口号。</value>
+  </data>
+    <data name="Instruction" xml:space="preserve">
+    <value>路线</value>
+  </data>
+    <data name="Introduce" xml:space="preserve">
+    <value>关于你自己：</value>
+  </data>
+    <data name="IntroItem" xml:space="preserve">
+    <value>ធាតុសៀវភៅដៃ</value>
+  </data>
+    <data name="IntroUserVip" xml:space="preserve">
+    <value>អ្នកប្រើ VIP មានឥទ្ធិពលនិងរួមចំណែកយ៉ាងច្រើនដល់សហគមន៍ ABCnet ។ ដោយហេតុនេះអ្នកប្រើ VIP នឹងទទួលបានអត្ថប្រយោជន៍ជាច្រើនដូចជា: រង្វាន់មាសនៅពេលដែលកម្រិត VIP, ថ្ងៃកំណើតកាដូមាស, ការផ្តល់ជូនពិសេសនៅពេលដែលមានមាសតាមរយៈភ្នាក់ងារ …</value>
+  </data>
+    <data name="IntroWeb" xml:space="preserve">
+    <value>អំពី Win8</value>
+  </data>
+    <data name="IntroWeb1" xml:space="preserve">
+    <value>Win8 គឺជាគេហទំព័រ</value>
+  </data>
+    <data name="IntroWeb2" xml:space="preserve">
+    <value>ហ្គេមអនឡាញឈានមុខគេមួយ</value>
+  </data>
+    <data name="InvalidGold" xml:space="preserve">
+    <value>胜利号码无效</value>
+  </data>
+    <data name="InvalidSign" xml:space="preserve">
+    <value>签名错误</value>
+  </data>
+    <data name="InvalidUser" xml:space="preserve">
+    <value>玩家{0}不存在</value>
+  </data>
+    <data name="InviteFriend" xml:space="preserve">
+    <value>邀请更多朋友</value>
+  </data>
+    <data name="InviteFriend1" xml:space="preserve">
+    <value>朋友的邀请</value>
+  </data>
+    <data name="InviteFriend2" xml:space="preserve">
+    <value>អញ្ជើញមិត្តភក្តិច្រើនទៀត</value>
+  </data>
+    <data name="InviteGuild" xml:space="preserve">
+    <value>加入该州的邀请已发送给该会员。</value>
+  </data>
+    <data name="InviteJoinGuild" xml:space="preserve">
+    <value>邀请加入该州。</value>
+  </data>
+    <data name="Item" xml:space="preserve">
+    <value>项目</value>
+  </data>
+    <data name="JoinGuild" xml:space="preserve">
+    <value>加入州：</value>
+  </data>
+    <data name="KCard" xml:space="preserve">
+    <value>K改变了日期</value>
+  </data>
+    <data name="Keywords" xml:space="preserve">
+    <value>白族在线游戏，在线列表，在线玩游戏，离线游戏</value>
+  </data>
+    <data name="KickMember" xml:space="preserve">
+    <value>开始轰隆</value>
+  </data>
+    <data name="LeftGuildCurrent" xml:space="preserve">
+    <value>请先保留当前状态。</value>
+  </data>
+    <data name="LevelNo" xml:space="preserve">
+    <value>等级：</value>
+  </data>
+    <data name="LimitCmt10" xml:space="preserve">
+    <value>为了能够参与评论，你必须在游戏中玩至少10个小时。</value>
+  </data>
+    <data name="LimitTranferGold" xml:space="preserve">
+    <value>Win开关失败。 当天{0}的获胜者人数最多为：{1}获胜</value>
+  </data>
+    <data name="LimitTranferGoldInGuild" xml:space="preserve">
+    <value>您只能转换10,000到500,000 Win。</value>
+  </data>
+    <data name="LimitTranferUser" xml:space="preserve">
+    <value>您最多只能转移5人。</value>
+  </data>
+    <data name="Line" xml:space="preserve">
+    <value>糖</value>
+  </data>
+    <data name="Listdoithe" xml:space="preserve">
+    <value>卡片更改清单</value>
+  </data>
+    <data name="ListExchangeCard" xml:space="preserve">
+    <value>奖金变动清单</value>
+  </data>
+    <data name="ListGuild" xml:space="preserve">
+    <value>公会名单</value>
+  </data>
+    <data name="ListMemReGold" xml:space="preserve">
+    <value>Win成员的应用程序列表</value>
+  </data>
+    <data name="ListSubOwner" xml:space="preserve">
+    <value>部门名单</value>
+  </data>
+    <data name="LogicError" xml:space="preserve">
+    <value>逻辑错误</value>
+  </data>
+    <data name="Login" xml:space="preserve">
+    <value>使用Win8帐户登录</value>
+  </data>
+    <data name="LoginAgain" xml:space="preserve">
+    <value>请再次登录</value>
+  </data>
+    <data name="LoginAgainTodo" xml:space="preserve">
+    <value>您需要再次登录才能执行此功能。</value>
+  </data>
+    <data name="LoginAgainToTranferGold" xml:space="preserve">
+    <value>请再次登录以转移Win</value>
+  </data>
+    <data name="LoginBy" xml:space="preserve">
+    <value>登录：</value>
+  </data>
+    <data name="LoginError" xml:space="preserve">
+    <value>登录过程中发生错误。</value>
+  </data>
+    <data name="LoginToCmt" xml:space="preserve">
+    <value>您必须登录才能加入讨论。</value>
+  </data>
+    <data name="LoginToDepositMoney" xml:space="preserve">
+    <value>请登录以加载胜利</value>
+  </data>
+    <data name="LoginToDo" xml:space="preserve">
+    <value>请登录以执行此功能。</value>
+  </data>
+    <data name="LogOut" xml:space="preserve">
+    <value>退出</value>
+  </data>
+    <data name="MakeFriendAlreadyFriend" xml:space="preserve">
+    <value>已经结交朋友了</value>
+  </data>
+    <data name="MakeFriendAlreadyRequestFriend" xml:space="preserve">
+    <value>您已受到此用户的邀请</value>
+  </data>
+    <data name="MakeFriendCanNotMakeFriendYourSelf" xml:space="preserve">
+    <value>不能交朋友</value>
+  </data>
+    <data name="Male" xml:space="preserve">
+    <value>南</value>
+  </data>
+    <data name="ManageGuild" xml:space="preserve">
+    <value>管理BANG</value>
+  </data>
+    <data name="ManagementGuild" xml:space="preserve">
+    <value>国家管理</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>学生名单</value>
+  </data>
+    <data name="MessageContentRequired" xml:space="preserve">
+    <value>请输入消息</value>
+  </data>
+    <data name="MiniGameBVKC" xml:space="preserve">
+    <value>保护钻石</value>
+  </data>
+    <data name="MiniGameBvkcOrient" xml:space="preserve">
+    <value>用于肖像</value>
+  </data>
+    <data name="MiniGameChayTronGau" xml:space="preserve">
+    <value>逃离熊</value>
+  </data>
+    <data name="MiniGameChemTraiCay" xml:space="preserve">
+    <value>削减水果</value>
+  </data>
+    <data name="MiniGameChimMoVit" xml:space="preserve">
+    <value>鸟窥器</value>
+  </data>
+    <data name="MiniGameChonHuong" xml:space="preserve">
+    <value>选择正确的方向</value>
+  </data>
+    <data name="MiniGameCoTuong" xml:space="preserve">
+    <value>中国象棋</value>
+  </data>
+    <data name="MiniGameCoTuongEasy" xml:space="preserve">
+    <value>容易水平</value>
+  </data>
+    <data name="MiniGameCoTuongHard" xml:space="preserve">
+    <value>难度等级</value>
+  </data>
+    <data name="MiniGameCoTuongRedo" xml:space="preserve">
+    <value>去</value>
+  </data>
+    <data name="MiniGameCoTuongType" xml:space="preserve">
+    <value>棋盘风格</value>
+  </data>
+    <data name="MiniGameDoMin" xml:space="preserve">
+    <value>矿井探测</value>
+  </data>
+    <data name="MiniGameEchNhay" xml:space="preserve">
+    <value>跳蛙</value>
+  </data>
+    <data name="MiniGameGiuThanh" xml:space="preserve">
+    <value>保持城市</value>
+  </data>
+    <data name="MiniGameKeoBong" xml:space="preserve">
+    <value>世界棉花糖</value>
+  </data>
+    <data name="MiniGameLolita" xml:space="preserve">
+    <value>洛丽塔飞机</value>
+  </data>
+    <data name="MiniGameMario" xml:space="preserve">
+    <value>超级马里奥</value>
+  </data>
+    <data name="MiniGameMayBay" xml:space="preserve">
+    <value>战士</value>
+  </data>
+    <data name="MiniGameNhanhMat" xml:space="preserve">
+    <value>快速的眼睛</value>
+  </data>
+    <data name="MiniGameNhaySieuCao" xml:space="preserve">
+    <value>超级跳高</value>
+  </data>
+    <data name="MiniGameNoiDiem" xml:space="preserve">
+    <value>匹配相似点</value>
+  </data>
+    <data name="MiniGameNongTrai" xml:space="preserve">
+    <value>农场</value>
+  </data>
+    <data name="MiniGameRong" xml:space="preserve">
+    <value>龙儿和宝</value>
+  </data>
+    <data name="MiniGameSocNhay" xml:space="preserve">
+    <value>松鼠跳</value>
+  </data>
+    <data name="MiniGameTungTrung" xml:space="preserve">
+    <value>蛋卷</value>
+  </data>
+    <data name="MinLenghtUser" xml:space="preserve">
+    <value>ឈ្មោះអ្នកប្រើមានយ៉ាងតិច 3 តួអក្សររួមមានតួអក្សរពី a-z A-Z និង 0-9</value>
+  </data>
+    <data name="MobileCommentUserMustLogin" xml:space="preserve">
+    <value>您必须登录才能加入讨论。</value>
+  </data>
+    <data name="MobileCommentUserMustPlay" xml:space="preserve">
+    <value>为了能够参与评论，你必须在游戏中玩至少10个小时。</value>
+  </data>
+    <data name="MobileCommentUserSend" xml:space="preserve">
+    <value>发送</value>
+  </data>
+    <data name="MobileCommentUserTitle" xml:space="preserve">
+    <value>备注</value>
+  </data>
+    <data name="MobileCreateGuildbtn" xml:space="preserve">
+    <value>陶邦</value>
+  </data>
+    <data name="MobileCreateGuildRule" xml:space="preserve">
+    <value>请参阅创建公会的规则&gt;&gt;</value>
+  </data>
+    <data name="MobileGuildDetailChatTitle" xml:space="preserve">
+    <value>讨论</value>
+  </data>
+    <data name="MobileGuildDetailRuleFinish" xml:space="preserve">
+    <value>完</value>
+  </data>
+    <data name="MobileGuildDetailRuleTitle" xml:space="preserve">
+    <value>规则</value>
+  </data>
+    <data name="MobileGuildDetailTopMember" xml:space="preserve">
+    <value>热门成员</value>
+  </data>
+    <data name="MobileGuildDetailUserJoin" xml:space="preserve">
+    <value>用户加入</value>
+  </data>
+    <data name="MobileGuildDetailUserNull" xml:space="preserve">
+    <value>还没有会员申请</value>
+  </data>
+    <data name="MobileGuildMemberVipFromDay" xml:space="preserve">
+    <value>从一天开始</value>
+  </data>
+    <data name="MobileGuildMemberVipMember" xml:space="preserve">
+    <value>成员</value>
+  </data>
+    <data name="MobileGuildMemberVipPoint" xml:space="preserve">
+    <value>点</value>
+  </data>
+    <data name="MobileGuildMemberVipSearch" xml:space="preserve">
+    <value>见</value>
+  </data>
+    <data name="MobileGuildMemberVipTime" xml:space="preserve">
+    <value>时间</value>
+  </data>
+    <data name="MoneyMultipleOf" xml:space="preserve">
+    <value>胜利号码必须是倍数</value>
+  </data>
+    <data name="MoneyTranferInvalid" xml:space="preserve">
+    <value>胜利转移的数量无效。</value>
+  </data>
+    <data name="MoneyWin" xml:space="preserve">
+    <value>赢了</value>
+  </data>
+    <data name="More" xml:space="preserve">
+    <value>观看更多</value>
+  </data>
+    <data name="MostVibrant" xml:space="preserve">
+    <value>最好的</value>
+  </data>
+    <data name="MTK" xml:space="preserve">
+    <value>MTK</value>
+  </data>
+    <data name="MTKIsNotNull" xml:space="preserve">
+    <value>输入MTK或昵称......</value>
+  </data>
+    <data name="MustLogin1" xml:space="preserve">
+    <value>你需要</value>
+  </data>
+    <data name="MustLogin3" xml:space="preserve">
+    <value>新讨论。</value>
+  </data>
+    <data name="Name" xml:space="preserve">
+    <value>名称：</value>
+  </data>
+    <data name="NameGuild" xml:space="preserve">
+    <value>州名</value>
+  </data>
+    <data name="NameGuildMaxLenght" xml:space="preserve">
+    <value>程序集名称不超过30个字符。</value>
+  </data>
+    <data name="NameGuildNotEmpty" xml:space="preserve">
+    <value>程序集名称不能为空。</value>
+  </data>
+    <data name="NewEvent" xml:space="preserve">
+    <value>新事件</value>
+  </data>
+    <data name="NewGuild" xml:space="preserve">
+    <value>新状态</value>
+  </data>
+    <data name="NewMessage" xml:space="preserve">
+    <value>新邮件。</value>
+  </data>
+    <data name="NewPass" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+    <data name="NewPasswordSameOldPassword" xml:space="preserve">
+    <value>新密码和旧密码是相同的</value>
+  </data>
+    <data name="News" xml:space="preserve">
+    <value>NEWS</value>
+  </data>
+    <data name="NewsEvent" xml:space="preserve">
+    <value>ព័ត៌មាន - ព្រឹត្តិការណ៍</value>
+  </data>
+    <data name="NichnameEqual" xml:space="preserve">
+    <value>显示名称不能与用户名相同。</value>
+  </data>
+    <data name="Nick" xml:space="preserve">
+    <value>绰号</value>
+  </data>
+    <data name="NickMail" xml:space="preserve">
+    <value>尼克/电子邮件</value>
+  </data>
+    <data name="NickNameChangedBefore" xml:space="preserve">
+    <value>你之前改变了你的昵称</value>
+  </data>
+    <data name="NicknameContent" xml:space="preserve">
+    <value>用户名包含不允许的名称</value>
+  </data>
+    <data name="NickNameExist" xml:space="preserve">
+    <value>此用户名已被使用，请选择其他名称</value>
+  </data>
+    <data name="NickNameLeght" xml:space="preserve">
+    <value>用户名至少3个字符。</value>
+  </data>
+    <data name="NicknameNull" xml:space="preserve">
+    <value>用户名包含不允许的名称。</value>
+  </data>
+    <data name="NickNameRule" xml:space="preserve">
+    <value>昵称长度至少为3到15个字符，仅包含来自a-z，A-Z和0-9的字母。</value>
+  </data>
+    <data name="NickNameWrong" xml:space="preserve">
+    <value>用户名不正确</value>
+  </data>
+    <data name="NickOrPasswordIsWrong" xml:space="preserve">
+    <value>用户名或密码不正确</value>
+  </data>
+    <data name="No" xml:space="preserve">
+    <value>消除</value>
+  </data>
+    <data name="NoAllowEditArticle" xml:space="preserve">
+    <value>您无权编辑此文章！</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>没有数据</value>
+  </data>
+    <data name="NoEnoughGold" xml:space="preserve">
+    <value>赢取数字不足以转移。</value>
+  </data>
+    <data name="NoEnoughGoldToUser" xml:space="preserve">
+    <value>您没有足够的Win转移到玩家{0}。</value>
+  </data>
+    <data name="NoGuild" xml:space="preserve">
+    <value>你还没有加入州，不能转让Win Assembly</value>
+  </data>
+    <data name="NoLogin" xml:space="preserve">
+    <value>请勿登录</value>
+  </data>
+    <data name="NoRequestMakeFriend" xml:space="preserve">
+    <value>您目前没有朋友邀请</value>
+  </data>
+    <data name="NotAwarded" xml:space="preserve">
+    <value>尚未捐赠</value>
+  </data>
+    <data name="Note" xml:space="preserve">
+    <value>注意</value>
+  </data>
+    <data name="NotExchangeCard" xml:space="preserve">
+    <value>无法兑换奖励。 请联系客户服务中心</value>
+  </data>
+    <data name="NotExchangeFromMTop" xml:space="preserve">
+    <value>无法用MTop兑换奖励。 请联系客户服务中心</value>
+  </data>
+    <data name="NotExchangeFromVnKash" xml:space="preserve">
+    <value>无法使用VnKash兑换奖励。 请联系客户服务中心</value>
+  </data>
+    <data name="NotExitReward" xml:space="preserve">
+    <value>尚未申请获胜</value>
+  </data>
+    <data name="NotFindNewArticle" xml:space="preserve">
+    <value>没有找到介绍文章</value>
+  </data>
+    <data name="Notify" xml:space="preserve">
+    <value>通知</value>
+  </data>
+    <data name="NotifyError" xml:space="preserve">
+    <value>错误消息</value>
+  </data>
+    <data name="NotInGuild" xml:space="preserve">
+    <value>尚未加入该州</value>
+  </data>
+    <data name="NotTransfer" xml:space="preserve">
+    <value>您无权转让Win！</value>
+  </data>
+    <data name="NotTransferCoinCauseMaxReceived" xml:space="preserve">
+    <value>无法切换胜利，因为用户今天已收到{0} 胜利</value>
+  </data>
+    <data name="NotTransferForThisUser" xml:space="preserve">
+    <value>您无法将Win转移给此用户！</value>
+  </data>
+    <data name="NumberAccept" xml:space="preserve">
+    <value>评论数量</value>
+  </data>
+    <data name="NumberMember" xml:space="preserve">
+    <value>会员人数</value>
+  </data>
+    <data name="NumMember" xml:space="preserve">
+    <value>成员：</value>
+  </data>
+    <data name="OAuNewAcc" xml:space="preserve">
+    <value>新帐户</value>
+  </data>
+    <data name="OAuPlayerNotActive" xml:space="preserve">
+    <value>播放器无法激活</value>
+  </data>
+    <data name="OAuSecurityCode" xml:space="preserve">
+    <value>安全码</value>
+  </data>
+    <data name="OAuSMSCode" xml:space="preserve">
+    <value>短信安全代码</value>
+  </data>
+    <data name="OldPass" xml:space="preserve">
+    <value>旧密码</value>
+  </data>
+    <data name="OneVipPoint" xml:space="preserve">
+    <value>អ្នកត្រូវបានហាមឃាត់មិនឱ្យពិភាក្សា សំរាប់រាល់ 10,000 ដុង = 1 ពិន្ទុ VIP នៅពេលទៅដល់</value>
+  </data>
+    <data name="OnlineFree" xml:space="preserve">
+    <value>在线免费</value>
+  </data>
+    <data name="OnlyAdminChange" xml:space="preserve">
+    <value>只有管理员可以更改内容</value>
+  </data>
+    <data name="OutGameToTranferGold" xml:space="preserve">
+    <value>无法转移胜利。 你必须退出游戏</value>
+  </data>
+    <data name="OwnerReviewReward" xml:space="preserve">
+    <value>东道国批准奖励</value>
+  </data>
+    <data name="OwnerSub" xml:space="preserve">
+    <value>BANG VICE</value>
+  </data>
+    <data name="PageNoExist" xml:space="preserve">
+    <value>找不到任何页面</value>
+  </data>
+    <data name="PanNickForever" xml:space="preserve">
+    <value>您的帐户已永久锁定。 原因：&lt;strong&gt; {0} &lt;/ strong&gt;。&lt;br/&gt;如有任何疑问，请联系在线支持部门获取答案。</value>
+  </data>
+    <data name="PanNickForeverShowPopup" xml:space="preserve">
+    <value>您的帐户已永久锁定</value>
+  </data>
+    <data name="PassDifferent" xml:space="preserve">
+    <value>密码不一样</value>
+  </data>
+    <data name="PassLenghtMax" xml:space="preserve">
+    <value>密码必须是最大值</value>
+  </data>
+    <data name="PassLenghtMin" xml:space="preserve">
+    <value>密码必须至少为</value>
+  </data>
+    <data name="PassMinLenght" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់ត្រូវមានយ៉ាងតិច 6 តួ</value>
+  </data>
+    <data name="PassNewWeak" xml:space="preserve">
+    <value>新密码太短</value>
+  </data>
+    <data name="PassOldWrong" xml:space="preserve">
+    <value>旧密码不正确。 如果您忘记密码，请联系支持部门。</value>
+  </data>
+    <data name="PassRule" xml:space="preserve">
+    <value>{0}至少{1}个字符..</value>
+  </data>
+    <data name="PassTooLong" xml:space="preserve">
+    <value>密码太长</value>
+  </data>
+    <data name="PassUnlockWrong" xml:space="preserve">
+    <value>密码不正确</value>
+  </data>
+    <data name="PassViWrong" xml:space="preserve">
+    <value>电子钱包密码不正确</value>
+  </data>
+    <data name="Password" xml:space="preserve">
+    <value>密码：</value>
+  </data>
+    <data name="PasswordIsEmpty" xml:space="preserve">
+    <value>尚未输入{0}</value>
+  </data>
+    <data name="PasswordNotNull" xml:space="preserve">
+    <value>输入密码</value>
+  </data>
+    <data name="Personal" xml:space="preserve">
+    <value>个人</value>
+  </data>
+    <data name="Personality" xml:space="preserve">
+    <value>个性：</value>
+  </data>
+    <data name="PhoneIsRequired" xml:space="preserve">
+    <value>手机不能空白</value>
+  </data>
+    <data name="PhoneLength" xml:space="preserve">
+    <value>电话号码是10或11位数</value>
+  </data>
+    <data name="PhoneMustNumber" xml:space="preserve">
+    <value>电话号码必须是数字</value>
+  </data>
+    <data name="PinCard" xml:space="preserve">
+    <value>卡号</value>
+  </data>
+    <data name="PlayCardOnline" xml:space="preserve">
+    <value>玩在线卡</value>
+  </data>
+    <data name="PlayerIsBlockedAcc" xml:space="preserve">
+    <value>该帐户被阻止</value>
+  </data>
+    <data name="PlayerUnBlockedAcc" xml:space="preserve">
+    <value>玩家不会被阻止帐户</value>
+  </data>
+    <data name="PlayFunny" xml:space="preserve">
+    <value>。 祝你玩得开心</value>
+  </data>
+    <data name="PlayGameMobile" xml:space="preserve">
+    <value>លេងហ្គេមទូរស័ព្ទ</value>
+  </data>
+    <data name="PointAccuDay" xml:space="preserve">
+    <value>累计积分/天：</value>
+  </data>
+    <data name="PointAccuMonth" xml:space="preserve">
+    <value>累计积分/月：</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>គោលនយោបាយ</value>
+  </data>
+    <data name="PolicyVip" xml:space="preserve">
+    <value>គោលនយោបាយ VIP</value>
+  </data>
+    <data name="PrescribeActivitie" xml:space="preserve">
+    <value>បទបញ្ជាប្រតិបត្តិការ</value>
+  </data>
+    <data name="Profile" xml:space="preserve">
+    <value>个人信息：</value>
+  </data>
+    <data name="ProfileBasic" xml:space="preserve">
+    <value>基本信息：</value>
+  </data>
+    <data name="QuantityInvalid" xml:space="preserve">
+    <value>数量无效</value>
+  </data>
+    <data name="Questions" xml:space="preserve">
+    <value>សំណួរដែលសួរជាញឹកញាប់</value>
+  </data>
+    <data name="RegisInMobileAccept" xml:space="preserve">
+    <value>我已阅读并接受Win8的条款</value>
+  </data>
+    <data name="RegisInMobileBtnRegis" xml:space="preserve">
+    <value>注册</value>
+  </data>
+    <data name="RegisInMobileConfirmPasswordPH" xml:space="preserve">
+    <value>重新输入密码</value>
+  </data>
+    <data name="RegisInMobileDisplaynamePH" xml:space="preserve">
+    <value>显示名称</value>
+  </data>
+    <data name="RegisInMobileimgCaptchaPH" xml:space="preserve">
+    <value>验证码</value>
+  </data>
+    <data name="RegisInMobilePassword" xml:space="preserve">
+    <value>密码必须至少为6个字符。</value>
+  </data>
+    <data name="RegisInMobilePasswordPH" xml:space="preserve">
+    <value>密码</value>
+  </data>
+    <data name="RegisInMobileUserName" xml:space="preserve">
+    <value>用户名至少为3个字符，仅包括a-z，A-Z和0-9中的字母。</value>
+  </data>
+    <data name="RegisInMobileUserNamePH" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+    <data name="RegisterSuccess" xml:space="preserve">
+    <value>成功注册</value>
+  </data>
+    <data name="Reply" xml:space="preserve">
+    <value>答案</value>
+  </data>
+    <data name="Report2Month" xml:space="preserve">
+    <value>您只能在2个月内进行统计</value>
+  </data>
+    <data name="ReportDay" xml:space="preserve">
+    <value>按天统计</value>
+  </data>
+    <data name="ReportMonth" xml:space="preserve">
+    <value>按月统计</value>
+  </data>
+    <data name="RequestFriendUnknownStatus" xml:space="preserve">
+    <value>未知的同意或拒绝状态</value>
+  </data>
+    <data name="ResFail" xml:space="preserve">
+    <value>注册失败。 请稍后再试。</value>
+  </data>
+    <data name="Responsibility" xml:space="preserve">
+    <value>គណនេយ្យភាព</value>
+  </data>
+    <data name="ResSucc" xml:space="preserve">
+    <value>អ្នកបានចុះឈ្មោះគណនីរបស់អ្នកដោយជោគជ័យ</value>
+  </data>
+    <data name="Reward" xml:space="preserve">
+    <value>申请奖励</value>
+  </data>
+    <data name="RightMemGuild" xml:space="preserve">
+    <value>អត្ថប្រយោជន៍របស់</value>
+  </data>
+    <data name="RightOwner" xml:space="preserve">
+    <value>អត្ថប្រយោជន៍របស់</value>
+  </data>
+    <data name="RuleblockAcc" xml:space="preserve">
+    <value>គោលការណ៍ចាក់សោគណនី</value>
+  </data>
+    <data name="RuleComment" xml:space="preserve">
+    <value>为了能够参与评论，你必须在游戏中玩至少10个小时。</value>
+  </data>
+    <data name="RuleCreateGuild" xml:space="preserve">
+    <value>建立条件</value>
+  </data>
+    <data name="SaveGold" xml:space="preserve">
+    <value>赢得积累</value>
+  </data>
+    <data name="SavePoint" xml:space="preserve">
+    <value>累积积分</value>
+  </data>
+    <data name="SaveSuccess" xml:space="preserve">
+    <value>保存成功。</value>
+  </data>
+    <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+    <data name="Search2Month" xml:space="preserve">
+    <value>*支持2个月内搜索</value>
+  </data>
+    <data name="SecurityCodeAccount" xml:space="preserve">
+    <value>输入帐户安全代码</value>
+  </data>
+    <data name="SecurityCodeSMS" xml:space="preserve">
+    <value>输入SMS安全代码</value>
+  </data>
+    <data name="SelectImage" xml:space="preserve">
+    <value>没有选择照片。</value>
+  </data>
+    <data name="SendComment" xml:space="preserve">
+    <value>发送讨论</value>
+  </data>
+    <data name="SendDiscuss" xml:space="preserve">
+    <value>发表讨论</value>
+  </data>
+    <data name="SendMail" xml:space="preserve">
+    <value>ផ្ញើអ៊ីមែល</value>
+  </data>
+    <data name="Seri" xml:space="preserve">
+    <value>序列号</value>
+  </data>
+    <data name="SessionLoginOut" xml:space="preserve">
+    <value>登录会话已过期。</value>
+  </data>
+    <data name="Show" xml:space="preserve">
+    <value>显示</value>
+  </data>
+    <data name="ShowchangeFromDate" xml:space="preserve">
+    <value>查看日内交易</value>
+  </data>
+    <data name="SizeChek" xml:space="preserve">
+    <value>图像容量必须&lt;= 500Kb</value>
+  </data>
+    <data name="Start" xml:space="preserve">
+    <value>明星：</value>
+  </data>
+    <data name="SubOwner" xml:space="preserve">
+    <value>制作副州 - 协会</value>
+  </data>
+    <data name="SubOwner1" xml:space="preserve">
+    <value>部门1</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+    <data name="SuccesUpdate" xml:space="preserve">
+    <value>成功更新！</value>
+  </data>
+    <data name="SuccesUpdateGiftXu" xml:space="preserve">
+    <value>成功更新。你获得{0}胜利</value>
+  </data>
+    <data name="Support" xml:space="preserve">
+    <value>ជំនួយ</value>
+  </data>
+    <data name="Support4room" xml:space="preserve">
+    <value>通过论坛支持</value>
+  </data>
+    <data name="SupportEmail" xml:space="preserve">
+    <value>电邮支援</value>
+  </data>
+    <data name="SupportOnline" xml:space="preserve">
+    <value>在线支持</value>
+  </data>
+    <data name="SystemMaintenance" xml:space="preserve">
+    <value>系统正在维护中，请重试。</value>
+  </data>
+    <data name="TGBongBong" xml:space="preserve">
+    <value>泡泡世界</value>
+  </data>
+    <data name="ThanksUserComeback" xml:space="preserve">
+    <value>感谢{0}回来。您将获得{1}您的帐户。第二天回来继续获奖！</value>
+  </data>
+    <data name="Thongbao" xml:space="preserve">
+    <value>警报！</value>
+  </data>
+    <data name="TienLen" xml:space="preserve">
+    <value>来吧</value>
+  </data>
+    <data name="TimeOutLogin" xml:space="preserve">
+    <value>时间到了。 请再次登录。</value>
+  </data>
+    <data name="TokenExpired" xml:space="preserve">
+    <value>登录会结束</value>
+  </data>
+    <data name="TokenNotFound" xml:space="preserve">
+    <value>找不到登录会</value>
+  </data>
+    <data name="TopDongGop" xml:space="preserve">
+    <value>顶级包装</value>
+  </data>
+    <data name="TopExpByMonth" xml:space="preserve">
+    <value>顶级经验</value>
+  </data>
+    <data name="TopGuildTitle" xml:space="preserve">
+    <value>顶级公会</value>
+  </data>
+    <data name="TopTichLuyTitle" xml:space="preserve">
+    <value>最重要的积累</value>
+  </data>
+    <data name="TopWin" xml:space="preserve">
+    <value>顶级胜利</value>
+  </data>
+    <data name="TotalAsset" xml:space="preserve">
+    <value>总资产</value>
+  </data>
+    <data name="TotalGold" xml:space="preserve">
+    <value>一般胜利</value>
+  </data>
+    <data name="TotalTimePlay" xml:space="preserve">
+    <value>总比赛时间：</value>
+  </data>
+    <data name="TouchAvatarOrderToUpdateInfo" xml:space="preserve">
+    <value>单击头像以更新您的帐户保护信息</value>
+  </data>
+    <data name="TranferCash" xml:space="preserve">
+    <value>将卡改为现金</value>
+  </data>
+    <data name="TranferGift" xml:space="preserve">
+    <value>礼品交换</value>
+  </data>
+    <data name="TranferGold" xml:space="preserve">
+    <value>转移胜利</value>
+  </data>
+    <data name="TranferGoldFail" xml:space="preserve">
+    <value>失败交易</value>
+  </data>
+    <data name="TranferGoldFromViSucc" xml:space="preserve">
+    <value>从钱包转移到成功的主帐户</value>
+  </data>
+    <data name="TranferGoldGuild" xml:space="preserve">
+    <value>转会赢公会</value>
+  </data>
+    <data name="TranferGoldOwner" xml:space="preserve">
+    <value>转移主机国家的胜利</value>
+  </data>
+    <data name="TranferGoldSucc" xml:space="preserve">
+    <value>转移成功胜利。 你被扣除了</value>
+  </data>
+    <data name="TranferGoldToUser" xml:space="preserve">
+    <value>您已成功将Win转移到播放器：{0}。</value>
+  </data>
+    <data name="TranferGoldToViSucc" xml:space="preserve">
+    <value>将胜利成功转移到钱包</value>
+  </data>
+    <data name="TranferInvalidUser" xml:space="preserve">
+    <value>将Win切换到播放器{0}失败，因为发件人不存在</value>
+  </data>
+    <data name="TranferNotGuildLeader" xml:space="preserve">
+    <value>用户{0}的切换Win失败，因为发件人不是主状态</value>
+  </data>
+    <data name="TranferWalletVnkash" xml:space="preserve">
+    <value>转移到VNKASH.COM</value>
+  </data>
+    <data name="TransferAccountReceivedInvalid" xml:space="preserve">
+    <value>收到的帐户无效</value>
+  </data>
+    <data name="TransferAccountSendInvalid" xml:space="preserve">
+    <value>帐户转帐无效</value>
+  </data>
+    <data name="TransferBothAccountInvalid" xml:space="preserve">
+    <value>帐户转帐（接收）无效</value>
+  </data>
+    <data name="TransferFailCauseMinCoinRequired" xml:space="preserve">
+    <value>转移胜利失败。你的胜利小于{0}胜利</value>
+  </data>
+    <data name="TryPassDifficult" xml:space="preserve">
+    <value>请选择更难的密码来保护您的帐户。 不要选择密码</value>
+  </data>
+    <data name="TypeJackPot" xml:space="preserve">
+    <value>JackPot类型</value>
+  </data>
+    <data name="TypeMember" xml:space="preserve">
+    <value>会员类型：</value>
+  </data>
+    <data name="TypeVip" xml:space="preserve">
+    <value>ប្រភេទ Vip</value>
+  </data>
+    <data name="Unknown" xml:space="preserve">
+    <value>匿名</value>
+  </data>
+    <data name="Update" xml:space="preserve">
+    <value>已更新</value>
+  </data>
+    <data name="UpdateDay" xml:space="preserve">
+    <value>上次登录日期：</value>
+  </data>
+    <data name="UpdateFail" xml:space="preserve">
+    <value>更新失败</value>
+  </data>
+    <data name="UpdateInfo1" xml:space="preserve">
+    <value>1.必须更新清晰的个人信息，以便管理委员会可以联系并协助管理国家</value>
+  </data>
+    <data name="UpdateInfo2" xml:space="preserve">
+    <value>2.国家建立成本：&lt;span&gt; 1,000,000,000 WIN（10亿WIN）&lt;/ span&gt; &lt;br&gt;</value>
+  </data>
+    <data name="UpdateInfo3" xml:space="preserve">
+    <value>3.成立后&lt;span&gt; 3天&lt;/ span&gt;的最小成员数&lt;span&gt; 6名成员&lt;/ span&gt;（包括国家所有者）</value>
+  </data>
+    <data name="UpdateProfileReGold" xml:space="preserve">
+    <value>赢得奖励。 请更新您的帐户以获得更多赢！</value>
+  </data>
+    <data name="UpdateRuleSucc" xml:space="preserve">
+    <value>成功更新规则</value>
+  </data>
+    <data name="UpdateSuccess" xml:space="preserve">
+    <value>成功更新密码</value>
+  </data>
+    <data name="UpLoad" xml:space="preserve">
+    <value>下载照片</value>
+  </data>
+    <data name="UploadAvatarFailed" xml:space="preserve">
+    <value>头像上传失败</value>
+  </data>
+    <data name="UploadFile" xml:space="preserve">
+    <value> - 只接受尾部图像：&lt;span&gt; gif，png，jpg &lt;/ span&gt;。 较小的尺寸&lt;span&gt; 500KB &lt;/ span&gt;。&lt;br&gt;</value>
+  </data>
+    <data name="UploadPixel" xml:space="preserve">
+    <value> - 建议上传&lt;span&gt; 1：1 &lt;/ span&gt;比例和最小&lt;span&gt; 150x150 &lt;/ span&gt;像素的图像。</value>
+  </data>
+    <data name="UserInfoBC3DBoss" xml:space="preserve">
+    <value>ត្រី boss</value>
+  </data>
+    <data name="UserInfoBC3DGift" xml:space="preserve">
+    <value>ប្រអប់រង្វាន់</value>
+  </data>
+    <data name="UserInfoBC3DInfo" xml:space="preserve">
+    <value>ព័ត៏មាន</value>
+  </data>
+    <data name="UserInfoBC3DMission" xml:space="preserve">
+    <value>បេសកកម្ម</value>
+  </data>
+    <data name="UserInfoBC3DNewPass" xml:space="preserve">
+    <value>កូដសម្ងាត់ថ្មី</value>
+  </data>
+    <data name="UserInfoBC3DOldPass" xml:space="preserve">
+    <value>កូដសម្ងាត់ចាស់</value>
+  </data>
+    <data name="UserInfoBC3DThanhTich" xml:space="preserve">
+    <value>សមត្ថផល</value>
+  </data>
+    <data name="UserInvalidFormat" xml:space="preserve">
+    <value>帐户信息不正确</value>
+  </data>
+    <data name="UserIsNotActivePopupContent" xml:space="preserve">
+    <value>&lt;div class ='text-center'&gt;请激活帐户&lt;/ div&gt;</value>
+  </data>
+    <data name="UserIsNotActivePopupTitle" xml:space="preserve">
+    <value>帐户尚未激活</value>
+  </data>
+    <data name="UserLoginFailsPopupContent" xml:space="preserve">
+    <value>&lt;div class ='text-center'&gt;登录失败。 请稍后再试。&lt;/ div&gt;</value>
+  </data>
+    <data name="UserLoginFailsPopupTitle" xml:space="preserve">
+    <value>登录失败</value>
+  </data>
+    <data name="UsernameInvalid" xml:space="preserve">
+    <value>帐户名无效</value>
+  </data>
+    <data name="UsernameIsExist" xml:space="preserve">
+    <value>此用户名已存在。</value>
+  </data>
+    <data name="UserNotCompareDis" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញមិនគួរជាឈ្មោះហៅក្រៅ យ៉ាងហោចណាស់តួអក្សរ 3</value>
+  </data>
+    <data name="UserNotInGuild" xml:space="preserve">
+    <value>玩家{0}不在公会中</value>
+  </data>
+    <data name="UserTransferGold" xml:space="preserve">
+    <value>转移胜利</value>
+  </data>
+    <data name="UserTransferxu" xml:space="preserve">
+    <value>转移胜利</value>
+  </data>
+    <data name="ValidateCaptcha" xml:space="preserve">
+    <value>验证码不正确。</value>
+  </data>
+    <data name="ValidateDisplayName" xml:space="preserve">
+    <value>显示名称包含不允许的名称。</value>
+  </data>
+    <data name="ValidateDisplayNameLeght" xml:space="preserve">
+    <value>显示名称至少3到15个字符。</value>
+  </data>
+    <data name="ValidateDisplayNameNull" xml:space="preserve">
+    <value>显示名称不能包含空格。</value>
+  </data>
+    <data name="ValidatEmail" xml:space="preserve">
+    <value>电子邮件无效</value>
+  </data>
+    <data name="ValidateNickName" xml:space="preserve">
+    <value>用户名不能包含空格。</value>
+  </data>
+    <data name="ValidatePass" xml:space="preserve">
+    <value>密码包含不允许的字符。</value>
+  </data>
+    <data name="ValidatId" xml:space="preserve">
+    <value>身份证无效</value>
+  </data>
+    <data name="ValidatPhone" xml:space="preserve">
+    <value>电话号码无效</value>
+  </data>
+    <data name="Value" xml:space="preserve">
+    <value>值</value>
+  </data>
+    <data name="VersionNotMatch" xml:space="preserve">
+    <value>看不懂图片。 此错误可能是由旧版本的浏览器引起的。 请联系管理员以获取支持。</value>
+  </data>
+    <data name="ViBlocked" xml:space="preserve">
+    <value>钱包被锁定了</value>
+  </data>
+    <data name="ViEnoghGoldToTranfer" xml:space="preserve">
+    <value>您的钱包不够转让</value>
+  </data>
+    <data name="ViewGold" xml:space="preserve">
+    <value>见赢，积分</value>
+  </data>
+    <data name="ViewGoldAndPoint" xml:space="preserve">
+    <value>赢得积累和筛选点</value>
+  </data>
+    <data name="ViNotExist" xml:space="preserve">
+    <value>您的钱包尚未创建</value>
+  </data>
+    <data name="VipPointNum" xml:space="preserve">
+    <value>贵宾点</value>
+  </data>
+    <data name="Wait2Minute" xml:space="preserve">
+    <value>并等待2分钟！</value>
+  </data>
+    <data name="Wallet" xml:space="preserve">
+    <value>适用于：</value>
+  </data>
+    <data name="WalletBank" xml:space="preserve">
+    <value>银行钱包</value>
+  </data>
+    <data name="WantToMakeFriend" xml:space="preserve">
+    <value>{0}希望成为你的朋友</value>
+  </data>
+    <data name="Welcome" xml:space="preserve">
+    <value>欢迎来到</value>
+  </data>
+    <data name="Welcome3Cay" xml:space="preserve">
+    <value>欢迎加入Win8社区</value>
+  </data>
+    <data name="WelcomeNewUser" xml:space="preserve">
+    <value>您将获得{0} Win奖金。 您点击头像图标（头像）更新账户安全信息以获得更多赢！</value>
+  </data>
+    <data name="WelcomeNewUserHasEventUpdateInfo" xml:space="preserve">
+    <value>您将获得{0} Win奖金。 您单击头像图标（头像）以更新帐户安全信息以获得{1}赢！</value>
+  </data>
+    <data name="WhatCanStarDo" xml:space="preserve">
+    <value>2.它用于什么？</value>
+  </data>
+    <data name="WhatCanStarDoAnswer" xml:space="preserve">
+    <value>如果是这样，您可以将其更改为：&lt;br /&gt;
+                                         &lt;div style =“padding-left：10px;”&gt;
+                                             +更改手机刮刮卡&lt;br /&gt;
+                                             +将星变为Win，1星= 1胜率
+                                        &lt;/ DIV&gt;
+                                         如果您有任何问题，建议，请联系在线支持或发送信函支持@ Win8获取答案。</value>
+  </data>
+    <data name="WhoBuy" xml:space="preserve">
+    <value>赢你就是：</value>
+  </data>
+    <data name="XiTo" xml:space="preserve">
+    <value>扑克元素</value>
+  </data>
+    <data name="XuReceive" xml:space="preserve">
+    <value>赢了</value>
+  </data>
+    <data name="XuToAccount" xml:space="preserve">
+    <value>赢了账！</value>
+  </data>
+    <data name="YouAward" xml:space="preserve">
+    <value>你被授予了</value>
+  </data>
+    <data name="InvalidLoginName" xml:space="preserve">
+    <value>登录名无效</value>
+  </data>
+    <data name="MostView" xml:space="preserve">
+    <value>观看最多</value>
+  </data>
+    <data name="MustLogin2" xml:space="preserve">
+    <value>注册</value>
+  </data>
+    <data name="NotGrantTodo" xml:space="preserve">
+    <value>您无权执行此功能。</value>
+  </data>
+    <data name="NotTranferForYour" xml:space="preserve">
+    <value>你无法将Win转移给自己。</value>
+  </data>
+    <data name="OnlinePlayGameCard" xml:space="preserve">
+    <value>在线 - 玩纸牌游戏</value>
+  </data>
+    <data name="PassLv2Wrong" xml:space="preserve">
+    <value>2级密码不正确</value>
+  </data>
+    <data name="PassSMSTimeout" xml:space="preserve">
+    <value>短信密码已过期</value>
+  </data>
+    <data name="Phom" xml:space="preserve">
+    <value>Phom</value>
+  </data>
+    <data name="Pie2D" xml:space="preserve">
+    <value>2D环</value>
+  </data>
+    <data name="RegisInMobileDisplayname" xml:space="preserve">
+    <value>显示名称不能与NickName相同，至少3个字符。</value>
+  </data>
+    <data name="SearchMember" xml:space="preserve">
+    <value>按成员国搜索</value>
+  </data>
+    <data name="SinhNhatVip" xml:space="preserve">
+    <value>贵宾生日</value>
+  </data>
+    <data name="UploadBannerSucc" xml:space="preserve">
+    <value>成功的横幅。</value>
+  </data>
+    <data name="UploadImgSucc" xml:space="preserve">
+    <value>上传成功的头像。</value>
+  </data>
+    <data name="PhonedIsUsed" xml:space="preserve">
+    <value>电话号码已在使用中</value>
+  </data>
+</LocalLanguages>

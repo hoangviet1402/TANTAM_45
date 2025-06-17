@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="Friend_FriendNotExist" xml:space="preserve">
+    <value>No friend!</value>
+  </data>
+    <data name="Friend_FriendApproveSuccess" xml:space="preserve">
+    <value>Accepted the invitation successfully!</value>
+  </data>
+    <data name="Friend_FriendError1" xml:space="preserve">
+    <value>Sent friend invitation for this user before.</value>
+  </data>
+    <data name="Friend_FriendError2" xml:space="preserve">
+    <value>This person is already your friend.</value>
+  </data>
+    <data name="Friend_FriendFull" xml:space="preserve">
+    <value>Unable to send invitation because your number is full!</value>
+  </data>
+    <data name="Friend_FriendNoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="Friend_FriendNoInvitation" xml:space="preserve">
+    <value>User has no friend invitation</value>
+  </data>
+    <data name="Friend_FriendNotYou" xml:space="preserve">
+    <value>You cannot send invitations to yourself.</value>
+  </data>
+    <data name="Friend_FriendNumberInvitaion" xml:space="preserve">
+    <value>You have {0} friend requests!</value>
+  </data>
+    <data name="Friend_FriendRejectSuccess" xml:space="preserve">
+    <value>Reject the invitation successfully!</value>
+  </data>
+    <data name="Friend_FriendRequiredLevel" xml:space="preserve">
+    <value>Unlock when reaching VIP {0}</value>
+  </data>
+    <data name="Friend_FriendSearchNoData" xml:space="preserve">
+    <value>No friends found!</value>
+  </data>
+    <data name="Friend_FriendSeverError" xml:space="preserve">
+    <value>Server error!</value>
+  </data>
+    <data name="Friend_FriendUserNotExists" xml:space="preserve">
+    <value>User does not exist.</value>
+  </data>
+</LocalLanguages>

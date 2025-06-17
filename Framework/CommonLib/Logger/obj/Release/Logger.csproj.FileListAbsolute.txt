@@ -1,0 +1,12 @@
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Release\Logger.dll.config
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Release\Logger.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Release\Logger.pdb
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Release\log4net.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Release\Newtonsoft.Json.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Release\log4net.xml
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Release\Newtonsoft.Json.xml
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Release\Logger.csprojAssemblyReference.cache
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Release\Logger.csproj.CoreCompileInputs.cache
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Release\Logger.csproj.CopyComplete
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Release\Logger.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Release\Logger.pdb

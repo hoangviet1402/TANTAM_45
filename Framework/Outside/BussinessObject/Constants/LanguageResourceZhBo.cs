@@ -1,0 +1,207 @@
+﻿namespace BussinessObject.Constants
+{
+    public class LanguageResourceZhBo
+    {
+        public const string Success = "成功"; //Thành công
+        public const string Fail = "失败"; //Thất bại
+        public const string Skill = "技能"; //Kỹ năng
+        public const string ConfigFail = "配置不存在"; //Cấu hình không tồn tại
+        public const string EnoughNotCoins = "你买不起货"; //Bạn không đủ tiền để mua hàng
+        public const string InvalidNumber = "号码无效"; //Số lượng không hợp lệ
+        public const string InvalidMoneyType = "货币类型无效"; //Loại tiền không hợp lệ
+        public const string ContinueBuying = "您必须使用此项目继续购买"; //Bạn phải sử dụng Item này để tiếp tục mua hàng
+        public const string NotHaveExhausted = "您已经用尽了当天购买的商品数量"; //Bạn đã hết số lần mua Item trong ngày
+        public const string TheNumberIsTooLimited = "这个数字太有限了"; //Số lượng quá giới hạn
+
+        public const string
+            ToBuyANewItem = "要购买新商品，请使用商品目录中的所有商品"; //Để mua item mới bạn vui lòng sử dụng hết item trong túi đồ
+
+        public const string YouHaveRunOutOfTimes = "你已经没时间买物品了"; // Bạn đã hết số lần mua Item
+        public const string NoData = "没有数据"; //Không có dữ liệu
+        public const string EventEnds = "活动结束了"; // Sự kiện đã hết
+
+        public const string
+            YouMustHaveATurn =
+                "您必须至少有01个旋转和 {0：＃，## 0} 个硬币才能加入"; //Bạn phải có tối thiểu 01 lượt quay và {0:#,##0} xu mới được tham gia
+
+        public const string MustWaitMoreDays = "您必须等待 {0} 天才能拨打"; //Bạn phải đợi {0} ngày nữa mới được quay
+        public const string ToDayHasBeenAwarded = "今天的奖项已经颁发"; //Giải thưởng hôm nay đã được trao hết
+        public const string HasBeenAwarded = "奖项被授予"; //Giải thưởng đã được trao
+        public const string CSKHService = "请联系客户服务以获取帮助"; //Vui lòng liên hệ với CSKH để được hỗ trợ
+        public const string VipNotRunning = "没有运行VIP"; //Chưa chạy vip
+        public const string AccountNotVip = "该帐户没有贵宾"; //Tài khoản chưa có vip
+        public const string YourAccountAwarded = "您的帐户可获得{0}加值"; //Bạn được thưởng {0} vào tài khoản của bạn
+        public const string YouPromotioned = "根据卡的值，建议您使用 {0}％ "; //Bạn được khuyến mãi {0}% dựa trên giá trị của thẻ
+        public const string GameNotConfig = "游戏尚未配置"; //Game chưa được cấu hình
+        public const string GetDataFail = "获取数据失败"; //Lấy dữ liệu thất bại
+        public const string InvalidLocationId = "位置无效"; //Location không hợp lệ
+        public const string InvalidChannel = "频道无效"; //Channel không hợp lệ
+        public const string UserNotEnoughWatch = "用户已超出视图数量限制"; //User đã quá giớn hạn số lần coi
+        public const string GetDataSuccess_v1 = "成功获取数据"; //Lấy dữ liệu thành công
+        public const string Orther = "其他"; //Khác
+        public const string Bullet = "子弹"; //Đạn
+        public const string Guns = "枪"; //Súng
+        public const string Effect = "效果"; //Hiệu ứng
+        public const string NoItem = "没有产品"; // Không có Item
+        public const string ItemCannotActive = "该产品尚未激活"; // Item chưa được kích hoạt
+
+        public const string Itemdoesnotexist = "产品不存在"; // Item không tồn tại
+        public const string Buyitemssuccessfully = "成功购买产品"; // Mua Item thành công
+        public const string VipLevelUp = "获得成功的VIP级别奖励"; //Nhận thưởng lên level vip thành công
+        public const string Norewards = "没有奖励可以收到"; //Không có phần thưởng để nhận
+        public const string Getrewardedfailure = "因失败而获得奖励"; //Nhận thưởng thất bại
+        public const string Norewardfound = "没有找到奖励"; //Không tìm thấy phần thưởng để nhận
+        public const string Pointstoachieve = "要实现的目标"; //Điểm cần đạt được
+        public const string Expshotfish = "炸鱼"; //Exp băn cá
+        public const string Accumulatedskill = "积累的技术"; //Tích lũy tuyệt chiêu
+        public const string Transfercoins = "转移硬币"; //Chuyển xu
+        public const string Getacointransfer = "获得硬币转移"; //Nhận chuyển xu
+        public const string Donatedtimes1 = "免费1次"; //Tặng lần 1
+        public const string Donatedtimes2 = "免费2次"; //Tặng lần 2
+        public const string Expcharacter = "Exp角色"; //Exp nhân vật
+        public const string Invalidinputdata = "输入数据无效"; //Dữ liệu đầu vào không hợp lệ
+        public const string Levelvipup = "升级贵宾"; // Lên level vip
+        public const string Accumulatesuccesspoints = "积累成功点"; // Tích lũy điểm thành công
+        public const string Failuretoaccumulatepointsfailed = "故障点失败"; //Lỗi tích điểm không thành công
+        public const string Youareawardedtoyouraccount = "您已获得{0}给您的帐户"; //Bạn đã được thưởng xnxx vào tài khoản
+        public const string Addingvipuserinformationfailed = "添加VIP用户信息失败"; //Thêm thông tin vip user thất bại
+        public const string Successfullyupdated = "成功更新信息"; // Cập nhật thông tin thành công
+        public const string Emailalreadyexists = "您的电子邮件已存在"; //Email của bạn đã tồn tại
+        public const string Accountdoesnotexist = "帐户不存在"; // Tài khoản không tồn tại
+        public const string PassOrEmailError = "电子邮件或密码不正确"; //Email hoặc mặt khẩu không chính xác
+        public const string BanNick = "帐户被锁定"; // Tài khoản đã bị khóa
+        public const string BanNickForever = "帐户已被永久锁定"; // Tài khoản đã bị khóa vĩnh viễn
+        public const string UserIsNotActive = "帐户尚未激活"; // Tài khoản chưa được kích hoạt
+        public const string UsingAnotherDevice = "用户使用其他设备"; // Người dùng để sử dụng thiết bị khác
+        public const string NonexistSecurityCode = "安全代码不存在"; // Mã bảo mật không tồn tại
+        public const string InvalidSecurityCode = "安全码不正确"; // Mã bảo mật không chính xác
+        public const string SuccessWithSecure = "成功且安全的代码"; // Mã thành công và bảo mật
+        public const string NonExistsAccount = "帐户不存在"; // Tài khoản không tồn tại
+        public const string UsingSMSSecure = "通过短信保护帐户"; // Tài khoản bảo mật bằng SMS
+        public const string UsingNormalSecure = "帐户使用安全性"; // Tài khoản sử dụng bảo mật
+        public const string OtpExpire = "OTP到期"; // OTP hết hạn
+        public const string SystemError = "系统错误"; // Lỗi hệ thống
+        public const string InvalidCaptchaCode = "安全码不正确"; // Mã bảo mật không chính xác
+        public const string PleaseComeBackTomorrow = "请明天再来"; // Vui lòng quay lại vào ngày mai
+        public const string UserReceivedAReward = "用户收到了奖励"; // User đã nhận thưởng
+        public const string BonusDailyDay = "天"; //Ngày
+        public const string Bronze = "铜"; //Đồng
+        public const string Silver = "银"; //Bạc
+        public const string Ruby = "黄"; // hồng ngọc
+        public const string Emerald = "红宝石"; // Ngọc lục bảo
+        public const string Diamond = "钻石"; // Kim cương
+        public const string Gold = "钻石"; // Vàng
+        public const string EventDoesNotExist = "该事件不存在"; // Sự kiện không tồn tại
+        public const string ChannelInvalid = "频道无效"; // Channel không hợp lệ
+        public const string UserLimitViews = "用户已超出视图数量限制"; // User đã quá giới hạn số lần coi
+
+        #region Reason
+
+        public const string Reason_2 = "充IAP";
+        public const string Reason_40 = "购买物品";
+        public const string Reason_48 = "购买壁纸";
+        public const string Reason_49 = "买头像";
+        public const string Reason_68 = "当州处于等级时捐出胜利";
+        public const string Reason_70 = "当用户在充Chips时上传成员资格类型时给予胜利";
+        public const string Reason_89 = "赠送予胜利等级";
+        public const string Reason_102 = "赠送Chips登录";
+        public const string Reason_105 = "买感情";
+        public const string Reason_108 = "胜利转移给朋友";
+        public const string Reason_116 = "在VIP会员之间转账";
+        public const string Reason_117 = "向会员转移社会资金";
+        public const string Reason_118 = "充胜利";
+        public const string Reason_119 = "管理员捐赠了胜利";
+        public const string Reason_133 = "免费赢在线射鱼";
+        public const string Reason_142 = "促进充胜利";
+        public const string Reason_143 = "获得成就";
+        public const string Reason_161 = "促销充赢得VIP用户";
+        public const string Reason_162 = "在您有更多乐趣事件，可以为新用户提供金牌";
+        public const string Reason_166 = "赠送胜利以注册打开ID";
+        public const string Reason_168 = "赠送胜利在一个新的用户事件";
+        public const string Reason_169 = "为赢得顶级VIP的用户赠送胜利";
+        public const string Reason_171 = "每天赠送胜利";
+        public const string Reason_173 = "管理员扣除胜利";
+        public const string Reason_174 = "通过短信充货币";
+        public const string Reason_175 = "登录应用程序射鱼";
+        public const string Reason_176 = "赢得大奖";
+        public const string Reason_178 = "赠送胜利每日登录手机";
+        public const string Reason_179 = "积分收奖励";
+        public const string Reason_180 = "赠送胜利邀请脸书上的朋友";
+        public const string Reason_181 = "朋友在脸书上注册时给予胜利";
+        public const string Reason_182 = "促销第一次充";
+        public const string Reason_183 = "当用户不断登录时给予胜利";
+        public const string Reason_184 = "在app 脸书跟fanpage页面一样获胜";
+        public const string Reason_187 = "当新用户用完捐款时给予胜利 ";
+        public const string Reason_188 = "为新用户初次注册给予胜利";
+        public const string Reason_189 = "为用户登录mobile黄金时间给予胜利";
+        public const string Reason_190 = "为用户登录mobile黄金日给予胜利";
+        public const string Reason_191 = "从雅虎广告中注册赠送胜利";
+        public const string Reason_192 = "更新信息时给予胜利";
+        public const string Reason_197 = "促销充胜利短信";
+        public const string Reason_198 = "促销充IAP";
+        public const string Reason_213 = "玩射击鱼游戏";
+        public const string Reason_300 = "为新用户给予胜利";
+        public const string Reason_301 = "退胜利事件给予大于小于红利";
+        public const string Reason_302 = "改变胜利";
+        public const string Reason_303 = "换卡";
+        public const string Reason_306 = "兑换奖品旋转号码";
+        public const string Reason_307 = "累积奖金供应系统";
+        public const string Reason_311 = "通过Google电子货币包存款";
+        public const string Reason_312 = "通过Apple Store充值";
+        public const string Reason_313 = "建立公会";
+        public const string Reason_314 = "撤";
+        public const string Reason_315 = "充值";
+        public const string Reason_316 = "主办将货币转移给用户";
+        public const string Reason_318 = "用户结束射击鱼游戏";
+        public const string Reason_319 = "用户玩射击鱼游戏";
+        public const string Reason_320 = "从主办获得胜利";
+        public const string Reason_321 = "为本办捐赠2％的销售额给主办";
+        public const string Reason_322 = "为该办月分销售额的3％赠送充最多胜利的人";
+        public const string Reason_325 = "进入游戏室玩无法成功之后向用户退胜利";
+        public const string Reason_326 = "管理员取消兑换请求后，向用户退胜利";
+        public const string Reason_327 = "狩猎老板鱼的奖金";
+        public const string Reason_328 = "赠送用户在黄金时间登录";
+        public const string Reason_329 = "给用户胜利活动退款";
+        public const string Reason_330 = "赠送用户注册射鱼游戏狩奖品";
+        public const string Reason_331 = "赠送用户登录射鱼游戏狩奖品";
+        public const string Reason_332 = "在待侯室等射鱼游戏时给予胜利";
+        public const string Reason_333 = "获得日常任务的奖励";
+        public const string Reason_334 = "脸书分享奖金";
+        public const string Reason_335 = "赢大奖系统";
+        public const string Reason_336 = "因换卡失败而退款";
+        public const string Reason_337 = "捐货币完成射击鱼的任务";
+        public const string Reason_338 = "给货币上升级射击鱼";
+        public const string Reason_342 = "用户将货币转移给另一个用户";
+        public const string Reason_343 = "用户收到货币从另一个用户转";
+        public const string Reason_344 = "管理员返回射击鱼的胜利";
+        public const string Reason_345 = "管理员返回lather的胜利";
+        public const string Reason_347 = "会办的奖金总结";
+        public const string Reason_350 = "捐赢得游戏旋转";
+        public const string Reason_351 = "赢得乌龟游戏的奖品";
+        public const string Reason_352 = "赢得事件输入代码获得货币";
+        public const string Reason_353 = "赢得竞技场比赛";
+        public const string Reason_355 = "玩射击3D鱼";
+        public const string Reason_356 = "射击3D鱼结束";
+        public const string Reason_357 = "玩移动射击3D鱼";
+        public const string Reason_358 = "移动射击3D鱼结束";
+        public const string Reason_359 = "获得日常任务的奖励";
+        public const string Reason_404 = "玩迷你硬币游戏";
+        public const string Reason_406 = "玩迷你惩罚游戏";
+        public const string Reason_407 = "黄金时段促销";
+        public const string Reason_408 = "玩迷你Fortunes88游戏";
+        public const string Reason_409 = "玩累积奖金游戏";
+        public const string Reason_410 = "玩XengLuxury游戏";
+        public const string Reason_412 = "玩金龙老虎机游戏";
+        public const string Reason_413 = "玩三国老虎机游戏";
+        public const string Reason_418 = "玩野兽游戏";
+        public const string Reason_419 = "玩财富游戏";
+        public const string Reason_420 = "玩Pachinko机器人游戏";
+        public const string Reason_422 = "玩武士游戏";
+        public const string Reason_501 = "赢得幸运转过来";
+        public const string Reason_502 = "买幸运转过来";
+        public const string Reason_503 = "玩lather游戏";
+        public const string Reason_999 = "发生log因为Id不存在";
+
+        #endregion
+    }
+}

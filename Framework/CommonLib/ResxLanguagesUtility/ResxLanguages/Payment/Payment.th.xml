@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="DepositCardAmountNotAllow" xml:space="preserve">
+    <value>หมายเหตุ: รับเฉพาะบัตรที่เป็นธนบัตร {0} ธนบัตรอื่นจะไม่ได้รับเงินคืนและไม่ได้แถม Win</value>
+  </data>
+    <data name="DepositCardIsUsed" xml:space="preserve">
+    <value>บัตรที่ได้ใช้แล้ว</value>
+  </data>
+    <data name="DepositCreateTransactionFail" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดในการบันทึกภารกิจ กรุณาลองอีกครั้งในภายหลัง!</value>
+  </data>
+    <data name="DepositDelayTime" xml:space="preserve">
+    <value>การเติมบัตรแต่ละครั้งจะต้องอยู่ห่างกัน {0} นาที</value>
+  </data>
+    <data name="DepositErrorCauseBlockMultipleFailed" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดระหว่างการโหลดการ์ด โปรดลองอีกครั้งในภายหลัง</value>
+  </data>
+    <data name="DepositMultipleFailed" xml:space="preserve">
+    <value>คุณได้เติม {0} รอบไม่ถูกต้องในเวลา{1} นาที กรุณารอสักครู่เพื่อดำเนินการเติมรอบต่อไป</value>
+  </data>
+    <data name="DepositSelectCardAmountWrong" xml:space="preserve">
+    <value>คุณเลือกธนบัตรไม่ถูกต้อง กรุณาติดต่อฝ่ายบริการลูกค้าเพื่อรับการช่วยเหลือ</value>
+  </data>
+    <data name="DepositSmsTelcoNoSupport" xml:space="preserve">
+    <value>ผู้ให้บริการเครือข่ายไม่รองรับ</value>
+  </data>
+    <data name="DepositSmsTelcoValueNoSupport" xml:space="preserve">
+    <value>ธนบัตรไม่ได้รองรับ</value>
+  </data>
+    <data name="DepositSupportText" xml:space="preserve">
+    <value>&lt;br /&gt;ทุกความสังสัย การุณาติดต่อ &lt;a href=\"mailto:{0}\"&gt;{1}&lt;/a&gt; เพื่อรับการช่วยเหลือ.&lt;br/&gt;หรึอติดต่อฝ่ายบริการลูกค้าเพื่อรับการช่วยเหลือโดยตรง</value>
+  </data>
+    <data name="DepositTransactionChargeWithCallback" xml:space="preserve">
+    <value>บัตรของคุณได้รับการยอมรับ Win จะถูกเพิ่มเข้าในบัญชีของคุณ กรุณารอสักครู่</value>
+        <comment>Thẻ sẽ được nạp trong 2 phút. Sau 2 phút Chip sẽ được tự động cộng vào tài khoản của bạn</comment>
+  </data>
+    <data name="DepositTransactionError" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดระหว่างการเติมเงิน กรุณาลองใหม่อีกครั้งในภายหลัง (Code={0})</value>
+  </data>
+    <data name="DepositTransactionTimeOut" xml:space="preserve">
+    <value>ภารกิจหมดอายุแล้ว กรุณาติดต่อกับแอดมิน</value>
+  </data>
+    <data name="DoiThuongCardOutOfLimit" xml:space="preserve">
+    <value>คุณหมดสิทธิลากบัตรในวันนี้แล้ว การุณากลับมาในวันถัดไป</value>
+  </data>
+    <data name="DoiThuongCardOutOfRangeTime" xml:space="preserve">
+    <value>กรุณาแลกบัตรในครั้งต่อไปหลังบัตรก่อน {0} นาที ขอขอบคุณ</value>
+  </data>
+    <data name="DoiThuongCardStockRunOut" xml:space="preserve">
+    <value>บัตรหมด</value>
+  </data>
+    <data name="DoiThuongCardSuccess" xml:space="preserve">
+    <value>การเรียกขอแลกบัตร {0} ({1} Riel) ของคุณสำเร็จแล้ว บัตรจะถูกส่งไปยังกล่องจดหมายส่วนบุคคลหลังจากนไม่กี่นาที!</value>
+  </data>
+    <data name="DoiThuongCardSuccessReview" xml:space="preserve">
+    <value>การเรียกขอแลกบัตร {0} ({1} Riel) ของคุณสำเร็จแล้ว  กรุณารอแอดมินตรวจสอบ บัตรจะถูกส่งไปยังกล่องจดหมายส่วนบุคคลหลังจากไม่กี่นาที!</value>
+  </data>
+    <data name="DoiThuongCreateTranlogError" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดการเริ่มต้นภารกิจ</value>
+  </data>
+    <data name="DoiThuongMaintainance" xml:space="preserve">
+    <value>ฟังก์ชั่นกำลังได้บำรุงรักษา กรุณากลับมาใหม่ในภายหลัง</value>
+  </data>
+    <data name="DoiThuongMaintainanceUpdate" xml:space="preserve">
+    <value>ฟังก์ชั่นปัจจุบันอยู่ระหว่างการอัพเกรดการบำรุงรักษา กรุณากลับมาใหม่ในภายหลัง</value>
+  </data>
+    <data name="DoiThuongNotEnoughGoldOffset" xml:space="preserve">
+    <value>คุณไม่มียอดคงเหลือขั้นต่ำ {0: #, ## 0} ชนะหลังจากการเปลี่ยนแปลง</value>
+  </data>
+    <data name="DoiThuongRequireVipLevel" xml:space="preserve">
+    <value>คุณต้องมี Vip Silver ขึ้นไปจึงจะสามารถเปลี่ยนบัตรของคุณได้</value>
+  </data>
+    <data name="DoiThuongUpdateCoinError" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดในการอัพเดทยอดเงินในบัญชี</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+    <data name="DepositGetProductMethodInvalid" xml:space="preserve">
+    <value>ไม่สามารถระบุวิธีการชำระเงินได้</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>โหลดสำเร็จแล้ว {0: N0} ชนะ</value>
+  </data>
+    <data name="DepositSuccessAddVipFailed" xml:space="preserve">
+    <value>โหลดสำเร็จแล้ว {0: N0} ชนะ แต่มีข้อผิดพลาดในการประมวลผลจุดวีไอพี</value>
+  </data>
+    <data name="DepositSuccessAddCoinVipFailed" xml:space="preserve">
+    <value>โหลดได้สำเร็จ แต่มีข้อผิดพลาดในกระบวนการโอนย้าย Win และการประมวลผล vip point</value>
+  </data>
+    <data name="NumberDepositOnDay" xml:space="preserve">
+    <value>โปรดกลับมาพรุ่งนี้</value>
+  </data>
+    <data name="SuccessButAddGoldFail" xml:space="preserve">
+    <value>โหลดสำเร็จแล้ว แต่มีข้อผิดพลาดในกระบวนการถ่ายโอน Win</value>
+  </data>
+    <data name="Pending" xml:space="preserve">
+    <value>ธุรกรรมกำลังดำเนินการอยู่</value>
+  </data>
+    <data name="TransactionNotExists" xml:space="preserve">
+    <value>ไม่พบธุรกรรมในระบบ</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>จำนวนการชนะในบัญชีนั้นไม่เพียงพอในการทำธุรกรรม</value>
+  </data>
+
+
+    <data name="ChonNhaMang" xml:space="preserve">
+    <value>เลือกเครือข่าย SIM ที่บ้านของคุณ</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>ชิพ</value>
+  </data>
+    <data name="CuPhap" xml:space="preserve">
+    <value>วากยสัมพันธ์</value>
+  </data>
+    <data name="DepositAlert_Card" xml:space="preserve">
+    <value>โหลดประกาศ</value>
+  </data>
+    <data name="DepositAlert_CardError" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดในการโหลดการ์ดโปรดลองอีกครั้งในภายหลัง</value>
+  </data>
+    <data name="DepositBaoKim" xml:space="preserve">
+    <value>BaoKim</value>
+  </data>
+    <data name="DepositCode_Input2" xml:space="preserve">
+    <value>ใส่รหัส</value>
+  </data>
+    <data name="DepositConfirm" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
+    <data name="DepositInputCaptcha" xml:space="preserve">
+    <value>ป้อน captcha</value>
+  </data>
+    <data name="DepositMoneyCost2" xml:space="preserve">
+    <value>มูลค่าที่ตราไว้</value>
+  </data>
+    <data name="DepositSms" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+    <data name="DepositSmsGui" xml:space="preserve">
+    <value>เสนอ</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>ลองดู</value>
+  </data>
+    <data name="DoiThuongMaXacNhan" xml:space="preserve">
+    <value>แจ้งลบความคิดเห็น</value>
+  </data>
+    <data name="DoiThuongPhiChuyen" xml:space="preserve">
+    <value>ค่าธรรมเนียมการโอน</value>
+  </data>
+    <data name="DoiThuongSoTienChuyen" xml:space="preserve">
+    <value>จำนวนการถ่ายโอนชิป</value>
+  </data>
+    <data name="DoiThuongSoXuHienCo" xml:space="preserve">
+    <value>จำนวนชิปที่มี</value>
+  </data>
+    <data name="DoiThuongTaiKhoan" xml:space="preserve">
+    <value>บัญชี</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>ได้รับบัญชีแล้ว</value>
+  </data>
+    <data name="DoiThuongTenTaiKhoan" xml:space="preserve">
+    <value>ชื่อบัญชี</value>
+  </data>
+    <data name="DoiThuongThucHien" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+    <data name="DoiThuongXu" xml:space="preserve">
+    <value>ชิพ</value>
+  </data>
+    <data name="DoiThuongXuBiTru" xml:space="preserve">
+    <value>ชิปหักลบ</value>
+  </data>
+    <data name="GhiChuNapSMS" xml:space="preserve">
+    <value>&lt;ul&gt; &lt;li&gt; เวลาประมวลผล 30 วินาที - 60 วินาที &lt;/li&gt; &lt;li&gt; สังเกตการเว้นวรรคของไวยากรณ์ &lt;/li&gt; &lt;li&gt; ตรวจสอบ ID เพียงพอหากไม่ได้ป้อน ID ที่ไม่ถูกต้อง CHIPS &lt;/li&gt; &lt;/ul&gt;</value>
+  </data>
+    <data name="GhiChuNapSMS1" xml:space="preserve">
+    <value>โหลด SMS CHIPS ตามเครือข่าย</value>
+  </data>
+    <data name="GhiChuNapSMS2" xml:space="preserve">
+    <value>คุณควรสังเกตไวยากรณ์ที่ถูกต้องดังนี้:</value>
+  </data>
+    <data name="GhiChuNapSMSMobile" xml:space="preserve">
+    <value>&lt;ul&gt; &lt;li&gt; เวลาประมวลผล 30 วินาที - 60 วินาที &lt;/li&gt; &lt;li&gt; สังเกตการเว้นวรรคของไวยากรณ์ &lt;/li&gt; &lt;li&gt; ตรวจสอบ ID เพียงพอหากไม่ได้ป้อน ID ที่ไม่ถูกต้อง CHIPS &lt;/li&gt; &lt;/ul&gt;</value>
+  </data>
+    <data name="MenhGia" xml:space="preserve">
+    <value>มูลค่าที่ตราไว้</value>
+  </data>
+    <data name="ValidationCaptcha2" xml:space="preserve">
+    <value>รหัสยืนยันไม่ถูกต้อง</value>
+  </data>
+    <data name="ValidationMenhGiaThe" xml:space="preserve">
+    <value>กรุณาเลือกมูลค่าบัตร</value>
+  </data>
+    <data name="ValidationPayment" xml:space="preserve">
+    <value>โปรดป้อนรหัสซีเรียลและการ์ด</value>
+  </data>
+    <data name="ValidationPayment2" xml:space="preserve">
+    <value>กรุณาเข้าสู่ระบบเพื่อโหลดบัตร</value>
+  </data>
+    <data name="ValidationPayment3" xml:space="preserve">
+    <value>ไม่มีบัญชี</value>
+  </data>
+    <data name="ValidationPayment4" xml:space="preserve">
+    <value>ข้อมูลบัตรไม่ถูกต้อง (รหัส: {0})</value>
+  </data>
+    <data name="ValidationPayment5" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดระหว่างการประมวลผล {0}</value>
+  </data>
+    <data name="ValidationPayment6" xml:space="preserve">
+    <value>ข้อมูลบัตรไม่ถูกต้องโปรดลองอีกครั้ง</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>วีไอพี</value>
+  </data>
+    <data name="LogCardTransNapGoldSuccess" xml:space="preserve">
+    <value>ชำระเงิน VND {0} การ์ดสำเร็จ คุณได้รับรางวัล &lt;แข็งแกร่ง&gt; {1} &lt;/strong&gt; ชิปเข้าบัญชี</value>
+  </data>
+</LocalLanguages>

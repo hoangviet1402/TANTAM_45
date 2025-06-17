@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="GuildNoExist">
+        <value>Bang hội không tồn tại</value>
+    </data>
+
+
+    <data name="GuildAdmin" xml:space="preserve">
+    <value>admin _</value>
+  </data>
+    <data name="GuildBang" xml:space="preserve">
+    <value>Bang _</value>
+  </data>
+    <data name="GuildBangChu" xml:space="preserve">
+    <value>Bang chủ _ </value>
+  </data>
+    <data name="GuildCap" xml:space="preserve">
+    <value>cấp _</value>
+  </data>
+    <data name="GuildChinhSach" xml:space="preserve">
+    <value>CHÍNH SÁCH BANG _</value>
+  </data>
+    <data name="GuildChiTietTTUser" xml:space="preserve">
+    <value>CHI TIẾT THÔNG TIN USER _</value>
+  </data>
+    <data name="GuildChonBangGiaNhap" xml:space="preserve">
+    <value>Chọn bang xin gia nhập. _</value>
+  </data>
+    <data name="GuildCmt" xml:space="preserve">
+    <value>Bình luận _</value>
+  </data>
+    <data name="GuildDaiBang" xml:space="preserve">
+    <value>ĐẠI BANG THÁNG _</value>
+  </data>
+    <data name="GuildDangBoi" xml:space="preserve">
+    <value>Đăng bởi: _</value>
+  </data>
+    <data name="GuildDanhSachSuKienMoi" xml:space="preserve">
+    <value>DANH SÁCH SỰ KIỆN MỚI NHẤT _</value>
+  </data>
+    <data name="GuildDongGop" xml:space="preserve">
+    <value>Đóng góp _</value>
+  </data>
+    <data name="GuildDongY" xml:space="preserve">
+    <value>Đồng ý _</value>
+  </data>
+    <data name="GuildGiaNhap" xml:space="preserve">
+    <value>Gia nhập _</value>
+  </data>
+    <data name="GuildGiaNhapSuccess" xml:space="preserve">
+    <value>Xin gia nhập thành công. Vui lòng chờ bang chủ chấp nhận. _</value>
+  </data>
+    <data name="GuildGiaNhapSuccess2" xml:space="preserve">
+    <value>Đã xin gia nhập bang này. Vui lòng chờ bang chủ chấp nhận. _</value>
+  </data>
+    <data name="GuildGiayTruoc" xml:space="preserve">
+    <value>giây trước _</value>
+  </data>
+    <data name="GuildGioTruoc" xml:space="preserve">
+    <value>giờ trước _</value>
+  </data>
+    <data name="GuildGui" xml:space="preserve">
+    <value>Gửi _</value>
+  </data>
+    <data name="GuildHaiQuan" xml:space="preserve">
+    <value>Hải quân _</value>
+  </data>
+    <data name="GuildHaiTac" xml:space="preserve">
+    <value>Hải tặc _</value>
+  </data>
+    <data name="GuildID" xml:space="preserve">
+    <value>ID _</value>
+  </data>
+    <data name="GuildKCoBinhLuan" xml:space="preserve">
+    <value>Không có bình luận _</value>
+  </data>
+    <data name="GuildKCoDataChoDuyet" xml:space="preserve">
+    <value>Không có thành viên chờ duyệt _</value>
+  </data>
+    <data name="GuildKCoTTBang" xml:space="preserve">
+    <value>Không có thông tin bang. _</value>
+  </data>
+    <data name="GuildKich" xml:space="preserve">
+    <value>Kick _</value>
+  </data>
+    <data name="GuildKinhNghiem" xml:space="preserve">
+    <value>Kinh nghiệm _</value>
+  </data>
+    <data name="GuildLevel" xml:space="preserve">
+    <value>Level _</value>
+  </data>
+    <data name="GuildLinkFanPage" xml:space="preserve">
+    <value>Link fanpage _</value>
+  </data>
+    <data name="GuildLoginDeSuDung" xml:space="preserve">
+    <value>Vui lòng đăng nhập để sử dụng chức năng này _</value>
+  </data>
+    <data name="GuildMember" xml:space="preserve">
+    <value>Thành viên _</value>
+  </data>
+    <data name="GuildMoiDay" xml:space="preserve">
+    <value>Mới đây _</value>
+  </data>
+    <data name="GuildNgayTao" xml:space="preserve">
+    <value>Ngày tạo _</value>
+  </data>
+    <data name="GuildNgayTruoc" xml:space="preserve">
+    <value>ngày trước _</value>
+  </data>
+    <data name="GuildNhapTenBang" xml:space="preserve">
+    <value>Nhập tên bang</value>
+  </data>
+    <data name="GuildNoData" xml:space="preserve">
+    <value>Không có dữ liệu _</value>
+  </data>
+    <data name="GuildPhe" xml:space="preserve">
+    <value>Phe _</value>
+  </data>
+    <data name="GuildPhutTruoc" xml:space="preserve">
+    <value>phút trước _</value>
+  </data>
+    <data name="GuildRoiBang" xml:space="preserve">
+    <value>Rời bang _</value>
+  </data>
+    <data name="GuildSave" xml:space="preserve">
+    <value>Lưu _</value>
+  </data>
+    <data name="GuildSearchBang" xml:space="preserve">
+    <value>Nhập tên bang để tìm kiếm _</value>
+  </data>
+    <data name="GuildSTT" xml:space="preserve">
+    <value>STT _</value>
+  </data>
+    <data name="GuildSuKien" xml:space="preserve">
+    <value>SỰ KIỆN _</value>
+  </data>
+    <data name="GuildTaiKhoan" xml:space="preserve">
+    <value>Tài khoản _</value>
+  </data>
+    <data name="GuildTaoBang" xml:space="preserve">
+    <value>TẠO BANG _</value>
+  </data>
+    <data name="GuildTenBang" xml:space="preserve">
+    <value>Tên bang _</value>
+  </data>
+    <data name="GuildThoiGian" xml:space="preserve">
+    <value>Thời gian _</value>
+  </data>
+    <data name="GuildThongTin" xml:space="preserve">
+    <value>Thông tin _</value>
+  </data>
+    <data name="GuildThongTinBangHoi" xml:space="preserve">
+    <value>THÔNG TIN BANG HỘI _</value>
+  </data>
+    <data name="GuildTimKiem" xml:space="preserve">
+    <value>Tìm kiếm _</value>
+  </data>
+    <data name="GuildTongXu" xml:space="preserve">
+    <value>Tổng xu _</value>
+  </data>
+    <data name="GuildTuChoi" xml:space="preserve">
+    <value>Từ chối _</value>
+  </data>
+    <data name="GuildUserJoin" xml:space="preserve">
+    <value>User xin gia nhập _</value>
+  </data>
+    <data name="GuildValidate" xml:space="preserve">
+    <value>Bạn chỉ được phép nhận thêm {0} thành viên ở cấp độ bang này. _</value>
+  </data>
+    <data name="GuildValidate10" xml:space="preserve">
+    <value>Bạn không phải là bang chủ. _</value>
+  </data>
+    <data name="GuildValidate11" xml:space="preserve">
+    <value>Không thể xóa chính bạn. _</value>
+  </data>
+    <data name="GuildValidate12" xml:space="preserve">
+    <value>Chỉ được kick user vào những ngày quy định. _</value>
+  </data>
+    <data name="GuildValidate13" xml:space="preserve">
+    <value>* Bạn phải có đủ 2.000.000 để tạo được bang _</value>
+  </data>
+    <data name="GuildValidate2" xml:space="preserve">
+    <value>Lỗi chấp nhận User {0} _</value>
+  </data>
+    <data name="GuildValidate3" xml:space="preserve">
+    <value>Lỗi từ chối User {0} _</value>
+  </data>
+    <data name="GuildValidate4" xml:space="preserve">
+    <value>Khẩu hiệu bang chứa ký tự không cho phép _</value>
+  </data>
+    <data name="GuildValidate5" xml:space="preserve">
+    <value>Khẩu hiệu bang phải lớn hơn 5 và nhỏ hơn 60 ký tự _</value>
+  </data>
+    <data name="GuildValidate6" xml:space="preserve">
+    <value>Tên bang hội phải lớn hơn 5 và nhỏ hơn 30 ký tự _</value>
+  </data>
+    <data name="GuildValidate7" xml:space="preserve">
+    <value>Tên bang hội chứa ký tự không cho phép _</value>
+  </data>
+    <data name="GuildValidate8" xml:space="preserve">
+    <value>Bạn cần 2.000.000 Xu để tạo bang _</value>
+  </data>
+    <data name="GuildValidate9" xml:space="preserve">
+    <value>Tên Bang đã tồn tại _</value>
+  </data>
+    <data name="GuildVip" xml:space="preserve">
+    <value>VIP _</value>
+  </data>
+    <data name="GuildXoaBinhLuan" xml:space="preserve">
+    <value>Xóa bình luận _</value>
+  </data>
+    <data name="GuildQuanLyBang" xml:space="preserve">
+    <value>QUẢN LÝ BANG</value>
+  </data>
+    <data name="GuildDanhSachBang" xml:space="preserve">
+    <value>DANH SÁCH BANG _</value>
+  </data>
+    <data name="GuildValidate14" xml:space="preserve">
+    <value>Chỉ có thành viên mới xem được bình luận _</value>
+  </data>
+    <data name="GuildError" xml:space="preserve">
+    <value>Có lỗi xảy ra! Vui lòng thử lại sau. _</value>
+  </data>
+    <data name="GuildKhauHieu" xml:space="preserve">
+    <value>Khẩu hiệu _</value>
+  </data>
+    <data name="GuildNhapfanpagefb" xml:space="preserve">
+    <value>Nhập fanpage facebook</value>
+  </data>
+    <data name="GuildNhapKhauHieu" xml:space="preserve">
+    <value>Nhập khẩu hiệu</value>
+  </data>
+    <data name="GuildMoiThanhVien" xml:space="preserve">
+    <value>Mời thành viên_</value>
+  </data>
+    <data name="GuildCoppy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+    <data name="GuildDangNhap" xml:space="preserve">
+    <value>Đăng nhập_</value>
+  </data>
+    <data name="GuildReport" xml:space="preserve">
+    <value>Thống kê _</value>
+  </data>
+
+
+    <data name="Account" xml:space="preserve">
+    <value>帐户</value>
+  </data>
+    <data name="BtnSearch" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+    <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+    <data name="ChooseeImage" xml:space="preserve">
+    <value>选择图像</value>
+  </data>
+    <data name="ClickToView" xml:space="preserve">
+    <value>点击查看</value>
+  </data>
+    <data name="ClickViewInfo" xml:space="preserve">
+    <value>点击查看个人信息</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="Comment" xml:space="preserve">
+    <value>备注</value>
+  </data>
+    <data name="CommentNull" xml:space="preserve">
+    <value>没有评论。</value>
+  </data>
+    <data name="Contribution" xml:space="preserve">
+    <value>点贡献：</value>
+  </data>
+    <data name="Copy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+    <data name="CreateDate" xml:space="preserve">
+    <value>创建日期：</value>
+  </data>
+    <data name="CreateGuild" xml:space="preserve">
+    <value>建立公会</value>
+  </data>
+    <data name="CreateGuildUppercase" xml:space="preserve">
+    <value>创建组装</value>
+  </data>
+    <data name="CreateGuildValidation1" xml:space="preserve">
+    <value>公会名称必须大于5且小于30个字符。</value>
+  </data>
+    <data name="CreateGuildValidation2" xml:space="preserve">
+    <value>公会名称包含不允许的字符。</value>
+  </data>
+    <data name="CreateGuildValidation3" xml:space="preserve">
+    <value>您需要{0}CHIPS来创建一个州。</value>
+  </data>
+    <data name="CreateGuildValidation4" xml:space="preserve">
+    <value>公会的名称已经存在。</value>
+  </data>
+    <data name="CreateGuildValidation5" xml:space="preserve">
+    <value>*你必须有足够的{0}才能创建一个公会。</value>
+  </data>
+    <data name="Date" xml:space="preserve">
+    <value>天</value>
+  </data>
+    <data name="DateFrom" xml:space="preserve">
+    <value>统计</value>
+  </data>
+    <data name="DateTo" xml:space="preserve">
+    <value>从那天起</value>
+  </data>
+    <data name="Delete" xml:space="preserve">
+    <value>抹去</value>
+  </data>
+    <data name="DeleteCmt" xml:space="preserve">
+    <value>删除评论</value>
+  </data>
+    <data name="DongGop" xml:space="preserve">
+    <value>贡献</value>
+  </data>
+    <data name="Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+    <data name="EnterFanPage" xml:space="preserve">
+    <value>输入Facebook页面地址</value>
+  </data>
+    <data name="EnterGuildName" xml:space="preserve">
+    <value>输入公会名称</value>
+  </data>
+    <data name="Event" xml:space="preserve">
+    <value>事件</value>
+  </data>
+    <data name="Exp" xml:space="preserve">
+    <value>经验</value>
+  </data>
+    <data name="Faction" xml:space="preserve">
+    <value>派</value>
+  </data>
+    <data name="GuildKey" xml:space="preserve">
+    <value>公会</value>
+  </data>
+    <data name="GuildKey2" xml:space="preserve">
+    <value>公会</value>
+  </data>
+    <data name="GuildName" xml:space="preserve">
+    <value>公会名称</value>
+  </data>
+    <data name="GuildOwne" xml:space="preserve">
+    <value>公会老板：</value>
+  </data>
+    <data name="GuildSuggest" xml:space="preserve">
+    <value>公会提出</value>
+  </data>
+    <data name="GuildValidation1" xml:space="preserve">
+    <value>您只能在此公会级别获得{0}</value>
+  </data>
+    <data name="GuildValidation10" xml:space="preserve">
+    <value>选择公会加入。</value>
+  </data>
+    <data name="GuildValidation11" xml:space="preserve">
+    <value>请成功加入。 请等待公会大师接受。</value>
+  </data>
+    <data name="GuildValidation12" xml:space="preserve">
+    <value>申请加入这个公会。 请等待公会大师接受。</value>
+  </data>
+    <data name="GuildValidation13" xml:space="preserve">
+    <value>没有公会信息。</value>
+  </data>
+    <data name="GuildValidation2" xml:space="preserve">
+    <value>接受用户{0}时出错</value>
+  </data>
+    <data name="GuildValidation3" xml:space="preserve">
+    <value>拒绝用户{0}时出错</value>
+  </data>
+    <data name="GuildValidation4" xml:space="preserve">
+    <value>请选择要删除的成员</value>
+  </data>
+    <data name="GuildValidation5" xml:space="preserve">
+    <value>你不是公会大师</value>
+  </data>
+    <data name="GuildValidation6" xml:space="preserve">
+    <value>无法删除自己</value>
+  </data>
+    <data name="GuildValidation7" xml:space="preserve">
+    <value>仅在指定日期踢用户</value>
+  </data>
+    <data name="GuildValidation8" xml:space="preserve">
+    <value>公会标语包含不允许的字符。</value>
+  </data>
+    <data name="GuildValidation9" xml:space="preserve">
+    <value>公会标语必须大于5且小于60个字符。</value>
+  </data>
+    <data name="Hello" xml:space="preserve">
+    <value>你好</value>
+  </data>
+    <data name="HistoryCoin" xml:space="preserve">
+    <value>CHIPS的历史</value>
+  </data>
+    <data name="HoursAgo" xml:space="preserve">
+    <value>前一个小时</value>
+  </data>
+    <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+    <data name="InfoAccount" xml:space="preserve">
+    <value>个人信息</value>
+  </data>
+    <data name="InfoGuild" xml:space="preserve">
+    <value>协会信息</value>
+  </data>
+    <data name="InfomationNull" xml:space="preserve">
+    <value>还没有信息</value>
+  </data>
+    <data name="Join" xml:space="preserve">
+    <value>加入</value>
+  </data>
+    <data name="Kick" xml:space="preserve">
+    <value>踢</value>
+  </data>
+    <data name="LeavGuild" xml:space="preserve">
+    <value>离开公会</value>
+  </data>
+    <data name="Level" xml:space="preserve">
+    <value>范围：</value>
+  </data>
+    <data name="LinkFanpage" xml:space="preserve">
+    <value>链接粉丝页面</value>
+  </data>
+    <data name="LinkInvitesMembers" xml:space="preserve">
+    <value>会员邀请链接</value>
+  </data>
+    <data name="ListGuild" xml:space="preserve">
+    <value>公会名单</value>
+  </data>
+    <data name="ListMember" xml:space="preserve">
+    <value>会员名单</value>
+  </data>
+    <data name="ListMemberUppercase" xml:space="preserve">
+    <value>会员名单</value>
+  </data>
+    <data name="ListMemberWaitting" xml:space="preserve">
+    <value>申请加入公会的会员名单</value>
+  </data>
+    <data name="Login" xml:space="preserve">
+    <value>注册</value>
+  </data>
+    <data name="LoginUseFunction" xml:space="preserve">
+    <value>您需要登录才能使用此功能</value>
+  </data>
+    <data name="LoginViewInfoGuild" xml:space="preserve">
+    <value>登录查看公会信息</value>
+  </data>
+    <data name="Logout" xml:space="preserve">
+    <value>出口</value>
+  </data>
+    <data name="ManaGuild" xml:space="preserve">
+    <value>行会管理</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>成员</value>
+  </data>
+    <data name="MetaTitle" xml:space="preserve">
+    <value>公会</value>
+  </data>
+    <data name="MinuteAgo" xml:space="preserve">
+    <value>最后一分钟</value>
+  </data>
+    <data name="Navy" xml:space="preserve">
+    <value>海军</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>没有数据。</value>
+  </data>
+    <data name="NumberMember" xml:space="preserve">
+    <value>会员人数</value>
+  </data>
+    <data name="OK" xml:space="preserve">
+    <value>同意</value>
+  </data>
+    <data name="Pirates" xml:space="preserve">
+    <value>海盗</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>政策</value>
+  </data>
+    <data name="PolicyGuild" xml:space="preserve">
+    <value>协会政策</value>
+  </data>
+    <data name="Recently" xml:space="preserve">
+    <value>最近</value>
+  </data>
+    <data name="Register" xml:space="preserve">
+    <value>注册</value>
+  </data>
+    <data name="Reject" xml:space="preserve">
+    <value>垃圾</value>
+  </data>
+    <data name="Report" xml:space="preserve">
+    <value>来吧</value>
+  </data>
+    <data name="ReportMemberActive" xml:space="preserve">
+    <value>活跃成员的统计数据</value>
+  </data>
+    <data name="ReportMemberActive2" xml:space="preserve">
+    <value>活动统计</value>
+  </data>
+    <data name="ReportMemberActive3" xml:space="preserve">
+    <value>活跃成员统计图表</value>
+  </data>
+    <data name="ReportRevenuGuild" xml:space="preserve">
+    <value>公会收入统计图表</value>
+  </data>
+    <data name="ReportTotalRechargeMember" xml:space="preserve">
+    <value>成员总负荷统计</value>
+  </data>
+    <data name="ReportTotalRechargeMember2" xml:space="preserve">
+    <value>总负载统计</value>
+  </data>
+    <data name="ReportTotalRechargeMember3" xml:space="preserve">
+    <value>成员的总负载统计</value>
+  </data>
+    <data name="RequestJoinGuildNull" xml:space="preserve">
+    <value>渔民没有要求</value>
+  </data>
+    <data name="ResponseCode1" xml:space="preserve">
+    <value>帐户被锁定</value>
+  </data>
+    <data name="ResponseCode10" xml:space="preserve">
+    <value>此功能目前暂时被锁定</value>
+  </data>
+    <data name="ResponseCode11" xml:space="preserve">
+    <value>获取帐户信息失败</value>
+  </data>
+    <data name="ResponseCode12" xml:space="preserve">
+    <value>获取配置信息失败</value>
+  </data>
+    <data name="ResponseCode13" xml:space="preserve">
+    <value>获取失败的横幅列表</value>
+  </data>
+    <data name="ResponseCode14" xml:space="preserve">
+    <value>获取新闻列表失败</value>
+  </data>
+    <data name="ResponseCode15" xml:space="preserve">
+    <value>获取货币历史记录失败列表</value>
+  </data>
+    <data name="ResponseCode16" xml:space="preserve">
+    <value>获取奖励交换的失败历史列表</value>
+  </data>
+    <data name="ResponseCode17" xml:space="preserve">
+    <value>获取失败的卡片加载历史记录列表</value>
+  </data>
+    <data name="ResponseCode18" xml:space="preserve">
+    <value>获取失败的邮箱信息</value>
+  </data>
+    <data name="ResponseCode19" xml:space="preserve">
+    <value>安全码不正确</value>
+  </data>
+    <data name="ResponseCode2" xml:space="preserve">
+    <value>正在进行中</value>
+  </data>
+    <data name="ResponseCode20" xml:space="preserve">
+    <value>服务不存在</value>
+  </data>
+    <data name="ResponseCode21" xml:space="preserve">
+    <value>公会不存在</value>
+  </data>
+    <data name="ResponseCode22" xml:space="preserve">
+    <value>帐户不是公会所有者</value>
+  </data>
+    <data name="ResponseCode23" xml:space="preserve">
+    <value>只接受jpg，png，gif ...图片</value>
+  </data>
+    <data name="ResponseCode24" xml:space="preserve">
+    <value>文件大小&gt; = 500Kb。</value>
+  </data>
+    <data name="ResponseCode25" xml:space="preserve">
+    <value>程序集名称不能为空。</value>
+  </data>
+    <data name="ResponseCode26" xml:space="preserve">
+    <value>州名长度在5到30个字符之间。</value>
+  </data>
+    <data name="ResponseCode27" xml:space="preserve">
+    <value>装配密码不能为空。</value>
+  </data>
+    <data name="ResponseCode28" xml:space="preserve">
+    <value>密码不匹配。</value>
+  </data>
+    <data name="ResponseCode29" xml:space="preserve">
+    <value>创建公会失败了。</value>
+  </data>
+    <data name="ResponseCode3" xml:space="preserve">
+    <value>数据无效</value>
+  </data>
+    <data name="ResponseCode30" xml:space="preserve">
+    <value>用户尚未登录</value>
+  </data>
+    <data name="ResponseCode31" xml:space="preserve">
+    <value>请求退出旧公会。</value>
+  </data>
+    <data name="ResponseCode32" xml:space="preserve">
+    <value>目前的公会不匹配。</value>
+  </data>
+    <data name="ResponseCode33" xml:space="preserve">
+    <value>加入公会失败了。</value>
+  </data>
+    <data name="ResponseCode34" xml:space="preserve">
+    <value>加入公会成功。</value>
+  </data>
+    <data name="ResponseCode35" xml:space="preserve">
+    <value>没有数据。</value>
+  </data>
+    <data name="ResponseCode4" xml:space="preserve">
+    <value>系统错误</value>
+  </data>
+    <data name="ResponseCode41" xml:space="preserve">
+    <value>您被禁止发表评论。</value>
+  </data>
+    <data name="ResponseCode42" xml:space="preserve">
+    <value>字符数超出限制</value>
+  </data>
+    <data name="ResponseCode43" xml:space="preserve">
+    <value>当天的评论数量超出限制</value>
+  </data>
+    <data name="ResponseCode44" xml:space="preserve">
+    <value>内容不合适。</value>
+  </data>
+    <data name="ResponseCode45" xml:space="preserve">
+    <value>该事件尚未发生</value>
+  </data>
+    <data name="ResponseCode46" xml:space="preserve">
+    <value>成功退出公会。</value>
+  </data>
+    <data name="ResponseCode47" xml:space="preserve">
+    <value>公会领袖无法逃脱行会。</value>
+  </data>
+    <data name="ResponseCode48" xml:space="preserve">
+    <value>没有加入公会。</value>
+  </data>
+    <data name="ResponseCode49" xml:space="preserve">
+    <value>程序集名称不包含禁止的字符。</value>
+  </data>
+    <data name="ResponseCode5" xml:space="preserve">
+    <value>令牌过期</value>
+  </data>
+    <data name="ResponseCode50" xml:space="preserve">
+    <value>口号不包含禁止的字符。</value>
+  </data>
+    <data name="ResponseCode51" xml:space="preserve">
+    <value>仅在指定日期踢用户。</value>
+  </data>
+    <data name="ResponseCode52" xml:space="preserve">
+    <value>用户不在公会中。</value>
+  </data>
+    <data name="ResponseCode53" xml:space="preserve">
+    <value>成功</value>
+  </data>
+    <data name="ResponseCode6" xml:space="preserve">
+    <value>是时候处理了</value>
+  </data>
+    <data name="ResponseCode7" xml:space="preserve">
+    <value>系统维护</value>
+  </data>
+    <data name="ResponseCode8" xml:space="preserve">
+    <value>帐户不存在</value>
+  </data>
+    <data name="ResponseCode9" xml:space="preserve">
+    <value>获取帐户信息失败</value>
+  </data>
+    <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+    <data name="SearchGuildPH" xml:space="preserve">
+    <value>输入要搜索的公会名称</value>
+  </data>
+    <data name="SecondsAgo" xml:space="preserve">
+    <value>几秒钟前</value>
+  </data>
+    <data name="Send" xml:space="preserve">
+    <value>提交</value>
+  </data>
+    <data name="Share" xml:space="preserve">
+    <value>分享</value>
+  </data>
+    <data name="Sologan" xml:space="preserve">
+    <value>暗号</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>时间</value>
+  </data>
+    <data name="Title" xml:space="preserve">
+    <value>标题</value>
+  </data>
+    <data name="TopDaiBang" xml:space="preserve">
+    <value>顶级伟大的公会</value>
+  </data>
+    <data name="TopDongGop" xml:space="preserve">
+    <value>Top贡献数月</value>
+  </data>
+    <data name="TopGuildMonth1" xml:space="preserve">
+    <value>顶级战争英雄月</value>
+  </data>
+    <data name="TopGuildMonth2" xml:space="preserve">
+    <value>上月协会</value>
+  </data>
+    <data name="View" xml:space="preserve">
+    <value>见</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>要人</value>
+  </data>
+    <data name="VipPoint" xml:space="preserve">
+    <value>VIP分数</value>
+  </data>
+    <data name="Yesterday" xml:space="preserve">
+    <value>几天前</value>
+  </data>
+</LocalLanguages>

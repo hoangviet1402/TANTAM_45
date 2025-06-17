@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="AcceptedSuccessfully" xml:space="preserve">
+    <value>ยอมรับคำเชิญได้สำเร็จ</value>
+  </data>
+    <data name="CantSendRequestFriend" xml:space="preserve">
+    <value>ไม่สามารถส่งคำเชิญได้เนื่องจากหมายเลขของคุณเต็ม</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>ความล้มเหลว</value>
+  </data>
+    <data name="InvalidQuantity" xml:space="preserve">
+    <value>หมายเลขไม่ถูกต้อง</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+    <data name="NoFriendsFound" xml:space="preserve">
+    <value>ไม่พบเพื่อน</value>
+  </data>
+    <data name="PersonFriend" xml:space="preserve">
+    <value>ผู้ใช้นี้เป็นเพื่อนแล้ว</value>
+  </data>
+    <data name="RejectSuccessfully" xml:space="preserve">
+    <value>ปฏิเสธคำเชิญสำเร็จ</value>
+  </data>
+    <data name="RewardeUserInviteFriend" xml:space="preserve">
+    <value>เชิญผู้ใช้ให้เชิญคุณ</value>
+  </data>
+    <data name="SentThisPerson" xml:space="preserve">
+    <value>ส่งคำเชิญเป็นเพื่อนถึงบุคคลนี้</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>ฟังก์ชั่นอยู่ระหว่างการบำรุงรักษา</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>ประสบความสำเร็จ</value>
+  </data>
+    <data name="UnlockVip" xml:space="preserve">
+    <value>ปลดล็อกเมื่อมาถึง Vip</value>
+  </data>
+    <data name="UserCannotSendInvitationsToUser" xml:space="preserve">
+    <value>คุณไม่สามารถส่งคำเชิญถึงตัวคุณเอง</value>
+  </data>
+    <data name="UserHasNoFriendInvitation" xml:space="preserve">
+    <value>ผู้ใช้ไม่มีคำเชิญเป็นเพื่อน</value>
+  </data>
+    <data name="UserHaveFriendInvitation" xml:space="preserve">
+    <value>คุณมีคำขอเป็นเพื่อน {0} คน!</value>
+  </data>
+    <data name="UserHaveRunOutOfRewarded" xml:space="preserve">
+    <value>โบนัสของคุณหมดแล้ว</value>
+  </data>
+    <data name="UserMustInviteEnough" xml:space="preserve">
+    <value>คุณต้องเชิญ {0} คนขึ้นไปเพื่อรับของกำนัล</value>
+  </data>
+    <data name="UserNotExists" xml:space="preserve">
+    <value>ไม่มีผู้ใช้</value>
+  </data>
+    <data name="ContentIsNotAllow" xml:space="preserve">
+    <value>เนื้อหาไม่เหมาะสม</value>
+  </data>
+</LocalLanguages>

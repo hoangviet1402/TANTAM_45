@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="GuildNoExist">
+        <value>Bang hội không tồn tại</value>
+    </data>
+
+
+    <data name="GuildAdmin" xml:space="preserve">
+    <value>admin _</value>
+  </data>
+    <data name="GuildBang" xml:space="preserve">
+    <value>Bang _</value>
+  </data>
+    <data name="GuildBangChu" xml:space="preserve">
+    <value>Bang chủ _ </value>
+  </data>
+    <data name="GuildCap" xml:space="preserve">
+    <value>cấp _</value>
+  </data>
+    <data name="GuildChinhSach" xml:space="preserve">
+    <value>CHÍNH SÁCH BANG _</value>
+  </data>
+    <data name="GuildChiTietTTUser" xml:space="preserve">
+    <value>CHI TIẾT THÔNG TIN USER _</value>
+  </data>
+    <data name="GuildChonBangGiaNhap" xml:space="preserve">
+    <value>Chọn bang xin gia nhập. _</value>
+  </data>
+    <data name="GuildCmt" xml:space="preserve">
+    <value>Bình luận _</value>
+  </data>
+    <data name="GuildDaiBang" xml:space="preserve">
+    <value>ĐẠI BANG THÁNG _</value>
+  </data>
+    <data name="GuildDangBoi" xml:space="preserve">
+    <value>Đăng bởi: _</value>
+  </data>
+    <data name="GuildDanhSachSuKienMoi" xml:space="preserve">
+    <value>DANH SÁCH SỰ KIỆN MỚI NHẤT _</value>
+  </data>
+    <data name="GuildDongGop" xml:space="preserve">
+    <value>Đóng góp _</value>
+  </data>
+    <data name="GuildDongY" xml:space="preserve">
+    <value>Đồng ý _</value>
+  </data>
+    <data name="GuildGiaNhap" xml:space="preserve">
+    <value>Gia nhập _</value>
+  </data>
+    <data name="GuildGiaNhapSuccess" xml:space="preserve">
+    <value>Xin gia nhập thành công. Vui lòng chờ bang chủ chấp nhận. _</value>
+  </data>
+    <data name="GuildGiaNhapSuccess2" xml:space="preserve">
+    <value>Đã xin gia nhập bang này. Vui lòng chờ bang chủ chấp nhận. _</value>
+  </data>
+    <data name="GuildGiayTruoc" xml:space="preserve">
+    <value>giây trước _</value>
+  </data>
+    <data name="GuildGioTruoc" xml:space="preserve">
+    <value>giờ trước _</value>
+  </data>
+    <data name="GuildGui" xml:space="preserve">
+    <value>Gửi _</value>
+  </data>
+    <data name="GuildHaiQuan" xml:space="preserve">
+    <value>Hải quân _</value>
+  </data>
+    <data name="GuildHaiTac" xml:space="preserve">
+    <value>Hải tặc _</value>
+  </data>
+    <data name="GuildID" xml:space="preserve">
+    <value>ID _</value>
+  </data>
+    <data name="GuildKCoBinhLuan" xml:space="preserve">
+    <value>Không có bình luận _</value>
+  </data>
+    <data name="GuildKCoDataChoDuyet" xml:space="preserve">
+    <value>Không có thành viên chờ duyệt _</value>
+  </data>
+    <data name="GuildKCoTTBang" xml:space="preserve">
+    <value>Không có thông tin bang. _</value>
+  </data>
+    <data name="GuildKich" xml:space="preserve">
+    <value>Kick _</value>
+  </data>
+    <data name="GuildKinhNghiem" xml:space="preserve">
+    <value>Kinh nghiệm _</value>
+  </data>
+    <data name="GuildLevel" xml:space="preserve">
+    <value>Level _</value>
+  </data>
+    <data name="GuildLinkFanPage" xml:space="preserve">
+    <value>Link fanpage _</value>
+  </data>
+    <data name="GuildLoginDeSuDung" xml:space="preserve">
+    <value>Vui lòng đăng nhập để sử dụng chức năng này _</value>
+  </data>
+    <data name="GuildMember" xml:space="preserve">
+    <value>Thành viên _</value>
+  </data>
+    <data name="GuildMoiDay" xml:space="preserve">
+    <value>Mới đây _</value>
+  </data>
+    <data name="GuildNgayTao" xml:space="preserve">
+    <value>Ngày tạo _</value>
+  </data>
+    <data name="GuildNgayTruoc" xml:space="preserve">
+    <value>ngày trước _</value>
+  </data>
+    <data name="GuildNoData" xml:space="preserve">
+    <value>Không có dữ liệu _</value>
+  </data>
+    <data name="GuildPhe" xml:space="preserve">
+    <value>Phe _</value>
+  </data>
+    <data name="GuildPhutTruoc" xml:space="preserve">
+    <value>phút trước _</value>
+  </data>
+    <data name="GuildRoiBang" xml:space="preserve">
+    <value>Rời bang _</value>
+  </data>
+    <data name="GuildSave" xml:space="preserve">
+    <value>Lưu _</value>
+  </data>
+    <data name="GuildSearchBang" xml:space="preserve">
+    <value>Nhập tên bang để tìm kiếm _</value>
+  </data>
+    <data name="GuildSTT" xml:space="preserve">
+    <value>STT _</value>
+  </data>
+    <data name="GuildSuKien" xml:space="preserve">
+    <value>SỰ KIỆN _</value>
+  </data>
+    <data name="GuildTaiKhoan" xml:space="preserve">
+    <value>Tài khoản _</value>
+  </data>
+    <data name="GuildTaoBang" xml:space="preserve">
+    <value>TẠO BANG _</value>
+  </data>
+    <data name="GuildTenBang" xml:space="preserve">
+    <value>Tên bang _</value>
+  </data>
+    <data name="GuildThoiGian" xml:space="preserve">
+    <value>Thời gian _</value>
+  </data>
+    <data name="GuildThongTin" xml:space="preserve">
+    <value>Thông tin _</value>
+  </data>
+    <data name="GuildThongTinBangHoi" xml:space="preserve">
+    <value>THÔNG TIN BANG HỘI _</value>
+  </data>
+    <data name="GuildTongXu" xml:space="preserve">
+    <value>Tổng xu _</value>
+  </data>
+    <data name="GuildTuChoi" xml:space="preserve">
+    <value>Từ chối _</value>
+  </data>
+    <data name="GuildUserJoin" xml:space="preserve">
+    <value>User xin gia nhập _</value>
+  </data>
+    <data name="GuildValidate" xml:space="preserve">
+    <value>Bạn chỉ được phép nhận thêm {0} thành viên ở cấp độ bang này. _</value>
+  </data>
+    <data name="GuildValidate10" xml:space="preserve">
+    <value>Bạn không phải là bang chủ. _</value>
+  </data>
+    <data name="GuildValidate11" xml:space="preserve">
+    <value>Không thể xóa chính bạn. _</value>
+  </data>
+    <data name="GuildValidate12" xml:space="preserve">
+    <value>Chỉ được kick user vào những ngày quy định. _</value>
+  </data>
+    <data name="GuildValidate13" xml:space="preserve">
+    <value>* Bạn phải có đủ 2.000.000 để tạo được bang _</value>
+  </data>
+    <data name="GuildValidate2" xml:space="preserve">
+    <value>Lỗi chấp nhận User {0} _</value>
+  </data>
+    <data name="GuildValidate3" xml:space="preserve">
+    <value>Lỗi từ chối User {0} _</value>
+  </data>
+    <data name="GuildValidate4" xml:space="preserve">
+    <value>Khẩu hiệu bang chứa ký tự không cho phép _</value>
+  </data>
+    <data name="GuildValidate5" xml:space="preserve">
+    <value>Khẩu hiệu bang phải lớn hơn 5 và nhỏ hơn 60 ký tự _</value>
+  </data>
+    <data name="GuildValidate6" xml:space="preserve">
+    <value>Tên bang hội phải lớn hơn 5 và nhỏ hơn 30 ký tự _</value>
+  </data>
+    <data name="GuildValidate7" xml:space="preserve">
+    <value>Tên bang hội chứa ký tự không cho phép _</value>
+  </data>
+    <data name="GuildValidate8" xml:space="preserve">
+    <value>Bạn cần 2.000.000 Xu để tạo bang _</value>
+  </data>
+    <data name="GuildValidate9" xml:space="preserve">
+    <value>Tên Bang đã tồn tại _</value>
+  </data>
+    <data name="GuildVip" xml:space="preserve">
+    <value>VIP _</value>
+  </data>
+    <data name="GuildXoaBinhLuan" xml:space="preserve">
+    <value>Xóa bình luận _</value>
+  </data>
+    <data name="GuildTimKiem" xml:space="preserve">
+    <value>Tìm kiếm _</value>
+  </data>
+    <data name="GuildNhapTenBang" xml:space="preserve">
+    <value>Nhập tên bang</value>
+  </data>
+    <data name="GuildQuanLyBang" xml:space="preserve">
+    <value>QUẢN LÝ BANG</value>
+  </data>
+    <data name="GuildDanhSachBang" xml:space="preserve">
+    <value>DANH SÁCH BANG _</value>
+  </data>
+    <data name="GuildValidate14" xml:space="preserve">
+    <value>Chỉ có thành viên mới xem được bình luận _</value>
+  </data>
+    <data name="GuildError" xml:space="preserve">
+    <value>Có lỗi xảy ra! Vui lòng thử lại sau. _</value>
+  </data>
+    <data name="GuildKhauHieu" xml:space="preserve">
+    <value>Khẩu hiệu _</value>
+  </data>
+    <data name="GuildNhapfanpagefb" xml:space="preserve">
+    <value>Nhập fanpage facebook</value>
+  </data>
+    <data name="GuildNhapKhauHieu" xml:space="preserve">
+    <value>Nhập khẩu hiệu</value>
+  </data>
+    <data name="GuildMoiThanhVien" xml:space="preserve">
+    <value>Mời thành viên _</value>
+  </data>
+    <data name="GuildCoppy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+    <data name="GuildDangNhap" xml:space="preserve">
+    <value>Đăng nhập_</value>
+  </data>
+    <data name="GuildReport" xml:space="preserve">
+    <value>Thống kê _</value>
+  </data>
+
+
+    <data name="Account" xml:space="preserve">
+    <value>គណនី</value>
+  </data>
+    <data name="BtnSearch" xml:space="preserve">
+    <value>ស្វែងរក</value>
+  </data>
+    <data name="Cancel" xml:space="preserve">
+    <value>បោះបង់</value>
+  </data>
+    <data name="ChooseeImage" xml:space="preserve">
+    <value>ជ្រើសរូបភាព</value>
+  </data>
+    <data name="ClickToView" xml:space="preserve">
+    <value>ចុចដើម្បីមើល</value>
+  </data>
+    <data name="ClickViewInfo" xml:space="preserve">
+    <value>ចុចដើម្បីមើលព័ត៌មានផ្ទាល់ខ្លួន</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="Comment" xml:space="preserve">
+    <value>យោបល់</value>
+  </data>
+    <data name="CommentNull" xml:space="preserve">
+    <value>មិនមានមតិទេ។</value>
+  </data>
+    <data name="Contribution" xml:space="preserve">
+    <value>វិភាគទាន:</value>
+  </data>
+    <data name="Copy" xml:space="preserve">
+    <value>ចម្លង</value>
+  </data>
+    <data name="CreateDate" xml:space="preserve">
+    <value>កាលបរិច្ឆេទបង្កើត:</value>
+  </data>
+    <data name="CreateGuild" xml:space="preserve">
+    <value>បង្កើតហ្គីល</value>
+  </data>
+    <data name="CreateGuildUppercase" xml:space="preserve">
+    <value>បង្កើតហ្គីល</value>
+  </data>
+    <data name="CreateGuildValidation1" xml:space="preserve">
+    <value>ឈ្មោះហ្គីលត្រូវតែធំជាង 5 និងតិចជាង 30 តួអក្សរ។</value>
+  </data>
+    <data name="CreateGuildValidation2" xml:space="preserve">
+    <value>ឈ្មោះហ្គីលមានតួអក្សរដែលមិនត្រូវបានអនុញ្ញាត។</value>
+  </data>
+    <data name="CreateGuildValidation3" xml:space="preserve">
+    <value>អ្នកត្រូវការ CHIPS {0} ដើម្បីបង្កើតរដ្ឋ។</value>
+  </data>
+    <data name="CreateGuildValidation4" xml:space="preserve">
+    <value>ឈ្មោះរបស់ហ្គីលនេះមានរួចហើយ។</value>
+  </data>
+    <data name="CreateGuildValidation5" xml:space="preserve">
+    <value>* អ្នកត្រូវមាន {0} គ្រប់គ្រាន់ដើម្បីបង្កើត Guild ។</value>
+  </data>
+    <data name="Date" xml:space="preserve">
+    <value>ថ្ងៃ</value>
+  </data>
+    <data name="DateFrom" xml:space="preserve">
+    <value>ស្ថិតិ</value>
+  </data>
+    <data name="DateTo" xml:space="preserve">
+    <value>ចាប់ពីថ្ងៃ</value>
+  </data>
+    <data name="Delete" xml:space="preserve">
+    <value>លុប</value>
+  </data>
+    <data name="DeleteCmt" xml:space="preserve">
+    <value>លុបមតិយោបល់</value>
+  </data>
+    <data name="DongGop" xml:space="preserve">
+    <value>ចូលរួមចំណែក</value>
+  </data>
+    <data name="Edit" xml:space="preserve">
+    <value>កែប្រែ</value>
+  </data>
+    <data name="EnterFanPage" xml:space="preserve">
+    <value>បញ្ចូលអាសយដ្ឋានទំព័រហ្វេសប៊ុក</value>
+  </data>
+    <data name="EnterGuildName" xml:space="preserve">
+    <value>បញ្ចូលឈ្មោះ Guild</value>
+  </data>
+    <data name="Event" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍</value>
+  </data>
+    <data name="Exp" xml:space="preserve">
+    <value>បទពិសោធន៍</value>
+  </data>
+    <data name="Faction" xml:space="preserve">
+    <value>បក្សពួក</value>
+  </data>
+    <data name="GuildKey" xml:space="preserve">
+    <value>ហ្គីល</value>
+  </data>
+    <data name="GuildKey2" xml:space="preserve">
+    <value>ហ្គីល</value>
+  </data>
+    <data name="GuildName" xml:space="preserve">
+    <value>ឈ្មោះរបស់ហ្គីល</value>
+  </data>
+    <data name="GuildOwne" xml:space="preserve">
+    <value>ម្ចាស់ Guild:</value>
+  </data>
+    <data name="GuildSuggest" xml:space="preserve">
+    <value>Guild បានស្នើសុំ</value>
+  </data>
+    <data name="GuildValidation1" xml:space="preserve">
+    <value>អ្នកត្រូវបានអនុញ្ញាតឱ្យទទួល {0} នៅកម្រិតហ្គីលនេះតែប៉ុណ្ណោះ</value>
+  </data>
+    <data name="GuildValidation10" xml:space="preserve">
+    <value>ជ្រើសរើសក្រុមហ្គីលីដដើម្បីចូលរួម។</value>
+  </data>
+    <data name="GuildValidation11" xml:space="preserve">
+    <value>សូមព្យាយាមរង់ចាំគណៈគ្រប់គ្រងបញ្ជាក់ដើម្បីបានចូលរួមក្នុងបក្ស/ក្រុម</value>
+  </data>
+    <data name="GuildValidation12" xml:space="preserve">
+    <value>បានអនុវត្តដើម្បីចូលរួម Guild នេះ។ សូមរង់ចាំមេអនុប្រធានដើម្បីទទួលយក។</value>
+  </data>
+    <data name="GuildValidation13" xml:space="preserve">
+    <value>មិនមានព័ត៌មានហ្គីលឡើយ។</value>
+  </data>
+    <data name="GuildValidation2" xml:space="preserve">
+    <value>កំហុសក្នុងការទទួលយកអ្នកប្រើប្រាស់ {0}</value>
+  </data>
+    <data name="GuildValidation3" xml:space="preserve">
+    <value>កំហុសក្នុងការបដិសេធអ្នកប្រើប្រាស់ {0}</value>
+  </data>
+    <data name="GuildValidation4" xml:space="preserve">
+    <value>សូមជ្រើសរើសសមាជិកដែលអ្នកចង់ដកចេញ</value>
+  </data>
+    <data name="GuildValidation5" xml:space="preserve">
+    <value>អ្នកមិនមែនជាម្ចាស់មេហ្គីលនោះទេ</value>
+  </data>
+    <data name="GuildValidation6" xml:space="preserve">
+    <value>មិនអាចលុបខ្លួនអ្នកបានទេ</value>
+  </data>
+    <data name="GuildValidation7" xml:space="preserve">
+    <value>ចាប់ផ្ដើមតែអ្នកប្រើនៅលើថ្ងៃជាក់លាក់</value>
+  </data>
+    <data name="GuildValidation8" xml:space="preserve">
+    <value>ពាក្យស្លោករបស់ Guild មានតួអក្សរដែលមិនត្រូវបានអនុញ្ញាត។</value>
+  </data>
+    <data name="GuildValidation9" xml:space="preserve">
+    <value>ពាក្យស្លោករបស់ Guild ត្រូវតែធំជាង 5 និងតិចជាង 60 តួអក្សរ។</value>
+  </data>
+    <data name="Hello" xml:space="preserve">
+    <value>សួស្តី</value>
+  </data>
+    <data name="HistoryCoin" xml:space="preserve">
+    <value>ប្រវត្តិរបស់ CHIPS</value>
+  </data>
+    <data name="HoursAgo" xml:space="preserve">
+    <value>ម៉ោងមុន</value>
+  </data>
+    <data name="ID" xml:space="preserve">
+    <value>លេខសម្គាល់:</value>
+  </data>
+    <data name="InfoAccount" xml:space="preserve">
+    <value>ព័ត៌មានផ្ទាល់ខ្លួន</value>
+  </data>
+    <data name="InfoGuild" xml:space="preserve">
+    <value>ព័ត៌មានសមាគម</value>
+  </data>
+    <data name="InfomationNull" xml:space="preserve">
+    <value>មិនទាន់មានព័ត៌មាននៅឡើយ</value>
+  </data>
+    <data name="Join" xml:space="preserve">
+    <value>ចូលរួម</value>
+  </data>
+    <data name="Kick" xml:space="preserve">
+    <value>ទាត់</value>
+  </data>
+    <data name="LeavGuild" xml:space="preserve">
+    <value>ចាកចេញពី Guild</value>
+  </data>
+    <data name="Level" xml:space="preserve">
+    <value>កម្រិត:</value>
+  </data>
+    <data name="LinkFanpage" xml:space="preserve">
+    <value>អាសយដ្ឋានអញ្ជើញរបស់ហ្វេសប៊ុក:</value>
+  </data>
+    <data name="LinkInvitesMembers" xml:space="preserve">
+    <value>តំណភ្ជាប់អញ្ជើញសមាជិក:</value>
+  </data>
+    <data name="ListGuild" xml:space="preserve">
+    <value>បញ្ជីអ្នកតំណាង</value>
+  </data>
+    <data name="ListMember" xml:space="preserve">
+    <value>បញ្ជីសមាជិក</value>
+  </data>
+    <data name="ListMemberUppercase" xml:space="preserve">
+    <value>បញ្ជីសមាជិក</value>
+  </data>
+    <data name="ListMemberWaitting" xml:space="preserve">
+    <value>ហ្គីលកំពូលអស្ចារ្យ</value>
+  </data>
+    <data name="Login" xml:space="preserve">
+    <value>ចូល</value>
+  </data>
+    <data name="LoginUseFunction" xml:space="preserve">
+    <value>អ្នកត្រូវចូលដើម្បីប្រើមុខងារនេះ</value>
+  </data>
+    <data name="LoginViewInfoGuild" xml:space="preserve">
+    <value>ចូលដើម្បីមើលពត៌មាន Guild</value>
+  </data>
+    <data name="Logout" xml:space="preserve">
+    <value>ចេញ</value>
+  </data>
+    <data name="ManaGuild" xml:space="preserve">
+    <value>ការគ្រប់គ្រង Guild</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>សមាជិក</value>
+  </data>
+    <data name="MetaTitle" xml:space="preserve">
+    <value>Guild</value>
+  </data>
+    <data name="MinuteAgo" xml:space="preserve">
+    <value>នាទីចុងក្រោយ</value>
+  </data>
+    <data name="Navy" xml:space="preserve">
+    <value>កងទ័ពជើងទឹក</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>មិនមានទិន្នន័យ។</value>
+  </data>
+    <data name="NumberMember" xml:space="preserve">
+    <value>ចំនួនសមាជិក:</value>
+  </data>
+    <data name="OK" xml:space="preserve">
+    <value>យល់ព្រម</value>
+  </data>
+    <data name="Pirates" xml:space="preserve">
+    <value>ចោរសមុទ្រ</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>គោលនយោបាយ</value>
+  </data>
+    <data name="PolicyGuild" xml:space="preserve">
+    <value>គោលនយោបាយសមាគម</value>
+  </data>
+    <data name="Recently" xml:space="preserve">
+    <value>ថ្មីៗ</value>
+  </data>
+    <data name="Register" xml:space="preserve">
+    <value>ចុះឈ្មោះ</value>
+  </data>
+    <data name="Reject" xml:space="preserve">
+    <value>បដិសេធ</value>
+  </data>
+    <data name="Report" xml:space="preserve">
+    <value>ចូលមក</value>
+  </data>
+    <data name="ReportMemberActive" xml:space="preserve">
+    <value>ស្ថិតិសមាជិកសកម្ម</value>
+  </data>
+    <data name="ReportMemberActive2" xml:space="preserve">
+    <value>ស្ថិតិសកម្មភាព</value>
+  </data>
+    <data name="ReportMemberActive3" xml:space="preserve">
+    <value>តារាងនៃស្ថិតិសមាជិកសកម្ម</value>
+  </data>
+    <data name="ReportRevenuGuild" xml:space="preserve">
+    <value>តារាងពិន្ទុស្ថិតិប្រាក់ចំណូលរបស់ហ្គីល</value>
+  </data>
+    <data name="ReportTotalRechargeMember" xml:space="preserve">
+    <value>ស្ថិតិនៃការផ្ទុកសរុបរបស់សមាជិក</value>
+  </data>
+    <data name="ReportTotalRechargeMember2" xml:space="preserve">
+    <value>ស្ថិតិនៃការផ្ទុកសរុប</value>
+  </data>
+    <data name="ReportTotalRechargeMember3" xml:space="preserve">
+    <value>ស្ថិតិផ្ទុកសរុបនៃសមាជិក</value>
+  </data>
+    <data name="RequestJoinGuildNull" xml:space="preserve">
+    <value>មិនមានសំណើពីអ្នកនេសាទទេ</value>
+  </data>
+    <data name="ResponseCode1" xml:space="preserve">
+    <value>គណនីត្រូវបានចាក់សោ</value>
+  </data>
+    <data name="ResponseCode10" xml:space="preserve">
+    <value>មុខងារនេះបច្ចុប្បន្នត្រូវបានចាក់សោបណ្តោះអាសន្ន</value>
+  </data>
+    <data name="ResponseCode11" xml:space="preserve">
+    <value>ទទួលបានព័ត៌មានគណនីបរាជ័យ</value>
+  </data>
+    <data name="ResponseCode12" xml:space="preserve">
+    <value>ទទួលបានព័ត៌មានការកំណត់រចនាសម្ព័ន្ធបរាជ័យ</value>
+  </data>
+    <data name="ResponseCode13" xml:space="preserve">
+    <value>ទទួលយកបញ្ជីបដាដែលបរាជ័យ</value>
+  </data>
+    <data name="ResponseCode14" xml:space="preserve">
+    <value>ទទួលយកបញ្ជីព័ត៌មានបរាជ័យ</value>
+  </data>
+    <data name="ResponseCode15" xml:space="preserve">
+    <value>ទទួលបានបញ្ជីនៃការបរាជ័យប្រវត្តិសាស្រ្តប្រាក់</value>
+  </data>
+    <data name="ResponseCode16" xml:space="preserve">
+    <value>ទទួលយកបញ្ជីប្រវត្តិនៃការទូទាត់រង្វាន់ដែលបរាជ័យ</value>
+  </data>
+    <data name="ResponseCode17" xml:space="preserve">
+    <value>ទទួលយកបញ្ជីនៃការផ្ទុកកាតដែលបរាជ័យ</value>
+  </data>
+    <data name="ResponseCode18" xml:space="preserve">
+    <value>ទទួលបានព័ត៌មានប្រអប់សំបុត្របរាជ័យ</value>
+  </data>
+    <data name="ResponseCode19" xml:space="preserve">
+    <value>លេខកូដសុវត្ថិភាពមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="ResponseCode2" xml:space="preserve">
+    <value>កំពុងដំណើរការ</value>
+  </data>
+    <data name="ResponseCode20" xml:space="preserve">
+    <value>សេវាកម្មមិនមានទេ</value>
+  </data>
+    <data name="ResponseCode21" xml:space="preserve">
+    <value>Guild មិនមានទេ</value>
+  </data>
+    <data name="ResponseCode22" xml:space="preserve">
+    <value>គណនីមិនមែនជាម្ចាស់ហ្គីល</value>
+  </data>
+    <data name="ResponseCode23" xml:space="preserve">
+    <value>ទទួលយកតែរូបភាព jpg, png, gif ...</value>
+  </data>
+    <data name="ResponseCode24" xml:space="preserve">
+    <value>ទំហំឯកសារ&gt; = 500 គីប។</value>
+  </data>
+    <data name="ResponseCode25" xml:space="preserve">
+    <value>ឈ្មោះរដ្ឋសភាមិនអាចទទេ។</value>
+  </data>
+    <data name="ResponseCode26" xml:space="preserve">
+    <value>ឈ្មោះរដ្ឋមានប្រវែងពី 5 ទៅ 30 តួអក្សរ។</value>
+  </data>
+    <data name="ResponseCode27" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់នៃការដំឡើងមិនអាចទទេបានទេ។</value>
+  </data>
+    <data name="ResponseCode28" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់មិនត្រូវគ្នា។</value>
+  </data>
+    <data name="ResponseCode29" xml:space="preserve">
+    <value>ការបង្កើតហ្គីតាបានបរាជ័យ។</value>
+  </data>
+    <data name="ResponseCode3" xml:space="preserve">
+    <value>ទិន្នន័យមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="ResponseCode30" xml:space="preserve">
+    <value>អ្នកប្រើមិនបានចូលទេ</value>
+  </data>
+    <data name="ResponseCode31" xml:space="preserve">
+    <value>ស្នើសុំឱ្យចាកចេញពី Guild ចាស់។</value>
+  </data>
+    <data name="ResponseCode32" xml:space="preserve">
+    <value>Guild បច្ចុប្បន្នមិនត្រូវគ្នា។</value>
+  </data>
+    <data name="ResponseCode33" xml:space="preserve">
+    <value>ការចូលរួមក្រុមហ្គីតាបានបរាជ័យ។</value>
+  </data>
+    <data name="ResponseCode34" xml:space="preserve">
+    <value>ចូលរួមហ្គីតាដោយជោគជ័យ។</value>
+  </data>
+    <data name="ResponseCode35" xml:space="preserve">
+    <value>មិនមានទិន្នន័យ។</value>
+  </data>
+    <data name="ResponseCode4" xml:space="preserve">
+    <value>កំហុសប្រព័ន្ធ</value>
+  </data>
+    <data name="ResponseCode41" xml:space="preserve">
+    <value>អ្នកត្រូវបានហាមឃាត់មិនឱ្យបញ្ចេញមតិ។</value>
+  </data>
+    <data name="ResponseCode42" xml:space="preserve">
+    <value>ចំនួនតួអក្សរលើសពីដែនកំណត់</value>
+  </data>
+    <data name="ResponseCode43" xml:space="preserve">
+    <value>ចំនួនមតិយោបល់ក្នុងថ្ងៃលើសពីដែនកំណត់</value>
+  </data>
+    <data name="ResponseCode44" xml:space="preserve">
+    <value>មាតិកាមិនសមរម្យ។</value>
+  </data>
+    <data name="ResponseCode45" xml:space="preserve">
+    <value>ព្រឹត្តិការណ៍នេះមិនទាន់បានកើតឡើងនៅឡើយទេ</value>
+  </data>
+    <data name="ResponseCode46" xml:space="preserve">
+    <value>ចេញពី Guild ដោយជោគជ័យ។</value>
+  </data>
+    <data name="ResponseCode47" xml:space="preserve">
+    <value>មេដឹកនាំហ្គីលមិនអាចគេចចេញពីក្រុម Guild បាន។</value>
+  </data>
+    <data name="ResponseCode48" xml:space="preserve">
+    <value>មិនបានចូលរួមជាមួយ Guild ។</value>
+  </data>
+    <data name="ResponseCode49" xml:space="preserve">
+    <value>ឈ្មោះរដ្ឋសភាមិនមានតួអក្សរហាមឃាត់ឡើយ។</value>
+  </data>
+    <data name="ResponseCode5" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់ផុតកំណត់</value>
+  </data>
+    <data name="ResponseCode50" xml:space="preserve">
+    <value>ពាក្យស្លោកមិនមានតួអក្សរហាមឃាត់។</value>
+  </data>
+    <data name="ResponseCode51" xml:space="preserve">
+    <value>ចាប់ផ្ដើមតែអ្នកប្រើនៅលើថ្ងៃជាក់លាក់។</value>
+  </data>
+    <data name="ResponseCode52" xml:space="preserve">
+    <value>អ្នកប្រើមិននៅក្នុងហ្គីល។</value>
+  </data>
+    <data name="ResponseCode53" xml:space="preserve">
+    <value>ជោគជ័យ</value>
+  </data>
+    <data name="ResponseCode6" xml:space="preserve">
+    <value>ពេលវេលាដើម្បីដំណើរការ</value>
+  </data>
+    <data name="ResponseCode7" xml:space="preserve">
+    <value>ថែទាំប្រព័ន្ធ</value>
+  </data>
+    <data name="ResponseCode8" xml:space="preserve">
+    <value>មិនមានគណនី</value>
+  </data>
+    <data name="ResponseCode9" xml:space="preserve">
+    <value>ទទួលបានព័ត៌មានគណនីបរាជ័យ</value>
+  </data>
+    <data name="Save" xml:space="preserve">
+    <value>រក្សាទុក</value>
+  </data>
+    <data name="SearchGuildPH" xml:space="preserve">
+    <value>បញ្ចូលឈ្មោះហ្គីលដើម្បីស្វែងរក</value>
+  </data>
+    <data name="SecondsAgo" xml:space="preserve">
+    <value>វិនាទីកន្លងទៅ</value>
+  </data>
+    <data name="Send" xml:space="preserve">
+    <value>បានផ្ញើ</value>
+  </data>
+    <data name="Share" xml:space="preserve">
+    <value>ចែករំលែក</value>
+  </data>
+    <data name="Sologan" xml:space="preserve">
+    <value>ពាក្យស្លោក</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>ពេលវេលា</value>
+  </data>
+    <data name="Title" xml:space="preserve">
+    <value>ចំណងជើង</value>
+  </data>
+    <data name="TopDaiBang" xml:space="preserve">
+    <value>ហ្គីលដ៏កំពូលអស្ចារ្យ</value>
+  </data>
+    <data name="TopDongGop" xml:space="preserve">
+    <value>TOP រួមចំណែកខែ</value>
+  </data>
+    <data name="TopGuildMonth1" xml:space="preserve">
+    <value>TOP ក្រុមប្រយុទ្ធអង់អាចខែ</value>
+  </data>
+    <data name="TopGuildMonth2" xml:space="preserve">
+    <value>Top ក្រុមប្រយុទ្ធខែ</value>
+  </data>
+    <data name="View" xml:space="preserve">
+    <value>សូមមើល</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+    <data name="VipPoint" xml:space="preserve">
+    <value>ពិន្ទុ VIP</value>
+  </data>
+    <data name="Yesterday" xml:space="preserve">
+    <value>ថ្ងៃមុន</value>
+  </data>
+</LocalLanguages>

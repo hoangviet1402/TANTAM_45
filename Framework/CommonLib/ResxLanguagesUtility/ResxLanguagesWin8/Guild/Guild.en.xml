@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+    <data name="BtnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+    <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+    <data name="ChooseeImage" xml:space="preserve">
+    <value>Choose image</value>
+  </data>
+    <data name="ClickToView" xml:space="preserve">
+    <value>Click to view</value>
+  </data>
+    <data name="ClickViewInfo" xml:space="preserve">
+    <value>Click to view personal information</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>WIN</value>
+  </data>
+    <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+    <data name="CommentNull" xml:space="preserve">
+    <value>No comment</value>
+  </data>
+    <data name="Contribution" xml:space="preserve">
+    <value>Point contribution</value>
+  </data>
+    <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+    <data name="CreateDate" xml:space="preserve">
+    <value>Create date</value>
+  </data>
+    <data name="CreateGuild" xml:space="preserve">
+    <value>Create guild</value>
+  </data>
+    <data name="CreateGuildUppercase" xml:space="preserve">
+    <value>CREATE GUILD</value>
+  </data>
+    <data name="CreateGuildValidation1" xml:space="preserve">
+    <value>The guild name must be greater than 5 and less than 30 characters.</value>
+  </data>
+    <data name="CreateGuildValidation2" xml:space="preserve">
+    <value>The guild name contains the characters that are not allowed.</value>
+  </data>
+    <data name="CreateGuildValidation3" xml:space="preserve">
+    <value>The guild name contains characters that do not allow. You need 2,000,000 WIN to create guilds.</value>
+  </data>
+    <data name="CreateGuildValidation4" xml:space="preserve">
+    <value>The name of the guild already exists.</value>
+  </data>
+    <data name="CreateGuildValidation5" xml:space="preserve">
+    <value>* You must deposit 1000$ to create a guild.</value>
+  </data>
+    <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+    <data name="DateFrom" xml:space="preserve">
+    <value>Statistical</value>
+  </data>
+    <data name="DateTo" xml:space="preserve">
+    <value>Since</value>
+  </data>
+    <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+    <data name="DeleteCmt" xml:space="preserve">
+    <value>Delete comment</value>
+  </data>
+    <data name="DongGop" xml:space="preserve">
+    <value>Contribute</value>
+  </data>
+    <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+    <data name="EnterFanPage" xml:space="preserve">
+    <value>Enter the Facebook page address</value>
+  </data>
+    <data name="EnterGuildName" xml:space="preserve">
+    <value>Enter the guild name</value>
+  </data>
+    <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+    <data name="Exp" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+    <data name="Faction" xml:space="preserve">
+    <value>Faction</value>
+  </data>
+    <data name="GuildKey" xml:space="preserve">
+    <value>Guild</value>
+  </data>
+    <data name="GuildKey2" xml:space="preserve">
+    <value>Guild:</value>
+  </data>
+    <data name="GuildName" xml:space="preserve">
+    <value>Name of guild</value>
+  </data>
+    <data name="GuildOwne" xml:space="preserve">
+    <value>Guild owner:</value>
+  </data>
+    <data name="GuildSuggest" xml:space="preserve">
+    <value>Guild suggest</value>
+  </data>
+    <data name="GuildValidation1" xml:space="preserve">
+    <value>You are only allowed to receive {0} at this guild level</value>
+  </data>
+    <data name="GuildValidation10" xml:space="preserve">
+    <value>Choose guilds to join.</value>
+  </data>
+    <data name="GuildValidation11" xml:space="preserve">
+    <value>Please join successfully. Please wait for the guild master to accept.</value>
+  </data>
+    <data name="GuildValidation12" xml:space="preserve">
+    <value>Applyed to join this guild. Please wait for the guild master to accept.</value>
+  </data>
+    <data name="GuildValidation13" xml:space="preserve">
+    <value>There is no guild information.</value>
+  </data>
+    <data name="GuildValidation2" xml:space="preserve">
+    <value>Error accepting user {0}</value>
+  </data>
+    <data name="GuildValidation3" xml:space="preserve">
+    <value>Error denying user {0}</value>
+  </data>
+    <data name="GuildValidation4" xml:space="preserve">
+    <value>Please select the member you want to remove</value>
+  </data>
+    <data name="GuildValidation5" xml:space="preserve">
+    <value>You are not a guild master</value>
+  </data>
+    <data name="GuildValidation6" xml:space="preserve">
+    <value>Cannot delete yourself</value>
+  </data>
+    <data name="GuildValidation7" xml:space="preserve">
+    <value>Only kick users on specified days</value>
+  </data>
+    <data name="GuildValidation8" xml:space="preserve">
+    <value>Guild slogans contain characters that are not allowed.</value>
+  </data>
+    <data name="GuildValidation9" xml:space="preserve">
+    <value>Guild slogans must be greater than 5 and less than 60 characters.</value>
+  </data>
+    <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+    <data name="HistoryCoin" xml:space="preserve">
+    <value>WIN history</value>
+  </data>
+    <data name="HoursAgo" xml:space="preserve">
+    <value>Hours ago</value>
+  </data>
+    <data name="ID" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+    <data name="InfoAccount" xml:space="preserve">
+    <value>Personal information</value>
+  </data>
+    <data name="InfoGuild" xml:space="preserve">
+    <value>Association information</value>
+  </data>
+    <data name="InfomationNull" xml:space="preserve">
+    <value>No information</value>
+  </data>
+    <data name="Join" xml:space="preserve">
+    <value>Join</value>
+  </data>
+    <data name="Kick" xml:space="preserve">
+    <value>Kick</value>
+  </data>
+    <data name="LeavGuild" xml:space="preserve">
+    <value>Leaving the guild</value>
+  </data>
+    <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+    <data name="LinkFanpage" xml:space="preserve">
+    <value>Link Fanpage</value>
+  </data>
+    <data name="LinkInvitesMembers" xml:space="preserve">
+    <value>Member invitation link</value>
+  </data>
+    <data name="ListGuild" xml:space="preserve">
+    <value>List of guilds</value>
+  </data>
+    <data name="ListMember" xml:space="preserve">
+    <value>Members list</value>
+  </data>
+    <data name="ListMemberUppercase" xml:space="preserve">
+    <value>MEMBERS LIST</value>
+  </data>
+    <data name="ListMemberWaitting" xml:space="preserve">
+    <value>List of members applying to join the guild</value>
+  </data>
+    <data name="Login" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+    <data name="LoginUseFunction" xml:space="preserve">
+    <value>You need to login to use this function</value>
+  </data>
+    <data name="LoginViewInfoGuild" xml:space="preserve">
+    <value>Login to view guild information</value>
+  </data>
+    <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+    <data name="ManaGuild" xml:space="preserve">
+    <value>Guild management</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>Member</value>
+  </data>
+    <data name="MetaTitle" xml:space="preserve">
+    <value>Guild</value>
+  </data>
+    <data name="MinuteAgo" xml:space="preserve">
+    <value>Minute ago</value>
+  </data>
+    <data name="Navy" xml:space="preserve">
+    <value>Navy</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>No data.</value>
+  </data>
+    <data name="NumberMember" xml:space="preserve">
+    <value>Number of member:</value>
+  </data>
+    <data name="OK" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+    <data name="Pirates" xml:space="preserve">
+    <value>Pirate</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+    <data name="PolicyGuild" xml:space="preserve">
+    <value>Guild policy</value>
+  </data>
+    <data name="Recently" xml:space="preserve">
+    <value>Recently</value>
+  </data>
+    <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+    <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+    <data name="Report" xml:space="preserve">
+    <value>To date</value>
+  </data>
+    <data name="ReportMemberActive" xml:space="preserve">
+    <value>Statistics of active members</value>
+  </data>
+    <data name="ReportMemberActive2" xml:space="preserve">
+    <value>Statistics active</value>
+  </data>
+    <data name="ReportMemberActive3" xml:space="preserve">
+    <value>Chart of active member statistics</value>
+  </data>
+    <data name="ReportRevenuGuild" xml:space="preserve">
+    <value>Chart of guild revenue statistics</value>
+  </data>
+    <data name="ReportTotalRechargeMember" xml:space="preserve">
+    <value>Statistics of members' total payment</value>
+  </data>
+    <data name="ReportTotalRechargeMember2" xml:space="preserve">
+    <value>Statistics of total payment</value>
+  </data>
+    <data name="ReportTotalRechargeMember3" xml:space="preserve">
+    <value>Total payment statistics of members</value>
+  </data>
+    <data name="RequestJoinGuildNull" xml:space="preserve">
+    <value>There are no requests from fishermen</value>
+  </data>
+    <data name="ResponseCode1" xml:space="preserve">
+    <value>Account is locked</value>
+  </data>
+    <data name="ResponseCode10" xml:space="preserve">
+    <value>This function is currently temporarily locked</value>
+  </data>
+    <data name="ResponseCode11" xml:space="preserve">
+    <value>Get account information failed</value>
+  </data>
+    <data name="ResponseCode12" xml:space="preserve">
+    <value>Get configuration information failed</value>
+  </data>
+    <data name="ResponseCode13" xml:space="preserve">
+    <value>Get the failed banner list</value>
+  </data>
+    <data name="ResponseCode14" xml:space="preserve">
+    <value>Get the news list failed</value>
+  </data>
+    <data name="ResponseCode15" xml:space="preserve">
+    <value>Get the list of WIN history failure</value>
+  </data>
+    <data name="ResponseCode16" xml:space="preserve">
+    <value>Get the list of failed history of reward redemption</value>
+  </data>
+    <data name="ResponseCode17" xml:space="preserve">
+    <value>Get the list of failed card payment history</value>
+  </data>
+    <data name="ResponseCode18" xml:space="preserve">
+    <value>Get failed mailbox information</value>
+  </data>
+    <data name="ResponseCode19" xml:space="preserve">
+    <value>Security code is incorrect</value>
+  </data>
+    <data name="ResponseCode2" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+    <data name="ResponseCode20" xml:space="preserve">
+    <value>Service does not exist</value>
+  </data>
+    <data name="ResponseCode21" xml:space="preserve">
+    <value>The guild does not exist</value>
+  </data>
+    <data name="ResponseCode22" xml:space="preserve">
+    <value>Account is not a guild owner</value>
+  </data>
+    <data name="ResponseCode23" xml:space="preserve">
+    <value>Only accept jpg, png, gif ... images</value>
+  </data>
+    <data name="ResponseCode24" xml:space="preserve">
+    <value>File size&gt; = 500Kb.</value>
+  </data>
+    <data name="ResponseCode25" xml:space="preserve">
+    <value>Guild name cannot be empty.</value>
+  </data>
+    <data name="ResponseCode26" xml:space="preserve">
+    <value>The guild name is between 5 and 30 characters long.</value>
+  </data>
+    <data name="ResponseCode27" xml:space="preserve">
+    <value>Guild password cannot be blank.</value>
+  </data>
+    <data name="ResponseCode28" xml:space="preserve">
+    <value>Password incorrect.</value>
+  </data>
+    <data name="ResponseCode29" xml:space="preserve">
+    <value>Creating guilds failed.</value>
+  </data>
+    <data name="ResponseCode3" xml:space="preserve">
+    <value>Invalid data</value>
+  </data>
+    <data name="ResponseCode30" xml:space="preserve">
+    <value>User has not logged in</value>
+  </data>
+    <data name="ResponseCode31" xml:space="preserve">
+    <value>Request to exit the old guild.</value>
+  </data>
+    <data name="ResponseCode32" xml:space="preserve">
+    <value>The current guild does not match.</value>
+  </data>
+    <data name="ResponseCode33" xml:space="preserve">
+    <value>Joining guilds failed.</value>
+  </data>
+    <data name="ResponseCode34" xml:space="preserve">
+    <value>Join the guild successfully.</value>
+  </data>
+    <data name="ResponseCode35" xml:space="preserve">
+    <value>No data.</value>
+  </data>
+    <data name="ResponseCode4" xml:space="preserve">
+    <value>System error</value>
+  </data>
+    <data name="ResponseCode41" xml:space="preserve">
+    <value>You are prohibited from commenting.</value>
+  </data>
+    <data name="ResponseCode42" xml:space="preserve">
+    <value>Number of characters exceeds the limit</value>
+  </data>
+    <data name="ResponseCode43" xml:space="preserve">
+    <value>Number of comments in the day exceeds the limit</value>
+  </data>
+    <data name="ResponseCode44" xml:space="preserve">
+    <value>Content inappropriate.</value>
+  </data>
+    <data name="ResponseCode45" xml:space="preserve">
+    <value>The event has not yet taken place</value>
+  </data>
+    <data name="ResponseCode46" xml:space="preserve">
+    <value>Exit the guild successfully.</value>
+  </data>
+    <data name="ResponseCode47" xml:space="preserve">
+    <value>The guild leader cannot escape the guild.</value>
+  </data>
+    <data name="ResponseCode48" xml:space="preserve">
+    <value>Not joined the guild.</value>
+  </data>
+    <data name="ResponseCode49" xml:space="preserve">
+    <value>Guild name does not contain prohibited characters.</value>
+  </data>
+    <data name="ResponseCode5" xml:space="preserve">
+    <value>Token expires</value>
+  </data>
+    <data name="ResponseCode50" xml:space="preserve">
+    <value>Slogan does not contain prohibited characters.</value>
+  </data>
+    <data name="ResponseCode51" xml:space="preserve">
+    <value>Only kick users on specified days.</value>
+  </data>
+    <data name="ResponseCode52" xml:space="preserve">
+    <value>User is not in guild.</value>
+  </data>
+    <data name="ResponseCode53" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="ResponseCode6" xml:space="preserve">
+    <value>Time to process</value>
+  </data>
+    <data name="ResponseCode7" xml:space="preserve">
+    <value>System maintenance</value>
+  </data>
+    <data name="ResponseCode8" xml:space="preserve">
+    <value>Account does not exist</value>
+  </data>
+    <data name="ResponseCode9" xml:space="preserve">
+    <value>Get account information failed</value>
+  </data>
+    <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+    <data name="SearchGuildPH" xml:space="preserve">
+    <value>Enter the guild name to search</value>
+  </data>
+    <data name="SecondsAgo" xml:space="preserve">
+    <value>Seconds ago</value>
+  </data>
+    <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+    <data name="Share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+    <data name="Sologan" xml:space="preserve">
+    <value>Slogan</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+    <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="TopDaiBang" xml:space="preserve">
+    <value>Top great guilds</value>
+  </data>
+    <data name="TopDongGop" xml:space="preserve">
+    <value>Top contributes</value>
+  </data>
+    <data name="TopGuildMonth1" xml:space="preserve">
+    <value>Top competitive guild wars</value>
+  </data>
+    <data name="TopGuildMonth2" xml:space="preserve">
+    <value>Top guild</value>
+  </data>
+    <data name="View" xml:space="preserve">
+    <value>See</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+    <data name="VipPoint" xml:space="preserve">
+    <value>VIP point</value>
+  </data>
+    <data name="Yesterday" xml:space="preserve">
+    <value>Yesterday</value>
+  </data>
+    <data name="AccountNoExist" xml:space="preserve">
+    <value>Account does not exist</value>
+  </data>
+    <data name="BlockAccTransferTo" xml:space="preserve">
+    <value>The account you want to transfer is currently locked. Please contact Customer Service.</value>
+  </data>
+    <data name="NotTransfer" xml:space="preserve">
+    <value>You do not have permission to transfer Win!</value>
+  </data>
+    <data name="BlockTranferGold" xml:space="preserve">
+    <value>Your account is locked to Win.</value>
+  </data>
+    <data name="ContactCustomerCare" xml:space="preserve">
+    <value>Please contact Customer Service for assistance</value>
+  </data>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>Invalid data</value>
+  </data>
+    <data name="TranferGoldFail" xml:space="preserve">
+    <value>Failure Trading</value>
+  </data>
+    <data name="TranferGoldToViSucc" xml:space="preserve">
+    <value>Transfer win to wallet successfully</value>
+  </data>
+    <data name="AccountNotEnough" xml:space="preserve">
+    <value>The amount in the account is not enough to make the transaction</value>
+  </data>
+    <data name="NoteInfomation" xml:space="preserve">
+    <value>** Note: chat and provide money receiving information to the host state</value>
+  </data>
+    <data name="InputGoldTranfer" xml:space="preserve">
+    <value>Enter the number of win ...</value>
+  </data>
+    <data name="AmountUSD" xml:space="preserve">
+    <value>The amount of USD received</value>
+  </data>
+    <data name="ContentTransfer" xml:space="preserve">
+    <value>Content transfer</value>
+  </data>
+    <data name="Submit" xml:space="preserve">
+    <value>SUBMIT</value>
+  </data>
+    <data name="BuyWinGuildMaster" xml:space="preserve">
+    <value>Sell win for master guild</value>
+  </data>
+    <data name="TransferWinForMasterGuild" xml:space="preserve">
+    <value>Transfer win for master guild</value>
+  </data>
+    <data name="GuideToBuyAndSell" xml:space="preserve">
+    <value>GUIDE TO BUY AND SELL</value>
+  </data>
+    <data name="JoinTheGuildBuySell" xml:space="preserve">
+    <value>Let's join GUILD to BUY and SELL WIN with the best discount. Contact your nearest Guild Master now!</value>
+  </data>
+    <data name="ProportionOfBuyingWin" xml:space="preserve">
+    <value>RATE OF BUYING WIN</value>
+  </data>
+    <data name="BuyCent" xml:space="preserve">
+    <value>BUY 0.85 Cent = 4000 WIN &lt;/br&gt; SELL 4000 WIN = 0.80 Cent</value>
+  </data>
+    <data name="MoneyCannotTransfer" xml:space="preserve">
+    <value>Money cannot be transferred, because you are not in this guild</value>
+  </data>
+    <data name="Function" xml:space="preserve">
+    <value>Function</value>
+  </data>
+    <data name="TransferWin" xml:space="preserve">
+    <value>Transfer Win</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>System error</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+    <data name="TransferNote" xml:space="preserve">
+    <value>** Transfer must be greater than or equal to 200,000 cents</value>
+  </data>
+    <data name="AccountsReceive" xml:space="preserve">
+    <value>Accounts receive</value>
+  </data>
+    <data name="CurrentCoin" xml:space="preserve">
+    <value>Current coin</value>
+  </data>
+    <data name="EnterAccount" xml:space="preserve">
+    <value>Enter account</value>
+  </data>
+    <data name="InputTranferGold" xml:space="preserve">
+    <value>Win number</value>
+  </data>
+    <data name="AccountName" xml:space="preserve">
+    <value>Account name</value>
+  </data>
+    <data name="TransferAmount" xml:space="preserve">
+    <value>Transfer amount</value>
+  </data>
+    <data name="EnterTransferAmount" xml:space="preserve">
+    <value>Enter the transfer amount</value>
+  </data>
+    <data name="PleaseEnterAccount" xml:space="preserve">
+    <value>Please enter an account</value>
+  </data>
+    <data name="YouCannotTransfer" xml:space="preserve">
+    <value>You cannot transfer money to yourself</value>
+  </data>
+    <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+    <data name="AccountSell" xml:space="preserve">
+    <value>Account to sell Win</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+    <data name="BuyWinFromMasterGuild" xml:space="preserve">
+    <value>Buy win from master guild</value>
+  </data>
+    <data name="MasterAccountName" xml:space="preserve">
+    <value>Account master name</value>
+  </data>
+    <data name="MasterAccountId" xml:space="preserve">
+    <value>Account master code</value>
+  </data>
+    <data name="AccountBuyWin" xml:space="preserve">
+    <value>Account buy Win</value>
+  </data>
+    <data name="Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+    <data name="InvalidAmount" xml:space="preserve">
+    <value>Amount Invalid</value>
+  </data>
+    <data name="InvalidWin" xml:space="preserve">
+    <value>Win Invalid</value>
+  </data>
+    <data name="SystemSellWinIsClosed" xml:space="preserve">
+    <value>The system to Sell Win is closed</value>
+  </data>
+    <data name="ValidatePayplus" xml:space="preserve">
+    <value>The loaded USD number must be greater than {0} and divisible by {1}</value>
+  </data>
+    <data name="SystemBuyWinIsClosed" xml:space="preserve">
+    <value>The system to buy Win is closed</value>
+  </data>
+</LocalLanguages>

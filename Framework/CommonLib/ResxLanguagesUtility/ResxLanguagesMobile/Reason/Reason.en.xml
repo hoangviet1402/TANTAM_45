@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Reason_427" xml:space="preserve">
+		<value>Play Poker</value>
+	</data>
+    <data name="Reason_526" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_527" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_528" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_2001" xml:space="preserve">
+		<value>Onet fruit</value>
+	</data>
+    <data name="Reason_414" xml:space="preserve">
+		<value>Play Poker Slot</value>
+	</data>
+    <data name="Reason_2" xml:space="preserve">
+		<value>Add IAP</value>
+	</data>
+    <data name="Reason_434" xml:space="preserve">
+		<value>Play BlackJack</value>
+	</data>
+    <data name="Reason_129" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_520" xml:space="preserve">
+		<value>Deposit</value>
+	</data>
+    <data name="Reason_435" xml:space="preserve">
+		<value>Play TEANG LEN</value>
+	</data>
+    <data name="Reason_102" xml:space="preserve">
+		<value>Get CHIPS when login</value>
+	</data>
+    <data name="Reason_2">
+        <value>Add IAP</value>
+    </data>
+    <data name="Reason_40">
+        <value>Buy Item</value>
+    </data>
+    <data name="Reason_48">
+        <value>Buy background</value>
+    </data>
+    <data name="Reason_49">
+        <value>Buy avatar</value>
+    </data>
+    <data name="Reason_68">
+        <value>Get Chips when association Level up</value>
+    </data>
+    <data name="Reason_70">
+        <value>Get Chips when user membership level up when adding Chips</value>
+    </data>
+    <data name="Reason_89">
+        <value>Get Chips when level up</value>
+    </data>
+    <data name="Reason_524">
+        <value>Get Chips when level up.</value>
+    </data>
+    <data name="Reason_102">
+        <value>Get Chips when login</value>
+    </data>
+    <data name="Reason_105">
+        <value>Buy Emotion</value>
+    </data>
+    <data name="Reason_108">
+        <value>Transfer Chips to friends</value>
+    </data>
+    <data name="Reason_116">
+        <value>Transfer money between VIP members</value>
+    </data>
+    <data name="Reason_117">
+        <value>Transfer of Associaion Funds to Members</value>
+    </data>
+    <data name="Reason_118">
+        <value>Add Chips</value>
+    </data>
+    <data name="Reason_119">
+        <value>Admin gives Chips</value>
+    </data>
+    <data name="Reason_133">
+        <value>Free Chips for online shooting fish</value>
+    </data>
+    <data name="Reason_142">
+        <value>Deposit bonus</value>
+    </data>
+    <data name="Reason_143">
+        <value>Get achievements</value>
+    </data>
+    <data name="Reason_161">
+        <value>Deposit bonus for VIP User</value>
+    </data>
+    <data name="Reason_162">
+        <value>Give gold to new users in the event of more friends more fun</value>
+    </data>
+    <data name="Reason_166">
+        <value>Give Chips when register with OpenID</value>
+    </data>
+    <data name="Reason_168">
+        <value>Give Chips for new user event</value>
+    </data>
+    <data name="Reason_169">
+        <value>Give Chips to users who race top vip</value>
+    </data>
+    <data name="Reason_171">
+        <value>Daily Chips bonus</value>
+    </data>
+    <data name="Reason_173">
+        <value>Admin deducts Chips</value>
+    </data>
+    <data name="Reason_174">
+        <value>Add money via sms</value>
+    </data>
+    <data name="Reason_175">
+        <value>Login to fish shooting app</value>
+    </data>
+    <data name="Reason_176">
+        <value>Chips Jackpot</value>
+    </data>
+    <data name="Reason_178">
+        <value>Give Chips daily login for mobile</value>
+    </data>
+    <data name="Reason_179">
+        <value>Attendance bonus</value>
+    </data>
+    <data name="Reason_180">
+        <value>Give Chips for inviting friends on facebook</value>
+    </data>
+    <data name="Reason_181">
+        <value>Give Chips when friends register on facebook</value>
+    </data>
+    <data name="Reason_182">
+        <value>First deposit bonus</value>
+    </data>
+    <data name="Reason_183">
+        <value>Give Chips when users log in regularly</value>
+    </data>
+    <data name="Reason_184">
+        <value>Give Chips for user like fanpage on facebook app</value>
+    </data>
+    <data name="Reason_187">
+        <value>CCHIPS giving when successfully update information</value>
+    </data>
+    <data name="Reason_188">
+        <value>Give Chips user adding card registration</value>
+    </data>
+    <data name="Reason_189">
+        <value>Give Chips for login on prime time on mobile</value>
+    </data>
+    <data name="Reason_190">
+        <value>Give Chips for login on prime day on mobile</value>
+    </data>
+    <data name="Reason_191">
+        <value>Give Chips for registration from Yahoo ads</value>
+    </data>
+    <data name="Reason_192">
+        <value>Give Chips when updating information</value>
+    </data>
+    <data name="Reason_197">
+        <value>Bonus for adding Chips by sms</value>
+    </data>
+    <data name="Reason_198">
+        <value>Bonus for adding IAP</value>
+    </data>
+    <data name="Reason_213">
+        <value>Play Fish Shooting game</value>
+    </data>
+    <data name="Reason_300">
+        <value>Give Chips For New User</value>
+    </data>
+    <data name="Reason_301">
+        <value>Give Chips for Tai Xiu Bonus Event</value>
+    </data>
+    <data name="Reason_302">
+        <value>Exchange Chips</value>
+    </data>
+    <data name="Reason_303">
+        <value>Exchange card</value>
+    </data>
+    <data name="Reason_306">
+        <value>Exchange spin bonus</value>
+    </data>
+    <data name="Reason_307">
+        <value>Gold supply system for jackpot</value>
+    </data>
+    <data name="Reason_311">
+        <value>Add money via Google Wallet</value>
+    </data>
+    <data name="Reason_312">
+        <value>Add money via Apple Store</value>
+    </data>
+    <data name="Reason_313">
+        <value>Create association</value>
+    </data>
+    <data name="Reason_314">
+        <value>Withdraw</value>
+    </data>
+    <data name="Reason_315">
+        <value>Add</value>
+    </data>
+    <data name="Reason_316">
+        <value>Owner transfers money to the user</value>
+    </data>
+    <data name="Reason_318">
+        <value>User ends fish shooting game</value>
+    </data>
+    <data name="Reason_319">
+        <value>User plays fish shooting game</value>
+    </data>
+    <data name="Reason_320">
+        <value>Get Chips from the owner</value>
+    </data>
+    <data name="Reason_321">
+        <value>Give 2% of revenue of association for the owner</value>
+    </data>
+    <data name="Reason_322">
+        <value>Give 3% of revenue of association for user who added the most Chips</value>
+    </data>
+    <data name="Reason_325">
+        <value>Give Chips to user after entering room failed</value>
+    </data>
+    <data name="Reason_326">
+        <value>Give Chips to user after admin canceled exchange request</value>
+    </data>
+    <data name="Reason_327">
+        <value>Reward for hunting fish boss</value>
+    </data>
+    <data name="Reason_328">
+        <value>Give Chips to user in prime time Event</value>
+    </data>
+    <data name="Reason_329">
+        <value>Give Chips to user in refund Event</value>
+    </data>
+    <data name="Reason_330">
+        <value>Give Chips to user who registered shooting fish game</value>
+    </data>
+    <data name="Reason_331">
+        <value>Give Chips to user who logged in shooting fish game</value>
+    </data>
+    <data name="Reason_332">
+        <value>Give Chips when back to waiting room in shooting fish game</value>
+    </data>
+    <data name="Reason_333">
+        <value>Receive rewards for daily tasks</value>
+    </data>
+    <data name="Reason_334">
+        <value>Facebook share bonus</value>
+    </data>
+    <data name="Reason_335">
+        <value>System rewards Jackpot Chips</value>
+    </data>
+    <data name="Reason_336">
+        <value>Refund due to card exchange failed</value>
+    </data>
+    <data name="Reason_337">
+        <value>Give money for completing shooting fish mission</value>
+    </data>
+    <data name="Reason_338">
+        <value>Give money for shooting fish level up</value>
+    </data>
+    <data name="Reason_342">
+        <value>User transferd money to another user</value>
+    </data>
+    <data name="Reason_343">
+        <value>User received money from another user</value>
+    </data>
+    <data name="Reason_344">
+        <value>Admin gives Chips Shoot Fish</value>
+    </data>
+    <data name="Reason_345">
+        <value>Admin gives Chips Lather</value>
+    </data>
+    <data name="Reason_347">
+        <value>Association summary bonus</value>
+    </data>
+    <data name="Reason_350">
+        <value>Give Chips for spin in game</value>
+    </data>
+    <data name="Reason_351">
+        <value>Chips Xoc Rua Game prize</value>
+    </data>
+    <data name="Reason_352">
+        <value>Chips event of entering code getting money</value>
+    </data>
+    <data name="Reason_353">
+        <value>Chips arena game</value>
+    </data>
+    <data name="Reason_355">
+        <value>Play shooting fish 3D</value>
+    </data>
+    <data name="Reason_356">
+        <value>End shooting fish 3D</value>
+    </data>
+    <data name="Reason_357">
+        <value>Play shooting fish 3D for mobile</value>
+    </data>
+    <data name="Reason_358">
+        <value>End shooting fish 3D for mobile</value>
+    </data>
+    <data name="Reason_359">
+        <value>Get reward for daily tasks</value>
+    </data>
+    <data name="Reason_404">
+        <value>Play Mini Xeng game</value>
+    </data>
+    <data name="Reason_406">
+        <value>Play Mini Penalty game</value>
+    </data>
+    <data name="Reason_407">
+        <value>Prime time bonus</value>
+    </data>
+    <data name="Reason_408">
+        <value>Play Mini Fortunes88 game</value>
+    </data>
+    <data name="Reason_409">
+        <value>Play Jackpot game</value>
+    </data>
+    <data name="Reason_410">
+        <value>Play XengLuxury game</value>
+    </data>
+    <data name="Reason_412">
+        <value>Play Golden Dragon Slot game</value>
+    </data>
+    <data name="Reason_413">
+        <value>Play Three Kingdoms Slot Game</value>
+    </data>
+    <data name="Reason_418" xml:space="preserve">
+    <value>Play Amazing Animal game</value>
+  </data>
+    <data name="Reason_419" xml:space="preserve">
+    <value>Play God Of Wealth game </value>
+  </data>
+    <data name="Reason_420">
+        <value>Play Pachinko Robot game</value>
+    </data>
+    <data name="Reason_422">
+        <value>Play Samurai game</value>
+    </data>
+    <data name="Reason_423">
+        <value>Play Super 777 game</value>
+    </data>
+    <data name="Reason_424">
+        <value>Play Golden Turtle Mini game</value>
+    </data>
+    <data name="Reason_425">
+        <value>Play Monopoly Million Dollar game</value>
+    </data>
+    <data name="Reason_426">
+        <value>Play Diamonds Links game</value>
+    </data>
+    <data name="Reason_428">
+        <value>Play Candy game</value>
+    </data>
+    <data name="Reason_430">
+        <value>Play Fantastic Beasts game</value>
+    </data>
+    <data name="Reason_501">
+        <value>Chips Lucky Spin</value>
+    </data>
+    <data name="Reason_502">
+        <value>Buy Lucky Spin Turn</value>
+    </data>
+    <data name="Reason_503">
+        <value>Play Lather game</value>
+    </data>
+    <data name="Reason_999">
+        <value>Log generated because IdReason does not exist</value>
+    </data>
+    <data name="Reason_504">
+        <value>Paypal</value>
+    </data>
+    <data name="Reason_211" xml:space="preserve">
+    <value>Play Odd Even game</value>
+  </data>
+    <data name="Reason_50" xml:space="preserve">
+    <value>Play Sic Bo game</value>
+  </data>
+    <data name="Reason_518" xml:space="preserve">
+    <value>Reward after watching advertising</value>
+  </data>
+    <data name="Reason_421" xml:space="preserve">
+    <value>Play Indian Slot game</value>
+  </data>
+    <data name="Reason_436" xml:space="preserve">
+		<value>Play game Kdam Klouk</value>
+	</data>
+    <data name="Reason_517" xml:space="preserve">
+		<value>Tutorial</value>
+	</data>
+    <data name="Reason_210" xml:space="preserve">
+		<value>Play game Mystery Num</value>
+	</data>
+    <data name="Reason_156" xml:space="preserve">
+		<value>Tournament Participate</value>
+	</data>
+    <data name="Reason_360" xml:space="preserve">
+		<value>Tournament Top Reward</value>
+	</data>
+    <data name="Reason_433" xml:space="preserve">
+		<value>Play Baccarat</value>
+	</data>
+</LocalLanguages>

@@ -1,0 +1,12 @@
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\bin\Release\WebUtility.dll.config
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\bin\Release\WebUtility.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\bin\Release\WebUtility.pdb
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\bin\Release\System.Web.Mvc.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\bin\Release\System.Web.Mvc.xml
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\bin\Release\Microsoft.Web.Infrastructure.xml
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Release\WebUtility.csprojAssemblyReference.cache
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Release\WebUtility.csproj.CoreCompileInputs.cache
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Release\WebUtility.csproj.CopyComplete
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Release\WebUtility.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Release\WebUtility.pdb

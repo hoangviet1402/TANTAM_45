@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_500" xml:space="preserve">
+    <value>เกมส์ตกปลา</value>
+  </data>
+    <data name="Game_425" xml:space="preserve">
+    <value>POKER</value>
+  </data>
+    <data name="Game_424" xml:space="preserve">
+    <value>DIAMONDS LINK</value>
+  </data>
+    <data name="Game_423" xml:space="preserve">
+    <value>MONOPOLY</value>
+  </data>
+    <data name="Game_420" xml:space="preserve">
+    <value>SAMURAI SLOT</value>
+  </data>
+    <data name="Game_419" xml:space="preserve">
+    <value>INDIAN DREAMING</value>
+  </data>
+    <data name="Game_417" xml:space="preserve">
+    <value>GOD OF WEALTH</value>
+  </data>
+    <data name="Game_416" xml:space="preserve">
+    <value>GOLDEN DRAGON</value>
+  </data>
+    <data name="Game_411" xml:space="preserve">
+    <value>THREE KINGDOMS</value>
+  </data>
+    <data name="Game_410" xml:space="preserve">
+    <value>GOLDEN FANG</value>
+  </data>
+    <data name="Game_409" xml:space="preserve">
+    <value>CAO RUA</value>
+  </data>
+    <data name="Game_408" xml:space="preserve">
+    <value>LUCKY</value>
+  </data>
+    <data name="Game_407" xml:space="preserve">
+    <value>JACKPOT</value>
+  </data>
+    <data name="Game_406" xml:space="preserve">
+    <value>88 FORTUNES</value>
+  </data>
+    <data name="Game_402" xml:space="preserve">
+    <value>HOA QUA</value>
+  </data>
+    <data name="Game_209" xml:space="preserve">
+    <value>XOC DIA</value>
+  </data>
+    <data name="Game_201" xml:space="preserve">
+    <value>SAM LOC</value>
+  </data>
+    <data name="Game_200" xml:space="preserve">
+    <value>LIENG</value>
+  </data>
+    <data name="Game_48" xml:space="preserve">
+    <value>SICBO</value>
+  </data>
+    <data name="Game_42" xml:space="preserve">
+    <value>HONGKONG POKER</value>
+  </data>
+    <data name="Game_41" xml:space="preserve">
+    <value>PHOM</value>
+  </data>
+    <data name="Game_40" xml:space="preserve">
+    <value>TLMN</value>
+  </data>
+    <data name="Game_34" xml:space="preserve">
+    <value>CHINESE POKER</value>
+  </data>
+    <data name="Game__1" xml:space="preserve">
+    <value>LUCKY SPIN</value>
+  </data>
+    <data name="Game__3" xml:space="preserve">
+    <value>LUCKY SPIN</value>
+  </data>
+
+
+    <data name="VipLevelBlockRoomTextSilver" xml:space="preserve">
+    <value>ต้องการ VIP Silver</value>
+  </data>
+    <data name="GameLevelBlockRoomTextLevel" xml:space="preserve">
+    <value>ต้องการระดับ {0}</value>
+  </data>
+    <data name="GameConnectUnavailable" xml:space="preserve">
+    <value>ไม่สามารถเชื่อมต่อเกม</value>
+  </data>
+    <data name="NotFoundGame" xml:space="preserve">
+    <value>ไม่พบเกม</value>
+  </data>
+    <data name="RoomFull" xml:space="preserve">
+    <value>ห้องเล่นเกมมีผู้เล่นเพียงพอ</value>
+  </data>
+    <data name="UnlockWhenVipSilver" xml:space="preserve">
+    <value>ปลดล็อคเมื่อมาถึง VIP Silver</value>
+  </data>
+    <data name="VipLevelBlockGameSlotTextSilver" xml:space="preserve">
+    <value>ปลดล็อคเมื่อมาถึง VIP Silver</value>
+  </data>
+
+
+    <data name="Game_GetConfigBanCa_ArrayInvalidText" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="Game_GetConfigBanCa_ArrayInvalidText1" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="Game_GetConfigBanCa_CoinUnit" xml:space="preserve">
+    <value>ชิป</value>
+  </data>
+    <data name="Game_GetConfigBanCa_CoinUnit1" xml:space="preserve">
+    <value>ชิป</value>
+  </data>
+    <data name="Game_GetConfigBanCa_LoginOtherSessionMessage" xml:space="preserve">
+    <value>บัญชีนี้ได้ล็อกอิน\nที่อุปกรณ์เครื่องอื่น</value>
+  </data>
+    <data name="Game_GetConfigBanCa_LoginOtherSessionMessage1" xml:space="preserve">
+    <value>บัญชีนี้ได้ล็อกอิน\nที่อุปกรณ์เครื่องอื่น</value>
+  </data>
+    <data name="Game_GetConfigBanCa_PopupGetMessageError" xml:space="preserve">
+    <value>มีข้อผิดพลาดเกิดขึ้นในการโหลดข้อมูลกรุณาลองใหม่ในภายหลัง</value>
+  </data>
+    <data name="Game_GioiThieuNotFound" xml:space="preserve">
+    <value>ไม่เจอเกมส์</value>
+  </data>
+    <data name="Game_GioiThieuTitle" xml:space="preserve">
+    <value>ยิงปลา</value>
+  </data>
+    <data name="Game_GioiThieuTut" xml:space="preserve">
+    <value>การแนะนำเกมส์</value>
+  </data>
+    <data name="Game_HomeIndexTitle" xml:space="preserve">
+    <value>หน้าหลัก</value>
+  </data>
+    <data name="Game_HomeLoginForgot" xml:space="preserve">
+    <value>ลืมรหัสผ่าน</value>
+  </data>
+    <data name="Game_HomeLoginOther" xml:space="preserve">
+    <value>ล็อกอิน/ล็อกอินโดย</value>
+  </data>
+    <data name="Game_HomeLoginPass" xml:space="preserve">
+    <value>รหัสผ่าน</value>
+  </data>
+    <data name="Game_HomeLoginSignup" xml:space="preserve">
+    <value>ลงทะเบียน</value>
+  </data>
+    <data name="Game_HomeLoginUsername" xml:space="preserve">
+    <value>ชื่อผู้ใช้</value>
+  </data>
+    <data name="Game_HomePlaygameAppTitle" xml:space="preserve">
+    <value>เล่นเกมส์ยิงปลา</value>
+  </data>
+    <data name="Game_HomePlaygameIndexTitle" xml:space="preserve">
+    <value>เล่นเกมส์ยิงปลา</value>
+  </data>
+    <data name="Game_HomePlayGameMobileTitle" xml:space="preserve">
+    <value>เล่นเกมส์ยิงปลา</value>
+  </data>
+    <data name="Game_HomePlaygameTitle" xml:space="preserve">
+    <value>เล่นเกมส์ยิงปลา</value>
+  </data>
+    <data name="Game_HomeRegisterDisplayName" xml:space="preserve">
+    <value>ชื่อตัวละคร</value>
+  </data>
+    <data name="Game_HomeRegisterInputCaptcha" xml:space="preserve">
+    <value>กรอกรหัสผ่าน</value>
+  </data>
+    <data name="Game_HomeRegisterPass" xml:space="preserve">
+    <value>รหัสผ่าน</value>
+  </data>
+    <data name="Game_HomeRegisterRegisterButton" xml:space="preserve">
+    <value>ลงทะเบียน</value>
+  </data>
+    <data name="Game_HomeRegisterTitle" xml:space="preserve">
+    <value>ลงทะเบียน</value>
+  </data>
+    <data name="Game_HomeRegisterTitle1" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="Game_HomeRegisterUsername" xml:space="preserve">
+    <value>ชื่อผู้ใช้</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideDetailError" xml:space="preserve">
+    <value>มีข้อผิดพลาดเกิดขึ้นในการรับรายการ</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideError" xml:space="preserve">
+    <value>มีข้อผิดพลาดเกิดขึ้นในการรับรายการ</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideHeading" xml:space="preserve">
+    <value>หัวข้อ</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideNodata" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+    <data name="Game_LoginTitle" xml:space="preserve">
+    <value>เข้าสู่ระบบ</value>
+  </data>
+    <data name="Game_PlayGamesHtml5EmbedLoading" xml:space="preserve">
+    <value>กำลังโหลด</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>หมายเลขสั่งซื้อ</value>
+  </data>
+    <data name="ErrorMessValidation1" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดระหว่างการหมุน</value>
+  </data>
+    <data name="ErrorMessValidation2" xml:space="preserve">
+    <value>เทิร์นได้หมดอายุแล้ว</value>
+  </data>
+    <data name="ErrorMessValidation3" xml:space="preserve">
+    <value>กิจกรรมยังไม่เกิดขึ้น</value>
+  </data>
+    <data name="ErrorMessValidation4" xml:space="preserve">
+    <value>การเลี้ยวที่ไม่ถูกต้อง</value>
+  </data>
+    <data name="ErrorMessValidation5" xml:space="preserve">
+    <value>ขอแสดงความยินดีกับการชนะ {0} CHIPS!</value>
+  </data>
+    <data name="ErrorMessValidation6" xml:space="preserve">
+    <value>ขอให้โชคดีในครั้งต่อไป!</value>
+  </data>
+    <data name="PlayJackPot" xml:space="preserve">
+    <value>เล่นเลย</value>
+  </data>
+    <data name="ActiveFaild" xml:space="preserve">
+    <value>การเปิดใช้งานล้มเหลว</value>
+  </data>
+    <data name="ActiveSuccess" xml:space="preserve">
+    <value>เปิดใช้งานสำเร็จ</value>
+  </data>
+    <data name="ChuaCauHinhTuong" xml:space="preserve">
+    <value>ไม่ได้กำหนดค่ากำแพง</value>
+  </data>
+    <data name="ChuaChonNguyenLieu" xml:space="preserve">
+    <value>ไม่ได้เลือกวัสดุ</value>
+  </data>
+    <data name="ChuaChonSung" xml:space="preserve">
+    <value>ยังไม่มีปืน</value>
+  </data>
+    <data name="TienHoaThanhCong" xml:space="preserve">
+    <value>วิวัฒนาการที่ประสบความสำเร็จ</value>
+  </data>
+</LocalLanguages>

@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+    <data name="DisplaynameAvailable" xml:space="preserve">
+    <value>显示名称已存在</value>
+  </data>
+    <data name="AccountalreadyinusePleasechooseanothername" xml:space="preserve">
+    <value>帐户已在使用中。 请选择其他名称</value>
+  </data>
+    <data name="CaptchaDoesnotexist" xml:space="preserve">
+    <value>验证码无效</value>
+  </data>
+    <data name="CaptchaInvalid" xml:space="preserve">
+    <value>验证码无效</value>
+  </data>
+    <data name="CommingSoon" xml:space="preserve">
+    <value>功能正在增长</value>
+  </data>
+    <data name="ConfigFail" xml:space="preserve">
+    <value>配置不存在</value>
+  </data>
+    <data name="CreateFail" xml:space="preserve">
+    <value>初始化失败</value>
+  </data>
+    <data name="CreateSuccess" xml:space="preserve">
+    <value>初始化成功</value>
+  </data>
+    <data name="Display3to20characters" xml:space="preserve">
+    <value>显示名称至少3到20个字符。</value>
+  </data>
+    <data name="Displaynamecannotspaces" xml:space="preserve">
+    <value>显示名称不能为空</value>
+  </data>
+    <data name="Displaynamemusthavespecialcharacterscharacters" xml:space="preserve">
+    <value>显示名称不得包含特殊字符和字符</value>
+  </data>
+    <data name="Displaynamenotallowed" xml:space="preserve">
+    <value>显示名称包含不允许的单词。</value>
+  </data>
+    <data name="EmailIncorrect" xml:space="preserve">
+    <value>电子邮件不正确</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>失败</value>
+  </data>
+    <data name="IncorrectIDcard" xml:space="preserve">
+    <value>身份证不正确</value>
+  </data>
+    <data name="Invalidaccountname" xml:space="preserve">
+    <value>帐户名无效</value>
+  </data>
+    <data name="Invaliddisplayname" xml:space="preserve">
+    <value>显示名称无效</value>
+  </data>
+    <data name="RegistrationfailedPleasetryagainlater" xml:space="preserve">
+    <value>注册失败。 请稍后再试。</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>功能正在维护中</value>
+  </data>
+    <data name="SignUpSuccess" xml:space="preserve">
+    <value>成功注册</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+    <data name="SuccessfullyTransaction" xml:space="preserve">
+    <value>成功加载但硬币转移过程中出错</value>
+  </data>
+    <data name="SystemError" xml:space="preserve">
+    <value>系统错误</value>
+  </data>
+    <data name="TransactionFailed" xml:space="preserve">
+    <value>无法加载硬币</value>
+  </data>
+    <data name="Transactionisprocessed" xml:space="preserve">
+    <value>交易正在处理中</value>
+  </data>
+    <data name="Transactionnotfound" xml:space="preserve">
+    <value>未找到任何交易</value>
+  </data>
+    <data name="Transactionnotfoundinsystem" xml:space="preserve">
+    <value>在系统中找不到任何交易</value>
+  </data>
+    <data name="Transactionprocessing" xml:space="preserve">
+    <value>交易正在处理中</value>
+  </data>
+    <data name="Transactionprocessingfailed" xml:space="preserve">
+    <value>事务处理失败</value>
+  </data>
+    <data name="TransactionSuccess" xml:space="preserve">
+    <value>成功支付硬币</value>
+  </data>
+    <data name="Usernamecannotbethesameasaccountname" xml:space="preserve">
+    <value>用户名不能与帐户名相同</value>
+  </data>
+    <data name="Usernamecannotspaces" xml:space="preserve">
+    <value>用户名不能留空格</value>
+  </data>
+    <data name="Usernamemustnothaveaccentsandspecialcharacters" xml:space="preserve">
+    <value>用户名不得包含重音符和特殊字符</value>
+  </data>
+    <data name="UserNamepasswordincorrect" xml:space="preserve">
+    <value>用户名和密码不正确</value>
+  </data>
+    <data name="GetSuccessfulCaptcha" xml:space="preserve">
+    <value>获得成功的验证码</value>
+  </data>
+    <data name="InvalidDataInput" xml:space="preserve">
+    <value>数据无效</value>
+  </data>
+    <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>帐户不存在</value>
+  </data>
+    <data name="GetTheListSuccessfully" xml:space="preserve">
+    <value>获取成功列表</value>
+  </data>
+    <data name="GetTheConfigSuccessfully" xml:space="preserve">
+    <value>成功获取配置</value>
+  </data>
+    <data name="GetTheLinkSuccessfully" xml:space="preserve">
+    <value>成功获取链接</value>
+  </data>
+    <data name="GetTheLinkFailed" xml:space="preserve">
+    <value>获取路径失败</value>
+  </data>
+    <data name="TheGameDoesNotExistContainHasHtml5" xml:space="preserve">
+    <value>游戏不存在或游戏不包含HasHtml5</value>
+  </data>
+    <data name="SKIPAndPort" xml:space="preserve">
+    <value>无法获得SK IPAndPort</value>
+  </data>
+    <data name="InvalidSerialNumber" xml:space="preserve">
+    <value>序列号无效</value>
+  </data>
+    <data name="InvalidScratchCardCode" xml:space="preserve">
+    <value>无效的刮刮卡代码</value>
+  </data>
+    <data name="ErrorDuringProcessing" xml:space="preserve">
+    <value>处理过程中出错.</value>
+  </data>
+    <data name="InvalidCardInformation" xml:space="preserve">
+    <value>卡信息无效（代码：{0}）</value>
+  </data>
+    <data name="InvalidCardNotInformation" xml:space="preserve">
+    <value>卡信息无效，请重试...</value>
+  </data>
+    <data name="GetTheListOfFailures" xml:space="preserve">
+    <value>获取失败列表</value>
+  </data>
+    <data name="YouWantToLoad" xml:space="preserve">
+    <value>要在{1} K加载{0}吗？</value>
+  </data>
+    <data name="SMSChargingSystem" xml:space="preserve">
+    <value>短信充电系统正在维护中！</value>
+  </data>
+    <data name="InvalidSMSInformation" xml:space="preserve">
+    <value>无效的短信息</value>
+  </data>
+    <data name="CardToChange" xml:space="preserve">
+    <value>请选择要更改的卡类型</value>
+  </data>
+    <data name="SystemIsUnderMaintenance" xml:space="preserve">
+    <value>系统{0}正在维护中，请选择其他卡类型</value>
+  </data>
+    <data name="CannotRedeemRewards" xml:space="preserve">
+    <value>无法兑换奖励。 请联系客户服务中心</value>
+  </data>
+    <data name="TheSystemMaintenance" xml:space="preserve">
+    <value>系统正在维护中，请稍后再试</value>
+  </data>
+    <data name="TheRewardIsNotTrue" xml:space="preserve">
+    <value>奖励不是真的</value>
+  </data>
+    <data name="ItIsNotTimeToAward" xml:space="preserve">
+    <value>现在不是奖励的时候。 请稍后再试</value>
+  </data>
+    <data name="AwardsAreNotSuccessful" xml:space="preserve">
+    <value>奖项不成功。 请稍后再试</value>
+  </data>
+    <data name="AwardedSuccessfully" xml:space="preserve">
+    <value>获奖成功。 请检查您的收件箱</value>
+  </data>
+    <data name="IncorrectCode" xml:space="preserve">
+    <value>验证码不正确</value>
+  </data>
+    <data name="VerificationCodeDoesNotExist" xml:space="preserve">
+    <value>验证码不存在</value>
+  </data>
+    <data name="FunctionDoesNotExist" xml:space="preserve">
+    <value>功能不存在</value>
+  </data>
+    <data name="CannotAuthenticateInformation" xml:space="preserve">
+    <value>无法验证信息</value>
+  </data>
+    <data name="FacebookIncorrect" xml:space="preserve">
+    <value>Facebook信息不正确，请重新登录</value>
+  </data>
+    <data name="UpdateInformationFailed" xml:space="preserve">
+    <value>更新信息失败。 请稍后再试。</value>
+  </data>
+    <data name="UpdateSuccessful" xml:space="preserve">
+    <value>成功更新。 您的帐户获得{0}美分！</value>
+  </data>
+    <data name="ErrorImage" xml:space="preserve">
+    <value>必须是jpg，png，gif格式</value>
+  </data>
+    <data name="ErrorimageSize" xml:space="preserve">
+    <value>图像容量小于500kb</value>
+  </data>
+    <data name="UploadAvatarSuccess" xml:space="preserve">
+    <value>上传头像成功</value>
+  </data>
+    <data name="NoEvents" xml:space="preserve">
+    <value>还没有活动</value>
+  </data>
+    <data name="NoDataRequested" xml:space="preserve">
+    <value>没有您要求的数据</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>信息</value>
+  </data>
+    <data name="NoNewInstructions" xml:space="preserve">
+    <value>还没有新的说明</value>
+  </data>
+    <data name="EmailorPasswordIncorrect" xml:space="preserve">
+    <value>电子邮件或密码不正确</value>
+  </data>
+    <data name="AccountLocked" xml:space="preserve">
+    <value>帐户被锁定</value>
+  </data>
+    <data name="AccountPermanentlyLocked" xml:space="preserve">
+    <value>帐户已被永久锁定</value>
+  </data>
+    <data name="AccountActivatedYet" xml:space="preserve">
+    <value>帐户尚未激活</value>
+  </data>
+    <data name="UserAnotherDevice" xml:space="preserve">
+    <value>用户正在使用其他设备</value>
+  </data>
+    <data name="SecurityCodeDoesNotExist" xml:space="preserve">
+    <value>安全代码不存在</value>
+  </data>
+    <data name="SecurityCodeIncorrect" xml:space="preserve">
+    <value>安全码不正确</value>
+  </data>
+    <data name="SecurityCodeUsed" xml:space="preserve">
+    <value>已使用安全代码。 请写下新的安全码！</value>
+  </data>
+    <data name="FacebookAccountNotRegistered" xml:space="preserve">
+    <value>Facebook帐户尚未注册</value>
+  </data>
+    <data name="LoggedSuccessfully" xml:space="preserve">
+    <value>登录成功</value>
+  </data>
+    <data name="LoginError" xml:space="preserve">
+    <value>登录时出错。 请再试一次！</value>
+  </data>
+    <data name="FacebookInformationIncorrect" xml:space="preserve">
+    <value>Facebook信息不正确，请重新登录</value>
+  </data>
+    <data name="FacebookInformationNotMatch" xml:space="preserve">
+    <value>Facebook信息不符，请再试一次..</value>
+  </data>
+    <data name="DisplayNameAlreadyExists" xml:space="preserve">
+    <value> 显示名称已存在</value>
+  </data>
+    <data name="Display3to15characters" xml:space="preserve">
+    <value>显示名称至少3到15个字符。</value>
+  </data>
+    <data name="AccountAlreadyUse" xml:space="preserve">
+    <value>帐户已在使用中。 请选择其他名称</value>
+  </data>
+    <data name="RegistrationFailed" xml:space="preserve">
+    <value>注册失败。 请稍后再试。</value>
+  </data>
+    <data name="UsernameAvailable" xml:space="preserve">
+    <value>用户名已存在</value>
+  </data>
+    <data name="ValidUsername" xml:space="preserve">
+    <value>有效用户名</value>
+  </data>
+    <data name="YouNotCoinHistory" xml:space="preserve">
+    <value>你还没有硬币历史</value>
+  </data>
+    <data name="GetAvatarSuccessfully" xml:space="preserve">
+    <value>成功获取链接头像</value>
+  </data>
+    <data name="YouHaveNoMail" xml:space="preserve">
+    <value>你没有邮件</value>
+  </data>
+    <data name="InvalidAccount1" xml:space="preserve">
+    <value>帐号无效（代码-1）</value>
+  </data>
+    <data name="InformationIsIncorrect" xml:space="preserve">
+    <value>信息不正确，请重新登录</value>
+  </data>
+    <data name="AccountLinked" xml:space="preserve">
+    <value>您希望链接的帐户已用于ID：{0}是否要注销并切换到该帐户</value>
+  </data>
+    <data name="TieuDeTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>标题超过{0}个字符。</value>
+  </data>
+    <data name="NoiDungTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>内容超过{0}个字符。</value>
+  </data>
+    <data name="KhongTheGuiTinNhanChoMinh" xml:space="preserve">
+    <value>你不能发信息给自己！</value>
+  </data>
+    <data name="TKNhanTinNhanKTonTai" xml:space="preserve">
+    <value>接收消息的帐户不存在</value>
+  </data>
+    <data name="TaiKhoanNhanTinNhanBiKhoa" xml:space="preserve">
+    <value>您要将邮件发送到的帐户现已锁定！</value>
+  </data>
+    <data name="ErrorMessCustomservice" xml:space="preserve">
+    <value>请联系客户服务以获取帮助。</value>
+  </data>
+    <data name="TinNhanDaDuocGui" xml:space="preserve">
+    <value>消息已发送到{0}  -  {1}！</value>
+  </data>
+    <data name="SuDungHetLuotGuiTinNhan" xml:space="preserve">
+    <value>您已经用完了发送的邮件数量。</value>
+  </data>
+    <data name="NhapTKNhanTinNhan" xml:space="preserve">
+    <value>请输入接收帐户</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>今天已经领奖励，每账号每天只能用一个兑换码兑换礼物</value>
+  </data>
+    <data name="HistoriCoinBanCaSuccess" xml:space="preserve">
+    <value>成功获得金钱历史</value>
+  </data>
+    <data name="AcceptImgType" xml:space="preserve">
+    <value>只接受jpg，png，gif图片。</value>
+  </data>
+    <data name="ImgSize" xml:space="preserve">
+    <value>当玩家下注时，Id原因减去</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>事件选择无效键{0}</value>
+  </data>
+    <data name="GetChipFromTheEvent" xml:space="preserve">
+    <value>你从事件中得到{0}徐。</value>
+  </data>
+    <data name="HavebeenAwardedChip" xml:space="preserve">
+    <value>您已获得{0}筹码奖。 赢取活动输入货币代码。 1个昵称每天只能赢得1个礼品代码。</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>没有足够的时间收到礼物。</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>有足够的时间收到礼物。</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>帐户第一次收到礼物。</value>
+  </data>
+    <data name="ErrorMessInvalidInformation" xml:space="preserve">
+    <value>信息无效</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>未登录或登录其他计算机</value>
+  </data>
+    <data name="TurnsInvalid" xml:space="preserve">
+    <value>播放无效</value>
+  </data>
+    <data name="ErrorMessValidation2" xml:space="preserve">
+    <value>轮到了</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>你收到了礼物</value>
+  </data>
+    <data name="OutOfChips" xml:space="preserve">
+    <value>没有筹码</value>
+  </data>
+    <data name="ConfigSuccess" xml:space="preserve">
+    <value>成功获取配置信息</value>
+  </data>
+    <data name="CoinACcountIsNotEnough" xml:space="preserve">
+    <value>帐户中的硬币数量不足以进行交易</value>
+  </data>
+    <data name="AmountTransferChipsDivided" xml:space="preserve">
+    <value>金额必须从{0}筹码转移并除以10,000！</value>
+  </data>
+    <data name="AmountTransferSmaller" xml:space="preserve">
+    <value>转移金额必须更小</value>
+  </data>
+    <data name="TransferChipsSuccess" xml:space="preserve">
+    <value>成功转移芯片。 {0}收到{1}。</value>
+  </data>
+    <data name="VipPromotionForYou" xml:space="preserve">
+    <value>VIP专属促销活动</value>
+  </data>
+    <data name="IPLimit" xml:space="preserve">
+    <value>IP已超过收到的奖金数量</value>
+  </data>
+    <data name="DeviceLimit" xml:space="preserve">
+    <value>设备已超过收到的奖金数量</value>
+  </data>
+    <data name="ConfigNotExists" xml:space="preserve">
+    <value>配置不存在</value>
+  </data>
+</LocalLanguages>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="AcceptedSuccessfully" xml:space="preserve">
+    <value>ទទួលយកការអញ្ជើញដោយជោគជ័យ</value>
+  </data>
+    <data name="CantSendRequestFriend" xml:space="preserve">
+    <value>មិនអាចផ្ញើការអញ្ជើញបានទេព្រោះលេខរបស់អ្នកពេញ</value>
+  </data>
+    <data name="Fail" xml:space="preserve">
+    <value>បរាជ័យ</value>
+  </data>
+    <data name="InvalidQuantity" xml:space="preserve">
+    <value>លេខមិនត្រឹមត្រូវ</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>មិនមានទិន្នន័យ</value>
+  </data>
+    <data name="NoFriendsFound" xml:space="preserve">
+    <value>រកមិនឃើញមិត្តភក្តិ</value>
+  </data>
+    <data name="PersonFriend" xml:space="preserve">
+    <value>អ្នកប្រើនេះជាមិត្តម្នាក់រួចហើយ</value>
+  </data>
+    <data name="RejectSuccessfully" xml:space="preserve">
+    <value>បដិសេធការអញ្ជើញដោយជោគជ័យ</value>
+  </data>
+    <data name="RewardeUserInviteFriend" xml:space="preserve">
+    <value>អញ្ជើញអ្នកប្រើអញ្ជើញអ្នក</value>
+  </data>
+    <data name="SentThisPerson" xml:space="preserve">
+    <value>បានផ្ញើការអញ្ជើញមិត្តម្នាក់ទៅមនុស្សម្នាក់នេះ</value>
+  </data>
+    <data name="ServerMaintenance" xml:space="preserve">
+    <value>មុខងារត្រូវបានថែទាំ</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>ជោគជ័យ</value>
+  </data>
+    <data name="UnlockVip" xml:space="preserve">
+    <value>ដោះសោនៅពេលទៅដល់ Vip</value>
+  </data>
+    <data name="UserCannotSendInvitationsToUser" xml:space="preserve">
+    <value>អ្នកមិនអាចផ្ញើការអញ្ជើញទៅខ្លួនអ្នកបានទេ</value>
+  </data>
+    <data name="UserHasNoFriendInvitation" xml:space="preserve">
+    <value>អ្នកប្រើគ្មានការអញ្ជើញមិត្ត</value>
+  </data>
+    <data name="UserHaveFriendInvitation" xml:space="preserve">
+    <value>អ្នកមាន {0} សំណើមិត្តភក្តិ!</value>
+  </data>
+    <data name="UserHaveRunOutOfRewarded" xml:space="preserve">
+    <value>អ្នកបានអស់ប្រាក់រង្វាន់</value>
+  </data>
+    <data name="UserMustInviteEnough" xml:space="preserve">
+    <value>អ្នកត្រូវតែអញ្ជើញ {0} ឬមនុស្សច្រើនទៀតដើម្បីទទួលអំណោយ</value>
+  </data>
+    <data name="UserNotExists" xml:space="preserve">
+    <value>អ្នកប្រើមិនមានទេ</value>
+  </data>
+    <data name="ContentIsNotAllow" xml:space="preserve">
+    <value>អត្ថបទមិនសមស្រប</value>
+  </data>
+</LocalLanguages>

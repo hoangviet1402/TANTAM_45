@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>ข้อมูลไม่ถูกต้อง</value>
+  </data>
+    <data name="CodeError" xml:space="preserve">
+    <value>ความผิดพลาด</value>
+  </data>
+    <data name="CodeFail" xml:space="preserve">
+    <value>ความล้มเหลว</value>
+  </data>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>ข้อมูลไม่ถูกต้อง</value>
+  </data>
+    <data name="CodeInvalidSign" xml:space="preserve">
+    <value>ลายเซ็นไม่ถูกต้อง</value>
+  </data>
+    <data name="CodeSuccess" xml:space="preserve">
+    <value>ความสำเร็จ</value>
+  </data>
+    <data name="CodeTokenExpire" xml:space="preserve">
+    <value>โทเค็นหมดอายุแล้ว</value>
+  </data>
+    <data name="CodeTokenNotExist" xml:space="preserve">
+    <value>ไม่มีโทเค็น</value>
+  </data>
+    <data name="CodeApiNotExist" xml:space="preserve">
+    <value>API ไม่มีอยู่</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>กรุณาเข้าสู่ระบบเพื่อใช้ฟังก์ชั่นนี้</value>
+  </data>
+    <data name="BtnUpdate" xml:space="preserve">
+    <value>ปรับปรุง</value>
+  </data>
+    <data name="UpdateSuccess" xml:space="preserve">
+    <value>อัปเดตสำเร็จแล้ว</value>
+  </data>
+    <data name="UpdateFaild" xml:space="preserve">
+    <value>การอัปเดตล้มเหลว</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+    <data name="FunctionMaintainance" xml:space="preserve">
+    <value>ฟังก์ชั่นภายใต้การบำรุงรักษาโปรดลองอีกครั้งในภายหลัง</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>เหตุการณ์ถูกระงับ</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>ไม่ได้ลงชื่อเข้าใช้หรือลงชื่อเข้าใช้ที่เครื่องอื่น</value>
+  </data>
+    <data name="HasErrorContactCustomService" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดโปรดติดต่อฝ่ายสนับสนุนออนไลน์เพื่อขอความช่วยเหลือ</value>
+  </data>
+</LocalLanguages>

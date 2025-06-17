@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="UserNameInvalit4" xml:space="preserve">
+        <value>ឈ្មោះបញ្ចូលគណនីមានរួចហើយ</value>
+    </data>
+    <data name="RegisterBouns" xml:space="preserve">
+    <value>អបអរសាទរសម្រាប់ការចុះឈ្មោះដោយជោគជ័យ! រដ្ឋបាលនឹងអោយអ្នក {0} CHIPS លេងហ្គេម។</value>
+  </data>
+    <data name="RegisterBounsTitle" xml:space="preserve">
+    <value>អបអរសាទរសម្រាប់ការចុះឈ្មោះដោយជោគជ័យ! </value>
+	</data>
+    <data name="Level_LevelUp" xml:space="preserve">
+    <value>អអ្នកបានឡើងកម្រិត</value>
+  </data>
+    <data name="Level_LogPointSuccess" xml:space="preserve">
+    <value>សន្សំពិន្ទុះកម្រិតជោគជ័យ</value>
+  </data>
+    <data name="Level_LogPointError" xml:space="preserve">
+    <value>សន្សំពិន្ទុះកម្រិតបរាជ័យ</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigListGameText" xml:space="preserve">
+    <value>អ្នកត្រូវជាប់កម្រិត {0}</value>
+  </data>
+    <data name="Level_LevelInfo_ConfigBanCaRoomText" xml:space="preserve">
+    <value>អ្នកត្រូវជាប់កម្រិត {0} </value>
+  </data>
+    <data name="Level_DescriptionUnlockGame" xml:space="preserve">
+    <value>ស្វាគមន៍អ្នកបានបើកសោហ្គេម{0}</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+        <value>ធ្វើបច្ចុប្បន្នភាពព័ត៌មានដោយជោគជ័យ</value>
+    </data>
+    <data name="EmailExists" xml:space="preserve">
+        <value>អ៊ីមែលនេះត្រូវបានប្រើ</value>
+    </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+        <value>លេខទូរស័ព្ទកំពុងប្រើរួចហើយ</value>
+    </data>
+    <data name="ErrorMessValidation7" xml:space="preserve">
+        <value>លេខទូរស័ព្ទមិនត្រឹមត្រូវ។</value>
+    </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញរួចហើយ</value>
+  </data>
+    <data name="ValidationLogin12" xml:space="preserve">
+    <value>មិនមានគណនី</value>
+  </data>
+    <data name="ValidationDisplayName6" xml:space="preserve">
+    <value>ឈ្មោះបង្ហាញរួចហើយ</value>
+  </data>
+    <data name="ValidationPhone2" xml:space="preserve">
+    <value>លេខទូរស័ព្ទកំពុងប្រើរួចហើយ</value>
+  </data>
+    <data name="EmailExists" xml:space="preserve">
+    <value>អ៊ីមែលនេះត្រូវបានប្រើ</value>
+  </data>
+    <data name="UpdateInfoSuccess" xml:space="preserve">
+    <value>ធ្វើបច្ចុប្បន្នភាពព័ត៌មានដោយជោគជ័យ</value>
+  </data>
+</LocalLanguages>

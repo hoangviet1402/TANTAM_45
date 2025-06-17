@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70248680-8EA1-42ED-B418-2880CBF774B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EntitiesObject</RootNamespace>
+    <AssemblyName>EntitiesObject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Channel\Danhbaionline\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant\AccountAuthenGameStatusCode.cs" />
+    <Compile Include="Constant\EnumPlatformId.cs" />
+    <Compile Include="Constant\ExportCardEnum.cs" />
+    <Compile Include="Entities\IStoredProcedure.cs" />
+    <Compile Include="Entities\TanTamEntities\Ins_Account_EmployeesInfoInCompany_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Account_GetAllCompany_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Account_GetInfor_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Account_GetTokensByEmployeeID_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Account_Login_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Account_UpdateFullName_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Account_Validata_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Business_GetList_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_CompanyBranch_GetAllByCompany_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_CompanyBranch_GetAllInfor_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_CompanyBranch_GetInfor_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_CompanyDepartment_CreateInAllBranchId_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_CompanyDepartment_GetAll_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_CompanyPosition_CreateInAllBranchId_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Company_GetEmployeeID_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Company_GetInforAccount_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Company_GetInfor_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Company_GetSetupStep_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Employee_GetAll_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Employee_GetEmployeeID_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Employee_GetList_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Employee_GetShiftsInBranch_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Branch_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Department_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Position_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Shift_Branch_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Shift_CreateTimeInOutConfig_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Shift_CreateTimeRestConfig_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Shift_GetTimekeeper_logLastest_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Shift_Get_Status_Clock_In_Out_Shift_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_CreatorInfo_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_GetTaskGroupsByTaskId_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Group_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_List_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_ManagersByTask_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_ListByBundle_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_UsersByTask_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_UsersByUser_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Time_GetList_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_User_GetDetail_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_User_GetList_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\TanTam.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\TanTamEntities\TanTam.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TanTam.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Message\" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

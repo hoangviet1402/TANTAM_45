@@ -1,0 +1,2349 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="ACB" xml:space="preserve">
+    <value>A Chau bank</value>
+  </data>
+    <data name="AcceptRule" xml:space="preserve">
+    <value>I have read and accepted terms</value>
+  </data>
+    <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+    <data name="AccountBaoKim" xml:space="preserve">
+    <value>Bao Kim account</value>
+  </data>
+    <data name="AccountGold" xml:space="preserve">
+    <value>&lt;/strong&gt;Win to your wallet</value>
+  </data>
+    <data name="AccountHasBeenKick" xml:space="preserve">
+    <value>You have been kicked because this account is logged in to another computer</value>
+  </data>
+    <data name="AccountMTop" xml:space="preserve">
+    <value>MTop Account</value>
+  </data>
+    <data name="AccountVnKash" xml:space="preserve">
+    <value>VNKash Account</value>
+  </data>
+    <data name="AccountWeb" xml:space="preserve">
+    <value>Account WEB</value>
+  </data>
+    <data name="AccpetRule3cay" xml:space="preserve">
+    <value>I have read and accepted the terms</value>
+  </data>
+    <data name="ActiveSerCode" xml:space="preserve">
+    <value>Activate the account protection function</value>
+  </data>
+    <data name="ActivityForum" xml:space="preserve">
+    <value>FORUM ACTIVITIES</value>
+  </data>
+    <data name="AddCmt" xml:space="preserve">
+    <value>ADD COMMENTS</value>
+  </data>
+    <data name="AGB" xml:space="preserve">
+    <value>AGB bank</value>
+  </data>
+    <data name="Agree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+    <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+    <data name="AllowCmt" xml:space="preserve">
+    <value>Allow comment</value>
+  </data>
+    <data name="ApiCommentLeast" xml:space="preserve">
+    <value>The current Win minimum {0} has been commented</value>
+  </data>
+    <data name="ApplyDepositGold" xml:space="preserve">
+    <value>(applies to members who have loaded Win from</value>
+  </data>
+    <data name="Article" xml:space="preserve">
+    <value>ARTICLE</value>
+  </data>
+    <data name="ArticleNotExist" xml:space="preserve">
+    <value>Post does not exist or has been deleted.</value>
+  </data>
+    <data name="ArticleRule" xml:space="preserve">
+    <value>GENERAL REGULATIONS ON ARTICLES</value>
+  </data>
+    <data name="ATMDomestic" xml:space="preserve">
+    <value>Domestic Bank Card (ATM)</value>
+  </data>
+    <data name="Award" xml:space="preserve">
+    <value>Rewards</value>
+  </data>
+    <data name="AwardToAcc" xml:space="preserve">
+    <value>You are donated to your account</value>
+  </data>
+    <data name="Back" xml:space="preserve">
+    <value>&lt;/strong&gt; is back. You are awarded &lt;strong&gt;</value>
+  </data>
+    <data name="BackToHistory" xml:space="preserve">
+    <value>Return to the previous page</value>
+  </data>
+    <data name="BackToTop" xml:space="preserve">
+    <value>Back top top</value>
+  </data>
+    <data name="BadNews" xml:space="preserve">
+    <value>Report bad news</value>
+  </data>
+    <data name="BangTimKiem" xml:space="preserve">
+    <value>Search</value>
+  </data>
+    <data name="BaoLo" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+    <data name="BaoLoRule" xml:space="preserve">
+    <value>Type the last 2 digits of all the ranges if you return then you win, if you return 2 times, you get 2 * 3.5 = x7 to N times, you get N * 3.5. Include numbers from 00 to 99</value>
+  </data>
+    <data name="Bet" xml:space="preserve">
+    <value>BET</value>
+  </data>
+    <data name="BetGold" xml:space="preserve">
+    <value>Bet (Win)</value>
+  </data>
+    <data name="BetLucky" xml:space="preserve">
+    <value>LUCKY BET</value>
+  </data>
+    <data name="BetSpecial" xml:space="preserve">
+    <value>Special deals</value>
+  </data>
+    <data name="Betting" xml:space="preserve">
+    <value>Betting</value>
+  </data>
+    <data name="BigGuildMonth" xml:space="preserve">
+    <value>GUILD OF THE MONTH</value>
+  </data>
+    <data name="Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+    <data name="BlockAcc" xml:space="preserve">
+    <value>Your account is locked {{0} &lt;/strong&gt; days, from &lt;strong&gt; {1} &lt;/strong&gt; to &lt;strong&gt; {2} &lt;/strong&gt;. Reason: &lt;strong&gt; {3} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="BlockAccount" xml:space="preserve">
+    <value>Your account is locked</value>
+  </data>
+    <data name="BlockForever" xml:space="preserve">
+    <value>Your account is permanently locked. Reason: &lt;strong&gt; {0} &lt;/strong&gt;. &lt;br/&gt; Any questions please contact online support for answers.</value>
+  </data>
+    <data name="BuyGoldAgency" xml:space="preserve">
+    <value>BUY AGENT WIN</value>
+  </data>
+    <data name="BuyGoldNL" xml:space="preserve">
+    <value>BUY WIN ONLINE NGAN LUONG</value>
+  </data>
+    <data name="BuyGoldWith" xml:space="preserve">
+    <value>Buy win with</value>
+  </data>
+    <data name="Cancel" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+    <data name="Captcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="CardNum" xml:space="preserve">
+    <value>Card value...</value>
+  </data>
+    <data name="CardType" xml:space="preserve">
+    <value>Card type</value>
+  </data>
+    <data name="CardVND" xml:space="preserve">
+    <value>Card {0} {1} Win</value>
+  </data>
+    <data name="Change" xml:space="preserve">
+    <value>CHANGE</value>
+  </data>
+    <data name="ChangeAvata" xml:space="preserve">
+    <value>Change Avatar</value>
+  </data>
+    <data name="ChangePass" xml:space="preserve">
+    <value>CHANGE PASSWORD</value>
+  </data>
+    <data name="ChangePassSucc" xml:space="preserve">
+    <value>Update password successfully !</value>
+  </data>
+    <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+    <data name="ChangeXu" xml:space="preserve">
+    <value>Win changes</value>
+  </data>
+    <data name="ChartFinanceGuild" xml:space="preserve">
+    <value>State Financial Chart</value>
+  </data>
+    <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+    <data name="CheckAgainEmail" xml:space="preserve">
+    <value>Please check your email (including inbox, spam, bulk).</value>
+  </data>
+    <data name="CheckTransfer" xml:space="preserve">
+    <value>Check</value>
+  </data>
+    <data name="ChooseLanguage" xml:space="preserve">
+    <value>Choose language</value>
+  </data>
+    <data name="Chose2NumXien" xml:space="preserve">
+    <value>Select 2 oblique numbers</value>
+  </data>
+    <data name="Chose2Xien2" xml:space="preserve">
+    <value>Select 2 lottery numbers 2</value>
+  </data>
+    <data name="Chose3NumXien" xml:space="preserve">
+    <value>Select 3 oblique numbers</value>
+  </data>
+    <data name="Chose3Xien3" xml:space="preserve">
+    <value>Select 3 oblique numbers 3</value>
+  </data>
+    <data name="Chose4NumXien" xml:space="preserve">
+    <value>Select 4 oblique numbers</value>
+  </data>
+    <data name="Chose4Xien4" xml:space="preserve">
+    <value>Select 4 lottery numbers 4</value>
+  </data>
+    <data name="ChoseAll" xml:space="preserve">
+    <value>[Select/Unselect all]</value>
+  </data>
+    <data name="ChoseCmtDelCheck" xml:space="preserve">
+    <value>Delete comment</value>
+  </data>
+    <data name="Chosed" xml:space="preserve">
+    <value>You chose</value>
+  </data>
+    <data name="ChoseDisplayNameInWeb" xml:space="preserve">
+    <value>Please select the name of your representative display on Win8</value>
+  </data>
+    <data name="ChoseImg" xml:space="preserve">
+    <value>Select photos</value>
+  </data>
+    <data name="Classify" xml:space="preserve">
+    <value>Classify</value>
+  </data>
+    <data name="ClickToExchange" xml:space="preserve">
+    <value>Click here to change</value>
+  </data>
+    <data name="Close" xml:space="preserve">
+    <value>Lose</value>
+  </data>
+    <data name="CMND" xml:space="preserve">
+    <value>ID</value>
+  </data>
+    <data name="CodeError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+    <data name="CodeFail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>Invalid data</value>
+  </data>
+    <data name="CodeInvalidSign" xml:space="preserve">
+    <value>Wrong signature</value>
+  </data>
+    <data name="CodeSuccess" xml:space="preserve">
+    <value>Successfully</value>
+  </data>
+    <data name="CodeSystemError" xml:space="preserve">
+    <value>System error</value>
+  </data>
+    <data name="CodeTokenExpire" xml:space="preserve">
+    <value>Token is expired !</value>
+  </data>
+    <data name="CodeTokenNotExist" xml:space="preserve">
+    <value>Token not exist</value>
+  </data>
+    <data name="CoinHistoryErrorConfirm" xml:space="preserve">
+    <value>Want to send a request to check the card?</value>
+  </data>
+    <data name="CoinHistoryErrorContent" xml:space="preserve">
+    <value>We have received your request. Please wait for the system to process.</value>
+  </data>
+    <data name="CoinHistoryErrorRequested" xml:space="preserve">
+    <value>Required </value>
+  </data>
+    <data name="Compact" xml:space="preserve">
+    <value>Compact</value>
+  </data>
+    <data name="CompareResult" xml:space="preserve">
+    <value>Compare results</value>
+  </data>
+    <data name="ConfigNotFound" xml:space="preserve">
+    <value>Config not found</value>
+  </data>
+    <data name="Confirm" xml:space="preserve">
+    <value>CONFIRM</value>
+  </data>
+    <data name="ConfirmDelCmt" xml:space="preserve">
+    <value>Do you want to delete the selected comment?</value>
+  </data>
+    <data name="ConfirmDelMem" xml:space="preserve">
+    <value>Do you really want to delete this member?</value>
+  </data>
+    <data name="ConfirmNewPass" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+    <data name="ConfirmNewPassWrong" xml:space="preserve">
+    <value>Confirm the new password is not correct.</value>
+  </data>
+    <data name="ConfirmPass" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+    <data name="ConfirmPasswordWallet" xml:space="preserve">
+    <value>Confirm wallet password.</value>
+  </data>
+    <data name="ContactUsWith" xml:space="preserve">
+    <value>If you are sure that you have requested the correct page, please contact us at the address</value>
+  </data>
+    <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="ContentComform" xml:space="preserve">
+    <value>The content must be consistent with Cambodian customs and culture, not discussing religious and political issues.</value>
+  </data>
+    <data name="ContentMean" xml:space="preserve">
+    <value>Content must be meaningful.</value>
+  </data>
+    <data name="ContentPropagate" xml:space="preserve">
+    <value>The content is not propaganda, attracting members to oppose the Board's decisions, announcements, causing unity among members, negatively affecting ...</value>
+  </data>
+    <data name="ContentSMS" xml:space="preserve">
+    <value>Please compose the syntax message: WIN MBV</value>
+  </data>
+    <data name="ContentTopic" xml:space="preserve">
+    <value>Content must post correct headings and topics.</value>
+  </data>
+    <data name="Continue" xml:space="preserve">
+    <value>. Come back the next day to continue receiving prizes!</value>
+  </data>
+    <data name="ContributeLevelGuild" xml:space="preserve">
+    <value>Contribute by level</value>
+  </data>
+    <data name="ContributePoint" xml:space="preserve">
+    <value>Contribution points</value>
+  </data>
+    <data name="ConvertToCard" xml:space="preserve">
+    <value>RULES OF SCRATCH CARDS</value>
+  </data>
+    <data name="ConvertToItem" xml:space="preserve">
+    <value>REWARD REWARDS TO PRODUCTS</value>
+  </data>
+    <data name="CopyLink" xml:space="preserve">
+    <value>Copy links and send to friends via Yahoo Messenger, Facebook ...</value>
+  </data>
+    <data name="CopyLinkSendFriend" xml:space="preserve">
+    <value>Please copy this link and send it to a friend</value>
+  </data>
+    <data name="Copyright" xml:space="preserve">
+    <value>Copyright © 2019 The most fun online gaming community</value>
+  </data>
+    <data name="Create" xml:space="preserve">
+    <value>CREATE</value>
+  </data>
+    <data name="CreateAcc" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+    <data name="CreateAccBaoKim" xml:space="preserve">
+    <value>Create Account Bao Kim</value>
+  </data>
+    <data name="CreateAccMTop" xml:space="preserve">
+    <value>Create Account MTOP</value>
+  </data>
+    <data name="CreateAccVnKash" xml:space="preserve">
+    <value>Create Account VnKash</value>
+  </data>
+    <data name="CreateArticle" xml:space="preserve">
+    <value>Create Article</value>
+  </data>
+    <data name="CreateDay" xml:space="preserve">
+    <value>Registration Date</value>
+  </data>
+    <data name="CreateGuild" xml:space="preserve">
+    <value>Create guilds</value>
+  </data>
+    <data name="CreateNews" xml:space="preserve">
+    <value>Create New Post</value>
+  </data>
+    <data name="CreateTransactionError" xml:space="preserve">
+    <value>Transaction creation error</value>
+  </data>
+    <data name="CurrentXu" xml:space="preserve">
+    <value>Current Win</value>
+  </data>
+    <data name="DAB" xml:space="preserve">
+    <value>Dong a Bank</value>
+  </data>
+    <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+    <data name="DateChange" xml:space="preserve">
+    <value>Date to change</value>
+  </data>
+    <data name="DateJoin" xml:space="preserve">
+    <value>Date joined</value>
+  </data>
+    <data name="Dau" xml:space="preserve">
+    <value>HEAD</value>
+  </data>
+    <data name="Dau1An8" xml:space="preserve">
+    <value>HEAD (1 EAT 8)</value>
+  </data>
+    <data name="DauDuoi" xml:space="preserve">
+    <value>Tail end</value>
+  </data>
+    <data name="DayBefore" xml:space="preserve">
+    <value> yesterday</value>
+  </data>
+    <data name="DealNoExist" xml:space="preserve">
+    <value>You have no transactions</value>
+  </data>
+    <data name="DelBanner" xml:space="preserve">
+    <value>REMOVE BANNER</value>
+  </data>
+    <data name="DelCmt" xml:space="preserve">
+    <value>Delete Comment</value>
+  </data>
+    <data name="DelCmtChosed" xml:space="preserve">
+    <value>Delete the selected comment</value>
+  </data>
+    <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+    <data name="DepositCard" xml:space="preserve">
+    <value>PAYMENT CARD</value>
+  </data>
+    <data name="DepositCardCardTypeInvalid" xml:space="preserve">
+    <value>Invalid card type</value>
+  </data>
+    <data name="DepositCardPinCodeInvalid" xml:space="preserve">
+    <value>Invalid PIN code</value>
+  </data>
+    <data name="DepositCardSerialInvalid" xml:space="preserve">
+    <value>Invalid serial</value>
+  </data>
+    <data name="DepositCode" xml:space="preserve">
+    <value>TOP COUNTER TOP CARD CODE</value>
+  </data>
+    <data name="DepositCoin" xml:space="preserve">
+    <value>Add win</value>
+  </data>
+    <data name="DepositGetProductMethodInvalid" xml:space="preserve">
+    <value>Unable to determine payment method</value>
+  </data>
+    <data name="DepositIAPGoogleFail" xml:space="preserve">
+    <value>Transaction failed from google</value>
+  </data>
+    <data name="DepositIAPGoogleInvalid" xml:space="preserve">
+    <value>Service pack does not exist</value>
+  </data>
+    <data name="DepositIAPGoogleProccessing" xml:space="preserve">
+    <value>Transaction pending from google</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>Successfully loaded {0: N0} Win</value>
+  </data>
+    <data name="DepositSuccessAddCoinFailed" xml:space="preserve">
+    <value>Deposit successfully. But there was an error in the Win transfer process</value>
+  </data>
+    <data name="DepositSuccessAddCoinVipFailed" xml:space="preserve">
+    <value>Deposit successfully. But there was an error in the Win transfer process and vip point processing</value>
+  </data>
+    <data name="DepositSuccessAddVipFailed" xml:space="preserve">
+    <value>Deposit successfully {0: N0} Win. But there was an error in processing the vip point</value>
+  </data>
+    <data name="DepositVnKash" xml:space="preserve">
+    <value>REFRIGERATION BY VNKASH ACCOUNT</value>
+  </data>
+    <data name="DepositWithBank" xml:space="preserve">
+    <value>Deposit Win by bank card</value>
+  </data>
+    <data name="DepositWithBaoKim" xml:space="preserve">
+    <value>Deposit with BaoKim</value>
+  </data>
+    <data name="DepositWithPayPlus" xml:space="preserve">
+    <value>Load with PayPlus</value>
+  </data>
+    <data name="DepositWithPayPlusSuccess" xml:space="preserve">
+    <value>Depsited Successfully {0: N0} Win</value>
+  </data>
+    <data name="DepositWithPayPlusUnit" xml:space="preserve">
+    <value>USD</value>
+  </data>
+    <data name="DepositWithPP" xml:space="preserve">
+    <value>Load with Pi Pay</value>
+  </data>
+    <data name="DepositWithPPSuccess" xml:space="preserve">
+    <value>Depsited Successfully {0: N0} Win</value>
+  </data>
+    <data name="DepositWithPPUnit" xml:space="preserve">
+    <value>USD</value>
+  </data>
+    <data name="DesGameDG" xml:space="preserve">
+    <value>where you unleash folk games online with a variety of diverse and rich games such as phỏm, shield, lie, advance, chess, three trees, go to the south, have fun</value>
+  </data>
+    <data name="Dicken" xml:space="preserve">
+    <value>Draw</value>
+  </data>
+    <data name="DisCuss" xml:space="preserve">
+    <value>Discuss</value>
+  </data>
+    <data name="Dislayname" xml:space="preserve">
+    <value>Display name</value>
+  </data>
+    <data name="DisplayAccName" xml:space="preserve">
+    <value>Account name</value>
+  </data>
+    <data name="DisplayName" xml:space="preserve">
+    <value>Display name:</value>
+  </data>
+    <data name="DisplayNameNotEmpty" xml:space="preserve">
+    <value>Display name does not contain spaces</value>
+  </data>
+    <data name="Donation" xml:space="preserve">
+    <value>Donation</value>
+  </data>
+    <data name="Duoi" xml:space="preserve">
+    <value>TAIL</value>
+  </data>
+    <data name="Duoi1An8" xml:space="preserve">
+    <value>TAIL (1 EAT 8)</value>
+  </data>
+    <data name="Edit" xml:space="preserve">
+    <value>Repair</value>
+  </data>
+    <data name="ErrorCmt" xml:space="preserve">
+    <value>Error comment</value>
+  </data>
+    <data name="ErrorDelFriend" xml:space="preserve">
+    <value>Error deleting friend</value>
+  </data>
+    <data name="Errorimage" xml:space="preserve">
+    <value>Image capacity is less than 500kb</value>
+  </data>
+    <data name="ErrorImage2" xml:space="preserve">
+    <value>must be in jpg, png, gif format</value>
+  </data>
+    <data name="ErrorLogin" xml:space="preserve">
+    <value>Login error</value>
+  </data>
+    <data name="ErrorProcess" xml:space="preserve">
+    <value>Error during processing, please try again later.</value>
+  </data>
+    <data name="ErrorReadImage" xml:space="preserve">
+    <value>Can't read the picture. This error may be due to the old version browser. Please contact admin for support.</value>
+  </data>
+    <data name="ErrorSystem" xml:space="preserve">
+    <value>System error. Please try again</value>
+  </data>
+    <data name="Event" xml:space="preserve">
+    <value>EVENT</value>
+  </data>
+    <data name="EventDetail" xml:space="preserve">
+    <value>Event details</value>
+  </data>
+    <data name="EXB" xml:space="preserve">
+    <value>Import-Export Bank</value>
+  </data>
+    <data name="Exchange" xml:space="preserve">
+    <value>SPEND WIN</value>
+  </data>
+    <data name="ExchangeCard" xml:space="preserve">
+    <value>Exchange Card</value>
+  </data>
+    <data name="ExchangeCardSelectCardPls" xml:space="preserve">
+    <value>Please select the type of card to exchange</value>
+  </data>
+    <data name="ExchangeCardSuccessMessageContent" xml:space="preserve">
+    <value>You have successfully exchanged the card n Serial: {0} NP: {1} n Click the card code and hold for 3 seconds to copy characters</value>
+  </data>
+    <data name="ExchangeCardSuccessMessageTitle" xml:space="preserve">
+    <value>Card {0} {1} exchanged on {2}</value>
+  </data>
+    <data name="ExchangeCardSuccessNoticeContent" xml:space="preserve">
+    <value>You have successfully exchanged the card. Please go to Notification -&gt; Message to view card code</value>
+  </data>
+    <data name="ExchangeCardSystemMaintainance" xml:space="preserve">
+    <value>System {0} is under maintenance, please choose another card type</value>
+  </data>
+    <data name="ExchangeDial" xml:space="preserve">
+    <value>Redemption of dials</value>
+  </data>
+    <data name="ExchangeNow" xml:space="preserve">
+    <value>Exchange Now</value>
+  </data>
+    <data name="ExchangeProductInvalid" xml:space="preserve">
+    <value>Invalid exchange product</value>
+  </data>
+    <data name="ExchangeProductInvalidCode" xml:space="preserve">
+    <value>Invalid Product code </value>
+  </data>
+    <data name="ExchangeRate" xml:space="preserve">
+    <value>Conversion rate</value>
+  </data>
+    <data name="ExchangeSuccessNoticeContent" xml:space="preserve">
+    <value>You have successfully exchanged {0}. Please update your account protection information and please contact us at Hotline number ({1}) to receive your reward.</value>
+  </data>
+    <data name="ExchangeSuccessNoticeTitle" xml:space="preserve">
+    <value>You have successfully exchanged {0}</value>
+  </data>
+    <data name="Existence" xml:space="preserve">
+    <value>Rest:</value>
+  </data>
+    <data name="Exit" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+    <data name="Exp" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+    <data name="ExpPoint" xml:space="preserve">
+    <value>Experience points </value>
+  </data>
+    <data name="FAQs" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+    <data name="FAQsMobileEmty" xml:space="preserve">
+    <value>Information is updating.</value>
+  </data>
+    <data name="FeedbackContentRequire" xml:space="preserve">
+    <value>Content must have at least 10 characters</value>
+  </data>
+    <data name="FeedbackFail" xml:space="preserve">
+    <value>Send feedback failed, please try again</value>
+  </data>
+    <data name="FeedbackSuccess" xml:space="preserve">
+    <value>Send feedback successfully, thank you and have fun</value>
+  </data>
+    <data name="FeedbackTitleRequire" xml:space="preserve">
+    <value>Title must contain characters or numbers</value>
+  </data>
+    <data name="FinalAward" xml:space="preserve">
+    <value>Summary &amp; Awards</value>
+  </data>
+    <data name="FindFriend" xml:space="preserve">
+    <value>Find friend</value>
+  </data>
+    <data name="FindMember" xml:space="preserve">
+    <value>Find the guild member</value>
+  </data>
+    <data name="FindoutBaoKim" xml:space="preserve">
+    <value>LEARN MORE OF BAO KIM ELECTRONICS</value>
+  </data>
+    <data name="FindoutMTop" xml:space="preserve">
+    <value>Learn more about MTOP ELECTRONICS</value>
+  </data>
+    <data name="FindoutVnKash" xml:space="preserve">
+    <value>LEARN MORE OF ELECTRONICS VNKASH.COM</value>
+  </data>
+    <data name="Finish" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+    <data name="FooterCopyright" xml:space="preserve">
+    <value>Copyright &lt;br /&gt; Game for 13+</value>
+  </data>
+    <data name="FooterSlogan" xml:space="preserve">
+    <value>Play on mobile and receive gifts</value>
+  </data>
+    <data name="ForgotPass" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+    <data name="Forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+    <data name="Friend" xml:space="preserve">
+    <value>Friend</value>
+  </data>
+    <data name="FriendNotExist" xml:space="preserve">
+    <value>No friend!</value>
+  </data>
+    <data name="Friends" xml:space="preserve">
+    <value>FRIEND</value>
+  </data>
+    <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+    <data name="FromDate" xml:space="preserve">
+    <value>From date</value>
+  </data>
+    <data name="Fullname" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+    <data name="Funny" xml:space="preserve">
+    <value>Funny</value>
+  </data>
+    <data name="Funny3cay" xml:space="preserve">
+    <value>Wish you have many relaxing moments on Win8</value>
+  </data>
+    <data name="GameBanCa" xml:space="preserve">
+    <value>Fish shooting game - Play Fish Shoot game online for free</value>
+  </data>
+    <data name="GameBet" xml:space="preserve">
+    <value>BOOKING GAME</value>
+  </data>
+    <data name="GameBetting" xml:space="preserve">
+    <value>GAME BETTING</value>
+  </data>
+    <data name="GameCard" xml:space="preserve">
+    <value>GAME POKER</value>
+  </data>
+    <data name="GameConnectUnavailable" xml:space="preserve">
+    <value>Unable to connect the game</value>
+  </data>
+    <data name="GameDanGian" xml:space="preserve">
+    <value>Online Folk Game, Play Online</value>
+  </data>
+    <data name="GameFunny" xml:space="preserve">
+    <value>FUNNY GAME</value>
+  </data>
+    <data name="GameKyNang" xml:space="preserve">
+    <value>SKILL GAME</value>
+  </data>
+    <data name="GameMenu_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+    <data name="GameMenu_Bai" xml:space="preserve">
+    <value>Game Poker</value>
+  </data>
+    <data name="GameMenu_Bet" xml:space="preserve">
+    <value>Game Bet</value>
+  </data>
+    <data name="GameMenu_Skill" xml:space="preserve">
+    <value>Game Fishing</value>
+  </data>
+    <data name="GameMenu_Slot" xml:space="preserve">
+    <value>Game Slot</value>
+  </data>
+    <data name="GameMenu_Thuong" xml:space="preserve">
+    <value>Game Bonus</value>
+  </data>
+    <data name="Gender" xml:space="preserve">
+    <value>Sex</value>
+  </data>
+    <data name="Gift" xml:space="preserve">
+    <value>Gift</value>
+  </data>
+    <data name="Gift20K" xml:space="preserve">
+    <value>'&lt;div&gt; You are given &lt;strong&gt; 20,000 Win &lt;/strong&gt; to your account &lt;div style = "font-size: 18px; color: red;"&gt; You enter any game to receive Win &lt;/div&gt; &lt; div class = ""&gt; Have fun playing games. &lt;/div&gt; &lt;br/&gt; &lt;/div&gt; '</value>
+  </data>
+    <data name="GiftChange" xml:space="preserve">
+    <value>The gift has changed</value>
+  </data>
+    <data name="GiftGoldBrithday" xml:space="preserve">
+    <value>Give Win a birthday</value>
+  </data>
+    <data name="GiftToReaching" xml:space="preserve">
+    <value>1. Win Rewards when reaching VIP points:</value>
+  </data>
+    <data name="God" xml:space="preserve">
+    <value>GOD</value>
+  </data>
+    <data name="GoldAccuDay" xml:space="preserve">
+    <value>Win accumulated / day</value>
+  </data>
+    <data name="GoldAccuMount" xml:space="preserve">
+    <value>Win accumulated / month</value>
+  </data>
+    <data name="GoldBet" xml:space="preserve">
+    <value>Win bets</value>
+  </data>
+    <data name="GoldCurrent" xml:space="preserve">
+    <value>Win numbers current</value>
+  </data>
+    <data name="GoldGiftLevelUp" xml:space="preserve">
+    <value>Win bonuses on VIP level</value>
+  </data>
+    <data name="GoldGiftLogin" xml:space="preserve">
+    <value>Win donated login</value>
+  </data>
+    <data name="GoldGiftVip" xml:space="preserve">
+    <value>Win gave VIP birthday</value>
+  </data>
+    <data name="GoldHave" xml:space="preserve">
+    <value>Win you have:</value>
+  </data>
+    <data name="GoldReceive" xml:space="preserve">
+    <value>Win number received</value>
+  </data>
+    <data name="GoldWinBet" xml:space="preserve">
+    <value>Win number wins (if any)</value>
+  </data>
+    <data name="GotoBaoKim" xml:space="preserve">
+    <value>Visit Bao Kim page</value>
+  </data>
+    <data name="GotoMTop" xml:space="preserve">
+    <value>Go to MTOP page</value>
+  </data>
+    <data name="GotoVnKash" xml:space="preserve">
+    <value>Go to VnKash.com</value>
+  </data>
+    <data name="GPB" xml:space="preserve">
+    <value>Global Petroleum Commercial Joint Stock Bank</value>
+  </data>
+    <data name="Guide" xml:space="preserve">
+    <value>Guide</value>
+  </data>
+    <data name="GuidePlay" xml:space="preserve">
+    <value>Guide for playing games</value>
+  </data>
+    <data name="Guild" xml:space="preserve">
+    <value>Guild</value>
+  </data>
+    <data name="GuildAccumulationMemberInfo" xml:space="preserve">
+    <value>Member contribution information</value>
+  </data>
+    <data name="GuildAccumulationPoint" xml:space="preserve">
+    <value>Contribution points</value>
+  </data>
+    <data name="GuildAvatar" xml:space="preserve">
+    <value>Avatar guild</value>
+  </data>
+    <data name="GuildCoinWillReceive" xml:space="preserve">
+    <value>Win is expected to be received</value>
+  </data>
+    <data name="GuildCommentDisable" xml:space="preserve">
+    <value>Comment is forbidden</value>
+  </data>
+    <data name="GuildCommentDisableAsk" xml:space="preserve">
+    <value>Do you want to ban this comment?</value>
+  </data>
+    <data name="GuildCommentDisabled" xml:space="preserve">
+    <value>Comment has been banned</value>
+  </data>
+    <data name="GuildCreate" xml:space="preserve">
+    <value>CREATE GUILD</value>
+  </data>
+    <data name="GuildCreateRule" xml:space="preserve">
+    <value>You must have at least 200,000 Win to create guilds</value>
+  </data>
+    <data name="GuildEnterPass" xml:space="preserve">
+    <value>Enter the guild password</value>
+  </data>
+    <data name="GuildEnterPass2" xml:space="preserve">
+    <value>Re-enter the guild password</value>
+  </data>
+    <data name="GuildInfoAccumulationByLevel" xml:space="preserve">
+    <value>Information contributed by level</value>
+  </data>
+    <data name="GuildInputToSearch" xml:space="preserve">
+    <value>Enter the guild name to search ...</value>
+  </data>
+    <data name="GuildInviteLink" xml:space="preserve">
+    <value>Member invitation link</value>
+  </data>
+    <data name="GuildKickMember" xml:space="preserve">
+    <value>Type members from the guild</value>
+  </data>
+    <data name="GuildKickMemberAsk" xml:space="preserve">
+    <value>Do you want to kick the user from this guild?</value>
+  </data>
+    <data name="GuildListUserReceiveCoin" xml:space="preserve">
+    <value>Member list to receive Win</value>
+  </data>
+    <data name="GuildListUserWaiting" xml:space="preserve">
+    <value>Users list to join this guild</value>
+  </data>
+    <data name="GuildMemAchieve" xml:space="preserve">
+    <value>The Guild has a member with the title</value>
+  </data>
+    <data name="GuildMemberRemoveAsk" xml:space="preserve">
+    <value>Do you really want to delete this member?</value>
+  </data>
+    <data name="GuildMemberTopPayment" xml:space="preserve">
+    <value>Top members loaded cards</value>
+  </data>
+    <data name="GuildMyGuild" xml:space="preserve">
+    <value>MY GUILD</value>
+  </data>
+    <data name="GuildName" xml:space="preserve">
+    <value>Guild name</value>
+  </data>
+    <data name="GuildNotify" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+    <data name="GuildNotifyCreate" xml:space="preserve">
+    <value>Create new notification</value>
+  </data>
+    <data name="GuildNotifyDeleteAsk" xml:space="preserve">
+    <value>Are you sure you want to delete the selected message?</value>
+  </data>
+    <data name="GuildNotifyList" xml:space="preserve">
+    <value>List of announcements in guild</value>
+  </data>
+    <data name="GuildOwner" xml:space="preserve">
+    <value>Master of guild</value>
+  </data>
+    <data name="GuildPolicy" xml:space="preserve">
+    <value>Guild policy</value>
+  </data>
+    <data name="GuildRevenueInfo" xml:space="preserve">
+    <value>Sales information</value>
+  </data>
+    <data name="GuildSetting" xml:space="preserve">
+    <value>MANAGEMENT GUILD</value>
+  </data>
+    <data name="GuildTop" xml:space="preserve">
+    <value>TOP GUILD</value>
+  </data>
+    <data name="GuildTopCreateNew" xml:space="preserve">
+    <value>TOP NEW GUILD</value>
+  </data>
+    <data name="GuildTopMemberAccumulation" xml:space="preserve">
+    <value>Win Guild contribute by members in the month</value>
+  </data>
+    <data name="GuildTopRich" xml:space="preserve">
+    <value>TOP big guild</value>
+  </data>
+    <data name="GuildTopSuggest" xml:space="preserve">
+    <value>Guild in suggested</value>
+  </data>
+    <data name="GuildTopVip" xml:space="preserve">
+    <value>TOP MEMBERS IN MONTH</value>
+  </data>
+    <data name="GuildTotalAccumulation" xml:space="preserve">
+    <value>General Win accumulated</value>
+  </data>
+    <data name="GuildUpdateFanpage" xml:space="preserve">
+    <value>Are you sure you want to update LinkFanpage?</value>
+  </data>
+    <data name="GuildUpdateFanpageError" xml:space="preserve">
+    <value>Link Fanpage is not correct</value>
+  </data>
+    <data name="HasErrorContactCustomService" xml:space="preserve">
+    <value>An error has occurred, please contact online support for assistance</value>
+  </data>
+    <data name="HDB" xml:space="preserve">
+    <value>HCMC Housing Development Bank</value>
+  </data>
+    <data name="Hello" xml:space="preserve">
+    <value>Hi</value>
+  </data>
+    <data name="HighestPoint" xml:space="preserve">
+    <value>Highest score</value>
+  </data>
+    <data name="HistoryBet" xml:space="preserve">
+    <value>HISTORY OF BETTING</value>
+  </data>
+    <data name="HistoryCoin" xml:space="preserve">
+    <value>History win</value>
+  </data>
+    <data name="HistoryCoinNote" xml:space="preserve">
+    <value>Note</value>
+  </data>
+    <data name="HistoryCoinTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+    <data name="HistoryDeposit" xml:space="preserve">
+    <value>HISTORY REWARD</value>
+  </data>
+    <data name="HistoryExchange" xml:space="preserve">
+    <value>HISTORY EXCHANGE</value>
+  </data>
+    <data name="HistoryExchangeCard" xml:space="preserve">
+    <value>History of Win changes -</value>
+  </data>
+    <data name="HistoryGold" xml:space="preserve">
+    <value>HISTORY WIN</value>
+  </data>
+    <data name="HistoryMiniBossHopQua" xml:space="preserve">
+    <value>History win the gift box</value>
+  </data>
+    <data name="HistoryMiniBossNhan" xml:space="preserve">
+    <value>Reward</value>
+  </data>
+    <data name="HistoryMissionBanCaIncomplete" xml:space="preserve">
+    <value>Not completed</value>
+  </data>
+    <data name="HistoryMissionBanCaProcessing" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+    <data name="HistoryMoney" xml:space="preserve">
+    <value>HISTORY WIN</value>
+  </data>
+    <data name="HistoryMoney1" xml:space="preserve">
+    <value>HISTORY WIN</value>
+  </data>
+    <data name="HistoryMoneyError" xml:space="preserve">
+    <value>LỊCH SỬ NẠP THẺ LỖI</value>
+  </data>
+    <data name="HistoryNL" xml:space="preserve">
+    <value>History of JackPot</value>
+  </data>
+    <data name="HistoryPlayGame" xml:space="preserve">
+    <value>Game history</value>
+  </data>
+    <data name="Hobpy" xml:space="preserve">
+    <value>Benefits</value>
+  </data>
+    <data name="Home" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+    <data name="HomePlayCardOnline" xml:space="preserve">
+    <value>HOME - Betting online</value>
+  </data>
+    <data name="Hour" xml:space="preserve">
+    <value>hour</value>
+  </data>
+    <data name="HourBefore" xml:space="preserve">
+    <value> hours ago</value>
+  </data>
+    <data name="HunterJackpot" xml:space="preserve">
+    <value>JACKPOT HUNTING</value>
+  </data>
+    <data name="ICB" xml:space="preserve">
+    <value>Industrial and Commercial Bank of Vietnam</value>
+  </data>
+    <data name="Inbox" xml:space="preserve">
+    <value>Mailbox</value>
+  </data>
+    <data name="InfoAccout" xml:space="preserve">
+    <value>ACCOUNT INFORMATION</value>
+  </data>
+    <data name="InfoBet" xml:space="preserve">
+    <value>BETTING INFORMATION</value>
+  </data>
+    <data name="InfoContributeLevel" xml:space="preserve">
+    <value>Information contributed by level</value>
+  </data>
+    <data name="InfoContributeMember" xml:space="preserve">
+    <value>Member contribution information</value>
+  </data>
+    <data name="InfoContriMem" xml:space="preserve">
+    <value>Member contribution information</value>
+  </data>
+    <data name="InfoNetwork" xml:space="preserve">
+    <value>INFORMATION NETWORK OF THE NETWORK</value>
+  </data>
+    <data name="InforSimilar" xml:space="preserve">
+    <value>General information</value>
+  </data>
+    <data name="InfoSales" xml:space="preserve">
+    <value>Sales information</value>
+  </data>
+    <data name="InfoSercNotChage1" xml:space="preserve">
+    <value>The information below is only updated once and cannot be changed.</value>
+  </data>
+    <data name="InfoSercNotChage2" xml:space="preserve">
+    <value>The information below will be the basis for Win8 to protect your account and reissue your account when necessary (Win8 recommends that you provide the correct information).</value>
+  </data>
+    <data name="InfoSercNotChage3" xml:space="preserve">
+    <value>Win8 is committed to not providing this information to third parties (only you will see this information appear on your personal page).</value>
+  </data>
+    <data name="InfoSercNotChage4" xml:space="preserve">
+    <value>They are Latin names. If we violate, we are not responsible when you lose your account.</value>
+  </data>
+    <data name="InfoSercu" xml:space="preserve">
+    <value>Security information</value>
+  </data>
+    <data name="InfoSercurity" xml:space="preserve">
+    <value>ACCOUNT SECURITY INFORMATION</value>
+  </data>
+    <data name="InputCaptcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="InputCmt" xml:space="preserve">
+    <value>Enter discussion content.</value>
+  </data>
+    <data name="InputContentShare" xml:space="preserve">
+    <value>Enter the emotion you want to share ...</value>
+  </data>
+    <data name="InputDiscuss" xml:space="preserve">
+    <value>Writing Discussion</value>
+  </data>
+    <data name="InputEmail" xml:space="preserve">
+    <value>Enter Email...</value>
+  </data>
+    <data name="InputEmailFriend" xml:space="preserve">
+    <value>Enter your friend's email and invite them to join</value>
+  </data>
+    <data name="InputGoldTranfer" xml:space="preserve">
+    <value>Enter the number of win ...</value>
+  </data>
+    <data name="InputMoney" xml:space="preserve">
+    <value>Enter the win number</value>
+  </data>
+    <data name="InputMoneyBaoKim" xml:space="preserve">
+    <value>Bao Kim number needs to be deposited</value>
+  </data>
+    <data name="InputMoneyPayPlus" xml:space="preserve">
+    <value>Amount of USD to add</value>
+  </data>
+    <data name="InputMoneyVnkash" xml:space="preserve">
+    <value>VnKash need to deposit</value>
+  </data>
+    <data name="InputNewPass" xml:space="preserve">
+    <value>Enter new password</value>
+  </data>
+    <data name="InputNickEmail" xml:space="preserve">
+    <value>Please enter your Nickname and Email address to receive your password</value>
+  </data>
+    <data name="InputPassOld" xml:space="preserve">
+    <value>Enter old password</value>
+  </data>
+    <data name="InputPassWalletBank" xml:space="preserve">
+    <value>Enter password to protect Bank Wallet</value>
+  </data>
+    <data name="InputPubUserId" xml:space="preserve">
+    <value>Enter the account code</value>
+  </data>
+    <data name="InputSecuAcc" xml:space="preserve">
+    <value>Enter the account security code</value>
+  </data>
+    <data name="InputSMS" xml:space="preserve">
+    <value>Enter the SMS security code</value>
+  </data>
+    <data name="InputTextOnly" xml:space="preserve">
+    <value>Only text can be entered, up to 50 characters.</value>
+  </data>
+    <data name="InputUsername" xml:space="preserve">
+    <value>Enter username</value>
+  </data>
+    <data name="InputXuBet" xml:space="preserve">
+    <value>Please enter the Win number</value>
+  </data>
+    <data name="InputXuBetu" xml:space="preserve">
+    <value>Enter Win bets</value>
+  </data>
+    <data name="InputXuTranfer" xml:space="preserve">
+    <value>Enter Win to transfer</value>
+  </data>
+    <data name="Intro" xml:space="preserve">
+    <value>Introduce</value>
+  </data>
+    <data name="Intro3cay" xml:space="preserve">
+    <value>Introducing Win8</value>
+  </data>
+    <data name="Intro3cay1" xml:space="preserve">
+    <value>Win8 is a leading entertainment website for online games.</value>
+  </data>
+    <data name="Intro3cay2" xml:space="preserve">
+    <value>With a beautiful and attractive interface, the members will have a lot of fun and experience on Win8</value>
+  </data>
+    <data name="IntroBuyNL" xml:space="preserve">
+    <value>Instructions for buying through Ngan Luong</value>
+  </data>
+    <data name="Introduce" xml:space="preserve">
+    <value>Introduction to playing cards online</value>
+  </data>
+    <data name="IntroInviteFriend" xml:space="preserve">
+    <value>HOW TO INVITE FRIENDS</value>
+  </data>
+    <data name="IntroItem" xml:space="preserve">
+    <value>Instructions for using the item</value>
+  </data>
+    <data name="IntroSupport" xml:space="preserve">
+    <value>INSTRUCTIONS - SUPPORT</value>
+  </data>
+    <data name="IntroUserVip" xml:space="preserve">
+    <value>User VIP is influential people and a big contributor to the Win8 community. Because of that, User VIP will get more benefits such as: Win Win on VIP level, Give Win birthday, Promotions when loading Win through Agents, ...</value>
+  </data>
+    <data name="IntroUserVip1" xml:space="preserve">
+    <value>VIP users have a lot of influence and contribute to the ABCnet community. VIP users will thus benefit from a variety of benefits such as gold prizes, VIP levels, golden gadgets, special offers when having gold through agents ...</value>
+  </data>
+    <data name="IntroWeb" xml:space="preserve">
+    <value>Introducing Win8.</value>
+  </data>
+    <data name="IntroWeb1" xml:space="preserve">
+    <value>Win8 is a leading entertainment website for online games.</value>
+  </data>
+    <data name="IntroWeb2" xml:space="preserve">
+    <value>With a beautiful and attractive interface, the members will have a lot of fun and experience on Win8.</value>
+  </data>
+    <data name="InviteFriend" xml:space="preserve">
+    <value>Invite more friends</value>
+  </data>
+    <data name="InviteFriend1" xml:space="preserve">
+    <value>friend request</value>
+  </data>
+    <data name="InviteJoinGuild" xml:space="preserve">
+    <value>invitation to join guild</value>
+  </data>
+    <data name="InviteLink" xml:space="preserve">
+    <value>SEND OPEN SHARE BY LINK</value>
+  </data>
+    <data name="IsOwner" xml:space="preserve">
+    <value>is the master of guild</value>
+  </data>
+    <data name="ItemDiff" xml:space="preserve">
+    <value>other item</value>
+  </data>
+    <data name="ItemShop" xml:space="preserve">
+    <value>Item shop</value>
+  </data>
+    <data name="JoinGuild" xml:space="preserve">
+    <value>Join guild</value>
+  </data>
+    <data name="JoinNow" xml:space="preserve">
+    <value>JOIN GUILD</value>
+  </data>
+    <data name="JustTitleContent" xml:space="preserve">
+    <value>Must have title and content.</value>
+  </data>
+    <data name="JustTitleContentVn" xml:space="preserve">
+    <value>The title and content must be written in Latin</value>
+  </data>
+    <data name="Key" xml:space="preserve">
+    <value>Keyword</value>
+  </data>
+    <data name="KillFishBoss" xml:space="preserve">
+    <value>(Destroy boss fish)</value>
+  </data>
+    <data name="KingPenalty" xml:space="preserve">
+    <value>KING PENALTY</value>
+  </data>
+    <data name="KingTaiXiu" xml:space="preserve">
+    <value>TALK KING</value>
+  </data>
+    <data name="LeftGuild" xml:space="preserve">
+    <value>Quit guild</value>
+  </data>
+    <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+    <data name="LevelUp" xml:space="preserve">
+    <value>Up Level</value>
+  </data>
+    <data name="Lieng" xml:space="preserve">
+    <value>Lieng</value>
+  </data>
+    <data name="LimitCmt10" xml:space="preserve">
+    <value>To be able to participate in the comment, the post you have to play the game for at least 10 hours.</value>
+  </data>
+    <data name="LinkInvite" xml:space="preserve">
+    <value>Member invitation link</value>
+  </data>
+    <data name="LinkUse" xml:space="preserve">
+    <value>It is possible that the following links will be helpful to you:</value>
+  </data>
+    <data name="ListAgent" xml:space="preserve">
+    <value>LIST OF AGENCY</value>
+  </data>
+    <data name="ListBetting" xml:space="preserve">
+    <value>List of players who are betting</value>
+  </data>
+    <data name="ListFriends" xml:space="preserve">
+    <value>Friends List</value>
+  </data>
+    <data name="ListGameVui" xml:space="preserve">
+    <value>FUNNY GAME LIST</value>
+  </data>
+    <data name="ListMemGuildInMonth" xml:space="preserve">
+    <value>List of guild in the month</value>
+  </data>
+    <data name="ListNewMemGuildInMonth" xml:space="preserve">
+    <value>List of new users in the month</value>
+  </data>
+    <data name="ListUpdate" xml:space="preserve">
+    <value>List is updating</value>
+  </data>
+    <data name="ListVip" xml:space="preserve">
+    <value>VIP LIST</value>
+  </data>
+    <data name="LoDeOnline" xml:space="preserve">
+    <value>North lot</value>
+  </data>
+    <data name="Login" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+    <data name="LoginGameToReceiveGold" xml:space="preserve">
+    <value>Please enter any game to receive WIN</value>
+  </data>
+    <data name="LoginToCmt" xml:space="preserve">
+    <value>Sign in to comment.</value>
+  </data>
+    <data name="LoginWith" xml:space="preserve">
+    <value>Sign in with:</value>
+  </data>
+    <data name="LotteryAmerican" xml:space="preserve">
+    <value>American style lottery</value>
+  </data>
+    <data name="LotteryResult" xml:space="preserve">
+    <value>Lottery results</value>
+  </data>
+    <data name="LoXien" xml:space="preserve">
+    <value>Oblique lot</value>
+  </data>
+    <data name="MailBox" xml:space="preserve">
+    <value>Mailbox</value>
+  </data>
+    <data name="Maintenance" xml:space="preserve">
+    <value>MAINTENANCE</value>
+  </data>
+    <data name="MauBinh" xml:space="preserve">
+    <value>Mau Soldiers</value>
+  </data>
+    <data name="MB" xml:space="preserve">
+    <value>Military bank</value>
+  </data>
+    <data name="Member" xml:space="preserve">
+    <value>Member</value>
+  </data>
+    <data name="MemInvited" xml:space="preserve">
+    <value>Members are invited</value>
+  </data>
+    <data name="MemPlayGame" xml:space="preserve">
+    <value>Members play games</value>
+  </data>
+    <data name="MessageEmpty" xml:space="preserve">
+    <value>Message is empty</value>
+  </data>
+    <data name="MessageNotFound" xml:space="preserve">
+    <value>Message not found</value>
+  </data>
+    <data name="MinBet" xml:space="preserve">
+    <value>The minimum number of Win bets is</value>
+  </data>
+    <data name="MinLenghtUser" xml:space="preserve">
+    <value>The username contains at least 3 characters, including characters from a-z A-Z and 0-9</value>
+  </data>
+    <data name="MinLenghtUser1" xml:space="preserve">
+    <value>The username contains at least 3 characters, including characters from a-z A-Z and 0-9</value>
+  </data>
+    <data name="MinuteBefore" xml:space="preserve">
+    <value>minute ago</value>
+  </data>
+    <data name="MoneyBaoKimExchange" xml:space="preserve">
+    <value>Bao Kim's winnings need to be withdrawn</value>
+  </data>
+    <data name="MoneyDeal" xml:space="preserve">
+    <value>(Win transactions of 100,000 or more and are multiples of 10,000)</value>
+  </data>
+    <data name="MoneyDeduct" xml:space="preserve">
+    <value>Win is deducted</value>
+  </data>
+    <data name="MoneyDeposit" xml:space="preserve">
+    <value>Deposit Win</value>
+  </data>
+    <data name="MoneyMTopExchange" xml:space="preserve">
+    <value>Number of win MTOP to withdraw</value>
+  </data>
+    <data name="MoneyNumber" xml:space="preserve">
+    <value>Win number</value>
+  </data>
+    <data name="MoneyTranfer" xml:space="preserve">
+    <value>Number win transfer</value>
+  </data>
+    <data name="MoneyTransferTo" xml:space="preserve">
+    <value>Number of win you want to transfer</value>
+  </data>
+    <data name="MoneyVnKashExchange" xml:space="preserve">
+    <value>The number of VnKash win should be withdrawn</value>
+  </data>
+    <data name="MonthBefore" xml:space="preserve">
+    <value> month before</value>
+  </data>
+    <data name="MSB" xml:space="preserve">
+    <value>Maritime Bank</value>
+  </data>
+    <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+    <data name="NameAgent" xml:space="preserve">
+    <value>Agent name</value>
+  </data>
+    <data name="NavEvent" xml:space="preserve">
+    <value>Event</value>
+  </data>
+    <data name="NavForum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+    <data name="NavGuide" xml:space="preserve">
+    <value>Guide</value>
+  </data>
+    <data name="NavShop" xml:space="preserve">
+    <value>Shop</value>
+  </data>
+    <data name="NavTop100" xml:space="preserve">
+    <value>Top 100</value>
+  </data>
+    <data name="Network" xml:space="preserve">
+    <value>Home network</value>
+  </data>
+    <data name="NewDetail" xml:space="preserve">
+    <value>DETAILED NEWS</value>
+  </data>
+    <data name="Newest" xml:space="preserve">
+    <value>LATEST NEWS</value>
+  </data>
+    <data name="NewEvent" xml:space="preserve">
+    <value>News - Event</value>
+  </data>
+    <data name="NewMessage" xml:space="preserve">
+    <value>a new message.</value>
+  </data>
+    <data name="NewPass" xml:space="preserve">
+    <value>New password</value>
+  </data>
+    <data name="NewRelated" xml:space="preserve">
+    <value>RELATED NEWS</value>
+  </data>
+    <data name="News" xml:space="preserve">
+    <value>NEWS</value>
+  </data>
+    <data name="NewsDiff" xml:space="preserve">
+    <value>OTHER NEWS</value>
+  </data>
+    <data name="NewsEvent" xml:space="preserve">
+    <value>News - Event.</value>
+  </data>
+    <data name="NewsOther" xml:space="preserve">
+    <value>Other news</value>
+  </data>
+    <data name="Nickname" xml:space="preserve">
+    <value>Nickname</value>
+  </data>
+    <data name="NoAccountActive" xml:space="preserve">
+    <value>Account has not been activated yet</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>No data you requested</value>
+  </data>
+    <data name="NoHave" xml:space="preserve">
+    <value>[no]</value>
+  </data>
+    <data name="NoLogin1" xml:space="preserve">
+    <value>Not logged in</value>
+  </data>
+    <data name="NoMessage" xml:space="preserve">
+    <value>You have no mail</value>
+  </data>
+    <data name="NoResult" xml:space="preserve">
+    <value>No results!</value>
+  </data>
+    <data name="NotAllowCmt" xml:space="preserve">
+    <value>You are forbidden to discuss</value>
+  </data>
+    <data name="NotApproval" xml:space="preserve">
+    <value>Do not browse</value>
+  </data>
+    <data name="NotBet" xml:space="preserve">
+    <value>You have not bet.</value>
+  </data>
+    <data name="NotChangeBonus" xml:space="preserve">
+    <value>You have not exchanged rewards yet</value>
+  </data>
+    <data name="NotData" xml:space="preserve">
+    <value>No data you requested</value>
+  </data>
+    <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+    <data name="NoteBuyGoldAgency" xml:space="preserve">
+    <value>Note: Click on the agent name to view details</value>
+  </data>
+    <data name="NotEnoughLevelTranferGold" xml:space="preserve">
+    <value>You have not enough game level to transfer Win</value>
+  </data>
+    <data name="NotEnoughTimePlay" xml:space="preserve">
+    <value>Not enough playing hours</value>
+  </data>
+    <data name="NotFound" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+    <data name="NotFoundGame" xml:space="preserve">
+    <value>No game found</value>
+  </data>
+    <data name="NotFoundInfo" xml:space="preserve">
+    <value>No statistical information available</value>
+  </data>
+    <data name="NotFoundPageRequest" xml:space="preserve">
+    <value>We could not find the page you requested</value>
+  </data>
+    <data name="Notify" xml:space="preserve">
+    <value>NOTE</value>
+  </data>
+    <data name="NotInGuild" xml:space="preserve">
+    <value>Not yet joined</value>
+  </data>
+    <data name="Number" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+    <data name="NumberIdentification" xml:space="preserve">
+    <value>Identification numbers</value>
+  </data>
+    <data name="NumBet" xml:space="preserve">
+    <value>Number of bets</value>
+  </data>
+    <data name="NumOnline" xml:space="preserve">
+    <value>Quantity online</value>
+  </data>
+    <data name="NVB" xml:space="preserve">
+    <value>Nam Viet Bank</value>
+  </data>
+    <data name="OldPass" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+    <data name="OneVipPoint" xml:space="preserve">
+    <value>For every VND 10,000 = 1 VIP Point, when reached</value>
+  </data>
+    <data name="OnlySameDomain" xml:space="preserve">
+    <value>Only allowed to upload the same domain</value>
+  </data>
+    <data name="OwnerTranferGold" xml:space="preserve">
+    <value>Bang master transferred Win</value>
+  </data>
+    <data name="PassDissPassWallet" xml:space="preserve">
+    <value>(You should choose another Bank Wallet password with a login password)</value>
+  </data>
+    <data name="PassLength" xml:space="preserve">
+    <value>Password must be 6 - 30 characters long</value>
+  </data>
+    <data name="PassMinLenght" xml:space="preserve">
+    <value>Password must be at least 6 characters</value>
+  </data>
+    <data name="PassSendInbox" xml:space="preserve">
+    <value>Your password has been sent to your inbox, please go to the mailbox to retrieve your password</value>
+  </data>
+    <data name="PassWord" xml:space="preserve">
+    <value>Password</value>
+  </data>
+    <data name="Pending" xml:space="preserve">
+    <value>Waiting for approval</value>
+  </data>
+    <data name="PercentFee" xml:space="preserve">
+    <value>Transfer fees Win</value>
+  </data>
+    <data name="Perform" xml:space="preserve">
+    <value>Perform</value>
+  </data>
+    <data name="Personality" xml:space="preserve">
+    <value>Character</value>
+  </data>
+    <data name="PGB" xml:space="preserve">
+    <value>Petrolimex Petrol Bank</value>
+  </data>
+    <data name="PhanThuong" xml:space="preserve">
+    <value>REWARD</value>
+  </data>
+    <data name="Phom" xml:space="preserve">
+    <value>Phom</value>
+  </data>
+    <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+    <data name="Play" xml:space="preserve">
+    <value>Play</value>
+  </data>
+    <data name="PlayGameMobile" xml:space="preserve">
+    <value>Play in mobile</value>
+  </data>
+    <data name="PlayGameNow" xml:space="preserve">
+    <value>PLAY NOW</value>
+  </data>
+    <data name="PlayGameRegisterSuggest" xml:space="preserve">
+    <value>No account yet, register now</value>
+  </data>
+    <data name="PlaygameSaveCode" xml:space="preserve">
+    <value>PLAY SPEED GAME CODE</value>
+  </data>
+    <data name="PlayGameToPlay" xml:space="preserve">
+    <value>To play games please log in</value>
+  </data>
+    <data name="PleaseWaitToUploadContinue" xml:space="preserve">
+    <value>You have successfully uploaded, please wait for the next upload</value>
+  </data>
+    <data name="Point" xml:space="preserve">
+    <value>Point</value>
+  </data>
+    <data name="PointAccuDay" xml:space="preserve">
+    <value>Accumulated points / day</value>
+  </data>
+    <data name="PointAccuMonth" xml:space="preserve">
+    <value>Accumulated points / month</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+    <data name="PolicyGiftGold" xml:space="preserve">
+    <value>Win reward policy</value>
+  </data>
+    <data name="PolicyGuild" xml:space="preserve">
+    <value>Association policy</value>
+  </data>
+    <data name="PolicyVip" xml:space="preserve">
+    <value>VIP policy</value>
+  </data>
+    <data name="PrescribeActivitie" xml:space="preserve">
+    <value>Operation regulations</value>
+  </data>
+    <data name="PriceList" xml:space="preserve">
+    <value>SERVICE PRICE LIST</value>
+  </data>
+    <data name="ProcessUpdate" xml:space="preserve">
+    <value>Updating...</value>
+  </data>
+    <data name="Profile" xml:space="preserve">
+    <value>Personal information</value>
+  </data>
+    <data name="ProvideCity" xml:space="preserve">
+    <value>Province / City</value>
+  </data>
+    <data name="PubUserId" xml:space="preserve">
+    <value>Account code</value>
+  </data>
+    <data name="Questions" xml:space="preserve">
+    <value>Frequently asked questions</value>
+  </data>
+    <data name="QuyDinhTaoBang" xml:space="preserve">
+    <value>See the rules for creating guilds &gt;&gt;</value>
+  </data>
+    <data name="Rank" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+    <data name="RateBuyGold" xml:space="preserve">
+    <value>Exchange rate when buying Win</value>
+  </data>
+    <data name="RateBuyGold1" xml:space="preserve">
+    <value>&lt;25USD: for every 0.5USD you receive</value>
+  </data>
+    <data name="RateBuyGold2" xml:space="preserve">
+    <value>Win + 1 Vip point</value>
+  </data>
+    <data name="RateBuyGold3" xml:space="preserve">
+    <value>&gt; = 25USD: for every 0.5USD you receive</value>
+  </data>
+    <data name="RateDeposit" xml:space="preserve">
+    <value>The loading rate is</value>
+  </data>
+    <data name="ReceivePass" xml:space="preserve">
+    <value>Receive Password</value>
+  </data>
+    <data name="Refuse" xml:space="preserve">
+    <value>Refuse</value>
+  </data>
+    <data name="Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+    <data name="RepassIsWrong" xml:space="preserve">
+    <value>Password confirmation is incorrect</value>
+  </data>
+    <data name="Reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+    <data name="ReportGetFrom" xml:space="preserve">
+    <value>Statistics taken from source</value>
+  </data>
+    <data name="ReportXSMB" xml:space="preserve">
+    <value>STATISTICS XSMB</value>
+  </data>
+    <data name="RequestPassWallet" xml:space="preserve">
+    <value>When you transfer Win from Bank Wallet to main account, the system will ask you to enter this password</value>
+  </data>
+    <data name="ResAccWith" xml:space="preserve">
+    <value>REGISTER BY ACCOUNT</value>
+  </data>
+    <data name="ResCreAccGame" xml:space="preserve">
+    <value>Register an account, Create a gaming account</value>
+  </data>
+    <data name="ResInternetBanking" xml:space="preserve">
+    <value>You need to register for Internet-Banking or online payment service at the bank before proceeding.</value>
+  </data>
+    <data name="ResLive" xml:space="preserve">
+    <value>DIRECT REGISTRATION</value>
+  </data>
+    <data name="Responsibility" xml:space="preserve">
+    <value>Responsibility</value>
+  </data>
+    <data name="ResQuick" xml:space="preserve">
+    <value>SIGN UP NOW</value>
+  </data>
+    <data name="ResSucc" xml:space="preserve">
+    <value>You have successfully registered an account.</value>
+  </data>
+    <data name="ResultDate" xml:space="preserve">
+    <value>Results day</value>
+  </data>
+    <data name="Revenue" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+    <data name="RevenueShare" xml:space="preserve">
+    <value>Revenue shared</value>
+  </data>
+    <data name="RewardEvent" xml:space="preserve">
+    <value>Summary &amp; Awards</value>
+  </data>
+    <data name="RichGuild" xml:space="preserve">
+    <value>RICH GUILD</value>
+  </data>
+    <data name="RightMemGuild" xml:space="preserve">
+    <value>Guild member benefits</value>
+  </data>
+    <data name="RightOwner" xml:space="preserve">
+    <value>Master-guild benefits</value>
+  </data>
+    <data name="RoomArticle" xml:space="preserve">
+    <value>Forum - Create article</value>
+  </data>
+    <data name="RoomEvent" xml:space="preserve">
+    <value>Forum - Events Taking place</value>
+  </data>
+    <data name="RoomFull" xml:space="preserve">
+    <value>Room is full</value>
+  </data>
+    <data name="RuleblockAcc" xml:space="preserve">
+    <value>Account lockout rules</value>
+  </data>
+    <data name="RuleGuild" xml:space="preserve">
+    <value>INTERNAL REGULATIONS</value>
+  </data>
+    <data name="RuleLoDe1" xml:space="preserve">
+    <value>Type the last 2 digits of all leagues if you return then you win, if you go 2 times, you get 2 * x3.5 = x7, then N times you get N * x3.5</value>
+  </data>
+    <data name="RuleLoDe2" xml:space="preserve">
+    <value>Type 2 numbers (from 00 ---&gt; 99) of all the prizes, if you go back to both numbers, you win the other one, if you go back twice, you will only be counted 1 time - You can hit a lot series of skewers 2.</value>
+  </data>
+    <data name="RuleLoDe3" xml:space="preserve">
+    <value>Type 3 numbers (from 00 ---&gt; 99) of all the prizes, if you go back to all 3 numbers, you will win the remaining ones, if you go back 3 times, you can only count 1 time - You can hit many Skewers 3.</value>
+  </data>
+    <data name="RuleLoDe4" xml:space="preserve">
+    <value>Type 4 numbers (from 00 ---&gt; 99) of all the prizes, if you go back to all 4 numbers, you will win the remaining ones, if you go back 4 times, you can only count 1 time - You can hit many series of skewers 4.</value>
+  </data>
+    <data name="RuleLoDe5" xml:space="preserve">
+    <value>Type the first number of the last 2 numbers of the special prize. For example, the jackpot 456789, if you choose 8, you win.</value>
+  </data>
+    <data name="RuleLoDe6" xml:space="preserve">
+    <value>Last number of the last 2 numbers of the special prize. For example, the jackpot 456789, if you choose 9, you win.</value>
+  </data>
+    <data name="RuleLoDe7" xml:space="preserve">
+    <value>Hit the last 2 digits of the jackpots, for example the special prize 58790, if you choose 90, you will win.</value>
+  </data>
+    <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+    <data name="SamLoc" xml:space="preserve">
+    <value>Ginseng</value>
+  </data>
+    <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+    <data name="SCB" xml:space="preserve">
+    <value>Saigon Thuong Tin Commercial Bank</value>
+  </data>
+    <data name="Search" xml:space="preserve">
+    <value>SEARCH</value>
+  </data>
+    <data name="Seccond" xml:space="preserve">
+    <value>few seconds ago</value>
+  </data>
+    <data name="SecondBefore" xml:space="preserve">
+    <value>few seconds ago</value>
+  </data>
+    <data name="Secret" xml:space="preserve">
+    <value>Secret</value>
+  </data>
+    <data name="SelectAll" xml:space="preserve">
+    <value>[Select all]</value>
+  </data>
+    <data name="SendDiscuss" xml:space="preserve">
+    <value>Send comment</value>
+  </data>
+    <data name="SendMail" xml:space="preserve">
+    <value>Send message</value>
+  </data>
+    <data name="SendSMS" xml:space="preserve">
+    <value>send to 8038 "and enter the security code</value>
+  </data>
+    <data name="SercuCode" xml:space="preserve">
+    <value>Account protection code</value>
+  </data>
+    <data name="SercurityAccount" xml:space="preserve">
+    <value>Account protection</value>
+  </data>
+    <data name="SetPass" xml:space="preserve">
+    <value>Set Password</value>
+  </data>
+    <data name="Setup" xml:space="preserve">
+    <value>SETTING</value>
+  </data>
+    <data name="SetupNow" xml:space="preserve">
+    <value>SETTING NOW</value>
+  </data>
+    <data name="Share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+    <data name="SHB" xml:space="preserve">
+    <value>Saigon - Hanoi Bank</value>
+  </data>
+    <data name="Shopping" xml:space="preserve">
+    <value>STORE</value>
+  </data>
+    <data name="Show10Guild" xml:space="preserve">
+    <value>Display: 10 guild</value>
+  </data>
+    <data name="Showhistory" xml:space="preserve">
+    <value>VIEW HISTORY WIN</value>
+  </data>
+    <data name="SizeBanner" xml:space="preserve">
+    <value>Banner size: 590px x 250px</value>
+  </data>
+    <data name="SMSSytax" xml:space="preserve">
+    <value>To load Win, compose the message according to the following syntax</value>
+  </data>
+    <data name="Start" xml:space="preserve">
+    <value>Why?</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>STT</value>
+  </data>
+    <data name="SubmitBy" xml:space="preserve">
+    <value>Post by </value>
+  </data>
+    <data name="SubmitError" xml:space="preserve">
+    <value>to report this error.</value>
+  </data>
+    <data name="Subscriber" xml:space="preserve">
+    <value>You use subscription</value>
+  </data>
+    <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+    <data name="SupportText" xml:space="preserve">
+    <value>For any questions please contact {0} for assistance</value>
+  </data>
+    <data name="SystemIsMaintaining" xml:space="preserve">
+    <value>The system is maintenaning!</value>
+  </data>
+    <data name="SystemMaintenance" xml:space="preserve">
+    <value>System maintenance - Online gambling</value>
+  </data>
+    <data name="SystemRecord" xml:space="preserve">
+    <value>The system will automatically recognize you as a referral when your friend clicks on the link to register</value>
+  </data>
+    <data name="TangXu" xml:space="preserve">
+    <value>Give Win</value>
+  </data>
+    <data name="TCB" xml:space="preserve">
+    <value>Techcombank</value>
+  </data>
+    <data name="TextNoHu" xml:space="preserve">
+    <value>Smash</value>
+  </data>
+    <data name="Thank" xml:space="preserve">
+    <value>Thank &lt;strong&gt;</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+    <data name="TimeAward" xml:space="preserve">
+    <value>Bonus time</value>
+  </data>
+    <data name="TimeMauBinh" xml:space="preserve">
+    <value>GOLDEN GAME TIME</value>
+  </data>
+    <data name="TimePhom" xml:space="preserve">
+    <value>Golden Game Time</value>
+  </data>
+    <data name="TimePlay" xml:space="preserve">
+    <value>Total play time</value>
+  </data>
+    <data name="TimeSamLoc" xml:space="preserve">
+    <value>GOLDEN TIME FOR THE LOTTERY GAME</value>
+  </data>
+    <data name="TimeTLMN" xml:space="preserve">
+    <value>GOLD TIME GAME TLMN</value>
+  </data>
+    <data name="TimeXiTo" xml:space="preserve">
+    <value>FALLING GAME TIME</value>
+  </data>
+    <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="TLMN" xml:space="preserve">
+    <value>TLMN</value>
+  </data>
+    <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+    <data name="ToAward" xml:space="preserve">
+    <value>Rewards</value>
+  </data>
+    <data name="ToDate" xml:space="preserve">
+    <value>To date</value>
+  </data>
+    <data name="ToEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+    <data name="Tomorrow" xml:space="preserve">
+    <value>&lt;/strong&gt; for coming back. Come back the next day for a chance to receive daily rewards!</value>
+  </data>
+    <data name="TopBanCa" xml:space="preserve">
+    <value>TOP FISHING</value>
+  </data>
+    <data name="TopBanCaSys" xml:space="preserve">
+    <value>TOP SYSTEM FISHING</value>
+  </data>
+    <data name="TopBet" xml:space="preserve">
+    <value>TOP BET</value>
+  </data>
+    <data name="TopCaoThu" xml:space="preserve">
+    <value>TOP MASTER</value>
+  </data>
+    <data name="TopContributeGuild" xml:space="preserve">
+    <value>Top contributed guild level</value>
+  </data>
+    <data name="TopDaiGia" xml:space="preserve">
+    <value>TOP RICH MASTER</value>
+  </data>
+    <data name="TopDeposit" xml:space="preserve">
+    <value>Top members deposited cards</value>
+  </data>
+    <data name="TopDepositView" xml:space="preserve">
+    <value>TOP DEPOSIT CARDS</value>
+  </data>
+    <data name="TopDungSkill" xml:space="preserve">
+    <value>TOP ABSOLUTELY FREE</value>
+  </data>
+    <data name="TopDungSkillMedusa" xml:space="preserve">
+    <value>TOP AWESOME SEVEN-SEA</value>
+  </data>
+    <data name="TopDungSkillVip" xml:space="preserve">
+    <value>TOP EXCELLENT OF THE UNIVERSITY</value>
+  </data>
+    <data name="TopExChangeCard" xml:space="preserve">
+    <value>TOP OF CHANGE REWARDS</value>
+  </data>
+    <data name="TopExp" xml:space="preserve">
+    <value>TOP OF EXPERIENCE GAMERS</value>
+  </data>
+    <data name="TopExTLMN" xml:space="preserve">
+    <value>TOP OF EXPERIENCE GAMERS TLMN</value>
+  </data>
+    <data name="TopFortunes88" xml:space="preserve">
+    <value>TOP FORTUNES - 88</value>
+  </data>
+    <data name="TopGuild" xml:space="preserve">
+    <value>TOP GUILDS</value>
+  </data>
+    <data name="TopInvite" xml:space="preserve">
+    <value>TOP COMPLETE</value>
+  </data>
+    <data name="TopMemMonth" xml:space="preserve">
+    <value>Top member months</value>
+  </data>
+    <data name="TopPhom" xml:space="preserve">
+    <value>TOP PHom</value>
+  </data>
+    <data name="TopPoint" xml:space="preserve">
+    <value>High score</value>
+  </data>
+    <data name="TopSales" xml:space="preserve">
+    <value>TOP REVENUE</value>
+  </data>
+    <data name="TopSanCaBoss" xml:space="preserve">
+    <value>TOP HUNTING BOSS</value>
+  </data>
+    <data name="TopSanCaMapDG" xml:space="preserve">
+    <value>TOP HERITAGE FISHING HUNTING</value>
+  </data>
+    <data name="TopSanCaMapSys" xml:space="preserve">
+    <value>TOP SHOOTING SHOOTING SYSTEM</value>
+  </data>
+    <data name="TopSanCaMapTD" xml:space="preserve">
+    <value>TOP FREE FISHING HUNTING FISH</value>
+  </data>
+    <data name="TopSanCaMapX" xml:space="preserve">
+    <value>TOP GREEN FISH HUNTING</value>
+  </data>
+    <data name="TopXamLoc" xml:space="preserve">
+    <value>TOP DEVICE</value>
+  </data>
+    <data name="TopXeng" xml:space="preserve">
+    <value>TOP WORTH</value>
+  </data>
+    <data name="TopXocDia" xml:space="preserve">
+    <value>TOP CLEARING DISC</value>
+  </data>
+    <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+    <data name="TotalCode" xml:space="preserve">
+    <value>Total code</value>
+  </data>
+    <data name="TotalDeposit" xml:space="preserve">
+    <value>Total deposit card</value>
+  </data>
+    <data name="TotalExp" xml:space="preserve">
+    <value>Total of score experience</value>
+  </data>
+    <data name="TotalGold" xml:space="preserve">
+    <value>- Total win:</value>
+  </data>
+    <data name="TotalSales" xml:space="preserve">
+    <value>Total revenue</value>
+  </data>
+    <data name="TotalStart" xml:space="preserve">
+    <value>- Total star</value>
+  </data>
+    <data name="TotalTimePlay" xml:space="preserve">
+    <value>Total playing game hour</value>
+  </data>
+    <data name="TranferGift" xml:space="preserve">
+    <value>Tranfer gift</value>
+  </data>
+    <data name="TranferGold" xml:space="preserve">
+    <value>Transfer Win</value>
+  </data>
+    <data name="TranferGoldLimmitInDate" xml:space="preserve">
+    <value>The recipient has exceeded the number of transactions or the number of transactions allowed during the day.</value>
+  </data>
+    <data name="TranferGoldLimmitInDateself" xml:space="preserve">
+    <value>You exceed the number of transactions or the number of trades allowed during the day</value>
+  </data>
+    <data name="TranferGoldToWallet" xml:space="preserve">
+    <value>Transfer Win main account to Bank Wallet</value>
+  </data>
+    <data name="TranferGoldWalletToAcc" xml:space="preserve">
+    <value>Transfer Win from Bank Wallet to main account</value>
+  </data>
+    <data name="TranferXu" xml:space="preserve">
+    <value>Transfer Win</value>
+  </data>
+    <data name="TranferXuHome" xml:space="preserve">
+    <value>GIVE WIN</value>
+  </data>
+    <data name="TransforTruXu" xml:space="preserve">
+    <value>Win Subtracted:</value>
+  </data>
+    <data name="Trophy" xml:space="preserve">
+    <value>Achievements</value>
+  </data>
+    <data name="TrophyPersonal" xml:space="preserve">
+    <value>Personal Achievements</value>
+  </data>
+    <data name="TryAgainLater" xml:space="preserve">
+    <value>Please try again next time!</value>
+  </data>
+    <data name="TypeBet" xml:space="preserve">
+    <value>Types of bets</value>
+  </data>
+    <data name="TypeMember" xml:space="preserve">
+    <value>Type of member</value>
+  </data>
+    <data name="TypeVip" xml:space="preserve">
+    <value>Type of VIP</value>
+  </data>
+    <data name="UpBannerBtn" xml:space="preserve">
+    <value>UPLOAD BANNER</value>
+  </data>
+    <data name="Update" xml:space="preserve">
+    <value>UPDATE</value>
+  </data>
+    <data name="UpdateDay" xml:space="preserve">
+    <value>Last login date</value>
+  </data>
+    <data name="UpdateProfile" xml:space="preserve">
+    <value>Update account information</value>
+  </data>
+    <data name="UpdateWalletBalanceError" xml:space="preserve">
+    <value>Update wallet balance error</value>
+  </data>
+    <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+    <data name="UserInfoBC3DBoss" xml:space="preserve">
+    <value>Boss Fish</value>
+  </data>
+    <data name="UserInfoBC3DGift" xml:space="preserve">
+    <value>Gift</value>
+  </data>
+    <data name="UserInfoBC3DInfo" xml:space="preserve">
+    <value>Information</value>
+  </data>
+    <data name="UserInfoBC3DMission" xml:space="preserve">
+    <value>Mission</value>
+  </data>
+    <data name="UserInfoBC3DNewPass" xml:space="preserve">
+    <value>New password</value>
+  </data>
+    <data name="UserInfoBC3DOldPass" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+    <data name="UserInfoBC3DThanhTich" xml:space="preserve">
+    <value>Achievements</value>
+  </data>
+    <data name="UserJoin" xml:space="preserve">
+    <value>USER WATING JOIN</value>
+  </data>
+    <data name="UserNotCompareDis" xml:space="preserve">
+    <value>Display name cannot be identical to NickName, at least 3 characters</value>
+  </data>
+    <data name="UserTransferGoldTitle" xml:space="preserve">
+    <value>Transfer win to another account</value>
+  </data>
+    <data name="UseSecureCode" xml:space="preserve">
+    <value>You are using sms protection code.</value>
+  </data>
+    <data name="VAB" xml:space="preserve">
+    <value>Viet A Bank</value>
+  </data>
+    <data name="ValidateAvata" xml:space="preserve">
+    <value>The representative image needs to be specified format &lt;br/&gt; .jpg, .ipeg, .gif, .png &lt;br /&gt; Capacity &lt; 500Kb</value>
+  </data>
+    <data name="ValidateXuMore" xml:space="preserve">
+    <value>Winning numbers must be bigger</value>
+  </data>
+    <data name="ValidateXuSubtract" xml:space="preserve">
+    <value>Win and divide by 10,000!</value>
+  </data>
+    <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+    <data name="VCB" xml:space="preserve">
+    <value>Joint Stock Commercial Bank for Foreign Trade of Vietnam</value>
+  </data>
+    <data name="VIB" xml:space="preserve">
+    <value>International Bank</value>
+  </data>
+    <data name="Vietlott" xml:space="preserve">
+    <value>Vietlott</value>
+  </data>
+    <data name="View" xml:space="preserve">
+    <value>Display</value>
+  </data>
+    <data name="ViewMore" xml:space="preserve">
+    <value>View more</value>
+  </data>
+    <data name="VipAwardGold" xml:space="preserve">
+    <value>&lt;/p&gt; &lt;p&gt; You have been awarded {0} Win to your VIP member program</value>
+  </data>
+    <data name="VipPoint" xml:space="preserve">
+    <value>VIP points</value>
+  </data>
+    <data name="VipPointNum" xml:space="preserve">
+    <value>VIP points</value>
+  </data>
+    <data name="VipUser" xml:space="preserve">
+    <value>GRATEFUL USER VIP</value>
+  </data>
+    <data name="VND" xml:space="preserve">
+    <value>Win</value>
+  </data>
+    <data name="VPB" xml:space="preserve">
+    <value>Vietnam Prosperity Bank</value>
+  </data>
+    <data name="VuaSlot" xml:space="preserve">
+    <value>KING SLOT</value>
+  </data>
+    <data name="WalletBank" xml:space="preserve">
+    <value>- Bank wallet:</value>
+  </data>
+    <data name="WalletIsNotEnough" xml:space="preserve">
+    <value>Account balance is not enough to make transactions</value>
+  </data>
+    <data name="WebOpenLater" xml:space="preserve">
+    <value>WEBSITE WILL OPERATE AFTER</value>
+  </data>
+    <data name="Website" xml:space="preserve">
+    <value>Win8</value>
+  </data>
+    <data name="Welcom3cay" xml:space="preserve">
+    <value>Welcome to join the community Win8</value>
+  </data>
+    <data name="WelcomeNewMember" xml:space="preserve">
+    <value>WELCOME NEW MEMBERS</value>
+  </data>
+    <data name="WeSendNewPass" xml:space="preserve">
+    <value>We will send you a new password.</value>
+  </data>
+    <data name="Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+    <data name="WinClose" xml:space="preserve">
+    <value>Win/Lose</value>
+  </data>
+    <data name="WinTour" xml:space="preserve">
+    <value>Champions league</value>
+  </data>
+    <data name="Xien" xml:space="preserve">
+    <value>SLANT</value>
+  </data>
+    <data name="Xien2" xml:space="preserve">
+    <value>SECTION 2 (1 EAT 09)</value>
+  </data>
+    <data name="Xien3" xml:space="preserve">
+    <value>SECTION 3 (1 EAT 35)</value>
+  </data>
+    <data name="Xien4" xml:space="preserve">
+    <value>SECTION 4 (1 EAT 90)</value>
+  </data>
+    <data name="XienBet2" xml:space="preserve">
+    <value>Type 2 numbers (from 00 ---&gt; 99) of all the prizes, if you go back to both numbers, you win the other one, if you go back twice, you will only be counted 1 time - You can hit a lot series of skewers 2.</value>
+  </data>
+    <data name="XienBet3" xml:space="preserve">
+    <value>Type 3 numbers (from 00 ---&gt; 99) of all the prizes, if you go back to all 3 numbers, you will win the remaining ones, if you go back 3 times, you can only count 1 time - You can hit many Skewers 3.</value>
+  </data>
+    <data name="XienBet4" xml:space="preserve">
+    <value>Type 4 numbers (from 00 ---&gt; 99) of all the prizes, if you go back to all 4 numbers, you will win the remaining ones, if you go back 4 times, you can only count 1 time - You can hit many series of skewers 4.</value>
+  </data>
+    <data name="Xu" xml:space="preserve">
+    <value>Win</value>
+  </data>
+    <data name="XuNum" xml:space="preserve">
+    <value>Win numbers current</value>
+  </data>
+    <data name="XuNumber" xml:space="preserve">
+    <value>Win number</value>
+  </data>
+    <data name="XuTranfer" xml:space="preserve">
+    <value>Win transfer</value>
+  </data>
+    <data name="YearBefore" xml:space="preserve">
+    <value> year ago</value>
+  </data>
+    <data name="YouAchieved" xml:space="preserve">
+    <value>You can</value>
+  </data>
+    <data name="YouHave" xml:space="preserve">
+    <value>You have:</value>
+  </data>
+    <data name="YouHave2" xml:space="preserve">
+    <value>You have</value>
+  </data>
+    <data name="ContentNotFound" xml:space="preserve">
+    <value>No content was found</value>
+  </data>
+    <data name="InputMoneyPP" xml:space="preserve">
+    <value>The amount of USD to load</value>
+  </data>
+    <data name="FishingOnline" xml:space="preserve">
+    <value>Fishing Online - </value>
+  </data>
+    <data name="EnableJSAlert" xml:space="preserve">
+    <value>Please enable javascript to continue. &lt;br/&gt; &lt;a target="_blank" href="https://www.enable-javascript.com/"&gt; Instructions for opening javascript &lt;/a&gt;</value>
+  </data>
+    <data name="Choosebank" xml:space="preserve">
+    <value>Choose a bank</value>
+  </data>
+    <data name="EnterWINGAccountCode" xml:space="preserve">
+    <value>Enter the correct WING account code here</value>
+  </data>
+    <data name="Example" xml:space="preserve">
+    <value>For example</value>
+  </data>
+    <data name="ProfilePhone" xml:space="preserve">
+    <value>Please &lt;a href="javascript:void(0)" onclick="OpenProfile({0});"&gt; update &lt;/a&gt; and verify the phone number in your personal profile</value>
+  </data>
+    <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+    <data name="YourWINGAccount" xml:space="preserve">
+    <value>Your WING account code</value>
+  </data>
+    <data name="WINwithdraw" xml:space="preserve">
+    <value>WIN number wants to withdraw</value>
+  </data>
+    <data name="AmountUSD" xml:space="preserve">
+    <value>The amount of USD received</value>
+  </data>
+    <data name="AreaCode" xml:space="preserve">
+    <value>Area code</value>
+  </data>
+    <data name="SelectAeaCode" xml:space="preserve">
+    <value>Select the area code</value>
+  </data>
+    <data name="TheAmountUSD" xml:space="preserve">
+    <value>The amount of USD to load</value>
+  </data>
+    <data name="WinReceived" xml:space="preserve">
+    <value>Win number received</value>
+  </data>
+    <data name="OurAccount" xml:space="preserve">
+    <value>Our account</value>
+  </data>
+    <data name="YouTransferMoney" xml:space="preserve">
+    <value>You transfer money to us via the account number above and get the TID in the box below</value>
+  </data>
+    <data name="TransactionCode" xml:space="preserve">
+    <value>Enter the transaction code</value>
+  </data>
+    <data name="InstructionsTID" xml:space="preserve">
+    <value>Instructions for obtaining TID</value>
+  </data>
+    <data name="EnterOTP" xml:space="preserve">
+    <value>Enter the OTP code</value>
+  </data>
+    <data name="WithdrawalRate" xml:space="preserve">
+    <value>Withdrawal rate</value>
+  </data>
+    <data name="YourAccountcode" xml:space="preserve">
+    <value>Your account code {0}</value>
+  </data>
+    <data name="EnterCodeCorrectly" xml:space="preserve">
+    <value>Enter the account code {0} exactly here</value>
+  </data>
+    <data name="PhoneVerified" xml:space="preserve">
+    <value>Phone number verified</value>
+  </data>
+    <data name="AccountInvalid" xml:space="preserve">
+    <value>Account is Invalid</value>
+  </data>
+    <data name="SuccessfulVerification" xml:space="preserve">
+    <value>{0} successful verification</value>
+  </data>
+    <data name="UpdatedPhoneNumber" xml:space="preserve">
+    <value>Account has not updated phone number</value>
+  </data>
+    <data name="NoTransactionsFound" xml:space="preserve">
+    <value>No transactions found</value>
+  </data>
+    <data name="OTPIsInvalid" xml:space="preserve">
+    <value>OTP is invalid</value>
+  </data>
+    <data name="Congratulations" xml:space="preserve">
+    <value>Congratulations on successfully withdrawing USD {0}! Money will go to your account in a few minutes</value>
+  </data>
+    <data name="CreateOTPFailure" xml:space="preserve">
+    <value>Create OTP failure</value>
+  </data>
+    <data name="PleaseChoose" xml:space="preserve">
+    <value>Please choose</value>
+  </data>
+    <data name="YourBankAccount" xml:space="preserve">
+    <value>Your bank account number</value>
+  </data>
+    <data name="EnterYourBank" xml:space="preserve">
+    <value>Enter your bank account exactly here</value>
+  </data>
+    <data name="BankBranch" xml:space="preserve">
+    <value>Bank branch</value>
+  </data>
+    <data name="EnterBankBranch" xml:space="preserve">
+    <value>Enter the bank branch correctly here</value>
+  </data>
+    <data name="PhoneDoesNotExist" xml:space="preserve">
+    <value>Phone number does not exist</value>
+  </data>
+    <data name="ExchangeUnderProcess" xml:space="preserve">
+    <value>The exchange is under process. Please wait for a few minutes to WIN</value>
+  </data>
+    <data name="YourTransactionCode" xml:space="preserve">
+    <value>Your transaction code</value>
+  </data>
+    <data name="TransferBox" xml:space="preserve">
+    <value>**Please enter this code in the content transfer box when making a transfer</value>
+  </data>
+    <data name="ImportantNote" xml:space="preserve">
+    <value>STEP 1: Log in to your internet banking and fill in the correct bank information and deposit amount
+STEP 2: Enter WIN8's Transaction Code in the transfer text box
+STEP 3: Complete the transaction and wait for a moment to receive WIN in the game
+** IMPORTANT NOTE: Enter the correct transaction code to avoid unnecessary trouble</value>
+  </data>
+    <data name="PhoneNumberIncorrect" xml:space="preserve">
+    <value>No account found for phone number: {0}</value>
+  </data>
+    <data name="ConfirmPasswordIncorrectly" xml:space="preserve">
+    <value>Confirm password incorrectly</value>
+  </data>
+    <data name="ImportOTPcode" xml:space="preserve">
+    <value>IMPORT OTP CODE WHAT WE SEND ABOUT YOUR PHONE NUMBER</value>
+  </data>
+    <data name="FeatureDeveloping" xml:space="preserve">
+    <value>Feature is developing</value>
+  </data>
+    <data name="AccountID" xml:space="preserve">
+    <value>Account ID</value>
+  </data>
+    <data name="ClickConfirmOTP" xml:space="preserve">
+    <value>Please click Confirm Button to recive OTP</value>
+  </data>
+</LocalLanguages>

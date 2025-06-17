@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>Dữ liệu không hợp lệ.</value>
+  </data>
+    <data name="CodeError" xml:space="preserve">
+    <value>Có lỗi xảy ra, vui lòng thử lại sau.</value>
+  </data>
+    <data name="CodeFail" xml:space="preserve">
+    <value>Thất bại.</value>
+  </data>
+    <data name="CodeSuccess" xml:space="preserve">
+    <value>Thành công.</value>
+  </data>
+
+    <data name="CodeTokenExpire" xml:space="preserve">
+    <value>Token đã hết hạn.</value>
+  </data>
+    <data name="CodeInvalidSign" xml:space="preserve">
+    <value>Sai chữ ký.</value>
+  </data>
+    <data name="CodeTokenNotExist" xml:space="preserve">
+    <value>Token không tồn tại.</value>
+  </data>
+    <data name="CodeApiNotExist" xml:space="preserve">
+    <value>Api không tồn tại.</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>Vui lòng đăng nhập để sử dụng chức năng này.</value>
+  </data>
+    <data name="BtnUpdate" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+    <data name="UpdateSuccess" xml:space="preserve">
+    <value>Cập nhật thành công</value>
+  </data>
+    <data name="UpdateFaild" xml:space="preserve">
+    <value>Cập nhật thất bại</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>Không có dữ liệu</value>
+  </data>
+    <data name="FunctionMaintainance" xml:space="preserve">
+    <value>Chức năng đang bảo trì, vui lòng thử lại sau.</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>Sự kiện đang tạm ngưng</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>Chưa đăng nhập hoặc bị đăng nhập tại máy khác</value>
+  </data>
+    <data name="HasErrorContactCustomService" xml:space="preserve">
+    <value>Có lỗi xảy ra, bạn vui lòng liên hệ hỗ trợ trực tuyến để được hỗ trợ</value>
+  </data>
+    <data name="FunctionDeveloping" xml:space="preserve">
+    <value>Tính năng đang phát triển</value>
+  </data>
+
+    <data name="ValidDataTextRegis" xml:space="preserve">
+    <value>Vui lòng sử dụng bảng chữ cái a,b,c - z và số từ 0 - 9</value>
+  </data>
+</LocalLanguages>

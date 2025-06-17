@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="BoxEventScore" xml:space="preserve">
+    <value>Điểm</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>Tài khoản mới nhận thưởng lần đầu.</value>
+  </data>
+    <data name="EventAchievementBoss" xml:space="preserve">
+    <value>Boss</value>
+  </data>
+    <data name="EventAchievementBossDescription" xml:space="preserve">
+    <value>Tiêu diệt cá boss {0} lần</value>
+  </data>
+    <data name="EventAchievementBossName" xml:space="preserve">
+    <value>Tiêu diệt cá boss</value>
+  </data>
+    <data name="EventAchievementCaDo" xml:space="preserve">
+    <value>Cá đỏ</value>
+  </data>
+    <data name="EventAchievementGiftBoxDescription" xml:space="preserve">
+    <value>Tiêu diệt hộp quà {0} lần</value>
+  </data>
+    <data name="EventAchievementGiftBoxName" xml:space="preserve">
+    <value>Tiêu diệt hộp quà</value>
+  </data>
+    <data name="EventAchievementHopQua" xml:space="preserve">
+    <value>Hộp quà</value>
+  </data>
+    <data name="EventAchievementItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+    <data name="EventAchievementItemDescription" xml:space="preserve">
+    <value>Sử dụng Item {0} lần</value>
+  </data>
+    <data name="EventAchievementItemName" xml:space="preserve">
+    <value>Sử dụng Item</value>
+  </data>
+    <data name="EventAchievementLoginDescription" xml:space="preserve">
+    <value>Đăng nhập bắn cá</value>
+  </data>
+    <data name="EventAchievementLoginName" xml:space="preserve">
+    <value>Đăng nhập bắn cá</value>
+  </data>
+    <data name="EventAchievementOther" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+    <data name="EventAchievementRedFishDescription" xml:space="preserve">
+    <value>Tiêu diệt cá đỏ {0} lần</value>
+  </data>
+    <data name="EventAchievementRedFishName" xml:space="preserve">
+    <value>Tiêu diệt cá đỏ</value>
+  </data>
+    <data name="EventAchievementSkill" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+    <data name="EventAchievementSkillBombDescription" xml:space="preserve">
+    <value>Sử dụng skill Bom {0} lần</value>
+  </data>
+    <data name="EventAchievementSkillBombName" xml:space="preserve">
+    <value>Sử dụng skill Bom</value>
+  </data>
+    <data name="EventAchievementSkillDescription" xml:space="preserve">
+    <value>Sử dụng súng skill {0} lần</value>
+  </data>
+    <data name="EventAchievementSkillLaserDescription" xml:space="preserve">
+    <value>Sử dụng súng skill laser {0} lần</value>
+  </data>
+    <data name="EventAchievementSkillLaserName" xml:space="preserve">
+    <value>Sử dụng súng skill laser</value>
+  </data>
+    <data name="EventAchievementSkillName" xml:space="preserve">
+    <value>Sử dụng súng skill</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirDescription" xml:space="preserve">
+    <value>Sử dụng skill sóng âm {0} lần</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirName" xml:space="preserve">
+    <value>Sử dụng skill sóng âm</value>
+  </data>
+    <data name="EventAchievementUpLevelDescription" xml:space="preserve">
+    <value>Lên level bắn cá</value>
+  </data>
+    <data name="EventAchievementUpLevelName" xml:space="preserve">
+    <value>Lên level bắn cá</value>
+  </data>
+    <data name="EventAchivementNotComplete" xml:space="preserve">
+    <value>Thành tựu chưa hoàn thành</value>
+  </data>
+    <data name="EventChipCounts" xml:space="preserve">
+    <value>{0} Win</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>Event chọn không hợp lệ key {0}</value>
+  </data>
+    <data name="EventDailyBonusLoginName" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+    <data name="EventDontHaveNew" xml:space="preserve">
+    <value>Chưa có sự kiện mới</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>Đủ thời gian nhận thưởng.</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>Bạn đã nhận thưởng</value>
+  </data>
+    <data name="EventGetListSuccess" xml:space="preserve">
+    <value>Lấy danh sách event thành công</value>
+  </data>
+    <data name="EventGiftIsWrong" xml:space="preserve">
+    <value>Phần thưởng không đúng</value>
+  </data>
+    <data name="EventGiftNotAvailable" xml:space="preserve">
+    <value>Phần thưởng đã nhận hoặc ko tồn tại</value>
+  </data>
+    <data name="EventGiveGiftFail" xml:space="preserve">
+    <value>Trao thưởng không thành công. Vui lòng thử lại sau</value>
+  </data>
+    <data name="EventGiveGiftSuccessAndCheckMail" xml:space="preserve">
+    <value>Đã trao thưởng thành công. Vui lòng kiểm tra hòm thư.</value>
+  </data>
+    <data name="EventMessageYouHasMoneyFromEve" xml:space="preserve">
+    <value>Bạn được nhận {0} Win từ sự kiện.</value>
+  </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>Số Win của bạn phải nhỏ hơn 5.000 mới được nhận thưởng</value>
+  </data>
+    <data name="EventMissionNotComplete" xml:space="preserve">
+    <value>Nhiệm vụ chưa hoàn thành</value>
+  </data>
+    <data name="EventNoData" xml:space="preserve">
+    <value>Không có dữ liệu</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>Chưa đủ thời gian nhận thưởng.</value>
+  </data>
+    <data name="EventNotExist" xml:space="preserve">
+    <value>Event không tồn tại</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>Sự kiện đang tạm ngưng</value>
+  </data>
+    <data name="EventNotTimeUp" xml:space="preserve">
+    <value>Chưa tới thời điểm trao thưởng. Vui lòng thử lại sau</value>
+  </data>
+    <data name="EventQuicklyRegisterCannotRegisterMore" xml:space="preserve">
+    <value>Không thể đăng ký chơi ngay thêm, vui lòng đăng ký tài khoản mới</value>
+  </data>
+    <data name="EventReceivedGift" xml:space="preserve">
+    <value>Đã nhận thưởng</value>
+  </data>
+    <data name="EventReceiveGiftSuccess" xml:space="preserve">
+    <value>Nhận quà thành công</value>
+  </data>
+    <data name="EventReceiveLevelVip" xml:space="preserve">
+    <value>Nhận thưởng lên level vip</value>
+  </data>
+    <data name="EventSecondCount" xml:space="preserve">
+    <value>{0} giây</value>
+  </data>
+    <data name="EventSystemMaintainingChooseOther" xml:space="preserve">
+    <value>Hệ thống {0} đang bảo trì, vui lòng chọn loại thẻ khác</value>
+  </data>
+    <data name="EventTitleBonusHall" xml:space="preserve">
+    <value>Bạn được tặng {0} vào tài khoản</value>
+  </data>
+    <data name="EventTurnsCount" xml:space="preserve">
+    <value>{0} lượt quay</value>
+  </data>
+    <data name="EventTypeCardCount" xml:space="preserve">
+    <value>Thẻ {0} {1}</value>
+  </data>
+    <data name="EventUploadSuccessButFail" xml:space="preserve">
+    <value>Tải lên thành công, nhưng cập nhật sự kiện bị lỗi.</value>
+  </data>
+    <data name="EventVipAnchorPoint" xml:space="preserve">
+    <value>Điểm cần đạt</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>Khuyến mãi nạp</value>
+  </data>
+    <data name="EventVipExpFish" xml:space="preserve">
+    <value>Exp bắn cá</value>
+  </data>
+    <data name="EventVipNotRunning" xml:space="preserve">
+    <value>Chưa chạy Vip</value>
+  </data>
+    <data name="EventVipTichLuySkill" xml:space="preserve">
+    <value>Tích lũy tuyệt chiêu</value>
+  </data>
+    <data name="EventVipTransferChip" xml:space="preserve">
+    <value>Chuyển Win</value>
+  </data>
+    <data name="EventOverMaxViewLimit" xml:space="preserve">
+    <value>Lượt mở quà đã hết hạn. Vui lòng chờ lượt nhận quà tiếp theo.</value>
+  </data>
+
+    <!-- #Region E1806_BonusDailyDayEnum-->
+    <data name="E1806_BonusDailyDayEnum_Faile" xml:space="preserve">
+    <value>Nhận thưởng không thành công</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusFirst" xml:space="preserve">
+    <value>Nhận thưởng lần đầu tiên</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_BonusInDay" xml:space="preserve">
+    <value>Đã nhận thưởng ngày hôm nay</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_ResetBonus" xml:space="preserve">
+    <value>Ngày nhận thưởng không liên tiếp</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7Days" xml:space="preserve">
+    <value>Nhận thưởng ngày liên tiếp</value>
+  </data>
+    <data name="E1806_BonusDailyDayEnum_Bonus7DaysThen" xml:space="preserve">
+    <value>Nhận thưởng quá 7 ngày</value>
+  </data>
+    <!-- #Endregion E1806_BonusDailyDayEnum-->
+
+
+    <data name="BoxTopEventAppTitle" xml:space="preserve">
+    <value>Top sự kiện bắn cá săn thưởng.</value>
+  </data>
+    <data name="EventNhapMaDuocTienCaptcha" xml:space="preserve">
+    <value>Mã xác nhận</value>
+  </data>
+    <data name="EventNhapMaDuocTienCode" xml:space="preserve">
+    <value>Mã code:</value>
+  </data>
+    <data name="EventNhapMaDuocTienConfirm" xml:space="preserve">
+    <value>XÁC NHẬN</value>
+  </data>
+    <data name="EventNhapMaDuocTienCongra" xml:space="preserve">
+    <value>Hôm nay bạn đã trúng thưởng rồi. 1 nick chỉ được trúng 1 gift code trong ngày</value>
+  </data>
+    <data name="EventNhapMaDuocTienTitle" xml:space="preserve">
+    <value>NHẬP GIFT CODE NHẬN TIỀN</value>
+  </data>
+    <data name="JackpotMetaDesc" xml:space="preserve">
+    <value>Bắn Cá 2018 Cực Hot. Chơi Trực Tiếp Trên Website Hoặc Mobile Không Cần Cài Đặt. </value>
+  </data>
+    <data name="JackpotPlay" xml:space="preserve">
+    <value>CHƠI JACKPOT</value>
+  </data>
+    <data name="JackpotTitle" xml:space="preserve">
+    <value>Bắn Cá</value>
+  </data>
+    <data name="ListEvent3DHeading" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+    <data name="ListEvent3DMessageNoData" xml:space="preserve">
+    <value>Không có dữ liệu!</value>
+  </data>
+    <data name="ListEvent3DSubTitle" xml:space="preserve">
+    <value>Gift Code</value>
+  </data>
+    <data name="ListEvent3DTitle" xml:space="preserve">
+    <value>TỔNG KẾT &lt;br /&gt; TRAO GIẢI</value>
+  </data>
+    <data name="ListEvent_Event" xml:space="preserve">
+    <value>SỰ KIỆN</value>
+  </data>
+    <data name="ListEvent_Gala" xml:space="preserve">
+    <value>TRAO GIẢI</value>
+  </data>
+    <data name="ListEvent_GiftCode" xml:space="preserve">
+    <value>Gift Code</value>
+  </data>
+    <data name="ListEvent_Heading" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+    <data name="ListEvent_MessageNodata" xml:space="preserve">
+    <value>Không có dữ liệu!</value>
+  </data>
+    <data name="ListTongKetTraoGiaiHeading" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+    <data name="ListTongKetTraoGiaiMessageNodata" xml:space="preserve">
+    <value>Không có dữ liệu!</value>
+  </data>
+    <data name="ListTongKetTraoGiaiTitle" xml:space="preserve">
+    <value>Nạp thẻ - đổi thưởng bắn cá săn thưởng</value>
+  </data>
+    <data name="ShareSocialMetaDesc" xml:space="preserve">
+    <value>Bắn Cá 2018 Cực Hot. Chơi Trực Tiếp Trên Website Hoặc Mobile Không Cần Cài Đặt. </value>
+  </data>
+    <data name="ShareSocialShareAction" xml:space="preserve">
+    <value>Chia sẻ</value>
+  </data>
+    <data name="ShareSocialSharing" xml:space="preserve">
+    <value>Chia sẻ với bạn bè: </value>
+  </data>
+    <data name="ShareSocialTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="ShareSocial_CongraFB" xml:space="preserve">
+    <value>Bạn nhận được thưởng từ sự kiện chia sẻ facebook nhận quà</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>STT</value>
+  </data>
+    <data name="Top" xml:space="preserve">
+    <value>TOP</value>
+  </data>
+    <data name="EventNull" xml:space="preserve">
+    <value>Hiện chưa có sự kiện nào diễn ra</value>
+  </data>
+    <data name="CoinChange" xml:space="preserve">
+    <value>Thay đổi</value>
+  </data>
+    <data name="CurrentCoin" xml:space="preserve">
+    <value>Hiện tại</value>
+  </data>
+    <data name="Errror1" xml:space="preserve">
+    <value>Có lỗi xãy ra trong quá trình lấy danh sách.</value>
+  </data>
+    <data name="GuiTinNhan" xml:space="preserve">
+    <value>Gửi tin nhắn</value>
+  </data>
+    <data name="HopThu" xml:space="preserve">
+    <value>Hộp thư</value>
+  </data>
+    <data name="KhongCoThu" xml:space="preserve">
+    <value>Không có thư mới !!!</value>
+  </data>
+    <data name="NgayGui" xml:space="preserve">
+    <value>Ngày gửi</value>
+  </data>
+    <data name="NguoiGui" xml:space="preserve">
+    <value>Người gửi</value>
+  </data>
+    <data name="Noted" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+    <data name="Time" xml:space="preserve">
+    <value>Thời gian</value>
+  </data>
+    <data name="DatCuoc" xml:space="preserve">
+    <value>Đặt Cược</value>
+  </data>
+    <data name="KetQua" xml:space="preserve">
+    <value>Kết Quả</value>
+  </data>
+    <data name="MoTa" xml:space="preserve">
+    <value>Mô Tả</value>
+  </data>
+    <data name="NgayDat" xml:space="preserve">
+    <value>Ngày Đặt</value>
+  </data>
+    <data name="Trat" xml:space="preserve">
+    <value>Trật</value>
+  </data>
+    <data name="Trung" xml:space="preserve">
+    <value>Trúng</value>
+  </data>
+    <data name="Message" xml:space="preserve">
+    <value>Tin nhắn</value>
+  </data>
+</LocalLanguages>

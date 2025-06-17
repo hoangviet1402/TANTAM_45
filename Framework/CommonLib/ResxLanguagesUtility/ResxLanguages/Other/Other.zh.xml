@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Lưu ý: Đối với file other vui lòng đặt name theo cấu trung module_key để phân biệt-->
+<LocalLanguages>
+    <data name="Friend_FriendNotExist" xml:space="preserve">
+    <value>不，你！</value>
+  </data>
+    <data name="Friend_FriendApproveSuccess" xml:space="preserve">
+    <value>成功接受邀请！</value>
+  </data>
+    <data name="Friend_FriendError1" xml:space="preserve">
+    <value>之前已向此用户发送了朋友邀请。</value>
+  </data>
+    <data name="Friend_FriendError2" xml:space="preserve">
+    <value>这个人已经是你的朋友了。</value>
+  </data>
+    <data name="Friend_FriendFull" xml:space="preserve">
+    <value>由于您的号码已满，无法发送邀请！</value>
+  </data>
+    <data name="Friend_FriendNoData" xml:space="preserve">
+    <value>没有数据</value>
+  </data>
+    <data name="Friend_FriendNoInvitation" xml:space="preserve">
+    <value>用户没有朋友邀请</value>
+  </data>
+    <data name="Friend_FriendNotYou" xml:space="preserve">
+    <value>您无法向自己发送邀请。</value>
+  </data>
+    <data name="Friend_FriendNumberInvitaion" xml:space="preserve">
+    <value>您有{0}个朋友请求！</value>
+  </data>
+    <data name="Friend_FriendRejectSuccess" xml:space="preserve">
+    <value>成功拒绝邀请！</value>
+  </data>
+    <data name="Friend_FriendRequiredLevel" xml:space="preserve">
+    <value>到达VIP {0}时解锁</value>
+  </data>
+    <data name="Friend_FriendSearchNoData" xml:space="preserve">
+    <value>找不到朋友！</value>
+  </data>
+    <data name="Friend_FriendSeverError" xml:space="preserve">
+    <value>服务器错误！</value>
+  </data>
+    <data name="Friend_FriendUserNotExists" xml:space="preserve">
+    <value>用户不存在。</value>
+  </data>
+</LocalLanguages>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="BoxEventScore" xml:space="preserve">
+    <value>点</value>
+  </data>
+    <data name="EventAccountFirstGift" xml:space="preserve">
+    <value>新帐户首次收到。</value>
+  </data>
+    <data name="EventAchievementBoss" xml:space="preserve">
+    <value>老板</value>
+  </data>
+    <data name="EventAchievementBossDescription" xml:space="preserve">
+    <value>消灭boss怪物{0}次</value>
+  </data>
+    <data name="EventAchievementBossName" xml:space="preserve">
+    <value>摧毁老板鱼</value>
+  </data>
+    <data name="EventAchievementCaDo" xml:space="preserve">
+    <value>红色的鱼</value>
+  </data>
+    <data name="EventAchievementGiftBoxDescription" xml:space="preserve">
+    <value>销毁礼品盒{0}次</value>
+  </data>
+    <data name="EventAchievementGiftBoxName" xml:space="preserve">
+    <value>销毁礼品盒</value>
+  </data>
+    <data name="EventAchievementHopQua" xml:space="preserve">
+    <value>礼品盒</value>
+  </data>
+    <data name="EventAchievementItem" xml:space="preserve">
+    <value>项目</value>
+  </data>
+    <data name="EventAchievementItemDescription" xml:space="preserve">
+    <value>使用项目{0}次</value>
+  </data>
+    <data name="EventAchievementItemName" xml:space="preserve">
+    <value>使用项目</value>
+  </data>
+    <data name="EventAchievementLoginDescription" xml:space="preserve">
+    <value>登录拍鱼</value>
+  </data>
+    <data name="EventAchievementLoginName" xml:space="preserve">
+    <value>登录拍鱼</value>
+  </data>
+    <data name="EventAchievementOther" xml:space="preserve">
+    <value>其他</value>
+  </data>
+    <data name="EventAchievementRedFishDescription" xml:space="preserve">
+    <value>消灭红色的鱼{0}次</value>
+  </data>
+    <data name="EventAchievementRedFishName" xml:space="preserve">
+    <value>消灭红色的鱼</value>
+  </data>
+    <data name="EventAchievementSkill" xml:space="preserve">
+    <value>技能</value>
+  </data>
+    <data name="EventAchievementSkillBombDescription" xml:space="preserve">
+    <value>使用技能炸弹{0}次</value>
+  </data>
+    <data name="EventAchievementSkillBombName" xml:space="preserve">
+    <value>使用Bom技能</value>
+  </data>
+    <data name="EventAchievementSkillDescription" xml:space="preserve">
+    <value>使用{0}技能枪一次</value>
+  </data>
+    <data name="EventAchievementSkillLaserDescription" xml:space="preserve">
+    <value>使用{0}激光技能枪一次</value>
+  </data>
+    <data name="EventAchievementSkillLaserName" xml:space="preserve">
+    <value>使用激光技能枪</value>
+  </data>
+    <data name="EventAchievementSkillName" xml:space="preserve">
+    <value>使用技能枪</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirDescription" xml:space="preserve">
+    <value>使用技能波{0}次</value>
+  </data>
+    <data name="EventAchievementSkillWaveAirName" xml:space="preserve">
+    <value>使用声波技巧</value>
+  </data>
+    <data name="EventAchievementUpLevelDescription" xml:space="preserve">
+    <value>升级射击鱼</value>
+  </data>
+    <data name="EventAchievementUpLevelName" xml:space="preserve">
+    <value>升级射击鱼</value>
+  </data>
+    <data name="EventAchivementNotComplete" xml:space="preserve">
+    <value>未完成的成就</value>
+  </data>
+    <data name="EventChipCounts" xml:space="preserve">
+    <value>{0}赢</value>
+  </data>
+    <data name="EventChooseNotAllow" xml:space="preserve">
+    <value>事件选择无效密钥{0}</value>
+  </data>
+    <data name="EventDailyBonusLoginName" xml:space="preserve">
+    <value>天</value>
+  </data>
+    <data name="EventDontHaveNew" xml:space="preserve">
+    <value>天</value>
+  </data>
+    <data name="EventEnoughtTimeToGift" xml:space="preserve">
+    <value>有足够的时间来获得奖励。</value>
+  </data>
+    <data name="EventGaveGiftToUser" xml:space="preserve">
+    <value>你收到了奖励</value>
+  </data>
+    <data name="EventGetListSuccess" xml:space="preserve">
+    <value>获取成功的活动列表</value>
+  </data>
+    <data name="EventGiftIsWrong" xml:space="preserve">
+    <value>奖励不是真的</value>
+  </data>
+    <data name="EventGiftNotAvailable" xml:space="preserve">
+    <value>收到或不存在奖励</value>
+  </data>
+    <data name="EventGiveGiftFail" xml:space="preserve">
+    <value>奖项不成功。请稍后再试</value>
+  </data>
+    <data name="EventGiveGiftSuccessAndCheckMail" xml:space="preserve">
+    <value>获奖成功。 请检查您的收件箱。</value>
+  </data>
+    <data name="EventMessageYouHasMoneyFromEve" xml:space="preserve">
+    <value>你从事件中获得{0}胜利。</value>
+  </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>您的获奖号码必须少于5,000才能获得奖品</value>
+  </data>
+    <data name="EventMissionNotComplete" xml:space="preserve">
+    <value>任务尚未完成</value>
+  </data>
+    <data name="EventNoData" xml:space="preserve">
+    <value>没有数据</value>
+  </data>
+    <data name="EventNotEnoughtTimeToGift" xml:space="preserve">
+    <value>没有足够的时间来获得奖励。</value>
+  </data>
+    <data name="EventNotExist" xml:space="preserve">
+    <value>事件不存在</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>该活动暂停</value>
+  </data>
+    <data name="EventNotTimeUp" xml:space="preserve">
+    <value>现在不是奖励的时候。 请稍后再试</value>
+  </data>
+    <data name="EventQuicklyRegisterCannotRegisterMore" xml:space="preserve">
+    <value>现在无法注册，请注册一个新帐户</value>
+  </data>
+    <data name="EventReceivedGift" xml:space="preserve">
+    <value>收到奖励</value>
+  </data>
+    <data name="EventReceiveGiftSuccess" xml:space="preserve">
+    <value>收到成功的礼物</value>
+  </data>
+    <data name="EventReceiveLevelVip" xml:space="preserve">
+    <value>获得VIP级别的奖励</value>
+  </data>
+    <data name="EventSecondCount" xml:space="preserve">
+    <value>{0}秒</value>
+  </data>
+    <data name="EventSystemMaintainingChooseOther" xml:space="preserve">
+    <value>系统{0}正在维护中，请选择其他卡类型</value>
+  </data>
+    <data name="EventTitleBonusHall" xml:space="preserve">
+    <value>您被授予{0}到您的帐户</value>
+  </data>
+    <data name="EventTurnsCount" xml:space="preserve">
+    <value>{0}转</value>
+  </data>
+    <data name="EventTypeCardCount" xml:space="preserve">
+    <value>{0} {1}标记</value>
+  </data>
+    <data name="EventUploadSuccessButFail" xml:space="preserve">
+    <value>已成功上载，但事件更新失败。</value>
+  </data>
+    <data name="EventVipAnchorPoint" xml:space="preserve">
+    <value>要点达到</value>
+  </data>
+    <data name="EventVipDepositBonus" xml:space="preserve">
+    <value>促销已加载</value>
+  </data>
+    <data name="EventVipExpFish" xml:space="preserve">
+    <value>Exp射击鱼</value>
+  </data>
+    <data name="EventVipNotRunning" xml:space="preserve">
+    <value>没有运行Vip</value>
+  </data>
+    <data name="EventVipTichLuySkill" xml:space="preserve">
+    <value>积累的技术</value>
+  </data>
+    <data name="EventVipTransferChip" xml:space="preserve">
+    <value>转移胜利</value>
+  </data>
+    <data name="EventPlayGame" xml:space="preserve">
+    <value>在手机版上播放和接收礼物&lt;/ br&gt;</value>
+  </data>
+</LocalLanguages>

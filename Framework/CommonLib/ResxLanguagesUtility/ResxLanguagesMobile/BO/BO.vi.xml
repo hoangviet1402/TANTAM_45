@@ -1,0 +1,1639 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="RegisInMobilePassword" xml:space="preserve">
+        <value>Mật khẩu ít nhất phải 6 ký tự.</value>
+    </data>
+    <data name="NonexistSecurityCode" xml:space="preserve">
+        <value>Mã bảo mật không chính xác</value>
+    </data>
+    <data name="BonusLogin" xml:space="preserve">
+        <value>Bonus Login</value>
+    </data>
+    <data name="Game_Type_Fishing">
+        <value>Bắn Cá</value>
+    </data>
+    <data name="Game_Type_Slot_Game">
+        <value>Game Slot</value>
+    </data>
+    <data name="Game_Type_Orther">
+        <value>Game khác</value>
+    </data>
+    <!--Region Description Defender-->
+    <data name="SoloMode_Default" xml:space="preserve">
+        <value>Súng Săn Cá</value>
+    </data>
+    <data name="SoloMode_Medusa" xml:space="preserve">
+        <value>Súng Medusa</value>
+    </data>
+    <data name="SoloMode_NhanMa" xml:space="preserve">
+        <value>Súng Nhân Mã</value>
+    </data>
+    <data name="SoloMode_Poseidon" xml:space="preserve">
+        <value>Súng Poseidon</value>
+    </data>
+    <data name="SoloMode_Mermaid" xml:space="preserve">
+        <value>Súng Mermaid</value>
+    </data>
+    <data name="SoloMode_Cerberus" xml:space="preserve">
+        <value>Súng Cerberus</value>
+    </data>
+    <data name="SoloMode_Dragon" xml:space="preserve">
+        <value>Súng rồng</value>
+    </data>
+    <data name="SoloMode_Success" xml:space="preserve">
+        <value>Thành công</value>
+    </data>
+    <data name="SoloMode_Failed" xml:space="preserve">
+        <value>Thất bại</value>
+    </data>
+    <data name="SoloMode_InvalidDataInput" xml:space="preserve">
+        <value>Dữ liệu không hợp lệ</value>
+    </data>
+    <data name="SoloMode_NotHaveGunKind" xml:space="preserve">
+        <value>User không có súng phù hợp.</value>
+    </data>
+    <data name="SoloMode_NotConfigGunKind" xml:space="preserve">
+        <value>Súng chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_NotConfigGeneration" xml:space="preserve">
+        <value>Thế hệ súng chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_GunLevelMax" xml:space="preserve">
+        <value>Súng đã tới level tối đa.</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveGun" xml:space="preserve">
+        <value>Súng được chọn quá quy định.</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseGun" xml:space="preserve">
+        <value>Không được chọn trùng súng.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseGun" xml:space="preserve">
+        <value>Không được chọn súng mình không có.</value>
+    </data>
+    <data name="SoloMode_UpdateIsFailed" xml:space="preserve">
+        <value>Có lỗi trong quá trình nâng cấp.</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultGun" xml:space="preserve">
+        <value>User chỉ có súng mặc định.</value>
+    </data>
+    <data name="SoloMode_NotEnoughLevelToEvolution" xml:space="preserve">
+        <value>Súng chưa thể tiến hóa.</value>
+    </data>
+    <data name="SoloMode_EvolutionIsFailed" xml:space="preserve">
+        <value>Có lỗi tiến hóa.</value>
+    </data>
+    <data name="SoloMode_NotAnyMineral" xml:space="preserve">
+        <value>Không có nguyên liệu.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseMineral" xml:space="preserve">
+        <value>Nguyên liệu không có trong túi đồ.</value>
+    </data>
+    <data name="SoloMode_NotConfigMineral" xml:space="preserve">
+        <value>Chưa cấu hình exp trong túi user.</value>
+    </data>
+    <data name="SoloMode_NotAnyMaterial" xml:space="preserve">
+        <value>User không có nguyên liệu tiến hóa.</value>
+    </data>
+    <data name="SoloMode_IsContainsChoiseMaterial" xml:space="preserve">
+        <value>Nguyên liệu không có trong túi đồ.</value>
+    </data>
+    <data name="SoloMode_NotConfigMaterial" xml:space="preserve">
+        <value>Chưa cấu hình Material trong túi user.</value>
+    </data>
+    <data name="SoloMode_MaterialChoiseNotMatchConfig" xml:space="preserve">
+        <value>Nguyên liệu không phù hợp.</value>
+    </data>
+    <data name="SoloMode_NotHaveSkillKind" xml:space="preserve">
+        <value>Không có kỹ năng này.</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveSkill" xml:space="preserve">
+        <value>Kỹ năng được chọn quá quy định.</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseSkill" xml:space="preserve">
+        <value>Không được chọn trùng kỹ năng.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseSkill" xml:space="preserve">
+        <value>Không được chọn kỹ năng mình không có.</value>
+    </data>
+    <data name="SoloMode_WallNotFound" xml:space="preserve">
+        <value>Wall không tồn tại.</value>
+    </data>
+    <data name="SoloMode_WallInvalidStage" xml:space="preserve">
+        <value>Chơi tới màn chơi cho phép nâng cấp.</value>
+    </data>
+    <data name="SoloMode_NotHaveTowerKind" xml:space="preserve">
+        <value>User không có tháp phù hợp.</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerKind" xml:space="preserve">
+        <value>Tháp chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerGeneration" xml:space="preserve">
+        <value>Thế hệ tháp chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_TowerLevelMax" xml:space="preserve">
+        <value>Tháp đã tới level tối đa.</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveTower" xml:space="preserve">
+        <value>Tháp được chọn quá quy định.</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseTower" xml:space="preserve">
+        <value>Không được chọn trùng tháp.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseTower" xml:space="preserve">
+        <value>Không được chọn tháp mình không có.</value>
+    </data>
+    <data name="SoloMode_UpdateTowerIsFailed" xml:space="preserve">
+        <value>Có lỗi trong quá trình nâng cấp.</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultTower" xml:space="preserve">
+        <value>User chỉ có tháp mặc định.</value>
+    </data>
+    <data name="SoloMode_NotEnoughCoin" xml:space="preserve">
+        <value>User không đủ xu.</value>
+    </data>
+    <data name="SoloMode_CheckNotExists" xml:space="preserve">
+        <value>Hàm kiểm tra không tồn tại.</value>
+    </data>
+    <data name="CreateTranlogError" xml:space="preserve">
+        <value>Lỗi khởi tạo giao dịch</value>
+    </data>
+    <data name="AddGoldUserFromEvent" xml:space="preserve">
+        <value>Tặng Gold cho user mới</value>
+    </data>
+    <data name="AddGoldUserFromEventError" xml:space="preserve">
+        <value>Lỗi tặng Gold cho user</value>
+    </data>
+    <data name="AddGoldUserFirstChargeCardInDay" xml:space="preserve">
+        <value>Tặng Gold cho user nạp thẻ đầu tiên trong ngày</value>
+    </data>
+    <data name="AddGoldUserChargeCard" xml:space="preserve">
+        <value>Tặng Gold cho user nạp thẻ</value>
+    </data>
+    <data name="AddGoldUserChargeIAP" xml:space="preserve">
+        <value>Tặng Gold cho user nạp IAP</value>
+    </data>
+    <data name="NotPromoCard" xml:space="preserve">
+        <value>Thẻ không được khuyến mãi</value>
+    </data>
+    <data name="EvnetNapTheTichCodeSuccess" xml:space="preserve">
+        <value>Bạn được tặng {0} code tham gia xổ số. Vui lòng vào hộp thư cá nhân xem mã code!</value>
+    </data>
+    <data name="EvnetNapTheTichCodeSystemError" xml:space="preserve">
+        <value>Lỗi cấp mã code. Vui lòng liên hệ ban quản trị để được cấp lại!</value>
+    </data>
+    <data name="AddGoldUserRegBcst" xml:space="preserve">
+        <value>Tặng Gold cho user đăng ký game Bắn cá săn thưởng</value>
+    </data>
+    <data name="AddGoldUserHall" xml:space="preserve">
+        <value>Tặng Gold cho user hết xu khi ra sảnh</value>
+    </data>
+    <data name="BonusShareSuccess" xml:space="preserve">
+        <value>Nhận thưởng thành công</value>
+    </data>
+    <data name="BonusShareError" xml:space="preserve">
+        <value>Nhận thưởng không thành công</value>
+    </data>
+    <data name="RegisterRefererPubUser" xml:space="preserve">
+        <value>Mời bạn tham gia game</value>
+    </data>
+    <data name="RegisterRefererPubUserAccepted" xml:space="preserve">
+        <value>Đã chấp nhận lời mời</value>
+    </data>
+    <data name="DoImportCardResponseError" xml:space="preserve">
+        <value>Lỗi không đọc được thông tin thẻ trả về</value>
+    </data>
+    <data name="DoImportCardImportError" xml:space="preserve">
+        <value>Lỗi nhập thẻ vào kho</value>
+    </data>
+    <data name="DoImportCardSupplierExportError" xml:space="preserve">
+        <value>Lỗi xuất thẻ từ nhà cung cấp</value>
+    </data>
+    <data name="DoExportCardNotSelectCard" xml:space="preserve">
+        <value>Vui lòng chọn loại thẻ cần đổi</value>
+    </data>
+    <data name="DoExportCardIsMaintain" xml:space="preserve">
+        <value>Chức năng hiện tại đang được bảo trì nâng cấp. Bạn vui lòng quay lại sau!!!</value>
+    </data>
+    <data name="DoExportCardOutOfLimit" xml:space="preserve">
+        <value>Bạn đã hết hạn mức đổi thẻ trong ngày. Vui lòng quay lại vào ngày hôm sau!</value>
+    </data>
+    <data name="DoExportCardOutOfRangeTime" xml:space="preserve">
+        <value>Mời bạn đổi thẻ tiếp theo sau thẻ trước {0} phút. Xin cảm ơn</value>
+    </data>
+    <data name="DoExportCardNotEnoughGold" xml:space="preserve">
+        <value>Số dư tài khoản không đủ để đổi thẻ cào</value>
+    </data>
+    <data name="DoExportCardNotEnoughGoldOffset" xml:space="preserve">
+        <value>Bạn không đủ số dư tối thiểu {0:#,##0} gold sau khi đổi</value>
+    </data>
+    <data name="DoExportCardError" xml:space="preserve">
+        <value>Có lỗi trong quá trình đổi thẻ cào. Bạn vui lòng thử lại sau!</value>
+    </data>
+    <data name="DoExportCardErrorAdmin" xml:space="preserve">
+        <value>Lỗi đổi thẻ cào. Bạn vui lòng liên hệ Admin để được hổ trợ!</value>
+    </data>
+    <data name="DoExportCardTimeOut" xml:space="preserve">
+        <value>Lỗi đổi thẻ cào. Bạn vui lòng liên hệ Admin để được hổ trợ! [Code = 3]</value>
+    </data>
+    <data name="DoExportCardSupGold" xml:space="preserve">
+        <value>Trừ gold khi đổi thẻ</value>
+    </data>
+    <data name="DoExportCardUpdateAccountError" xml:space="preserve">
+        <value>Lỗi cập nhật số dư tài khoản</value>
+    </data>
+    <data name="DoExportCardOutOflimitCard" xml:space="preserve">
+        <value>Thẻ bạn muốn đổi đã hết, bạn vui lòng thử lại sau!</value>
+    </data>
+    <data name="DoExportCardSuccess" xml:space="preserve">
+        <value>Yêu cầu đổi thẻ {0}({1}VND) của bạn đã thành công. Bạn vui lòng chờ Admin kiểm duyệt. Thẻ sẽ được gửi vào HỘP THƯ CÁ NHÂN sau ít phút nữa!</value>
+    </data>
+    <data name="CashOutDataError" xml:space="preserve">
+        <value>Dữ liệu không hợp lệ</value>
+    </data>
+    <data name="CashOutError" xml:space="preserve">
+        <value>Có lỗi trong quá trình thực hiện. Bạn vui lòng thử lại sau!</value>
+    </data>
+    <data name="OutOfGoldCashOut" xml:space="preserve">
+        <value>Bạn đã hết hạn mức rút tiền trong ngày. Vui lòng quay lại vào ngày hôm sau!</value>
+    </data>
+    <data name="CashOutNotEnoughGold" xml:space="preserve">
+        <value>Số dư tài khoản không đủ để thực hiện giao dịch!</value>
+    </data>
+    <data name="CashOutAccountVnKashIsNotExit" xml:space="preserve">
+        <value>Thông tin tài khoản vnKash không hợp lệ!</value>
+    </data>
+    <data name="CashOutAVnKashNotEnoughGold" xml:space="preserve">
+        <value>Tai khoan daily vnkash khong du tien | Balance: {0}</value>
+    </data>
+    <data name="AccountCashOut" xml:space="preserve">
+        <value>{0} rút tiền về tài khoản</value>
+    </data>
+    <data name="CashOutSupGold" xml:space="preserve">
+        <value>Trừ gold khi rút tiền về vnkash</value>
+    </data>
+    <data name="CashOutBaoKimSupGold" xml:space="preserve">
+        <value>Trừ gold khi rút tiền về BaoKim</value>
+    </data>
+    <data name="CashOutTimeOut" xml:space="preserve">
+        <value>Lỗi chuyển tiền sang tài khoản vnkash. Bạn vui lòng liên hệ CSKH để hổ trợ!</value>
+    </data>
+    <data name="CashOutTimeOutBaoKim" xml:space="preserve">
+        <value>Lỗi chuyển tiền sang tài khoản BaoKim. Bạn vui lòng liên hệ CSKH để hổ trợ!</value>
+    </data>
+    <data name="CashOutReturnGold" xml:space="preserve">
+        <value>Lỗi timed out cần kiểm tra lại giao dịch trước khi hoàn Xu</value>
+    </data>
+    <data name="CashOutReturnGoldCSKH" xml:space="preserve">
+        <value>Lỗi chuyển tiền sang tài khoản vnkash. Bạn vui lòng liên hệ CSKH để hoàn lại Xu!</value>
+    </data>
+    <data name="CashOutReturnGoldCskhBaoKim" xml:space="preserve">
+        <value>Lỗi chuyển tiền sang tài khoản BaoKim. Bạn vui lòng liên hệ CSKH để hoàn lại Xu!</value>
+    </data>
+    <data name="CashOutErrorReturnGoldCSKH" xml:space="preserve">
+        <value>Có lỗi trong quá trình xử lý. Bạn vui lòng liên hệ CSKH để được hổ trợ!</value>
+    </data>
+    <data name="CashOutSuccess" xml:space="preserve">
+        <value>Bạn đã rút thành công {0} về ví Vnkash</value>
+    </data>
+    <data name="CashOutSuccessBaoKim" xml:space="preserve">
+        <value>Bạn đã rút thành công {0} về BaoKim</value>
+    </data>
+    <data name="DepositMinMoney" xml:space="preserve">
+        <value>Số tiền nạp tối thiểu là 10.000 và phải chia hết cho 1.000!</value>
+    </data>
+    <data name="Depositfail" xml:space="preserve">
+        <value>Giao dịch thất bại vui lòng thử lại sau!</value>
+    </data>
+    <data name="DepositDealfail" xml:space="preserve">
+        <value>Giao dịch không hợp lệ!</value>
+    </data>
+    <data name="DepositReview" xml:space="preserve">
+        <value>Giao dịch đang được kiểm duyệt!</value>
+    </data>
+    <data name="DepositAddGoldFail" xml:space="preserve">
+        <value>Lỗi nạp Xu vào tài khoản. Vui lòng liên hệ CSKH để được hổ trợ!</value>
+    </data>
+    <data name="DepositAddGoldSuccess" xml:space="preserve">
+        <value>Nạp Tiền Thành Công</value>
+    </data>
+    <data name="DepositCreatePostDataFail" xml:space="preserve">
+        <value>Lỗi tạo chuỗi Post Data</value>
+    </data>
+    <data name="DepositProcessing" xml:space="preserve">
+        <value>Thanh toan don hang:</value>
+    </data>
+    <data name="DepositDelay" xml:space="preserve">
+        <value>Mỗi lần nạp thẻ phải cách nhau {0} phút</value>
+    </data>
+    <data name="SubGoldItem" xml:space="preserve">
+        <value>Trừ xu khi đổi vật phẩm</value>
+    </data>
+    <data name="OutOfTurnCard" xml:space="preserve">
+        <value>- Hết lượt đổi thẻ</value>
+    </data>
+    <data name="OutOfTurnStar" xml:space="preserve">
+        <value>- Hết lượt đổi sao</value>
+    </data>
+    <data name="NotEnoughStar" xml:space="preserve">
+        <value>- Không đủ sao chuyển</value>
+    </data>
+    <data name="NotEnoughCardWithProductId" xml:space="preserve">
+        <value>- Hết thẻ với ProductId:</value>
+    </data>
+    <data name="MessageSendItemSuccess" xml:space="preserve">
+        <value>Cảm ơn bạn đã tham gia sự kiện \"Tích sao đổi quà\"<br/>
+            Mã số thẻ của bạn là:
+            <b> {0} </b>
+            <br/>
+            Số seri của bạn là:
+            <b> {1} </b>
+            <br/>
+            Mệnh giá thẻ:
+            <b> {2} VNĐ</b>
+            <br/>
+            Loại thẻ: <b> {3} </b> Chúc bạn chơi game vui vẻ !</value>
+    </data>
+    <data name="TransferGoldFail" xml:space="preserve">
+        <value>Không thể chuyển gold. Bạn phải thoát khỏi game {0} và chờ 2 phút.</value>
+    </data>
+    <data name="AccountIsNotExit" xml:space="preserve">
+        <value>Thông tin tài khoản không hợp lệ!</value>
+    </data>
+    <data name="AccountIsLock" xml:space="preserve">
+        <value>Tài khoản đã bị khóa</value>
+    </data>
+    <data name="HasBeenUpdated" xml:space="preserve">
+        <value>Tài khoản đã được cập nhật trước đó!</value>
+    </data>
+    <data name="InvalidUpdating" xml:space="preserve">
+        <value>Dữ liệu cập nhật không đúng!</value>
+    </data>
+    <data name="SendingMailError" xml:space="preserve">
+        <value>Lỗi trong quá trình gửi mail</value>
+    </data>
+    <data name="SuccessWithGold" xml:space="preserve">
+        <value>Tài khoản cập nhật thành công và được tặng Gold</value>
+    </data>
+    <data name="AvatarNotExists" xml:space="preserve">
+        <value>User không tồn tại</value>
+    </data>
+    <data name="UserNotExists" xml:space="preserve">
+        <value>Avatar không tồn tại</value>
+    </data>
+    <data name="Failed" xml:space="preserve">
+        <value>Thất bại</value>
+    </data>
+    <data name="OutOfDate" xml:space="preserve">
+        <value>Hết hạn</value>
+    </data>
+    <data name="NotYetSms" xml:space="preserve">
+        <value>Chưa nhắn tin</value>
+    </data>
+    <data name="WrongCode" xml:space="preserve">
+        <value>Sai mã Code</value>
+    </data>
+    <data name="OutOfTimes" xml:space="preserve">
+        <value>Quá số lần quy định</value>
+    </data>
+    <data name="None" xml:space="preserve">
+        <value>Không có referer</value>
+    </data>
+    <data name="GoogleSearch" xml:space="preserve">
+        <value>Tìm kiếm Google</value>
+    </data>
+    <data name="Facebook" xml:space="preserve">
+        <value>Từ Facebook</value>
+    </data>
+    <data name="Mobile" xml:space="preserve">
+        <value>Từ di động</value>
+    </data>
+    <data name="GoogleAdword" xml:space="preserve">
+        <value>Quảng cáo Google</value>
+    </data>
+    <data name="FacebookApp" xml:space="preserve">
+        <value>Từ Facebook App</value>
+    </data>
+    <data name="EmailError" xml:space="preserve">
+        <value>Tài khoản đã được cập nhật trước đó!</value>
+    </data>
+    <data name="EmailExist" xml:space="preserve">
+        <value>Địa chỉ email đã tồn tại, vui lòng nhập lại!</value>
+    </data>
+    <data name="Success" xml:space="preserve">
+        <value>Thành công</value>
+    </data>
+    <data name="PassOrEmailError" xml:space="preserve">
+        <value>Tên đăng nhập hoặc mật khẩu không chính xác</value>
+    </data>
+    <data name="BanNick" xml:space="preserve">
+        <value>Tài khoản đã bị khóa</value>
+    </data>
+    <data name="BanNickForever" xml:space="preserve">
+        <value>Tài khoản đã bị khóa vĩnh viễn</value>
+    </data>
+    <data name="UserIsNotActive" xml:space="preserve">
+        <value>Tài khoản chưa được kích hoạt</value>
+    </data>
+    <data name="UsingAnotherDevice" xml:space="preserve">
+        <value>User đang dùng máy khác</value>
+    </data>
+    <data name="NonexistSecurityCode" xml:space="preserve">
+        <value>Mã bảo vệ không tồn tại</value>
+    </data>
+    <data name="InvalidSecurityCode" xml:space="preserve">
+        <value>Mã bảo mật không chính xác</value>
+    </data>
+    <data name="SuccessWithSecure" xml:space="preserve">
+        <value>Thành công và có mã bảo vệ</value>
+    </data>
+    <data name="NonExistsAccount" xml:space="preserve">
+        <value>Tài khoản không tồn tại</value>
+    </data>
+    <data name="UsingSMSSecure" xml:space="preserve">
+        <value>Tài khoản dùng bảo mật bằng SMS</value>
+    </data>
+    <data name="UsingNormalSecure" xml:space="preserve">
+        <value>Tài khoản dùng bảo mật</value>
+    </data>
+    <data name="OtpExpire" xml:space="preserve">
+        <value>Mã bảo vệ đã được sử dụng. Vui lòng soạn tin lấy lại mã bảo vệ mới!</value>
+    </data>
+    <data name="SystemError" xml:space="preserve">
+        <value>Lỗi hệ thống</value>
+    </data>
+
+    <data name="InvalidCaptchaCode" xml:space="preserve">
+        <value>Mã bảo vệ không chính xác</value>
+    </data>
+    <data name="Unknown" xml:space="preserve">
+        <value>Không xác định</value>
+    </data>
+    <data name="Web" xml:space="preserve">
+        <value>Web - Platform</value>
+    </data>
+    <data name="Android" xml:space="preserve">
+        <value>Mobile - HĐH Android</value>
+    </data>
+    <data name="Ios" xml:space="preserve">
+        <value>Mobile - HĐH IOs</value>
+    </data>
+    <data name="WindowPhone" xml:space="preserve">
+        <value>Mobile - HĐH Window phone</value>
+    </data>
+    <data name="PlatformIdEnumFacebook" xml:space="preserve">
+        <value>Web - Facebook Platform</value>
+    </data>
+    <data name="NotActivate" xml:space="preserve">
+        <value>User chưa được kích hoạt</value>
+    </data>
+    <data name="UsingSMS" xml:space="preserve">
+        <value>User đã active chức năng bảo vệ tài khoản bằng SMS</value>
+    </data>
+    <data name="Normal" xml:space="preserve">
+        <value>User sử dụng chức năng bảo vệ tài khoản</value>
+    </data>
+    <data name="AllType" xml:space="preserve">
+        <value>User sử dụng cả 2 chức năng bảo vệ tài khoản</value>
+    </data>
+    <data name="InvalidNickName" xml:space="preserve">
+        <value>Tên đăng nhập không hợp lệ</value>
+    </data>
+    <data name="ExistedAccount" xml:space="preserve">
+        <value>Tài khoản đã tồn tại</value>
+    </data>
+    <data name="InvalidDisplayName" xml:space="preserve">
+        <value>Tên hiển thị đã tồn tại</value>
+    </data>
+    <data name="NotUse" xml:space="preserve">
+        <value>User hiện không có sử dụng chức năng này</value>
+    </data>
+    <data name="HasBeenUpdate" xml:space="preserve">
+        <value>Đã cập nhật trước đó</value>
+    </data>
+    <data name="UserNotRegular" xml:space="preserve">
+        <value>User không hợp lệ</value>
+    </data>
+    <data name="NotSelectQuestion" xml:space="preserve">
+        <value>Chưa chọn câu hỏi</value>
+    </data>
+    <data name="NotAnswer" xml:space="preserve">
+        <value>Chưa trả lời câu hỏi</value>
+    </data>
+    <data name="AnswerNotRegular" xml:space="preserve">
+        <value>Câu trả lời không hợp lệ</value>
+    </data>
+    <data name="AnswerHasSignChar" xml:space="preserve">
+        <value>Câu trả lời không được có dấu</value>
+    </data>
+    <data name="IsEnough" xml:space="preserve">
+        <value>Bang đã đủ thành viên</value>
+    </data>
+    <data name="IsMember" xml:space="preserve">
+        <value>User đã gia nhập bang</value>
+    </data>
+    <data name="IsWaiting" xml:space="preserve">
+        <value>User đã gửi lời mời trước đó và chờ xét duyệt</value>
+    </data>
+    <data name="NotEnoughLevel" xml:space="preserve">
+        <value>User không đủ tiền và level để gia nhập</value>
+    </data>
+    <data name="NotPermission" xml:space="preserve">
+        <value>User không có quyền xử lý</value>
+    </data>
+    <data name="Admin" xml:space="preserve">
+        <value>Admin vinh danh</value>
+    </data>
+    <data name="Association" xml:space="preserve">
+        <value>Bang hội vinh danh</value>
+    </data>
+    <data name="Exp" xml:space="preserve">
+        <value>Tìm theo điểm kinh nghiệm</value>
+    </data>
+    <data name="PubUserId" xml:space="preserve">
+        <value>Tìm theo mã tài khoản</value>
+    </data>
+    <data name="NickName" xml:space="preserve">
+        <value>Tìm theo nickname</value>
+    </data>
+    <data name="NameExists" xml:space="preserve">
+        <value>Tên bang đã tồn tại</value>
+    </data>
+    <data name="NameNotExists" xml:space="preserve">
+        <value>Tên bang chưa có</value>
+    </data>
+    <data name="DaThamGiaBangHoi" xml:space="preserve">
+        <value>Đã tham gia bang hội</value>
+    </data>
+    <data name="ChuaCapNhapThongTin" xml:space="preserve">
+        <value>Chưa cập nhật thông tin</value>
+    </data>
+    <data name="KhongDuGold" xml:space="preserve">
+        <value>không đủ gold tạo bang hội</value>
+    </data>
+    <data name="DuplicationName" xml:space="preserve">
+        <value>Tên bang đã tồn tại</value>
+    </data>
+    <data name="IsNotOwner" xml:space="preserve">
+        <value>Không phải là bang chủ</value>
+    </data>
+    <data name="IsNotEnoughGold" xml:space="preserve">
+        <value>Không đủ gold</value>
+    </data>
+    <data name="IsEnoughMember" xml:space="preserve">
+        <value>Bang đã đủ thành viên</value>
+    </data>
+    <data name="IsBelongToAssociation" xml:space="preserve">
+        <value>User đã là thành viên của bang</value>
+    </data>
+    <data name="HasSent" xml:space="preserve">
+        <value>User đã được gửi lời mời</value>
+    </data>
+    <data name="SameUser" xml:space="preserve">
+        <value>User không thể mời chính mình</value>
+    </data>
+    <data name="InvalidMessage" xml:space="preserve">
+        <value>User chưa nhập tin nhắn</value>
+    </data>
+    <data name="UserLeft" xml:space="preserve">
+        <value>User không còn trong bang</value>
+    </data>
+    <data name="AccessDenied" xml:space="preserve">
+        <value>User thực hiện kick không đủ quyền</value>
+    </data>
+    <data name="UserTuRoi" xml:space="preserve">
+        <value>User không còn trong bang</value>
+    </data>
+    <data name="OwnerKick" xml:space="preserve">
+        <value>User thực hiện kick không đủ quyền</value>
+    </data>
+    <data name="SubOwnerKick" xml:space="preserve">
+        <value>User thực hiện kick không đủ quyền</value>
+    </data>
+    <data name="UserHasSent" xml:space="preserve">
+        <value>User đã gửi lời mời trước đó và chờ được xét duyệt</value>
+    </data>
+    <data name="IsNotEnoughCondition" xml:space="preserve">
+        <value>User không đủ tiền và level để gia nhập</value>
+    </data>
+    <data name="IsExistsAnotherAss" xml:space="preserve">
+        <value>User đang là thành viên của bang khác</value>
+    </data>
+    <data name="EnoughSubOwner" xml:space="preserve">
+        <value>Bang đã đủ bang phó</value>
+    </data>
+    <data name="AlreadyDone" xml:space="preserve">
+        <value>User đã là bang phó, hoặc đã không còn là bang phó, tùy vào loại</value>
+    </data>
+    <data name="NotOwner" xml:space="preserve">
+        <value>User lập bang phó không phải là bang chủ</value>
+    </data>
+    <data name="SameOwnUser" xml:space="preserve">
+        <value>User được lập bang phó đang là bang chủ</value>
+    </data>
+    <data name="NotMember" xml:space="preserve">
+        <value>User được lập bang phó không phải là thành viên trong bang</value>
+    </data>
+    <data name="Round1" xml:space="preserve">
+        <value>Đợt 1</value>
+    </data>
+    <data name="Round2" xml:space="preserve">
+        <value>Đợt 2</value>
+    </data>
+    <data name="Round3" xml:space="preserve">
+        <value>Đợt 3</value>
+    </data>
+    <data name="OutOfStars" xml:space="preserve">
+        <value>Vượt quá số sao</value>
+    </data>
+    <data name="CardPartnerFail" xml:space="preserve">
+        <value>Lỗi đổi thẻ cào từ đối tác</value>
+    </data>
+    <data name="Card" xml:space="preserve">
+        <value>Chuyển sang thẻ cào</value>
+    </data>
+    <data name="Item" xml:space="preserve">
+        <value>Chuyển sang thẻ vật phẩm</value>
+    </data>
+    <data name="StarExchangeGold" xml:space="preserve">
+        <value>Chuyển sang gold</value>
+    </data>
+    <data name="Vong1" xml:space="preserve">
+        <value>Vòng loại</value>
+    </data>
+    <data name="Vong2" xml:space="preserve">
+        <value>Bán kết</value>
+    </data>
+    <data name="Vong3" xml:space="preserve">
+        <value>Chung kết</value>
+    </data>
+    <data name="InvalidSender" xml:space="preserve">
+        <value>Người gửi không tồn tại</value>
+    </data>
+    <data name="InvalidReceiver" xml:space="preserve">
+        <value>Người nhận không tồn tại</value>
+    </data>
+    <data name="NotEnoughGold" xml:space="preserve">
+        <value>Không đủ gold</value>
+    </data>
+    <data name="InvalidGold" xml:space="preserve">
+        <value>Số Gold cần chuyển phải >= 20.000,mời nhập lại!</value>
+    </data>
+    <data name="IsNotSameAssociation" xml:space="preserve">
+        <value>User nhận không cùng bang hội</value>
+    </data>
+    <data name="OutOfTime" xml:space="preserve">
+        <value>Hết số lần chuyển Gold bang hội</value>
+    </data>
+    <data name="UserInGame" xml:space="preserve">
+        <value>User đang chơi game</value>
+    </data>
+    <data name="RangerGoldMaxOnDay" xml:space="preserve">
+        <value>Vượt quá số gold được chuyển trong ngày</value>
+    </data>
+    <data name="NotEnoughLevelGame" xml:space="preserve">
+        <value>Bạn chưa đủ level game để chuyển gold</value>
+    </data>
+    <data name="ExistedName" xml:space="preserve">
+        <value>Tên bang đã tồn tại</value>
+    </data>
+    <data name="UserInAnotherGuild" xml:space="preserve">
+        <value>Bạn đang trong một bang khác</value>
+    </data>
+    <data name="NoRight" xml:space="preserve">
+        <value>User không có quyền xóa</value>
+    </data>
+    <data name="NotExistedGuild" xml:space="preserve">
+        <value>Bang không tồn tại</value>
+    </data>
+    <data name="ValueIncorrect" xml:space="preserve">
+        <value>Lượng Gold không phù hợp</value>
+    </data>
+    <data name="CommentNotMember" xml:space="preserve">
+        <value>User không phải thành viên</value>
+    </data>
+    <data name="NotExistsComment" xml:space="preserve">
+        <value>Comment cha không tồn tại</value>
+    </data>
+    <data name="NotExistsGuild" xml:space="preserve">
+        <value>Bang không tồn tại</value>
+    </data>
+    <data name="JoinIsWaiting" xml:space="preserve">
+        <value>User đã xin vào bang và đang chờ duyệt</value>
+    </data>
+    <data name="CannotKickOwner" xml:space="preserve">
+        <value>Bang chủ không thể kick chính mình</value>
+    </data>
+    <data name="UserNotInGuild" xml:space="preserve">
+        <value>Bạn không ở trong bang</value>
+    </data>
+    <data name="CannotLeftOwner" xml:space="preserve">
+        <value>Bang chủ không được rời bang</value>
+    </data>
+    <data name="NotEnough" xml:space="preserve">
+        <value>Gold đại lý không đủ chuyển</value>
+    </data>
+    <data name="NotExists" xml:space="preserve">
+        <value>ID không tồn tại</value>
+    </data>
+    <data name="FailTransaction" xml:space="preserve">
+        <value>Giao dịch thất bại</value>
+    </data>
+    <data name="ExistantTransaction" xml:space="preserve">
+        <value>Giao dịch đã tồn tại</value>
+    </data>
+    <data name="InvalidVipPoint" xml:space="preserve">
+        <value>Có lỗi khi cộng Vip Point</value>
+    </data>
+    <data name="NapGold" xml:space="preserve">
+        <value>Kiểm tra giao dịch từ nạp gold</value>
+    </data>
+    <data name="KiemTraGiaoDich" xml:space="preserve">
+        <value>Kiểm tra giao dịch do user hoặc admin kích hoạt</value>
+    </data>
+    <data name="ThatBai" xml:space="preserve">
+        <value>Giao dịch thất bại do không cập nhật được</value>
+    </data>
+    <data name="DaiLyKhongDuGold" xml:space="preserve">
+        <value>Đại lý không đủ gold</value>
+    </data>
+    <data name="GiaoDichKhongTonTai" xml:space="preserve">
+        <value>Giao dịch không tồn tại</value>
+    </data>
+    <data name="TheDaSuDung" xml:space="preserve">
+        <value>Thẻ đã sử dụng</value>
+    </data>
+    <data name="CardAmountInvalid" xml:space="preserve">
+        <value>Mệnh giá thẻ không đúng</value>
+    </data>
+    <data name="DepositCardError" xml:space="preserve">
+        <value>Nạp sai</value>
+    </data>
+    <data name="CardTypeInvalid" xml:space="preserve">
+        <value>Loại thẻ không đúng</value>
+    </data>
+    <data name="TransactionInvalid" xml:space="preserve">
+        <value>Mã giao dịch không đúng</value>
+    </data>
+    <data name="GiaoDichThatBai" xml:space="preserve">
+        <value>Giao dịch thất bại từ ngân lượng</value>
+    </data>
+    <data name="CongVipPointLoi" xml:space="preserve">
+        <value>Cộng VipPoint không thành công</value>
+    </data>
+    <data name="GiaoDichLoi" xml:space="preserve">
+        <value>Giao dịch lỗi, được lưu lại để xử lý sau</value>
+    </data>
+    <data name="CongGoldPromotionVipError" xml:space="preserve">
+        <value>Cộng gold, khuyến mãi và vip không thành công</value>
+    </data>
+    <data name="CongGoldPromotionError" xml:space="preserve">
+        <value>Cộng gold, khuyến mãi không thành công</value>
+    </data>
+    <data name="CongGoldVipError" xml:space="preserve">
+        <value>Cộng gold, vip không thành công</value>
+    </data>
+    <data name="CongPromotionVipError" xml:space="preserve">
+        <value>Cộng khuyến mãi và vip không thành công</value>
+    </data>
+    <data name="CongGoldError" xml:space="preserve">
+        <value>Cộng gold không thành công</value>
+    </data>
+    <data name="CongPromotionError" xml:space="preserve">
+        <value>Cộng khuyến mãi không thành công</value>
+    </data>
+    <data name="Proccessing" xml:space="preserve">
+        <value>Đang xử lý</value>
+    </data>
+    <data name="FailWhenCallUseCard" xml:space="preserve">
+        <value>Lỗi khi gọi đối tác gạch thẻ</value>
+    </data>
+    <data name="SuccessAllNotGold" xml:space="preserve">
+        <value>Nạp thẻ thành công nhưng không nhận được gold</value>
+    </data>
+    <data name="SuccessAllNotPromotion" xml:space="preserve">
+        <value>Không nhận được khuyến mãi</value>
+    </data>
+    <data name="SuccessAllNotVipPoint" xml:space="preserve">
+        <value>Không nhận được Vip Point</value>
+    </data>
+    <data name="SuccessAllNotGoldAndVip" xml:space="preserve">
+        <value>Không nhận được Gold và Vip Point</value>
+    </data>
+    <data name="SuccessAllNotPromotionAndVipPoint" xml:space="preserve">
+        <value>Không nhận được khuyến mãi và Vip Point</value>
+    </data>
+    <data name="SuccessAllNotGoldAndPromotion" xml:space="preserve">
+        <value>Không nhận được gold và khuyến mãi</value>
+    </data>
+    <data name="SuccessNotGoldAndPromotionAndVip" xml:space="preserve">
+        <value>Không nhận đượcgold, khuyến mãi và Vip Point</value>
+    </data>
+    <data name="UserRequestCheckTransactionError" xml:space="preserve">
+        <value>User yêu cầu kiểm tra trạng thái thẻ lỗi</value>
+    </data>
+    <data name="TimeOut" xml:space="preserve">
+        <value>Nạp thẻ bị timeout</value>
+    </data>
+    <data name="CallbackProcessing" xml:space="preserve">
+        <value>Thẻ đã gửi cho đối tác</value>
+    </data>
+    <data name="CallbackError" xml:space="preserve">
+        <value>Đối tác trả về chi tiết lỗi</value>
+    </data>
+    <data name="CallbackReturnDepositAgain" xml:space="preserve">
+        <value>Đối tác trả về yêu cầu nạp lại</value>
+    </data>
+    <data name="FailWhenCallGetStatus" xml:space="preserve">
+        <value>Lỗi khi gọi đối tác tra cứu trạng thái</value>
+    </data>
+    <data name="DelayToNextDeposit" xml:space="preserve">
+        <value>Chờ tới lượt nạp thẻ tiếp theo</value>
+    </data>
+    <data name="MemberToMember" xml:space="preserve">
+        <value>Thành viên chuyển cho thành viên</value>
+    </data>
+    <data name="AssociationToMember" xml:space="preserve">
+        <value>Bang chuyển cho thành viên</value>
+    </data>
+    <data name="KhongDuGoldAddOrSub" xml:space="preserve">
+        <value>Không đủ gold</value>
+    </data>
+    <data name="KhongThucHienLenhNao" xml:space="preserve">
+        <value>Không thực hiện lệnh nào</value>
+    </data>
+    <data name="CongGoldKhongThanhCong" xml:space="preserve">
+        <value>Cộng gold không thành công</value>
+    </data>
+    <data name="LoiException" xml:space="preserve">
+        <value>Lỗi Exception</value>
+    </data>
+    <data name="NapGoldTheCao" xml:space="preserve">
+        <value>Nạp gold qua thẻ cào</value>
+    </data>
+    <data name="NapGoldTheCaoKhuyenMai100" xml:space="preserve">
+        <value>Khuyến mãi % qua thẻ cào</value>
+    </data>
+    <data name="NapGoldNganLuong" xml:space="preserve">
+        <value>Nạp gold qua ngân lượng</value>
+    </data>
+    <data name="NapGoldNganLuongKhuyenMai" xml:space="preserve">
+        <value>Khuyến mãi nạp gold qua ngân lượng</value>
+    </data>
+    <data name="NapGoldSms" xml:space="preserve">
+        <value>Khuyến mãi nạp gold qua sms</value>
+    </data>
+    <data name="NapGoldSmsKhuyenMai" xml:space="preserve">
+        <value>Khuyến mãi nạp gold qua sms</value>
+    </data>
+    <data name="NapGoldTheCaoKhuyenMaiTiepSuc" xml:space="preserve">
+        <value>Khuyến mãi tiếp sức qua thẻ cào</value>
+    </data>
+    <data name="NapGoldTheCaoKhuyenMaiTihcLuy" xml:space="preserve">
+        <value>Khuyến mãi tích lũy qua thẻ cào</value>
+    </data>
+    <data name="NapGoldTheCaoKhuyenMaiChonLoc" xml:space="preserve">
+        <value>Khuyến mãi chọn lọc qua thẻ cào</value>
+    </data>
+    <data name="NapGoldTheCaoKhuyenMaiNgayVang" xml:space="preserve">
+        <value>Khuyến mãi ngày vàng qua thẻ cào</value>
+    </data>
+    <data name="LiXiTet" xml:space="preserve">
+        <value>Lì xì tết</value>
+    </data>
+    <data name="ChuyenGoldTuTaiKhoanVaoViNganHang" xml:space="preserve">
+        <value>Chuyển tiền vào tài khoản vào Ví ngân hàng</value>
+    </data>
+    <data name="ChuyenGoldTuViNganHangVaoTaiKhoan" xml:space="preserve">
+        <value>Chuyển tiền từ Ví ngân hàng vào tài khoản</value>
+    </data>
+    <data name="CongGoldEvent03" xml:space="preserve">
+        <value>Tặng Gold cho User Eway đăng nhập trên Mwork</value>
+    </data>
+    <data name="DoiSaoRaTheCao" xml:space="preserve">
+        <value>Đổi sao ra thẻ cào</value>
+    </data>
+    <data name="DoiSaoRaGold" xml:space="preserve">
+        <value>Đổi sao ra gold</value>
+    </data>
+    <data name="DoiSaoRaVatPham" xml:space="preserve">
+        <value>Đổi sao ra quà</value>
+    </data>
+    <data name="NapGoldDaiLy" xml:space="preserve">
+        <value>Mua Gold đai lý</value>
+    </data>
+    <data name="NapGoldDaiLyKhuyenMai" xml:space="preserve">
+        <value>Khuyến mãi mua gold đại lý</value>
+    </data>
+    <data name="NapGoldDaiLyKhuyenMaiMuaGoldChamMoc" xml:space="preserve">
+        <value>Khuyến mãi mua gold đại lý chạm mốc</value>
+    </data>
+    <data name="TriAnVip" xml:space="preserve">
+        <value>Tri ân Vip</value>
+    </data>
+    <data name="NapTienGoogleWallet" xml:space="preserve">
+        <value>Nạp tiền bằng Ví Google</value>
+    </data>
+    <data name="NapTienAppleStore" xml:space="preserve">
+        <value>Nạp tiền qua Apple Store</value>
+    </data>
+    <data name="DoiDoanhThuRaGold" xml:space="preserve">
+        <value>Đổi doanh thu ra Gold</value>
+    </data>
+    <data name="NhanThuongVQXS" xml:space="preserve">
+        <value>Nhận thưởng Vòng quay</value>
+    </data>
+    <data name="NhanThuongRaSanh" xml:space="preserve">
+        <value>Nhận thưởng Ra sảnh</value>
+    </data>
+    <data name="KhuyenMaiUserVIP" xml:space="preserve">
+        <value>Khuyến mãi USER VIP</value>
+    </data>
+    <data name="NhanThuongThanhTuu" xml:space="preserve">
+        <value>Nhận thưởng thành tựu</value>
+    </data>
+    <data name="KhuyenMaiPrivateUserReal" xml:space="preserve">
+        <value>Khuyến mãi USER REAL</value>
+    </data>
+    <data name="KhuyenMaiPrivateUserVIP" xml:space="preserve">
+        <value>Khuyến mãi USER VIP</value>
+    </data>
+    <data name="MainGame" xml:space="preserve">
+        <value>3Cay</value>
+    </data>
+    <data name="BCST" xml:space="preserve">
+        <value>Bắn Cá Săn Thưởng</value>
+    </data>
+    <data name="BC3D" xml:space="preserve">
+        <value>Bắn Cá 3D</value>
+    </data>
+    <data name="BCV" xml:space="preserve">
+        <value>Bắn Cá Vàng</value>
+    </data>
+    <data name="LogIn" xml:space="preserve">
+        <value>Đăng nhập</value>
+    </data>
+    <data name="SignIn" xml:space="preserve">
+        <value>Đăng ký</value>
+    </data>
+    <data name="ChangeCard" xml:space="preserve">
+        <value>Đổi thưởng thẻ cào</value>
+    </data>
+    <data name="ChangeVnKash" xml:space="preserve">
+        <value>Đổi thưởng VnKash</value>
+    </data>
+    <data name="PlayGame" xml:space="preserve">
+        <value>Đổi thưởng VnKash</value>
+    </data>
+    <data name="ChangeBaoKim" xml:space="preserve">
+        <value>Đổi thưởng BaoKim</value>
+    </data>
+    <data name="ChangeMTop" xml:space="preserve">
+        <value>Đổi thưởng MTop</value>
+    </data>
+    <data name="ChangeBank" xml:space="preserve">
+        <value>Đổi thưởng Ngân hàng</value>
+    </data>
+    <data name="TransferGold" xml:space="preserve">
+        <value>Chuyển xu</value>
+    </data>
+    <data name="TopBanner" xml:space="preserve">
+        <value>Top Banner</value>
+    </data>
+    <data name="TopBanner" xml:space="preserve">
+        <value>Slider trang chủ</value>
+    </data>
+    <data name="TopBanner" xml:space="preserve">
+        <value>Slider bài viết</value>
+    </data>
+    <data name="Sliderbcst" xml:space="preserve">
+        <value>Slider BCST</value>
+    </data>
+    <data name="PopupEvent" xml:space="preserve">
+        <value>PopupEvent</value>
+    </data>
+    <data name="PopupEventBCST" xml:space="preserve">
+        <value>PopupEventBCST</value>
+    </data>
+    <data name="Hide" xml:space="preserve">
+        <value>Ẩn</value>
+    </data>
+    <data name="Show" xml:space="preserve">
+        <value>Hiển thị</value>
+    </data>
+    <data name="Delete" xml:space="preserve">
+        <value>Xóa</value>
+    </data>
+    <data name="EventIsNotBegin" xml:space="preserve">
+        <value>Event chưa bắt đầu</value>
+    </data>
+    <data name="EventIsEnd" xml:space="preserve">
+        <value>Event đã kết thúc</value>
+    </data>
+    <data name="ErrorWhenAddGold" xml:space="preserve">
+        <value>Cộng gold không thành công</value>
+    </data>
+    <data name="UserNotinEvent" xml:space="preserve">
+        <value>User không tham gia trong event</value>
+    </data>
+    <data name="TLMN" xml:space="preserve">
+        <value>Tiến lên miền nam</value>
+    </data>
+    <data name="Binh" xml:space="preserve">
+        <value>Binh</value>
+    </data>
+    <data name="OanTuTi" xml:space="preserve">
+        <value>Oẳn tù tì</value>
+    </data>
+    <data name="U" xml:space="preserve">
+        <value>Ù</value>
+    </data>
+    <data name="DanhChan" xml:space="preserve">
+        <value>Đánh chắn</value>
+    </data>
+    <data name="CoTuong" xml:space="preserve">
+        <value>Cờ Tướng</value>
+    </data>
+    <data name="XiTo" xml:space="preserve">
+        <value>Xì Tố</value>
+    </data>
+    <data name="DeclineInviteFriend" xml:space="preserve">
+        <value>Từ chối kết bạn</value>
+    </data>
+    <data name="SentInviteFriend" xml:space="preserve">
+        <value>Đã gửi kết bạn</value>
+    </data>
+    <data name="AcceptInviteFriend" xml:space="preserve">
+        <value>Đồng ý kết bạn</value>
+    </data>
+    <data name="SentNotConfirm" xml:space="preserve">
+        <value>Đã gửi nhưng chưa trả lời</value>
+    </data>
+    <data name="SqlError" xml:space="preserve">
+        <value>Lỗi trong sql</value>
+    </data>
+    <data name="InviteFriend" xml:space="preserve">
+        <value>Lời mời kết bạn</value>
+    </data>
+    <data name="InviteAssociation" xml:space="preserve">
+        <value>Lời mời gia nhập bang</value>
+    </data>
+    <data name="GetErrorMessage00" xml:space="preserve">
+        <value>Không có lỗi</value>
+    </data>
+    <data name="GetErrorMessage99" xml:space="preserve">
+        <value>Lỗi không được định nghĩa hoặc không rõ nguyên nhân</value>
+    </data>
+    <data name="GetErrorMessage01" xml:space="preserve">
+        <value>Lỗi tại NgânLượng.vn nên không sinh được phiếu thu hoặc giao dịch</value>
+    </data>
+    <data name="GetErrorMessage02" xml:space="preserve">
+        <value>Địa chỉ IP của merchant gọi tới NganLuong.vn không được chấp nhận</value>
+    </data>
+    <data name="GetErrorMessage03" xml:space="preserve">
+        <value>Sai tham số gửi tới NganLuong.vn (có tham số sai tên hoặc kiểu dữ liệu)</value>
+    </data>
+    <data name="GetErrorMessage04" xml:space="preserve">
+        <value>Tên hàm API do merchant gọi tới không hợp lệ (không tồn tại)</value>
+    </data>
+    <data name="GetErrorMessage05" xml:space="preserve">
+        <value>Sai version của API</value>
+    </data>
+    <data name="GetErrorMessage06" xml:space="preserve">
+        <value>Mã merchant không tồn tại hoặc chưa được kích hoạt</value>
+    </data>
+    <data name="GetErrorMessage07" xml:space="preserve">
+        <value>Sai mật khẩu của merchant</value>
+    </data>
+    <data name="GetErrorMessage08" xml:space="preserve">
+        <value>Tài khoản người bán hàng không tồn tại</value>
+    </data>
+    <data name="GetErrorMessage09" xml:space="preserve">
+        <value>Tài khoản người nhận tiền đang bị phong tỏa</value>
+    </data>
+    <data name="GetErrorMessage10" xml:space="preserve">
+        <value>Hóa đơn thanh toán không hợp lệ</value>
+    </data>
+    <data name="GetErrorMessage11" xml:space="preserve">
+        <value>Số tiền thanh toán không hợp lệ</value>
+    </data>
+    <data name="GetErrorMessage12" xml:space="preserve">
+        <value>Đơn vị tiền tệ không hợp lệ</value>
+    </data>
+    <data name="GetErrorMessage13" xml:space="preserve">
+        <value>Sai số lượng sản phẩm</value>
+    </data>
+    <data name="GetErrorMessage14" xml:space="preserve">
+        <value>Tên sản phẩm không hợp lệ</value>
+    </data>
+    <data name="GetErrorMessage15" xml:space="preserve">
+        <value>Sai số lượng sản phẩm/hàng hóa trong chi tiết đơn hàng</value>
+    </data>
+    <data name="GetErrorMessage16" xml:space="preserve">
+        <value>Số tiền trong chi tiết đơn hàng không hợp lệ</value>
+    </data>
+    <data name="GetErrorMessage17" xml:space="preserve">
+        <value>Phương thức thanh toán không được hỗ trợ</value>
+    </data>
+    <data name="GetErrorMessage18" xml:space="preserve">
+        <value>Phương thức thanh toán không được hỗ trợ</value>
+    </data>
+    <data name="GetErrorMessage19" xml:space="preserve">
+        <value>Tài khoản người thanh toán đang bị phong tỏa, không thể thực hiện giao dịch</value>
+    </data>
+    <data name="GetErrorMessage20" xml:space="preserve">
+        <value>Số dư khả dụng của người thanh toán không đủ thực hiện giao dịch</value>
+    </data>
+    <data name="GetErrorMessage21" xml:space="preserve">
+        <value>Giao dịch NL đã được thanh toán trước đó, không thể thực hiện lại</value>
+    </data>
+    <data name="GetErrorMessage22" xml:space="preserve">
+        <value>Ngân hàng từ chối thanh toán (do thẻ/tài khoản ngân hàng bị khóa hoặc chưa đăng ký sử dụng dịch vụ IB)</value>
+    </data>
+    <data name="GetErrorMessage23" xml:space="preserve">
+        <value>Lỗi kết nối tới hệ thống Ngân hàng (NH không trả lời yêu cầu thanh toán)</value>
+    </data>
+    <data name="GetErrorMessage24" xml:space="preserve">
+        <value>Thẻ/tài khoản hết hạn sử dụng</value>
+    </data>
+    <data name="GetErrorMessage25" xml:space="preserve">
+        <value>Thẻ/Tài khoản không đủ số dư để thanh toán</value>
+    </data>
+    <data name="GetErrorMessage26" xml:space="preserve">
+        <value>Nhập sai tài khoản truy cập Internet-Banking</value>
+    </data>
+    <data name="GetErrorMessage27" xml:space="preserve">
+        <value>Nhập sai OTP quá số lần quy định</value>
+    </data>
+    <data name="GetErrorMessage28" xml:space="preserve">
+        <value>Lỗi phía Ngân hàng xử lý giao dịch thanh toán nhưng chưa rõ nguyên nhân hoặc lỗi này chưa được mô tả</value>
+    </data>
+    <data name="GetErrorMessage29" xml:space="preserve">
+        <value>Mã token không tồn tại</value>
+    </data>
+    <data name="GetErrorMessage30" xml:space="preserve">
+        <value>Giao dịch không tồn tại</value>
+    </data>
+    <data name="GetErrorMessageSms00" xml:space="preserve">
+        <value>Giao dịch thành công</value>
+    </data>
+    <data name="GetErrorMessageSms99" xml:space="preserve">
+        <value>Lỗi tuy nhiên lỗi chưa được định nghĩa hoặc chưa xác định được nguyên nhân</value>
+    </data>
+    <data name="GetErrorMessageSms01" xml:space="preserve">
+        <value>Lỗi, địa chỉ IP truy cập API của NgânLượng.vn bị từ chối</value>
+    </data>
+    <data name="GetErrorMessageSms02" xml:space="preserve">
+        <value>Lỗi, tham số gửi từ merchant tới NgânLượng.vn chưa chính xác.</value>
+    </data>
+    <data name="GetErrorMessageSms03" xml:space="preserve">
+        <value>Lỗi, mã merchant không tồn tại hoặc merchant đang bị khóa kết nối tới NgânLượng.vn</value>
+    </data>
+    <data name="GetErrorMessageSms04" xml:space="preserve">
+        <value>Lỗi, mã checksum không chính xác</value>
+    </data>
+    <data name="GetErrorMessageSms05" xml:space="preserve">
+        <value>Tài khoản nhận tiền nạp của merchant không tồn tại</value>
+    </data>
+    <data name="GetErrorMessageSms06" xml:space="preserve">
+        <value>Tài khoản nhận tiền nạp của  merchant đang bị khóa hoặc bị phong tỏa, không thể thực hiện được giao dịch nạp tiền</value>
+    </data>
+    <data name="GetErrorMessageSms07" xml:space="preserve">
+        <value>Thẻ đã được sử dụng</value>
+    </data>
+    <data name="GetErrorMessageSms08" xml:space="preserve">
+        <value>Thẻ bị khóa</value>
+    </data>
+    <data name="GetErrorMessageSms09" xml:space="preserve">
+        <value>Thẻ hết hạn sử dụng</value>
+    </data>
+    <data name="GetErrorMessageSms10" xml:space="preserve">
+        <value>Thẻ chưa được kích hoạt hoặc không tồn tại</value>
+    </data>
+    <data name="GetErrorMessageSms11" xml:space="preserve">
+        <value>Mã thẻ sai định dạng</value>
+    </data>
+    <data name="GetErrorMessageSms12" xml:space="preserve">
+        <value>Sai số serial của thẻ</value>
+    </data>
+    <data name="GetErrorMessageSms13" xml:space="preserve">
+        <value>Mã thẻ và số serial không khớp</value>
+    </data>
+    <data name="GetErrorMessageSms14" xml:space="preserve">
+        <value>Thẻ không tồn tại</value>
+    </data>
+    <data name="GetErrorMessageSms15" xml:space="preserve">
+        <value>Thẻ không sử dụng được</value>
+    </data>
+    <data name="GetErrorMessageSms16" xml:space="preserve">
+        <value>Số lần tưử của thẻ vượt quá giới hạn cho phép</value>
+    </data>
+    <data name="GetErrorMessageSms17" xml:space="preserve">
+        <value>Hệ thống Telco bị lỗi hoặc quá tải, thẻ chưa bị trừ</value>
+    </data>
+    <data name="GetErrorMessageSms18" xml:space="preserve">
+        <value>Hệ thống Telco  bị lỗi hoặc quá tải, thẻ có thể bị trừ, cần phối hợp với nhà mạng để đối soát</value>
+    </data>
+    <data name="GetErrorMessageSms19" xml:space="preserve">
+        <value>Kết nối NgânLượng với Telco bị lỗi, thẻ chưa bị trừ.</value>
+    </data>
+    <data name="GetErrorMessageSms20" xml:space="preserve">
+        <value>Kết nối tới Telco thành công, thẻ bị trừ nhưng chưa cộng tiền trên NgânLượng.vn</value>
+    </data>
+    <data name="GetErrorMessageSms21" xml:space="preserve">
+        <value>Lưu ý: Chỉ chấp nhận thẻ các mệnh giá {0}, các mệnh giá khác sẽ không hoàn lại và không được cộng xu</value>
+    </data>
+    <data name="GetErrorMessageSms22" xml:space="preserve">
+        <value>Thẻ không được phép nạp vào game do nạp sai quá {0} lần liên tiếp</value>
+    </data>
+    <data name="GetErrorMessageSms23" xml:space="preserve">
+        <value>Loại thẻ bạn nạp không được hỗ trợ</value>
+    </data>
+    <data name="GetErrorMessageSms24" xml:space="preserve">
+        <value>Bạn đã chọn sai mệnh giá thẻ cào. Vui lòng liên hệ CSKH để hổ trợ</value>
+    </data>
+    <data name="GetErrorMessageSms25" xml:space="preserve">
+        <value>Bạn không được phép nạp vào game do nạp sai quá {0} lần liên tiếp</value>
+    </data>
+    <data name="DownloadSoftpinLoginFail" xml:space="preserve">
+        <value>Đăng nhập không thành công</value>
+    </data>
+    <data name="DownloadSoftpinCallServiceFail" xml:space="preserve">
+        <value>Gọi service không thành công</value>
+    </data>
+    <data name="EpayGetCardInfoFail" xml:space="preserve">
+        <value>Lấy thông tin thẻ không thành công</value>
+    </data>
+    <data name="EpayGetPinOrResiInfoFail" xml:space="preserve">
+        <value>Lấy thông tin pin - seri thẻ không thành công</value>
+    </data>
+    <data name="LogCardTransDesWating" xml:space="preserve">
+        <value>Đang chờ kết quả từ đối tác</value>
+    </data>
+    <data name="LogCardTransInsertFail" xml:space="preserve">
+        <value>Lỗi ghi nhận giao dịch. Vui lòng thử lại sau!</value>
+    </data>
+    <data name="LogCardTransInsertTimeOut" xml:space="preserve">
+        <value>Giao dịch đã hết hạn. Vui lòng liên hệ Admin hỗ trợ</value>
+    </data>
+    <data name="LogCardTransInsertError" xml:space="preserve">
+        <value>Lỗi trong quá trình nạp thẻ. Vui lòng thử lại sau (Code=1)!</value>
+    </data>
+    <data name="LogCardTransChargeErrorCode2" xml:space="preserve">
+        <value>Lỗi trong quá trình nạp thẻ. Vui lòng thử lại sau (Code=2)</value>
+    </data>
+    <data name="LogCardTransChargeErrorCode3" xml:space="preserve">
+        <value>Lỗi trong quá trình nạp thẻ. Vui lòng thử lại sau (Code=3)</value>
+    </data>
+    <data name="LogCardTransChargeWithCallback" xml:space="preserve">
+        <value>Thẻ sẽ được nạp từ 2 - 60 phút. Sau đó xu sẽ được tự động cộng vào tài khoản của bạn</value>
+    </data>
+    <data name="LogCardTransNapGoldTheCao" xml:space="preserve">
+        <value>Nạp gold qua thẻ cào</value>
+    </data>
+    <data name="LogCardTransNapGoldSuccess" xml:space="preserve">
+        <value>Nạp thành công thẻ {0} VNĐ. Bạn được tặng <strong> {1} </strong> Xu vào tài khoản</value>
+    </data>
+    <data name="LogCardTransNapGoldSuccessNoHtml" xml:space="preserve">
+        <value>Nạp thành công thẻ {0} VNĐ. Bạn nhận được {1} Xu vào tài khoản</value>
+    </data>
+    <data name="LogCardTransNapTheTichCode" xml:space="preserve">
+        <value>Bạn được tặng {0} code tham gia xổ số may mắn cho thẻ nạp {1} {2} K. Mã số code của bạn là: {3} . Chúng tôi sẽ tổng kết tất cả code bạn nhận được vào cuối chương trình trước khi xổ số bắt đầu!</value>
+    </data>
+    <data name="SaveLogVipPointLog" xml:space="preserve">
+        <value>Mua Gold đại lý: {0}</value>
+    </data>
+    <data name="LoiTruGoldGame" xml:space="preserve">
+        <value>lỗi khi trừ gold</value>
+    </data>
+    <data name="TopBangHoiUserLogTypeEnumUnKnow" xml:space="preserve">
+        <value>Không Xác Định</value>
+    </data>
+    <data name="TopBangHoiUserLogTypeEnumBangHoi" xml:space="preserve">
+        <value>Bang hội</value>
+    </data>
+    <data name="TopBangHoiUserLogTypeEnumCaNhan" xml:space="preserve">
+        <value>Cá Nhân</value>
+    </data>
+    <data name="WalletError" xml:space="preserve">
+        <value>Không xác định được phương thức bảo vệ Ví</value>
+    </data>
+    <data name="WalletTypeError" xml:space="preserve">
+        <value>Không xác định được loại giao dịch</value>
+    </data>
+    <data name="WalletUserLogTypeEnumDoiMatKhau" xml:space="preserve">
+        <value>Đổi mật khẩu ví ngân hàng</value>
+    </data>
+    <data name="WalletUserLogTypeEnumThayDoiSDT" xml:space="preserve">
+        <value>Đổi số điện thoại OTP ví ngân hàng</value>
+    </data>
+    <data name="WalletUserLogTypeEnumTaoMatKhauOtp" xml:space="preserve">
+        <value>Cấp mật khẩu OTP mới cho ví ngân hàng</value>
+    </data>
+    <data name="WalletUserLogTypeEnumDoiMatKhauKhoaVi" xml:space="preserve">
+        <value>Đổi mật khẩu khóa ví ngân hàng</value>
+    </data>
+    <data name="WalletUserLogTypeEnumKhoaVi" xml:space="preserve">
+        <value>Khóa ví ngân hàng</value>
+    </data>
+    <data name="WalletUserLogTypeEnumMoKhoaVi" xml:space="preserve">
+        <value>Mở khóa ví ngân hàng</value>
+    </data>
+    <data name="BanCa" xml:space="preserve">
+        <value>Bắn Cá Săn Thưởng</value>
+    </data>
+    <data name="VQXS" xml:space="preserve">
+        <value>Vòng quay</value>
+    </data>
+    <data name="ShopOnline" xml:space="preserve">
+        <value>Shop Online</value>
+    </data>
+    <data name="FeeOfflineMessage" xml:space="preserve">
+        <value>Trừ xu phí inbox</value>
+    </data>
+    <data name="OfflineMessage" xml:space="preserve">
+        <value>Offline Message</value>
+    </data>
+    <data name="Fail" xml:space="preserve">
+        <value>Thất bại</value>
+    </data>
+    <data name="Skill" xml:space="preserve">
+        <value>Kỹ năng</value>
+    </data>
+    <data name="ConfigFail" xml:space="preserve">
+        <value>Cấu hình không tồn tại</value>
+    </data>
+    <data name="EnoughNotCoins" xml:space="preserve">
+        <value>Bạn không đủ tiền để mua hàng</value>
+    </data>
+    <data name="InvalidNumber" xml:space="preserve">
+        <value>Số lượng không hợp lệ</value>
+    </data>
+    <data name="InvalidMoneyType" xml:space="preserve">
+        <value>Loại tiền không hợp lệ</value>
+    </data>
+    <data name="ContinueBuying" xml:space="preserve">
+        <value>Bạn phải sử dụng Item này để tiếp tục mua hàng</value>
+    </data>
+    <data name="NotHaveExhausted" xml:space="preserve">
+        <value>Bạn đã hết số lần mua Item trong ngày</value>
+    </data>
+    <data name="TheNumberIsTooLimited" xml:space="preserve">
+        <value>Số lượng quá giới hạn</value>
+    </data>
+    <data name="ToBuyANewItem" xml:space="preserve">
+        <value>Để mua item mới bạn vui lòng sử dụng hết item trong túi đồ</value>
+    </data>
+    <data name="YouHaveRunOutOfTimes" xml:space="preserve">
+        <value>Bạn đã hết số lần mua Item</value>
+    </data>
+    <data name="NoData" xml:space="preserve">
+        <value>Không có dữ liệu</value>
+    </data>
+    <data name="EventEnds" xml:space="preserve">
+        <value>Sự kiện đã hết</value>
+    </data>
+    <data name="YouMustHaveATurn" xml:space="preserve">
+        <value>Bạn phải có tối thiểu 01 lượt quay và {0:#,##0} xu mới được tham gia</value>
+    </data>
+    <data name="MustWaitMoreDays" xml:space="preserve">
+        <value>Bạn phải đợi {0} ngày nữa mới được quay</value>
+    </data>
+    <data name="ToDayHasBeenAwarded" xml:space="preserve">
+        <value>Giải thưởng hôm nay đã được trao hết</value>
+    </data>
+    <data name="HasBeenAwarded" xml:space="preserve">
+        <value>Giải thưởng đã được trao</value>
+    </data>
+    <data name="CSKHService" xml:space="preserve">
+        <value>Vui lòng liên hệ với CSKH để được hỗ trợ</value>
+    </data>
+    <data name="VipNotRunning" xml:space="preserve">
+        <value>Chưa chạy vip</value>
+    </data>
+    <data name="AccountNotVip" xml:space="preserve">
+        <value>Tài khoản chưa có vip</value>
+    </data>
+    <data name="YourAccountAwarded" xml:space="preserve">
+        <value>Bạn được thưởng {0} vào tài khoản của bạn</value>
+    </data>
+    <data name="YouPromotioned" xml:space="preserve">
+        <value>Bạn được khuyến mãi {0}% dựa trên giá trị của thẻ</value>
+    </data>
+    <data name="GameNotConfig" xml:space="preserve">
+        <value>Game chưa được cấu hình</value>
+    </data>
+    <data name="GetDataFail" xml:space="preserve">
+        <value>Lấy dữ liệu thất bại</value>
+    </data>
+    <data name="InvalidLocationId" xml:space="preserve">
+        <value>Location không hợp lệ</value>
+    </data>
+    <data name="InvalidChannel" xml:space="preserve">
+        <value>Channel không hợp lệ</value>
+    </data>
+    <data name="UserNotEnoughWatch" xml:space="preserve">
+        <value>User đã quá giớn hạn số lần coi</value>
+    </data>
+    <data name="GetDataSuccess_v1" xml:space="preserve">
+        <value>Lấy dữ liệu thành công</value>
+    </data>
+    <data name="Orther" xml:space="preserve">
+        <value>Khác</value>
+    </data>
+    <data name="Bullet" xml:space="preserve">
+        <value>Đạn</value>
+    </data>
+    <data name="Guns" xml:space="preserve">
+        <value>Súng</value>
+    </data>
+    <data name="Effect" xml:space="preserve">
+        <value>Hiệu ứng</value>
+    </data>
+    <data name="NoItem" xml:space="preserve">
+        <value>Không có Item</value>
+    </data>
+    <data name="NoItem" xml:space="preserve">
+        <value>Item không thể kích hoạt</value>
+    </data>
+    <data name="Itemdoesnotexist" xml:space="preserve">
+        <value>Item không tồn tại</value>
+    </data>
+    <data name="Buyitemssuccessfully" xml:space="preserve">
+        <value>Mua Item thành công</value>
+    </data>
+    <data name="VipLevelUp" xml:space="preserve">
+        <value>Nhận thưởng lên level vip thành công</value>
+    </data>
+    <data name="Norewards" xml:space="preserve">
+        <value>Không có phần thưởng để nhận</value>
+    </data>
+    <data name="Getrewardedfailure" xml:space="preserve">
+        <value>Nhận thưởng thất bại</value>
+    </data>
+    <data name="Norewardfound" xml:space="preserve">
+        <value>Không tìm thấy phần thưởng để nhận</value>
+    </data>
+    <data name="Pointstoachieve" xml:space="preserve">
+        <value>Điểm cần đạt được</value>
+    </data>
+    <data name="Expshotfish" xml:space="preserve">
+        <value>Exp băn cá</value>
+    </data>
+    <data name="Accumulatedskill" xml:space="preserve">
+        <value>Tích lũy tuyệt chiêu</value>
+    </data>
+    <data name="Transfercoins" xml:space="preserve">
+        <value>Chuyển xu</value>
+    </data>
+    <data name="Getacointransfer" xml:space="preserve">
+        <value>Nhận chuyển xu</value>
+    </data>
+    <data name="Donatedtimes1" xml:space="preserve">
+        <value>Tặng lần 1</value>
+    </data>
+    <data name="Donatedtimes2" xml:space="preserve">
+        <value>Tặng lần 2</value>
+    </data>
+    <data name="Expcharacter" xml:space="preserve">
+        <value>Exp nhân vật</value>
+    </data>
+    <data name="Invalidinputdata" xml:space="preserve">
+        <value>Dữ liệu đầu vào không hợp lệ</value>
+    </data>
+    <data name="Levelvipup" xml:space="preserve">
+        <value>Lên level vip</value>
+    </data>
+    <data name="Accumulatesuccesspoints" xml:space="preserve">
+        <value>Tích lũy điểm thành công</value>
+    </data>
+    <data name="Failuretoaccumulatepointsfailed" xml:space="preserve">
+        <value>Lỗi tích điểm không thành công</value>
+    </data>
+    <data name="Youareawardedtoyouraccount" xml:space="preserve">
+        <value>Bạn đã được thưởng {0} vào tài khoản</value>
+    </data>
+    <data name="Addingvipuserinformationfailed" xml:space="preserve">
+        <value>Thêm thông tin vip user thất bại</value>
+    </data>
+    <data name="Successfullyupdated" xml:space="preserve">
+        <value>Cập nhật thông tin thành công</value>
+    </data>
+    <data name="Emailalreadyexists" xml:space="preserve">
+        <value>Email của bạn đã tồn tại</value>
+    </data>
+    <data name="Accountdoesnotexist" xml:space="preserve">
+        <value>Tài khoản không tồn tại</value>
+    </data>
+    <data name="PleaseComeBackTomorrow" xml:space="preserve">
+        <value>Bạn vui lòng trở lại vào ngày mai.</value>
+    </data>
+    <data name="UserReceivedAReward" xml:space="preserve">
+        <value>User đã nhận thưởng</value>
+    </data>
+    <data name="BonusDailyDay" xml:space="preserve">
+        <value>Ngày</value>
+    </data>
+    <data name="Bronze" xml:space="preserve">
+        <value>Đồng</value>
+    </data>
+    <data name="Silver" xml:space="preserve">
+        <value>Bạc</value>
+    </data>
+    <data name="Ruby" xml:space="preserve">
+        <value>Hồng ngọc</value>
+    </data>
+    <data name="Emerald" xml:space="preserve">
+        <value>Ngọc lục bảo</value>
+    </data>
+    <data name="Diamond" xml:space="preserve">
+        <value>Kim cương</value>
+    </data>
+    <data name="Gold" xml:space="preserve">
+        <value>Vàng</value>
+    </data>
+    <data name="EventDoesNotExist" xml:space="preserve">
+        <value>Sự kiện không tồn tại</value>
+    </data>
+    <data name="ChannelInvalid" xml:space="preserve">
+        <value>Channel không hợp lệ</value>
+    </data>
+    <data name="UserLimitViews" xml:space="preserve">
+        <value>User đã quá giới hạn số lần coi</value>
+    </data>
+    <data name="UserAwarded" xml:space="preserve">
+        <value>User đã được tặng gold</value>
+    </data>
+    <data name="MissionNotComplte" xml:space="preserve">
+        <value>Nhiệm vụ chưa hoàn thành</value>
+    </data>
+    <data name="RewardNotExists" xml:space="preserve">
+        <value>Phần thưởng đã nhận hoặc ko tồn tại</value>
+    </data>
+    <data name="EventNotYetRun" xml:space="preserve">
+        <value>Sự kiện chưa diễn ra</value>
+    </data>
+    <data name="ComeBackAt" xml:space="preserve">
+        <value>Bạn vui lòng quay lại vào lúc {0}</value>
+    </data>
+    <data name="CoinNotMatch" xml:space="preserve">
+        <value>Xu hiện tại không khớp</value>
+    </data>
+    <data name="DevicesFailed" xml:space="preserve">
+        <value>Vượt quá số lượng thiết bị</value>
+    </data>
+    <data name="UserFailed" xml:space="preserve">
+        <value>Vượt quá số lượng user</value>
+    </data>
+    <data name="IPFailed" xml:space="preserve">
+        <value>Vượt quá số lượng Ip</value>
+    </data>
+    <data name="UserFreeTurn" xml:space="preserve">
+        <value>User đang có lượt free</value>
+    </data>
+    <data name="OldNewSame" xml:space="preserve">
+        <value>Mật khẩu cũ và mới giống nhau. Vui lòng kiểm tra lại</value>
+    </data>
+    <data name="AllowedNotCharacters" xml:space="preserve">
+        <value>Mật khẩu chứa các ký tự không được phép.</value>
+    </data>
+    <data name="HardPassword" xml:space="preserve">
+        <value>Bạn vui lòng chọn mật khẩu khó hơn để bảo vệ tài khoản của bạn. Không được chọn mật khẩu</value>
+    </data>
+    <data name="AllowedLimitPassword" xml:space="preserve">
+        <value>Mật khẩu mới của bạn vượt quá giới hạn cho phép</value>
+    </data>
+    <data name="OldPassWordIsNotCorrect" xml:space="preserve">
+        <value>Mật khẩu cũ không đúng. Vui lòng liên hệ hỗ trợ nếu bạn không nhớ mật khẩu của mình.</value>
+    </data>
+    <data name="RegisterDateNotReward" xml:space="preserve">
+        <value>Trong ngày đăng ký sẽ không được nhận xu đăng nhập</value>
+    </data>
+    <data name="CoinLessThenBonus" xml:space="preserve">
+        <value>Số Xu của bạn phải nhỏ hơn {0} mới được nhận thưởng</value>
+    </data>
+    <data name="OutOfStock" xml:space="preserve">
+        <value>Hết kho thẻ</value>
+    </data>
+    <data name="AccountHasComplete" xml:space="preserve">
+        <value>Tài khoản đã hoàn thành Tutorial</value>
+    </data>
+    <data name="CompeleteTutorialBonus" xml:space="preserve">
+        <value>Hướng dẫn</value>
+    </data>
+    <data name="ConfigNotExists" xml:space="preserve">
+        <value>Cấu hình không tồn tại</value>
+    </data>
+    <data name="DeviceIdAlreadyExist" xml:space="preserve">
+        <value>Device đã tồn tại</value>
+    </data>
+    <data name="EventMinChipToReceiveGift" xml:space="preserve">
+    <value>Số Chips của bạn phải nhỏ hơn 5.000 mới được nhận thưởng</value>
+  </data>
+    <data name="RewardsForTheDay" xml:space="preserve">
+    <value>Bạn đã nhận hết phần thưởng trong ngày</value>
+  </data>
+    <data name="Failed" xml:space="preserve">
+        <value>Thất bại</value>
+    </data>
+    <!--Endregion Description Defender-->
+</LocalLanguages>

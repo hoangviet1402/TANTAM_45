@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_412" xml:space="preserve">
+    <value>POKER SOLO</value>
+  </data>
+    <data name="Game_2001" xml:space="preserve">
+    <value>Onet fruit</value>
+  </data>
+    <data name="Game_2002" xml:space="preserve">
+    <value>BonusOnline</value>
+  </data>
+    <data name="Game_-1" xml:space="preserve">
+    <value>Bonus Wheel</value>
+  </data>
+    <data name="Game_434" xml:space="preserve">
+    <value>Black Jack</value>
+  </data>
+    <data name="Game_Type_Fishing">
+        <value>Fishing Game</value>
+    </data>
+    <data name="Game_Type_Slot_Game">
+        <value>Slot Game</value>
+    </data>
+    <data name="Game_500">
+        <value>Bắn Cá</value>
+    </data>
+    <data name="Game_425">
+        <value>TEXAS HOLD 'EM POKER</value>
+    </data>
+    <data name="Game_424">
+        <value>Kim cương</value>
+    </data>
+    <data name="Game_423">
+        <value>Tỷ Phú</value>
+    </data>
+    <data name="Game_420">
+        <value>SAMURAI</value>
+    </data>
+    <data name="Game_419">
+        <value>THỔ DÂN</value>
+    </data>
+    <data name="Game_417">
+        <value>THẦN TÀI</value>
+    </data>
+    <data name="Game_416">
+        <value>THẦN THÚ</value>
+    </data>
+    <data name="Game_411">
+        <value>TAM QUỐC</value>
+    </data>
+    <data name="Game_410">
+        <value>RỒNG VÀNG</value>
+    </data>
+    <data name="Game_409">
+        <value>Cào Rùa</value>
+    </data>
+    <data name="Game_408">
+        <value>LUCKY</value>
+    </data>
+    <data name="Game_407">
+        <value>JACKPOT</value>
+    </data>
+    <data name="Game_406">
+        <value>KIM QUY</value>
+    </data>
+    <data name="Game_402">
+        <value>HOA QUẢ</value>
+    </data>
+    <data name="Game_209">
+        <value>XÓC ĐĨA</value>
+    </data>
+    <data name="Game_201">
+        <value>SÂM LỐC</value>
+    </data>
+    <data name="Game_200">
+        <value>Liêng</value>
+    </data>
+    <data name="Game_48">
+        <value>TÀI XỈU</value>
+    </data>
+    <data name="Game_42">
+        <value>XÌ TỐ</value>
+    </data>
+    <data name="Game_41">
+        <value>PHỎM</value>
+    </data>
+    <data name="Game_40">
+        <value>TIẾN LÊN</value>
+    </data>
+    <data name="Game_34">
+        <value>MẬU BINH</value>
+    </data>
+    <data name="Game_1">
+        <value>LUCKY SPIN</value>
+    </data>
+    <data name="Game_3">
+        <value>LUCKY SPIN</value>
+    </data>
+
+    <data name="Game_421">
+        <value>SUPER 777</value>
+    </data>
+    <data name="Game_422">
+        <value>SUPER FORTUNE</value>
+    </data>
+    <data name="Game_423">
+        <value>TỶ PHÚ</value>
+    </data>
+    <data name="Game_424">
+        <value>KIM CƯƠNG</value>
+    </data>
+
+    <data name="Game_428">
+        <value>DRACULA</value>
+    </data>
+    <data name="Game_429">
+        <value>PACMAN</value>
+    </data>
+    <data name="Game_430">
+        <value>BIGTWO</value>
+    </data>
+    <data name="Game_431">
+        <value>BACCARAT</value>
+    </data>
+
+    <data name="Game_433">
+        <value>TEANG LEN</value>
+    </data>
+    <data name="Game_426">
+        <value>CANDY</value>
+    </data>
+    <data name="Game_418">
+        <value>PACHINKO ROBOT</value>
+    </data>
+    <data name="Game_45">
+        <value>BIG SMALL</value>
+    </data>
+    <data name="Game_208">
+        <value>MYSTERY NUM</value>
+    </data>
+    <data name="Game_432">
+        <value>BLACKJACK</value>
+    </data>
+</LocalLanguages>

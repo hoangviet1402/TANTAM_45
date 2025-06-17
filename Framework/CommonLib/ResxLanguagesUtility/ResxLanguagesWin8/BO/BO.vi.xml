@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <!--Region Description Defender-->
+    <data name="SoloMode_Default" xml:space="preserve">
+        <value>Súng Săn Cá</value>
+    </data>
+    <data name="SoloMode_Medusa" xml:space="preserve">
+        <value>Súng Medusa</value>
+    </data>
+    <data name="SoloMode_NhanMa" xml:space="preserve">
+        <value>Súng Nhân Mã</value>
+    </data>
+    <data name="SoloMode_Poseidon" xml:space="preserve">
+        <value>Súng Poseidon</value>
+    </data>
+    <data name="SoloMode_Mermaid" xml:space="preserve">
+        <value>Súng Mermaid</value>
+    </data>
+    <data name="SoloMode_Cerberus" xml:space="preserve">
+        <value>Súng Cerberus</value>
+    </data>
+    <data name="SoloMode_Dragon" xml:space="preserve">
+        <value>Súng rồng</value>
+    </data>
+    <data name="SoloMode_Success" xml:space="preserve">
+        <value>Thành công</value>
+    </data>
+    <data name="SoloMode_Failed" xml:space="preserve">
+        <value>Thất bại</value>
+    </data>
+    <data name="SoloMode_InvalidDataInput" xml:space="preserve">
+        <value>Dữ liệu không hợp lệ</value>
+    </data>
+    <data name="SoloMode_NotHaveGunKind" xml:space="preserve">
+        <value>User không có súng phù hợp.</value>
+    </data>
+    <data name="SoloMode_NotConfigGunKind" xml:space="preserve">
+        <value>Súng chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_NotConfigGeneration" xml:space="preserve">
+        <value>Thế hệ súng chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_GunLevelMax" xml:space="preserve">
+        <value>Súng đã tới level tối đa.</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveGun" xml:space="preserve">
+        <value>Súng được chọn quá quy định.</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseGun" xml:space="preserve">
+        <value>Không được chọn trùng súng.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseGun" xml:space="preserve">
+        <value>Không được chọn súng mình không có.</value>
+    </data>
+    <data name="SoloMode_UpdateIsFailed" xml:space="preserve">
+        <value>Có lỗi trong quá trình nâng cấp.</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultGun" xml:space="preserve">
+        <value>User chỉ có súng mặc định.</value>
+    </data>
+    <data name="SoloMode_NotEnoughLevelToEvolution" xml:space="preserve">
+        <value>Súng chưa thể tiến hóa.</value>
+    </data>
+    <data name="SoloMode_EvolutionIsFailed" xml:space="preserve">
+        <value>Có lỗi tiến hóa.</value>
+    </data>
+    <data name="SoloMode_NotAnyMineral" xml:space="preserve">
+        <value>Không có nguyên liệu.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseMineral" xml:space="preserve">
+        <value>Nguyên liệu không có trong túi đồ.</value>
+    </data>
+    <data name="SoloMode_NotConfigMineral" xml:space="preserve">
+        <value>Chưa cấu hình exp trong túi user.</value>
+    </data>
+    <data name="SoloMode_NotAnyMaterial" xml:space="preserve">
+        <value>User không có nguyên liệu tiến hóa.</value>
+    </data>
+    <data name="SoloMode_IsContainsChoiseMaterial" xml:space="preserve">
+        <value>Nguyên liệu không có trong túi đồ.</value>
+    </data>
+    <data name="SoloMode_NotConfigMaterial" xml:space="preserve">
+        <value>Chưa cấu hình Material trong túi user.</value>
+    </data>
+    <data name="SoloMode_MaterialChoiseNotMatchConfig" xml:space="preserve">
+        <value>Nguyên liệu không phù hợp.</value>
+    </data>
+    <data name="SoloMode_NotHaveSkillKind" xml:space="preserve">
+        <value>Không có kỹ năng này.</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveSkill" xml:space="preserve">
+        <value>Kỹ năng được chọn quá quy định.</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseSkill" xml:space="preserve">
+        <value>Không được chọn trùng kỹ năng.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseSkill" xml:space="preserve">
+        <value>Không được chọn kỹ năng mình không có.</value>
+    </data>
+    <data name="SoloMode_WallNotFound" xml:space="preserve">
+        <value>Wall không tồn tại.</value>
+    </data>
+    <data name="SoloMode_WallInvalidStage" xml:space="preserve">
+        <value>Chơi tới màn chơi cho phép nâng cấp.</value>
+    </data>
+    <data name="SoloMode_NotHaveTowerKind" xml:space="preserve">
+        <value>User không có tháp phù hợp.</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerKind" xml:space="preserve">
+        <value>Tháp chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_NotConfigTowerGeneration" xml:space="preserve">
+        <value>Thế hệ tháp chưa cấu hình.</value>
+    </data>
+    <data name="SoloMode_TowerLevelMax" xml:space="preserve">
+        <value>Tháp đã tới level tối đa.</value>
+    </data>
+    <data name="SoloMode_OverLimitActiveTower" xml:space="preserve">
+        <value>Tháp được chọn quá quy định.</value>
+    </data>
+    <data name="SoloMode_DuplicateActiveChoiseTower" xml:space="preserve">
+        <value>Không được chọn trùng tháp.</value>
+    </data>
+    <data name="SoloMode_NotContainsChoiseTower" xml:space="preserve">
+        <value>Không được chọn tháp mình không có.</value>
+    </data>
+    <data name="SoloMode_UpdateTowerIsFailed" xml:space="preserve">
+        <value>Có lỗi trong quá trình nâng cấp.</value>
+    </data>
+    <data name="SoloMode_HaveOnlyDefaultTower" xml:space="preserve">
+        <value>User chỉ có tháp mặc định.</value>
+    </data>
+    <data name="SoloMode_NotEnoughCoin" xml:space="preserve">
+        <value>User không đủ xu.</value>
+    </data>
+    <data name="SoloMode_CheckNotExists" xml:space="preserve">
+        <value>Hàm kiểm tra không tồn tại.</value>
+    </data>
+    <!--Endregion Description Defender-->
+</LocalLanguages>

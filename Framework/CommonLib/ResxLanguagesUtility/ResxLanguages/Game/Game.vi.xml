@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_500" xml:space="preserve">
+    <value>Bắn Cá</value>
+  </data>
+    <data name="Game_425" xml:space="preserve">
+    <value>Game bài</value>
+  </data>
+    <data name="Game_424" xml:space="preserve">
+    <value>Kim cương</value>
+  </data>
+    <data name="Game_423" xml:space="preserve">
+    <value>Tỷ Phú</value>
+  </data>
+    <data name="Game_420" xml:space="preserve">
+    <value>Samurai</value>
+  </data>
+    <data name="Game_419" xml:space="preserve">
+    <value>Thổ Dân</value>
+  </data>
+    <data name="Game_417" xml:space="preserve">
+    <value>Thần Tài</value>
+  </data>
+    <data name="Game_416" xml:space="preserve">
+    <value>Rồng Vàng</value>
+  </data>
+    <data name="Game_411" xml:space="preserve">
+    <value>Tam Quốc</value>
+  </data>
+    <data name="Game_410" xml:space="preserve">
+    <value>Thần Thú</value>
+  </data>
+    <data name="Game_409" xml:space="preserve">
+    <value>Cào Rùa</value>
+  </data>
+    <data name="Game_408" xml:space="preserve">
+    <value>May mắn</value>
+  </data>
+    <data name="Game_407" xml:space="preserve">
+    <value>Jackpot</value>
+  </data>
+    <data name="Game_406" xml:space="preserve">
+    <value>88 Fortunes</value>
+  </data>
+    <data name="Game_402" xml:space="preserve">
+    <value>Hoa Quả</value>
+  </data>
+    <data name="Game_209" xml:space="preserve">
+    <value>Xốc Dĩa</value>
+  </data>
+    <data name="Game_201" xml:space="preserve">
+    <value>Sâm Lốc</value>
+  </data>
+    <data name="Game_200" xml:space="preserve">
+    <value>Liêng</value>
+  </data>
+    <data name="Game_48" xml:space="preserve">
+    <value>Tài Xĩu</value>
+  </data>
+    <data name="Game_42" xml:space="preserve">
+    <value>Xì Tố</value>
+  </data>
+    <data name="Game_41" xml:space="preserve">
+    <value>Phỏm</value>
+  </data>
+    <data name="Game_40" xml:space="preserve">
+    <value>Tiến Lên</value>
+  </data>
+    <data name="Game_34" xml:space="preserve">
+    <value>Mậu Binh</value>
+  </data>
+    <data name="Game__1" xml:space="preserve">
+    <value>LUCKY SPIN</value>
+  </data>
+    <data name="Game__3" xml:space="preserve">
+    <value>LUCKY SPIN</value>
+  </data>
+
+
+    <data name="VipLevelBlockRoomTextSilver" xml:space="preserve">
+    <value>Cần Vip Silver</value>
+  </data>
+    <data name="GameLevelBlockRoomTextLevel" xml:space="preserve">
+    <value>Cần Level {0}</value>
+  </data>
+    <data name="GameConnectUnavailable" xml:space="preserve">
+    <value>Không thể kết nối game</value>
+  </data>
+    <data name="NotFoundGame" xml:space="preserve">
+    <value>Không tìm thấy game</value>
+  </data>
+    <data name="RoomFull" xml:space="preserve">
+    <value>Phòng game đã đủ số người chơi</value>
+  </data>
+    <data name="UnlockWhenVipSilver" xml:space="preserve">
+    <value>Mở khóa khi đạt VIP Silver</value>
+  </data>
+    <data name="VipLevelBlockGameSlotTextSilver" xml:space="preserve">
+    <value>Mở khóa khi đạt VIP Silver</value>
+  </data>
+
+
+    <data name="Game_GetConfigBanCa_ArrayInvalidText" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="Game_GetConfigBanCa_ArrayInvalidText1" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="Game_GetConfigBanCa_CoinUnit" xml:space="preserve">
+    <value>Xu</value>
+  </data>
+    <data name="Game_GetConfigBanCa_CoinUnit1" xml:space="preserve">
+    <value>Xu</value>
+  </data>
+    <data name="Game_GetConfigBanCa_LoginOtherSessionMessage" xml:space="preserve">
+    <value>Tài khoản này đang được đăng nhập\n ở một máy khác</value>
+  </data>
+    <data name="Game_GetConfigBanCa_LoginOtherSessionMessage1" xml:space="preserve">
+    <value>Tài khoản này đang được đăng nhập\n ở một máy khác</value>
+  </data>
+    <data name="Game_GetConfigBanCa_PopupGetMessageError" xml:space="preserve">
+    <value>Có lỗi trong quá trình lấy dữ liệu. Vui lòng thử lại sau</value>
+  </data>
+    <data name="Game_GioiThieuNotFound" xml:space="preserve">
+    <value>Không tìm thấy game</value>
+  </data>
+    <data name="Game_GioiThieuTitle" xml:space="preserve">
+    <value>Bắn Cá</value>
+  </data>
+    <data name="Game_GioiThieuTut" xml:space="preserve">
+    <value>Hướng Dẫn Game </value>
+  </data>
+    <data name="Game_HomeIndexTitle" xml:space="preserve">
+    <value>Trang Chủ</value>
+  </data>
+    <data name="Game_HomeLoginForgot" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+  </data>
+    <data name="Game_HomeLoginOther" xml:space="preserve">
+    <value>Đăng nhập/Đăng ký bằng : </value>
+  </data>
+    <data name="Game_HomeLoginPass" xml:space="preserve">
+    <value>MẬT KHẨU</value>
+  </data>
+    <data name="Game_HomeLoginSignup" xml:space="preserve">
+    <value>ĐĂNG KÝ</value>
+  </data>
+    <data name="Game_HomeLoginUsername" xml:space="preserve">
+    <value>TÊN ĐĂNG NHẬP</value>
+  </data>
+    <data name="Game_HomePlaygameAppTitle" xml:space="preserve">
+    <value>Chơi game Bắn Cá</value>
+  </data>
+    <data name="Game_HomePlaygameIndexTitle" xml:space="preserve">
+    <value>Chơi game Bắn Cá</value>
+  </data>
+    <data name="Game_HomePlayGameMobileTitle" xml:space="preserve">
+    <value>Chơi game Bắn Cá</value>
+  </data>
+    <data name="Game_HomePlaygameTitle" xml:space="preserve">
+    <value>Chơi game Bắn Cá</value>
+  </data>
+    <data name="Game_HomeRegisterDisplayName" xml:space="preserve">
+    <value>TÊN HIỂN THỊ</value>
+  </data>
+    <data name="Game_HomeRegisterInputCaptcha" xml:space="preserve">
+    <value>NHẬP MÃ</value>
+  </data>
+    <data name="Game_HomeRegisterPass" xml:space="preserve">
+    <value>MẬT KHẨU</value>
+  </data>
+    <data name="Game_HomeRegisterRegisterButton" xml:space="preserve">
+    <value>ĐĂNG KÝ</value>
+  </data>
+    <data name="Game_HomeRegisterTitle" xml:space="preserve">
+    <value>Đăng Ký</value>
+  </data>
+    <data name="Game_HomeRegisterTitle1" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="Game_HomeRegisterUsername" xml:space="preserve">
+    <value>TÊN ĐĂNG NHẬP</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideDetailError" xml:space="preserve">
+    <value>Có lỗi xãy ra trong quá trình lấy danh sách.</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideError" xml:space="preserve">
+    <value>Có lỗi xãy ra trong quá trình lấy danh sách.</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideHeading" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+    <data name="Game_HomeShowPopupGuideNodata" xml:space="preserve">
+    <value>Không có dữ liệu!</value>
+  </data>
+    <data name="Game_LoginTitle" xml:space="preserve">
+    <value>ĐĂNG NHẬP</value>
+  </data>
+    <data name="Game_PlayGamesHtml5EmbedLoading" xml:space="preserve">
+    <value>Đang tải dữ liệu .....</value>
+  </data>
+    <data name="STT" xml:space="preserve">
+    <value>STT</value>
+  </data>
+    <data name="ErrorMessValidation1" xml:space="preserve">
+    <value>Có lỗi trong quá trình quay thưởng</value>
+  </data>
+    <data name="ErrorMessValidation2" xml:space="preserve">
+    <value>Lượt quay đã hết hạn</value>
+  </data>
+    <data name="ErrorMessValidation3" xml:space="preserve">
+    <value>Sự kiện chưa diễn ra</value>
+  </data>
+    <data name="ErrorMessValidation4" xml:space="preserve">
+    <value>Lượt quay không hợp lệ</value>
+  </data>
+    <data name="ErrorMessValidation5" xml:space="preserve">
+    <value>Chúc mừng bạn đã trúng thưởng {0} CHIPS !</value>
+  </data>
+    <data name="ErrorMessValidation6" xml:space="preserve">
+    <value>Chúc bạn may mắn lần sau !</value>
+  </data>
+    <data name="PlayJackPot" xml:space="preserve">
+    <value>Chơi Lật Hình</value>
+  </data>
+    <data name="ActiveFaild" xml:space="preserve">
+    <value>Kích hoạt thất bại</value>
+  </data>
+    <data name="ActiveSuccess" xml:space="preserve">
+    <value>Kích hoạt thành công</value>
+  </data>
+    <data name="ChuaCauHinhTuong" xml:space="preserve">
+    <value>Chưa cấu hình tường</value>
+  </data>
+    <data name="ChuaChonNguyenLieu" xml:space="preserve">
+    <value>Chưa chọn nguyên liệu</value>
+  </data>
+    <data name="ChuaChonSung" xml:space="preserve">
+    <value>Chưa chọn súng</value>
+  </data>
+    <data name="TienHoaThanhCong" xml:space="preserve">
+    <value>Tiến hóa thành công</value>
+  </data>
+</LocalLanguages>

@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Please_deposit_more_to_withdraw" xml:space="preserve">
+    <value>Please deposit more to withdraw</value>
+  </data>
+    <data name="DepositCardAmountNotAllow" xml:space="preserve">
+    <value>注意：只接受{0}面额的卡，其他面额将不予退款，CHIPS将不会被添加</value>
+  </data>
+    <data name="DepositCardIsUsed" xml:space="preserve">
+    <value>使用的卡</value>
+  </data>
+    <data name="DepositCreateTransactionFail" xml:space="preserve">
+    <value>录制事务时出错。 请稍后再试！</value>
+  </data>
+    <data name="DepositDelayTime" xml:space="preserve">
+    <value>每张卡的负载必须相隔{0}分钟</value>
+  </data>
+    <data name="DepositErrorCauseBlockMultipleFailed" xml:space="preserve">
+    <value>卡加载时出错。 请稍后再试</value>
+  </data>
+    <data name="DepositMultipleFailed" xml:space="preserve">
+    <value>您在{1}分钟内未正确加载{0}次，请稍等片刻以进入下一次加载</value>
+  </data>
+    <data name="DepositSelectCardAmountWrong" xml:space="preserve">
+    <value>您选择了错误的刮刮卡面值。 请联系客户服务中心寻求帮助</value>
+  </data>
+    <data name="DepositSmsTelcoNoSupport" xml:space="preserve">
+    <value>网络运营商不支持</value>
+  </data>
+    <data name="DepositSmsTelcoValueNoSupport" xml:space="preserve">
+    <value>面值不支持</value>
+  </data>
+    <data name="DepositSupportText" xml:space="preserve">
+    <value>&lt;br/&gt; 如果您有任何疑问，请联系 &lt;a href=\"邮寄地址:{0}\"&gt;"&gt; {1} &lt;/a&gt; 寻求帮助. &lt;br/&gt; 或联系客户服务中心在线支持.</value>
+  </data>
+    <data name="DepositTransactionChargeWithCallback" xml:space="preserve">
+    <value>您的卡已被接受，CHIPS将被添加到您的帐户中，请稍等</value>
+  </data>
+    <data name="DepositTransactionError" xml:space="preserve">
+    <value>卡加载时出错。 请稍后再试（代码= {0}）</value>
+  </data>
+    <data name="DepositTransactionTimeOut" xml:space="preserve">
+    <value>交易已过期。 请联系管理员支持</value>
+  </data>
+    <data name="DoiThuongCardOutOfLimit" xml:space="preserve">
+    <value>您已在当天达到了卡交换的限额。 请第二天回来</value>
+  </data>
+    <data name="DoiThuongCardOutOfRangeTime" xml:space="preserve">
+    <value>请在{0}分钟之前更换卡旁边的卡。 谢谢</value>
+  </data>
+    <data name="DoiThuongCardStockRunOut" xml:space="preserve">
+    <value>缺货卡</value>
+  </data>
+    <data name="DoiThuongCardSuccess" xml:space="preserve">
+    <value>您更改{0}（{1} USD）卡的请求已成功完成。 几分钟后，该卡将被发送到个人信函！</value>
+  </data>
+    <data name="DoiThuongCardSuccessReview" xml:space="preserve">
+    <value>您更改{0}（{1} USD）卡的请求已成功完成。 请等待管理员进行审查。几分钟后，卡片将被发送到个人信函！</value>
+  </data>
+    <data name="DoiThuongCreateTranlogError" xml:space="preserve">
+    <value>事务初始化错误</value>
+  </data>
+    <data name="DoiThuongMaintainance" xml:space="preserve">
+    <value>维修功能，请稍后再回来。</value>
+  </data>
+    <data name="DoiThuongMaintainanceUpdate" xml:space="preserve">
+    <value>当前功能正在进行维护升级。 请稍后再回来</value>
+  </data>
+    <data name="DoiThuongNotEnoughGoldOffset" xml:space="preserve">
+    <value>更改后，您没有{0：＃，## 0}最小余额</value>
+  </data>
+    <data name="DoiThuongRequireVipLevel" xml:space="preserve">
+    <value>您必须拥有Vip Silver或以上才能更换您的卡</value>
+  </data>
+    <data name="DoiThuongUpdateCoinError" xml:space="preserve">
+    <value>更新帐户余额时出错</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>没有数据</value>
+  </data>
+    <data name="DepositGetProductMethodInvalid" xml:space="preserve">
+    <value>无法确定付款方式</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>成功加载{0：N0} CHIPS</value>
+  </data>
+    <data name="DepositSuccessAddVipFailed" xml:space="preserve">
+    <value>成功加载{0：N0} CHIPS。 但处理vip点时出错</value>
+  </data>
+    <data name="DepositSuccessAddCoinVipFailed" xml:space="preserve">
+    <value>加载胜利成功。 但是在CHIPS传输过程和vip点处理中存在错误</value>
+  </data>
+    <data name="NumberDepositOnDay" xml:space="preserve">
+    <value>请明天再来</value>
+  </data>
+    <data name="SuccessButAddGoldFail" xml:space="preserve">
+    <value>已成功加载但在CHIPS传输期间出错</value>
+  </data>
+    <data name="Pending" xml:space="preserve">
+    <value>处理交易。</value>
+  </data>
+    <data name="TransactionNotExists" xml:space="preserve">
+    <value>在系统中找不到任何交易。</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>帐户中的CHIPS数量不足以进行交易</value>
+  </data>
+
+
+    <data name="ChonNhaMang" xml:space="preserve">
+    <value>选择您的SIM网络主页</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="CuPhap" xml:space="preserve">
+    <value>句法</value>
+  </data>
+    <data name="DepositAlert_Card" xml:space="preserve">
+    <value>加载通知</value>
+  </data>
+    <data name="DepositAlert_CardError" xml:space="preserve">
+    <value>加载卡时出错，请稍后再试</value>
+  </data>
+    <data name="DepositBaoKim" xml:space="preserve">
+    <value>BaoKim</value>
+  </data>
+    <data name="DepositCode_Input2" xml:space="preserve">
+    <value>输入代码</value>
+  </data>
+    <data name="DepositConfirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+    <data name="DepositInputCaptcha" xml:space="preserve">
+    <value>输入验证码</value>
+  </data>
+    <data name="DepositMoneyCost2" xml:space="preserve">
+    <value>面子价值</value>
+  </data>
+    <data name="DepositSms" xml:space="preserve">
+    <value>短信</value>
+  </data>
+    <data name="DepositSmsGui" xml:space="preserve">
+    <value>提交</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>退房</value>
+  </data>
+    <data name="DoiThuongMaXacNhan" xml:space="preserve">
+    <value>验证码</value>
+  </data>
+    <data name="DoiThuongPhiChuyen" xml:space="preserve">
+    <value>转会费</value>
+  </data>
+    <data name="DoiThuongSoTienChuyen" xml:space="preserve">
+    <value>CHIPS转移数量</value>
+  </data>
+    <data name="DoiThuongSoXuHienCo" xml:space="preserve">
+    <value>可用的CHIPS数量</value>
+  </data>
+    <data name="DoiThuongTaiKhoan" xml:space="preserve">
+    <value>帐户</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>收到帐户</value>
+  </data>
+    <data name="DoiThuongTenTaiKhoan" xml:space="preserve">
+    <value>帐户名称</value>
+  </data>
+    <data name="DoiThuongThucHien" xml:space="preserve">
+    <value>执行</value>
+  </data>
+    <data name="DoiThuongXu" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="DoiThuongXuBiTru" xml:space="preserve">
+    <value>减去CHIPS</value>
+  </data>
+    <data name="GhiChuNapSMS" xml:space="preserve">
+    <value>&lt;ul&gt; &lt;li&gt;处理时间为30秒--60秒&lt;/ li&gt; &lt;li&gt;注意语法间距&lt;/ li&gt; &lt;li&gt;检查ID是否足够，如果输入的ID不正确则不会添加芯片&lt;/ li&gt; &lt;/ ul&gt;</value>
+  </data>
+    <data name="GhiChuNapSMS1" xml:space="preserve">
+    <value>通过网络加载SMS CHIPS</value>
+  </data>
+    <data name="GhiChuNapSMS2" xml:space="preserve">
+    <value>您应该注意正确的语法如下：</value>
+  </data>
+    <data name="GhiChuNapSMSMobile" xml:space="preserve">
+    <value>&lt;ul&gt; &lt;li&gt;处理时间为30秒--60秒&lt;/ li&gt; &lt;li&gt;注意语法间距&lt;/ li&gt; &lt;li&gt;检查ID是否足够，如果输入的ID不正确则不会添加芯片&lt;/ li&gt; &lt;/ ul&gt;</value>
+  </data>
+    <data name="MenhGia" xml:space="preserve">
+    <value>面子价值</value>
+  </data>
+    <data name="ValidationCaptcha2" xml:space="preserve">
+    <value>验证码不正确</value>
+  </data>
+    <data name="ValidationMenhGiaThe" xml:space="preserve">
+    <value>请选择卡值</value>
+  </data>
+    <data name="ValidationPayment" xml:space="preserve">
+    <value>请输入序列号和卡片代码</value>
+  </data>
+    <data name="ValidationPayment2" xml:space="preserve">
+    <value>请登录以加载该卡</value>
+  </data>
+    <data name="ValidationPayment3" xml:space="preserve">
+    <value>帐户不存在</value>
+  </data>
+    <data name="ValidationPayment4" xml:space="preserve">
+    <value>卡信息无效（代码：{0}）</value>
+  </data>
+    <data name="ValidationPayment5" xml:space="preserve">
+    <value>处理{0}时出错</value>
+  </data>
+    <data name="ValidationPayment6" xml:space="preserve">
+    <value>卡信息无效，请重试</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>要人</value>
+  </data>
+    <data name="LogCardTransNapGoldSuccess" xml:space="preserve">
+    <value>成功付款VND {0}卡。 您被授予 &lt;strong&gt; {1} &lt;/strong&gt; 芯片考虑在内</value>
+  </data>
+
+    <data name="AccountReceiveNotExists" xml:space="preserve">
+    <value>接收帐户不存在</value>
+  </data>
+    <data name="AccountTransferMoneyLockedOut" xml:space="preserve">
+    <value>您要转帐的帐户目前已被锁定！</value>
+  </data>
+    <data name="AccountTransferNotYetVip" xml:space="preserve">
+    <value>您要转帐的帐户尚未达到VIP</value>
+  </data>
+    <data name="AccountTransferVipLevelNotSatisfactory" xml:space="preserve">
+    <value>您要转移到VIP级别的帐户不满意</value>
+  </data>
+    <data name="ValidAccount" xml:space="preserve">
+    <value>有效帐户</value>
+  </data>
+    <data name="NumberOfTransferDivisible" xml:space="preserve">
+    <value>转移数量必须可被整除{0}!</value>
+  </data>
+    <data name="NumberOfMovesSmaller" xml:space="preserve">
+    <value>移动次数必须更小{0}!</value>
+  </data>
+    <data name="LoginSession" xml:space="preserve">
+    <value>您已到达登录会话的末尾</value>
+  </data>
+    <data name="CannotTransferCoinYourSeft" xml:space="preserve">
+    <value>你不能把硬币转移给自己</value>
+  </data>
+    <data name="AccountTransferLockedPleaseCSKH" xml:space="preserve">
+    <value>您要转移硬币的帐户目前已被锁定。 请联系客户服务</value>
+  </data>
+    <data name="AccountNotRoleCoinTransfer" xml:space="preserve">
+    <value>你没有权利转移硬币！</value>
+  </data>
+    <data name="AccountIsNotEnoughMakeTransaction" xml:space="preserve">
+    <value>帐户中的硬币数量不足以进行交易</value>
+  </data>
+    <data name="TransferCoinSuccessfully" xml:space="preserve">
+    <value>成功转移硬币</value>
+  </data>
+    <data name="AccountLockTransferGold" xml:space="preserve">
+     <value>您的帐户目前已无法使用CHIPS</value>
+  </data>
+    <data name="AccountNotYetVip" xml:space="preserve">
+     <value>您的帐户未达到VIP</value>
+  </data>
+    <data name="AccountRequiredVip" xml:space="preserve">
+     <value>您的VIP帐户级别不满意</value>
+  </data>
+    <data name="AccountExceedTransferOrTransferGold" xml:space="preserve">
+     <value>您超过交易数量或当天允许的金额</value>
+  </data>
+    <data name="TitleMessBonusDepoistFisrt" xml:space="preserve">
+    <value>促销第一笔存款</value>
+  </data>
+    <data name="ContentMessBonusDepoistFisrt" xml:space="preserve">
+    <value>当您第一次加载硬币时，您将获得10％的促销。祝你游戏愉快！</value>
+  </data>
+    <data name="ContentNoteDeposit" xml:space="preserve">
+    <value>完成交易后，请等待5至15分钟。 芯片将添加到您的帐户中。 每个问题或疑虑都需要支持，请联系email：live777.help@gmail.com</value>
+  </data>
+
+    <data name="FsCashOut_MinWithdraw" xml:space="preserve">
+    <value> Amount withdrawn at least ${0}</value>
+</data>
+    <data name="FsCashOut_MessageValidation" xml:space="preserve">
+    <value> Your Coin number is not enough to withdraw </value>
+</data>
+    <data name="FsCashOut_MessageValidation1" xml:space="preserve">
+    <value> The wing account code is invalid </value>
+</data>
+    <data name="FsCashOut_MessageValidation2" xml:space="preserve">
+    <value> You have exceeded the number of times of the day, up to {0} times / day </value>
+</data>
+    <data name="FsCashOut_MessageValidation3" xml:space="preserve">
+    <value> The number of users changed in the day, the maximum of {0} users / day </value>
+</data>
+    <data name="FsCashOut_MessageValidation4" xml:space="preserve">
+    <value>The balance after the withdrawal must be at least {0} Coin</value>
+  </data>
+    <data name="FsCashOut_MessageValidation5" xml:space="preserve">
+    <value>You must deposit at least {0} times</value>
+  </data>
+    <data name="FsCashOut_RequestSuccess" xml:space="preserve">
+    <value>要求从机翼钱包中取款：{0}@wing ${1}已经完成</value>
+</data>
+    <data name="FsCashOut_RequestSuccess2" xml:space="preserve">
+    <value>成功提款请求</value>
+</data>
+    <data name="FsCashOut_HistoryCashOutTitle" xml:space="preserve">
+    <value> History </value>
+</data>
+    <data name="FsCashOut_HistoryCashOut_Col_Amount" xml:space="preserve">
+    <value> Amount </value>
+</data>
+    <data name="FsCashOut_HistoryCashOut_Col_Status" xml:space="preserve">
+    <value> Status </value>
+</data>
+    <data name="FsCashOut_Status_DescRequest" xml:space="preserve">
+    <value> Sent request </value>
+</data>
+    <data name="FsCashOut_Status_DescSuccess" xml:space="preserve">
+    <value> Success </value>
+</data>
+    <data name="FsCashOut_Status_DescCancel" xml:space="preserve">
+    <value> Reject </value>
+</data>
+    <data name="FsCashOut_Status_DescProcessing" xml:space="preserve">
+    <value> Processing </value>
+</data>
+    <data name="FsCashOut_Status_DescError" xml:space="preserve">
+    <value> Error </value>
+</data>
+    <data name="FsCashOut_Status_DescCallbackReturnError" xml:space="preserve">
+    <value> Callback error </value>
+</data>
+
+    <data name="FsCashOut_lableSoDu" xml:space="preserve">
+    <value>Your balance &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt;  (equal to $&lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{1}&lt;/strong&gt;)</value>
+  </data>
+    <data name="FsCashOut_lableTyGia" xml:space="preserve">
+    <value>Exchange rate: &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt; = $&lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{1}&lt;/strong&gt;</value>
+  </data>
+    <data name="FsCashOut_lableSoDu2" xml:space="preserve">
+    <value>Your balance &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt;  (equal to &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{1}{2}&lt;/strong&gt;)</value>
+  </data>
+    <data name="FsCashOut_lableTyGia2" xml:space="preserve">
+    <value>Exchange rate: &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt; = &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{1}{2}&lt;/strong&gt;</value>
+  </data>
+    <data name="FsCashOut_lableBanMuonRutBnhieu" xml:space="preserve">
+    <value>How much money do you want to withdraw?</value>
+  </data>
+    <data name="FsCashOut_lableChonMenhGia" xml:space="preserve">
+    <value>Please select</value>
+  </data>
+    <data name="FsCashOut_btnNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+    <data name="FsCashOut_btnBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+    <data name="FsCashOut_btnRutTien" xml:space="preserve">
+    <value>Withdraw</value>
+  </data>
+    <data name="FsCashOut_lableDienTKWing" xml:space="preserve">
+    <value>Enter your Wing account to receive money:</value>
+  </data>
+    <data name="FsCashOut_lableDienPhone" xml:space="preserve">
+    <value>Enter your phone to get money quicker:</value>
+  </data>
+    <data name="FsCashOut_lableSupport" xml:space="preserve">
+    <value>You can get online support by clicking here</value>
+  </data>
+
+
+    <data name="FsCashOut_CoinAndAmountNotMatch" xml:space="preserve">
+    <value>CHIPS and Amount is not match, please try again later.</value>
+  </data>
+
+    <data name="FsCashOut_Status_ErrorSubtractGold" xml:space="preserve">
+    <value> Error when Subtract CHIPS , please try again later.</value>
+</data>
+
+    <data name="FsCashOut_Status_EnoughGold" xml:space="preserve">
+    <value> Not enough CHIPS</value>
+</data>
+    <data name="FsCashOut_MessageValidationType" xml:space="preserve">
+    <value> The type is empty or invalid </value>
+</data>
+
+    <data name="FsCashOut_MessageValidationAddress" xml:space="preserve">
+    <value>Invalid output address: Bad address [{0}], should have 40 characters.</value>
+</data>
+
+    <data name="FsCashOut_Amount" xml:space="preserve">
+    <value>Amount</value>
+</data>
+    <data name="FsCashOut_Type" xml:space="preserve">
+    <value>Type</value>
+</data>
+    <data name="FsCashOut_CoinAddress" xml:space="preserve">
+    <value>(**)Address code</value>
+</data>
+    <data name="FsCashOut_Coinleast" xml:space="preserve">
+    <value>You need at least {0} CHIPS to Withdraw </value>
+  </data>
+    <data name="DepositCoin_Step1" xml:space="preserve">
+    <value>&lt;strong&gt;Step 1:&lt;/strong&gt; Create ETH account and buy ETH to Cryto-Wallet on &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano.com&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain.info&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase.com&lt;/a&gt;(How to create ETH-wallet?)&lt;/a&gt;</value>
+  </data>
+    <data name="DepositCoin_Step2" xml:space="preserve">
+    <value>&lt;strong&gt;Step 2:&lt;/strong&gt; When you already have ETH in your wallet >> Press Withdraw in Crypto-Wallet and enter ETH amount for withdrawing to buy CHIPS &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;javascript:&quot; onclick=&quot;ClientWebHelper.ShowPopUpArticleDetail(&#39;GUIDE&#39;,{1})&quot;&gt;(How to buy Chips On {0}?)&lt;/a&gt;&lt;br /&gt;</value>
+  </data>
+    <data name="DepositCoin_Step2_Note" xml:space="preserve">
+    <value>(*) Address code is your ETH Account on {0}</value>
+  </data>
+    <data name="DepositCoin_Step3" xml:space="preserve">
+    <value>&lt;strong&gt;Step 3:&lt;/strong&gt; Wait 1 - 5 minutes for complete transaction, check the Chips History for your chips buying.&lt;br /&gt;If you don't receive chips after 5 minutes, please contact us to email:</value>
+  </data>
+    <data name="WithdrawCoin_Step1" xml:space="preserve">
+    <value>&lt;strong&gt;Step 1:&lt;/strong&gt; Create ETH account on &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano.com&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain.info&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase.com&lt;/a&gt;(How to create ETH-wallet?)&lt;/a&gt;</value>
+  </data>
+    <data name="WithdrawCoin_Step2" xml:space="preserve">
+    <value>&lt;strong&gt;Step 2:&lt;/strong&gt; Choose amount of money that you want to withdraw into your Crypto-Wallet. {0} will deduct Chips according to cryptocurrency that you want to withdraw. Paste your Cryto-Wallet Address Code &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;javascript:&quot; onclick=&quot;ClientWebHelper.ShowPopUpArticleDetail(&#39;GUIDE&#39;,{1})&quot;&gt;(How to withdraw ETH from {0}?)&lt;/a&gt;</value>
+  </data>
+    <data name="WithdrawCoin_Step2_Note" xml:space="preserve">
+    <value>(**)Address code is your ETH account on &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano&lt;/a&gt;/ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain&lt;/a&gt;/ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase&lt;/a&gt;/…</value>
+  </data>
+    <data name="WithdrawCoin_Step3" xml:space="preserve">
+    <value>&lt;strong&gt;Step 3:&lt;/strong&gt; Press "Submit". Wait 5 - 15 minutes for completed transaction and check your wallet.&lt;br /&gt;If you don't receive chips after 15 minutes, please contact us to email:</value>
+  </data>
+    <data name="WithdrawCoin_FsCashOut_RateCashInAndCashOutForUser" xml:space="preserve">
+    <value>Total Withdraw in day / user lesser 2.5 deposit</value>
+  </data>
+
+    <data name="FsCashOut_RateCashInAndCashOutForServer" xml:space="preserve">
+    <value>Please try again tomorrow</value>
+  </data>
+    <data name="FsCashOut_Account_IsBanWithdraw" xml:space="preserve">
+    <value>Account Is Ban Withdraw</value>
+  </data>
+    <data name="DepositCoin_Noted" xml:space="preserve">
+    <value>Noted: Wallet address on Live777.co can only use once. The next chips buying, player must refresh to receive new address.</value>
+  </data>
+
+    <data name="Tab_TitleDeposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+    <data name="Tab_TitleWithDraw" xml:space="preserve">
+    <value>WithDraw</value>
+  </data>
+    <data name="Tab_TitleHistoryWithDraw" xml:space="preserve">
+    <value>History WithDraw</value>
+  </data>
+    <data name="Tab_TitleDepositETH" xml:space="preserve">
+    <value>Deposit ETH</value>
+  </data>
+    <data name="Tab_TitleWithDrawETH" xml:space="preserve">
+    <value>WithDraw ETH</value>
+  </data>
+
+    <data name="Deposit_btnBuy" xml:space="preserve">
+    <value>购买</value>
+  </data>
+</LocalLanguages>

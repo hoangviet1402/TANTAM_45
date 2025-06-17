@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="GetConfigBanCa_AlertGetMessageError" xml:space="preserve">
+    <value>取数据时发生错误，请重试！</value>
+  </data>
+    <data name="GetConfigBanCa_AlertLoginOther" xml:space="preserve">
+    <value>此账号已登陆在\n别设备</value>
+  </data>
+    <data name="IndexTitle" xml:space="preserve">
+    <value>主页</value>
+  </data>
+    <data name="LoginForgot" xml:space="preserve">
+    <value>忘记密码</value>
+  </data>
+    <data name="LoginPass" xml:space="preserve">
+    <value>密码</value>
+  </data>
+    <data name="LoginTitle" xml:space="preserve">
+    <value>登陆</value>
+  </data>
+    <data name="LoginUsername" xml:space="preserve">
+    <value>登录名</value>
+  </data>
+    <data name="PlayGameAppTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="PlayGameIndexTitle" xml:space="preserve">
+    <value/>
+  </data>
+    <data name="PlayGameTitle" xml:space="preserve">
+    <value>捕鱼游戏</value>
+  </data>
+    <data name="RegisterAddress" xml:space="preserve">
+    <value>永久地址</value>
+  </data>
+    <data name="RegisterCaptcha" xml:space="preserve">
+    <value>输入密码</value>
+  </data>
+    <data name="RegisterCMND" xml:space="preserve">
+    <value>身份证</value>
+  </data>
+    <data name="RegisterCMNDCreateDate" xml:space="preserve">
+    <value>发行日期</value>
+  </data>
+    <data name="RegisterCMNDFrom" xml:space="preserve">
+    <value>发行地点</value>
+  </data>
+    <data name="RegisterDateOfBirth" xml:space="preserve">
+    <value>出生日期</value>
+  </data>
+    <data name="RegisterDisplay" xml:space="preserve">
+    <value>角色名</value>
+  </data>
+    <data name="RegisterFullName" xml:space="preserve">
+    <value>全名</value>
+  </data>
+    <data name="RegisterPass" xml:space="preserve">
+    <value>密码</value>
+  </data>
+    <data name="RegisterPhone" xml:space="preserve">
+    <value>电话号码</value>
+  </data>
+    <data name="RegisterPrivateEmail" xml:space="preserve">
+    <value>电子邮件</value>
+  </data>
+    <data name="RegisterTitle" xml:space="preserve">
+    <value>登记</value>
+  </data>
+    <data name="RegisterUsername" xml:space="preserve">
+    <value>登陆名</value>
+  </data>
+    <data name="ShowPopupGuideDetail_Error" xml:space="preserve">
+    <value>取名单时发生错误</value>
+  </data>
+    <data name="ShowPopupGuide_ErrorList" xml:space="preserve">
+    <value>取名单时发生错误</value>
+  </data>
+    <data name="HomeLoginOther" xml:space="preserve">
+    <value>登陆/登记：</value>
+  </data>
+    <data name="ShowPopupGuideDetailSTT" xml:space="preserve">
+    <value>订单号</value>
+  </data>
+    <data name="ShowPopupGuideDetailTitle" xml:space="preserve">
+    <value>标题</value>
+  </data>
+    <data name="ErrorMessAccountNotExists" xml:space="preserve">
+    <value>帐户不存在</value>
+  </data>
+    <data name="ErrorMessConfigNotExists" xml:space="preserve">
+    <value>配置不存在</value>
+  </data>
+    <data name="ErrorMessCustomservice" xml:space="preserve">
+    <value>请联系客户服务以获取帮助。</value>
+  </data>
+    <data name="ErrorMessGetListFaild" xml:space="preserve">
+    <value>获取列表失败！</value>
+  </data>
+    <data name="ErrorMessGetListSuccess" xml:space="preserve">
+    <value>成功获取列表。</value>
+  </data>
+    <data name="ErrorMessInvalidInformation" xml:space="preserve">
+    <value>信息无效</value>
+  </data>
+    <data name="ErrorMessInvaliInput" xml:space="preserve">
+    <value>数据无效</value>
+  </data>
+    <data name="ErrorMessNoData" xml:space="preserve">
+    <value>没有数据。</value>
+  </data>
+    <data name="ErrorMessNotLoginOrLoginOther" xml:space="preserve">
+    <value>未登录或登录其他计算机。</value>
+  </data>
+    <data name="ErrorMessServerError" xml:space="preserve">
+    <value>服务器错误</value>
+  </data>
+    <data name="ErrorMessServerMaintenance" xml:space="preserve">
+    <value>服务器维护</value>
+  </data>
+    <data name="ErrorMessSuccess" xml:space="preserve">
+    <value>成功</value>
+  </data>
+    <data name="CaptchaIncorrect" xml:space="preserve">
+    <value>验证码不正确。</value>
+  </data>
+    <data name="Content" xml:space="preserve">
+    <value>维修功能，请稍后再试!!!</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>到达{0}时解锁</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>收到帐户</value>
+  </data>
+    <data name="ErrorMessFuctionMaintenance" xml:space="preserve">
+    <value>查</value>
+  </data>
+    <data name="ErrorMessOpenVip" xml:space="preserve">
+    <value>到达{0}时解锁</value>
+  </data>
+    <data name="KhongTheGuiTinNhanChoMinh" xml:space="preserve">
+    <value>你不能发信息给自己！</value>
+  </data>
+    <data name="MaTaiKhoan" xml:space="preserve">
+    <value>帐户代码</value>
+  </data>
+    <data name="NoiDungKhongPhuHop" xml:space="preserve">
+    <value>内容不合适。</value>
+  </data>
+    <data name="NoiDungTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>内容超过{0}个字符。</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>请登录以执行此功能！</value>
+  </data>
+    <data name="Send" xml:space="preserve">
+    <value>内容</value>
+  </data>
+    <data name="SendingMess" xml:space="preserve">
+    <value>提交</value>
+  </data>
+    <data name="SendMessOther" xml:space="preserve">
+    <value>发送其他用户</value>
+  </data>
+    <data name="SendUserOther" xml:space="preserve">
+    <value>发送其他用户</value>
+  </data>
+    <data name="SuDungHetLuotGuiTinNhan" xml:space="preserve">
+    <value>您已经用完了发送的邮件数量。</value>
+  </data>
+    <data name="TaiKhoanNhanTinNhanBiKhoa" xml:space="preserve">
+    <value>您要将邮件发送到的帐户现已锁定！</value>
+  </data>
+    <data name="ThongTinNguoiNhan" xml:space="preserve">
+    <value>*收件人信息</value>
+  </data>
+    <data name="TieuDeTinNhanVuotQuaKyTu" xml:space="preserve">
+    <value>标题超过{0}个字符。</value>
+  </data>
+    <data name="TinNhanDaDuocGui" xml:space="preserve">
+    <value>消息已发送到{0}  -  {1}！</value>
+  </data>
+    <data name="Title" xml:space="preserve">
+    <value>标题</value>
+  </data>
+    <data name="EnableJSAlert" xml:space="preserve">
+    <value>请启用javascript以继续。 &lt;br/&gt; &lt;a target="_blank" href="https://www.enable-javascript.com/"&gt;打开javascript的说明&lt;/a&gt;</value>
+  </data>
+    <data name="ErrorMessProcessing" xml:space="preserve">
+    <value>处理期间发生错误</value>
+  </data>
+    <data name="CashOut_ChonNganHang" xml:space="preserve">
+    <value>选择一家银行</value>
+  </data>
+    <data name="CashOut_ChuTKNganHang" xml:space="preserve">
+    <value>帐户持有人姓名</value>
+  </data>
+    <data name="CashOut_MaTK" xml:space="preserve">
+    <value>您的Wing帐户代码</value>
+  </data>
+    <data name="CashOut_PHChuTKNganHang" xml:space="preserve">
+    <value>例如：汗萨邦</value>
+  </data>
+    <data name="CashOut_PhiRut" xml:space="preserve">
+    <value>提款费</value>
+  </data>
+    <data name="CashOut_PHMaTK" xml:space="preserve">
+    <value>在此输入正确的Wing代码</value>
+  </data>
+    <data name="CashOut_PHSoTKNganHang" xml:space="preserve">
+    <value>请在此处输入您的银行帐户</value>
+  </data>
+    <data name="CashOut_PHSoWinMuonRut" xml:space="preserve">
+    <value>在此处输入您要提取的奖金数量</value>
+  </data>
+    <data name="CashOut_Rut" xml:space="preserve">
+    <value>撤</value>
+  </data>
+    <data name="CashOut_SoTKNganHang" xml:space="preserve">
+    <value>您的银行帐号</value>
+  </data>
+    <data name="CashOut_SoUSDNhanDc" xml:space="preserve">
+    <value>收到的美元金额</value>
+  </data>
+    <data name="CashOut_SoWinMuonRut" xml:space="preserve">
+    <value>您想要提取的奖金数量</value>
+  </data>
+    <data name="CashOut_TyleDoi" xml:space="preserve">
+    <value>转换率</value>
+  </data>
+    <data name="CashOut_Validation1" xml:space="preserve">
+    <value>请输入您要退出的Win数量，且必须大于0</value>
+  </data>
+    <data name="CashOut_Validation2" xml:space="preserve">
+    <value>收到的美元金额必须大于0</value>
+  </data>
+    <data name="CashOut_Validation3" xml:space="preserve">
+    <value>请输入您的Win帐户代码</value>
+  </data>
+    <data name="CashOut_Validation4" xml:space="preserve">
+    <value>请输入您的银行帐号</value>
+  </data>
+    <data name="CashOut_Validation5" xml:space="preserve">
+    <value>请输入帐户持有人姓名</value>
+  </data>
+    <data name="CashOut_Validation6" xml:space="preserve">
+    <value>请选择一家银行</value>
+  </data>
+    <data name="ErrorMessCaptcha" xml:space="preserve">
+    <value>请输入验证码</value>
+  </data>
+    <data name="Notification" xml:space="preserve">
+    <value>通知</value>
+  </data>
+    <data name="ErrorMessFaild" xml:space="preserve">
+    <value>失败</value>
+  </data>
+    <data name="RegisterAgree" xml:space="preserve">
+    <value>同意</value>
+  </data>
+    <data name="AgreeToTermsOfService" xml:space="preserve">
+    <value>我同意</value>
+  </data>
+    <data name="ValidationAgreeToTermsOfService" xml:space="preserve">
+    <value>在下一步之前，请同意我们的条款和政策！</value>
+  </data>
+    <data name="DieuKhoan" xml:space="preserve">
+    <value>使用条款</value>
+  </data>
+    <data name="Privatcy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+    <data name="Term" xml:space="preserve">
+    <value>Term</value>
+  </data>
+    <data name="Policy" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+    <data name="ConfirmLabel" xml:space="preserve">
+    <value>确认</value>
+  </data>
+    <data name="TKNhanTinNhanKTonTai" xml:space="preserve">
+    <value>接收消息的帐户不存在</value>
+  </data>
+    <data name="NhapTKNhanTinNhan" xml:space="preserve">
+    <value>请输入接收帐户</value>
+  </data>
+</LocalLanguages>

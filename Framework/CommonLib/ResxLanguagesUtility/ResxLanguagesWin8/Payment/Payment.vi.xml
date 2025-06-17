@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Please_deposit_more_to_withdraw" xml:space="preserve">
+    <value>Vui lòng nạp thêm để được đổi</value>
+  </data>
+    <data name="DepositCardAmountNotAllow" xml:space="preserve">
+    <value>Lưu ý: Chỉ chấp nhận thẻ các mệnh giá {0}, các mệnh giá khác sẽ không hoàn lại và không được cộng Win</value>
+  </data>
+    <data name="DepositCardIsUsed" xml:space="preserve">
+    <value>Thẻ đã sử dụng</value>
+  </data>
+    <data name="DepositCreateTransactionFail" xml:space="preserve">
+    <value>Lỗi ghi nhận giao dịch. Vui lòng thử lại sau!</value>
+  </data>
+    <data name="DepositDelayTime" xml:space="preserve">
+    <value>Mỗi lần nạp thẻ phải cách nhau {0} phút</value>
+  </data>
+    <data name="DepositErrorCauseBlockMultipleFailed" xml:space="preserve">
+    <value>Lỗi trong quá trình nạp thẻ. Vui lòng thử lại sau</value>
+  </data>
+    <data name="DepositMultipleFailed" xml:space="preserve">
+    <value>Bạn đã nạp sai {0} lần trong {1} phút, vui lòng đợi trong giây lát để đến lần nạp tiếp theo</value>
+  </data>
+    <data name="DepositSelectCardAmountWrong" xml:space="preserve">
+    <value>Bạn đã chọn sai mệnh giá thẻ cào. Vui lòng liên hệ chăm sóc khách hàng để hổ trợ</value>
+  </data>
+    <data name="DepositSmsTelcoNoSupport" xml:space="preserve">
+    <value>Nhà mạng không hỗ trợ</value>
+  </data>
+    <data name="DepositSmsTelcoValueNoSupport" xml:space="preserve">
+    <value>Mệnh giá  không hỗ trợ</value>
+  </data>
+    <data name="DepositSupportText" xml:space="preserve">
+    <value>&lt;br/&gt;Mọi thắc mắc vui lòng liên hệ &lt;a href=\"mailto:{0}\"&gt;{1}&lt;/a&gt; để được hỗ trợ.&lt;br/&gt;Hoặc liên hệ với chăm sóc khách hàng để được hỗ trợ trực tuyến.</value>
+  </data>
+    <data name="DepositTransactionChargeWithCallback" xml:space="preserve">
+    <value>Thẻ của bạn đã được chấp nhận, Win sẽ được cộng vào tài khoản của bạn, vui lòng đợi trong giây lát</value>
+        <comment>Thẻ sẽ được nạp trong 2 phút. Sau 2 phút Chip sẽ được tự động cộng vào tài khoản của bạn</comment>
+  </data>
+    <data name="DepositTransactionError" xml:space="preserve">
+    <value>Lỗi trong quá trình nạp thẻ. Vui lòng thử lại sau (Code={0})</value>
+  </data>
+    <data name="DepositTransactionTimeOut" xml:space="preserve">
+    <value>Giao dịch đã hết hạn. Vui lòng liên hệ Admin hỗ trợ</value>
+  </data>
+    <data name="DoiThuongCardOutOfLimit" xml:space="preserve">
+    <value>Bạn đã hết hạn mức đổi thẻ trong ngày. Vui lòng quay lại vào ngày hôm sau</value>
+  </data>
+    <data name="DoiThuongCardOutOfRangeTime" xml:space="preserve">
+    <value>Mời bạn đổi thẻ tiếp theo sau thẻ trước {0} phút. Xin cảm ơn</value>
+  </data>
+    <data name="DoiThuongCardStockRunOut" xml:space="preserve">
+    <value>Hết kho thẻ</value>
+  </data>
+    <data name="DoiThuongCardSuccess" xml:space="preserve">
+    <value>Yêu cầu đổi thẻ {0} ({1} USD) của bạn đã thành công. Thẻ sẽ được gửi vào HỘP THƯ CÁ NHÂN sau ít phút nữa!</value>
+  </data>
+    <data name="DoiThuongCardSuccessReview" xml:space="preserve">
+    <value>Yêu cầu đổi thẻ {0} ({1} USD) của bạn đã thành công. Bạn vui lòng chờ Admin kiểm duyệt. Thẻ sẽ được gửi vào HỘP THƯ CÁ NHÂN sau ít phút nữa!</value>
+  </data>
+    <data name="DoiThuongCreateTranlogError" xml:space="preserve">
+    <value>Lỗi khởi tạo giao dịch</value>
+  </data>
+    <data name="DoiThuongMaintainance" xml:space="preserve">
+    <value>Chức năng đang bảo trì, vui lòng quay lại sau.</value>
+  </data>
+    <data name="DoiThuongMaintainanceUpdate" xml:space="preserve">
+    <value>Chức năng hiện tại đang được bảo trì nâng cấp. Bạn vui lòng quay lại sau</value>
+  </data>
+    <data name="DoiThuongNotEnoughGoldOffset" xml:space="preserve">
+    <value>Bạn không đủ số dư tối thiểu {0:#,##0} Win sau khi đổi</value>
+  </data>
+    <data name="DoiThuongRequireVipLevel" xml:space="preserve">
+    <value>Bạn phải đạt cấp Vip Silver trở lên để có thể đổi thẻ</value>
+  </data>
+    <data name="DoiThuongUpdateCoinError" xml:space="preserve">
+    <value>Lỗi cập nhật số dư tài khoản</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>Không có dữ liệu </value>
+  </data>
+    <data name="DepositGetProductMethodInvalid" xml:space="preserve">
+    <value>Không xác định được phương thức thanh toán</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>Đã nạp thành công {0:N0} Win</value>
+  </data>
+    <data name="DepositSuccessAddVipFailed" xml:space="preserve">
+    <value>Đã nạp thành công {0:N0} Win. Nhưng có lỗi trong quá trình xử lý vip point</value>
+  </data>
+    <data name="DepositSuccessAddCoinVipFailed" xml:space="preserve">
+    <value>Nạp win thành công. Nhưng có lỗi trong quá trình chuyển Win và quá trình xử lý vip point</value>
+  </data>
+    <data name="NumberDepositOnDay" xml:space="preserve">
+    <value>Bạn vui lòng trở lại vào ngày mai</value>
+  </data>
+    <data name="SuccessButAddGoldFail" xml:space="preserve">
+    <value>Nạp thành công nhưng có lỗi trong quá trình chuyển Win</value>
+  </data>
+    <data name="Pending" xml:space="preserve">
+    <value>Giao dịch đang xử lý.</value>
+  </data>
+    <data name="TransactionNotExists" xml:space="preserve">
+    <value>Không tìm thấy giao dịch trong hệ thống.</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>Số Win trong tài khoản không đủ để thực hiện giao dịch</value>
+  </data>
+
+
+    <data name="ChonNhaMang" xml:space="preserve">
+    <value>Chọn nhà mạng SIM của bạn</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="CuPhap" xml:space="preserve">
+    <value>Cú pháp</value>
+  </data>
+    <data name="DepositAlert_Card" xml:space="preserve">
+    <value>Thông báo nạp</value>
+  </data>
+    <data name="DepositAlert_CardError" xml:space="preserve">
+    <value>Lỗi khi nạp thẻ, vui lòng thử lại sau</value>
+  </data>
+    <data name="DepositBaoKim" xml:space="preserve">
+    <value>BaoKim</value>
+  </data>
+    <data name="DepositCode_Input2" xml:space="preserve">
+    <value>Nhập mã</value>
+  </data>
+    <data name="DepositConfirm" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+    <data name="DepositInputCaptcha" xml:space="preserve">
+    <value>Nhập captcha</value>
+  </data>
+    <data name="DepositMoneyCost2" xml:space="preserve">
+    <value>Mệnh giá</value>
+  </data>
+    <data name="DepositSms" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+    <data name="DepositSmsGui" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+    <data name="DoiThuongMaXacNhan" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="DoiThuongPhiChuyen" xml:space="preserve">
+    <value>Phí chuyển</value>
+  </data>
+    <data name="DoiThuongSoTienChuyen" xml:space="preserve">
+    <value>Số CHIPS chuyển</value>
+  </data>
+    <data name="DoiThuongSoXuHienCo" xml:space="preserve">
+    <value>Số CHIPS hiện có</value>
+  </data>
+    <data name="DoiThuongTaiKhoan" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>Tài khoản nhận</value>
+  </data>
+    <data name="DoiThuongTenTaiKhoan" xml:space="preserve">
+    <value>Tên tài khoản</value>
+  </data>
+    <data name="DoiThuongThucHien" xml:space="preserve">
+    <value>Thực hiện</value>
+  </data>
+    <data name="DoiThuongXu" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="DoiThuongXuBiTru" xml:space="preserve">
+    <value>CHIPS bị trừ</value>
+  </data>
+    <data name="GhiChuNapSMS" xml:space="preserve">
+    <value>&lt;ul&gt;&lt;li&gt;Thời gian xử lý 30 giây - 60 giây&lt;/li&gt;&lt;li&gt;Chú ý các khoảng cách của cú pháp&lt;/li&gt;&lt;li&gt;Kiểm tra ID đủ, nếu nhập sai ID sẽ không được cộng CHIPS&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+    <data name="GhiChuNapSMS1" xml:space="preserve">
+    <value>Để nạp CHIPS SMS bằng Mạng</value>
+  </data>
+    <data name="GhiChuNapSMS2" xml:space="preserve">
+    <value>bạn lưu ý nhập đúng cú pháp như sau:</value>
+  </data>
+    <data name="GhiChuNapSMSMobile" xml:space="preserve">
+    <value>&lt;ul&gt;&lt;li&gt;Thời gian xử lý 30 giây - 60 giây&lt;/li&gt;&lt;li&gt;Chú ý các khoảng cách của cú pháp&lt;/li&gt;&lt;li&gt;Kiểm tra ID đủ, nếu nhập sai ID sẽ không được cộng CHIPS&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+    <data name="MenhGia" xml:space="preserve">
+    <value>Mệnh giá</value>
+  </data>
+    <data name="ValidationCaptcha2" xml:space="preserve">
+    <value>Mã xác nhận không chính xác</value>
+  </data>
+    <data name="ValidationMenhGiaThe" xml:space="preserve">
+    <value>Vui lòng chọn mệnh giá thẻ</value>
+  </data>
+    <data name="ValidationPayment" xml:space="preserve">
+    <value>Vui lòng nhập serial và mã thẻ</value>
+  </data>
+    <data name="ValidationPayment2" xml:space="preserve">
+    <value>Vui lòng đăng nhập để nạp thẻ</value>
+  </data>
+    <data name="ValidationPayment3" xml:space="preserve">
+    <value>Tài khoản không tồn tại</value>
+  </data>
+    <data name="ValidationPayment4" xml:space="preserve">
+    <value>Thông tin thẻ không hợp lệ (Code: {0})</value>
+  </data>
+    <data name="ValidationPayment5" xml:space="preserve">
+    <value>Lỗi trong quá trình xử lý {0}</value>
+  </data>
+    <data name="ValidationPayment6" xml:space="preserve">
+    <value>Thông tin thẻ không hợp lệ, vui lòng thử lại</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+    <data name="LogCardTransNapGoldSuccess" xml:space="preserve">
+    <value>Nạp thành công thẻ {0} VNĐ. Bạn được tặng &lt;strong&gt; {1} &lt;/strong&gt; Chip vào tài khoản</value>
+  </data>
+
+    <data name="AccountReceiveNotExists" xml:space="preserve">
+    <value>Tài khoản nhận không tồn tại</value>
+  </data>
+    <data name="AccountTransferMoneyLockedOut" xml:space="preserve">
+    <value>Tài khoản bạn muốn chuyển tiền hiện đã bị khoá chuyển tiền!</value>
+  </data>
+    <data name="AccountTransferNotYetVip" xml:space="preserve">
+    <value>Tài khoản bạn muốn chuyển chưa đạt VIP</value>
+  </data>
+    <data name="AccountTransferVipLevelNotSatisfactory" xml:space="preserve">
+    <value>Tài khoản bạn muốn chuyển level VIP chưa đạt yêu cầu</value>
+  </data>
+    <data name="ValidAccount" xml:space="preserve">
+    <value>Tài khoản hợp lệ</value>
+  </data>
+    <data name="NumberOfTransferDivisible" xml:space="preserve">
+    <value>Số CHIPS chuyển phải chia hết cho {0}!</value>
+  </data>
+    <data name="NumberOfMovesSmaller" xml:space="preserve">
+    <value>Số CHIPS chuyển phải nhỏ hơn {0}!</value>
+  </data>
+    <data name="LoginSession" xml:space="preserve">
+    <value>Bạn đã hết phiên đăng nhập</value>
+  </data>
+    <data name="CannotTransferCoinYourSeft" xml:space="preserve">
+    <value>Bạn không thể chuyển CHIPS cho chính bạn</value>
+  </data>
+    <data name="AccountTransferLockedPleaseCSKH" xml:space="preserve">
+    <value>Tài khoản bạn muốn chuyển CHIPS hiện đã bị khoá. Vui lòng liên hệ CSKH</value>
+  </data>
+    <data name="AccountNotRoleCoinTransfer" xml:space="preserve">
+    <value>Bạn không có quyền chuyển CHIPS!</value>
+  </data>
+    <data name="AccountIsNotEnoughMakeTransaction" xml:space="preserve">
+    <value>Số CHIPS trong tài khoản không đủ để thực hiện giao dịch</value>
+  </data>
+    <data name="TransferCoinSuccessfully" xml:space="preserve">
+    <value>Chuyển CHIPS thành công</value>
+  </data>
+    <data name="AccountLockTransferGold" xml:space="preserve">
+    <value>Tài khoản của bạn hiện đang bị khoá chuyển CHIPS</value>
+  </data>
+    <data name="AccountNotYetVip" xml:space="preserve">
+    <value>Tài khoản của bạn chưa đạt VIP</value>
+  </data>
+    <data name="AccountRequiredVip" xml:space="preserve">
+    <value>Tài khoản của bạn level VIP chưa đạt yêu cầu</value>
+  </data>
+    <data name="AccountExceedTransferOrTransferGold" xml:space="preserve">
+    <value>Bạn vượt quá số lần giao dịch hoặc số tiền được phép giao dịch trong ngày</value>
+  </data>
+    <data name="TitleMessBonusDepoistFisrt" xml:space="preserve">
+    <value>Khuyến mãi nạp lần đầu</value>
+  </data>
+    <data name="ContentMessBonusDepoistFisrt" xml:space="preserve">
+    <value>Bạn nhận được khuyến mại 10% khi nạp Coin lần đầu tiên. Chúc bạn chơi game vui vẻ!</value>
+  </data>
+    <data name="ContentNoteDeposit" xml:space="preserve">
+    <value>Sau khi hoàn thành giao dịch, bạn vui lòng đợi từ  5 - 15&apos; Chips sẽ được cộng vào tài khoản. Mọi thắc mắc và cần hỗ trợ thêm vui lòng liên hệ mail: live777.help@gmail.com</value>
+  </data>
+    <data name="FsCashOut_MessageValidationAddress" xml:space="preserve">
+    <value>Invalid output address: Bad address [{0}], should have 40 characters.</value>
+</data>
+    <data name="FsCashOut_Amount" xml:space="preserve">
+    <value>Amount</value>
+</data>
+    <data name="FsCashOut_Type" xml:space="preserve">
+    <value>Type</value>
+</data>
+    <data name="FsCashOut_CoinAddress" xml:space="preserve">
+    <value>(**)Address code</value>
+</data>
+    <data name="FsCashOut_Coinleast" xml:space="preserve">
+    <value>You need at least {0} CHIPS to Withdraw </value>
+  </data>
+    <data name="DepositCoin_Step1" xml:space="preserve">
+    <value>&lt;strong&gt;Step 1:&lt;/strong&gt; Create ETH account and buy ETH to Cryto-Wallet on &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano.com&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain.info&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase.com&lt;/a&gt;(How to create ETH-wallet?)&lt;/a&gt;</value>
+  </data>
+    <data name="DepositCoin_Step2" xml:space="preserve">
+    <value>&lt;strong&gt;Step 2:&lt;/strong&gt; When you already have ETH in your wallet >> Press Withdraw in Crypto-Wallet and enter ETH amount for withdrawing to buy CHIPS &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;javascript:&quot; onclick=&quot;ClientWebHelper.ShowPopUpArticleDetail(&#39;GUIDE&#39;,{1})&quot;&gt;(How to buy Chips On {0}?)&lt;/a&gt;&lt;br /&gt;</value>
+  </data>
+    <data name="DepositCoin_Step2_Note" xml:space="preserve">
+    <value>(*) Address code is your ETH Account on {0}</value>
+  </data>
+    <data name="DepositCoin_Step3" xml:space="preserve">
+    <value>&lt;strong&gt;Step 3:&lt;/strong&gt; Wait 1 - 5 minutes for complete transaction, check the Chips History for your chips buying.&lt;br /&gt;If you don't receive chips after 5 minutes, please contact us to email:</value>
+  </data>
+    <data name="WithdrawCoin_Step1" xml:space="preserve">
+    <value>&lt;strong&gt;Step 1:&lt;/strong&gt; Create ETH account on &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano.com&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain.info&lt;/a&gt;, &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase.com&lt;/a&gt;(How to create ETH-wallet?)&lt;/a&gt;</value>
+  </data>
+    <data name="WithdrawCoin_Step2" xml:space="preserve">
+    <value>&lt;strong&gt;Step 2:&lt;/strong&gt; Choose amount of money that you want to withdraw into your Crypto-Wallet. {0} will deduct Chips according to cryptocurrency that you want to withdraw. Paste your Cryto-Wallet Address Code &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;javascript:&quot; onclick=&quot;ClientWebHelper.ShowPopUpArticleDetail(&#39;GUIDE&#39;,{1})&quot;&gt;(How to withdraw ETH from {0}?)&lt;/a&gt;</value>
+  </data>
+    <data name="WithdrawCoin_Step2_Note" xml:space="preserve">
+    <value>(**)Address code is your ETH account on &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://remitano.com&quot; target=&quot;_blank&quot;&gt;Remitano&lt;/a&gt;/ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.blockchain.com/explorer&quot; target=&quot;_blank&quot;&gt;Blockchain&lt;/a&gt;/ &lt;a class=&quot;ohyea__color-yellow&quot; href=&quot;https://www.coinbase.com/dashboard&quot; target=&quot;_blank&quot;&gt;Coinbase&lt;/a&gt;/…</value>
+  </data>
+    <data name="WithdrawCoin_Step3" xml:space="preserve">
+    <value>&lt;strong&gt;Step 3:&lt;/strong&gt; Press "Submit". Wait 5 - 15 minutes for completed transaction and check your wallet.&lt;br /&gt;If you don't receive chips after 15 minutes, please contact us to email:</value>
+  </data>
+    <data name="WithdrawCoin_FsCashOut_RateCashInAndCashOutForUser" xml:space="preserve">
+    <value>Total Withdraw in day / user lesser 2.5 deposit</value>
+  </data>
+
+    <data name="FsCashOut_RateCashInAndCashOutForServer" xml:space="preserve">
+    <value>Please try again tomorrow</value>
+  </data>
+    <data name="FsCashOut_Account_IsBanWithdraw" xml:space="preserve">
+    <value>Account Is Ban Withdraw</value>
+  </data>
+    <data name="DepositCoin_Noted" xml:space="preserve">
+    <value>Lưu Ý: Địa chỉ ví tại Live777.com chỉ được sử dụng cho mỗi lần nạp. Lần nạp tiếp theo người chơi vui lòng refresh để nhận địa chỉ mới nhé!</value>
+  </data>
+
+
+    <data name="FsCashOut_MinWithdraw" xml:space="preserve">
+    <value>Số tiền rút ít nhất ${0}</value>
+  </data>
+    <data name="FsCashOut_MessageValidation" xml:space="preserve">
+    <value>Số Coin của bạn không đủ để rút</value>
+  </data>
+    <data name="FsCashOut_MessageValidation1" xml:space="preserve">
+    <value>Mã tài khoản wing không hợp lệ</value>
+  </data>
+    <data name="FsCashOut_MessageValidation2" xml:space="preserve">
+    <value>Bạn đã vượt quá số lần đổi trong ngày, tối đa {0} lần/ ngày</value>
+  </data>
+    <data name="FsCashOut_MessageValidation3" xml:space="preserve">
+    <value>Đã vượt quá số lượng user đổi trong ngày, tối đa {0} user/ ngày</value>
+  </data>
+    <data name="FsCashOut_MessageValidation4" xml:space="preserve">
+    <value>Số dư sau khi rút phải ít nhất {0} Coin</value>
+  </data>
+    <data name="FsCashOut_MessageValidation5" xml:space="preserve">
+    <value>Bạn phải nạp ít nhất {0} lần</value>
+  </data>
+    <data name="FsCashOut_MessageValidation6" xml:space="preserve">
+    <value>Tổng số rút không hợp lệ, chỉ được rút tối đa {0} USD</value>
+  </data>
+    <data name="FsCashOut_RequestSuccess" xml:space="preserve">
+    <value>Yêu cầu rút tiền từ ví wing: {0}@wing ${1} đã hoàn thành</value>
+  </data>
+    <data name="FsCashOut_RequestSuccess2" xml:space="preserve">
+    <value>Yêu cầu rút thành công</value>
+  </data>
+    <data name="FsCashOut_HistoryCashOutTitle" xml:space="preserve">
+    <value>Lịch sử</value>
+  </data>
+    <data name="FsCashOut_HistoryCashOut_Col_Amount" xml:space="preserve">
+    <value>Số tiền</value>
+  </data>
+    <data name="FsCashOut_HistoryCashOut_Col_Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+    <data name="FsCashOut_Status_DescRequest" xml:space="preserve">
+    <value>Đã gửi yêu cầu</value>
+  </data>
+    <data name="FsCashOut_Status_DescSuccess" xml:space="preserve">
+    <value>Thành công</value>
+  </data>
+    <data name="FsCashOut_Status_DescCancel" xml:space="preserve">
+    <value>Từ chối</value>
+  </data>
+    <data name="FsCashOut_Status_DescProcessing" xml:space="preserve">
+    <value>Đang xử lý</value>
+  </data>
+    <data name="FsCashOut_Status_DescError" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+    <data name="FsCashOut_Status_DescCallbackReturnError" xml:space="preserve">
+    <value>Lỗi Callback</value>
+  </data>
+
+    <data name="FsCashOut_lableSoDu" xml:space="preserve">
+    <value>Số dư của bạn còn &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt;  (tương đương &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; ${1}&lt;/strong&gt;)</value>
+  </data>
+    <data name="FsCashOut_lableTyGia" xml:space="preserve">
+    <value>Tỷ giá &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt; = &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; ${1}&lt;/strong&gt;</value>
+  </data>
+    <data name="FsCashOut_lableSoDu2" xml:space="preserve">
+    <value>Số dư của bạn còn &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt;  (tương đương &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; {1}{2}&lt;/strong&gt;)</value>
+  </data>
+    <data name="FsCashOut_lableTyGia2" xml:space="preserve">
+    <value>Tỷ giá &lt;strong class=&quot;ohyea__color-yellow&quot;&gt;{0}&lt;/strong&gt; = &lt;strong class=&quot;ohyea__color-yellow&quot;&gt; {1}{2}&lt;/strong&gt;</value>
+  </data>
+    <data name="FsCashOut_lableBanMuonRutBnhieu" xml:space="preserve">
+    <value>Bạn muốn rút bao nhiêu tiền?</value>
+  </data>
+    <data name="FsCashOut_lableChonMenhGia" xml:space="preserve">
+    <value>Chọn mệnh giá</value>
+  </data>
+    <data name="FsCashOut_btnNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+    <data name="FsCashOut_btnBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+    <data name="FsCashOut_btnRutTien" xml:space="preserve">
+    <value>Rút tiền</value>
+  </data>
+    <data name="FsCashOut_lableDienTKWing" xml:space="preserve">
+    <value>Hãy điền số tài khoản Wing của bạn</value>
+  </data>
+    <data name="FsCashOut_lableDienPhone" xml:space="preserve">
+    <value>Hãy điền số điện thoại của bạn</value>
+  </data>
+    <data name="FsCashOut_lableSupport" xml:space="preserve">
+    <value>Bạn có thể nhận hỗ trợ online bằng cách bấm vào đây</value>
+  </data>
+
+    <data name="Tab_TitleDeposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+    <data name="Tab_TitleWithDraw" xml:space="preserve">
+    <value>WithDraw</value>
+  </data>
+    <data name="Tab_TitleHistoryWithDraw" xml:space="preserve">
+    <value>History WithDraw</value>
+  </data>
+    <data name="Tab_TitleDepositETH" xml:space="preserve">
+    <value>Deposit ETH</value>
+  </data>
+    <data name="Tab_TitleWithDrawETH" xml:space="preserve">
+    <value>WithDraw ETH</value>
+  </data>
+
+    <data name="Deposit_btnBuy" xml:space="preserve">
+    <value>BUY</value>
+  </data>
+</LocalLanguages>

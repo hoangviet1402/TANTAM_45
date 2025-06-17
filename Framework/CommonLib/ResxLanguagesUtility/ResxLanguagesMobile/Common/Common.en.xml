@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="CodeError" xml:space="preserve">
+    <value>An error has occurred, please try again later.</value>
+  </data>
+    <data name="CodeFail" xml:space="preserve">
+    <value>Error</value>
+  </data>
+    <data name="CodeInvalidData" xml:space="preserve">
+    <value>Invalid data</value>
+  </data>
+    <data name="CodeInvalidSign" xml:space="preserve">
+    <value>Wrong signature</value>
+  </data>
+    <data name="CodeSuccess" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="CodeTokenExpire" xml:space="preserve">
+    <value>Tokens have expired</value>
+  </data>
+    <data name="CodeTokenNotExist" xml:space="preserve">
+    <value>Tokens do not exist</value>
+  </data>
+    <data name="CodeApiNotExist" xml:space="preserve">
+    <value>Api does not exist.</value>
+  </data>
+    <data name="PleaseLoginFunction" xml:space="preserve">
+    <value>Please login to use this function.</value>
+  </data>
+    <data name="BtnUpdate" xml:space="preserve">
+    <value>Update</value>
+  </data>
+    <data name="UpdateSuccess" xml:space="preserve">
+    <value>Update successful</value>
+  </data>
+    <data name="UpdateFaild" xml:space="preserve">
+    <value>Update failed</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+    <data name="FunctionMaintainance" xml:space="preserve">
+    <value>Function under maintenance, please try again later.</value>
+  </data>
+    <data name="EventNotRunning" xml:space="preserve">
+    <value>The event is suspended</value>
+  </data>
+    <data name="NotLoginOrBeAnother" xml:space="preserve">
+    <value>Not logged in or logged in at another machine</value>
+  </data>
+    <data name="HasErrorContactCustomService" xml:space="preserve">
+    <value>An error has occurred, please contact online support for assistance</value>
+  </data>
+    <data name="FunctionDeveloping" xml:space="preserve">
+    <value>Function is developing</value>
+  </data>
+    <data name="ValidDataTextRegis" xml:space="preserve">
+    <value>Please use only letters (a-z), numbers (0-9)</value>
+  </data>
+</LocalLanguages>

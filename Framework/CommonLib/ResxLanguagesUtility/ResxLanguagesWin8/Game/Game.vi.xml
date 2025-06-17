@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="Game_500">
+        <value>Bắn Cá</value>
+    </data>
+    <data name="Game_425">
+        <value>Game bài</value>
+    </data>
+    <data name="Game_424">
+        <value>Kim cương</value>
+    </data>
+    <data name="Game_423">
+        <value>Tỷ Phú</value>
+    </data>
+    <data name="Game_420">
+        <value>Samurai</value>
+    </data>
+    <data name="Game_419">
+        <value>Thổ Dân</value>
+    </data>
+    <data name="Game_417">
+        <value>Thần Tài</value>
+    </data>
+    <data name="Game_416">
+        <value>Rồng Vàng</value>
+    </data>
+    <data name="Game_411">
+        <value>Tam Quốc</value>
+    </data>
+    <data name="Game_410">
+        <value>Thần Thú</value>
+    </data>
+    <data name="Game_409">
+        <value>Cào Rùa</value>
+    </data>
+    <data name="Game_408">
+        <value>May mắn</value>
+    </data>
+    <data name="Game_407">
+        <value>Jackpot</value>
+    </data>
+    <data name="Game_406">
+        <value>88 Fortunes</value>
+    </data>
+    <data name="Game_402">
+        <value>Hoa Quả</value>
+    </data>
+    <data name="Game_209">
+        <value>Xốc Dĩa</value>
+    </data>
+    <data name="Game_201">
+        <value>Sâm Lốc</value>
+    </data>
+    <data name="Game_200">
+        <value>Liêng</value>
+    </data>
+    <data name="Game_48">
+        <value>Tài Xĩu</value>
+    </data>
+    <data name="Game_42">
+        <value>Xì Tố</value>
+    </data>
+    <data name="Game_41">
+        <value>Phỏm</value>
+    </data>
+    <data name="Game_40">
+        <value>Tiến Lên</value>
+    </data>
+    <data name="Game_34">
+        <value>Mậu Binh</value>
+    </data>
+    <data name="Game__1">
+        <value>LUCKY SPIN</value>
+    </data>
+    <data name="Game__3">
+        <value>LUCKY SPIN</value>
+    </data>
+</LocalLanguages>

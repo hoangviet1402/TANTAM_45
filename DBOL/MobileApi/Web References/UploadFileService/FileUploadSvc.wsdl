@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  targetNamespace="http://tempuri.org/">
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+            <s:element name="UploadImage">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="type" type="tns:TypeImageUploadEnum"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="pathOrFileName" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="byteArray" type="s:base64Binary"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:simpleType name="TypeImageUploadEnum">
+                <s:restriction base="s:string">
+                    <s:enumeration value="Avatar"/>
+                    <s:enumeration value="Article"/>
+                    <s:enumeration value="ScreenCapture"/>
+                    <s:enumeration value="Banner"/>
+                    <s:enumeration value="Comment"/>
+                    <s:enumeration value="Another"/>
+                    <s:enumeration value="Guild"/>
+                </s:restriction>
+            </s:simpleType>
+            <s:element name="UploadImageResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="UploadImageResult" type="tns:UploadImageResult"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="UploadImageResult">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="UploadImageResize">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="type" type="tns:TypeImageUploadEnum"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="pathOrFileName" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="byteArray" type="s:base64Binary"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="UploadImageResizeResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="UploadImageResizeResult"
+                                   type="tns:UploadImageResult"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="UploadImageGuildResize">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="alias" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="pathOrFileName" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="byteArray" type="s:base64Binary"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="UploadImageGuildResizeResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="UploadImageGuildResizeResult"
+                                   type="tns:UploadImageResult"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="UploadBanner">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="byteArray" type="s:base64Binary"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="upPath" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="UploadBannerResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="UploadBannerResult" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SaveJPEG">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="strjpg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="pathFile" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SaveJPEGResponse">
+                <s:complexType/>
+            </s:element>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="UploadImageSoapIn">
+        <wsdl:part name="parameters" element="tns:UploadImage"/>
+    </wsdl:message>
+    <wsdl:message name="UploadImageSoapOut">
+        <wsdl:part name="parameters" element="tns:UploadImageResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UploadImageResizeSoapIn">
+        <wsdl:part name="parameters" element="tns:UploadImageResize"/>
+    </wsdl:message>
+    <wsdl:message name="UploadImageResizeSoapOut">
+        <wsdl:part name="parameters" element="tns:UploadImageResizeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UploadImageGuildResizeSoapIn">
+        <wsdl:part name="parameters" element="tns:UploadImageGuildResize"/>
+    </wsdl:message>
+    <wsdl:message name="UploadImageGuildResizeSoapOut">
+        <wsdl:part name="parameters" element="tns:UploadImageGuildResizeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UploadBannerSoapIn">
+        <wsdl:part name="parameters" element="tns:UploadBanner"/>
+    </wsdl:message>
+    <wsdl:message name="UploadBannerSoapOut">
+        <wsdl:part name="parameters" element="tns:UploadBannerResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SaveJPEGSoapIn">
+        <wsdl:part name="parameters" element="tns:SaveJPEG"/>
+    </wsdl:message>
+    <wsdl:message name="SaveJPEGSoapOut">
+        <wsdl:part name="parameters" element="tns:SaveJPEGResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="FileUploadSvcSoap">
+        <wsdl:operation name="UploadImage">
+            <wsdl:input message="tns:UploadImageSoapIn"/>
+            <wsdl:output message="tns:UploadImageSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="UploadImageResize">
+            <wsdl:input message="tns:UploadImageResizeSoapIn"/>
+            <wsdl:output message="tns:UploadImageResizeSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="UploadImageGuildResize">
+            <wsdl:input message="tns:UploadImageGuildResizeSoapIn"/>
+            <wsdl:output message="tns:UploadImageGuildResizeSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="UploadBanner">
+            <wsdl:input message="tns:UploadBannerSoapIn"/>
+            <wsdl:output message="tns:UploadBannerSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SaveJPEG">
+            <wsdl:input message="tns:SaveJPEGSoapIn"/>
+            <wsdl:output message="tns:SaveJPEGSoapOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="FileUploadSvcSoap" type="tns:FileUploadSvcSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="UploadImage">
+            <soap:operation soapAction="http://tempuri.org/UploadImage" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UploadImageResize">
+            <soap:operation soapAction="http://tempuri.org/UploadImageResize" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UploadImageGuildResize">
+            <soap:operation soapAction="http://tempuri.org/UploadImageGuildResize" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UploadBanner">
+            <soap:operation soapAction="http://tempuri.org/UploadBanner" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SaveJPEG">
+            <soap:operation soapAction="http://tempuri.org/SaveJPEG" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="FileUploadSvcSoap12" type="tns:FileUploadSvcSoap">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="UploadImage">
+            <soap12:operation soapAction="http://tempuri.org/UploadImage" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UploadImageResize">
+            <soap12:operation soapAction="http://tempuri.org/UploadImageResize" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UploadImageGuildResize">
+            <soap12:operation soapAction="http://tempuri.org/UploadImageGuildResize" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UploadBanner">
+            <soap12:operation soapAction="http://tempuri.org/UploadBanner" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SaveJPEG">
+            <soap12:operation soapAction="http://tempuri.org/SaveJPEG" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="FileUploadSvc">
+        <wsdl:port name="FileUploadSvcSoap" binding="tns:FileUploadSvcSoap">
+            <soap:address location="http://api.hoiquan.net/FileUploadSvc.asmx"/>
+        </wsdl:port>
+        <wsdl:port name="FileUploadSvcSoap12" binding="tns:FileUploadSvcSoap12">
+            <soap12:address location="http://api.hoiquan.net/FileUploadSvc.asmx"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

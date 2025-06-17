@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="DepositCardAmountNotAllow" xml:space="preserve">
+    <value>Lưu ý: Chỉ chấp nhận thẻ các mệnh giá {0}, các mệnh giá khác sẽ không hoàn lại và không được cộng Win</value>
+  </data>
+    <data name="DepositCardIsUsed" xml:space="preserve">
+    <value>Thẻ đã sử dụng</value>
+  </data>
+    <data name="DepositCreateTransactionFail" xml:space="preserve">
+    <value>Lỗi ghi nhận giao dịch. Vui lòng thử lại sau!</value>
+  </data>
+    <data name="DepositDelayTime" xml:space="preserve">
+    <value>Mỗi lần nạp thẻ phải cách nhau {0} phút</value>
+  </data>
+    <data name="DepositErrorCauseBlockMultipleFailed" xml:space="preserve">
+    <value>Lỗi trong quá trình nạp thẻ. Vui lòng thử lại sau</value>
+  </data>
+    <data name="DepositMultipleFailed" xml:space="preserve">
+    <value>Bạn đã nạp sai {0} lần trong {1} phút, vui lòng đợi trong giây lát để đến lần nạp tiếp theo</value>
+  </data>
+    <data name="DepositSelectCardAmountWrong" xml:space="preserve">
+    <value>Bạn đã chọn sai mệnh giá thẻ cào. Vui lòng liên hệ chăm sóc khách hàng để hổ trợ</value>
+  </data>
+    <data name="DepositSmsTelcoNoSupport" xml:space="preserve">
+    <value>Nhà mạng không hỗ trợ</value>
+  </data>
+    <data name="DepositSmsTelcoValueNoSupport" xml:space="preserve">
+    <value>Mệnh giá  không hỗ trợ</value>
+  </data>
+    <data name="DepositSupportText" xml:space="preserve">
+    <value>&lt;br/&gt;Mọi thắc mắc vui lòng liên hệ &lt;a href=\"mailto:{0}\"&gt;{1}&lt;/a&gt; để được hỗ trợ.&lt;br/&gt;Hoặc liên hệ với chăm sóc khách hàng để được hỗ trợ trực tuyến.</value>
+  </data>
+    <data name="DepositTransactionChargeWithCallback" xml:space="preserve">
+    <value>Thẻ của bạn đã được chấp nhận, Win sẽ được cộng vào tài khoản của bạn, vui lòng đợi trong giây lát</value>
+        <comment>Thẻ sẽ được nạp trong 2 phút. Sau 2 phút Chip sẽ được tự động cộng vào tài khoản của bạn</comment>
+  </data>
+    <data name="DepositTransactionError" xml:space="preserve">
+    <value>Lỗi trong quá trình nạp thẻ. Vui lòng thử lại sau (Code={0})</value>
+  </data>
+    <data name="DepositTransactionTimeOut" xml:space="preserve">
+    <value>Giao dịch đã hết hạn. Vui lòng liên hệ Admin hỗ trợ</value>
+  </data>
+    <data name="DoiThuongCardOutOfLimit" xml:space="preserve">
+    <value>Bạn đã hết hạn mức đổi thẻ trong ngày. Vui lòng quay lại vào ngày hôm sau</value>
+  </data>
+    <data name="DoiThuongCardOutOfRangeTime" xml:space="preserve">
+    <value>Mời bạn đổi thẻ tiếp theo sau thẻ trước {0} phút. Xin cảm ơn</value>
+  </data>
+    <data name="DoiThuongCardStockRunOut" xml:space="preserve">
+    <value>Hết kho thẻ</value>
+  </data>
+    <data name="DoiThuongCardSuccess" xml:space="preserve">
+    <value>Yêu cầu đổi thẻ {0} ({1} USD) của bạn đã thành công. Thẻ sẽ được gửi vào HỘP THƯ CÁ NHÂN sau ít phút nữa!</value>
+  </data>
+    <data name="DoiThuongCardSuccessReview" xml:space="preserve">
+    <value>Yêu cầu đổi thẻ {0} ({1} USD) của bạn đã thành công. Bạn vui lòng chờ Admin kiểm duyệt. Thẻ sẽ được gửi vào HỘP THƯ CÁ NHÂN sau ít phút nữa!</value>
+  </data>
+    <data name="DoiThuongCreateTranlogError" xml:space="preserve">
+    <value>Lỗi khởi tạo giao dịch</value>
+  </data>
+    <data name="DoiThuongMaintainance" xml:space="preserve">
+    <value>Chức năng đang bảo trì, vui lòng quay lại sau.</value>
+  </data>
+    <data name="DoiThuongMaintainanceUpdate" xml:space="preserve">
+    <value>Chức năng hiện tại đang được bảo trì nâng cấp. Bạn vui lòng quay lại sau</value>
+  </data>
+    <data name="DoiThuongNotEnoughGoldOffset" xml:space="preserve">
+    <value>Bạn không đủ số dư tối thiểu {0:#,##0} Win sau khi đổi</value>
+  </data>
+    <data name="DoiThuongRequireVipLevel" xml:space="preserve">
+    <value>Bạn phải đạt cấp Vip Silver trở lên để có thể đổi thẻ</value>
+  </data>
+    <data name="DoiThuongUpdateCoinError" xml:space="preserve">
+    <value>Lỗi cập nhật số dư tài khoản</value>
+  </data>
+    <data name="NoData" xml:space="preserve">
+    <value>Không có dữ liệu </value>
+  </data>
+    <data name="DepositGetProductMethodInvalid" xml:space="preserve">
+    <value>Không xác định được phương thức thanh toán</value>
+  </data>
+    <data name="DepositSuccess" xml:space="preserve">
+    <value>Đã nạp thành công {0:N0} Win</value>
+  </data>
+    <data name="DepositSuccessAddVipFailed" xml:space="preserve">
+    <value>Đã nạp thành công {0:N0} Win. Nhưng có lỗi trong quá trình xử lý vip point</value>
+  </data>
+    <data name="DepositSuccessAddCoinVipFailed" xml:space="preserve">
+    <value>Nạp win thành công. Nhưng có lỗi trong quá trình chuyển Win và quá trình xử lý vip point</value>
+  </data>
+    <data name="NumberDepositOnDay" xml:space="preserve">
+    <value>Bạn vui lòng trở lại vào ngày mai</value>
+  </data>
+    <data name="SuccessButAddGoldFail" xml:space="preserve">
+    <value>Nạp thành công nhưng có lỗi trong quá trình chuyển Win</value>
+  </data>
+    <data name="Pending" xml:space="preserve">
+    <value>Giao dịch đang xử lý.</value>
+  </data>
+    <data name="TransactionNotExists" xml:space="preserve">
+    <value>Không tìm thấy giao dịch trong hệ thống.</value>
+  </data>
+    <data name="CurrentCoinNotEnought" xml:space="preserve">
+    <value>Số Win trong tài khoản không đủ để thực hiện giao dịch</value>
+  </data>
+
+
+    <data name="ChonNhaMang" xml:space="preserve">
+    <value>Chọn nhà mạng SIM của bạn</value>
+  </data>
+    <data name="Coin" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="CuPhap" xml:space="preserve">
+    <value>Cú pháp</value>
+  </data>
+    <data name="DepositAlert_Card" xml:space="preserve">
+    <value>Thông báo nạp</value>
+  </data>
+    <data name="DepositAlert_CardError" xml:space="preserve">
+    <value>Lỗi khi nạp thẻ, vui lòng thử lại sau</value>
+  </data>
+    <data name="DepositBaoKim" xml:space="preserve">
+    <value>BaoKim</value>
+  </data>
+    <data name="DepositCode_Input2" xml:space="preserve">
+    <value>Nhập mã</value>
+  </data>
+    <data name="DepositConfirm" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+    <data name="DepositInputCaptcha" xml:space="preserve">
+    <value>Nhập captcha</value>
+  </data>
+    <data name="DepositMoneyCost2" xml:space="preserve">
+    <value>Mệnh giá</value>
+  </data>
+    <data name="DepositSms" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+    <data name="DepositSmsGui" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+    <data name="DoiThuongKiemTra" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+    <data name="DoiThuongMaXacNhan" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+    <data name="DoiThuongPhiChuyen" xml:space="preserve">
+    <value>Phí chuyển</value>
+  </data>
+    <data name="DoiThuongSoTienChuyen" xml:space="preserve">
+    <value>Số CHIPS chuyển</value>
+  </data>
+    <data name="DoiThuongSoXuHienCo" xml:space="preserve">
+    <value>Số CHIPS hiện có</value>
+  </data>
+    <data name="DoiThuongTaiKhoan" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+    <data name="DoiThuongTaiKhoanNhan" xml:space="preserve">
+    <value>Tài khoản nhận</value>
+  </data>
+    <data name="DoiThuongTenTaiKhoan" xml:space="preserve">
+    <value>Tên tài khoản</value>
+  </data>
+    <data name="DoiThuongThucHien" xml:space="preserve">
+    <value>Thực hiện</value>
+  </data>
+    <data name="DoiThuongXu" xml:space="preserve">
+    <value>CHIPS</value>
+  </data>
+    <data name="DoiThuongXuBiTru" xml:space="preserve">
+    <value>CHIPS bị trừ</value>
+  </data>
+    <data name="GhiChuNapSMS" xml:space="preserve">
+    <value>&lt;ul&gt;&lt;li&gt;Thời gian xử lý 30 giây - 60 giây&lt;/li&gt;&lt;li&gt;Chú ý các khoảng cách của cú pháp&lt;/li&gt;&lt;li&gt;Kiểm tra ID đủ, nếu nhập sai ID sẽ không được cộng CHIPS&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+    <data name="GhiChuNapSMS1" xml:space="preserve">
+    <value>Để nạp CHIPS SMS bằng Mạng</value>
+  </data>
+    <data name="GhiChuNapSMS2" xml:space="preserve">
+    <value>bạn lưu ý nhập đúng cú pháp như sau:</value>
+  </data>
+    <data name="GhiChuNapSMSMobile" xml:space="preserve">
+    <value>&lt;ul&gt;&lt;li&gt;Thời gian xử lý 30 giây - 60 giây&lt;/li&gt;&lt;li&gt;Chú ý các khoảng cách của cú pháp&lt;/li&gt;&lt;li&gt;Kiểm tra ID đủ, nếu nhập sai ID sẽ không được cộng CHIPS&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+    <data name="MenhGia" xml:space="preserve">
+    <value>Mệnh giá</value>
+  </data>
+    <data name="ValidationCaptcha2" xml:space="preserve">
+    <value>Mã xác nhận không chính xác</value>
+  </data>
+    <data name="ValidationMenhGiaThe" xml:space="preserve">
+    <value>Vui lòng chọn mệnh giá thẻ</value>
+  </data>
+    <data name="ValidationPayment" xml:space="preserve">
+    <value>Vui lòng nhập serial và mã thẻ</value>
+  </data>
+    <data name="ValidationPayment2" xml:space="preserve">
+    <value>Vui lòng đăng nhập để nạp thẻ</value>
+  </data>
+    <data name="ValidationPayment3" xml:space="preserve">
+    <value>Tài khoản không tồn tại</value>
+  </data>
+    <data name="ValidationPayment4" xml:space="preserve">
+    <value>Thông tin thẻ không hợp lệ (Code: {0})</value>
+  </data>
+    <data name="ValidationPayment5" xml:space="preserve">
+    <value>Lỗi trong quá trình xử lý {0}</value>
+  </data>
+    <data name="ValidationPayment6" xml:space="preserve">
+    <value>Thông tin thẻ không hợp lệ, vui lòng thử lại</value>
+  </data>
+    <data name="Vip" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+    <data name="LogCardTransNapGoldSuccess" xml:space="preserve">
+    <value>Nạp thành công thẻ {0} VNĐ. Bạn được tặng &lt;strong&gt; {1} &lt;/strong&gt; Chip vào tài khoản</value>
+  </data>
+</LocalLanguages>

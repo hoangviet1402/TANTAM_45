@@ -1,0 +1,15 @@
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\MyUtility.dll.config
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\MyUtility.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\MyUtility.pdb
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\log4net.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\Logger.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\Newtonsoft.Json.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\Logger.pdb
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\Logger.dll.config
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\log4net.xml
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\bin\Release\Newtonsoft.Json.xml
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\obj\Release\MyUtility.csprojAssemblyReference.cache
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\obj\Release\MyUtility.csproj.CoreCompileInputs.cache
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\obj\Release\MyUtility.csproj.CopyComplete
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\obj\Release\MyUtility.dll
+D:\CRM\TANTAM_SVN\Framework\CommonLib\MyUtility\obj\Release\MyUtility.pdb

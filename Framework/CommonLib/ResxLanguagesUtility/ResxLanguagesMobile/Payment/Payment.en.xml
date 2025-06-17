@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalLanguages>
+    <data name="MessageFirstPurchase" xml:space="preserve">
+    <value>{0}% more coins for your 1st purchase</value>
+  </data>
+    <data name="Please_deposit_more_to_withdraw" xml:space="preserve">
+    <value>Please deposit more to withdraw</value>
+  </data>
+</LocalLanguages>
