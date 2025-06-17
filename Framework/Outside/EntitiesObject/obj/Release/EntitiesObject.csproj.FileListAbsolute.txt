@@ -1,0 +1,7 @@
+D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\bin\Release\EntitiesObject.dll.config
+D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\bin\Release\EntitiesObject.dll
+D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\bin\Release\EntitiesObject.pdb
+D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Release\EntitiesObject.csprojAssemblyReference.cache
+D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Release\EntitiesObject.csproj.CoreCompileInputs.cache
+D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Release\EntitiesObject.dll
+D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Release\EntitiesObject.pdb
