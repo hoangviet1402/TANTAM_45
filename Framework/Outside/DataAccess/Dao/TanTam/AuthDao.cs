@@ -12,7 +12,7 @@ namespace DataAccess.Dao.TanTamDao
     /// </summary>
     public interface IAuthDao : IBaseFactories<DBNull>
     {
-        Ins_Account_Login_Result Login(int accountId, int companyId);
+        Ins_Account_Login_Result CheckAccountIDExists(int accountId, int companyId);
         Ins_Account_Validata_Result Validate(string accountName, bool isUsePhone);
         List<Ins_Account_UpdateFullName_Result> UpdateFullName(string phone, string mail, string FullName, bool IsUsePhone);
         void RegisterAccount(string phoneCode, string phone, string email, string fullname, string deviceId, out int accountId, out int companyID, out int employeeAccountMapId);
@@ -49,7 +49,7 @@ namespace DataAccess.Dao.TanTamDao
             }          
         }
 
-        public Ins_Account_Login_Result Login(int accountId, int companyId)
+        public Ins_Account_Login_Result CheckAccountIDExists(int accountId, int companyId)
         {
             using (Uow)
             {

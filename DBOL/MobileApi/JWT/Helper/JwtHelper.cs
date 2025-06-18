@@ -5,15 +5,16 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.Linq;
 using System.Net.Http;
+using MyConfig;
 
 namespace TanTamApi.JWT.Helper
 {
     public class JwtHelper
     {
-        public static string  GenerateAccessToken(int accountId, int employeeAccountMapId, int companyId, int role , IConfiguration configuration,out string jwtID)
+        public static string  GenerateAccessToken(int accountId, int employeeAccountMapId, int companyId, int role,out string jwtID)
         {
             jwtID = GenerateRefreshToken();
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(MyConfiguration.JWT.SecretKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
@@ -28,10 +29,10 @@ namespace TanTamApi.JWT.Helper
             };
 
             var token = new JwtSecurityToken(
-                issuer: configuration["Jwt:Issuer"],
-                audience: configuration["Jwt:Audience"],
+                issuer: MyConfiguration.JWT.Issuer,
+                audience: MyConfiguration.JWT.Audience,
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(int.Parse(configuration["Jwt:ExpiryInMinutes"])),
+                expires: DateTime.UtcNow.AddMinutes(MyConfiguration.JWT.ExpiryInMinutes),
                 signingCredentials: creds
             );
 

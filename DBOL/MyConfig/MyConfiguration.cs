@@ -19,5 +19,6 @@ namespace MyConfig
 
         public static CaptchaElement Captcha => Instance.CaptchaElement;
 
+        public static JWTElement JWT => Instance.JWTElement;
     }
 }

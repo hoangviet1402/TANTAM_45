@@ -49,6 +49,7 @@
     <Compile Include="CacheApi\CacheApiElement.cs" />
     <Compile Include="CaptchaElement.cs" />
     <Compile Include="ResxLanguagesUtility\DefaultResxLanguagesUtilityElement.cs" />
+    <Compile Include="JWTElement.cs" />
     <Compile Include="ServerApiElement.cs" />
     <Compile Include="DefaultElement.cs" />
     <Compile Include="MyConfigSection.cs" />

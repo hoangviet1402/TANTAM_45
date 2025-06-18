@@ -4,6 +4,7 @@ using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.Auth;
 using EntitiesObject.Entities.TanTamEntities;
 using Logger;
+using MyConfig;
 using MyUtility.Extensions;
 using System;
 using System.Collections.Generic;
@@ -37,12 +38,22 @@ namespace TanTamApi.Controllers
             var companyId = JwtHelper.GetCompanyIdFromToken(Request);
             var accountId = JwtHelper.GetAccountIdFromToken(Request);
             var jwtID = JwtHelper.GetJwtIdFromToken(Request);
+            
             // Validate input (có thể thêm FluentValidation ở đây)
             if (string.IsNullOrEmpty(refreshToken))
             {
                 response.Code = ResponseResultEnum.InvalidInput.Value();
                 response.Message = "Vui lòng nhập đủ thông tin.";
                 return Request.CreateResponse(HttpStatusCode.OK, response );
+            }
+
+            // Validate input length for security
+            if (refreshToken.Length > 500)
+            {
+                CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Suspicious long refresh token from accountId {0}, companyId {1}", accountId, companyId);
+                response.Code = ResponseResultEnum.InvalidInput.Value();
+                response.Message = "Thông tin không hợp lệ.";
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
 
             if (accountId <= 0)
@@ -60,30 +71,35 @@ namespace TanTamApi.Controllers
                 {
                     if (tokenInfo.RefreshToken.Equals(AESHelper.HashPassword(refreshToken), StringComparison.OrdinalIgnoreCase) == false)
                     {
+                        CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Invalid refresh token for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.InvalidToken.Value();
                         response.Message = $"Phiên đăng nhập Không tồn tại.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                     else if (tokenInfo.JwtID.Equals(AESHelper.HashPassword(jwtID), StringComparison.OrdinalIgnoreCase) == false)
                     {
+                        CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Invalid JWT ID for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.InvalidToken.Value();
                         response.Message = $"Phiên đăng nhập Không tồn tại.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                     else if (tokenInfo.Expires < DateTime.Now)
                     {
+                        CommonLogger.DefaultLogger.InfoFormat("RefreshToken: Expired token for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.TokenExpired.Value();
                         response.Message = $"Phiên đăng nhập hết hạn vui lòng đăng nhập lại.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                     else if (tokenInfo.AccountIsActive ?? true == false)
                     {
+                        CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Locked account for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
                         response.Message = $"Tài Khoản nhân viên này hiện bị khóa.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                     else if (tokenInfo.CompanyIsActive ?? true == false)
                     {
+                        CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Locked company for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
                         response.Message = $"Công ty nhân viên đang làm việc hiện bị khóa.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
@@ -91,6 +107,7 @@ namespace TanTamApi.Controllers
 
                     else if (!tokenInfo.IsActive)
                     {
+                        CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Inactive employee for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
                         response.Message = $"Nhân viên đang làm việc hiện bị khóa.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
@@ -100,19 +117,18 @@ namespace TanTamApi.Controllers
                     var newJwtID = "";
                     var ip = WebUitility.GetIpAddressRequest();
                     var imie = "";
-                    var configuration = new AppSettingsConfiguration();
                     var newAccessToken = JwtHelper.GenerateAccessToken(
                         tokenInfo.AccountId, 
                         tokenInfo.EmployeesInfoId ?? 0,
                         tokenInfo.CompanyId, 
                         tokenInfo.Role ?? 0, 
-                        configuration, 
                     out newJwtID);
 
                     var isUpdateAccessToken = BoFactory.Auth.UpdateEmployeeJwtID(tokenInfo.Id, newJwtID, ip, imie);
 
                     if (isUpdateAccessToken > 0)
                     {
+                        CommonLogger.DefaultLogger.InfoFormat("RefreshToken: Successfully refreshed token for accountId {0}, companyId {1}", accountId, companyId);
                         response.Data = new RefeshTokenResponse()
                         {
                             AccessToken = newAccessToken,
@@ -123,6 +139,7 @@ namespace TanTamApi.Controllers
                     }
                     else
                     {
+                        CommonLogger.DefaultLogger.ErrorFormat("RefreshToken: Failed to update JWT ID for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
                         response.Message = $"Không tạo được token.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
@@ -130,6 +147,7 @@ namespace TanTamApi.Controllers
                 }
                 else
                 {
+                    CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Token info not found for accountId {0}, companyId {1}", accountId, companyId);
                     response.Code = ResponseResultEnum.InvalidToken.Value();
                     response.Message = $"Phiên đăng nhập Không tồn tại.";
                     return Request.CreateResponse(HttpStatusCode.OK, response);
@@ -304,10 +322,10 @@ namespace TanTamApi.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
 
-                if (request.NewPass.Equals(request.OldPass) == false)
+                if (request.NewPass.Equals(request.OldPass) == true)
                 {
                     response.Code = ResponseResultEnum.InvalidInput.Value();
-                    response.Message = "Xác nhận mật khẩu không khớp với mật khẩu được nhập.";
+                    response.Message = "Mật khẩu cũ và mới trùng nhau.";
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
 
@@ -366,7 +384,13 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                CommonLogger.DefaultLogger.Error("SignupPhone Exception: ", ex);
+                var response = new ApiResult<AuthResponse>()
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình đăng ký. Vui lòng thử lại sau."
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
 
@@ -380,7 +404,13 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                CommonLogger.DefaultLogger.Error("SignupMail Exception: ", ex);
+                var response = new ApiResult<AuthResponse>()
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình đăng ký. Vui lòng thử lại sau."
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
 
@@ -398,7 +428,13 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                CommonLogger.DefaultLogger.Error("PhoneSignin Exception: ", ex);
+                var response = new ApiResult<AuthResponse>()
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình đăng nhập. Vui lòng thử lại sau."
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
 
@@ -416,7 +452,13 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                CommonLogger.DefaultLogger.Error("MailSignin Exception: ", ex);
+                var response = new ApiResult<AuthResponse>()
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình đăng nhập. Vui lòng thử lại sau."
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
 
@@ -426,6 +468,11 @@ namespace TanTamApi.Controllers
 
             if (request.Stage == "signin")
             {
+                if (string.IsNullOrEmpty(request.Password))
+                {
+                    errorMsg = "Vui lòng nhập mật khẩu.";
+                    return false;
+                }
                 return true;
             }
 
@@ -494,36 +541,16 @@ namespace TanTamApi.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK, resultValidate);
 
                 case "signin":
-                    if (isUsePhone && string.IsNullOrEmpty(request.Password))
-                    {
-                        response.Message = "Vui lòng nhập mật khẩu";
-                        return Request.CreateResponse(HttpStatusCode.OK, response);
-                    }
                     var result = BoFactory.Auth.SigninAsync(request, isUsePhone, ip, userAgent);
                     if (result.Code == ResponseResultEnum.Success.Value())
                     {
                         var authdata = (Ins_Account_Login_Result)result.Data;
-
-                        string jwtID;
-                        var _configuration = new AppSettingsConfiguration();
-                        var accessToken = JwtHelper.GenerateAccessToken(authdata.AccountId, authdata.Id, authdata.CompanyId, authdata.Role ?? 0, _configuration, out jwtID);
-                        var refreshToken = JwtHelper.GenerateRefreshToken();
-                        int lifeTime = 30;
-                        var configValue = _configuration["Token:RefreshTokenLifeTime"];
-                        if (int.TryParse(configValue, out int parsedLifeTime))
-                        {
-                            lifeTime = parsedLifeTime;
-                        }
-
-                        BoFactory.Auth.InsertEmployeeToken(authdata.Id, jwtID, refreshToken, lifeTime, ip, "imie");
-
-                        response.Data = new AuthResponse()
-                        {
-                            AccessToken = accessToken,
-                            RefreshToken = refreshToken,
-                            UserId = authdata.AccountId,
-                            ShopId = authdata.CompanyId,
-                        };
+                        response.Data = GenerateAuthResponse(
+                         authdata.AccountId, 
+                         authdata.Id, 
+                         authdata.CompanyId, 
+                         authdata.Role ?? 0, 
+                         ip);
                     }
                     return Request.CreateResponse(HttpStatusCode.OK, response);
 
@@ -636,32 +663,11 @@ namespace TanTamApi.Controllers
                                     (dataAlter_result.Company.NeedSetPassword == true)
                                 )
                                 {
-                                    string jwtID;
-                                    var _configuration = new AppSettingsConfiguration();
-                                    var accessToken = JwtHelper.GenerateAccessToken(
-                                        dataAlter_result.User.Id ?? 0, 
+                                    response.Data = GenerateAuthResponse(
+                                        dataAlter_result.User.Id ?? 0,
                                         dataAlter_result.Company.UserId ?? 0,
-                                        dataAlter_result.Company.Id ?? 0, 
-                                        dataAlter_result.Company.ClientRole ?? 0, 
-                                        _configuration, 
-                                        out jwtID);
-                                    var refreshToken = JwtHelper.GenerateRefreshToken();
-                                    int lifeTime = 30;
-                                    var configValue = _configuration["Token:RefreshTokenLifeTime"];
-                                    if (int.TryParse(configValue, out int parsedLifeTime))
-                                    {
-                                        lifeTime = parsedLifeTime;
-                                    }
-
-                                    BoFactory.Auth.InsertEmployeeToken(dataAlter_result.Company.UserId ?? 0, jwtID, refreshToken, lifeTime, ip, "imie");
-
-                                    response.Data = new AuthResponse()
-                                    {
-                                        AccessToken = accessToken,
-                                        RefreshToken = refreshToken,
-                                        UserId = dataAlter_result.User.Id ?? 0,
-                                        ShopId = dataAlter_result.Company.Id ?? 0,
-                                    };
+                                        dataAlter_result.Company.Id ?? 0,
+                                        dataAlter_result.Company.ClientRole ?? 0, ip);
                                 }
                             }
                             return Request.CreateResponse(HttpStatusCode.OK, response);
@@ -673,6 +679,24 @@ namespace TanTamApi.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK, response);
 
             }
+        }
+
+        private AuthResponse GenerateAuthResponse(int accountId, int employeeId, int companyId, int role, string ip)
+        {
+            string jwtID;
+            var accessToken = JwtHelper.GenerateAccessToken(accountId, employeeId, companyId, role, out jwtID);
+            var refreshToken = JwtHelper.GenerateRefreshToken();
+            
+            int lifeTime = MyConfiguration.JWT.LifeTime;
+            BoFactory.Auth.InsertEmployeeToken(employeeId, jwtID, refreshToken, lifeTime, ip, "");
+
+            return new AuthResponse()
+            {
+                AccessToken = accessToken,
+                RefreshToken = refreshToken,
+                UserId = accountId,
+                ShopId = companyId,
+            };
         }
     }
 }
