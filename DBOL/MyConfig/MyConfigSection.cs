@@ -14,5 +14,6 @@ namespace MyConfig
             (DefaultResxLanguagesUtilityElement)this["DefaultResxLanguagesUtility"];
 
         [ConfigurationProperty("Captcha")] public CaptchaElement CaptchaElement => (CaptchaElement)this["Captcha"];
+        [ConfigurationProperty("JWT")] public JWTElement JWTElement => (JWTElement)this["JWT"];
     }
 }
