@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -166,7 +167,7 @@ namespace BussinessObject.Bo.TanTamBo
                 if (authdata == null || authdata.AccountId <= 0)
                 {
                     response.Code = ResponseResultEnum.Success.Value();
-                    response.Message = $"Tài khoản {accountName} không tồn tại.";
+                    response.Message = string.Format("Tài khoản {0} không tồn tại.", accountName);
                     response.Data = new ValidateAccountResponse()
                     {
                         Phone = isUsePhone ? request.Phone : "",
@@ -369,6 +370,63 @@ namespace BussinessObject.Bo.TanTamBo
             return response;
         }
 
-        
+        public ApiResult<UpdateFullNameSigupResponse> UpdateFullNameSigupAsync(string phoneCode, string phone, string mail, string fullName, bool isUsePhone, string ip, string imie)
+        {
+            var response = new ApiResult<UpdateFullNameSigupResponse>()
+            {
+                Data = new UpdateFullNameSigupResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            if (string.IsNullOrEmpty(fullName))
+            {
+                response.Code = ResponseResultEnum.InvalidInput.Value();
+                response.Message = "Vui lòng nhập tên.";
+                return response;
+            }
+            try
+            {
+                if (isUsePhone == true && string.IsNullOrEmpty(mail))
+                {
+                    mail = $"{phone}@mail.com";
+                }
+                else if (isUsePhone == false && string.IsNullOrEmpty(phone))
+                {
+                    phone = StringCommon.GenerateUniqueNumber(11);
+                }
+
+                var updatedFullNames = DaoFactory.Auth.UpdateFullName(string.Format("{0}{1}", phoneCode, phone), mail, fullName, isUsePhone);
+                var accountId = 0;
+                var companyId = 0;
+                var employeeAccountMapId = 0;
+                if (updatedFullNames == null || updatedFullNames.Count() <= 0 || updatedFullNames.FirstOrDefault().AccountID <= 0)
+                {
+                    DaoFactory.Auth.RegisterAccount(phoneCode, phone, mail, fullName, imie, out accountId,out companyId,out employeeAccountMapId);
+                }
+                else
+                {
+                    accountId = updatedFullNames.FirstOrDefault().AccountID ?? 0;
+                    companyId = updatedFullNames.FirstOrDefault().CompanyId ?? 0;
+                    employeeAccountMapId = updatedFullNames.FirstOrDefault().EmployeeAccountMapID ?? 0;
+                }
+
+                response.Data = new UpdateFullNameSigupResponse
+                {
+                    UserId = accountId,
+                    ShopId = companyId
+                };
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = "Cập nhật tên thành công.";
+            }
+            catch (Exception ex)
+            {
+//LoggerHelper.Error($"UpdateFullNameAsync Exception phone {phone} |mail {mail}, fullName {fullName}, isUsePhone {isUsePhone}", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = ResponseResultEnum.SystemError.Text();
+            }
+
+            return response;
+        }
     }
 }

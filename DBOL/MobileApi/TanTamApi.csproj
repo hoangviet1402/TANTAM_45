@@ -174,18 +174,12 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enum\AccountEnum.cs" />
-    <Compile Include="Enum\CompanyStatusEnum.cs" />
-    <Compile Include="Enum\EmployeeStatusEnum.cs" />
     <Compile Include="Enum\LanguageResourceCtrl.cs" />
     <Compile Include="Enum\OAuthCode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Enum\ResponseCodeEnum.cs" />
-    <Compile Include="Enum\ResponseResultEnum.cs" />
-    <Compile Include="Enum\UserRole.cs" />
     <Compile Include="Helper\AESHelper.cs" />
     <Compile Include="Helper\DataRowExtensions.cs" />
-    <Compile Include="Helper\JwtHelper.cs" />
     <Compile Include="Helper\MD5Helper.cs" />
     <Compile Include="Helper\TextHelper.cs" />
     <Compile Include="Helper\ValidationHelper.cs" />

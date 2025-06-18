@@ -1,8 +1,7 @@
+using BussinessObject.Enum;
 using MyUtility.Extensions;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using TanTamApi.Enum;
-
 
 namespace BussinessObject.Models.ApiResponse
 {

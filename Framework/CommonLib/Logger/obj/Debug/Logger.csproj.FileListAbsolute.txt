@@ -10,3 +10,15 @@ D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CoreCompile
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.dll
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.pdb
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Logger.dll.config
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Logger.dll
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Logger.pdb
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\log4net.dll
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Newtonsoft.Json.dll
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\log4net.xml
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Newtonsoft.Json.xml
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.Up2Date
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.dll
+D:\TANTAM_45\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.pdb
