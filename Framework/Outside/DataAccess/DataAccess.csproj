@@ -63,6 +63,7 @@
     <Compile Include="Base\UnitOfWork.cs" />
     <Compile Include="DaoFactory.cs" />
     <Compile Include="Dao\DaoFactories.cs" />
+    <Compile Include="Dao\TanTam\AuthDao.cs" />
     <Compile Include="Dao\TanTam\TanTamDao.cs" />
     <Compile Include="EF\TanTam.Context.cs">
       <AutoGen>True</AutoGen>

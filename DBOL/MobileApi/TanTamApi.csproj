@@ -101,13 +101,13 @@
     </Reference>
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http.Extensions">
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\Framework\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Formatting">
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\Framework\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Primitives">
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\Framework\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
@@ -171,17 +171,24 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ApiHomeController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enum\AccountEnum.cs" />
+    <Compile Include="Enum\CompanyStatusEnum.cs" />
+    <Compile Include="Enum\EmployeeStatusEnum.cs" />
     <Compile Include="Enum\LanguageResourceCtrl.cs" />
     <Compile Include="Enum\OAuthCode.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Enum\ResponseCodeEnum.cs" />
+    <Compile Include="Enum\ResponseResultEnum.cs" />
+    <Compile Include="Enum\UserRole.cs" />
     <Compile Include="Helper\AESHelper.cs" />
     <Compile Include="Helper\DataRowExtensions.cs" />
     <Compile Include="Helper\JwtHelper.cs" />
     <Compile Include="Helper\MD5Helper.cs" />
     <Compile Include="Helper\TextHelper.cs" />
+    <Compile Include="Helper\ValidationHelper.cs" />
     <Compile Include="JWT\Extensions\AuthorizationInforExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,18 +201,11 @@
     <Compile Include="Helper\CaptchaId.cs" />
     <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Helper\ServerCode.cs" />
+    <Compile Include="JWT\Helper\JwtHelper.cs" />
     <Compile Include="JWT\Helper\JwtTokenHelper.cs" />
     <Compile Include="JWT\Middleware\AuthorizeAttribute.cs" />
     <Compile Include="JWT\Middleware\JwtAuthenticationModule.cs" />
     <Compile Include="Models\ApiMethodName.cs" />
-    <Compile Include="Models\Auth\AuthResponse.cs" />
-    <Compile Include="Models\Auth\ChangePassRequest.cs" />
-    <Compile Include="Models\Auth\CompanyInfoDto.cs" />
-    <Compile Include="Models\Auth\CreatePassRequest.cs" />
-    <Compile Include="Models\Auth\LoginRequest.cs" />
-    <Compile Include="Models\Auth\OrganizationDto.cs" />
-    <Compile Include="Models\Auth\RefeshTokenResponse.cs" />
-    <Compile Include="Models\Auth\UpdateFullName.cs" />
     <Compile Include="Models\Captcha\CaptchaModel.cs" />
     <Compile Include="Models\MobileApi\DepositModel.cs" />
     <Compile Include="Models\MobileApi\GameInfo.cs" />

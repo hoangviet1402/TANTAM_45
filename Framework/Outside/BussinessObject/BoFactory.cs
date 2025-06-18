@@ -17,5 +17,6 @@ namespace BussinessObject
     {
     
         public static TanTamBo Vip => new TanTamBo();
+        public static AuthBo Auth => new AuthBo();
     }
 }

@@ -16,5 +16,6 @@ namespace DataAccess
     public class DaoFactory
     {
         public static ITanTamDao TanTam => new TanTamDao();
+        public static IAuthDao Auth => new AuthDao();
     }
 }

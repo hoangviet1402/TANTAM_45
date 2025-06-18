@@ -81,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bo\TanTamBo\AuthBo.cs" />
     <Compile Include="Bo\TanTamBo\TanTamBo.cs" />
     <Compile Include="BoFactory.cs" />
     <Compile Include="Bo\BaseBo.cs" />
@@ -93,14 +94,28 @@
     <Compile Include="Enum\ApiStatusCode.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Enum\CompanyStatusEnum.cs" />
+    <Compile Include="Enum\EmployeeStatusEnum.cs" />
     <Compile Include="Enum\Info\OpenProviderIdEnum.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Enum\Info\RefererIdEnum.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Enum\ResponseCodeEnum.cs" />
+    <Compile Include="Enum\ResponseResultEnum.cs" />
+    <Compile Include="Enum\UserRole.cs" />
     <Compile Include="Helper\CacheApiHelper.cs" />
     <Compile Include="Models\ApiResponse\ApiBaseResponse.cs" />
+    <Compile Include="Models\ApiResponse\ApiResult.cs" />
+    <Compile Include="Models\Auth\AuthResponse.cs" />
+    <Compile Include="Models\Auth\ChangePassRequest.cs" />
+    <Compile Include="Models\Auth\CompanyInfoDto.cs" />
+    <Compile Include="Models\Auth\CreatePassRequest.cs" />
+    <Compile Include="Models\Auth\LoginRequest.cs" />
+    <Compile Include="Models\Auth\OrganizationDto.cs" />
+    <Compile Include="Models\Auth\RefeshTokenResponse.cs" />
+    <Compile Include="Models\Auth\UpdateFullName.cs" />
     <Compile Include="Models\MyConfigModel.cs" />
     <Compile Include="Models\ResourceEnum\Model\MyResourceDetailModel.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceAccountManagement.cs" />

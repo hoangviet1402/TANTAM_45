@@ -8,6 +8,7 @@ D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\bin\Debug\EntitiesObject.pdb
 D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\bin\Debug\EntitiesObject.dll.config
 D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\bin\Debug\EntityFramework.xml
 D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
 D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\Framework\Outside\DataAccess\obj\Debug\DataAccess.dll

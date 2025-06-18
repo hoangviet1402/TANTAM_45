@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace Shared.Helpers
+namespace TanTamApi.Helper
 {
 
     public static class TextHelper
