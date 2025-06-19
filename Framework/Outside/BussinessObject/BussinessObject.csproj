@@ -116,6 +116,12 @@
     <Compile Include="Models\Auth\OrganizationDto.cs" />
     <Compile Include="Models\Auth\RefeshTokenResponse.cs" />
     <Compile Include="Models\Auth\UpdateFullName.cs" />
+    <Compile Include="Models\Company\BranchesDTO.cs" />
+    <Compile Include="Models\Company\BusinessDTO.cs" />
+    <Compile Include="Models\Company\CompanyDTO.cs" />
+    <Compile Include="Models\Company\DepartmentDTO.cs" />
+    <Compile Include="Models\Company\PositionDTO.cs" />
+    <Compile Include="Models\Company\UpdateInfoWhenSinup.cs" />
     <Compile Include="Models\MyConfigModel.cs" />
     <Compile Include="Models\ResourceEnum\Model\MyResourceDetailModel.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceAccountManagement.cs" />
