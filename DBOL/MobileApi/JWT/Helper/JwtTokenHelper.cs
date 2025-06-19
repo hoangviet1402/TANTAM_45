@@ -7,6 +7,9 @@ using System.Web;
 using Microsoft.IdentityModel.Tokens;
 using System.Configuration;
 using TanTamApi.Helper;
+using MyConfig;
+using BussinessObject;
+using MyUtility;
 
 namespace TanTamApi.JWT.Helper
 {
@@ -37,16 +40,16 @@ namespace TanTamApi.JWT.Helper
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"] ?? ""));
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(MyConfiguration.JWT.SecretKey));
 
                 var parameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = key,
                     ValidateIssuer = true,
-                    ValidIssuer = _configuration["Jwt:Issuer"],
+                    ValidIssuer = MyConfiguration.JWT.Issuer,
                     ValidateAudience = true,
-                    ValidAudience = _configuration["Jwt:Audience"],
+                    ValidAudience = MyConfiguration.JWT.Audience,
                     ClockSkew = TimeSpan.FromMinutes(5)
                 };
 
@@ -62,21 +65,24 @@ namespace TanTamApi.JWT.Helper
 
                 if (accountId != null && companyId != null && role != null && !string.IsNullOrEmpty(jti))
                 {
-                    // .Result is used here because we cannot use async/await in HttpModule directly for BeginRequest
-                    //var storedToken = authRepository.GetTokenInfo(int.Parse(accountId), int.Parse(companyId)).Result;
-                    //if (storedToken != null && storedToken.IsActive && storedToken.AccountIsActive && storedToken.CompanyIsActive && storedToken.JwtID.Equals(AESHelper.HashPassword(jti)))
-                    //{
-                    //    context.Items["AccountId"] = int.Parse(accountId);
-                    //    context.Items["EmployeeId"] = int.Parse(employeeId ?? "0");
-                    //    context.Items["CompanyId"] = int.Parse(companyId);
-                    //    context.Items["JwtID"] = jti;
-                    //    context.Items["Role"] = int.Parse(role);
-                    //}
-                    context.Items["AccountId"] = int.Parse(accountId);
-                    context.Items["EmployeeId"] = int.Parse(employeeId ?? "0");
-                    context.Items["CompanyId"] = int.Parse(companyId);
-                    context.Items["JwtID"] = jti;
-                    context.Items["Role"] = int.Parse(role);
+                    var storedToken = BoFactory.Auth.GetTokenInfo(int.Parse(accountId), int.Parse(companyId));
+                    if (storedToken != null 
+                        && storedToken.IsActive 
+                        && storedToken.AccountIsActive.GetValueOrDefault(false) 
+                        && storedToken.CompanyIsActive.GetValueOrDefault(false)
+                        && storedToken.JwtID.Equals(SecurityCommon.sha256_hash(jti)))
+                    {
+                        context.Items["AccountId"] = int.Parse(accountId);
+                        context.Items["EmployeeId"] = int.Parse(employeeId ?? "0");
+                        context.Items["CompanyId"] = int.Parse(companyId);
+                        context.Items["JwtID"] = jti;
+                        context.Items["Role"] = int.Parse(role);
+                    }
+                    //context.Items["AccountId"] = int.Parse(accountId);
+                    //context.Items["EmployeeId"] = int.Parse(employeeId ?? "0");
+                    //context.Items["CompanyId"] = int.Parse(companyId);
+                    //context.Items["JwtID"] = jti;
+                    //context.Items["Role"] = int.Parse(role);
                 }
             }
             catch (Exception ex)

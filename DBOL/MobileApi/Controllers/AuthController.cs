@@ -5,7 +5,9 @@ using BussinessObject.Models.Auth;
 using EntitiesObject.Entities.TanTamEntities;
 using Logger;
 using MyConfig;
+using MyUtility;
 using MyUtility.Extensions;
+using ServiceStack.Web;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -69,14 +71,14 @@ namespace TanTamApi.Controllers
                 var tokenInfo = BoFactory.Auth.GetTokenInfo(accountId, companyId);
                 if (tokenInfo != null)
                 {
-                    if (tokenInfo.RefreshToken.Equals(AESHelper.HashPassword(refreshToken), StringComparison.OrdinalIgnoreCase) == false)
+                    if (tokenInfo.RefreshToken.Equals(SecurityCommon.sha256_hash(refreshToken), StringComparison.OrdinalIgnoreCase) == false)
                     {
                         CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Invalid refresh token for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.InvalidToken.Value();
                         response.Message = $"Phiên đăng nhập Không tồn tại.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
-                    else if (tokenInfo.JwtID.Equals(AESHelper.HashPassword(jwtID), StringComparison.OrdinalIgnoreCase) == false)
+                    else if (tokenInfo.JwtID.Equals(SecurityCommon.sha256_hash(jwtID), StringComparison.OrdinalIgnoreCase) == false)
                     {
                         CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Invalid JWT ID for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.InvalidToken.Value();
@@ -377,19 +379,111 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("api/auth/signup/phone")]
         public HttpResponseMessage SignupPhone([FromBody] SignupRequest request)
         {
+            var response = new ApiResult<AuthResponse>()
+            {
+                Code = ResponseResultEnum.InvalidInput.Value(),
+                Message = ResponseResultEnum.InvalidInput.Text()
+            };
+            var isUsePhone = true;
+            // Validate input
+            if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
+            {
+                response.Message = "Số điện thoại không được để trống.";
+                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+            }
+            if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
+            {
+                response.Message = "Số điện thoại không hợp lệ.";
+                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+            }
+            if (string.IsNullOrEmpty(request.Stage))
+            {
+                response.Message = "Thông tin không hợp lệ.";
+                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+            }
+
+            var ip = WebUitility.GetIpAddressRequest();
+            var imie = "";
+
             try
             {
-                var result = SignupCommon(request, true);
-                return Request.CreateResponse(HttpStatusCode.OK, result);
+                switch (request.Stage.ToLower())
+                {
+                    case "validate":
+                        var resultValidate = BoFactory.Auth.ValidateAccountAsync(new ValidateAccountRequest()
+                        {
+                            PhoneCode = request.PhoneCode,
+                            Phone = request.Phone,
+                            Mail = request.Mail
+                        }, isUsePhone);
+                        if (resultValidate.Code == ResponseResultEnum.Success.Value() && resultValidate.Data != null)
+                        {
+                            var resultValidate_date = (ValidateAccountResponse)resultValidate.Data;
+                            if (resultValidate_date != null && resultValidate_date.AccountId != null && resultValidate_date.AccountId > 0)
+                            {
+                                response = BoFactory.Auth.GetDataAlterAsync(
+                                    resultValidate_date.AccountId.Value,
+                                    isUsePhone,
+                                    request.PhoneCode + request.Phone,
+                                    new List<string>() { "phone" });
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                            }
+                        }
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, resultValidate);
+                    case "signup":
+                        var result = BoFactory.Auth.UpdateFullNameSigupAsync(
+                            request.PhoneCode,
+                            request.Phone,
+                            request.Mail ?? string.Empty,
+                            request.Fullname ?? string.Empty,
+                            isUsePhone,
+                            ip,
+                            imie
+                            );
+                        if (request.IsMobileMenu == 1 && result.Data != null && result.Code == ResponseResultEnum.Success.Value())
+                        {
+                            var UpdateFullNameSigup_result = (UpdateFullNameSigupResponse)result.Data;
+                            if (UpdateFullNameSigup_result.UserId != null && UpdateFullNameSigup_result.UserId > 0)
+                            {
+                                var dataAlter = BoFactory.Auth.GetDataAlterAsync(
+                                        UpdateFullNameSigup_result.UserId ?? 0,
+                                        isUsePhone,
+                                        string.Format("{0}{1}", request.PhoneCode, request.Phone),
+                                        new List<string>() { "phone" });
+
+                                if (dataAlter.Code == ResponseResultEnum.Success.Value() && dataAlter.Data != null)
+                                {
+                                    var dataAlter_result = (AuthResponse)dataAlter.Data;
+                                    if (
+                                        (dataAlter_result.Company != null && dataAlter_result.Company.Id > 0)
+                                        &&
+                                        (dataAlter_result.User != null)
+                                        &&
+                                        (dataAlter_result.Company.NeedSetPassword == true)
+                                    )
+                                    {
+                                        response.Data = JwtHelper.GenerateAuthResponse(
+                                            dataAlter_result.User.Id ?? 0,
+                                            dataAlter_result.Company.UserId ?? 0,
+                                            dataAlter_result.Company.Id ?? 0,
+                                            dataAlter_result.Company.ClientRole ?? 0, ip);
+                                    }
+                                }
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                            }
+                        }
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, result);
+                    default:
+                        response.Message = "Thông tin không hợp lệ. 999";
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+
+                }
             }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("SignupPhone Exception: ", ex);
-                var response = new ApiResult<AuthResponse>()
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình đăng ký. Vui lòng thử lại sau."
-                };
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Thông tin không hợp lệ. 9999";
                 return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
@@ -397,19 +491,111 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("api/auth/signup/mail")]
         public HttpResponseMessage SignupMail([FromBody] SignupRequest request)
         {
+            var response = new ApiResult<AuthResponse>()
+            {
+                Code = ResponseResultEnum.InvalidInput.Value(),
+                Message = ResponseResultEnum.InvalidInput.Text()
+            };
+            var isUsePhone = false;
+            // Validate input
+            if (string.IsNullOrEmpty(request.Mail))
+            {
+                response.Message = "Mail không được để trống.";
+                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+            }
+            if (!ValidationHelper.IsValidEmail(request.Mail))
+            {
+                response.Message = "Email không hợp lệ.";
+                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+            }
+            if (string.IsNullOrEmpty(request.Stage))
+            {
+                response.Message = "Thông tin không hợp lệ.";
+                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+            }
+
+            var ip = WebUitility.GetIpAddressRequest();
+            var imie = "";
+
             try
             {
-                var result = SignupCommon(request, false);
-                return Request.CreateResponse(HttpStatusCode.OK, result);
+                switch (request.Stage.ToLower())
+                {
+                    case "validate":
+                        var resultValidate = BoFactory.Auth.ValidateAccountAsync(new ValidateAccountRequest()
+                        {
+                            PhoneCode = request.PhoneCode,
+                            Phone = request.Phone,
+                            Mail = request.Mail
+                        }, isUsePhone);
+                        if (resultValidate.Code == ResponseResultEnum.Success.Value() && resultValidate.Data != null)
+                        {
+                            var resultValidate_date = (ValidateAccountResponse)resultValidate.Data;
+                            if (resultValidate_date != null && resultValidate_date.AccountId != null && resultValidate_date.AccountId > 0)
+                            {
+                                response = BoFactory.Auth.GetDataAlterAsync(
+                                    resultValidate_date.AccountId.Value,
+                                    isUsePhone,
+                                    request.PhoneCode + request.Phone,
+                                    new List<string>() { "phone" });
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                            }
+                        }
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, resultValidate);
+                    case "signup":
+                        var result = BoFactory.Auth.UpdateFullNameSigupAsync(
+                            request.PhoneCode,
+                            request.Phone,
+                            request.Mail ?? string.Empty,
+                            request.Fullname ?? string.Empty,
+                            isUsePhone,
+                            ip,
+                            imie
+                            );
+                        if (request.IsMobileMenu == 1 && result.Data != null && result.Code == ResponseResultEnum.Success.Value())
+                        {
+                            var UpdateFullNameSigup_result = (UpdateFullNameSigupResponse)result.Data;
+                            if (UpdateFullNameSigup_result.UserId != null && UpdateFullNameSigup_result.UserId > 0)
+                            {
+                                var dataAlter = BoFactory.Auth.GetDataAlterAsync(
+                                        UpdateFullNameSigup_result.UserId ?? 0,
+                                        isUsePhone,
+                                        string.Format("{0}{1}", request.PhoneCode, request.Phone),
+                                        new List<string>() { "phone" });
+
+                                if (dataAlter.Code == ResponseResultEnum.Success.Value() && dataAlter.Data != null)
+                                {
+                                    var dataAlter_result = (AuthResponse)dataAlter.Data;
+                                    if (
+                                        (dataAlter_result.Company != null && dataAlter_result.Company.Id > 0)
+                                        &&
+                                        (dataAlter_result.User != null)
+                                        &&
+                                        (dataAlter_result.Company.NeedSetPassword == true)
+                                    )
+                                    {
+                                        response.Data = JwtHelper.GenerateAuthResponse(
+                                            dataAlter_result.User.Id ?? 0,
+                                            dataAlter_result.Company.UserId ?? 0,
+                                            dataAlter_result.Company.Id ?? 0,
+                                            dataAlter_result.Company.ClientRole ?? 0, ip);
+                                    }
+                                }
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                            }
+                        }
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, result);
+                    default:
+                        response.Message = "Thông tin không hợp lệ. 999";
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+
+                }
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.Error("SignupMail Exception: ", ex);
-                var response = new ApiResult<AuthResponse>()
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình đăng ký. Vui lòng thử lại sau."
-                };
+                CommonLogger.DefaultLogger.Error("SignupPhone Exception: ", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Thông tin không hợp lệ. 9999";
                 return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
@@ -417,23 +603,74 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("api/auth/phone/signin-v2")]
         public HttpResponseMessage PhoneSignin([FromBody] SigninRequest request)
         {
+            var response = new ApiResult<AuthResponse>()
+            {
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
             try
             {
                 var isUsePhone = true;
+                var ip = WebUitility.GetIpAddressRequest();
+                var userAgent = "";
+
                 if (!ValidateInput(request, isUsePhone, out var errorMsg))
                     return Request.CreateResponse(HttpStatusCode.OK, new ApiResult<int?> { Code = ResponseResultEnum.InvalidInput.Value(), Message = errorMsg });
 
-                var result = HandleStageAsync(request, isUsePhone, "", "");
-                return Request.CreateResponse(HttpStatusCode.OK, result);
+                switch (request.Stage.ToLower())
+                {
+                    case "validate":
+                        var resultValidate = BoFactory.Auth.ValidateAccountAsync(new ValidateAccountRequest()
+                        {
+                            PhoneCode = request.PhoneCode,
+                            Phone = request.Phone,
+                            Mail = request.Mail
+                        }, isUsePhone);
+
+                        if (resultValidate.Code == ResponseResultEnum.Success.Value() &&
+                            resultValidate.Data != null && ((ValidateAccountResponse)resultValidate.Data).AccountId != null)
+                        {
+                            response = BoFactory.Auth.GetDataAlterAsync(
+                                ((ValidateAccountResponse)resultValidate.Data).AccountId.Value,
+                                isUsePhone,
+                                request.PhoneCode + request.Phone,
+                                new List<string>() { "phone" });
+                            return Request.CreateResponse(HttpStatusCode.OK, response);
+                        }
+                        return Request.CreateResponse(HttpStatusCode.OK, resultValidate);
+
+                    case "signin":
+                        var result = BoFactory.Auth.SigninAsync(request, isUsePhone, ip, userAgent);
+                        if (result.Code == ResponseResultEnum.Success.Value())
+                        {
+                            var authdata = (Ins_Account_Login_Result)result.Data;
+                            response = JwtHelper.GenerateAuthResponse(
+                                authdata.AccountId,
+                                authdata.Id,
+                                authdata.CompanyId,
+                                authdata.Role ?? 0,
+                                ip
+                            );
+                        }
+                        else
+                        {
+                            response.Code = result.Code;
+                            response.Message = result.Message;
+                        }
+                        return Request.CreateResponse(HttpStatusCode.OK, response);
+
+                    default:
+                        response.Code = ResponseResultEnum.SystemError.Value();
+                        response.Message = "Thông tin không hợp lệ. 999";
+                        return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
             }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("PhoneSignin Exception: ", ex);
-                var response = new ApiResult<AuthResponse>()
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình đăng nhập. Vui lòng thử lại sau."
-                };
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Thông tin không hợp lệ. 9999";
                 return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
@@ -441,23 +678,74 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("api/auth/mail/signin-v2")]
         public HttpResponseMessage MailSignin([FromBody] SigninRequest request)
         {
+            var response = new ApiResult<AuthResponse>()
+            {
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
             try
             {
                 var isUsePhone = false;
+                var ip = WebUitility.GetIpAddressRequest();
+                var userAgent = "";
+
                 if (!ValidateInput(request, isUsePhone, out var errorMsg))
                     return Request.CreateResponse(HttpStatusCode.OK, new ApiResult<int?> { Code = ResponseResultEnum.InvalidInput.Value(), Message = errorMsg });
 
-                var result = HandleStageAsync(request, isUsePhone, "", "");
-                return Request.CreateResponse(HttpStatusCode.OK, result);
+                switch (request.Stage.ToLower())
+                {
+                    case "validate":
+                        var resultValidate = BoFactory.Auth.ValidateAccountAsync(new ValidateAccountRequest()
+                        {
+                            PhoneCode = request.PhoneCode,
+                            Phone = request.Phone,
+                            Mail = request.Mail
+                        }, isUsePhone);
+
+                        if (resultValidate.Code == ResponseResultEnum.Success.Value() &&
+                            resultValidate.Data != null && ((ValidateAccountResponse)resultValidate.Data).AccountId != null)
+                        {
+                            response = BoFactory.Auth.GetDataAlterAsync(
+                                ((ValidateAccountResponse)resultValidate.Data).AccountId.Value,
+                                isUsePhone,
+                                request.PhoneCode + request.Phone,
+                                new List<string>() { "phone" });
+                            return Request.CreateResponse(HttpStatusCode.OK, response);
+                        }
+                        return Request.CreateResponse(HttpStatusCode.OK, resultValidate);
+
+                    case "signin":
+                        var result = BoFactory.Auth.SigninAsync(request, isUsePhone, ip, userAgent);
+                        if (result.Code == ResponseResultEnum.Success.Value())
+                        {
+                            var authdata = (Ins_Account_Login_Result)result.Data;
+                            response = JwtHelper.GenerateAuthResponse(
+                                authdata.AccountId,
+                                authdata.Id,
+                                authdata.CompanyId,
+                                authdata.Role ?? 0,
+                                ip
+                            );
+                        }
+                        else
+                        {
+                            response.Code = result.Code;
+                            response.Message = result.Message;
+                        }
+                        return Request.CreateResponse(HttpStatusCode.OK, response);
+
+                    default:
+                        response.Code = ResponseResultEnum.SystemError.Value();
+                        response.Message = "Thông tin không hợp lệ. 999";
+                        return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
             }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("MailSignin Exception: ", ex);
-                var response = new ApiResult<AuthResponse>()
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình đăng nhập. Vui lòng thử lại sau."
-                };
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Thông tin không hợp lệ. 9999";
                 return Request.CreateResponse(HttpStatusCode.OK, response);
             }
         }
@@ -508,197 +796,6 @@ namespace TanTamApi.Controllers
                 return false;
             }
             return true;
-        }
-
-        private object HandleStageAsync(SigninRequest request, bool isUsePhone, string ip, string userAgent)
-        {
-            var response = new ApiResult<AuthResponse>()
-            {
-                Code = ResponseResultEnum.MaintenanceMode.Value(),
-                Message = ResponseResultEnum.MaintenanceMode.Text()
-            };
-
-            switch (request.Stage.ToLower())
-            {
-                case "validate":
-                    var resultValidate = BoFactory.Auth.ValidateAccountAsync(new ValidateAccountRequest()
-                        {
-                            PhoneCode = request.PhoneCode,
-                            Phone = request.Phone,
-                            Mail = request.Mail
-                        }, isUsePhone);
-
-                    if (resultValidate.Code == ResponseResultEnum.Success.Value() &&
-                        resultValidate.Data != null && ((ValidateAccountResponse)resultValidate.Data).AccountId != null)
-                    {
-                        response = BoFactory.Auth.GetDataAlterAsync(
-                            ((ValidateAccountResponse)resultValidate.Data).AccountId.Value,
-                            isUsePhone,
-                            request.PhoneCode + request.Phone,
-                            new List<string>() { "phone" });
-                        return response;
-                    }
-                    return resultValidate;
-
-                case "signin":
-                    var result = BoFactory.Auth.SigninAsync(request, isUsePhone, ip, userAgent);
-                    if (result.Code == ResponseResultEnum.Success.Value())
-                    {
-                        var authdata = (Ins_Account_Login_Result)result.Data;
-                        response.Data = GenerateAuthResponse(
-                         authdata.AccountId, 
-                         authdata.Id, 
-                         authdata.CompanyId, 
-                         authdata.Role ?? 0, 
-                         ip);
-                    }
-                    return response;
-
-                default:
-                    response.Message = "Thông tin không hợp lệ. 999";
-                    return response;
-            }
-        }
-
-        private object SignupCommon(SignupRequest request, bool isUsePhone)
-        {
-
-            var response = new ApiResult<AuthResponse>()
-            {
-                Code = ResponseResultEnum.InvalidInput.Value(),
-                Message = ResponseResultEnum.InvalidInput.Text()
-            };
-
-            // Validate input
-            if (isUsePhone)
-            {
-                if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
-                {
-                    response.Message = "Số điện thoại không được để trống.";
-                    return response;
-                }
-                if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
-                {
-                    response.Message = "Số điện thoại không hợp lệ.";
-                    return response;
-                }
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(request.Mail))
-                {
-                    response.Message = "Mail không được để trống.";
-                    return response;
-                }
-                if (!ValidationHelper.IsValidEmail(request.Mail))
-                {
-                    response.Message = "Email không hợp lệ.";
-                    return response;
-                }
-            }
-
-            if (string.IsNullOrEmpty(request.Stage))
-            {
-                response.Message = "Thông tin không hợp lệ.";
-                return response;
-            }
-
-            var validateRequest = new ValidateAccountRequest()
-            {
-                PhoneCode = request.PhoneCode,
-                Phone = request.Phone,
-                Mail = request.Mail
-            };
-
-            var ip = WebUitility.GetIpAddressRequest();
-            var imie = "";
-
-            switch ((request.Stage ?? string.Empty).ToLower())
-            {
-                case "validate":
-                    var resultValidate = BoFactory.Auth.ValidateAccountAsync(validateRequest, isUsePhone);
-                    if (resultValidate.Code == ResponseResultEnum.Success.Value() && resultValidate.Data != null)
-                    {
-                        var resultValidate_date = (ValidateAccountResponse)resultValidate.Data;
-                        if (resultValidate_date != null && resultValidate_date.AccountId != null && resultValidate_date.AccountId > 0)
-                        {
-                            response = BoFactory.Auth.GetDataAlterAsync(
-                                resultValidate_date.AccountId.Value,
-                                isUsePhone,
-                                request.PhoneCode + request.Phone,
-                                new List<string>() { "phone" });
-                            return response;
-                        }
-                    }
-                    return resultValidate;
-                case "signup":
-                    var result = BoFactory.Auth.UpdateFullNameSigupAsync(
-                        request.PhoneCode,
-                        request.Phone,
-                        request.Mail ?? string.Empty,
-                        request.Fullname ?? string.Empty,
-                        isUsePhone,
-                        ip,
-                        imie
-                        );
-                    if (request.IsMobileMenu == 1 && result.Data != null && result.Code == ResponseResultEnum.Success.Value())
-                    {
-                        var UpdateFullNameSigup_result = (UpdateFullNameSigupResponse)result.Data;
-                        if (UpdateFullNameSigup_result.UserId != null && UpdateFullNameSigup_result.UserId > 0)
-                        {
-                            var dataAlter = BoFactory.Auth.GetDataAlterAsync(
-                                    UpdateFullNameSigup_result.UserId ?? 0,
-                                    isUsePhone,
-                                    string.Format("{0}{1}",request.PhoneCode, request.Phone),
-                                    new List<string>() { "phone" });
-
-                            if ( dataAlter.Code == ResponseResultEnum.Success.Value() && dataAlter.Data != null)
-                            {
-                                var dataAlter_result = (AuthResponse)dataAlter.Data;
-                                if (                              
-                                    (dataAlter_result.Company != null && dataAlter_result.Company.Id > 0)
-                                    &&
-                                    (dataAlter_result.User != null)
-                                    &&
-                                    (dataAlter_result.Company.NeedSetPassword == true)
-                                )
-                                {
-                                    response.Data = GenerateAuthResponse(
-                                        dataAlter_result.User.Id ?? 0,
-                                        dataAlter_result.Company.UserId ?? 0,
-                                        dataAlter_result.Company.Id ?? 0,
-                                        dataAlter_result.Company.ClientRole ?? 0, ip);
-                                }
-                            }
-                            return response;
-                        }
-                    }
-                    return result;
-                default:
-                    response.Message = "Thông tin không hợp lệ. 999";
-                    return response;
-
-            }
-        }
-
-
-
-        private AuthResponse GenerateAuthResponse(int accountId, int employeeId, int companyId, int role, string ip)
-        {
-            string jwtID;
-            var accessToken = JwtHelper.GenerateAccessToken(accountId, employeeId, companyId, role, out jwtID);
-            var refreshToken = JwtHelper.GenerateRefreshToken();
-            
-            int lifeTime = MyConfiguration.JWT.LifeTime;
-            BoFactory.Auth.InsertEmployeeToken(employeeId, jwtID, refreshToken, lifeTime, ip, "");
-
-            return new AuthResponse()
-            {
-                AccessToken = accessToken,
-                RefreshToken = refreshToken,
-                UserId = accountId,
-                ShopId = companyId,
-            };
         }
     }
 }

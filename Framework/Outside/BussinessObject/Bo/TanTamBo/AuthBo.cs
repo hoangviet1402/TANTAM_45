@@ -148,7 +148,7 @@ namespace BussinessObject.Bo.TanTamBo
                 var accountName = "";
                 if (isUsePhone)
                 {
-                    accountName = $"{request.PhoneCode}{request.Phone}";
+                    accountName = string.Format("{0}{1}",request.PhoneCode,request.Phone);
                 }
                 else
                 {
@@ -158,7 +158,7 @@ namespace BussinessObject.Bo.TanTamBo
                 var authdata =  DaoFactory.Auth.Validate(accountName ?? "", isUsePhone);
                 if (authdata == null || authdata.AccountId <= 0)
                 {
-                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Code = ResponseResultEnum.AccountNotExist.Value();
                     response.Message = string.Format("Tài khoản {0} không tồn tại.", accountName);
                     response.Data = new ValidateAccountResponse()
                     {
@@ -329,8 +329,24 @@ namespace BussinessObject.Bo.TanTamBo
 
                 if (authdata == null || authdata.AccountId <= 0 || authdata.PasswordHash != (string.IsNullOrEmpty(request.Password) ? "" : SecurityCommon.sha256_hash(request.Password)))
                 {
-                    response.Code = ResponseResultEnum.NoData.Value();
+                    response.Code = ResponseResultEnum.InvalidPass.Value();
                     response.Message = "Mật khẩu không chính xác.";
+                    response.Data = null;
+                    return response;
+                }
+                
+                if (isUsePhone &&  (request.PhoneCode + request.Phone) != (authdata.PhoneCode + authdata.Phone))
+                {
+                    response.Code = ResponseResultEnum.InvalidPass.Value();
+                    response.Message = "Số điện thoại không chính xác.";
+                    response.Data = null;
+                    return response;
+                }
+
+                if (isUsePhone == false && request.Mail != authdata.Email)
+                {
+                    response.Code = ResponseResultEnum.InvalidPass.Value();
+                    response.Message = "Mail không chính xác.";
                     response.Data = null;
                     return response;
                 }
@@ -339,14 +355,15 @@ namespace BussinessObject.Bo.TanTamBo
                 {
                     //LoggerHelper.Warning($"LoginAsync email {accountName} này đã bị khóa.");
                     response.Code = ResponseResultEnum.AccountLocked.Value();
-                    response.Message = $"Tài khoản {accountName} đã bị khóa.";
+                    response.Message = string.Format("Tài khoản {0} đã bị khóa.", accountName);
                     response.Data = null;
                     return response;
                 }
 
                 response.Code = ResponseResultEnum.Success.Value();
-                response.Data = GetDataAlterAsync(authdata.AccountId, isUsePhone, accountName, signinMethods);
-                
+                response.Data = authdata;
+                //response.Data = GetDataAlterAsync(authdata.AccountId, isUsePhone, accountName, signinMethods);
+
             }
             catch (Exception ex)
             {
@@ -417,292 +434,5 @@ namespace BussinessObject.Bo.TanTamBo
             return response;
         }
 
-        //public ApiResult<AuthResponse> HandleStageAsync_validate(SigninRequest request, bool isUsePhone, string ip, string userAgent)
-        //{
-        //    var response = new ApiResult<AuthResponse>()
-        //    {
-        //        Code = ResponseResultEnum.MaintenanceMode.Value(),
-        //        Message = ResponseResultEnum.MaintenanceMode.Text()
-        //    };
-
-        //    var resultValidate = BoFactory.Auth.ValidateAccountAsync(new ValidateAccountRequest()
-        //    {
-        //        PhoneCode = request.PhoneCode,
-        //        Phone = request.Phone,
-        //        Mail = request.Mail
-        //    }, isUsePhone);
-
-            
-        //    return resultValidate;
-        //}
-
-        //public object HandleStageAsync_signin(SigninRequest request, bool isUsePhone, string ip, string userAgent)
-        //{
-        //    var response = new ApiResult<AuthResponse>()
-        //    {
-        //        Code = ResponseResultEnum.MaintenanceMode.Value(),
-        //        Message = ResponseResultEnum.MaintenanceMode.Text()
-        //    };
-
-        //    switch (request.Stage.ToLower())
-        //    {
-        //        case "validate":
-        //            var resultValidate = BoFactory.Auth.ValidateAccountAsync(new ValidateAccountRequest()
-        //            {
-        //                PhoneCode = request.PhoneCode,
-        //                Phone = request.Phone,
-        //                Mail = request.Mail
-        //            }, isUsePhone);
-
-        //            if (resultValidate.Code == ResponseResultEnum.Success.Value() &&
-        //                resultValidate.Data != null && ((ValidateAccountResponse)resultValidate.Data).AccountId != null)
-        //            {
-        //                response = BoFactory.Auth.GetDataAlterAsync(
-        //                    ((ValidateAccountResponse)resultValidate.Data).AccountId.Value,
-        //                    isUsePhone,
-        //                    request.PhoneCode + request.Phone,
-        //                    new List<string>() { "phone" });
-        //                return response;
-        //            }
-        //            return resultValidate;
-
-        //        case "signin":
-        //            var result = BoFactory.Auth.SigninAsync(request, isUsePhone, ip, userAgent);
-        //            if (result.Code == ResponseResultEnum.Success.Value())
-        //            {
-        //                var authdata = (Ins_Account_Login_Result)result.Data;
-        //                response.Data = GenerateAuthResponse(
-        //                 authdata.AccountId,
-        //                 authdata.Id,
-        //                 authdata.CompanyId,
-        //                 authdata.Role ?? 0,
-        //                 ip);
-        //            }
-        //            return response;
-
-        //        default:
-        //            response.Message = "Thông tin không hợp lệ. 999";
-        //            return response;
-        //    }
-        //}
-
-        //private object Signup_Validate(SignupRequest request, bool isUsePhone)
-        //{
-
-        //    var response = new ApiResult<AuthResponse>()
-        //    {
-        //        Code = ResponseResultEnum.InvalidInput.Value(),
-        //        Message = ResponseResultEnum.InvalidInput.Text()
-        //    };
-
-        //    // Validate input
-        //    if (isUsePhone)
-        //    {
-        //        if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
-        //        {
-        //            response.Message = "Số điện thoại không được để trống.";
-        //            return response;
-        //        }
-        //        if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
-        //        {
-        //            response.Message = "Số điện thoại không hợp lệ.";
-        //            return response;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (string.IsNullOrEmpty(request.Mail))
-        //        {
-        //            response.Message = "Mail không được để trống.";
-        //            return response;
-        //        }
-        //        if (!ValidationHelper.IsValidEmail(request.Mail))
-        //        {
-        //            response.Message = "Email không hợp lệ.";
-        //            return response;
-        //        }
-        //    }
-
-        //    if (string.IsNullOrEmpty(request.Stage))
-        //    {
-        //        response.Message = "Thông tin không hợp lệ.";
-        //        return response;
-        //    }
-
-        //    var validateRequest = new ValidateAccountRequest()
-        //    {
-        //        PhoneCode = request.PhoneCode,
-        //        Phone = request.Phone,
-        //        Mail = request.Mail
-        //    };
-
-        //    var ip = WebUitility.GetIpAddressRequest();
-        //    var imie = "";
-
-        //    switch ((request.Stage ?? string.Empty).ToLower())
-        //    {
-        //        case "validate":
-        //            var resultValidate = BoFactory.Auth.ValidateAccountAsync(validateRequest, isUsePhone);
-        //            if (resultValidate.Code == ResponseResultEnum.Success.Value() && resultValidate.Data != null)
-        //            {
-        //                var resultValidate_date = (ValidateAccountResponse)resultValidate.Data;
-        //                if (resultValidate_date != null && resultValidate_date.AccountId != null && resultValidate_date.AccountId > 0)
-        //                {
-        //                    response = BoFactory.Auth.GetDataAlterAsync(
-        //                        resultValidate_date.AccountId.Value,
-        //                        isUsePhone,
-        //                        request.PhoneCode + request.Phone,
-        //                        new List<string>() { "phone" });
-        //                    return response;
-        //                }
-        //            }
-        //            return resultValidate;
-        //        case "signup":
-        //            var result = BoFactory.Auth.UpdateFullNameSigupAsync(
-        //                request.PhoneCode,
-        //                request.Phone,
-        //                request.Mail ?? string.Empty,
-        //                request.Fullname ?? string.Empty,
-        //                isUsePhone,
-        //                ip,
-        //                imie
-        //                );
-        //            if (request.IsMobileMenu == 1 && result.Data != null && result.Code == ResponseResultEnum.Success.Value())
-        //            {
-        //                var UpdateFullNameSigup_result = (UpdateFullNameSigupResponse)result.Data;
-        //                if (UpdateFullNameSigup_result.UserId != null && UpdateFullNameSigup_result.UserId > 0)
-        //                {
-        //                    var dataAlter = BoFactory.Auth.GetDataAlterAsync(
-        //                            UpdateFullNameSigup_result.UserId ?? 0,
-        //                            isUsePhone,
-        //                            string.Format("{0}{1}", request.PhoneCode, request.Phone),
-        //                            new List<string>() { "phone" });
-
-        //                    if (dataAlter.Code == ResponseResultEnum.Success.Value() && dataAlter.Data != null)
-        //                    {
-        //                        var dataAlter_result = (AuthResponse)dataAlter.Data;
-        //                        if (
-        //                            (dataAlter_result.Company != null && dataAlter_result.Company.Id > 0)
-        //                            &&
-        //                            (dataAlter_result.User != null)
-        //                            &&
-        //                            (dataAlter_result.Company.NeedSetPassword == true)
-        //                        )
-        //                        {
-        //                            response.Data = GenerateAuthResponse(
-        //                                dataAlter_result.User.Id ?? 0,
-        //                                dataAlter_result.Company.UserId ?? 0,
-        //                                dataAlter_result.Company.Id ?? 0,
-        //                                dataAlter_result.Company.ClientRole ?? 0, ip);
-        //                        }
-        //                    }
-        //                    return response;
-        //                }
-        //            }
-        //            return result;
-        //        default:
-        //            response.Message = "Thông tin không hợp lệ. 999";
-        //            return response;
-
-        //    }
-        //}
-
-        //private object Signup_signup(SignupRequest request, bool isUsePhone)
-        //{
-
-        //    var response = new ApiResult<AuthResponse>()
-        //    {
-        //        Code = ResponseResultEnum.InvalidInput.Value(),
-        //        Message = ResponseResultEnum.InvalidInput.Text()
-        //    };
-
-        //    // Validate input
-        //    if (isUsePhone)
-        //    {
-        //        if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
-        //        {
-        //            response.Message = "Số điện thoại không được để trống.";
-        //            return response;
-        //        }
-        //        if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
-        //        {
-        //            response.Message = "Số điện thoại không hợp lệ.";
-        //            return response;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (string.IsNullOrEmpty(request.Mail))
-        //        {
-        //            response.Message = "Mail không được để trống.";
-        //            return response;
-        //        }
-        //        if (!ValidationHelper.IsValidEmail(request.Mail))
-        //        {
-        //            response.Message = "Email không hợp lệ.";
-        //            return response;
-        //        }
-        //    }
-
-        //    if (string.IsNullOrEmpty(request.Stage))
-        //    {
-        //        response.Message = "Thông tin không hợp lệ.";
-        //        return response;
-        //    }
-
-        //    var validateRequest = new ValidateAccountRequest()
-        //    {
-        //        PhoneCode = request.PhoneCode,
-        //        Phone = request.Phone,
-        //        Mail = request.Mail
-        //    };
-
-        //    var ip = WebUitility.GetIpAddressRequest();
-        //    var imie = "";
-
-        //    var result = BoFactory.Auth.UpdateFullNameSigupAsync(
-        //                request.PhoneCode,
-        //                request.Phone,
-        //                request.Mail ?? string.Empty,
-        //                request.Fullname ?? string.Empty,
-        //                isUsePhone,
-        //                ip,
-        //                imie
-        //                );
-
-        //    if (request.IsMobileMenu == 1 && result.Data != null && result.Code == ResponseResultEnum.Success.Value())
-        //    {
-        //        var UpdateFullNameSigup_result = (UpdateFullNameSigupResponse)result.Data;
-        //        if (UpdateFullNameSigup_result.UserId != null && UpdateFullNameSigup_result.UserId > 0)
-        //        {
-        //            var dataAlter = BoFactory.Auth.GetDataAlterAsync(
-        //                    UpdateFullNameSigup_result.UserId ?? 0,
-        //                    isUsePhone,
-        //                    string.Format("{0}{1}", request.PhoneCode, request.Phone),
-        //                    new List<string>() { "phone" });
-
-        //            if (dataAlter.Code == ResponseResultEnum.Success.Value() && dataAlter.Data != null)
-        //            {
-        //                var dataAlter_result = (AuthResponse)dataAlter.Data;
-        //                if (
-        //                    (dataAlter_result.Company != null && dataAlter_result.Company.Id > 0)
-        //                    &&
-        //                    (dataAlter_result.User != null)
-        //                    &&
-        //                    (dataAlter_result.Company.NeedSetPassword == true)
-        //                )
-        //                {
-        //                    response.Data = GenerateAuthResponse(
-        //                        dataAlter_result.User.Id ?? 0,
-        //                        dataAlter_result.Company.UserId ?? 0,
-        //                        dataAlter_result.Company.Id ?? 0,
-        //                        dataAlter_result.Company.ClientRole ?? 0, ip);
-        //                }
-        //            }
-        //            return response;
-        //        }
-        //    }
-        //    return result;
-        //}
     }
 }

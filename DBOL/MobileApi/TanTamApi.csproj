@@ -178,12 +178,9 @@
     <Compile Include="Enum\OAuthCode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helper\AESHelper.cs" />
     <Compile Include="Helper\DataRowExtensions.cs" />
-    <Compile Include="Helper\MD5Helper.cs" />
     <Compile Include="Helper\TextHelper.cs" />
     <Compile Include="Helper\ValidationHelper.cs" />
-    <Compile Include="JWT\Extensions\AuthorizationInforExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,7 +189,6 @@
     </Compile>
     <Compile Include="Helper\CacheHelper.cs" />
     <Compile Include="Helper\CaptchaHelper.cs" />
-    <Compile Include="Helper\CaptchaId.cs" />
     <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Helper\ServerCode.cs" />
     <Compile Include="JWT\Helper\JwtHelper.cs" />
@@ -201,22 +197,14 @@
     <Compile Include="JWT\Middleware\JwtAuthenticationModule.cs" />
     <Compile Include="Models\ApiMethodName.cs" />
     <Compile Include="Models\Captcha\CaptchaModel.cs" />
-    <Compile Include="Models\MobileApi\DepositModel.cs" />
-    <Compile Include="Models\MobileApi\GameInfo.cs" />
     <Compile Include="Models\Request\CaptchaRequestModel.cs" />
     <Compile Include="Models\GoogleUserDto.cs" />
-    <Compile Include="Models\MobileApi\AccountModel.cs" />
-    <Compile Include="Models\MobileApi\ArticleResponseModel.cs" />
-    <Compile Include="Models\MobileApi\MessageModel.cs" />
-    <Compile Include="Models\MobileApi\PagerParamModel.cs" />
-    <Compile Include="Models\MobileApi\PaymentModel.cs" />
     <Compile Include="Models\OpenUserDto.cs" />
     <Compile Include="Models\Request\ApiBaseRequest.cs" />
     <Compile Include="Models\Response\HomeLoginReponse.cs" />
     <Compile Include="Models\Response\LinkResponse.cs" />
     <Compile Include="Models\Response\UploadFileResponse.cs" />
     <Compile Include="Models\Response\UploadImageResponse.cs" />
-    <Compile Include="Models\Version\ConfigServerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

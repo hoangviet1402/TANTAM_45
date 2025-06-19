@@ -6,6 +6,12 @@ using Microsoft.IdentityModel.Tokens;
 using System.Linq;
 using System.Net.Http;
 using MyConfig;
+using BussinessObject.Enum;
+using BussinessObject.Models.ApiResponse;
+using BussinessObject.Models.Auth;
+using BussinessObject;
+using MyUtility.Extensions;
+using MyUtility;
 
 namespace TanTamApi.JWT.Helper
 {
@@ -162,13 +168,48 @@ namespace TanTamApi.JWT.Helper
                 var handler = new JwtSecurityTokenHandler();
                 var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
                 
-                var jtiClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "jti");
+                var jtiClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "jti" || c.Type == "JwtID");
                 return jtiClaim?.Value ?? string.Empty;
             }
             catch
             {
                 return string.Empty;
             }
+        }
+
+        public static ApiResult<AuthResponse> GenerateAuthResponse(int accountId, int employeeId, int companyId, int role, string ip)
+        {
+            var response = new ApiResult<AuthResponse>()
+            {
+                Data = new AuthResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            string jwtID;
+            var accessToken = GenerateAccessToken(accountId, employeeId, companyId, role, out jwtID);
+            var refreshToken = GenerateRefreshToken();
+
+            int lifeTime = MyConfiguration.JWT.LifeTime;
+            if (BoFactory.Auth.InsertEmployeeToken(employeeId, SecurityCommon.sha256_hash(jwtID), SecurityCommon.sha256_hash(refreshToken), lifeTime, ip, "") > 0)
+            {
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = ResponseResultEnum.Success.Text();
+                response.Data = new AuthResponse()
+                {
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken,
+                    UserId = accountId,
+                    ShopId = companyId,
+                };
+            }
+            else
+            {
+                response.Code = ResponseResultEnum.Failed.Value();
+                response.Message = ResponseResultEnum.Failed.Text();
+            }
+
+            return response;
         }
 
         /// <summary>
