@@ -510,7 +510,7 @@ namespace TanTamApi.Controllers
             return true;
         }
 
-        private HttpResponseMessage HandleStageAsync(SigninRequest request, bool isUsePhone, string ip, string userAgent)
+        private object HandleStageAsync(SigninRequest request, bool isUsePhone, string ip, string userAgent)
         {
             var response = new ApiResult<AuthResponse>()
             {
@@ -536,9 +536,9 @@ namespace TanTamApi.Controllers
                             isUsePhone,
                             request.PhoneCode + request.Phone,
                             new List<string>() { "phone" });
-                        return Request.CreateResponse(HttpStatusCode.OK, response);
+                        return response;
                     }
-                    return Request.CreateResponse(HttpStatusCode.OK, resultValidate);
+                    return resultValidate;
 
                 case "signin":
                     var result = BoFactory.Auth.SigninAsync(request, isUsePhone, ip, userAgent);
@@ -552,15 +552,15 @@ namespace TanTamApi.Controllers
                          authdata.Role ?? 0, 
                          ip);
                     }
-                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                    return response;
 
                 default:
                     response.Message = "Thông tin không hợp lệ. 999";
-                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                    return response;
             }
         }
 
-        private HttpResponseMessage SignupCommon(SignupRequest request, bool isUsePhone)
+        private object SignupCommon(SignupRequest request, bool isUsePhone)
         {
 
             var response = new ApiResult<AuthResponse>()
@@ -575,12 +575,12 @@ namespace TanTamApi.Controllers
                 if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
                 {
                     response.Message = "Số điện thoại không được để trống.";
-                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                    return response;
                 }
                 if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
                 {
                     response.Message = "Số điện thoại không hợp lệ.";
-                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                    return response;
                 }
             }
             else
@@ -588,19 +588,19 @@ namespace TanTamApi.Controllers
                 if (string.IsNullOrEmpty(request.Mail))
                 {
                     response.Message = "Mail không được để trống.";
-                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                    return response;
                 }
                 if (!ValidationHelper.IsValidEmail(request.Mail))
                 {
                     response.Message = "Email không hợp lệ.";
-                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                    return response;
                 }
             }
 
             if (string.IsNullOrEmpty(request.Stage))
             {
                 response.Message = "Thông tin không hợp lệ.";
-                return Request.CreateResponse(HttpStatusCode.OK, response);
+                return response;
             }
 
             var validateRequest = new ValidateAccountRequest()
@@ -627,10 +627,10 @@ namespace TanTamApi.Controllers
                                 isUsePhone,
                                 request.PhoneCode + request.Phone,
                                 new List<string>() { "phone" });
-                            return Request.CreateResponse(HttpStatusCode.OK, response);
+                            return response;
                         }
                     }
-                    return Request.CreateResponse(HttpStatusCode.OK, resultValidate);
+                    return resultValidate;
                 case "signup":
                     var result = BoFactory.Auth.UpdateFullNameSigupAsync(
                         request.PhoneCode,
@@ -670,16 +670,18 @@ namespace TanTamApi.Controllers
                                         dataAlter_result.Company.ClientRole ?? 0, ip);
                                 }
                             }
-                            return Request.CreateResponse(HttpStatusCode.OK, response);
+                            return response;
                         }
                     }
-                    return Request.CreateResponse(HttpStatusCode.OK, result);
+                    return result;
                 default:
                     response.Message = "Thông tin không hợp lệ. 999";
-                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                    return response;
 
             }
         }
+
+
 
         private AuthResponse GenerateAuthResponse(int accountId, int employeeId, int companyId, int role, string ip)
         {

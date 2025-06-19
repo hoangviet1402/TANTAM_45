@@ -1,0 +1,6 @@
+D:\CRM\TANTAM_SVN\DBOL\MyConfig\bin\Debug\MyConfig.dll
+D:\CRM\TANTAM_SVN\DBOL\MyConfig\bin\Debug\MyConfig.pdb
+D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.csprojAssemblyReference.cache
+D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.csproj.CoreCompileInputs.cache
+D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.dll
+D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.pdb

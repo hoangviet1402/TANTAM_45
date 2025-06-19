@@ -38,3 +38,11 @@ D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\obj\Release\BussinessObject.
 D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\obj\Release\BussinessObject.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\obj\Release\BussinessObject.dll
 D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\obj\Release\BussinessObject.pdb
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\Microsoft.IdentityModel.Logging.dll
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\Microsoft.IdentityModel.Tokens.dll
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\System.IdentityModel.Tokens.Jwt.dll
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\Microsoft.IdentityModel.Logging.xml
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\Microsoft.IdentityModel.Tokens.xml
+D:\CRM\TANTAM_SVN\Framework\Outside\BussinessObject\bin\Release\System.IdentityModel.Tokens.Jwt.xml
