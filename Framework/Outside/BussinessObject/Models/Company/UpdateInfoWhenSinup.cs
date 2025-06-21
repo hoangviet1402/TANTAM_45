@@ -15,10 +15,10 @@ namespace BussinessObject.Models.Company
         public string CompanyName { get; set; }
 
         [JsonProperty("latitude", NullValueHandling = NullValueHandling.Ignore)]
-        public int CompanyLatitude { get; set; }
+        public float? CompanyLatitude { get; set; }
 
         [JsonProperty("longitude", NullValueHandling = NullValueHandling.Ignore)]
-        public int CompanyLongitude { get; set; }
+        public float? CompanyLongitude { get; set; }
 
         [JsonProperty("number_employee_expected", NullValueHandling = NullValueHandling.Ignore)]
         public string CompanyNumberEmploye { get; set; }

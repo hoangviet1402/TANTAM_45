@@ -13,8 +13,7 @@ namespace DataAccess.Dao.TanTam
         int Employee_AddIntoBranch(int accountId, int branchId, bool isPrimary);
         Ins_Company_GetInforAccount_Result GetAccountInfo(int accountId, int companyId);
         Ins_Company_GetInfor_Result GetCompanyInfo(int companyId);
-        List<Ins_Company_GetSetupStep_Result> GetCompanyGetSetupStep(int companyId, int accountId);
-        
+        List<Ins_Company_GetSetupStep_Result> GetCompanyGetSetupStep(int companyId, int accountId);        
         
         int CreatePosition(string name, int departmentId, int companyId);
         

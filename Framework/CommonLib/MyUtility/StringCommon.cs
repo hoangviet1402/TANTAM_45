@@ -8,6 +8,29 @@ namespace MyUtility
     public class StringCommon
     {
         /// <summary>
+        /// Tách và trả về phần số gốc từ số điện thoại nhập vào.
+        /// Ví dụ: "0365618300" → "365618300"
+        ///        "+84912345678" → "912345678"
+        /// </summary>
+        public static string ExtractCoreNumber(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+               return "";
+
+            input = Regex.Replace(input, @"[\s\.\-]", "").Trim();
+
+            if (input.StartsWith("+84"))
+                return input.Substring(3); // Bỏ +84
+            else if (input.StartsWith("84"))
+                return input.Substring(2); // Bỏ 84
+            else if (input.StartsWith("0"))
+                return input.Substring(1); // Bỏ 0
+
+            // Nếu không có prefix thì giữ nguyên
+            return input;
+        }
+
+        /// <summary>
         /// Loại bỏ dấu tiếng Việt và thay thế khoảng trắng bằng ký tự cho trước
         /// </summary>
         public static string NormalizeText(string input, string separator = "_")

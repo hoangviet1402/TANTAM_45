@@ -395,6 +395,9 @@ namespace TanTamApi.Controllers
                 response.Message = "Số điện thoại không được để trống.";
                 return Request.CreateResponse(HttpStatusCode.OK, response);
             }
+
+            request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
+
             if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
             {
                 response.Message = "Số điện thoại không hợp lệ.";
@@ -618,6 +621,7 @@ namespace TanTamApi.Controllers
                 var isUsePhone = true;
                 var ip = WebUitility.GetIpAddressRequest();
                 var userAgent = "";
+                request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
 
                 if (!ValidateInput(request, isUsePhone, out var errorMsg))
                     return Request.CreateResponse(HttpStatusCode.OK, new ApiResult<int?> { Code = ResponseResultEnum.InvalidInput.Value(), Message = errorMsg });

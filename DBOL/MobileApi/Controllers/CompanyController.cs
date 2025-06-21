@@ -88,7 +88,7 @@ namespace TanTamApi.Controllers
             {
                 CommonLogger.DefaultLogger.ErrorFormat("CompanyController ListBranch EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
-                response.Message = "Đã xảy ra lỗi trong quá trình tạo chi nhánh.";
+                response.Message = "Đã xảy ra lỗi trong quá trình lấy danh sách chi nhánh.";
             }
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
@@ -127,7 +127,7 @@ namespace TanTamApi.Controllers
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.ErrorFormat("CompanyController CreateDepartment EX:", ex);
-                response.Code = ResponseResultEnum.InvalidInput.Value();
+                response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình tạo phòng ban.";               
             }
 
@@ -197,14 +197,26 @@ namespace TanTamApi.Controllers
 
 
         [HttpPost, Route("element/list-business-field")]
-        public HttpResponseMessage listBusinessField([FromBody] string refreshToken)
+        public HttpResponseMessage listBusinessField()
         {
-            var response = new ApiResult<RefeshTokenResponse>()
+            var response = new ApiResult<int>()
             {
-                Data = new RefeshTokenResponse(),
+                Data = 0,
                 Code = ResponseResultEnum.ServiceUnavailable.Value(),
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
+
+            try
+            {
+                var result = BoFactory.Company.ListBusinessResponseAsync();
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyController list-business-field EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình lấy thông tin.";
+            }
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
