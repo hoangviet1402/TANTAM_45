@@ -7,10 +7,12 @@ using EntitiesObject.Entities.TanTamEntities;
 using Logger;
 using MyUtility;
 using MyUtility.Extensions;
+using ServiceStack.Web;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using TanTamApi.Helper;
 using TanTamApi.JWT.Helper;
@@ -223,14 +225,68 @@ namespace TanTamApi.Controllers
 
         [JWT.Middleware.Authorize]
         [HttpPost, Route("update-user-and-shop-name")]
-        public HttpResponseMessage UpdateUserAndShopName([FromBody] string refreshToken)
+        public HttpResponseMessage UpdateUserAndShopName([FromBody] UpdateInfoWhenSinupRequest request)
         {
-            var response = new ApiResult<RefeshTokenResponse>()
+            var response = new ApiResult<int>()
             {
-                Data = new RefeshTokenResponse(),
+                Data = 0,
                 Code = ResponseResultEnum.ServiceUnavailable.Value(),
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
+
+            try
+            {
+                if (request == null)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = ResponseResultEnum.InvalidData.Text();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var accountId = JwtHelper.GetAccountIdFromToken(Request);
+
+                if (request.AccountId <= 0 || request.CompanyId <= 0 || string.IsNullOrWhiteSpace(request.CompanyName))
+                {
+                    response.Message = "Thông tin tài khoản hoặc công ty không hợp lệ.";
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+                if (request.CompanyLatitude < -90 || request.CompanyLatitude > 90 || request.CompanyLongitude < -180 || request.CompanyLongitude > 180)
+                {
+                    response.Message = "Vĩ độ hoặc kinh độ không hợp lệ.";
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+                if (string.IsNullOrWhiteSpace(request.CompanyAddress))
+                {
+                    response.Message = "Địa chỉ công ty không được để trống.";
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+
+                if (string.IsNullOrWhiteSpace(request.Email) || ValidationHelper.IsValidEmail(request.Email) == false)
+                {
+                    response.Message = "Email không hợp lệ.";
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+
+                if (request.HearAbout == null || request.UsePurpose == null)
+                {
+                    response.Message = "Thông tin về nguồn gốc và mục đích sử dụng không được để trống.";
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+
+                response = BoFactory.Company.UpdateUserAndShopNameAsync(request);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyController UpdateUserAndShopName EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
+            }
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
