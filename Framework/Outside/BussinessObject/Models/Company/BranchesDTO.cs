@@ -17,13 +17,13 @@ namespace BussinessObject.Models.Company
         public string RegionId { get; set; }
 
         [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
-        public int IsOnboarding { get; set; }
+        public int? IsOnboarding { get; set; }
 
         [JsonProperty("latitude", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Latitude { get; set; }
+        public float? Latitude { get; set; }
 
         [JsonProperty("longitude", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Longitude { get; set; }
+        public float? Longitude { get; set; }
     }
 
     public class ListBranchesByCompanyRequest

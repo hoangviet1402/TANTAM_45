@@ -82,7 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bo\TanTamBo\AuthBo.cs" />
-    <Compile Include="Bo\TanTamBo\TanTamBo.cs" />
+    <Compile Include="Bo\TanTamBo\BranchesBo.cs" />
+    <Compile Include="Bo\TanTamBo\DepartmentBo.cs" />
+    <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
     <Compile Include="BoFactory.cs" />
     <Compile Include="Bo\BaseBo.cs" />
     <Compile Include="Constants\LanguageResourceBo.cs" />
@@ -132,6 +134,8 @@
     <Compile Include="Models\ResourceEnum\MyResourceItemManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourcePaymentManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceTransferGoldManagement.cs" />
+    <Compile Include="Models\User\UserDto.cs" />
+    <Compile Include="Models\User\UserRequestDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

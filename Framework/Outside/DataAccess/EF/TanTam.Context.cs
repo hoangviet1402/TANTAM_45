@@ -15,7 +15,7 @@ namespace DataAccess.EF
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     using EntitiesObject.Entities.TanTamEntities;
-
+    
     public partial class TanTamEntities : DbContext
     {
         public TanTamEntities()
@@ -338,59 +338,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Company_GetSetupStep_Result>("Ins_Company_GetSetupStep", companyIdParameter);
         }
     
-        public virtual int Ins_Company_UpdateInfoWhenSinup(Nullable<int> accountId, Nullable<int> companyId, string companyName, string alias, Nullable<int> comPany_Latitude, Nullable<int> comPany_Longitude, string comPany_Number_Employee, string comPany_Address, string email, string hearAbout, string usePurpose, string businesFieldIds)
-        {
-            var accountIdParameter = accountId.HasValue ?
-                new ObjectParameter("AccountId", accountId) :
-                new ObjectParameter("AccountId", typeof(int));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var companyNameParameter = companyName != null ?
-                new ObjectParameter("CompanyName", companyName) :
-                new ObjectParameter("CompanyName", typeof(string));
-    
-            var aliasParameter = alias != null ?
-                new ObjectParameter("Alias", alias) :
-                new ObjectParameter("Alias", typeof(string));
-    
-            var comPany_LatitudeParameter = comPany_Latitude.HasValue ?
-                new ObjectParameter("ComPany_Latitude", comPany_Latitude) :
-                new ObjectParameter("ComPany_Latitude", typeof(int));
-    
-            var comPany_LongitudeParameter = comPany_Longitude.HasValue ?
-                new ObjectParameter("ComPany_Longitude", comPany_Longitude) :
-                new ObjectParameter("ComPany_Longitude", typeof(int));
-    
-            var comPany_Number_EmployeeParameter = comPany_Number_Employee != null ?
-                new ObjectParameter("ComPany_Number_Employee", comPany_Number_Employee) :
-                new ObjectParameter("ComPany_Number_Employee", typeof(string));
-    
-            var comPany_AddressParameter = comPany_Address != null ?
-                new ObjectParameter("ComPany_Address", comPany_Address) :
-                new ObjectParameter("ComPany_Address", typeof(string));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var hearAboutParameter = hearAbout != null ?
-                new ObjectParameter("HearAbout", hearAbout) :
-                new ObjectParameter("HearAbout", typeof(string));
-    
-            var usePurposeParameter = usePurpose != null ?
-                new ObjectParameter("UsePurpose", usePurpose) :
-                new ObjectParameter("UsePurpose", typeof(string));
-    
-            var businesFieldIdsParameter = businesFieldIds != null ?
-                new ObjectParameter("BusinesFieldIds", businesFieldIds) :
-                new ObjectParameter("BusinesFieldIds", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Company_UpdateInfoWhenSinup", accountIdParameter, companyIdParameter, companyNameParameter, aliasParameter, comPany_LatitudeParameter, comPany_LongitudeParameter, comPany_Number_EmployeeParameter, comPany_AddressParameter, emailParameter, hearAboutParameter, usePurposeParameter, businesFieldIdsParameter);
-        }
-    
         public virtual int Ins_ComPany_UpdateSetupStep(Nullable<int> companyId, Nullable<int> code, ObjectParameter outResult)
         {
             var companyIdParameter = companyId.HasValue ?
@@ -402,60 +349,6 @@ namespace DataAccess.EF
                 new ObjectParameter("Code", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ComPany_UpdateSetupStep", companyIdParameter, codeParameter, outResult);
-        }
-    
-        public virtual int Ins_CompanyBranch_Create(string branchName, string branchAddress, string regionId, Nullable<int> isOnboarding, Nullable<int> latitude, Nullable<int> longitude, Nullable<int> companyId, string alias, string code, ObjectParameter outResult)
-        {
-            var branchNameParameter = branchName != null ?
-                new ObjectParameter("BranchName", branchName) :
-                new ObjectParameter("BranchName", typeof(string));
-    
-            var branchAddressParameter = branchAddress != null ?
-                new ObjectParameter("BranchAddress", branchAddress) :
-                new ObjectParameter("BranchAddress", typeof(string));
-    
-            var regionIdParameter = regionId != null ?
-                new ObjectParameter("RegionId", regionId) :
-                new ObjectParameter("RegionId", typeof(string));
-    
-            var isOnboardingParameter = isOnboarding.HasValue ?
-                new ObjectParameter("IsOnboarding", isOnboarding) :
-                new ObjectParameter("IsOnboarding", typeof(int));
-    
-            var latitudeParameter = latitude.HasValue ?
-                new ObjectParameter("Latitude", latitude) :
-                new ObjectParameter("Latitude", typeof(int));
-    
-            var longitudeParameter = longitude.HasValue ?
-                new ObjectParameter("Longitude", longitude) :
-                new ObjectParameter("Longitude", typeof(int));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var aliasParameter = alias != null ?
-                new ObjectParameter("Alias", alias) :
-                new ObjectParameter("Alias", typeof(string));
-    
-            var codeParameter = code != null ?
-                new ObjectParameter("Code", code) :
-                new ObjectParameter("Code", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyBranch_Create", branchNameParameter, branchAddressParameter, regionIdParameter, isOnboardingParameter, latitudeParameter, longitudeParameter, companyIdParameter, aliasParameter, codeParameter, outResult);
-        }
-    
-        public virtual int Ins_CompanyBranch_CreateMultiple(Nullable<int> companyId, string branchNames, ObjectParameter outResult)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var branchNamesParameter = branchNames != null ?
-                new ObjectParameter("BranchNames", branchNames) :
-                new ObjectParameter("BranchNames", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyBranch_CreateMultiple", companyIdParameter, branchNamesParameter, outResult);
         }
     
         public virtual ObjectResult<Ins_CompanyBranch_GetAllByCompany_Result> Ins_CompanyBranch_GetAllByCompany(Nullable<int> companyId, Nullable<int> perPage, ObjectParameter total)
@@ -608,7 +501,7 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_AddIntoBranch", employeeIdParameter, branchIdParameter, isPrimaryParameter, outResult);
         }
     
-        public virtual int Ins_Employee_Create(string fullName, string employeesCode, string phone, string phoneCode, string email, string password, Nullable<int> companyId, Nullable<int> role, string deviceId, ObjectParameter employeeAccountId, ObjectParameter isNewUser, ObjectParameter needSetPassword, ObjectParameter needSetCompany)
+        public virtual int Ins_Employee_Create(string fullName, string employeesCode, string phone, string phoneCode, string email, string password, Nullable<int> companyId, Nullable<int> branchId, Nullable<int> role, string deviceId, ObjectParameter employeeAccountId, ObjectParameter isNewUser, ObjectParameter needSetPassword, ObjectParameter needSetCompany)
         {
             var fullNameParameter = fullName != null ?
                 new ObjectParameter("FullName", fullName) :
@@ -638,6 +531,10 @@ namespace DataAccess.EF
                 new ObjectParameter("CompanyId", companyId) :
                 new ObjectParameter("CompanyId", typeof(int));
     
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
             var roleParameter = role.HasValue ?
                 new ObjectParameter("Role", role) :
                 new ObjectParameter("Role", typeof(int));
@@ -646,7 +543,7 @@ namespace DataAccess.EF
                 new ObjectParameter("DeviceId", deviceId) :
                 new ObjectParameter("DeviceId", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_Create", fullNameParameter, employeesCodeParameter, phoneParameter, phoneCodeParameter, emailParameter, passwordParameter, companyIdParameter, roleParameter, deviceIdParameter, employeeAccountId, isNewUser, needSetPassword, needSetCompany);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_Create", fullNameParameter, employeesCodeParameter, phoneParameter, phoneCodeParameter, emailParameter, passwordParameter, companyIdParameter, branchIdParameter, roleParameter, deviceIdParameter, employeeAccountId, isNewUser, needSetPassword, needSetCompany);
         }
     
         public virtual int Ins_Employee_Delete(Nullable<int> employeeAccountId)
@@ -1625,6 +1522,100 @@ namespace DataAccess.EF
                 new ObjectParameter("CompanyId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sel_CompanyDepartment_GetCreated", companyIdParameter);
+        }
+    
+        public virtual int Ins_CompanyBranch_Create(string branchName, string branchAddress, string regionId, Nullable<int> isOnboarding, Nullable<double> latitude, Nullable<double> longitude, Nullable<int> companyId, string alias, string code, ObjectParameter outResult)
+        {
+            var branchNameParameter = branchName != null ?
+                new ObjectParameter("BranchName", branchName) :
+                new ObjectParameter("BranchName", typeof(string));
+    
+            var branchAddressParameter = branchAddress != null ?
+                new ObjectParameter("BranchAddress", branchAddress) :
+                new ObjectParameter("BranchAddress", typeof(string));
+    
+            var regionIdParameter = regionId != null ?
+                new ObjectParameter("RegionId", regionId) :
+                new ObjectParameter("RegionId", typeof(string));
+    
+            var isOnboardingParameter = isOnboarding.HasValue ?
+                new ObjectParameter("IsOnboarding", isOnboarding) :
+                new ObjectParameter("IsOnboarding", typeof(int));
+    
+            var latitudeParameter = latitude.HasValue ?
+                new ObjectParameter("Latitude", latitude) :
+                new ObjectParameter("Latitude", typeof(double));
+    
+            var longitudeParameter = longitude.HasValue ?
+                new ObjectParameter("Longitude", longitude) :
+                new ObjectParameter("Longitude", typeof(double));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("Code", code) :
+                new ObjectParameter("Code", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyBranch_Create", branchNameParameter, branchAddressParameter, regionIdParameter, isOnboardingParameter, latitudeParameter, longitudeParameter, companyIdParameter, aliasParameter, codeParameter, outResult);
+        }
+    
+        public virtual int Ins_Company_UpdateInfoWhenSinup(Nullable<int> accountId, Nullable<int> companyId, string companyName, string alias, Nullable<double> comPany_Latitude, Nullable<double> comPany_Longitude, string comPany_Number_Employee, string comPany_Address, string email, string hearAbout, string usePurpose, string businesFieldIds)
+        {
+            var accountIdParameter = accountId.HasValue ?
+                new ObjectParameter("AccountId", accountId) :
+                new ObjectParameter("AccountId", typeof(int));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var companyNameParameter = companyName != null ?
+                new ObjectParameter("CompanyName", companyName) :
+                new ObjectParameter("CompanyName", typeof(string));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var comPany_LatitudeParameter = comPany_Latitude.HasValue ?
+                new ObjectParameter("ComPany_Latitude", comPany_Latitude) :
+                new ObjectParameter("ComPany_Latitude", typeof(double));
+    
+            var comPany_LongitudeParameter = comPany_Longitude.HasValue ?
+                new ObjectParameter("ComPany_Longitude", comPany_Longitude) :
+                new ObjectParameter("ComPany_Longitude", typeof(double));
+    
+            var comPany_Number_EmployeeParameter = comPany_Number_Employee != null ?
+                new ObjectParameter("ComPany_Number_Employee", comPany_Number_Employee) :
+                new ObjectParameter("ComPany_Number_Employee", typeof(string));
+    
+            var comPany_AddressParameter = comPany_Address != null ?
+                new ObjectParameter("ComPany_Address", comPany_Address) :
+                new ObjectParameter("ComPany_Address", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var hearAboutParameter = hearAbout != null ?
+                new ObjectParameter("HearAbout", hearAbout) :
+                new ObjectParameter("HearAbout", typeof(string));
+    
+            var usePurposeParameter = usePurpose != null ?
+                new ObjectParameter("UsePurpose", usePurpose) :
+                new ObjectParameter("UsePurpose", typeof(string));
+    
+            var businesFieldIdsParameter = businesFieldIds != null ?
+                new ObjectParameter("BusinesFieldIds", businesFieldIds) :
+                new ObjectParameter("BusinesFieldIds", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Company_UpdateInfoWhenSinup", accountIdParameter, companyIdParameter, companyNameParameter, aliasParameter, comPany_LatitudeParameter, comPany_LongitudeParameter, comPany_Number_EmployeeParameter, comPany_AddressParameter, emailParameter, hearAboutParameter, usePurposeParameter, businesFieldIdsParameter);
         }
     }
 }

@@ -210,10 +210,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Company_UpdateInfoWhenSinup" FunctionName="TanTamModel.Store.Ins_Company_UpdateInfoWhenSinup" />
     <FunctionImportMapping FunctionImportName="Ins_ComPany_UpdateSetupStep" FunctionName="TanTamModel.Store.Ins_ComPany_UpdateSetupStep" />
-    <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_Create" FunctionName="TanTamModel.Store.Ins_CompanyBranch_Create" />
-    <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_CreateMultiple" FunctionName="TanTamModel.Store.Ins_CompanyBranch_CreateMultiple" />
     <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_GetAllByCompany" FunctionName="TanTamModel.Store.Ins_CompanyBranch_GetAllByCompany">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_CompanyBranch_GetAllByCompany_Result">
@@ -832,5 +829,7 @@
     <FunctionImportMapping FunctionImportName="Ins_User_UpdateStatus" FunctionName="TanTamModel.Store.Ins_User_UpdateStatus" />
     <FunctionImportMapping FunctionImportName="Sel_CompanyBranch_GetIds" FunctionName="TanTamModel.Store.Sel_CompanyBranch_GetIds" />
     <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
+    <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_Create" FunctionName="TanTamModel.Store.Ins_CompanyBranch_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_Company_UpdateInfoWhenSinup" FunctionName="TanTamModel.Store.Ins_Company_UpdateInfoWhenSinup" />
   </EntityContainerMapping>
 </Mapping>

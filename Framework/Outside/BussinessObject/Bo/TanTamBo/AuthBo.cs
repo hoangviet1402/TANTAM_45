@@ -126,6 +126,8 @@ namespace BussinessObject.Bo.TanTamBo
         {
             try
             {
+                newPass = SecurityCommon.sha256_hash(newPass);
+                oldPass = needSetPassword == 0 ? SecurityCommon.sha256_hash(oldPass) : "" ;
                 return DaoFactory.Auth.UpdatePass(accountId, companyId, newPass, oldPass, needSetPassword);
             }
             catch (Exception ex)
@@ -311,9 +313,9 @@ namespace BussinessObject.Bo.TanTamBo
 
             return response;
         }
-        public ApiResult<Ins_Account_Login_Result> SigninAsync(SigninRequest request, bool isUsePhone, string ip, string imie)
+        public ApiResult<object> SigninAsync(SigninRequest request, bool isUsePhone, string ip, string imie)
         {
-            var response = new ApiResult<Ins_Account_Login_Result>()
+            var response = new ApiResult<object>()
             {
                 Data = new Ins_Account_Login_Result(),
                 Code = ResponseResultEnum.Success.Value(),

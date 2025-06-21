@@ -1,6 +1,7 @@
 using BussinessObject.Enum;
 using MyUtility.Extensions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
 namespace BussinessObject.Models.ApiResponse
@@ -11,7 +12,7 @@ namespace BussinessObject.Models.ApiResponse
         public int Code { get; set; }
 
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public object Data { get; set; }
+        public T Data { get; set; }
 
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }

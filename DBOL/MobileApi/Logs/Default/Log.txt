@@ -97,3 +97,48 @@ System.Web.HttpException (0x80004005): The controller for path '/auth' was not f
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-06-21 10:53:26,732 - PhoneSignin Exception: 
+System.Configuration.ConfigurationErrorsException: Unrecognized element 'PaymentWallet'. (D:\CRM\TANTAM_SVN\DBOL\MobileApi\MyConfig\MyConfig.config line 41)
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Web.HttpContext.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at MyConfig.MyConfiguration.get_Instance() in D:\CRM\TANTAM_SVN\DBOL\MyConfig\MyConfiguration.cs:line 11
+   at MyConfig.MyConfiguration.get_JWT() in D:\CRM\TANTAM_SVN\DBOL\MyConfig\MyConfiguration.cs:line 22
+   at TanTamApi.JWT.Helper.JwtHelper.GenerateAccessToken(Int32 accountId, Int32 employeeAccountMapId, Int32 companyId, Int32 role, String& jwtID) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\JWT\Helper\JwtHelper.cs:line 23
+   at TanTamApi.JWT.Helper.JwtHelper.GenerateAuthResponse(Int32 accountId, Int32 employeeId, Int32 companyId, Int32 role, String ip) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\JWT\Helper\JwtHelper.cs:line 190
+   at TanTamApi.Controllers.AuthController.PhoneSignin(SigninRequest request) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\Controllers\AuthController.cs:line 652
+2025-06-21 10:53:41,221 - PhoneSignin Exception: 
+System.Configuration.ConfigurationErrorsException: Unrecognized element 'PaymentWallet'. (D:\CRM\TANTAM_SVN\DBOL\MobileApi\MyConfig\MyConfig.config line 41)
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Web.HttpContext.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at MyConfig.MyConfiguration.get_Instance() in D:\CRM\TANTAM_SVN\DBOL\MyConfig\MyConfiguration.cs:line 11
+   at MyConfig.MyConfiguration.get_JWT() in D:\CRM\TANTAM_SVN\DBOL\MyConfig\MyConfiguration.cs:line 22
+   at TanTamApi.JWT.Helper.JwtHelper.GenerateAccessToken(Int32 accountId, Int32 employeeAccountMapId, Int32 companyId, Int32 role, String& jwtID) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\JWT\Helper\JwtHelper.cs:line 23
+   at TanTamApi.JWT.Helper.JwtHelper.GenerateAuthResponse(Int32 accountId, Int32 employeeId, Int32 companyId, Int32 role, String ip) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\JWT\Helper\JwtHelper.cs:line 190
+   at TanTamApi.Controllers.AuthController.PhoneSignin(SigninRequest request) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\Controllers\AuthController.cs:line 652
+2025-06-21 10:55:18,503 - PhoneSignin Exception: 
+System.Configuration.ConfigurationErrorsException: Unrecognized element 'PaymentWallet'. (D:\CRM\TANTAM_SVN\DBOL\MobileApi\MyConfig\MyConfig.config line 41)
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Web.HttpContext.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at MyConfig.MyConfiguration.get_Instance() in D:\CRM\TANTAM_SVN\DBOL\MyConfig\MyConfiguration.cs:line 11
+   at MyConfig.MyConfiguration.get_JWT() in D:\CRM\TANTAM_SVN\DBOL\MyConfig\MyConfiguration.cs:line 22
+   at TanTamApi.JWT.Helper.JwtHelper.GenerateAccessToken(Int32 accountId, Int32 employeeAccountMapId, Int32 companyId, Int32 role, String& jwtID) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\JWT\Helper\JwtHelper.cs:line 23
+   at TanTamApi.JWT.Helper.JwtHelper.GenerateAuthResponse(Int32 accountId, Int32 employeeId, Int32 companyId, Int32 role, String ip) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\JWT\Helper\JwtHelper.cs:line 190
+   at TanTamApi.Controllers.AuthController.PhoneSignin(SigninRequest request) in D:\CRM\TANTAM_SVN\DBOL\MobileApi\Controllers\AuthController.cs:line 652

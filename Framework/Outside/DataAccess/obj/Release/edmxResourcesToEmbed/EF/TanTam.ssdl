@@ -107,8 +107,8 @@
     <Parameter Name="CompanyId" Type="int" Mode="In" />
     <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
     <Parameter Name="Alias" Type="nvarchar" Mode="In" />
-    <Parameter Name="ComPany_Latitude" Type="int" Mode="In" />
-    <Parameter Name="ComPany_Longitude" Type="int" Mode="In" />
+    <Parameter Name="ComPany_Latitude" Type="float" Mode="In" />
+    <Parameter Name="ComPany_Longitude" Type="float" Mode="In" />
     <Parameter Name="ComPany_Number_Employee" Type="varchar" Mode="In" />
     <Parameter Name="ComPany_Address" Type="nvarchar" Mode="In" />
     <Parameter Name="Email" Type="nvarchar" Mode="In" />
@@ -126,16 +126,11 @@
     <Parameter Name="BranchAddress" Type="nvarchar" Mode="In" />
     <Parameter Name="RegionId" Type="nvarchar" Mode="In" />
     <Parameter Name="IsOnboarding" Type="int" Mode="In" />
-    <Parameter Name="Latitude" Type="int" Mode="In" />
-    <Parameter Name="Longitude" Type="int" Mode="In" />
+    <Parameter Name="Latitude" Type="float" Mode="In" />
+    <Parameter Name="Longitude" Type="float" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />
     <Parameter Name="Alias" Type="nvarchar" Mode="In" />
     <Parameter Name="Code" Type="nvarchar" Mode="In" />
-    <Parameter Name="OutResult" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="Ins_CompanyBranch_CreateMultiple" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CompanyId" Type="int" Mode="In" />
-    <Parameter Name="BranchNames" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="OutResult" Type="int" Mode="InOut" />
   </Function>
   <Function Name="Ins_CompanyBranch_GetAllByCompany" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -196,6 +191,7 @@
     <Parameter Name="Email" Type="nvarchar" Mode="In" />
     <Parameter Name="Password" Type="nvarchar" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
     <Parameter Name="Role" Type="int" Mode="In" />
     <Parameter Name="DeviceId" Type="nvarchar" Mode="In" />
     <Parameter Name="EmployeeAccountId" Type="int" Mode="InOut" />

@@ -43,7 +43,7 @@ namespace TanTamApi.UploadFileService {
         
         /// <remarks/>
         public FileUploadSvc() {
-            this.Url = global::ChannelingToolApi.Properties.Settings.Default.HoYeahMobileApi_UploadFileService_FileUploadSvc;
+            this.Url = global::TanTamApi.Properties.Settings.Default.HoYeahMobileApi_UploadFileService_FileUploadSvc;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

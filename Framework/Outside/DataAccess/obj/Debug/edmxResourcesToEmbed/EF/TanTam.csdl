@@ -103,40 +103,9 @@
     <FunctionImport Name="Ins_Company_GetSetupStep" ReturnType="Collection(TanTamModel.Ins_Company_GetSetupStep_Result)">
       <Parameter Name="CompanyId" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="Ins_Company_UpdateInfoWhenSinup">
-      <Parameter Name="AccountId" Mode="In" Type="Int32" />
-      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
-      <Parameter Name="CompanyName" Mode="In" Type="String" />
-      <Parameter Name="Alias" Mode="In" Type="String" />
-      <Parameter Name="ComPany_Latitude" Mode="In" Type="Int32" />
-      <Parameter Name="ComPany_Longitude" Mode="In" Type="Int32" />
-      <Parameter Name="ComPany_Number_Employee" Mode="In" Type="String" />
-      <Parameter Name="ComPany_Address" Mode="In" Type="String" />
-      <Parameter Name="Email" Mode="In" Type="String" />
-      <Parameter Name="HearAbout" Mode="In" Type="String" />
-      <Parameter Name="UsePurpose" Mode="In" Type="String" />
-      <Parameter Name="BusinesFieldIds" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="Ins_ComPany_UpdateSetupStep">
       <Parameter Name="CompanyId" Mode="In" Type="Int32" />
       <Parameter Name="Code" Mode="In" Type="Int32" />
-      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="Ins_CompanyBranch_Create">
-      <Parameter Name="BranchName" Mode="In" Type="String" />
-      <Parameter Name="BranchAddress" Mode="In" Type="String" />
-      <Parameter Name="RegionId" Mode="In" Type="String" />
-      <Parameter Name="IsOnboarding" Mode="In" Type="Int32" />
-      <Parameter Name="Latitude" Mode="In" Type="Int32" />
-      <Parameter Name="Longitude" Mode="In" Type="Int32" />
-      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
-      <Parameter Name="Alias" Mode="In" Type="String" />
-      <Parameter Name="Code" Mode="In" Type="String" />
-      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="Ins_CompanyBranch_CreateMultiple">
-      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
-      <Parameter Name="BranchNames" Mode="In" Type="String" />
       <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="Ins_CompanyBranch_GetAllByCompany" ReturnType="Collection(TanTamModel.Ins_CompanyBranch_GetAllByCompany_Result)">
@@ -197,6 +166,7 @@
       <Parameter Name="Email" Mode="In" Type="String" />
       <Parameter Name="Password" Mode="In" Type="String" />
       <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
       <Parameter Name="Role" Mode="In" Type="Int32" />
       <Parameter Name="DeviceId" Mode="In" Type="String" />
       <Parameter Name="EmployeeAccountId" Mode="InOut" Type="Int32" />
@@ -487,6 +457,32 @@
     </FunctionImport>
     <FunctionImport Name="Sel_CompanyDepartment_GetCreated">
       <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_CompanyBranch_Create">
+      <Parameter Name="BranchName" Mode="In" Type="String" />
+      <Parameter Name="BranchAddress" Mode="In" Type="String" />
+      <Parameter Name="RegionId" Mode="In" Type="String" />
+      <Parameter Name="IsOnboarding" Mode="In" Type="Int32" />
+      <Parameter Name="Latitude" Mode="In" Type="Double" />
+      <Parameter Name="Longitude" Mode="In" Type="Double" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="Alias" Mode="In" Type="String" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Company_UpdateInfoWhenSinup">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Alias" Mode="In" Type="String" />
+      <Parameter Name="ComPany_Latitude" Mode="In" Type="Double" />
+      <Parameter Name="ComPany_Longitude" Mode="In" Type="Double" />
+      <Parameter Name="ComPany_Number_Employee" Mode="In" Type="String" />
+      <Parameter Name="ComPany_Address" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="HearAbout" Mode="In" Type="String" />
+      <Parameter Name="UsePurpose" Mode="In" Type="String" />
+      <Parameter Name="BusinesFieldIds" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">

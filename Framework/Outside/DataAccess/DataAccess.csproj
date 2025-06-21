@@ -64,7 +64,9 @@
     <Compile Include="DaoFactory.cs" />
     <Compile Include="Dao\DaoFactories.cs" />
     <Compile Include="Dao\TanTam\AuthDao.cs" />
-    <Compile Include="Dao\TanTam\TanTamDao.cs" />
+    <Compile Include="Dao\TanTam\DepartmentDao.cs" />
+    <Compile Include="Dao\TanTam\BranchesDao.cs" />
+    <Compile Include="Dao\TanTam\CompanyDao.cs" />
     <Compile Include="EF\TanTam.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

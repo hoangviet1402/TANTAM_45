@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
 using System.Linq;
-namespace DataAccess.Dao.TanTamDao
+namespace DataAccess.Dao.TanTam
 {
     /// <summary>
     ///     Sao khi dang ky thanh cong, lan dau tien dang nhan se duoc tang x Xu

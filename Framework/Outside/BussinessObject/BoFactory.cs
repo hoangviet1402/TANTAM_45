@@ -15,8 +15,9 @@ namespace BussinessObject
 {
     public class BoFactory
     {
-    
-        public static TanTamBo Vip => new TanTamBo();
         public static AuthBo Auth => new AuthBo();
+        public static CompanyBo Company => new CompanyBo();
+        public static BranchesBo Branches => new BranchesBo();
+        public static DepartmentBo Department => new DepartmentBo();
     }
 }

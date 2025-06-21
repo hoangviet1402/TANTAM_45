@@ -4,30 +4,25 @@ using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.Auth;
 using EntitiesObject.Entities.TanTamEntities;
 using Logger;
-using MyConfig;
 using MyUtility;
 using MyUtility.Extensions;
-using ServiceStack.Web;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Drawing.Drawing2D;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
-using System.Web.Http.Results;
 using TanTamApi.Helper;
 using TanTamApi.JWT.Helper;
 using WebUtility;
 
 namespace TanTamApi.Controllers
 {
+    [RoutePrefix("api/auth")]
     public class AuthController : ApiController
     {
-
-        [TanTamApi.JWT.Middleware.Authorize]
-        [HttpPost, Route("api/auth/refreshtoken")]
+        
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("refreshtoken")]
         public HttpResponseMessage RefreshToken([FromBody] string refreshToken)
         {
             var response = new ApiResult<RefeshTokenResponse>()
@@ -164,8 +159,8 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [TanTamApi.JWT.Middleware.Authorize]
-        [HttpPost, Route("api/auth/logout")]
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("logout")]
         public HttpResponseMessage Logout([FromBody] string refreshToken)
         {
             try
@@ -222,7 +217,7 @@ namespace TanTamApi.Controllers
         }
 
         //[Authorize]
-        [HttpPost, Route("api/auth/set-password-new-user")]
+        [HttpPost, Route("set-password-new-user")]
         public HttpResponseMessage CreatePass([FromBody] CreatePassRequest request)
         {
             try
@@ -258,6 +253,15 @@ namespace TanTamApi.Controllers
 
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
                 var accountId = JwtHelper.GetAccountIdFromToken(Request);
+                if(companyId == 0)
+                {
+                    companyId = request.ShopId ?? 0;
+                }
+
+                if (accountId == 0)
+                {
+                    accountId = request.UserId ?? 0;
+                }
                 var ip = WebUitility.GetIpAddressRequest();
                 var imie = "";
 
@@ -296,8 +300,8 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [TanTamApi.JWT.Middleware.Authorize]
-        [HttpPost, Route("api/auth/changepass")]
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("changepass")]
         public HttpResponseMessage ChangePass([FromBody] ChangePassRequest request)
         {
             try
@@ -366,7 +370,7 @@ namespace TanTamApi.Controllers
             catch (ArgumentException ex)
             {
                 CommonLogger.DefaultLogger.Error("Login Tham số không hợp lệ. Lỗi: " + ex.Message);
-                return Request.CreateResponse(HttpStatusCode.BadRequest, new { message = ex.Message });
+                return Request.CreateResponse(HttpStatusCode.OK, new { message = ex.Message });
             }
             catch (Exception ex)
             {
@@ -376,7 +380,7 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [HttpPost, Route("api/auth/signup/phone")]
+        [HttpPost, Route("signup/phone")]
         public HttpResponseMessage SignupPhone([FromBody] SignupRequest request)
         {
             var response = new ApiResult<AuthResponse>()
@@ -389,17 +393,17 @@ namespace TanTamApi.Controllers
             if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
             {
                 response.Message = "Số điện thoại không được để trống.";
-                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
             if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
             {
                 response.Message = "Số điện thoại không hợp lệ.";
-                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
             if (string.IsNullOrEmpty(request.Stage))
             {
                 response.Message = "Thông tin không hợp lệ.";
-                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
 
             var ip = WebUitility.GetIpAddressRequest();
@@ -426,10 +430,10 @@ namespace TanTamApi.Controllers
                                     isUsePhone,
                                     request.PhoneCode + request.Phone,
                                     new List<string>() { "phone" });
-                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                                return Request.CreateResponse(HttpStatusCode.OK, response);
                             }
                         }
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, resultValidate);
+                        return Request.CreateResponse(HttpStatusCode.OK, resultValidate);
                     case "signup":
                         var result = BoFactory.Auth.UpdateFullNameSigupAsync(
                             request.PhoneCode,
@@ -462,20 +466,20 @@ namespace TanTamApi.Controllers
                                         (dataAlter_result.Company.NeedSetPassword == true)
                                     )
                                     {
-                                        response.Data = JwtHelper.GenerateAuthResponse(
+                                        response = JwtHelper.GenerateAuthResponse(
                                             dataAlter_result.User.Id ?? 0,
                                             dataAlter_result.Company.UserId ?? 0,
                                             dataAlter_result.Company.Id ?? 0,
                                             dataAlter_result.Company.ClientRole ?? 0, ip);
                                     }
                                 }
-                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                                return Request.CreateResponse(HttpStatusCode.OK, response);
                             }
                         }
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, result);
+                        return Request.CreateResponse(HttpStatusCode.OK, result);
                     default:
                         response.Message = "Thông tin không hợp lệ. 999";
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                        return Request.CreateResponse(HttpStatusCode.OK, response);
 
                 }
             }
@@ -488,7 +492,7 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [HttpPost, Route("api/auth/signup/mail")]
+        [HttpPost, Route("signup/mail")]
         public HttpResponseMessage SignupMail([FromBody] SignupRequest request)
         {
             var response = new ApiResult<AuthResponse>()
@@ -501,17 +505,17 @@ namespace TanTamApi.Controllers
             if (string.IsNullOrEmpty(request.Mail))
             {
                 response.Message = "Mail không được để trống.";
-                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
             if (!ValidationHelper.IsValidEmail(request.Mail))
             {
                 response.Message = "Email không hợp lệ.";
-                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
             if (string.IsNullOrEmpty(request.Stage))
             {
                 response.Message = "Thông tin không hợp lệ.";
-                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                return Request.CreateResponse(HttpStatusCode.OK, response);
             }
 
             var ip = WebUitility.GetIpAddressRequest();
@@ -538,10 +542,10 @@ namespace TanTamApi.Controllers
                                     isUsePhone,
                                     request.PhoneCode + request.Phone,
                                     new List<string>() { "phone" });
-                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                                return Request.CreateResponse(HttpStatusCode.OK, response);
                             }
                         }
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, resultValidate);
+                        return Request.CreateResponse(HttpStatusCode.OK, resultValidate);
                     case "signup":
                         var result = BoFactory.Auth.UpdateFullNameSigupAsync(
                             request.PhoneCode,
@@ -574,20 +578,20 @@ namespace TanTamApi.Controllers
                                         (dataAlter_result.Company.NeedSetPassword == true)
                                     )
                                     {
-                                        response.Data = JwtHelper.GenerateAuthResponse(
+                                        response = JwtHelper.GenerateAuthResponse(
                                             dataAlter_result.User.Id ?? 0,
                                             dataAlter_result.Company.UserId ?? 0,
                                             dataAlter_result.Company.Id ?? 0,
                                             dataAlter_result.Company.ClientRole ?? 0, ip);
                                     }
                                 }
-                                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                                return Request.CreateResponse(HttpStatusCode.OK, response);
                             }
                         }
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, result);
+                        return Request.CreateResponse(HttpStatusCode.OK, result);
                     default:
                         response.Message = "Thông tin không hợp lệ. 999";
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+                        return Request.CreateResponse(HttpStatusCode.OK, response);
 
                 }
             }
@@ -600,7 +604,7 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [HttpPost, Route("api/auth/phone/signin-v2")]
+        [HttpPost, Route("phone/signin-v2")]
         public HttpResponseMessage PhoneSignin([FromBody] SigninRequest request)
         {
             var response = new ApiResult<AuthResponse>()
@@ -675,7 +679,7 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [HttpPost, Route("api/auth/mail/signin-v2")]
+        [HttpPost, Route("mail/signin-v2")]
         public HttpResponseMessage MailSignin([FromBody] SigninRequest request)
         {
             var response = new ApiResult<AuthResponse>()

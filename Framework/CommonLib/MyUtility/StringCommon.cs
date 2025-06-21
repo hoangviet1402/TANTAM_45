@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -6,6 +7,22 @@ namespace MyUtility
 {
     public class StringCommon
     {
+        /// <summary>
+        /// Loại bỏ dấu tiếng Việt và thay thế khoảng trắng bằng ký tự cho trước
+        /// </summary>
+        public static string NormalizeText(string input, string separator = "_")
+        {
+            if (string.IsNullOrWhiteSpace(input)) return string.Empty;
+            // Loại bỏ dấu tiếng Việt
+            string text = input.Normalize(NormalizationForm.FormD);
+            var chars = text.Where(c => System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) != System.Globalization.UnicodeCategory.NonSpacingMark).ToArray();
+            text = new string(chars).Normalize(NormalizationForm.FormC);
+            // Thay thế các ký tự không phải chữ/số bằng separator
+            text = Regex.Replace(text, "[^a-zA-Z0-9]+", separator);
+            // Loại bỏ separator ở đầu/cuối và thay thế nhiều separator liên tiếp thành 1
+            text = Regex.Replace(text, $"{separator}+", separator).Trim(separator.ToCharArray());
+            return text;
+        }
 
         /// <summary>
         /// Tạo chuỗi số ngẫu nhiên với độ dài được chỉ định

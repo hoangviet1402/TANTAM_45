@@ -1,8 +1,3 @@
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csprojAssemblyReference.cache
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CoreCompileInputs.cache
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\ChannelingToolApi.dll.config
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\ChannelingToolApi.dll
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\ChannelingToolApi.pdb
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\Antlr3.Runtime.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\BussinessObject.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\DataAccess.dll
@@ -24,6 +19,7 @@ D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\ServiceStack.Interfaces.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\ServiceStack.Redis.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\ServiceStack.Text.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\StackExchange.Redis.dll
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\Swashbuckle.Core.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.IdentityModel.Tokens.Jwt.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Net.Http.Extensions.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Net.Http.Formatting.dll
@@ -33,9 +29,9 @@ D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Http.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Http.WebHost.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Mvc.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Optimization.dll
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Razor.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.Deployment.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.Razor.dll
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\WebActivatorEx.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\WebGrease.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\WebUtility.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.dll
@@ -76,10 +72,14 @@ D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Http.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Http.WebHost.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Mvc.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Optimization.xml
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Razor.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.Deployment.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.Razor.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.xml
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csprojAssemblyReference.cache
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CoreCompileInputs.cache
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CopyComplete
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\ChannelingToolApi.dll
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\ChannelingToolApi.pdb
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll.config
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.pdb
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.dll
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.pdb

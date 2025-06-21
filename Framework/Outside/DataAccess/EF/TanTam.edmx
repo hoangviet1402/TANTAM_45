@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TanTamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TanTamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="Ins_Account_CreateForEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Email" Type="nvarchar" Mode="In" />
           <Parameter Name="Password" Type="nvarchar" Mode="In" />
@@ -112,8 +112,8 @@
           <Parameter Name="CompanyId" Type="int" Mode="In" />
           <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
           <Parameter Name="Alias" Type="nvarchar" Mode="In" />
-          <Parameter Name="ComPany_Latitude" Type="int" Mode="In" />
-          <Parameter Name="ComPany_Longitude" Type="int" Mode="In" />
+          <Parameter Name="ComPany_Latitude" Type="float" Mode="In" />
+          <Parameter Name="ComPany_Longitude" Type="float" Mode="In" />
           <Parameter Name="ComPany_Number_Employee" Type="varchar" Mode="In" />
           <Parameter Name="ComPany_Address" Type="nvarchar" Mode="In" />
           <Parameter Name="Email" Type="nvarchar" Mode="In" />
@@ -131,16 +131,11 @@
           <Parameter Name="BranchAddress" Type="nvarchar" Mode="In" />
           <Parameter Name="RegionId" Type="nvarchar" Mode="In" />
           <Parameter Name="IsOnboarding" Type="int" Mode="In" />
-          <Parameter Name="Latitude" Type="int" Mode="In" />
-          <Parameter Name="Longitude" Type="int" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
           <Parameter Name="CompanyId" Type="int" Mode="In" />
           <Parameter Name="Alias" Type="nvarchar" Mode="In" />
           <Parameter Name="Code" Type="nvarchar" Mode="In" />
-          <Parameter Name="OutResult" Type="int" Mode="InOut" />
-        </Function>
-        <Function Name="Ins_CompanyBranch_CreateMultiple" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CompanyId" Type="int" Mode="In" />
-          <Parameter Name="BranchNames" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="OutResult" Type="int" Mode="InOut" />
         </Function>
         <Function Name="Ins_CompanyBranch_GetAllByCompany" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -201,6 +196,7 @@
           <Parameter Name="Email" Type="nvarchar" Mode="In" />
           <Parameter Name="Password" Type="nvarchar" Mode="In" />
           <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="BranchId" Type="int" Mode="In" />
           <Parameter Name="Role" Type="int" Mode="In" />
           <Parameter Name="DeviceId" Type="nvarchar" Mode="In" />
           <Parameter Name="EmployeeAccountId" Type="int" Mode="InOut" />
@@ -493,8 +489,7 @@
           <Parameter Name="CompanyId" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="TanTamModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TanTamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -521,10 +516,10 @@
             <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Account_GetAllCompany" ReturnType="Collection(TanTamModel.Ins_Account_GetAllCompany_Result)">
-            <Parameter Name="AccountId" Mode="In" Type="Int32" />
+          <Parameter Name="AccountId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Account_GetInfor" ReturnType="Collection(TanTamModel.Ins_Account_GetInfor_Result)">
-            <Parameter Name="AccountId" Mode="In" Type="Int32" />
+          <Parameter Name="AccountId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Account_GetTokensByEmployeeID" ReturnType="Collection(TanTamModel.Ins_Account_GetTokensByEmployeeID_Result)">
             <Parameter Name="AccountId" Mode="In" Type="Int32" />
@@ -586,55 +581,24 @@
           </FunctionImport>
           <FunctionImport Name="Ins_Business_GetList" ReturnType="Collection(TanTamModel.Ins_Business_GetList_Result)" />
           <FunctionImport Name="Ins_ComPany_CreateSetupStep">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Company_GetEmployeeID" ReturnType="Collection(TanTamModel.Ins_Company_GetEmployeeID_Result)">
-            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+          <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Company_GetInfor" ReturnType="Collection(TanTamModel.Ins_Company_GetInfor_Result)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Company_GetInforAccount" ReturnType="Collection(TanTamModel.Ins_Company_GetInforAccount_Result)">
             <Parameter Name="AccountId" Mode="In" Type="Int32" />
             <Parameter Name="CompanyID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Company_GetSetupStep" ReturnType="Collection(TanTamModel.Ins_Company_GetSetupStep_Result)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Ins_Company_UpdateInfoWhenSinup">
-            <Parameter Name="AccountId" Mode="In" Type="Int32" />
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
-            <Parameter Name="CompanyName" Mode="In" Type="String" />
-            <Parameter Name="Alias" Mode="In" Type="String" />
-            <Parameter Name="ComPany_Latitude" Mode="In" Type="Int32" />
-            <Parameter Name="ComPany_Longitude" Mode="In" Type="Int32" />
-            <Parameter Name="ComPany_Number_Employee" Mode="In" Type="String" />
-            <Parameter Name="ComPany_Address" Mode="In" Type="String" />
-            <Parameter Name="Email" Mode="In" Type="String" />
-            <Parameter Name="HearAbout" Mode="In" Type="String" />
-            <Parameter Name="UsePurpose" Mode="In" Type="String" />
-            <Parameter Name="BusinesFieldIds" Mode="In" Type="String" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_ComPany_UpdateSetupStep">
             <Parameter Name="CompanyId" Mode="In" Type="Int32" />
             <Parameter Name="Code" Mode="In" Type="Int32" />
-            <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Ins_CompanyBranch_Create">
-            <Parameter Name="BranchName" Mode="In" Type="String" />
-            <Parameter Name="BranchAddress" Mode="In" Type="String" />
-            <Parameter Name="RegionId" Mode="In" Type="String" />
-            <Parameter Name="IsOnboarding" Mode="In" Type="Int32" />
-            <Parameter Name="Latitude" Mode="In" Type="Int32" />
-            <Parameter Name="Longitude" Mode="In" Type="Int32" />
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
-            <Parameter Name="Alias" Mode="In" Type="String" />
-            <Parameter Name="Code" Mode="In" Type="String" />
-            <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Ins_CompanyBranch_CreateMultiple">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
-            <Parameter Name="BranchNames" Mode="In" Type="String" />
             <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_CompanyBranch_GetAllByCompany" ReturnType="Collection(TanTamModel.Ins_CompanyBranch_GetAllByCompany_Result)">
@@ -643,10 +607,10 @@
             <Parameter Name="Total" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_CompanyBranch_GetAllInfor" ReturnType="Collection(TanTamModel.Ins_CompanyBranch_GetAllInfor_Result)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_CompanyBranch_GetInfor" ReturnType="Collection(TanTamModel.Ins_CompanyBranch_GetInfor_Result)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_CompanyDepartment_Create">
             <Parameter Name="Name" Mode="In" Type="String" />
@@ -666,7 +630,7 @@
             <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_CompanyDepartment_GetAll" ReturnType="Collection(TanTamModel.Ins_CompanyDepartment_GetAll_Result)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_CompanyPosition_Create">
             <Parameter Name="Name" Mode="In" Type="String" />
@@ -695,6 +659,7 @@
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
             <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="BranchId" Mode="In" Type="Int32" />
             <Parameter Name="Role" Mode="In" Type="Int32" />
             <Parameter Name="DeviceId" Mode="In" Type="String" />
             <Parameter Name="EmployeeAccountId" Mode="InOut" Type="Int32" />
@@ -703,7 +668,7 @@
             <Parameter Name="NeedSetCompany" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_Delete">
-            <Parameter Name="EmployeeAccountId" Mode="In" Type="Int32" />
+          <Parameter Name="EmployeeAccountId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_GetAll" ReturnType="Collection(TanTamModel.Ins_Employee_GetAll_Result)">
             <Parameter Name="CompanyId" Mode="In" Type="Int32" />
@@ -713,10 +678,10 @@
             <Parameter Name="IsActive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_GetEmployeeID" ReturnType="Collection(TanTamModel.Ins_Employee_GetEmployeeID_Result)">
-            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+          <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_GetLastEmployeeCode" ReturnType="Collection(String)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_GetList" ReturnType="Collection(TanTamModel.Ins_Employee_GetList_Result)">
             <Parameter Name="company_id" Mode="In" Type="Int32" />
@@ -732,10 +697,10 @@
             <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_GetTokensByEmployeeID">
-            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+          <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_MultiDelete">
-            <Parameter Name="EmployeeAccountIds" Mode="In" Type="String" />
+          <Parameter Name="EmployeeAccountIds" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_Employee_ResetPass">
             <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
@@ -806,7 +771,7 @@
             <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Shift_Get_Status_Clock_In_Out_Shift" ReturnType="Collection(TanTamModel.Ins_Shift_Get_Status_Clock_In_Out_Shift_Result)">
-            <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
+          <Parameter Name="EmployeeAccountMapId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Shift_GetTimekeeper_logLastest" ReturnType="Collection(TanTamModel.Ins_Shift_GetTimekeeper_logLastest_Result)">
             <Parameter Name="EmployeeShiftID" Mode="In" Type="Int32" />
@@ -865,10 +830,10 @@
             <Parameter Name="object_active" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_CreatorInfo" ReturnType="Collection(TanTamModel.Ins_Task_CreatorInfo_Result)">
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
+          <Parameter Name="task_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_GetTaskGroupsByTaskId" ReturnType="Collection(TanTamModel.Ins_Task_GetTaskGroupsByTaskId_Result)">
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
+          <Parameter Name="task_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_Group_Create" ReturnType="Collection(TanTamModel.Ins_Task_Group_Create_Result)">
             <Parameter Name="bundle_id" Mode="In" Type="Int32" />
@@ -877,10 +842,10 @@
             <Parameter Name="position" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_List" ReturnType="Collection(TanTamModel.Ins_Task_List_Result)">
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
+          <Parameter Name="task_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_ManagersByTask" ReturnType="Collection(TanTamModel.Ins_Task_ManagersByTask_Result)">
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
+          <Parameter Name="task_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_Sub_Create" ReturnType="Collection(TanTamModel.Ins_Task_Sub_Create_Result)">
             <Parameter Name="title" Mode="In" Type="String" />
@@ -890,13 +855,13 @@
             <Parameter Name="position" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_Sub_ListByBundle" ReturnType="Collection(TanTamModel.Ins_Task_Sub_ListByBundle_Result)">
-            <Parameter Name="BundleId" Mode="In" Type="String" />
+          <Parameter Name="BundleId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_UsersByTask" ReturnType="Collection(TanTamModel.Ins_Task_UsersByTask_Result)">
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
+          <Parameter Name="task_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_UsersByUser" ReturnType="Collection(TanTamModel.Ins_Task_UsersByUser_Result)">
-            <Parameter Name="user_id" Mode="In" Type="Int32" />
+          <Parameter Name="user_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Tasks_Create">
             <Parameter Name="title" Mode="In" Type="String" />
@@ -909,7 +874,7 @@
             <Parameter Name="user_ids" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_Time_GetList" ReturnType="Collection(TanTamModel.Ins_Time_GetList_Result)">
-            <Parameter Name="Lang" Mode="In" Type="String" />
+          <Parameter Name="Lang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_User_ChangePassword">
             <Parameter Name="user_id" Mode="In" Type="Int32" />
@@ -947,13 +912,13 @@
             <Parameter Name="role_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_User_IsEmailExist" ReturnType="Collection(Int32)">
-            <Parameter Name="email" Mode="In" Type="String" />
+          <Parameter Name="email" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_User_IsPhoneExist" ReturnType="Collection(Int32)">
-            <Parameter Name="phone_number" Mode="In" Type="String" />
+          <Parameter Name="phone_number" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_User_IsUsernameExist" ReturnType="Collection(Int32)">
-            <Parameter Name="username" Mode="In" Type="String" />
+          <Parameter Name="username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_User_Update">
             <Parameter Name="id" Mode="In" Type="Int32" />
@@ -981,10 +946,36 @@
             <Parameter Name="is_active" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Sel_CompanyBranch_GetIds" ReturnType="Collection(Int32)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Sel_CompanyDepartment_GetCreated">
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_CompanyBranch_Create">
+            <Parameter Name="BranchName" Mode="In" Type="String" />
+            <Parameter Name="BranchAddress" Mode="In" Type="String" />
+            <Parameter Name="RegionId" Mode="In" Type="String" />
+            <Parameter Name="IsOnboarding" Mode="In" Type="Int32" />
+            <Parameter Name="Latitude" Mode="In" Type="Double" />
+            <Parameter Name="Longitude" Mode="In" Type="Double" />
             <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Alias" Mode="In" Type="String" />
+            <Parameter Name="Code" Mode="In" Type="String" />
+            <Parameter Name="OutResult" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Company_UpdateInfoWhenSinup">
+            <Parameter Name="AccountId" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyName" Mode="In" Type="String" />
+            <Parameter Name="Alias" Mode="In" Type="String" />
+            <Parameter Name="ComPany_Latitude" Mode="In" Type="Double" />
+            <Parameter Name="ComPany_Longitude" Mode="In" Type="Double" />
+            <Parameter Name="ComPany_Number_Employee" Mode="In" Type="String" />
+            <Parameter Name="ComPany_Address" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="HearAbout" Mode="In" Type="String" />
+            <Parameter Name="UsePurpose" Mode="In" Type="String" />
+            <Parameter Name="BusinesFieldIds" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
@@ -1825,10 +1816,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Ins_Company_UpdateInfoWhenSinup" FunctionName="TanTamModel.Store.Ins_Company_UpdateInfoWhenSinup" />
           <FunctionImportMapping FunctionImportName="Ins_ComPany_UpdateSetupStep" FunctionName="TanTamModel.Store.Ins_ComPany_UpdateSetupStep" />
-          <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_Create" FunctionName="TanTamModel.Store.Ins_CompanyBranch_Create" />
-          <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_CreateMultiple" FunctionName="TanTamModel.Store.Ins_CompanyBranch_CreateMultiple" />
           <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_GetAllByCompany" FunctionName="TanTamModel.Store.Ins_CompanyBranch_GetAllByCompany">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TanTamModel.Ins_CompanyBranch_GetAllByCompany_Result">
@@ -2447,6 +2435,8 @@
           <FunctionImportMapping FunctionImportName="Ins_User_UpdateStatus" FunctionName="TanTamModel.Store.Ins_User_UpdateStatus" />
           <FunctionImportMapping FunctionImportName="Sel_CompanyBranch_GetIds" FunctionName="TanTamModel.Store.Sel_CompanyBranch_GetIds" />
           <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
+          <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_Create" FunctionName="TanTamModel.Store.Ins_CompanyBranch_Create" />
+          <FunctionImportMapping FunctionImportName="Ins_Company_UpdateInfoWhenSinup" FunctionName="TanTamModel.Store.Ins_Company_UpdateInfoWhenSinup" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

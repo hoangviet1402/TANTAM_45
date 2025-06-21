@@ -9,13 +9,16 @@
  *
  *********************************************************************/
 
-using DataAccess.Dao.TanTamDao;
+using DataAccess.Dao.TanTam;
 
 namespace DataAccess
 {
     public class DaoFactory
     {
-        public static ITanTamDao TanTam => new TanTamDao();
+       
         public static IAuthDao Auth => new AuthDao();
+        public static ICompanyDao Company => new CompanyDao();
+        public static IDepartmentDao Department => new DepartmentDao();
+        public static IBranchesDao Branches => new BranchesDao();
     }
 }
