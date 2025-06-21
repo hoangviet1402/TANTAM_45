@@ -690,5 +690,34 @@ namespace MyUtility
             public string TimeString { get; set; }
             public string KeyString { get; set; }
         }
+        /// <summary>
+        /// Tính thời gian làm việc dựa trên giờ bắt đầu và kết thúc
+        /// </summary>
+        /// <param name="startHourId">ID giờ bắt đầu</param>
+        /// <param name="startMinuteId">ID phút bắt đầu</param>
+        /// <param name="endHourId">ID giờ kết thúc</param>
+        /// <param name="endMinuteId">ID phút kết thúc</param>
+        /// <returns>Số giờ làm việc (làm tròn 2 chữ số thập phân)</returns>
+        public static double CalculateWorkingHour(int startHourId, int startMinuteId, int endHourId, int endMinuteId)
+        {
+            try
+            {
+                var startTotalMinutes = (startHourId * 60) + startMinuteId;
+                var endTotalMinutes = (endHourId * 60) + endMinuteId;
+
+                // Xử lý ca làm việc qua đêm (end time < start time)
+                if (endTotalMinutes < startTotalMinutes)
+                {
+                    endTotalMinutes += 24 * 60; // Thêm 24 giờ
+                }
+
+                var diffMinutes = endTotalMinutes - startTotalMinutes;
+                return Math.Round(diffMinutes / 60.0, 2);
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

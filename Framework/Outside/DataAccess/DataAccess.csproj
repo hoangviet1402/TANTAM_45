@@ -89,8 +89,6 @@
     <Compile Include="Model\Shift\Ins_ShiftAssignment_Position_Create.cs" />
     <Compile Include="Model\Shift\Ins_Shift_Branch_Create.cs" />
     <Compile Include="Model\Shift\Ins_Shift_Create_Parameter.cs" />
-    <Compile Include="Model\Shift\Ins_Time_GetList.cs" />
-    <Compile Include="Model\Shift\sads.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
