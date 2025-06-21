@@ -124,6 +124,7 @@ namespace TanTamApi.Controllers
                     response.Message = "Danh sách phòng ban không được để trống.";
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
+                
                 var result = BoFactory.Department.SetupCompany_CreateDepartmentAllBranchAsync(companyId, request);               
             }
             catch (Exception ex)
@@ -185,14 +186,41 @@ namespace TanTamApi.Controllers
 
         [JWT.Middleware.Authorize]
         [HttpPost, Route("position-add")]
-        public HttpResponseMessage CreatePosition([FromBody] string refreshToken)
+        public HttpResponseMessage CreatePosition([FromBody] CreatePosisionInAllBranchesRequest request)
         {
-            var response = new ApiResult<RefeshTokenResponse>()
+            var response = new ApiResult<List<CreatePosisionResponse>>()
             {
-                Data = new RefeshTokenResponse(),
+                Data = new List<CreatePosisionResponse>(),
                 Code = ResponseResultEnum.ServiceUnavailable.Value(),
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
+
+            try
+            {
+                if (request == null || request.Posisions == null || request.Posisions.Count == 0)
+                {
+                    response.Message = "Vui  lòng nhập các vị trí cần thiết cho công ty.";
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+
+                request.CompanyId = JwtHelper.GetCompanyIdFromToken(Request);
+
+                if (request.CompanyId <= 0)
+                {
+                    response.Message = "Thông tin công ty không hợp lệ.";
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+                
+                var result = BoFactory.Position.SetupCompany_CreatePositionInAllBranchesAsync(request.CompanyId, request);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyController CreatePosition EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
+            }
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
@@ -243,8 +271,8 @@ namespace TanTamApi.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
 
-                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
-                var accountId = JwtHelper.GetAccountIdFromToken(Request);
+                request.CompanyId = JwtHelper.GetCompanyIdFromToken(Request);
+                request.AccountId = JwtHelper.GetAccountIdFromToken(Request);
 
                 if (request.AccountId <= 0 || request.CompanyId <= 0 || string.IsNullOrWhiteSpace(request.CompanyName))
                 {
@@ -295,12 +323,26 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("detail")]
         public HttpResponseMessage CompanyDetail([FromBody] string refreshToken)
         {
-            var response = new ApiResult<RefeshTokenResponse>()
+            var response = new ApiResult<CompanyDetailResponse>()
             {
-                Data = new RefeshTokenResponse(),
-                Code = ResponseResultEnum.ServiceUnavailable.Value(),
-                Message = ResponseResultEnum.ServiceUnavailable.Text()
+                Data = new CompanyDetailResponse(),
+                Code = ResponseResultEnum.InvalidInput.Value(),
+                Message = ResponseResultEnum.InvalidInput.Text()
             };
+
+            try
+            {
+                CompanyDetailRequest request = new CompanyDetailRequest();
+                request.CompanyId = JwtHelper.GetCompanyIdFromToken(Request);
+                request.AccountId = JwtHelper.GetAccountIdFromToken(Request);
+                var result = BoFactory.Company.CompanyDetail(request);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyController CompanyDetail EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
+            }
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }

@@ -20,5 +20,7 @@ namespace DataAccess
         public static ICompanyDao Company => new CompanyDao();
         public static IDepartmentDao Department => new DepartmentDao();
         public static IBranchesDao Branches => new BranchesDao();
+        public static IPositionDao Position => new PositionDao();
+        
     }
 }

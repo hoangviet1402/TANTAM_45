@@ -19,5 +19,6 @@ namespace BussinessObject
         public static CompanyBo Company => new CompanyBo();
         public static BranchesBo Branches => new BranchesBo();
         public static DepartmentBo Department => new DepartmentBo();
+        public static PositionBo Position => new PositionBo();
     }
 }

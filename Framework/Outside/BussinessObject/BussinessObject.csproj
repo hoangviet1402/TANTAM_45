@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Bo\TanTamBo\AuthBo.cs" />
     <Compile Include="Bo\TanTamBo\BranchesBo.cs" />
+    <Compile Include="Bo\TanTamBo\PositionBo.cs" />
     <Compile Include="Bo\TanTamBo\DepartmentBo.cs" />
     <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
     <Compile Include="BoFactory.cs" />
