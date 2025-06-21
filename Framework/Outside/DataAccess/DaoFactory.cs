@@ -9,6 +9,7 @@
  *
  *********************************************************************/
 
+using DataAccess.Dao.Shift;
 using DataAccess.Dao.TanTam;
 
 namespace DataAccess
@@ -21,6 +22,8 @@ namespace DataAccess
         public static IDepartmentDao Department => new DepartmentDao();
         public static IBranchesDao Branches => new BranchesDao();
         public static IPositionDao Position => new PositionDao();
-        
+        public static IShiftDao Shift => new ShiftDao();
+        public static IShiftAssignmentDao ShiftAssignment => new ShiftAssignmentDao();
+
     }
 }

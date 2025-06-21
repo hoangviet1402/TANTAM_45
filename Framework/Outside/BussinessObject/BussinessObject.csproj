@@ -81,6 +81,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bo\Shift\ShiftAssignmentBo.cs" />
+    <Compile Include="Bo\Shift\ShiftBo.cs" />
     <Compile Include="Bo\TanTamBo\AuthBo.cs" />
     <Compile Include="Bo\TanTamBo\BranchesBo.cs" />
     <Compile Include="Bo\TanTamBo\PositionBo.cs" />
@@ -135,6 +137,9 @@
     <Compile Include="Models\ResourceEnum\MyResourceItemManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourcePaymentManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceTransferGoldManagement.cs" />
+    <Compile Include="Models\Shift\ShiftAssignmentDTO.cs" />
+    <Compile Include="Models\Shift\ShiftDTO.cs" />
+    <Compile Include="Models\Shift\TimeDTO.cs" />
     <Compile Include="Models\User\UserDto.cs" />
     <Compile Include="Models\User\UserRequestDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

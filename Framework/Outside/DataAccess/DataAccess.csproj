@@ -63,6 +63,8 @@
     <Compile Include="Base\UnitOfWork.cs" />
     <Compile Include="DaoFactory.cs" />
     <Compile Include="Dao\DaoFactories.cs" />
+    <Compile Include="Dao\Shift\ShiftAssignmentDao.cs" />
+    <Compile Include="Dao\Shift\ShiftDao.cs" />
     <Compile Include="Dao\TanTam\AuthDao.cs" />
     <Compile Include="Dao\TanTam\PositionDao.cs" />
     <Compile Include="Dao\TanTam\DepartmentDao.cs" />
@@ -80,6 +82,15 @@
     </Compile>
     <Compile Include="Extension\ContextExtension.cs" />
     <Compile Include="Interface\IBaseDao.cs" />
+    <Compile Include="Model\Shift\Ins_ShiftAssignment_Branch_Create.cs" />
+    <Compile Include="Model\Shift\Ins_ShiftAssignment_CreateAssignment.cs" />
+    <Compile Include="Model\Shift\Ins_ShiftAssignment_Creater.cs" />
+    <Compile Include="Model\Shift\Ins_ShiftAssignment_Department_Create.cs" />
+    <Compile Include="Model\Shift\Ins_ShiftAssignment_Position_Create.cs" />
+    <Compile Include="Model\Shift\Ins_Shift_Branch_Create.cs" />
+    <Compile Include="Model\Shift\Ins_Shift_Create_Parameter.cs" />
+    <Compile Include="Model\Shift\Ins_Time_GetList.cs" />
+    <Compile Include="Model\Shift\sads.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +122,7 @@
       <LastGenOutput>TanTam.Context.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -9,6 +9,7 @@
  *
  *********************************************************************/
 
+using BussinessObject.Bo.Shift;
 using BussinessObject.Bo.TanTamBo;
 
 namespace BussinessObject
@@ -20,5 +21,7 @@ namespace BussinessObject
         public static BranchesBo Branches => new BranchesBo();
         public static DepartmentBo Department => new DepartmentBo();
         public static PositionBo Position => new PositionBo();
+        public static ShiftBo Shift => new ShiftBo();       
+        public static ShiftAssignmentBo ShiftAssignment => new ShiftAssignmentBo();
     }
 }
