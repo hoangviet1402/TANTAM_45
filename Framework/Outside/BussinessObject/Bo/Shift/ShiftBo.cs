@@ -9,6 +9,8 @@ using DataAccess.Model.Shift;
 using Logger;
 using MyUtility;
 using MyUtility.Extensions;
+using ResxLanguagesUtility;
+using ResxLanguagesUtility.Enums;
 
 namespace BussinessObject.Bo.Shift
 {
@@ -138,7 +140,6 @@ namespace BussinessObject.Bo.Shift
                     EndCheckInHourId = request.Shift.EndCheckInHourId ?? 0,
                     StartCheckOutHourId = request.Shift.StartCheckOutHourId ?? 0,
                     EndCheckOutHourId = request.Shift.EndCheckOutHourId ?? 0,
-                    GenerateTimekeepingType = request.Shift.GenerateTimekeepingType ?? 1
                 };
 
 
@@ -158,6 +159,12 @@ namespace BussinessObject.Bo.Shift
                 response.Data.Shift.Name = shiftParameter.Name;
                 response.Data.Shift.NameNoSign = shiftParameter.NameNosign;
                 response.Data.Shift.ShiftKey = shiftParameter.ShiftKey;
+                response.Data.Shift.ShiftTypeObj = new ShiftTypeObject() {
+                    Id = 1,
+                    Value = shiftParameter.Type,
+                    Name  = ResxLanguages.GetText(shiftParameter.Type, ResxLanguagesEnum.Home),
+                    Type  = "shift_type",
+                };
 
                 #region tạo Shift_Branch
                 response.Data.Shift.BranchIds = new List<BranchDetail>();
@@ -336,7 +343,7 @@ namespace BussinessObject.Bo.Shift
                     Type = request.ShiftAssignment.Type ?? "shift_assignment",
                     PayrollConfigType = request.ShiftAssignment.PayrollConfigType ?? "",
                     AssignmentType = request.ShiftAssignment.AssignmentType ?? "weekly_loop",
-                    GenerateTimekeepingType = request.ShiftAssignment.GenerateTimekeepingType ?? "generate_from_start_of_month"
+                    GenerateTimekeepingType = request.ShiftAssignment.GenerateTimekeepingType,
                 };
                 var shiftAssignmentId = DaoFactory.ShiftAssignment.ShiftAssignmentCreate(shiftAssignmentParameter);
                 if (shiftAssignmentId <= 0)

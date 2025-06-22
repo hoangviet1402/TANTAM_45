@@ -110,10 +110,7 @@ namespace BussinessObject.Models.Shift
         public int? StartCheckOutHourId { get; set; }
 
         [JsonProperty("end_check_out_hour_id")]
-        public int? EndCheckOutHourId { get; set; }
-
-        [JsonProperty("generate_timekeeping_type")]
-        public int? GenerateTimekeepingType { get; set; }
+        public int? EndCheckOutHourId { get; set; }        
     }
 
 

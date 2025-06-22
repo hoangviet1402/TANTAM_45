@@ -36,8 +36,8 @@ namespace DataAccess.Dao.Shift
                     parameter.AutoApprove,
                     parameter.PayrollConfigType,
                     parameter.AssignmentType,
-                    parameter.GenerateTimekeepingType,
                     parameter.Type,
+                    parameter.GenerateTimekeepingType,
                     out_OutResult);
 
                 if (out_OutResult != null && out_OutResult.Value != null)

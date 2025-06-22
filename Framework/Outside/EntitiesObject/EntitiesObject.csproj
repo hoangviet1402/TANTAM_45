@@ -122,6 +122,9 @@
     <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Position_Create_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Shift_Branch_Create_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>

@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="Enum\ResponseCodeEnum.cs" />
     <Compile Include="Enum\ResponseResultEnum.cs" />
+    <Compile Include="Enum\ShittEnum.cs" />
     <Compile Include="Enum\UserRole.cs" />
     <Compile Include="Helper\CacheApiHelper.cs" />
     <Compile Include="Models\ApiResponse\ApiBaseResponse.cs" />

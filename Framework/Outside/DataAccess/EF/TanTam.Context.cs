@@ -733,79 +733,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Shift_Branch_Create_Result>("Ins_Shift_Branch_Create", shiftIDParameter, companyIDParameter, branchIDParameter, isInsertOneParameter);
         }
     
-        public virtual int Ins_Shift_Create(Nullable<int> companyID, string name, string nameNosign, string shiftKey, Nullable<decimal> coefficient, Nullable<decimal> minimumWorkingHour, string note, Nullable<int> earlyCheckOut, Nullable<int> latelyCheckIn, Nullable<int> maxLateCheckInOutMinute, Nullable<int> minSoonCheckInOutMinute, Nullable<int> status, string type, Nullable<int> sortIndex, Nullable<int> isOvertimeShift, Nullable<decimal> mealCoefficient, string timezone, ObjectParameter shiftId)
-        {
-            var companyIDParameter = companyID.HasValue ?
-                new ObjectParameter("CompanyID", companyID) :
-                new ObjectParameter("CompanyID", typeof(int));
-    
-            var nameParameter = name != null ?
-                new ObjectParameter("Name", name) :
-                new ObjectParameter("Name", typeof(string));
-    
-            var nameNosignParameter = nameNosign != null ?
-                new ObjectParameter("NameNosign", nameNosign) :
-                new ObjectParameter("NameNosign", typeof(string));
-    
-            var shiftKeyParameter = shiftKey != null ?
-                new ObjectParameter("ShiftKey", shiftKey) :
-                new ObjectParameter("ShiftKey", typeof(string));
-    
-            var coefficientParameter = coefficient.HasValue ?
-                new ObjectParameter("Coefficient", coefficient) :
-                new ObjectParameter("Coefficient", typeof(decimal));
-    
-            var minimumWorkingHourParameter = minimumWorkingHour.HasValue ?
-                new ObjectParameter("MinimumWorkingHour", minimumWorkingHour) :
-                new ObjectParameter("MinimumWorkingHour", typeof(decimal));
-    
-            var noteParameter = note != null ?
-                new ObjectParameter("Note", note) :
-                new ObjectParameter("Note", typeof(string));
-    
-            var earlyCheckOutParameter = earlyCheckOut.HasValue ?
-                new ObjectParameter("EarlyCheckOut", earlyCheckOut) :
-                new ObjectParameter("EarlyCheckOut", typeof(int));
-    
-            var latelyCheckInParameter = latelyCheckIn.HasValue ?
-                new ObjectParameter("LatelyCheckIn", latelyCheckIn) :
-                new ObjectParameter("LatelyCheckIn", typeof(int));
-    
-            var maxLateCheckInOutMinuteParameter = maxLateCheckInOutMinute.HasValue ?
-                new ObjectParameter("MaxLateCheckInOutMinute", maxLateCheckInOutMinute) :
-                new ObjectParameter("MaxLateCheckInOutMinute", typeof(int));
-    
-            var minSoonCheckInOutMinuteParameter = minSoonCheckInOutMinute.HasValue ?
-                new ObjectParameter("MinSoonCheckInOutMinute", minSoonCheckInOutMinute) :
-                new ObjectParameter("MinSoonCheckInOutMinute", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(int));
-    
-            var typeParameter = type != null ?
-                new ObjectParameter("Type", type) :
-                new ObjectParameter("Type", typeof(string));
-    
-            var sortIndexParameter = sortIndex.HasValue ?
-                new ObjectParameter("SortIndex", sortIndex) :
-                new ObjectParameter("SortIndex", typeof(int));
-    
-            var isOvertimeShiftParameter = isOvertimeShift.HasValue ?
-                new ObjectParameter("IsOvertimeShift", isOvertimeShift) :
-                new ObjectParameter("IsOvertimeShift", typeof(int));
-    
-            var mealCoefficientParameter = mealCoefficient.HasValue ?
-                new ObjectParameter("MealCoefficient", mealCoefficient) :
-                new ObjectParameter("MealCoefficient", typeof(decimal));
-    
-            var timezoneParameter = timezone != null ?
-                new ObjectParameter("Timezone", timezone) :
-                new ObjectParameter("Timezone", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Shift_Create", companyIDParameter, nameParameter, nameNosignParameter, shiftKeyParameter, coefficientParameter, minimumWorkingHourParameter, noteParameter, earlyCheckOutParameter, latelyCheckInParameter, maxLateCheckInOutMinuteParameter, minSoonCheckInOutMinuteParameter, statusParameter, typeParameter, sortIndexParameter, isOvertimeShiftParameter, mealCoefficientParameter, timezoneParameter, shiftId);
-        }
-    
         public virtual ObjectResult<Ins_Shift_CreateTimeInOutConfig_Result> Ins_Shift_CreateTimeInOutConfig(Nullable<int> shiftId, Nullable<int> startHourId, Nullable<int> startMinuteId, Nullable<int> endHourId, Nullable<int> endMinuteId, Nullable<int> startCheckInMinuteId, Nullable<int> endCheckInMinuteId, Nullable<int> startCheckOutMinuteId, Nullable<int> endCheckOutMinuteId, Nullable<int> startCheckInHourId, Nullable<int> endCheckInHourId, Nullable<int> startCheckOutHourId, Nullable<int> endCheckOutHourId, Nullable<int> maxLateCheckInOutMinute, Nullable<int> minSoonCheckInOutMinute, string lang)
         {
             var shiftIdParameter = shiftId.HasValue ?
@@ -949,47 +876,6 @@ namespace DataAccess.EF
                 new ObjectParameter("IsInsertOne", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_Branch_Create_Result>("Ins_ShiftAssignment_Branch_Create", shiftAssignmentIDParameter, companyIDParameter, branchIDParameter, isInsertOneParameter);
-        }
-    
-        public virtual int Ins_ShiftAssignment_Create(Nullable<int> companyID, Nullable<int> shiftID, string title, Nullable<int> sortIndex, Nullable<int> autoApprove, string payrollConfigType, string assignmentTypeObj, string generateTimekeepingTypeObj, string type, ObjectParameter shiftAssignmentId)
-        {
-            var companyIDParameter = companyID.HasValue ?
-                new ObjectParameter("CompanyID", companyID) :
-                new ObjectParameter("CompanyID", typeof(int));
-    
-            var shiftIDParameter = shiftID.HasValue ?
-                new ObjectParameter("ShiftID", shiftID) :
-                new ObjectParameter("ShiftID", typeof(int));
-    
-            var titleParameter = title != null ?
-                new ObjectParameter("Title", title) :
-                new ObjectParameter("Title", typeof(string));
-    
-            var sortIndexParameter = sortIndex.HasValue ?
-                new ObjectParameter("SortIndex", sortIndex) :
-                new ObjectParameter("SortIndex", typeof(int));
-    
-            var autoApproveParameter = autoApprove.HasValue ?
-                new ObjectParameter("AutoApprove", autoApprove) :
-                new ObjectParameter("AutoApprove", typeof(int));
-    
-            var payrollConfigTypeParameter = payrollConfigType != null ?
-                new ObjectParameter("PayrollConfigType", payrollConfigType) :
-                new ObjectParameter("PayrollConfigType", typeof(string));
-    
-            var assignmentTypeObjParameter = assignmentTypeObj != null ?
-                new ObjectParameter("AssignmentTypeObj", assignmentTypeObj) :
-                new ObjectParameter("AssignmentTypeObj", typeof(string));
-    
-            var generateTimekeepingTypeObjParameter = generateTimekeepingTypeObj != null ?
-                new ObjectParameter("GenerateTimekeepingTypeObj", generateTimekeepingTypeObj) :
-                new ObjectParameter("GenerateTimekeepingTypeObj", typeof(string));
-    
-            var typeParameter = type != null ?
-                new ObjectParameter("Type", type) :
-                new ObjectParameter("Type", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_Create", companyIDParameter, shiftIDParameter, titleParameter, sortIndexParameter, autoApproveParameter, payrollConfigTypeParameter, assignmentTypeObjParameter, generateTimekeepingTypeObjParameter, typeParameter, shiftAssignmentId);
         }
     
         public virtual int Ins_ShiftAssignment_CreateAssignment(Nullable<int> shiftAssignmentID, Nullable<int> shiftID, string label, Nullable<int> dateOfWeek, ObjectParameter assignmentID)
@@ -1616,6 +1502,195 @@ namespace DataAccess.EF
                 new ObjectParameter("BusinesFieldIds", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Company_UpdateInfoWhenSinup", accountIdParameter, companyIdParameter, companyNameParameter, aliasParameter, comPany_LatitudeParameter, comPany_LongitudeParameter, comPany_Number_EmployeeParameter, comPany_AddressParameter, emailParameter, hearAboutParameter, usePurposeParameter, businesFieldIdsParameter);
+        }
+    
+        public virtual int Ins_Shift_Create(Nullable<int> companyID, string name, string nameNosign, string shiftKey, Nullable<decimal> coefficient, Nullable<decimal> minimumWorkingHour, string note, Nullable<int> earlyCheckOut, Nullable<int> latelyCheckIn, Nullable<int> maxLateCheckInOutMinute, Nullable<int> minSoonCheckInOutMinute, Nullable<int> status, string type, Nullable<int> sortIndex, Nullable<int> isOvertimeShift, Nullable<decimal> mealCoefficient, string timezone, ObjectParameter shiftId)
+        {
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var nameNosignParameter = nameNosign != null ?
+                new ObjectParameter("NameNosign", nameNosign) :
+                new ObjectParameter("NameNosign", typeof(string));
+    
+            var shiftKeyParameter = shiftKey != null ?
+                new ObjectParameter("ShiftKey", shiftKey) :
+                new ObjectParameter("ShiftKey", typeof(string));
+    
+            var coefficientParameter = coefficient.HasValue ?
+                new ObjectParameter("Coefficient", coefficient) :
+                new ObjectParameter("Coefficient", typeof(decimal));
+    
+            var minimumWorkingHourParameter = minimumWorkingHour.HasValue ?
+                new ObjectParameter("MinimumWorkingHour", minimumWorkingHour) :
+                new ObjectParameter("MinimumWorkingHour", typeof(decimal));
+    
+            var noteParameter = note != null ?
+                new ObjectParameter("Note", note) :
+                new ObjectParameter("Note", typeof(string));
+    
+            var earlyCheckOutParameter = earlyCheckOut.HasValue ?
+                new ObjectParameter("EarlyCheckOut", earlyCheckOut) :
+                new ObjectParameter("EarlyCheckOut", typeof(int));
+    
+            var latelyCheckInParameter = latelyCheckIn.HasValue ?
+                new ObjectParameter("LatelyCheckIn", latelyCheckIn) :
+                new ObjectParameter("LatelyCheckIn", typeof(int));
+    
+            var maxLateCheckInOutMinuteParameter = maxLateCheckInOutMinute.HasValue ?
+                new ObjectParameter("MaxLateCheckInOutMinute", maxLateCheckInOutMinute) :
+                new ObjectParameter("MaxLateCheckInOutMinute", typeof(int));
+    
+            var minSoonCheckInOutMinuteParameter = minSoonCheckInOutMinute.HasValue ?
+                new ObjectParameter("MinSoonCheckInOutMinute", minSoonCheckInOutMinute) :
+                new ObjectParameter("MinSoonCheckInOutMinute", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            var typeParameter = type != null ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(string));
+    
+            var sortIndexParameter = sortIndex.HasValue ?
+                new ObjectParameter("SortIndex", sortIndex) :
+                new ObjectParameter("SortIndex", typeof(int));
+    
+            var isOvertimeShiftParameter = isOvertimeShift.HasValue ?
+                new ObjectParameter("IsOvertimeShift", isOvertimeShift) :
+                new ObjectParameter("IsOvertimeShift", typeof(int));
+    
+            var mealCoefficientParameter = mealCoefficient.HasValue ?
+                new ObjectParameter("MealCoefficient", mealCoefficient) :
+                new ObjectParameter("MealCoefficient", typeof(decimal));
+    
+            var timezoneParameter = timezone != null ?
+                new ObjectParameter("Timezone", timezone) :
+                new ObjectParameter("Timezone", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Shift_Create", companyIDParameter, nameParameter, nameNosignParameter, shiftKeyParameter, coefficientParameter, minimumWorkingHourParameter, noteParameter, earlyCheckOutParameter, latelyCheckInParameter, maxLateCheckInOutMinuteParameter, minSoonCheckInOutMinuteParameter, statusParameter, typeParameter, sortIndexParameter, isOvertimeShiftParameter, mealCoefficientParameter, timezoneParameter, shiftId);
+        }
+    
+        public virtual int Ins_ShiftAssignment_Create(Nullable<int> companyID, Nullable<int> shiftID, string title, Nullable<int> sortIndex, Nullable<int> autoApprove, string payrollConfigType, string assignmentTypeObj, string type, string generateTimekeepingType, ObjectParameter shiftAssignmentId)
+        {
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var shiftIDParameter = shiftID.HasValue ?
+                new ObjectParameter("ShiftID", shiftID) :
+                new ObjectParameter("ShiftID", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var sortIndexParameter = sortIndex.HasValue ?
+                new ObjectParameter("SortIndex", sortIndex) :
+                new ObjectParameter("SortIndex", typeof(int));
+    
+            var autoApproveParameter = autoApprove.HasValue ?
+                new ObjectParameter("AutoApprove", autoApprove) :
+                new ObjectParameter("AutoApprove", typeof(int));
+    
+            var payrollConfigTypeParameter = payrollConfigType != null ?
+                new ObjectParameter("PayrollConfigType", payrollConfigType) :
+                new ObjectParameter("PayrollConfigType", typeof(string));
+    
+            var assignmentTypeObjParameter = assignmentTypeObj != null ?
+                new ObjectParameter("AssignmentTypeObj", assignmentTypeObj) :
+                new ObjectParameter("AssignmentTypeObj", typeof(string));
+    
+            var typeParameter = type != null ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(string));
+    
+            var generateTimekeepingTypeParameter = generateTimekeepingType != null ?
+                new ObjectParameter("GenerateTimekeepingType", generateTimekeepingType) :
+                new ObjectParameter("GenerateTimekeepingType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_Create", companyIDParameter, shiftIDParameter, titleParameter, sortIndexParameter, autoApproveParameter, payrollConfigTypeParameter, assignmentTypeObjParameter, typeParameter, generateTimekeepingTypeParameter, shiftAssignmentId);
+        }
+    
+        public virtual int Ins_ShiftAssignment_User_Create(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<double> workingHour, Nullable<System.DateTime> workingDay, Nullable<int> weekOfYear, ObjectParameter shiftAssignment_UserId)
+        {
+            var shiftAssignmentIDParameter = shiftAssignmentID.HasValue ?
+                new ObjectParameter("ShiftAssignmentID", shiftAssignmentID) :
+                new ObjectParameter("ShiftAssignmentID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.DateTime));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.DateTime));
+    
+            var workingHourParameter = workingHour.HasValue ?
+                new ObjectParameter("WorkingHour", workingHour) :
+                new ObjectParameter("WorkingHour", typeof(double));
+    
+            var workingDayParameter = workingDay.HasValue ?
+                new ObjectParameter("WorkingDay", workingDay) :
+                new ObjectParameter("WorkingDay", typeof(System.DateTime));
+    
+            var weekOfYearParameter = weekOfYear.HasValue ?
+                new ObjectParameter("WeekOfYear", weekOfYear) :
+                new ObjectParameter("WeekOfYear", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_User_Create", shiftAssignmentIDParameter, accountMapIDParameter, startTimeParameter, endTimeParameter, workingHourParameter, workingDayParameter, weekOfYearParameter, shiftAssignment_UserId);
+        }
+    
+        public virtual int Ins_ShiftAssignment_User_GetByAccountMapID(Nullable<int> accountMapID, Nullable<int> companyID, Nullable<System.DateTime> workingDayFrom, Nullable<System.DateTime> workingDayTo)
+        {
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var workingDayFromParameter = workingDayFrom.HasValue ?
+                new ObjectParameter("WorkingDayFrom", workingDayFrom) :
+                new ObjectParameter("WorkingDayFrom", typeof(System.DateTime));
+    
+            var workingDayToParameter = workingDayTo.HasValue ?
+                new ObjectParameter("WorkingDayTo", workingDayTo) :
+                new ObjectParameter("WorkingDayTo", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_User_GetByAccountMapID", accountMapIDParameter, companyIDParameter, workingDayFromParameter, workingDayToParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result> Ins_ShiftAssignment_User_GetByShiftAssignmentID(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> workingDayFrom, Nullable<System.DateTime> workingDayTo)
+        {
+            var shiftAssignmentIDParameter = shiftAssignmentID.HasValue ?
+                new ObjectParameter("ShiftAssignmentID", shiftAssignmentID) :
+                new ObjectParameter("ShiftAssignmentID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var workingDayFromParameter = workingDayFrom.HasValue ?
+                new ObjectParameter("WorkingDayFrom", workingDayFrom) :
+                new ObjectParameter("WorkingDayFrom", typeof(System.DateTime));
+    
+            var workingDayToParameter = workingDayTo.HasValue ?
+                new ObjectParameter("WorkingDayTo", workingDayTo) :
+                new ObjectParameter("WorkingDayTo", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result>("Ins_ShiftAssignment_User_GetByShiftAssignmentID", shiftAssignmentIDParameter, accountMapIDParameter, workingDayFromParameter, workingDayToParameter);
         }
     }
 }

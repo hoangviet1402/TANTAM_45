@@ -324,8 +324,8 @@
     <Parameter Name="AutoApprove" Type="int" Mode="In" />
     <Parameter Name="PayrollConfigType" Type="nvarchar" Mode="In" />
     <Parameter Name="AssignmentTypeObj" Type="nvarchar" Mode="In" />
-    <Parameter Name="GenerateTimekeepingTypeObj" Type="nvarchar" Mode="In" />
     <Parameter Name="Type" Type="nvarchar" Mode="In" />
+    <Parameter Name="GenerateTimekeepingType" Type="nvarchar" Mode="In" />
     <Parameter Name="ShiftAssignmentId" Type="int" Mode="InOut" />
   </Function>
   <Function Name="Ins_ShiftAssignment_CreateAssignment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -346,6 +346,28 @@
     <Parameter Name="CompanyID" Type="int" Mode="In" />
     <Parameter Name="PositionID" Type="int" Mode="In" />
     <Parameter Name="IsInsertOne" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Ins_ShiftAssignment_User_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ShiftAssignmentID" Type="int" Mode="In" />
+    <Parameter Name="AccountMapID" Type="int" Mode="In" />
+    <Parameter Name="StartTime" Type="datetime" Mode="In" />
+    <Parameter Name="EndTime" Type="datetime" Mode="In" />
+    <Parameter Name="WorkingHour" Type="float" Mode="In" />
+    <Parameter Name="WorkingDay" Type="datetime" Mode="In" />
+    <Parameter Name="WeekOfYear" Type="int" Mode="In" />
+    <Parameter Name="ShiftAssignment_UserId" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Ins_ShiftAssignment_User_GetByAccountMapID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountMapID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="WorkingDayFrom" Type="datetime" Mode="In" />
+    <Parameter Name="WorkingDayTo" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Ins_ShiftAssignment_User_GetByShiftAssignmentID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ShiftAssignmentID" Type="int" Mode="In" />
+    <Parameter Name="AccountMapID" Type="int" Mode="In" />
+    <Parameter Name="WorkingDayFrom" Type="datetime" Mode="In" />
+    <Parameter Name="WorkingDayTo" Type="datetime" Mode="In" />
   </Function>
   <Function Name="Ins_Task_CreateTaskFieldWithOptions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="object_id" Type="int" Mode="In" />

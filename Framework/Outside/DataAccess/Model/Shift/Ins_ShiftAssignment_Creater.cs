@@ -10,7 +10,7 @@ namespace DataAccess.Model.Shift
         public int AutoApprove { get; set; } = 1;
         public string PayrollConfigType { get; set; } = string.Empty;
         public string AssignmentType { get; set; } = "weekly_loop";
-        public string GenerateTimekeepingType { get; set; } = "generate_from_start_of_month";
+        public string GenerateTimekeepingType { get; set; } = "";
         public string Type { get; set; } = "shift_assignment";
     }
 }

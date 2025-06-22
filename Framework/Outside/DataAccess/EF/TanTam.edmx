@@ -329,8 +329,8 @@
           <Parameter Name="AutoApprove" Type="int" Mode="In" />
           <Parameter Name="PayrollConfigType" Type="nvarchar" Mode="In" />
           <Parameter Name="AssignmentTypeObj" Type="nvarchar" Mode="In" />
-          <Parameter Name="GenerateTimekeepingTypeObj" Type="nvarchar" Mode="In" />
           <Parameter Name="Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="GenerateTimekeepingType" Type="nvarchar" Mode="In" />
           <Parameter Name="ShiftAssignmentId" Type="int" Mode="InOut" />
         </Function>
         <Function Name="Ins_ShiftAssignment_CreateAssignment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -351,6 +351,28 @@
           <Parameter Name="CompanyID" Type="int" Mode="In" />
           <Parameter Name="PositionID" Type="int" Mode="In" />
           <Parameter Name="IsInsertOne" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Ins_ShiftAssignment_User_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ShiftAssignmentID" Type="int" Mode="In" />
+          <Parameter Name="AccountMapID" Type="int" Mode="In" />
+          <Parameter Name="StartTime" Type="datetime" Mode="In" />
+          <Parameter Name="EndTime" Type="datetime" Mode="In" />
+          <Parameter Name="WorkingHour" Type="float" Mode="In" />
+          <Parameter Name="WorkingDay" Type="datetime" Mode="In" />
+          <Parameter Name="WeekOfYear" Type="int" Mode="In" />
+          <Parameter Name="ShiftAssignment_UserId" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="Ins_ShiftAssignment_User_GetByAccountMapID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountMapID" Type="int" Mode="In" />
+          <Parameter Name="CompanyID" Type="int" Mode="In" />
+          <Parameter Name="WorkingDayFrom" Type="datetime" Mode="In" />
+          <Parameter Name="WorkingDayTo" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Ins_ShiftAssignment_User_GetByShiftAssignmentID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ShiftAssignmentID" Type="int" Mode="In" />
+          <Parameter Name="AccountMapID" Type="int" Mode="In" />
+          <Parameter Name="WorkingDayFrom" Type="datetime" Mode="In" />
+          <Parameter Name="WorkingDayTo" Type="datetime" Mode="In" />
         </Function>
         <Function Name="Ins_Task_CreateTaskFieldWithOptions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="object_id" Type="int" Mode="In" />
@@ -723,26 +745,6 @@
             <Parameter Name="BranchID" Mode="In" Type="Int32" />
             <Parameter Name="IsInsertOne" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="Ins_Shift_Create">
-            <Parameter Name="CompanyID" Mode="In" Type="Int32" />
-            <Parameter Name="Name" Mode="In" Type="String" />
-            <Parameter Name="NameNosign" Mode="In" Type="String" />
-            <Parameter Name="ShiftKey" Mode="In" Type="String" />
-            <Parameter Name="Coefficient" Mode="In" Type="Decimal" />
-            <Parameter Name="MinimumWorkingHour" Mode="In" Type="Decimal" />
-            <Parameter Name="Note" Mode="In" Type="String" />
-            <Parameter Name="EarlyCheckOut" Mode="In" Type="Int32" />
-            <Parameter Name="LatelyCheckIn" Mode="In" Type="Int32" />
-            <Parameter Name="MaxLateCheckInOutMinute" Mode="In" Type="Int32" />
-            <Parameter Name="MinSoonCheckInOutMinute" Mode="In" Type="Int32" />
-            <Parameter Name="Status" Mode="In" Type="Int32" />
-            <Parameter Name="Type" Mode="In" Type="String" />
-            <Parameter Name="SortIndex" Mode="In" Type="Int32" />
-            <Parameter Name="IsOvertimeShift" Mode="In" Type="Int32" />
-            <Parameter Name="MealCoefficient" Mode="In" Type="Decimal" />
-            <Parameter Name="Timezone" Mode="In" Type="String" />
-            <Parameter Name="ShiftId" Mode="InOut" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="Ins_Shift_CreateTimeInOutConfig" ReturnType="Collection(TanTamModel.Ins_Shift_CreateTimeInOutConfig_Result)">
             <Parameter Name="ShiftId" Mode="In" Type="Int32" />
             <Parameter Name="StartHourId" Mode="In" Type="Int32" />
@@ -783,18 +785,6 @@
             <Parameter Name="CompanyID" Mode="In" Type="Int32" />
             <Parameter Name="BranchID" Mode="In" Type="Int32" />
             <Parameter Name="IsInsertOne" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="Ins_ShiftAssignment_Create">
-            <Parameter Name="CompanyID" Mode="In" Type="Int32" />
-            <Parameter Name="ShiftID" Mode="In" Type="Int32" />
-            <Parameter Name="Title" Mode="In" Type="String" />
-            <Parameter Name="SortIndex" Mode="In" Type="Int32" />
-            <Parameter Name="AutoApprove" Mode="In" Type="Int32" />
-            <Parameter Name="PayrollConfigType" Mode="In" Type="String" />
-            <Parameter Name="AssignmentTypeObj" Mode="In" Type="String" />
-            <Parameter Name="GenerateTimekeepingTypeObj" Mode="In" Type="String" />
-            <Parameter Name="Type" Mode="In" Type="String" />
-            <Parameter Name="ShiftAssignmentId" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_ShiftAssignment_CreateAssignment">
             <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
@@ -976,6 +966,60 @@
             <Parameter Name="HearAbout" Mode="In" Type="String" />
             <Parameter Name="UsePurpose" Mode="In" Type="String" />
             <Parameter Name="BusinesFieldIds" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Shift_Create">
+            <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="NameNosign" Mode="In" Type="String" />
+            <Parameter Name="ShiftKey" Mode="In" Type="String" />
+            <Parameter Name="Coefficient" Mode="In" Type="Decimal" />
+            <Parameter Name="MinimumWorkingHour" Mode="In" Type="Decimal" />
+            <Parameter Name="Note" Mode="In" Type="String" />
+            <Parameter Name="EarlyCheckOut" Mode="In" Type="Int32" />
+            <Parameter Name="LatelyCheckIn" Mode="In" Type="Int32" />
+            <Parameter Name="MaxLateCheckInOutMinute" Mode="In" Type="Int32" />
+            <Parameter Name="MinSoonCheckInOutMinute" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="SortIndex" Mode="In" Type="Int32" />
+            <Parameter Name="IsOvertimeShift" Mode="In" Type="Int32" />
+            <Parameter Name="MealCoefficient" Mode="In" Type="Decimal" />
+            <Parameter Name="Timezone" Mode="In" Type="String" />
+            <Parameter Name="ShiftId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_ShiftAssignment_Create">
+            <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+            <Parameter Name="ShiftID" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="SortIndex" Mode="In" Type="Int32" />
+            <Parameter Name="AutoApprove" Mode="In" Type="Int32" />
+            <Parameter Name="PayrollConfigType" Mode="In" Type="String" />
+            <Parameter Name="AssignmentTypeObj" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="GenerateTimekeepingType" Mode="In" Type="String" />
+            <Parameter Name="ShiftAssignmentId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_ShiftAssignment_User_Create">
+            <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="StartTime" Mode="In" Type="DateTime" />
+            <Parameter Name="EndTime" Mode="In" Type="DateTime" />
+            <Parameter Name="WorkingHour" Mode="In" Type="Double" />
+            <Parameter Name="WorkingDay" Mode="In" Type="DateTime" />
+            <Parameter Name="WeekOfYear" Mode="In" Type="Int32" />
+            <Parameter Name="ShiftAssignment_UserId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_ShiftAssignment_User_GetByAccountMapID">
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+            <Parameter Name="WorkingDayFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="WorkingDayTo" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_ShiftAssignment_User_GetByShiftAssignmentID" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result)">
+            <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="WorkingDayFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="WorkingDayTo" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
@@ -1601,6 +1645,16 @@
           <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="23" />
           <Property Type="Int32" Name="Gender" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ShiftAssignmentID" Nullable="false" />
+          <Property Type="Int32" Name="AccountMapID" Nullable="false" />
+          <Property Type="DateTime" Name="StartTime" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EndTime" Nullable="true" Precision="23" />
+          <Property Type="Double" Name="WorkingHour" Nullable="true" />
+          <Property Type="DateTime" Name="WorkingDay" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2071,7 +2125,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Ins_Shift_Create" FunctionName="TanTamModel.Store.Ins_Shift_Create" />
           <FunctionImportMapping FunctionImportName="Ins_Shift_CreateTimeInOutConfig" FunctionName="TanTamModel.Store.Ins_Shift_CreateTimeInOutConfig">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_CreateTimeInOutConfig_Result">
@@ -2181,7 +2234,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Create" />
           <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_CreateAssignment" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_CreateAssignment" />
           <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Department_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Department_Create">
             <ResultMapping>
@@ -2437,6 +2489,24 @@
           <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
           <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_Create" FunctionName="TanTamModel.Store.Ins_CompanyBranch_Create" />
           <FunctionImportMapping FunctionImportName="Ins_Company_UpdateInfoWhenSinup" FunctionName="TanTamModel.Store.Ins_Company_UpdateInfoWhenSinup" />
+          <FunctionImportMapping FunctionImportName="Ins_Shift_Create" FunctionName="TanTamModel.Store.Ins_Shift_Create" />
+          <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Create" />
+          <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_Create" />
+          <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByAccountMapID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByAccountMapID" />
+          <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByShiftAssignmentID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByShiftAssignmentID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ShiftAssignmentID" ColumnName="ShiftAssignmentID" />
+                <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+                <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+                <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

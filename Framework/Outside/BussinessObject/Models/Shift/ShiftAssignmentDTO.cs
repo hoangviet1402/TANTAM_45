@@ -41,6 +41,8 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("assignments")]
         public List<int> Assignments { get; set; }
+
+
         
     }
 

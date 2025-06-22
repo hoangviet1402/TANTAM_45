@@ -465,7 +465,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Shift_Create" FunctionName="TanTamModel.Store.Ins_Shift_Create" />
     <FunctionImportMapping FunctionImportName="Ins_Shift_CreateTimeInOutConfig" FunctionName="TanTamModel.Store.Ins_Shift_CreateTimeInOutConfig">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_CreateTimeInOutConfig_Result">
@@ -575,7 +574,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Create" />
     <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_CreateAssignment" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_CreateAssignment" />
     <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Department_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Department_Create">
       <ResultMapping>
@@ -831,5 +829,23 @@
     <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
     <FunctionImportMapping FunctionImportName="Ins_CompanyBranch_Create" FunctionName="TanTamModel.Store.Ins_CompanyBranch_Create" />
     <FunctionImportMapping FunctionImportName="Ins_Company_UpdateInfoWhenSinup" FunctionName="TanTamModel.Store.Ins_Company_UpdateInfoWhenSinup" />
+    <FunctionImportMapping FunctionImportName="Ins_Shift_Create" FunctionName="TanTamModel.Store.Ins_Shift_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByAccountMapID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByAccountMapID" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByShiftAssignmentID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByShiftAssignmentID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ShiftAssignmentID" ColumnName="ShiftAssignmentID" />
+          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
