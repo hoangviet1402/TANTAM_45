@@ -30,7 +30,7 @@ namespace BussinessObject.Models.Shift
         [JsonProperty("payroll_config_type")]
         public string PayrollConfigType { get; set; } = string.Empty;
 
-        [JsonProperty("payroll_config_type")]
+        [JsonProperty("assignment_type")]
         public string AssignmentType { get; set; } = "weekly_loop";
 
         [JsonProperty("generate_timekeeping_type")]
@@ -41,9 +41,6 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("assignments")]
         public List<int> Assignments { get; set; }
-
-
-        
     }
 
 

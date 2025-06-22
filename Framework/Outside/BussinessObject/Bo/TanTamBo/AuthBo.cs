@@ -337,21 +337,21 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
                 
-                if (isUsePhone &&  (request.PhoneCode + request.Phone) != (authdata.PhoneCode + authdata.Phone))
-                {
-                    response.Code = ResponseResultEnum.InvalidPass.Value();
-                    response.Message = "Số điện thoại không chính xác.";
-                    response.Data = null;
-                    return response;
-                }
+                //if (isUsePhone &&  (request.PhoneCode + request.Phone) != (authdata.PhoneCode + authdata.Phone))
+                //{
+                //    response.Code = ResponseResultEnum.InvalidPass.Value();
+                //    response.Message = "Số điện thoại không chính xác.";
+                //    response.Data = null;
+                //    return response;
+                //}
 
-                if (isUsePhone == false && request.Mail != authdata.Email)
-                {
-                    response.Code = ResponseResultEnum.InvalidPass.Value();
-                    response.Message = "Mail không chính xác.";
-                    response.Data = null;
-                    return response;
-                }
+                //if (isUsePhone == false && request.Mail != authdata.Email)
+                //{
+                //    response.Code = ResponseResultEnum.InvalidPass.Value();
+                //    response.Message = "Mail không chính xác.";
+                //    response.Data = null;
+                //    return response;
+                //}
 
                 if (authdata.IsActive == false)
                 {

@@ -17,7 +17,7 @@ namespace TanTamApi.JWT.Helper
 {
     public class JwtHelper
     {
-        public static string  GenerateAccessToken(int accountId, int employeeAccountMapId, int companyId, int role,out string jwtID)
+        public static string  GenerateAccessToken(int accountId, int accountMapID, int companyId, int role,out string jwtID)
         {
             jwtID = GenerateRefreshToken();
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(MyConfiguration.JWT.SecretKey));
@@ -26,7 +26,7 @@ namespace TanTamApi.JWT.Helper
             var claims = new[]
             {
                 new Claim("AccountId", accountId.ToString()),
-                new Claim("EmployeeId", employeeAccountMapId.ToString()),
+                new Claim("AccountMapID", accountMapID.ToString()),
                 new Claim("CompanyId", companyId.ToString()),
                 new Claim(ClaimTypes.Role, role.ToString()),               
                 new Claim("JwtID", jwtID),
@@ -116,7 +116,7 @@ namespace TanTamApi.JWT.Helper
                 var handler = new JwtSecurityTokenHandler();
                 var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
                 
-                var employeeIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "EmployeeId");
+                var employeeIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "AccountMapID");
                 if (employeeIdClaim != null && int.TryParse(employeeIdClaim.Value, out int employeeId))
                     return employeeId;
                 
@@ -177,7 +177,7 @@ namespace TanTamApi.JWT.Helper
             }
         }
 
-        public static ApiResult<AuthResponse> GenerateAuthResponse(int accountId, int employeeId, int companyId, int role, string ip)
+        public static ApiResult<AuthResponse> GenerateAuthResponse(int accountId, int accountMapID, int companyId, int role, string ip)
         {
             var response = new ApiResult<AuthResponse>()
             {
@@ -187,11 +187,11 @@ namespace TanTamApi.JWT.Helper
             };
 
             string jwtID;
-            var accessToken = GenerateAccessToken(accountId, employeeId, companyId, role, out jwtID);
+            var accessToken = GenerateAccessToken(accountId, accountMapID, companyId, role, out jwtID);
             var refreshToken = GenerateRefreshToken();
 
             int lifeTime = MyConfiguration.JWT.LifeTime;
-            if (BoFactory.Auth.InsertEmployeeToken(employeeId, SecurityCommon.sha256_hash(jwtID), SecurityCommon.sha256_hash(refreshToken), lifeTime, ip, "") > 0)
+            if (BoFactory.Auth.InsertEmployeeToken(accountMapID, SecurityCommon.sha256_hash(jwtID), SecurityCommon.sha256_hash(refreshToken), lifeTime, ip, "") > 0)
             {
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = ResponseResultEnum.Success.Text();

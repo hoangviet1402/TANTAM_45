@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
 using System.Linq;
+using System.Runtime.InteropServices;
 using DataAccess.EF;
 using DataAccess.Interface;
 using DataAccess.Model.Shift;
@@ -16,6 +17,7 @@ namespace DataAccess.Dao.Shift
         List<Ins_ShiftAssignment_Branch_Create_Result> ShiftAssignment_CreateBranch(Ins_ShiftAssignment_Branch_Create_Parameter parameter, out int assignmentID);
         List<Ins_ShiftAssignment_Position_Create_Result> ShiftAssignment_CreatePosition(Ins_ShiftAssignment_Position_Create_Parameter parameter);
         List<Ins_ShiftAssignment_Department_Create_Result> ShiftAssignment_CreateDepartment(Ins_ShiftAssignment_Department_Create_Parameter parameter);
+        int ShiftAssignment_User_Create(int shiftAssignmentID, int accountMapID);
     }
 
     internal class ShiftAssignmentDao : DaoFactories<TanTamEntities, DBNull>, IShiftAssignmentDao
@@ -111,6 +113,25 @@ namespace DataAccess.Dao.Shift
                     parameter.IsInsertOne);
 
                 return data.ToList();
+            }
+        }
+
+        public int ShiftAssignment_User_Create(int shiftAssignmentID,int accountMapID)
+        {
+            using (Uow)
+            {
+                int shiftAssignment_UserId = 0;
+
+                var out_shiftAssignment_UserId = new ObjectParameter("ShiftAssignment_UserId", typeof(int));
+
+                var data = Uow.Context.Ins_ShiftAssignment_User_Create(
+                    shiftAssignmentID,
+                    accountMapID,
+                    out_shiftAssignment_UserId);
+
+                if (out_shiftAssignment_UserId != null && out_shiftAssignment_UserId.Value != null)
+                    int.TryParse(out_shiftAssignment_UserId.Value.ToString(), out shiftAssignment_UserId);
+                return shiftAssignment_UserId;
             }
         }
     }

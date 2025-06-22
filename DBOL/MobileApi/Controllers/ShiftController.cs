@@ -279,7 +279,8 @@ namespace TanTamApi.Controllers
                 //    response.Data = JsonConvert.DeserializeObject(jsonString);
                 #endregion
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
-                response = BoFactory.Shift.ShiftCreateAndAssign(request, companyId);
+                var accountMapID = JwtHelper.GetEmployeeIdFromToken(Request);
+                response = BoFactory.Shift.ShiftCreateAndAssign(request, companyId , accountMapID);
             }
             catch (Exception ex)
             {

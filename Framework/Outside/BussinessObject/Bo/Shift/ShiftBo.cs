@@ -65,7 +65,7 @@ namespace BussinessObject.Bo.Shift
             return response;
         }
 
-        public ApiResult<ShiftCreateAndAssignResponse> ShiftCreateAndAssign(ShiftCreateAndAssignRequest request, int companyId)
+        public ApiResult<ShiftCreateAndAssignResponse> ShiftCreateAndAssign(ShiftCreateAndAssignRequest request, int companyId, int accountMapID)
         {
             var response = new ApiResult<ShiftCreateAndAssignResponse>()
             {
@@ -472,6 +472,14 @@ namespace BussinessObject.Bo.Shift
                     Label = "Lặp theo tuần",
                     Key = shiftAssignmentParameter.AssignmentType
                 };
+
+                #region tạo ca làm việc cho nhân viên hiện tại
+                var assignment_user_id = DaoFactory.ShiftAssignment.ShiftAssignment_User_Create(shiftAssignmentId, accountMapID);
+                if(assignment_user_id > 0)
+                {
+
+                }
+                #endregion
 
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Tạo ca làm việc thành công";

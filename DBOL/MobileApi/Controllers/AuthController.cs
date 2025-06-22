@@ -762,6 +762,12 @@ namespace TanTamApi.Controllers
         {
             errorMsg = string.Empty;
 
+            if (string.IsNullOrEmpty(request.Stage))
+            {
+                errorMsg = "Thông tin không hợp lệ.";
+                return false;
+            }
+
             if (request.Stage == "signin")
             {
                 if (string.IsNullOrEmpty(request.Password))
@@ -771,38 +777,36 @@ namespace TanTamApi.Controllers
                 }
                 return true;
             }
-
-            if (isUsePhone)
-            {
-                if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
-                {
-                    errorMsg = "Số điện thoại không được để trống.";
-                    return false;
-                }
-                if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
-                {
-                    errorMsg = "Số điện thoại không hợp lệ.";
-                    return false;
-                }
-            }
             else
             {
-                if (string.IsNullOrEmpty(request.Mail))
+                if (isUsePhone)
                 {
-                    errorMsg = "Email không được để trống.";
-                    return false;
+                    if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
+                    {
+                        errorMsg = "Số điện thoại không được để trống.";
+                        return false;
+                    }
+                    if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
+                    {
+                        errorMsg = "Số điện thoại không hợp lệ.";
+                        return false;
+                    }
                 }
-                if (!ValidationHelper.IsValidEmail(request.Mail))
+                else
                 {
-                    errorMsg = "Email không hợp lệ.";
-                    return false;
+                    if (string.IsNullOrEmpty(request.Mail))
+                    {
+                        errorMsg = "Email không được để trống.";
+                        return false;
+                    }
+                    if (!ValidationHelper.IsValidEmail(request.Mail))
+                    {
+                        errorMsg = "Email không hợp lệ.";
+                        return false;
+                    }
                 }
             }
-            if (string.IsNullOrEmpty(request.Stage))
-            {
-                errorMsg = "Thông tin không hợp lệ.";
-                return false;
-            }
+            
             return true;
         }
     }
