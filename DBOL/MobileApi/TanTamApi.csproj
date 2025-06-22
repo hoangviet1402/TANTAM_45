@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShiftController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Enum\AccountEnum.cs" />
     <Compile Include="Enum\LanguageResourceCtrl.cs" />

@@ -137,7 +137,8 @@ namespace BussinessObject.Bo.Shift
                     StartCheckInHourId = request.Shift.StartCheckInHourId ?? 0,
                     EndCheckInHourId = request.Shift.EndCheckInHourId ?? 0,
                     StartCheckOutHourId = request.Shift.StartCheckOutHourId ?? 0,
-                    EndCheckOutHourId = request.Shift.EndCheckOutHourId ?? 0
+                    EndCheckOutHourId = request.Shift.EndCheckOutHourId ?? 0,
+                    GenerateTimekeepingType = request.Shift.GenerateTimekeepingType ?? 1
                 };
 
 

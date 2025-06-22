@@ -57,6 +57,7 @@ namespace DataAccess.Dao.Shift
                     parameter.IsOvertimeShift,
                     parameter.MealCoefficient,
                     parameter.Timezone,
+                    parameter.GenerateTimekeepingType,
                     out_OutResult);
 
                 if (out_OutResult != null && out_OutResult.Value != null)

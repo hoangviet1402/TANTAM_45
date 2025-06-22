@@ -22,6 +22,8 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("is_onboarding")]
         public int IsOnboarding { get; set; }
+
+        
     }
 
     public class ShiftData
@@ -110,6 +112,8 @@ namespace BussinessObject.Models.Shift
         [JsonProperty("end_check_out_hour_id")]
         public int? EndCheckOutHourId { get; set; }
 
+        [JsonProperty("generate_timekeeping_type")]
+        public int? GenerateTimekeepingType { get; set; }
     }
 
 

@@ -32,5 +32,6 @@ namespace DataAccess.Model.Shift
         public int StartCheckOutHourId { get; set; } = 1;
         public int EndCheckOutHourId { get; set; } = 1;
         public int ShiftId { get; set; } = 0;
+        public int GenerateTimekeepingType { get; set; } = 1;
     }
 } 

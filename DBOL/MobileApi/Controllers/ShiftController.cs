@@ -45,8 +45,9 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("create-shift-and-assign-shift")]
         public HttpResponseMessage CreateShiftAndAssignShift([FromBody] ShiftCreateAndAssignRequest request)
         {
-            var response = new ApiResult<object>()
+            var response = new ApiResult<ShiftCreateAndAssignResponse>()
             {
+                Data = new ShiftCreateAndAssignResponse(),
                 Code = ResponseResultEnum.Success.Value(),
                 Message = ResponseResultEnum.Success.Text()
             };
@@ -278,7 +279,7 @@ namespace TanTamApi.Controllers
                 //    response.Data = JsonConvert.DeserializeObject(jsonString);
                 #endregion
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
-                var result = BoFactory.Shift.ShiftCreateAndAssign(request, companyId);
+                response = BoFactory.Shift.ShiftCreateAndAssign(request, companyId);
             }
             catch (Exception ex)
             {
