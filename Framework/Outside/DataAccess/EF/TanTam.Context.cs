@@ -204,27 +204,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Account_RevokeToken", idParameter, ipParameter, imieParameter, outResult);
         }
     
-        public virtual ObjectResult<Ins_Account_UpdateFullName_Result> Ins_Account_UpdateFullName(string phone, string email, string fullName, Nullable<bool> isUsePhone)
-        {
-            var phoneParameter = phone != null ?
-                new ObjectParameter("Phone", phone) :
-                new ObjectParameter("Phone", typeof(string));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var fullNameParameter = fullName != null ?
-                new ObjectParameter("FullName", fullName) :
-                new ObjectParameter("FullName", typeof(string));
-    
-            var isUsePhoneParameter = isUsePhone.HasValue ?
-                new ObjectParameter("IsUsePhone", isUsePhone) :
-                new ObjectParameter("IsUsePhone", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Account_UpdateFullName_Result>("Ins_Account_UpdateFullName", phoneParameter, emailParameter, fullNameParameter, isUsePhoneParameter);
-        }
-    
         public virtual int Ins_Account_UpdatePass(Nullable<int> accountId, Nullable<int> companyId, string pass, string oldPass, Nullable<int> needSetPassword, ObjectParameter outResult)
         {
             var accountIdParameter = accountId.HasValue ?
@@ -307,15 +286,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Company_GetEmployeeID_Result>("Ins_Company_GetEmployeeID", employeeIDParameter);
         }
     
-        public virtual ObjectResult<Ins_Company_GetInfor_Result> Ins_Company_GetInfor(Nullable<int> companyId)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Company_GetInfor_Result>("Ins_Company_GetInfor", companyIdParameter);
-        }
-    
         public virtual ObjectResult<Ins_Company_GetInforAccount_Result> Ins_Company_GetInforAccount(Nullable<int> accountId, Nullable<int> companyID)
         {
             var accountIdParameter = accountId.HasValue ?
@@ -338,6 +308,59 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Company_GetSetupStep_Result>("Ins_Company_GetSetupStep", companyIdParameter);
         }
     
+        public virtual int Ins_Company_UpdateInfoWhenSinup(Nullable<int> accountId, Nullable<int> companyId, string companyName, string alias, Nullable<double> comPany_Latitude, Nullable<double> comPany_Longitude, string comPany_Number_Employee, string comPany_Address, string email, string hearAbout, string usePurpose, string businesFieldIds)
+        {
+            var accountIdParameter = accountId.HasValue ?
+                new ObjectParameter("AccountId", accountId) :
+                new ObjectParameter("AccountId", typeof(int));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var companyNameParameter = companyName != null ?
+                new ObjectParameter("CompanyName", companyName) :
+                new ObjectParameter("CompanyName", typeof(string));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var comPany_LatitudeParameter = comPany_Latitude.HasValue ?
+                new ObjectParameter("ComPany_Latitude", comPany_Latitude) :
+                new ObjectParameter("ComPany_Latitude", typeof(double));
+    
+            var comPany_LongitudeParameter = comPany_Longitude.HasValue ?
+                new ObjectParameter("ComPany_Longitude", comPany_Longitude) :
+                new ObjectParameter("ComPany_Longitude", typeof(double));
+    
+            var comPany_Number_EmployeeParameter = comPany_Number_Employee != null ?
+                new ObjectParameter("ComPany_Number_Employee", comPany_Number_Employee) :
+                new ObjectParameter("ComPany_Number_Employee", typeof(string));
+    
+            var comPany_AddressParameter = comPany_Address != null ?
+                new ObjectParameter("ComPany_Address", comPany_Address) :
+                new ObjectParameter("ComPany_Address", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var hearAboutParameter = hearAbout != null ?
+                new ObjectParameter("HearAbout", hearAbout) :
+                new ObjectParameter("HearAbout", typeof(string));
+    
+            var usePurposeParameter = usePurpose != null ?
+                new ObjectParameter("UsePurpose", usePurpose) :
+                new ObjectParameter("UsePurpose", typeof(string));
+    
+            var businesFieldIdsParameter = businesFieldIds != null ?
+                new ObjectParameter("BusinesFieldIds", businesFieldIds) :
+                new ObjectParameter("BusinesFieldIds", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Company_UpdateInfoWhenSinup", accountIdParameter, companyIdParameter, companyNameParameter, aliasParameter, comPany_LatitudeParameter, comPany_LongitudeParameter, comPany_Number_EmployeeParameter, comPany_AddressParameter, emailParameter, hearAboutParameter, usePurposeParameter, businesFieldIdsParameter);
+        }
+    
         public virtual int Ins_ComPany_UpdateSetupStep(Nullable<int> companyId, Nullable<int> code, ObjectParameter outResult)
         {
             var companyIdParameter = companyId.HasValue ?
@@ -349,6 +372,60 @@ namespace DataAccess.EF
                 new ObjectParameter("Code", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ComPany_UpdateSetupStep", companyIdParameter, codeParameter, outResult);
+        }
+    
+        public virtual int Ins_CompanyBranch_Create(string branchName, string branchAddress, string regionId, Nullable<int> isOnboarding, Nullable<double> latitude, Nullable<double> longitude, Nullable<int> companyId, string alias, string code, ObjectParameter outResult)
+        {
+            var branchNameParameter = branchName != null ?
+                new ObjectParameter("BranchName", branchName) :
+                new ObjectParameter("BranchName", typeof(string));
+    
+            var branchAddressParameter = branchAddress != null ?
+                new ObjectParameter("BranchAddress", branchAddress) :
+                new ObjectParameter("BranchAddress", typeof(string));
+    
+            var regionIdParameter = regionId != null ?
+                new ObjectParameter("RegionId", regionId) :
+                new ObjectParameter("RegionId", typeof(string));
+    
+            var isOnboardingParameter = isOnboarding.HasValue ?
+                new ObjectParameter("IsOnboarding", isOnboarding) :
+                new ObjectParameter("IsOnboarding", typeof(int));
+    
+            var latitudeParameter = latitude.HasValue ?
+                new ObjectParameter("Latitude", latitude) :
+                new ObjectParameter("Latitude", typeof(double));
+    
+            var longitudeParameter = longitude.HasValue ?
+                new ObjectParameter("Longitude", longitude) :
+                new ObjectParameter("Longitude", typeof(double));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("Code", code) :
+                new ObjectParameter("Code", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyBranch_Create", branchNameParameter, branchAddressParameter, regionIdParameter, isOnboardingParameter, latitudeParameter, longitudeParameter, companyIdParameter, aliasParameter, codeParameter, outResult);
+        }
+    
+        public virtual int Ins_CompanyBranch_CreateMultiple(Nullable<int> companyId, string branchNames, ObjectParameter outResult)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var branchNamesParameter = branchNames != null ?
+                new ObjectParameter("BranchNames", branchNames) :
+                new ObjectParameter("BranchNames", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyBranch_CreateMultiple", companyIdParameter, branchNamesParameter, outResult);
         }
     
         public virtual ObjectResult<Ins_CompanyBranch_GetAllByCompany_Result> Ins_CompanyBranch_GetAllByCompany(Nullable<int> companyId, Nullable<int> perPage, ObjectParameter total)
@@ -733,6 +810,79 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Shift_Branch_Create_Result>("Ins_Shift_Branch_Create", shiftIDParameter, companyIDParameter, branchIDParameter, isInsertOneParameter);
         }
     
+        public virtual int Ins_Shift_Create(Nullable<int> companyID, string name, string nameNosign, string shiftKey, Nullable<decimal> coefficient, Nullable<decimal> minimumWorkingHour, string note, Nullable<int> earlyCheckOut, Nullable<int> latelyCheckIn, Nullable<int> maxLateCheckInOutMinute, Nullable<int> minSoonCheckInOutMinute, Nullable<int> status, string type, Nullable<int> sortIndex, Nullable<int> isOvertimeShift, Nullable<decimal> mealCoefficient, string timezone, ObjectParameter shiftId)
+        {
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var nameNosignParameter = nameNosign != null ?
+                new ObjectParameter("NameNosign", nameNosign) :
+                new ObjectParameter("NameNosign", typeof(string));
+    
+            var shiftKeyParameter = shiftKey != null ?
+                new ObjectParameter("ShiftKey", shiftKey) :
+                new ObjectParameter("ShiftKey", typeof(string));
+    
+            var coefficientParameter = coefficient.HasValue ?
+                new ObjectParameter("Coefficient", coefficient) :
+                new ObjectParameter("Coefficient", typeof(decimal));
+    
+            var minimumWorkingHourParameter = minimumWorkingHour.HasValue ?
+                new ObjectParameter("MinimumWorkingHour", minimumWorkingHour) :
+                new ObjectParameter("MinimumWorkingHour", typeof(decimal));
+    
+            var noteParameter = note != null ?
+                new ObjectParameter("Note", note) :
+                new ObjectParameter("Note", typeof(string));
+    
+            var earlyCheckOutParameter = earlyCheckOut.HasValue ?
+                new ObjectParameter("EarlyCheckOut", earlyCheckOut) :
+                new ObjectParameter("EarlyCheckOut", typeof(int));
+    
+            var latelyCheckInParameter = latelyCheckIn.HasValue ?
+                new ObjectParameter("LatelyCheckIn", latelyCheckIn) :
+                new ObjectParameter("LatelyCheckIn", typeof(int));
+    
+            var maxLateCheckInOutMinuteParameter = maxLateCheckInOutMinute.HasValue ?
+                new ObjectParameter("MaxLateCheckInOutMinute", maxLateCheckInOutMinute) :
+                new ObjectParameter("MaxLateCheckInOutMinute", typeof(int));
+    
+            var minSoonCheckInOutMinuteParameter = minSoonCheckInOutMinute.HasValue ?
+                new ObjectParameter("MinSoonCheckInOutMinute", minSoonCheckInOutMinute) :
+                new ObjectParameter("MinSoonCheckInOutMinute", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            var typeParameter = type != null ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(string));
+    
+            var sortIndexParameter = sortIndex.HasValue ?
+                new ObjectParameter("SortIndex", sortIndex) :
+                new ObjectParameter("SortIndex", typeof(int));
+    
+            var isOvertimeShiftParameter = isOvertimeShift.HasValue ?
+                new ObjectParameter("IsOvertimeShift", isOvertimeShift) :
+                new ObjectParameter("IsOvertimeShift", typeof(int));
+    
+            var mealCoefficientParameter = mealCoefficient.HasValue ?
+                new ObjectParameter("MealCoefficient", mealCoefficient) :
+                new ObjectParameter("MealCoefficient", typeof(decimal));
+    
+            var timezoneParameter = timezone != null ?
+                new ObjectParameter("Timezone", timezone) :
+                new ObjectParameter("Timezone", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Shift_Create", companyIDParameter, nameParameter, nameNosignParameter, shiftKeyParameter, coefficientParameter, minimumWorkingHourParameter, noteParameter, earlyCheckOutParameter, latelyCheckInParameter, maxLateCheckInOutMinuteParameter, minSoonCheckInOutMinuteParameter, statusParameter, typeParameter, sortIndexParameter, isOvertimeShiftParameter, mealCoefficientParameter, timezoneParameter, shiftId);
+        }
+    
         public virtual ObjectResult<Ins_Shift_CreateTimeInOutConfig_Result> Ins_Shift_CreateTimeInOutConfig(Nullable<int> shiftId, Nullable<int> startHourId, Nullable<int> startMinuteId, Nullable<int> endHourId, Nullable<int> endMinuteId, Nullable<int> startCheckInMinuteId, Nullable<int> endCheckInMinuteId, Nullable<int> startCheckOutMinuteId, Nullable<int> endCheckOutMinuteId, Nullable<int> startCheckInHourId, Nullable<int> endCheckInHourId, Nullable<int> startCheckOutHourId, Nullable<int> endCheckOutHourId, Nullable<int> maxLateCheckInOutMinute, Nullable<int> minSoonCheckInOutMinute, string lang)
         {
             var shiftIdParameter = shiftId.HasValue ?
@@ -876,6 +1026,47 @@ namespace DataAccess.EF
                 new ObjectParameter("IsInsertOne", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_Branch_Create_Result>("Ins_ShiftAssignment_Branch_Create", shiftAssignmentIDParameter, companyIDParameter, branchIDParameter, isInsertOneParameter);
+        }
+    
+        public virtual int Ins_ShiftAssignment_Create(Nullable<int> companyID, Nullable<int> shiftID, string title, Nullable<int> sortIndex, Nullable<int> autoApprove, string payrollConfigType, string assignmentTypeObj, string type, string generateTimekeepingType, ObjectParameter shiftAssignmentId)
+        {
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var shiftIDParameter = shiftID.HasValue ?
+                new ObjectParameter("ShiftID", shiftID) :
+                new ObjectParameter("ShiftID", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var sortIndexParameter = sortIndex.HasValue ?
+                new ObjectParameter("SortIndex", sortIndex) :
+                new ObjectParameter("SortIndex", typeof(int));
+    
+            var autoApproveParameter = autoApprove.HasValue ?
+                new ObjectParameter("AutoApprove", autoApprove) :
+                new ObjectParameter("AutoApprove", typeof(int));
+    
+            var payrollConfigTypeParameter = payrollConfigType != null ?
+                new ObjectParameter("PayrollConfigType", payrollConfigType) :
+                new ObjectParameter("PayrollConfigType", typeof(string));
+    
+            var assignmentTypeObjParameter = assignmentTypeObj != null ?
+                new ObjectParameter("AssignmentTypeObj", assignmentTypeObj) :
+                new ObjectParameter("AssignmentTypeObj", typeof(string));
+    
+            var typeParameter = type != null ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(string));
+    
+            var generateTimekeepingTypeParameter = generateTimekeepingType != null ?
+                new ObjectParameter("GenerateTimekeepingType", generateTimekeepingType) :
+                new ObjectParameter("GenerateTimekeepingType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_Create", companyIDParameter, shiftIDParameter, titleParameter, sortIndexParameter, autoApproveParameter, payrollConfigTypeParameter, assignmentTypeObjParameter, typeParameter, generateTimekeepingTypeParameter, shiftAssignmentId);
         }
     
         public virtual int Ins_ShiftAssignment_CreateAssignment(Nullable<int> shiftAssignmentID, Nullable<int> shiftID, string label, Nullable<int> dateOfWeek, ObjectParameter assignmentID)
@@ -1101,43 +1292,6 @@ namespace DataAccess.EF
                 new ObjectParameter("user_id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_UsersByUser_Result>("Ins_Task_UsersByUser", user_idParameter);
-        }
-    
-        public virtual int Ins_Tasks_Create(string title, Nullable<int> created_user_obj, string default_view, string color, string department_ids, string position_ids, string branch_ids, string user_ids)
-        {
-            var titleParameter = title != null ?
-                new ObjectParameter("title", title) :
-                new ObjectParameter("title", typeof(string));
-    
-            var created_user_objParameter = created_user_obj.HasValue ?
-                new ObjectParameter("created_user_obj", created_user_obj) :
-                new ObjectParameter("created_user_obj", typeof(int));
-    
-            var default_viewParameter = default_view != null ?
-                new ObjectParameter("default_view", default_view) :
-                new ObjectParameter("default_view", typeof(string));
-    
-            var colorParameter = color != null ?
-                new ObjectParameter("color", color) :
-                new ObjectParameter("color", typeof(string));
-    
-            var department_idsParameter = department_ids != null ?
-                new ObjectParameter("department_ids", department_ids) :
-                new ObjectParameter("department_ids", typeof(string));
-    
-            var position_idsParameter = position_ids != null ?
-                new ObjectParameter("position_ids", position_ids) :
-                new ObjectParameter("position_ids", typeof(string));
-    
-            var branch_idsParameter = branch_ids != null ?
-                new ObjectParameter("branch_ids", branch_ids) :
-                new ObjectParameter("branch_ids", typeof(string));
-    
-            var user_idsParameter = user_ids != null ?
-                new ObjectParameter("user_ids", user_ids) :
-                new ObjectParameter("user_ids", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Create", titleParameter, created_user_objParameter, default_viewParameter, colorParameter, department_idsParameter, position_idsParameter, branch_idsParameter, user_idsParameter);
         }
     
         public virtual ObjectResult<Ins_Time_GetList_Result> Ins_Time_GetList(string lang)
@@ -1410,215 +1564,28 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sel_CompanyDepartment_GetCreated", companyIdParameter);
         }
     
-        public virtual int Ins_CompanyBranch_Create(string branchName, string branchAddress, string regionId, Nullable<int> isOnboarding, Nullable<double> latitude, Nullable<double> longitude, Nullable<int> companyId, string alias, string code, ObjectParameter outResult)
+        public virtual ObjectResult<Get_Payroll_User_List_Result> Get_Payroll_User_List(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
         {
-            var branchNameParameter = branchName != null ?
-                new ObjectParameter("BranchName", branchName) :
-                new ObjectParameter("BranchName", typeof(string));
+            var assignmentUserIDParameter = assignmentUserID.HasValue ?
+                new ObjectParameter("AssignmentUserID", assignmentUserID) :
+                new ObjectParameter("AssignmentUserID", typeof(int));
     
-            var branchAddressParameter = branchAddress != null ?
-                new ObjectParameter("BranchAddress", branchAddress) :
-                new ObjectParameter("BranchAddress", typeof(string));
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
     
-            var regionIdParameter = regionId != null ?
-                new ObjectParameter("RegionId", regionId) :
-                new ObjectParameter("RegionId", typeof(string));
+            var dateFromParameter = dateFrom.HasValue ?
+                new ObjectParameter("DateFrom", dateFrom) :
+                new ObjectParameter("DateFrom", typeof(System.DateTime));
     
-            var isOnboardingParameter = isOnboarding.HasValue ?
-                new ObjectParameter("IsOnboarding", isOnboarding) :
-                new ObjectParameter("IsOnboarding", typeof(int));
+            var dateToParameter = dateTo.HasValue ?
+                new ObjectParameter("DateTo", dateTo) :
+                new ObjectParameter("DateTo", typeof(System.DateTime));
     
-            var latitudeParameter = latitude.HasValue ?
-                new ObjectParameter("Latitude", latitude) :
-                new ObjectParameter("Latitude", typeof(double));
-    
-            var longitudeParameter = longitude.HasValue ?
-                new ObjectParameter("Longitude", longitude) :
-                new ObjectParameter("Longitude", typeof(double));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var aliasParameter = alias != null ?
-                new ObjectParameter("Alias", alias) :
-                new ObjectParameter("Alias", typeof(string));
-    
-            var codeParameter = code != null ?
-                new ObjectParameter("Code", code) :
-                new ObjectParameter("Code", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyBranch_Create", branchNameParameter, branchAddressParameter, regionIdParameter, isOnboardingParameter, latitudeParameter, longitudeParameter, companyIdParameter, aliasParameter, codeParameter, outResult);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Get_Payroll_User_List_Result>("Get_Payroll_User_List", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter);
         }
     
-        public virtual int Ins_Company_UpdateInfoWhenSinup(Nullable<int> accountId, Nullable<int> companyId, string companyName, string alias, Nullable<double> comPany_Latitude, Nullable<double> comPany_Longitude, string comPany_Number_Employee, string comPany_Address, string email, string hearAbout, string usePurpose, string businesFieldIds)
-        {
-            var accountIdParameter = accountId.HasValue ?
-                new ObjectParameter("AccountId", accountId) :
-                new ObjectParameter("AccountId", typeof(int));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var companyNameParameter = companyName != null ?
-                new ObjectParameter("CompanyName", companyName) :
-                new ObjectParameter("CompanyName", typeof(string));
-    
-            var aliasParameter = alias != null ?
-                new ObjectParameter("Alias", alias) :
-                new ObjectParameter("Alias", typeof(string));
-    
-            var comPany_LatitudeParameter = comPany_Latitude.HasValue ?
-                new ObjectParameter("ComPany_Latitude", comPany_Latitude) :
-                new ObjectParameter("ComPany_Latitude", typeof(double));
-    
-            var comPany_LongitudeParameter = comPany_Longitude.HasValue ?
-                new ObjectParameter("ComPany_Longitude", comPany_Longitude) :
-                new ObjectParameter("ComPany_Longitude", typeof(double));
-    
-            var comPany_Number_EmployeeParameter = comPany_Number_Employee != null ?
-                new ObjectParameter("ComPany_Number_Employee", comPany_Number_Employee) :
-                new ObjectParameter("ComPany_Number_Employee", typeof(string));
-    
-            var comPany_AddressParameter = comPany_Address != null ?
-                new ObjectParameter("ComPany_Address", comPany_Address) :
-                new ObjectParameter("ComPany_Address", typeof(string));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var hearAboutParameter = hearAbout != null ?
-                new ObjectParameter("HearAbout", hearAbout) :
-                new ObjectParameter("HearAbout", typeof(string));
-    
-            var usePurposeParameter = usePurpose != null ?
-                new ObjectParameter("UsePurpose", usePurpose) :
-                new ObjectParameter("UsePurpose", typeof(string));
-    
-            var businesFieldIdsParameter = businesFieldIds != null ?
-                new ObjectParameter("BusinesFieldIds", businesFieldIds) :
-                new ObjectParameter("BusinesFieldIds", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Company_UpdateInfoWhenSinup", accountIdParameter, companyIdParameter, companyNameParameter, aliasParameter, comPany_LatitudeParameter, comPany_LongitudeParameter, comPany_Number_EmployeeParameter, comPany_AddressParameter, emailParameter, hearAboutParameter, usePurposeParameter, businesFieldIdsParameter);
-        }
-    
-        public virtual int Ins_Shift_Create(Nullable<int> companyID, string name, string nameNosign, string shiftKey, Nullable<decimal> coefficient, Nullable<decimal> minimumWorkingHour, string note, Nullable<int> earlyCheckOut, Nullable<int> latelyCheckIn, Nullable<int> maxLateCheckInOutMinute, Nullable<int> minSoonCheckInOutMinute, Nullable<int> status, string type, Nullable<int> sortIndex, Nullable<int> isOvertimeShift, Nullable<decimal> mealCoefficient, string timezone, ObjectParameter shiftId)
-        {
-            var companyIDParameter = companyID.HasValue ?
-                new ObjectParameter("CompanyID", companyID) :
-                new ObjectParameter("CompanyID", typeof(int));
-    
-            var nameParameter = name != null ?
-                new ObjectParameter("Name", name) :
-                new ObjectParameter("Name", typeof(string));
-    
-            var nameNosignParameter = nameNosign != null ?
-                new ObjectParameter("NameNosign", nameNosign) :
-                new ObjectParameter("NameNosign", typeof(string));
-    
-            var shiftKeyParameter = shiftKey != null ?
-                new ObjectParameter("ShiftKey", shiftKey) :
-                new ObjectParameter("ShiftKey", typeof(string));
-    
-            var coefficientParameter = coefficient.HasValue ?
-                new ObjectParameter("Coefficient", coefficient) :
-                new ObjectParameter("Coefficient", typeof(decimal));
-    
-            var minimumWorkingHourParameter = minimumWorkingHour.HasValue ?
-                new ObjectParameter("MinimumWorkingHour", minimumWorkingHour) :
-                new ObjectParameter("MinimumWorkingHour", typeof(decimal));
-    
-            var noteParameter = note != null ?
-                new ObjectParameter("Note", note) :
-                new ObjectParameter("Note", typeof(string));
-    
-            var earlyCheckOutParameter = earlyCheckOut.HasValue ?
-                new ObjectParameter("EarlyCheckOut", earlyCheckOut) :
-                new ObjectParameter("EarlyCheckOut", typeof(int));
-    
-            var latelyCheckInParameter = latelyCheckIn.HasValue ?
-                new ObjectParameter("LatelyCheckIn", latelyCheckIn) :
-                new ObjectParameter("LatelyCheckIn", typeof(int));
-    
-            var maxLateCheckInOutMinuteParameter = maxLateCheckInOutMinute.HasValue ?
-                new ObjectParameter("MaxLateCheckInOutMinute", maxLateCheckInOutMinute) :
-                new ObjectParameter("MaxLateCheckInOutMinute", typeof(int));
-    
-            var minSoonCheckInOutMinuteParameter = minSoonCheckInOutMinute.HasValue ?
-                new ObjectParameter("MinSoonCheckInOutMinute", minSoonCheckInOutMinute) :
-                new ObjectParameter("MinSoonCheckInOutMinute", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(int));
-    
-            var typeParameter = type != null ?
-                new ObjectParameter("Type", type) :
-                new ObjectParameter("Type", typeof(string));
-    
-            var sortIndexParameter = sortIndex.HasValue ?
-                new ObjectParameter("SortIndex", sortIndex) :
-                new ObjectParameter("SortIndex", typeof(int));
-    
-            var isOvertimeShiftParameter = isOvertimeShift.HasValue ?
-                new ObjectParameter("IsOvertimeShift", isOvertimeShift) :
-                new ObjectParameter("IsOvertimeShift", typeof(int));
-    
-            var mealCoefficientParameter = mealCoefficient.HasValue ?
-                new ObjectParameter("MealCoefficient", mealCoefficient) :
-                new ObjectParameter("MealCoefficient", typeof(decimal));
-    
-            var timezoneParameter = timezone != null ?
-                new ObjectParameter("Timezone", timezone) :
-                new ObjectParameter("Timezone", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Shift_Create", companyIDParameter, nameParameter, nameNosignParameter, shiftKeyParameter, coefficientParameter, minimumWorkingHourParameter, noteParameter, earlyCheckOutParameter, latelyCheckInParameter, maxLateCheckInOutMinuteParameter, minSoonCheckInOutMinuteParameter, statusParameter, typeParameter, sortIndexParameter, isOvertimeShiftParameter, mealCoefficientParameter, timezoneParameter, shiftId);
-        }
-    
-        public virtual int Ins_ShiftAssignment_Create(Nullable<int> companyID, Nullable<int> shiftID, string title, Nullable<int> sortIndex, Nullable<int> autoApprove, string payrollConfigType, string assignmentTypeObj, string type, string generateTimekeepingType, ObjectParameter shiftAssignmentId)
-        {
-            var companyIDParameter = companyID.HasValue ?
-                new ObjectParameter("CompanyID", companyID) :
-                new ObjectParameter("CompanyID", typeof(int));
-    
-            var shiftIDParameter = shiftID.HasValue ?
-                new ObjectParameter("ShiftID", shiftID) :
-                new ObjectParameter("ShiftID", typeof(int));
-    
-            var titleParameter = title != null ?
-                new ObjectParameter("Title", title) :
-                new ObjectParameter("Title", typeof(string));
-    
-            var sortIndexParameter = sortIndex.HasValue ?
-                new ObjectParameter("SortIndex", sortIndex) :
-                new ObjectParameter("SortIndex", typeof(int));
-    
-            var autoApproveParameter = autoApprove.HasValue ?
-                new ObjectParameter("AutoApprove", autoApprove) :
-                new ObjectParameter("AutoApprove", typeof(int));
-    
-            var payrollConfigTypeParameter = payrollConfigType != null ?
-                new ObjectParameter("PayrollConfigType", payrollConfigType) :
-                new ObjectParameter("PayrollConfigType", typeof(string));
-    
-            var assignmentTypeObjParameter = assignmentTypeObj != null ?
-                new ObjectParameter("AssignmentTypeObj", assignmentTypeObj) :
-                new ObjectParameter("AssignmentTypeObj", typeof(string));
-    
-            var typeParameter = type != null ?
-                new ObjectParameter("Type", type) :
-                new ObjectParameter("Type", typeof(string));
-    
-            var generateTimekeepingTypeParameter = generateTimekeepingType != null ?
-                new ObjectParameter("GenerateTimekeepingType", generateTimekeepingType) :
-                new ObjectParameter("GenerateTimekeepingType", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_Create", companyIDParameter, shiftIDParameter, titleParameter, sortIndexParameter, autoApproveParameter, payrollConfigTypeParameter, assignmentTypeObjParameter, typeParameter, generateTimekeepingTypeParameter, shiftAssignmentId);
-        }
-    
-        public virtual int Ins_ShiftAssignment_User_Create(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<double> workingHour, Nullable<System.DateTime> workingDay, Nullable<int> weekOfYear, ObjectParameter shiftAssignment_UserId)
+        public virtual int Ins_Payroll_User_Create(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<double> workingHour, Nullable<System.DateTime> workingDay, Nullable<int> weekOfYear, Nullable<System.DateTime> checkinTime, Nullable<System.DateTime> checkoutTime, string checkinType, string checkouType, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, string realCoefficient, Nullable<int> status, ObjectParameter payrollUserID)
         {
             var shiftAssignmentIDParameter = shiftAssignmentID.HasValue ?
                 new ObjectParameter("ShiftAssignmentID", shiftAssignmentID) :
@@ -1648,7 +1615,69 @@ namespace DataAccess.EF
                 new ObjectParameter("WeekOfYear", weekOfYear) :
                 new ObjectParameter("WeekOfYear", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_User_Create", shiftAssignmentIDParameter, accountMapIDParameter, startTimeParameter, endTimeParameter, workingHourParameter, workingDayParameter, weekOfYearParameter, shiftAssignment_UserId);
+            var checkinTimeParameter = checkinTime.HasValue ?
+                new ObjectParameter("CheckinTime", checkinTime) :
+                new ObjectParameter("CheckinTime", typeof(System.DateTime));
+    
+            var checkoutTimeParameter = checkoutTime.HasValue ?
+                new ObjectParameter("CheckoutTime", checkoutTime) :
+                new ObjectParameter("CheckoutTime", typeof(System.DateTime));
+    
+            var checkinTypeParameter = checkinType != null ?
+                new ObjectParameter("CheckinType", checkinType) :
+                new ObjectParameter("CheckinType", typeof(string));
+    
+            var checkouTypeParameter = checkouType != null ?
+                new ObjectParameter("CheckouType", checkouType) :
+                new ObjectParameter("CheckouType", typeof(string));
+    
+            var realWorkingHourParameter = realWorkingHour.HasValue ?
+                new ObjectParameter("RealWorkingHour", realWorkingHour) :
+                new ObjectParameter("RealWorkingHour", typeof(double));
+    
+            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
+                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
+                new ObjectParameter("RealWorkingMinute", typeof(double));
+    
+            var restStartTimeShortParameter = restStartTimeShort != null ?
+                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
+                new ObjectParameter("RestStartTimeShort", typeof(string));
+    
+            var restEndTimeShortParameter = restEndTimeShort != null ?
+                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
+                new ObjectParameter("RestEndTimeShort", typeof(string));
+    
+            var realCoefficientParameter = realCoefficient != null ?
+                new ObjectParameter("RealCoefficient", realCoefficient) :
+                new ObjectParameter("RealCoefficient", typeof(string));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_Create", shiftAssignmentIDParameter, accountMapIDParameter, startTimeParameter, endTimeParameter, workingHourParameter, workingDayParameter, weekOfYearParameter, checkinTimeParameter, checkoutTimeParameter, checkinTypeParameter, checkouTypeParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter, payrollUserID);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_ByCompanyID_Result> Ins_ShiftAssignment_ByCompanyID(Nullable<int> companyID)
+        {
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_ByCompanyID_Result>("Ins_ShiftAssignment_ByCompanyID", companyIDParameter);
+        }
+    
+        public virtual int Ins_ShiftAssignment_User_Create(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, ObjectParameter shiftAssignment_UserId)
+        {
+            var shiftAssignmentIDParameter = shiftAssignmentID.HasValue ?
+                new ObjectParameter("ShiftAssignmentID", shiftAssignmentID) :
+                new ObjectParameter("ShiftAssignmentID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_User_Create", shiftAssignmentIDParameter, accountMapIDParameter, shiftAssignment_UserId);
         }
     
         public virtual int Ins_ShiftAssignment_User_GetByAccountMapID(Nullable<int> accountMapID, Nullable<int> companyID, Nullable<System.DateTime> workingDayFrom, Nullable<System.DateTime> workingDayTo)
@@ -1672,7 +1701,7 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_User_GetByAccountMapID", accountMapIDParameter, companyIDParameter, workingDayFromParameter, workingDayToParameter);
         }
     
-        public virtual ObjectResult<Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result> Ins_ShiftAssignment_User_GetByShiftAssignmentID(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> workingDayFrom, Nullable<System.DateTime> workingDayTo)
+        public virtual int Ins_ShiftAssignment_User_GetByShiftAssignmentID(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> workingDayFrom, Nullable<System.DateTime> workingDayTo)
         {
             var shiftAssignmentIDParameter = shiftAssignmentID.HasValue ?
                 new ObjectParameter("ShiftAssignmentID", shiftAssignmentID) :
@@ -1690,7 +1719,160 @@ namespace DataAccess.EF
                 new ObjectParameter("WorkingDayTo", workingDayTo) :
                 new ObjectParameter("WorkingDayTo", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result>("Ins_ShiftAssignment_User_GetByShiftAssignmentID", shiftAssignmentIDParameter, accountMapIDParameter, workingDayFromParameter, workingDayToParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ShiftAssignment_User_GetByShiftAssignmentID", shiftAssignmentIDParameter, accountMapIDParameter, workingDayFromParameter, workingDayToParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Tasks_Create_Result> Ins_Tasks_Create(string title, Nullable<int> created_user_obj, string default_view, string color, string department_ids, string position_ids, string branch_ids, string user_ids)
+        {
+            var titleParameter = title != null ?
+                new ObjectParameter("title", title) :
+                new ObjectParameter("title", typeof(string));
+    
+            var created_user_objParameter = created_user_obj.HasValue ?
+                new ObjectParameter("created_user_obj", created_user_obj) :
+                new ObjectParameter("created_user_obj", typeof(int));
+    
+            var default_viewParameter = default_view != null ?
+                new ObjectParameter("default_view", default_view) :
+                new ObjectParameter("default_view", typeof(string));
+    
+            var colorParameter = color != null ?
+                new ObjectParameter("color", color) :
+                new ObjectParameter("color", typeof(string));
+    
+            var department_idsParameter = department_ids != null ?
+                new ObjectParameter("department_ids", department_ids) :
+                new ObjectParameter("department_ids", typeof(string));
+    
+            var position_idsParameter = position_ids != null ?
+                new ObjectParameter("position_ids", position_ids) :
+                new ObjectParameter("position_ids", typeof(string));
+    
+            var branch_idsParameter = branch_ids != null ?
+                new ObjectParameter("branch_ids", branch_ids) :
+                new ObjectParameter("branch_ids", typeof(string));
+    
+            var user_idsParameter = user_ids != null ?
+                new ObjectParameter("user_ids", user_ids) :
+                new ObjectParameter("user_ids", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Tasks_Create_Result>("Ins_Tasks_Create", titleParameter, created_user_objParameter, default_viewParameter, colorParameter, department_idsParameter, position_idsParameter, branch_idsParameter, user_idsParameter);
+        }
+    
+        public virtual int Ins_Payroll_User_MultiDay(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> weekOfYear, string checkinType, string checkouType, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, Nullable<double> realCoefficient, Nullable<int> status)
+        {
+            var assignmentUserIDParameter = assignmentUserID.HasValue ?
+                new ObjectParameter("AssignmentUserID", assignmentUserID) :
+                new ObjectParameter("AssignmentUserID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var dateFromParameter = dateFrom.HasValue ?
+                new ObjectParameter("DateFrom", dateFrom) :
+                new ObjectParameter("DateFrom", typeof(System.DateTime));
+    
+            var dateToParameter = dateTo.HasValue ?
+                new ObjectParameter("DateTo", dateTo) :
+                new ObjectParameter("DateTo", typeof(System.DateTime));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.DateTime));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.DateTime));
+    
+            var weekOfYearParameter = weekOfYear.HasValue ?
+                new ObjectParameter("WeekOfYear", weekOfYear) :
+                new ObjectParameter("WeekOfYear", typeof(int));
+    
+            var checkinTypeParameter = checkinType != null ?
+                new ObjectParameter("CheckinType", checkinType) :
+                new ObjectParameter("CheckinType", typeof(string));
+    
+            var checkouTypeParameter = checkouType != null ?
+                new ObjectParameter("CheckouType", checkouType) :
+                new ObjectParameter("CheckouType", typeof(string));
+    
+            var realWorkingHourParameter = realWorkingHour.HasValue ?
+                new ObjectParameter("RealWorkingHour", realWorkingHour) :
+                new ObjectParameter("RealWorkingHour", typeof(double));
+    
+            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
+                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
+                new ObjectParameter("RealWorkingMinute", typeof(double));
+    
+            var restStartTimeShortParameter = restStartTimeShort != null ?
+                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
+                new ObjectParameter("RestStartTimeShort", typeof(string));
+    
+            var restEndTimeShortParameter = restEndTimeShort != null ?
+                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
+                new ObjectParameter("RestEndTimeShort", typeof(string));
+    
+            var realCoefficientParameter = realCoefficient.HasValue ?
+                new ObjectParameter("RealCoefficient", realCoefficient) :
+                new ObjectParameter("RealCoefficient", typeof(double));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_MultiDay", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter, startTimeParameter, endTimeParameter, weekOfYearParameter, checkinTypeParameter, checkouTypeParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Company_GetInfor_Result> Ins_Company_GetInfor(Nullable<int> companyId)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Company_GetInfor_Result>("Ins_Company_GetInfor", companyIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Account_UpdateFullName_Result> Ins_Account_UpdateFullName(string phone, string email, string fullName, Nullable<bool> isUsePhone)
+        {
+            var phoneParameter = phone != null ?
+                new ObjectParameter("Phone", phone) :
+                new ObjectParameter("Phone", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var fullNameParameter = fullName != null ?
+                new ObjectParameter("FullName", fullName) :
+                new ObjectParameter("FullName", typeof(string));
+    
+            var isUsePhoneParameter = isUsePhone.HasValue ?
+                new ObjectParameter("IsUsePhone", isUsePhone) :
+                new ObjectParameter("IsUsePhone", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Account_UpdateFullName_Result>("Ins_Account_UpdateFullName", phoneParameter, emailParameter, fullNameParameter, isUsePhoneParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Payroll_User_GetList_Result> Ins_Payroll_User_GetList(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
+        {
+            var assignmentUserIDParameter = assignmentUserID.HasValue ?
+                new ObjectParameter("AssignmentUserID", assignmentUserID) :
+                new ObjectParameter("AssignmentUserID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var dateFromParameter = dateFrom.HasValue ?
+                new ObjectParameter("DateFrom", dateFrom) :
+                new ObjectParameter("DateFrom", typeof(System.DateTime));
+    
+            var dateToParameter = dateTo.HasValue ?
+                new ObjectParameter("DateTo", dateTo) :
+                new ObjectParameter("DateTo", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Payroll_User_GetList_Result>("Ins_Payroll_User_GetList", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter);
         }
     }
 }

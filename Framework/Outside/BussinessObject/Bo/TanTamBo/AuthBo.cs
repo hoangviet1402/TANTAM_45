@@ -160,7 +160,7 @@ namespace BussinessObject.Bo.TanTamBo
                 var authdata =  DaoFactory.Auth.Validate(accountName ?? "", isUsePhone);
                 if (authdata == null || authdata.AccountId <= 0)
                 {
-                    response.Code = ResponseResultEnum.AccountNotExist.Value();
+                    response.Code = ResponseResultEnum.Success.Value();
                     response.Message = string.Format("Tài khoản {0} không tồn tại.", accountName);
                     response.Data = new ValidateAccountResponse()
                     {
@@ -407,6 +407,7 @@ namespace BussinessObject.Bo.TanTamBo
                 var accountId = 0;
                 var companyId = 0;
                 var employeeAccountMapId = 0;
+                var ClientRole = 1;
                 if (updatedFullNames == null || updatedFullNames.Count() <= 0 || updatedFullNames.FirstOrDefault().AccountID <= 0)
                 {
                     DaoFactory.Auth.RegisterAccount(phoneCode, phone, mail, fullName, imie, out accountId,out companyId,out employeeAccountMapId);
@@ -416,12 +417,15 @@ namespace BussinessObject.Bo.TanTamBo
                     accountId = updatedFullNames.FirstOrDefault().AccountID ?? 0;
                     companyId = updatedFullNames.FirstOrDefault().CompanyId ?? 0;
                     employeeAccountMapId = updatedFullNames.FirstOrDefault().EmployeeAccountMapID ?? 0;
+                    ClientRole = updatedFullNames.FirstOrDefault().AccountRole ?? 1;
                 }
 
                 response.Data = new UpdateFullNameSigupResponse
                 {
                     UserId = accountId,
-                    ShopId = companyId
+                    ShopId = companyId,
+                    AccountMapId = employeeAccountMapId,
+                    ClientRole = ClientRole
                 };
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Cập nhật tên thành công.";

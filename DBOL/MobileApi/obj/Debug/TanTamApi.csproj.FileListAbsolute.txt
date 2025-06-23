@@ -1,3 +1,6 @@
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll.config
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.pdb
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\Antlr3.Runtime.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\BussinessObject.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\DataAccess.dll
@@ -78,8 +81,5 @@ D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csprojAssemblyReference.cache
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CoreCompileInputs.cache
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CopyComplete
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll.config
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.pdb
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.pdb

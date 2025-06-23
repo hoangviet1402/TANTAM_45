@@ -47,6 +47,9 @@
     <Compile Include="Constant\EnumPlatformId.cs" />
     <Compile Include="Constant\ExportCardEnum.cs" />
     <Compile Include="Entities\IStoredProcedure.cs" />
+    <Compile Include="Entities\TanTamEntities\Get_Payroll_User_List_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Account_EmployeesInfoInCompany_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
@@ -116,13 +119,13 @@
     <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Branch_Create_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_ByCompanyID_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Department_Create_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Position_Create_Result.cs">
-      <DependentUpon>TanTam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_User_GetByShiftAssignmentID_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Shift_Branch_Create_Result.cs">
@@ -138,6 +141,9 @@
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Shift_Get_Status_Clock_In_Out_Shift_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Tasks_Create_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Task_CreatorInfo_Result.cs">

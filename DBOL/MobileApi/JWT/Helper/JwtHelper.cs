@@ -105,7 +105,7 @@ namespace TanTamApi.JWT.Helper
         /// <summary>
         /// Lấy EmployeeId từ JWT token trong Web API
         /// </summary>
-        public static int GetEmployeeIdFromToken(HttpRequestMessage request)
+        public static int GetAccountMapIDFromToken(HttpRequestMessage request)
         {
             try
             {

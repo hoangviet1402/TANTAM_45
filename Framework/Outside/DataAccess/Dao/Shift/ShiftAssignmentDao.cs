@@ -28,7 +28,7 @@ namespace DataAccess.Dao.Shift
             {
                 var outResult = 0;
 
-                var out_OutResult = new ObjectParameter("OutResult", typeof(int));
+                var out_OutResult = new ObjectParameter("ShiftAssignmentId", typeof(int));
 
                 var data = Uow.Context.Ins_ShiftAssignment_Create(
                     parameter.CompanyID, 

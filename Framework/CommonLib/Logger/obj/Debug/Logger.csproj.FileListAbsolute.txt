@@ -5,7 +5,6 @@ D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Debug\log4net.dll
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Debug\Newtonsoft.Json.dll
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Debug\log4net.xml
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\bin\Debug\Newtonsoft.Json.xml
-D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csprojAssemblyReference.cache
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.dll

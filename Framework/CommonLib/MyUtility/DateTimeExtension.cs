@@ -719,5 +719,36 @@ namespace MyUtility
                 return 0;
             }
         }
+
+        // ... existing code ...
+
+        /// <summary>
+        /// Lấy ngày đầu và cuối theo type
+        /// Type = "1": Đầu tháng và cuối tháng
+        /// Type = "2": Đầu tuần và cuối tuần
+        /// </summary>
+        /// <param name="currentDate">Ngày hiện tại</param>
+        /// <param name="type">Loại: "1" - tháng, "2" - tuần</param>
+        /// <param name="startDate">OUT: Ngày đầu</param>
+        /// <param name="endDate">OUT: Ngày cuối</param>
+        public static void GetRangeByType(DateTime currentDate, int type, out DateTime startDate, out DateTime endDate)
+        {
+            if (type == 1)
+            {
+                startDate = currentDate.FirstDayOfMonth();
+                endDate = currentDate.LastDayOfMonth();
+            }
+            else if (type == 2)
+            {
+                startDate = currentDate.FirstDateOfWeek();
+                endDate = currentDate.LastDateOfWeek();
+            }
+            else
+            {
+                throw new ArgumentException("Type không hợp lệ. Chỉ nhận '1' (tháng) hoặc '2' (tuần).");
+            }
+        }
+
+// ... existing code ...
     }
 }

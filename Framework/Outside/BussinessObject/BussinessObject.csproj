@@ -81,15 +81,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bo\Shift\PayrollBo.cs" />
     <Compile Include="Bo\Shift\ShiftAssignmentBo.cs" />
     <Compile Include="Bo\Shift\ShiftBo.cs" />
     <Compile Include="Bo\TanTamBo\AuthBo.cs" />
     <Compile Include="Bo\TanTamBo\BranchesBo.cs" />
-    <Compile Include="Bo\TanTamBo\PositionBo.cs" />
-    <Compile Include="Bo\TanTamBo\DepartmentBo.cs" />
     <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
+    <Compile Include="Bo\TanTamBo\DepartmentBo.cs" />
+    <Compile Include="Bo\TanTamBo\EmployeeBo.cs" />
+    <Compile Include="Bo\TanTamBo\PositionBo.cs" />
+    <Compile Include="Bo\TanTamBo\TaskBo.cs" />
+    <Compile Include="Bo\TanTamBo\TanTamBo.cs" />
     <Compile Include="BoFactory.cs" />
     <Compile Include="Bo\BaseBo.cs" />
+    <Compile Include="Bo\TanTamBo\UserBo.cs" />
     <Compile Include="Constants\LanguageResourceBo.cs" />
     <Compile Include="Constants\LanguageResourceCam.cs" />
     <Compile Include="Constants\LanguageResourceEnBo .cs" />
@@ -111,6 +116,7 @@
     <Compile Include="Enum\ResponseResultEnum.cs" />
     <Compile Include="Enum\ShittEnum.cs" />
     <Compile Include="Enum\UserRole.cs" />
+    <Compile Include="Helper\AESHelper.cs" />
     <Compile Include="Helper\CacheApiHelper.cs" />
     <Compile Include="Models\ApiResponse\ApiBaseResponse.cs" />
     <Compile Include="Models\ApiResponse\ApiResult.cs" />
@@ -138,9 +144,14 @@
     <Compile Include="Models\ResourceEnum\MyResourceItemManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourcePaymentManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceTransferGoldManagement.cs" />
+    <Compile Include="Models\Employee\EmployeeDto.cs" />
+    <Compile Include="Models\Employee\EmployeeRequestDto.cs" />
     <Compile Include="Models\Shift\ShiftAssignmentDTO.cs" />
     <Compile Include="Models\Shift\ShiftDTO.cs" />
+    <Compile Include="Models\Shift\ShiftRequest.cs" />
+    <Compile Include="Models\Shift\ShiftResponse.cs" />
     <Compile Include="Models\Shift\TimeDTO.cs" />
+    <Compile Include="Models\Task\TaskRequestDto.cs" />
     <Compile Include="Models\User\UserDto.cs" />
     <Compile Include="Models\User\UserRequestDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

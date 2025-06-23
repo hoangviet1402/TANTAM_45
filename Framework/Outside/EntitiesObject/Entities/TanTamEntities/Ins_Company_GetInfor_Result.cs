@@ -21,8 +21,8 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string TotalEmployees { get; set; }
         public bool IsActive { get; set; }
         public int CreateStep { get; set; }
-        public Nullable<int> Latitude { get; set; }
-        public Nullable<int> Longitude { get; set; }
+        public Nullable<double> Latitude { get; set; }
+        public Nullable<double> Longitude { get; set; }
         public string Address { get; set; }
         public string HearAbout { get; set; }
         public string UsePurpose { get; set; }

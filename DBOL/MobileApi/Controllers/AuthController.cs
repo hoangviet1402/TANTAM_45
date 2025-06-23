@@ -447,37 +447,43 @@ namespace TanTamApi.Controllers
                             ip,
                             imie
                             );
-                        if (request.IsMobileMenu == 1 && result.Data != null && result.Code == ResponseResultEnum.Success.Value())
+                        if (result.Data != null && result.Code == ResponseResultEnum.Success.Value()) // request.IsMobileMenu == 1 && 
                         {
                             var UpdateFullNameSigup_result = (UpdateFullNameSigupResponse)result.Data;
-                            if (UpdateFullNameSigup_result.UserId != null && UpdateFullNameSigup_result.UserId > 0)
-                            {
-                                var dataAlter = BoFactory.Auth.GetDataAlterAsync(
-                                        UpdateFullNameSigup_result.UserId ?? 0,
-                                        isUsePhone,
-                                        string.Format("{0}{1}", request.PhoneCode, request.Phone),
-                                        new List<string>() { "phone" });
+                            response = JwtHelper.GenerateAuthResponse(
+                                           UpdateFullNameSigup_result.UserId ?? 0,
+                                           UpdateFullNameSigup_result.AccountMapId ?? 0,                                           
+                                           UpdateFullNameSigup_result.ShopId ?? 0,
+                                           UpdateFullNameSigup_result.ClientRole ?? 0, ip);
+                            return Request.CreateResponse(HttpStatusCode.OK, response);
+                            //if (UpdateFullNameSigup_result.UserId != null && UpdateFullNameSigup_result.UserId > 0)
+                            //{
+                            //    var dataAlter = BoFactory.Auth.GetDataAlterAsync(
+                            //            UpdateFullNameSigup_result.UserId ?? 0,
+                            //            isUsePhone,
+                            //            string.Format("{0}{1}", request.PhoneCode, request.Phone),
+                            //            new List<string>() { "phone" });
 
-                                if (dataAlter.Code == ResponseResultEnum.Success.Value() && dataAlter.Data != null)
-                                {
-                                    var dataAlter_result = (AuthResponse)dataAlter.Data;
-                                    if (
-                                        (dataAlter_result.Company != null && dataAlter_result.Company.Id > 0)
-                                        &&
-                                        (dataAlter_result.User != null)
-                                        &&
-                                        (dataAlter_result.Company.NeedSetPassword == true)
-                                    )
-                                    {
-                                        response = JwtHelper.GenerateAuthResponse(
-                                            dataAlter_result.User.Id ?? 0,
-                                            dataAlter_result.Company.UserId ?? 0,
-                                            dataAlter_result.Company.Id ?? 0,
-                                            dataAlter_result.Company.ClientRole ?? 0, ip);
-                                    }
-                                }
-                                return Request.CreateResponse(HttpStatusCode.OK, response);
-                            }
+                            //    if (dataAlter.Code == ResponseResultEnum.Success.Value() && dataAlter.Data != null)
+                            //    {
+                            //        var dataAlter_result = (AuthResponse)dataAlter.Data;
+                            //        if (
+                            //            (dataAlter_result.Company != null && dataAlter_result.Company.Id > 0)
+                            //            &&
+                            //            (dataAlter_result.User != null)
+                            //            &&
+                            //            (dataAlter_result.Company.NeedSetPassword == true)
+                            //        )
+                            //        {
+                            //            response = JwtHelper.GenerateAuthResponse(
+                            //                dataAlter_result.User.Id ?? 0,
+                            //                dataAlter_result.Company.UserId ?? 0,
+                            //                dataAlter_result.Company.Id ?? 0,
+                            //                dataAlter_result.Company.ClientRole ?? 0, ip);
+                            //        }
+                            //    }
+                            //    return Request.CreateResponse(HttpStatusCode.OK, response);
+                            //}
                         }
                         return Request.CreateResponse(HttpStatusCode.OK, result);
                     default:

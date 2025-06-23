@@ -16,6 +16,6 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<int> EmployeeAccountMapID { get; set; }
         public Nullable<int> CompanyId { get; set; }
         public Nullable<int> AccountID { get; set; }
-        public string AccountRole { get; set; }
+        public Nullable<int> AccountRole { get; set; }
     }
 }

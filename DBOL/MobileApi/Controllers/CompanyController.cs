@@ -37,8 +37,8 @@ namespace TanTamApi.Controllers
             try
             {
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
-                var accountId = JwtHelper.GetAccountIdFromToken(Request);
-                if (companyId <= 0 || accountId <= 0)
+                var accountMapId = JwtHelper.GetAccountMapIDFromToken(Request);
+                if (companyId <= 0 || accountMapId <= 0)
                 {
                     response.Code = ResponseResultEnum.InvalidInput.Value();
                     response.Message = "Thông tin tài khoản hoặc công ty không hợp lệ.";
@@ -52,7 +52,7 @@ namespace TanTamApi.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK, response);               
                 }
 
-                response = BoFactory.Branches.SetupCompany_CreateBranches(companyId, accountId, request);
+                response = BoFactory.Branches.SetupCompany_CreateBranches(companyId, accountMapId, request);
             }
             catch (Exception ex)
             {
@@ -100,9 +100,9 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("department-add")]
         public HttpResponseMessage CreateDepartment([FromBody] CreateDepartmentRequest request)
         {
-            var response = new ApiResult<RefeshTokenResponse>()
+            var response = new ApiResult<List<CreateDepartmentResponse>>()
             {
-                Data = new RefeshTokenResponse(),
+                Data = new List<CreateDepartmentResponse>(),
                 Code = ResponseResultEnum.ServiceUnavailable.Value(),
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
@@ -124,8 +124,8 @@ namespace TanTamApi.Controllers
                     response.Message = "Danh sách phòng ban không được để trống.";
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
-                
-                var result = BoFactory.Department.SetupCompany_CreateDepartmentAllBranchAsync(companyId, request);               
+
+                response = BoFactory.Department.SetupCompany_CreateDepartmentAllBranchAsync(companyId, request);               
             }
             catch (Exception ex)
             {
@@ -212,8 +212,8 @@ namespace TanTamApi.Controllers
                     response.Code = ResponseResultEnum.InvalidData.Value();
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
-                
-                var result = BoFactory.Position.SetupCompany_CreatePositionInAllBranchesAsync(request.CompanyId, request);
+
+                response = BoFactory.Position.SetupCompany_CreatePositionInAllBranchesAsync(request.CompanyId, request);
             }
             catch (Exception ex)
             {
@@ -335,7 +335,7 @@ namespace TanTamApi.Controllers
                 CompanyDetailRequest request = new CompanyDetailRequest();
                 request.CompanyId = JwtHelper.GetCompanyIdFromToken(Request);
                 request.AccountId = JwtHelper.GetAccountIdFromToken(Request);
-                var result = BoFactory.Company.CompanyDetail(request);
+                response = BoFactory.Company.CompanyDetail(request);
             }
             catch (Exception ex)
             {

@@ -15,6 +15,13 @@ namespace BussinessObject.Models.Auth
 
         [JsonProperty("shop_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? ShopId { get; set; }
+
+        [JsonProperty("user_map_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AccountMapId { get; set; }
+
+        [JsonProperty("Role", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ClientRole { get; set; }
+
     }
 
     public class UpdateFullNameResquest

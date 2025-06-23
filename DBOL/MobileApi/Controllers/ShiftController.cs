@@ -8,6 +8,7 @@ using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.Company;
 using BussinessObject.Models.Shift;
 using Logger;
+using MyUtility;
 using MyUtility.Extensions;
 using Newtonsoft.Json;
 using ServiceStack.Templates;
@@ -279,7 +280,7 @@ namespace TanTamApi.Controllers
                 //    response.Data = JsonConvert.DeserializeObject(jsonString);
                 #endregion
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
-                var accountMapID = JwtHelper.GetEmployeeIdFromToken(Request);
+                var accountMapID = JwtHelper.GetAccountMapIDFromToken(Request);
                 response = BoFactory.Shift.ShiftCreateAndAssign(request, companyId , accountMapID);
             }
             catch (Exception ex)
@@ -292,7 +293,7 @@ namespace TanTamApi.Controllers
         }
 
         [HttpGet, Route("list-employee-shift")]
-        public HttpResponseMessage ListEmployeeShift()
+        public HttpResponseMessage ListEmployeeShift(int assignmentUserID = 0)
         {
             var response = new ApiResult<object>()
             {
@@ -301,44 +302,52 @@ namespace TanTamApi.Controllers
             };
             try
             {
-                var jsonString = @"[
-                {
-                    ""id"": 6,
-                    ""name"": ""Ca hành chính"",
-                    ""shift_key"": ""CA_HANH_CHINH"",
-                    ""shift_id"": 5,
-                    ""shift_type"": ""hard"",
-                    ""start_time"": ""2025-06-09 09:00:00"",
-                    ""end_time"": ""2025-06-09 17:30:00"",
-                    ""working_hour"": 8.5,
-                    ""working_day"": ""2025-06-09 00:00:00"",
-                    ""week_of_year"": 24,
-                    ""branch_id"": 3,
-                    ""user_id"": 2,
-                    ""checkin_time"": null,
-                    ""checkout_time"": null,
-                    ""is_confirm"": 1,
-                    ""is_overtime_shift"": 0,
-                    ""shop_id"": 4,
-                    ""meal_coefficient"": 0,
-                    ""timezone"": ""Asia/Bangkok"",
-                    ""is_open_shift"": 0,
-                    ""dynamic_user_id"": null,
-                    ""checkin_type"": """",
-                    ""checkout_type"": """",
-                    ""employees"": [
-                        {
-                            ""username"": ""+84111111121"",
-                            ""name"": ""111111121"",
-                            ""user_id"": 2
-                        }
-                    ],
-                    ""clock_status"": ""clock_in"",
-                    ""is_active"": true,
-                    ""locations"": []
-                }
-            ]";
-                response.Data = JsonConvert.DeserializeObject(jsonString);
+                #region demo
+                //    var jsonString = @"[
+                //    {
+                //        ""id"": 6,
+                //        ""name"": ""Ca hành chính"",
+                //        ""shift_key"": ""CA_HANH_CHINH"",
+                //        ""shift_id"": 5,
+                //        ""shift_type"": ""hard"",
+                //        ""start_time"": ""2025-06-09 09:00:00"",
+                //        ""end_time"": ""2025-06-09 17:30:00"",
+                //        ""working_hour"": 8.5,
+                //        ""working_day"": ""2025-06-09 00:00:00"",
+                //        ""week_of_year"": 24,
+                //        ""branch_id"": 3,
+                //        ""user_id"": 2,
+                //        ""checkin_time"": null,
+                //        ""checkout_time"": null,
+                //        ""is_confirm"": 1,
+                //        ""is_overtime_shift"": 0,
+                //        ""shop_id"": 4,
+                //        ""meal_coefficient"": 0,
+                //        ""timezone"": ""Asia/Bangkok"",
+                //        ""is_open_shift"": 0,
+                //        ""dynamic_user_id"": null,
+                //        ""checkin_type"": """",
+                //        ""checkout_type"": """",
+                //        ""employees"": [
+                //            {
+                //                ""username"": ""+84111111121"",
+                //                ""name"": ""111111121"",
+                //                ""user_id"": 2
+                //            }
+                //        ],
+                //        ""clock_status"": ""clock_in"",
+                //        ""is_active"": true,
+                //        ""locations"": []
+                //    }
+                //]"; JsonConvert.DeserializeObject(jsonString);
+                #endregion
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var accountId = JwtHelper.GetAccountIdFromToken(Request);
+                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
+                DateTime dateFrom, dateTo;
+                DateTimeExtension.GetRangeByType(DateTime.Now, 2, out dateFrom, out dateTo);
+
+                response.Data = BoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountIdMap, dateFrom , dateTo);
             }
             catch (Exception ex)
             {
@@ -569,7 +578,6 @@ namespace TanTamApi.Controllers
                 }";
                 }
                 response.Data = JsonConvert.DeserializeObject(jsonString);
-                response.Data = JsonConvert.DeserializeObject(jsonString);
             }
             catch (Exception ex)
             {
@@ -579,6 +587,117 @@ namespace TanTamApi.Controllers
             }
             return Request.CreateResponse(HttpStatusCode.OK, response);
 
+        }
+
+
+
+
+        /// <summary>
+        /// Get list of shift assignments with shift details
+        /// </summary>
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("list-shift-assignment-with-shift-v2")]
+        public IHttpActionResult ListShiftAssignmentWithShiftV2()
+        {
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.GetListShiftAssignmentWithShift(companyId, employeeId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error($"ListShiftAssignmentWithShiftV2 Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
+        }
+
+        /// <summary>
+        /// Get summary of employee shifts
+        /// </summary>
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("summary-employee-shift")]
+        public IHttpActionResult SummaryEmployeeShift()
+        {
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.GetEmployeeShiftSummary(companyId, employeeId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error($"SummaryEmployeeShift Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
+        }
+
+        /// <summary>
+        /// Get list of open shifts
+        /// </summary>
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("list-open-shift")]
+        public IHttpActionResult ListOpenShift([FromUri] ListOpenShiftRequest request)
+        {
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.GetListOpenShift(companyId, employeeId, request);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error($"ListOpenShift Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
         }
     }
 }

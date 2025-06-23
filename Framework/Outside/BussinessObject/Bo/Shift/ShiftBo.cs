@@ -9,6 +9,7 @@ using DataAccess.Model.Shift;
 using Logger;
 using MyUtility;
 using MyUtility.Extensions;
+using Newtonsoft.Json;
 using ResxLanguagesUtility;
 using ResxLanguagesUtility.Enums;
 
@@ -150,7 +151,7 @@ namespace BussinessObject.Bo.Shift
                     response.Message = "Tạo ca làm việc thất bại";
                     return response;
                 }
-
+                response.Data.Shift = new ShiftResponse();
                 response.Data.Shift.Timezone = shiftParameter.Timezone;
                 response.Data.Shift.IsOvertimeShift = shiftParameter.IsOvertimeShift;
                 response.Data.Shift.MealCoefficient = shiftParameter.MealCoefficient;
@@ -176,7 +177,7 @@ namespace BussinessObject.Bo.Shift
                         var shiftBranchCreateed = DaoFactory.Shift.Shift_Branch_Create(new Ins_Shift_Branch_Create_Parameter()
                         {
                             BranchID = item,
-                            CompanyID = 0,
+                            CompanyID = companyId,
                             IsInsertOne = true,
                             ShiftID = shiftId,
                         });
@@ -204,7 +205,7 @@ namespace BussinessObject.Bo.Shift
 
                 var shiftCreateTimeInOutConfig = DaoFactory.Shift.ShiftCreateTimeInOutConfig(shiftParameter);
                 var shiftCreateTimeInOutConfig_One = shiftCreateTimeInOutConfig.FirstOrDefault();
-                response.Data.Shift.Id = shiftId;
+
                 if (shiftCreateTimeInOutConfig_One != null)
                 {
 
@@ -438,19 +439,22 @@ namespace BussinessObject.Bo.Shift
                 }
                 foreach (var item in request.ShiftAssignment.Assignments)
                 {
-                    var createAssignment = DaoFactory.ShiftAssignment.ShiftAssignment_CreateAssignment(new Ins_ShiftAssignment_CreateAssignment_Parameter()
+                    if (item == 1)
                     {
-                        DateOfWeek = item,
-                        Label = shiftAssignmentParameter.Title,
-                        ShiftAssignmentID = shiftAssignmentId,
-                        ShiftID = shiftId
-                    });
+                        var createAssignment = DaoFactory.ShiftAssignment.ShiftAssignment_CreateAssignment(new Ins_ShiftAssignment_CreateAssignment_Parameter()
+                        {
+                            DateOfWeek = item,
+                            Label = shiftAssignmentParameter.Title,
+                            ShiftAssignmentID = shiftAssignmentId,
+                            ShiftID = shiftId
+                        });
 
-                    response.Data.AssignmentObjs.Add(new AssignmentObj()
-                    {
-                        Key = createAssignment,
-                        Label = shiftParameter.Name
-                    });
+                        response.Data.AssignmentObjs.Add(new AssignmentObj()
+                        {
+                            Key = createAssignment,
+                            Label = shiftParameter.Name
+                        });
+                    }
                 }
                 #endregion
 
@@ -477,6 +481,39 @@ namespace BussinessObject.Bo.Shift
                 var assignment_user_id = DaoFactory.ShiftAssignment.ShiftAssignment_User_Create(shiftAssignmentId, accountMapID);
                 if(assignment_user_id > 0)
                 {
+                    DateTime dateFrom, dateTo;
+                    
+                    if (shiftAssignmentParameter.GenerateTimekeepingType == generate_timekeeping_type_obj_enum.generate_from_start_of_month.Text())
+                    {
+                        DateTimeExtension.GetRangeByType(DateTime.Now, 1, out dateFrom, out dateTo);
+                    }
+                    else
+                    {
+                        DateTimeExtension.GetRangeByType(DateTime.Now, 2, out dateFrom, out dateTo);
+                    }
+
+                    dateFrom = DateTime.Now.GetBeginOfDay();
+
+                    DaoFactory.Payroll.ShiftAssignment_User_Create(new Payroll_User_CreateMultiDayParameter()
+                        {
+                            AccountMapID = accountMapID, 
+                            AssignmentUserID = assignment_user_id, 
+                            CheckinType = "",
+                            CheckouType = "",
+                            EndTime = response.Data.Shift.EndTime,
+                            StartTime = response.Data.Shift.StartTime,
+
+                            RealCoefficient = 0, 
+                            RealWorkingHour = 0, 
+                            RealWorkingMinute = 0,
+                            RestEndTimeShort = "",
+                            RestStartTimeShort = "",                           
+                            Status= 0, 
+                            WeekOfYear = DateTime.Now.GetWeekNumber()
+                    },
+                        dateFrom, dateTo
+                    );
+
 
                 }
                 #endregion
@@ -518,6 +555,358 @@ namespace BussinessObject.Bo.Shift
                 CommonLogger.DefaultLogger.ErrorFormat("shift ListEmployeeShift EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Lấy danh sách phòng ban thất bại";
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// Get list of shift assignments with shift details
+        /// </summary>
+        public ApiResult<object> GetListShiftAssignmentWithShift(int companyId, int employeeId)
+        {
+            var response = new ApiResult<object>()
+            {
+                Data = null,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                // Static JSON exactly like old project
+                var jsonString = @"{
+                    ""meta"": {
+                        ""total"": 2,
+                        ""count"": 2,
+                        ""per_page"": 15,
+                        ""current_page"": 1,
+                        ""total_pages"": 1
+                    },
+                    ""items"": [
+                        {
+                            ""id"": ""685111f073439356d402af74"",
+                            ""title"": ""testea"",
+                            ""sort_index"": 0,
+                            ""shift"": {
+                                ""id"": ""685111f073439356d402af6c"",
+                                ""name"": ""testea"",
+                                ""shift_key"": ""TESTEA"",
+                                ""symbol"": null,
+                                ""color"": null,
+                                ""sort_index"": 0,
+                                ""working_hour"": 9.5,
+                                ""start_hour_obj"": {
+                                    ""id"": ""5b7e2a2add8e8408c63973a6"",
+                                    ""name"": ""08 giờ"",
+                                    ""value"": ""8"",
+                                    ""type"": ""hour_working""
+                                },
+                                ""start_minute_obj"": {
+                                    ""id"": ""5b7e2eaedd8e8437444429c3"",
+                                    ""name"": ""00 phút"",
+                                    ""value"": ""0"",
+                                    ""type"": ""minute_working""
+                                },
+                                ""end_hour_obj"": {
+                                    ""id"": ""5b7e2a88dd8e840a782810ed"",
+                                    ""name"": ""17 giờ"",
+                                    ""value"": ""17"",
+                                    ""type"": ""hour_working""
+                                },
+                                ""end_minute_obj"": {
+                                    ""id"": ""5b7e2eb9dd8e8408c63973b3"",
+                                    ""name"": ""30 phút"",
+                                    ""value"": ""30"",
+                                    ""type"": ""minute_working""
+                                },
+                                ""is_overtime_shift"": null,
+                                ""timezone"": ""Asia/Saigon""
+                            }
+                        },
+                        {
+                            ""id"": ""685112449ce972792b078627"",
+                            ""title"": ""newca"",
+                            ""sort_index"": 0,
+                            ""shift"": {
+                                ""id"": ""685112449ce972792b07861f"",
+                                ""name"": ""newca"",
+                                ""shift_key"": ""NEWCA"",
+                                ""symbol"": null,
+                                ""color"": null,
+                                ""sort_index"": 0,
+                                ""working_hour"": 9.5,
+                                ""start_hour_obj"": {
+                                    ""id"": ""5b7e2a2add8e8408c63973a6"",
+                                    ""name"": ""08 giờ"",
+                                    ""value"": ""8"",
+                                    ""type"": ""hour_working""
+                                },
+                                ""start_minute_obj"": {
+                                    ""id"": ""5b7e2eaedd8e8437444429c3"",
+                                    ""name"": ""00 phút"",
+                                    ""value"": ""0"",
+                                    ""type"": ""minute_working""
+                                },
+                                ""end_hour_obj"": {
+                                    ""id"": ""5b7e2a88dd8e840a782810ed"",
+                                    ""name"": ""17 giờ"",
+                                    ""value"": ""17"",
+                                    ""type"": ""hour_working""
+                                },
+                                ""end_minute_obj"": {
+                                    ""id"": ""5b7e2eb9dd8e8408c63973b3"",
+                                    ""name"": ""30 phút"",
+                                    ""value"": ""30"",
+                                    ""type"": ""minute_working""
+                                },
+                                ""is_overtime_shift"": null,
+                                ""timezone"": ""Asia/Saigon""
+                            }
+                        }
+                    ]
+                }";
+
+                response.Data = JsonConvert.DeserializeObject(jsonString);
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = ResponseResultEnum.Success.Text();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("ShiftBo.GetListShiftAssignmentWithShift - Error occurred", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lỗi hệ thống: " + ex.Message;
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// Get employee shift summary
+        /// </summary>
+        public ApiResult<object> GetEmployeeShiftSummary(int companyId, int employeeId)
+        {
+            var response = new ApiResult<object>()
+            {
+                Data = null,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                // Static JSON exactly like old project (truncated version for brevity)
+                var jsonString = @"{
+                    ""meta"": {
+                        ""total"": 7,
+                        ""count"": 7,
+                        ""per_page"": 10,
+                        ""current_page"": 1,
+                        ""total_pages"": 1
+                    },
+                    ""items"": [
+                        {
+                            ""user_id"": ""6847d5853c45bcBDe"",
+                            ""phone"": ""+841231231232"",
+                            ""username"": ""+841231231232"",
+                            ""name"": ""asdasdsa"",
+                            ""shop_id"": ""6847d585ef2efb7c9504f8cf"",
+                            ""identification"": ""0001"",
+                            ""branch_id"": ""684fc39e16b9f2ea27078acd"",
+                            ""branch_obj"": {
+                                ""id"": ""684fc39e16b9f2ea27078acd"",
+                                ""name"": ""TDT"",
+                                ""color"": null
+                            },
+                            ""payroll"": [],
+                            ""shifts"": {
+                                ""2025-06-16 00:00:00"": [
+                                    {
+                                        ""id"": ""684fc8349c887a82af0f4e5c"",
+                                        ""name"": ""dasdas"",
+                                        ""shift_key"": ""DASDAS"",
+                                        ""shift_id"": ""684fc8330f843dbb6a00f2e7"",
+                                        ""shift_type"": ""hard"",
+                                        ""start_time"": ""2025-06-16 08:00:00"",
+                                        ""end_time"": ""2025-06-16 17:30:00"",
+                                        ""working_hour"": 9.5,
+                                        ""working_day"": ""2025-06-16 00:00:00"",
+                                        ""week_of_year"": 25,
+                                        ""branch_id"": ""684fc39e16b9f2ea27078acd"",
+                                        ""user_id"": ""6847d5853c45bcBDe"",
+                                        ""checkin_time"": null,
+                                        ""checkout_time"": null,
+                                        ""is_confirm"": 1,
+                                        ""is_overtime_shift"": 0,
+                                        ""shop_id"": ""6847d585ef2efb7c9504f8cf"",
+                                        ""meal_coefficient"": 0,
+                                        ""timezone"": ""Asia/Saigon"",
+                                        ""is_open_shift"": 0,
+                                        ""dynamic_user_id"": null,
+                                        ""checkin_type"": """",
+                                        ""checkout_type"": """",
+                                        ""shift_name"": ""dasdas"",
+                                        ""display_option"": {
+                                            ""shift_name"": ""dasdas"",
+                                            ""option_type"": """",
+                                            ""option_name"": """"
+                                        },
+                                        ""real_working_hour"": 0,
+                                        ""real_working_minute"": 0,
+                                        ""rest_start_time_short"": ""00:00"",
+                                        ""rest_end_time_short"": ""00:00"",
+                                        ""coefficient"": 1,
+                                        ""real_coefficient"": 0,
+                                        ""status"": {
+                                            ""color"": ""#666666"",
+                                            ""status_color"": [
+                                                ""#838BA3"",
+                                                ""#EBEBEB""
+                                            ],
+                                            ""name"": ""Chưa vào/ra ca"",
+                                            ""detail"": [
+                                                ""Thời gian: 0 giờ""
+                                            ]
+                                        },
+                                        ""approved"": false
+                                    }
+                                ]
+                            },
+                            ""conflict_shifts"": [],
+                            ""total_working_hour"": 57,
+                            ""real_working_hour"": 0
+                        }
+                    ]
+                }";
+
+                response.Data = JsonConvert.DeserializeObject(jsonString);
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = ResponseResultEnum.Success.Text();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("ShiftBo.GetEmployeeShiftSummary - Error occurred", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lỗi hệ thống: " + ex.Message;
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// Get list of open shifts
+        /// </summary>
+        public ApiResult<object> GetListOpenShift(int companyId, int employeeId, ListOpenShiftRequest request)
+        {
+            var response = new ApiResult<object>()
+            {
+                Data = null,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                // Static JSON exactly like old project
+                var jsonString = @"[
+                    [
+                        {
+                            ""id"": ""685112524a36fd9fe7021681"",
+                            ""shift_name"": ""newca"",
+                            ""total_employees"": 1,
+                            ""shift_id"": ""685112449ce972792b07861f"",
+                            ""start_time"": ""2025-06-16 08:00"",
+                            ""end_time"": ""2025-06-16 17:30"",
+                            ""working_day"": ""2025-06-16"",
+                            ""timezone"": null,
+                            ""is_draft"": false,
+                            ""status"": {
+                                ""not_available"": 0,
+                                ""status_color"": [
+                                    ""#838BA3"",
+                                    ""#EBEBEB""
+                                ]
+                            },
+                            ""registered_employees"": 0
+                        }
+                    ],
+                    [
+                        {
+                            ""id"": ""6851121992d25d377b0fa2e7"",
+                            ""shift_name"": ""testea"",
+                            ""total_employees"": 1,
+                            ""shift_id"": ""685111f073439356d402af6c"",
+                            ""start_time"": ""2025-06-17 08:00"",
+                            ""end_time"": ""2025-06-17 17:30"",
+                            ""working_day"": ""2025-06-17"",
+                            ""timezone"": null,
+                            ""is_draft"": false,
+                            ""status"": {
+                                ""not_available"": 0,
+                                ""status_color"": [
+                                    ""#838BA3"",
+                                    ""#EBEBEB""
+                                ]
+                            },
+                            ""registered_employees"": 0
+                        }
+                    ],
+                    [],
+                    [
+                        {
+                            ""id"": ""6851125519a953ca2e032231"",
+                            ""shift_name"": ""newca"",
+                            ""total_employees"": 1,
+                            ""shift_id"": ""685112449ce972792b07861f"",
+                            ""start_time"": ""2025-06-19 08:00"",
+                            ""end_time"": ""2025-06-19 17:30"",
+                            ""working_day"": ""2025-06-19"",
+                            ""timezone"": null,
+                            ""is_draft"": false,
+                            ""status"": {
+                                ""not_available"": 1,
+                                ""status_color"": [
+                                    ""#838BA3"",
+                                    ""#EBEBEB""
+                                ]
+                            },
+                            ""registered_employees"": 0
+                        }
+                    ],
+                    [
+                        {
+                            ""id"": ""6851124c097147cb0b09d861"",
+                            ""shift_name"": ""newca"",
+                            ""total_employees"": 1,
+                            ""shift_id"": ""685112449ce972792b07861f"",
+                            ""start_time"": ""2025-06-20 08:00"",
+                            ""end_time"": ""2025-06-20 17:30"",
+                            ""working_day"": ""2025-06-20"",
+                            ""timezone"": null,
+                            ""is_draft"": false,
+                            ""status"": {
+                                ""not_available"": 1,
+                                ""status_color"": [
+                                    ""#838BA3"",
+                                    ""#EBEBEB""
+                                ]
+                            },
+                            ""registered_employees"": 0
+                        }
+                    ],
+                    [],
+                    []
+                ]";
+
+                response.Data = JsonConvert.DeserializeObject(jsonString);
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = ResponseResultEnum.Success.Text();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("ShiftBo.GetListOpenShift - Error occurred", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lỗi hệ thống: " + ex.Message;
             }
 
             return response;

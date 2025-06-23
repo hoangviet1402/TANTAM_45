@@ -105,5 +105,6 @@ namespace DataAccess.Dao.Shift
                 return data.ToList();
             }          
         }
+
     }
 }
