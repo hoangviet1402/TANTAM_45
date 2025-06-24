@@ -483,5 +483,14 @@ namespace BussinessObject.Models.Shift
         [JsonProperty("clock_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ClockType { get; set; }
     }
-     #endregion
+    #endregion
+
+    public class ListOpenShiftRequest
+    {
+        [JsonProperty("startdate")]
+        public string StartDate { get; set; }
+
+        [JsonProperty("enddate")]
+        public string EndDate { get; set; }
+    }
 }

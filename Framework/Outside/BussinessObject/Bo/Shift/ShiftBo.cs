@@ -435,15 +435,16 @@ namespace BussinessObject.Bo.Shift
                 if (request.ShiftAssignment.Assignments == null || request.ShiftAssignment.Assignments.Any() == false)
                 {
                     // mặc định client ko truyền thì lấy theo demo 
-                    request.ShiftAssignment.Assignments = new List<int>() { 1, 1, 1, 0, 1, 1, 0 };
+                    request.ShiftAssignment.Assignments = new List<int>() { 0, 1, 1, 1, 1, 1, 0,};
                 }
-                foreach (var item in request.ShiftAssignment.Assignments)
+
+                for (int i = 0; i < request.ShiftAssignment.Assignments.Count; i++)
                 {
-                    if (item == 1)
+                    if (request.ShiftAssignment.Assignments[i] == 1)
                     {
                         var createAssignment = DaoFactory.ShiftAssignment.ShiftAssignment_CreateAssignment(new Ins_ShiftAssignment_CreateAssignment_Parameter()
                         {
-                            DateOfWeek = item,
+                            DateOfWeek = i ,
                             Label = shiftAssignmentParameter.Title,
                             ShiftAssignmentID = shiftAssignmentId,
                             ShiftID = shiftId
@@ -456,6 +457,10 @@ namespace BussinessObject.Bo.Shift
                         });
                     }
                 }
+                //foreach (var item in request.ShiftAssignment.Assignments)
+                //{
+                    
+                //}
                 #endregion
 
                 response.Data.Id = shiftAssignmentId;

@@ -80,10 +80,6 @@ namespace DataAccess.Dao.Shift
                     parameter.CompanyID,
                     parameter.BranchID,
                     parameter.IsInsertOne);
-
-                if (out_OutResult != null && out_OutResult.Value != null)
-                    int.TryParse(out_OutResult.Value.ToString(), out assignmentID);
-
                 return data.ToList();
             }       
         }

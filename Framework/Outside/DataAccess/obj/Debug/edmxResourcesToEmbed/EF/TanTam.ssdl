@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TanTamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <Function Name="Get_Payroll_User_List" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="AssignmentUserID" Type="int" Mode="In" />
-    <Parameter Name="AccountMapID" Type="int" Mode="In" />
-    <Parameter Name="DateFrom" Type="date" Mode="In" />
-    <Parameter Name="DateTo" Type="date" Mode="In" />
-  </Function>
   <Function Name="Ins_Account_CreateForEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Email" Type="nvarchar" Mode="In" />
     <Parameter Name="Password" Type="nvarchar" Mode="In" />
@@ -280,6 +274,13 @@
     <Parameter Name="Status" Type="int" Mode="In" />
     <Parameter Name="PayrollUserID" Type="int" Mode="InOut" />
   </Function>
+  <Function Name="Ins_Payroll_User_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AssignmentUserID" Type="int" Mode="In" />
+    <Parameter Name="AccountMapID" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="DateFrom" Type="date" Mode="In" />
+    <Parameter Name="DateTo" Type="date" Mode="In" />
+  </Function>
   <Function Name="Ins_Payroll_User_MultiDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="AssignmentUserID" Type="int" Mode="In" />
     <Parameter Name="AccountMapID" Type="int" Mode="In" />
@@ -358,6 +359,10 @@
     <Parameter Name="EmployeeAccountMapID" Type="int" Mode="In" />
     <Parameter Name="LogTime" Type="datetime" Mode="In" />
   </Function>
+  <Function Name="Ins_Shift_User_GetStatus_clock_in_out" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountMapID" Type="int" Mode="In" />
+    <Parameter Name="DateClock" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="Ins_ShiftAssignment_Branch_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ShiftAssignmentID" Type="int" Mode="In" />
     <Parameter Name="CompanyID" Type="int" Mode="In" />
@@ -415,20 +420,6 @@
     <Parameter Name="WorkingDayFrom" Type="datetime" Mode="In" />
     <Parameter Name="WorkingDayTo" Type="datetime" Mode="In" />
   </Function>
-  <Function Name="Ins_Task_CreateTaskFieldWithOptions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="object_id" Type="int" Mode="In" />
-    <Parameter Name="title" Type="varchar" Mode="In" />
-    <Parameter Name="title_nosign" Type="varchar" Mode="In" />
-    <Parameter Name="add_to_lib" Type="bit" Mode="In" />
-    <Parameter Name="notify_when_value_changed" Type="bit" Mode="In" />
-    <Parameter Name="field_key" Type="varchar" Mode="In" />
-    <Parameter Name="is_default" Type="bit" Mode="In" />
-    <Parameter Name="created_user_id" Type="int" Mode="In" />
-    <Parameter Name="sort_index" Type="int" Mode="In" />
-    <Parameter Name="active" Type="bit" Mode="In" />
-    <Parameter Name="object_sort_index" Type="int" Mode="In" />
-    <Parameter Name="object_active" Type="bit" Mode="In" />
-  </Function>
   <Function Name="Ins_Task_CreatorInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="task_id" Type="int" Mode="In" />
   </Function>
@@ -475,6 +466,10 @@
   </Function>
   <Function Name="Ins_Time_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Lang" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ins_Timekeeper_log_User_GetLog_OneDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountMapID" Type="int" Mode="In" />
+    <Parameter Name="DateClock" Type="datetime" Mode="In" />
   </Function>
   <Function Name="Ins_User_ChangePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="user_id" Type="int" Mode="In" />

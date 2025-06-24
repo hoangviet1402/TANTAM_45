@@ -9,4 +9,10 @@
     {
         standard_working = 1
     }
+
+    public enum clock_type_enum
+    {
+        clock_in  = 1,
+        clock_out = 2
+    }
 }

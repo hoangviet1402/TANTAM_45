@@ -116,6 +116,9 @@
     <Compile Include="Entities\TanTamEntities\Ins_Employee_GetShiftsInBranch_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Payroll_User_GetList_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Branch_Create_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
@@ -141,6 +144,9 @@
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Shift_Get_Status_Clock_In_Out_Shift_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Shift_User_GetStatus_clock_in_out_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Tasks_Create_Result.cs">
@@ -171,6 +177,9 @@
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Task_UsersByUser_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Timekeeper_log_User_GetLog_OneDay_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Time_GetList_Result.cs">

@@ -9,3 +9,4 @@ D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CoreCompile
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.dll
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.pdb
+D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csprojAssemblyReference.cache

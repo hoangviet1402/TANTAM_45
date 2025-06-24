@@ -570,7 +570,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_CreateTaskFieldWithOptions" FunctionName="TanTamModel.Store.Ins_Task_CreateTaskFieldWithOptions" />
     <FunctionImportMapping FunctionImportName="Ins_Task_CreatorInfo" FunctionName="TanTamModel.Store.Ins_Task_CreatorInfo">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_CreatorInfo_Result">
@@ -799,61 +798,6 @@
     <FunctionImportMapping FunctionImportName="Ins_User_UpdateStatus" FunctionName="TanTamModel.Store.Ins_User_UpdateStatus" />
     <FunctionImportMapping FunctionImportName="Sel_CompanyBranch_GetIds" FunctionName="TanTamModel.Store.Sel_CompanyBranch_GetIds" />
     <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
-    <FunctionImportMapping FunctionImportName="Get_Payroll_User_List" FunctionName="TanTamModel.Store.Get_Payroll_User_List">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Get_Payroll_User_List_Result">
-          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
-          <ScalarProperty Name="AssignmentUserID" ColumnName="AssignmentUserID" />
-          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
-          <ScalarProperty Name="ShiftAssignmentID" ColumnName="ShiftAssignmentID" />
-          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
-          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
-          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
-          <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
-          <ScalarProperty Name="CheckoutTime" ColumnName="CheckoutTime" />
-          <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
-          <ScalarProperty Name="CheckouType" ColumnName="CheckouType" />
-          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
-          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
-          <ScalarProperty Name="RestStartTimeShort" ColumnName="RestStartTimeShort" />
-          <ScalarProperty Name="RestEndTimeShort" ColumnName="RestEndTimeShort" />
-          <ScalarProperty Name="RealCoefficient" ColumnName="RealCoefficient" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="ShiftAssignmentId1" ColumnName="ShiftAssignmentId1" />
-          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
-          <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
-          <ScalarProperty Name="Assignments" ColumnName="Assignments" />
-          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
-          <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
-          <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
-          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="ShiftId1" ColumnName="ShiftId1" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
-          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
-          <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
-          <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
-          <ScalarProperty Name="Note" ColumnName="Note" />
-          <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
-          <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
-          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
-          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
-          <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
-          <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
-          <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
-          <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
-          <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
-          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
-          <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
-          <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create" />
     <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_ByCompanyID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_ByCompanyID">
       <ResultMapping>
@@ -944,6 +888,122 @@
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
           <ScalarProperty Name="AccountID" ColumnName="AccountID" />
           <ScalarProperty Name="AccountRole" ColumnName="AccountRole" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_GetList" FunctionName="TanTamModel.Store.Ins_Payroll_User_GetList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Payroll_User_GetList_Result">
+          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+          <ScalarProperty Name="AssignmentUserID" ColumnName="AssignmentUserID" />
+          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+          <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
+          <ScalarProperty Name="CheckoutTime" ColumnName="CheckoutTime" />
+          <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
+          <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
+          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
+          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
+          <ScalarProperty Name="RestStartTimeShort" ColumnName="RestStartTimeShort" />
+          <ScalarProperty Name="RestEndTimeShort" ColumnName="RestEndTimeShort" />
+          <ScalarProperty Name="RealCoefficient" ColumnName="RealCoefficient" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
+          <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
+          <ScalarProperty Name="Assignments" ColumnName="Assignments" />
+          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
+          <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
+          <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
+          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
+          <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
+          <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
+          <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
+          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
+          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
+          <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
+          <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
+          <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
+          <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
+          <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
+          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+          <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
+          <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
+          <ScalarProperty Name="EmployeeShiftID" ColumnName="EmployeeShiftID" />
+          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Shift_User_GetStatus_clock_in_out" FunctionName="TanTamModel.Store.Ins_Shift_User_GetStatus_clock_in_out">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result">
+          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+          <ScalarProperty Name="AssignmentUserID" ColumnName="AssignmentUserID" />
+          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
+          <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
+          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
+          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
+          <ScalarProperty Name="RestStartTimeShort" ColumnName="RestStartTimeShort" />
+          <ScalarProperty Name="RestEndTimeShort" ColumnName="RestEndTimeShort" />
+          <ScalarProperty Name="RealCoefficient" ColumnName="RealCoefficient" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
+          <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
+          <ScalarProperty Name="Assignments" ColumnName="Assignments" />
+          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
+          <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
+          <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
+          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
+          <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
+          <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
+          <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
+          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
+          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
+          <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
+          <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
+          <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
+          <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
+          <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
+          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+          <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
+          <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

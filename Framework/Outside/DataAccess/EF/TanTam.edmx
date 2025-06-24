@@ -282,6 +282,7 @@
         <Function Name="Ins_Payroll_User_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="AssignmentUserID" Type="int" Mode="In" />
           <Parameter Name="AccountMapID" Type="int" Mode="In" />
+          <Parameter Name="BranchId" Type="int" Mode="In" />
           <Parameter Name="DateFrom" Type="date" Mode="In" />
           <Parameter Name="DateTo" Type="date" Mode="In" />
         </Function>
@@ -363,6 +364,10 @@
           <Parameter Name="EmployeeAccountMapID" Type="int" Mode="In" />
           <Parameter Name="LogTime" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="Ins_Shift_User_GetStatus_clock_in_out" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountMapID" Type="int" Mode="In" />
+          <Parameter Name="DateClock" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="Ins_ShiftAssignment_Branch_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ShiftAssignmentID" Type="int" Mode="In" />
           <Parameter Name="CompanyID" Type="int" Mode="In" />
@@ -420,20 +425,6 @@
           <Parameter Name="WorkingDayFrom" Type="datetime" Mode="In" />
           <Parameter Name="WorkingDayTo" Type="datetime" Mode="In" />
         </Function>
-        <Function Name="Ins_Task_CreateTaskFieldWithOptions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="object_id" Type="int" Mode="In" />
-          <Parameter Name="title" Type="varchar" Mode="In" />
-          <Parameter Name="title_nosign" Type="varchar" Mode="In" />
-          <Parameter Name="add_to_lib" Type="bit" Mode="In" />
-          <Parameter Name="notify_when_value_changed" Type="bit" Mode="In" />
-          <Parameter Name="field_key" Type="varchar" Mode="In" />
-          <Parameter Name="is_default" Type="bit" Mode="In" />
-          <Parameter Name="created_user_id" Type="int" Mode="In" />
-          <Parameter Name="sort_index" Type="int" Mode="In" />
-          <Parameter Name="active" Type="bit" Mode="In" />
-          <Parameter Name="object_sort_index" Type="int" Mode="In" />
-          <Parameter Name="object_active" Type="bit" Mode="In" />
-        </Function>
         <Function Name="Ins_Task_CreatorInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="task_id" Type="int" Mode="In" />
         </Function>
@@ -480,6 +471,10 @@
         </Function>
         <Function Name="Ins_Time_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Lang" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Ins_Timekeeper_log_User_GetLog_OneDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountMapID" Type="int" Mode="In" />
+          <Parameter Name="DateClock" Type="datetime" Mode="In" />
         </Function>
         <Function Name="Ins_User_ChangePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="user_id" Type="int" Mode="In" />
@@ -1116,8 +1111,17 @@
           <FunctionImport Name="Ins_Payroll_User_GetList" ReturnType="Collection(TanTamModel.Ins_Payroll_User_GetList_Result)">
             <Parameter Name="AssignmentUserID" Mode="In" Type="Int32" />
             <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="BranchId" Mode="In" Type="Int32" />
             <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
             <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Timekeeper_log_User_GetLog_OneDay" ReturnType="Collection(TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result)">
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="DateClock" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Shift_User_GetStatus_clock_in_out" ReturnType="Collection(TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result)">
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="DateClock" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
@@ -1891,6 +1895,69 @@
           <Property Type="String" Name="NameNosign" Nullable="true" MaxLength="255" />
           <Property Type="Int32" Name="IsOpenShift" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="LogTime" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ClockType" Nullable="true" />
+          <Property Type="Int32" Name="EmployeeShiftID" Nullable="true" />
+          <Property Type="Int32" Name="EmployeeAccountMapID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Ins_Shift_User_GetStatus_clock_in_out_Result">
+          <Property Type="Int32" Name="PayrollUserID" Nullable="false" />
+          <Property Type="Int32" Name="AssignmentUserID" Nullable="false" />
+          <Property Type="Int32" Name="AccountMapID" Nullable="false" />
+          <Property Type="DateTime" Name="StartTime" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EndTime" Nullable="true" Precision="23" />
+          <Property Type="Double" Name="WorkingHour" Nullable="true" />
+          <Property Type="DateTime" Name="WorkingDay" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
+          <Property Type="Int32" Name="BranchID" Nullable="false" />
+          <Property Type="String" Name="CheckinType" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CheckoutType" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="RealWorkingHour" Nullable="true" />
+          <Property Type="Double" Name="RealWorkingMinute" Nullable="true" />
+          <Property Type="String" Name="RestStartTimeShort" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RestEndTimeShort" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="RealCoefficient" Nullable="true" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="ShiftAssignmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="ShiftAssignmentSortIndex" Nullable="false" />
+          <Property Type="Int32" Name="AutoApprove" Nullable="false" />
+          <Property Type="String" Name="Assignments" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="ShiftAssignmentMealCoefficient" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="PayrollConfigType" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="GenerateTimekeepingType" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="AssignmentType" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ShiftId" Nullable="false" />
+          <Property Type="Int32" Name="CompanyID" Nullable="true" />
+          <Property Type="String" Name="ShiftName" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="ShiftKey" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Coefficient" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="MinimumWorkingHour" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="Note" Nullable="true" />
+          <Property Type="Int32" Name="EarlyCheckOut" Nullable="false" />
+          <Property Type="Int32" Name="LatelyCheckIn" Nullable="false" />
+          <Property Type="Int32" Name="ShiftStatus" Nullable="false" />
+          <Property Type="String" Name="ShiftType" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="ShiftSortIndex" Nullable="false" />
+          <Property Type="Int32" Name="IsOvertimeShift" Nullable="false" />
+          <Property Type="Decimal" Name="ShiftMealCoefficient" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="Timezone" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NameNosign" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="IsOpenShift" Nullable="true" />
+          <Property Type="Int32" Name="MaxLateCheckInOutMinute" Nullable="true" />
+          <Property Type="Int32" Name="MinSoonCheckInOutMinute" Nullable="true" />
+          <Property Type="Int32" Name="StartCheckInHourId" Nullable="true" />
+          <Property Type="Int32" Name="StartCheckInMinuteId" Nullable="true" />
+          <Property Type="Int32" Name="EndCheckInHourId" Nullable="true" />
+          <Property Type="Int32" Name="EndCheckInMinuteId" Nullable="true" />
+          <Property Type="Int32" Name="StartCheckOutHourId" Nullable="true" />
+          <Property Type="Int32" Name="StartCheckOutMinuteId" Nullable="true" />
+          <Property Type="Int32" Name="EndCheckOutHourId" Nullable="true" />
+          <Property Type="Int32" Name="EndCheckOutMinuteId" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2466,7 +2533,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Ins_Task_CreateTaskFieldWithOptions" FunctionName="TanTamModel.Store.Ins_Task_CreateTaskFieldWithOptions" />
           <FunctionImportMapping FunctionImportName="Ins_Task_CreatorInfo" FunctionName="TanTamModel.Store.Ins_Task_CreatorInfo">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_CreatorInfo_Result">
@@ -2838,6 +2904,77 @@
                 <ScalarProperty Name="Timezone" ColumnName="Timezone" />
                 <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
                 <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="ClockType" ColumnName="ClockType" />
+                <ScalarProperty Name="EmployeeShiftID" ColumnName="EmployeeShiftID" />
+                <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Shift_User_GetStatus_clock_in_out" FunctionName="TanTamModel.Store.Ins_Shift_User_GetStatus_clock_in_out">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result">
+                <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+                <ScalarProperty Name="AssignmentUserID" ColumnName="AssignmentUserID" />
+                <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+                <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+                <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
+                <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
+                <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
+                <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
+                <ScalarProperty Name="RestStartTimeShort" ColumnName="RestStartTimeShort" />
+                <ScalarProperty Name="RestEndTimeShort" ColumnName="RestEndTimeShort" />
+                <ScalarProperty Name="RealCoefficient" ColumnName="RealCoefficient" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
+                <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
+                <ScalarProperty Name="Assignments" ColumnName="Assignments" />
+                <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
+                <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
+                <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
+                <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+                <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
+                <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
+                <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
+                <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
+                <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
+                <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
+                <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
+                <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
+                <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
+                <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+                <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
+                <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
+                <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
+                <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
+                <ScalarProperty Name="StartCheckInHourId" ColumnName="StartCheckInHourId" />
+                <ScalarProperty Name="StartCheckInMinuteId" ColumnName="StartCheckInMinuteId" />
+                <ScalarProperty Name="EndCheckInHourId" ColumnName="EndCheckInHourId" />
+                <ScalarProperty Name="EndCheckInMinuteId" ColumnName="EndCheckInMinuteId" />
+                <ScalarProperty Name="StartCheckOutHourId" ColumnName="StartCheckOutHourId" />
+                <ScalarProperty Name="StartCheckOutMinuteId" ColumnName="StartCheckOutMinuteId" />
+                <ScalarProperty Name="EndCheckOutHourId" ColumnName="EndCheckOutHourId" />
+                <ScalarProperty Name="EndCheckOutMinuteId" ColumnName="EndCheckOutMinuteId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

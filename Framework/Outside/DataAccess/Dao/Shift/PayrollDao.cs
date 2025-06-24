@@ -16,7 +16,9 @@ namespace DataAccess.Dao.Shift
     public interface IPayrollDao : IBaseFactories<DBNull>
     {
         void ShiftAssignment_User_Create(Payroll_User_CreateMultiDayParameter parameter, DateTime dateFrom, DateTime dateTo);
-        List<Ins_Payroll_User_GetList_Result> ShiftAssignment_User_Create(int AssignmentUserID, int AccountMapID, DateTime DateFrom, DateTime DateTo);
+        List<Ins_Payroll_User_GetList_Result> Payroll_User_GetList(int assignmentUserID, int accountMapID, int brandId, DateTime dateFrom, DateTime dateTo);
+        List<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Timekeeper_log_User_GetLog_OneDay(int accountMapID, DateTime dateFrom);
+        List<Ins_Shift_User_GetStatus_clock_in_out_Result> Shift_User_GetStatus_clock_in_out(int accountMapID, DateTime dateFrom);
     }
 
     internal class PayrollDao : DaoFactories<TanTamEntities, DBNull>, IPayrollDao
@@ -47,15 +49,38 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public List<Ins_Payroll_User_GetList_Result> ShiftAssignment_User_Create(int AssignmentUserID,int AccountMapID,DateTime DateFrom,DateTime DateTo)
+        public List<Ins_Payroll_User_GetList_Result> Payroll_User_GetList(int assignmentUserID,int accountMapID, int brandId, DateTime dateFrom,DateTime dateTo)
         {
             using (Uow)
             {
                 return Uow.Context.Ins_Payroll_User_GetList(
-                    AssignmentUserID,
-                    AccountMapID,
-                    DateFrom,
-                    DateTo
+                    assignmentUserID,
+                    accountMapID,
+                    brandId,
+                    dateFrom,
+                    dateTo
+                ).ToList();
+            }
+        }
+
+        public List<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Timekeeper_log_User_GetLog_OneDay(int accountMapID, DateTime dateFrom)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Timekeeper_log_User_GetLog_OneDay(
+                    accountMapID,                    
+                    dateFrom                   
+                ).ToList();
+            }
+        }
+
+        public List<Ins_Shift_User_GetStatus_clock_in_out_Result> Shift_User_GetStatus_clock_in_out(int accountMapID, DateTime dateFrom)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Shift_User_GetStatus_clock_in_out(
+                    accountMapID,
+                    dateFrom
                 ).ToList();
             }
         }

@@ -178,3 +178,54 @@ System.Configuration.ConfigurationErrorsException: Unrecognized element 'Payment
    at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
    at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
    at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:10:05,458 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:14:39,762 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:15:42,929 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:17:09,959 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:17:10,092 - shift ShiftCreate EX:
+2025-06-24 12:44:03,527 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:46:32,701 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:47:05,744 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:47:56,101 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:49:39,321 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47
+2025-06-24 12:52:12,521 - [LanguagesUtility.Languages.GetText] - shift_working System.IO.DirectoryNotFoundException: Could not find a part of the path 'F:\svn\HOYEAH\HoyeahApi\ResxLanguages\Home\Home.en.xml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at ResxLanguagesUtility.ResxLanguages.GetText(String keyName, ResxLanguagesEnum resxLanguagesEnum) in D:\CRM\TANTAM_SVN\Framework\CommonLib\ResxLanguagesUtility\ResxLanguages.cs:line 47

@@ -1854,7 +1854,7 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Account_UpdateFullName_Result>("Ins_Account_UpdateFullName", phoneParameter, emailParameter, fullNameParameter, isUsePhoneParameter);
         }
     
-        public virtual ObjectResult<Ins_Payroll_User_GetList_Result> Ins_Payroll_User_GetList(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
+        public virtual ObjectResult<Ins_Payroll_User_GetList_Result> Ins_Payroll_User_GetList(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<int> branchId, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
         {
             var assignmentUserIDParameter = assignmentUserID.HasValue ?
                 new ObjectParameter("AssignmentUserID", assignmentUserID) :
@@ -1864,6 +1864,10 @@ namespace DataAccess.EF
                 new ObjectParameter("AccountMapID", accountMapID) :
                 new ObjectParameter("AccountMapID", typeof(int));
     
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
             var dateFromParameter = dateFrom.HasValue ?
                 new ObjectParameter("DateFrom", dateFrom) :
                 new ObjectParameter("DateFrom", typeof(System.DateTime));
@@ -1872,7 +1876,33 @@ namespace DataAccess.EF
                 new ObjectParameter("DateTo", dateTo) :
                 new ObjectParameter("DateTo", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Payroll_User_GetList_Result>("Ins_Payroll_User_GetList", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Payroll_User_GetList_Result>("Ins_Payroll_User_GetList", assignmentUserIDParameter, accountMapIDParameter, branchIdParameter, dateFromParameter, dateToParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Ins_Timekeeper_log_User_GetLog_OneDay(Nullable<int> accountMapID, Nullable<System.DateTime> dateClock)
+        {
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var dateClockParameter = dateClock.HasValue ?
+                new ObjectParameter("DateClock", dateClock) :
+                new ObjectParameter("DateClock", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Timekeeper_log_User_GetLog_OneDay_Result>("Ins_Timekeeper_log_User_GetLog_OneDay", accountMapIDParameter, dateClockParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Shift_User_GetStatus_clock_in_out_Result> Ins_Shift_User_GetStatus_clock_in_out(Nullable<int> accountMapID, Nullable<System.DateTime> dateClock)
+        {
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var dateClockParameter = dateClock.HasValue ?
+                new ObjectParameter("DateClock", dateClock) :
+                new ObjectParameter("DateClock", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Shift_User_GetStatus_clock_in_out_Result>("Ins_Shift_User_GetStatus_clock_in_out", accountMapIDParameter, dateClockParameter);
         }
     }
 }

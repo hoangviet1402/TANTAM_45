@@ -552,6 +552,21 @@
       <Parameter Name="FullName" Mode="In" Type="String" />
       <Parameter Name="IsUsePhone" Mode="In" Type="Boolean" />
     </FunctionImport>
+    <FunctionImport Name="Ins_Payroll_User_GetList" ReturnType="Collection(TanTamModel.Ins_Payroll_User_GetList_Result)">
+      <Parameter Name="AssignmentUserID" Mode="In" Type="Int32" />
+      <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
+      <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Timekeeper_log_User_GetLog_OneDay" ReturnType="Collection(TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result)">
+      <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+      <Parameter Name="DateClock" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_User_GetStatus_clock_in_out" ReturnType="Collection(TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result)">
+      <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+      <Parameter Name="DateClock" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
     <Property Type="Int32" Name="EmployeeAccountMapId" Nullable="false" />
@@ -1274,5 +1289,109 @@
     <Property Type="Int32" Name="CompanyId" Nullable="true" />
     <Property Type="Int32" Name="AccountID" Nullable="true" />
     <Property Type="Int32" Name="AccountRole" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Payroll_User_GetList_Result">
+    <Property Type="Int32" Name="PayrollUserID" Nullable="false" />
+    <Property Type="Int32" Name="AssignmentUserID" Nullable="false" />
+    <Property Type="Int32" Name="AccountMapID" Nullable="false" />
+    <Property Type="DateTime" Name="StartTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndTime" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="WorkingHour" Nullable="true" />
+    <Property Type="DateTime" Name="WorkingDay" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
+    <Property Type="DateTime" Name="CheckinTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CheckoutTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CheckinType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CheckoutType" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="RealWorkingHour" Nullable="true" />
+    <Property Type="Double" Name="RealWorkingMinute" Nullable="true" />
+    <Property Type="String" Name="RestStartTimeShort" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="RestEndTimeShort" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="RealCoefficient" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="ShiftAssignmentId" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ShiftAssignmentSortIndex" Nullable="false" />
+    <Property Type="Int32" Name="AutoApprove" Nullable="false" />
+    <Property Type="String" Name="Assignments" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="ShiftAssignmentMealCoefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="PayrollConfigType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="GenerateTimekeepingType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AssignmentType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ShiftId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="ShiftName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ShiftKey" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Coefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="MinimumWorkingHour" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="Note" Nullable="true" />
+    <Property Type="Int32" Name="EarlyCheckOut" Nullable="false" />
+    <Property Type="Int32" Name="LatelyCheckIn" Nullable="false" />
+    <Property Type="Int32" Name="MaxLateCheckInOutMinute" Nullable="false" />
+    <Property Type="Int32" Name="MinSoonCheckInOutMinute" Nullable="false" />
+    <Property Type="Int32" Name="ShiftStatus" Nullable="false" />
+    <Property Type="String" Name="ShiftType" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="ShiftSortIndex" Nullable="false" />
+    <Property Type="Int32" Name="IsOvertimeShift" Nullable="false" />
+    <Property Type="Decimal" Name="ShiftMealCoefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="Timezone" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NameNosign" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="IsOpenShift" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="LogTime" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ClockType" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeShiftID" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeAccountMapID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_Shift_User_GetStatus_clock_in_out_Result">
+    <Property Type="Int32" Name="PayrollUserID" Nullable="false" />
+    <Property Type="Int32" Name="AssignmentUserID" Nullable="false" />
+    <Property Type="Int32" Name="AccountMapID" Nullable="false" />
+    <Property Type="DateTime" Name="StartTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndTime" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="WorkingHour" Nullable="true" />
+    <Property Type="DateTime" Name="WorkingDay" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
+    <Property Type="Int32" Name="BranchID" Nullable="false" />
+    <Property Type="String" Name="CheckinType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CheckoutType" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="RealWorkingHour" Nullable="true" />
+    <Property Type="Double" Name="RealWorkingMinute" Nullable="true" />
+    <Property Type="String" Name="RestStartTimeShort" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="RestEndTimeShort" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="RealCoefficient" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="ShiftAssignmentId" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ShiftAssignmentSortIndex" Nullable="false" />
+    <Property Type="Int32" Name="AutoApprove" Nullable="false" />
+    <Property Type="String" Name="Assignments" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="ShiftAssignmentMealCoefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="PayrollConfigType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="GenerateTimekeepingType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AssignmentType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ShiftId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="ShiftName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ShiftKey" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Coefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="MinimumWorkingHour" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="Note" Nullable="true" />
+    <Property Type="Int32" Name="EarlyCheckOut" Nullable="false" />
+    <Property Type="Int32" Name="LatelyCheckIn" Nullable="false" />
+    <Property Type="Int32" Name="MaxLateCheckInOutMinute" Nullable="false" />
+    <Property Type="Int32" Name="MinSoonCheckInOutMinute" Nullable="false" />
+    <Property Type="Int32" Name="ShiftStatus" Nullable="false" />
+    <Property Type="String" Name="ShiftType" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="ShiftSortIndex" Nullable="false" />
+    <Property Type="Int32" Name="IsOvertimeShift" Nullable="false" />
+    <Property Type="Decimal" Name="ShiftMealCoefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="Timezone" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NameNosign" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="IsOpenShift" Nullable="true" />
   </ComplexType>
 </Schema>

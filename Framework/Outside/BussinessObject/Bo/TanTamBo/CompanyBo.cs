@@ -77,7 +77,7 @@ namespace BussinessObject.Bo.TanTamBo
                 }
                 response.Data.FirstStepModalOff = getCompanyInfo.FirstStepModalOff ?? 0;
                 response.Data.TimeFormat = "24hour";
-                response.Data.DateFormat = "DD\\/MM\\/YYYY";
+                response.Data.DateFormat = "dd/MM/yyyy";
                 response.Data.IsUsingOnleaveV2 = true;
                 response.Data.IsUsingCameraAi = false;
                 response.Data.TalentManagement = false;

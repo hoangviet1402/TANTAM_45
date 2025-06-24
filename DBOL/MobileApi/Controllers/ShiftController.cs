@@ -22,15 +22,15 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("times-get")]
         public HttpResponseMessage GetTimes([FromBody] GetTimesRequest request)
         {
-            var response = new ApiResult<ListBranchesReponse>()
+            var response = new ApiResult<TimesResponse>()
             {
-                Data = new ListBranchesReponse(),
+                Data = new TimesResponse(),
                 Code = ResponseResultEnum.ServiceUnavailable.Value(),
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
             try
             {
-                var result = BoFactory.Shift.GetTimes(request.Lang ?? "vi");
+                response = BoFactory.Shift.GetTimes(request.Lang ?? "vi");
             }
             catch (Exception ex)
             {
@@ -344,10 +344,9 @@ namespace TanTamApi.Controllers
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
                 var accountId = JwtHelper.GetAccountIdFromToken(Request);
                 var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
-                DateTime dateFrom, dateTo;
-                DateTimeExtension.GetRangeByType(DateTime.Now, 2, out dateFrom, out dateTo);
 
-                response.Data = BoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountIdMap, dateFrom , dateTo);
+
+                //response.Data = BoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountIdMap);
             }
             catch (Exception ex)
             {
@@ -359,125 +358,129 @@ namespace TanTamApi.Controllers
 
         }
 
+        [JWT.Middleware.Authorize]
         [HttpGet, Route("status-clock-in-out-shift")]
-        public HttpResponseMessage StatusClockInOutShift(int is_show_button)
+        public HttpResponseMessage StatusClockInOutShift()
         {
-            var response = new ApiResult<object>()
+            var response = new ApiResult<StatusClockInOutShiftResponse>()
             {
+                Data = new StatusClockInOutShiftResponse(),
                 Code = ResponseResultEnum.Success.Value(),
                 Message = ResponseResultEnum.Success.Text()
             };
             try
             {
-                string clock_type = is_show_button == 0 ? "clock_in" : "clock_out";
-                string jsonString;
-                if (clock_type == "clock_in")
-                {
-                    jsonString = $@"{{
-                    ""clock_setting"": {{
-                        ""clock_in_out_requirements"": [""gps""],
-                        ""is_location_tracking"": 0,
-                        ""distance"": 100,
-                        ""debug"": false,
-                        ""logLevel"": 5
-                    }},
-                    ""clock_type"": ""clock_out"",
-                    ""current_employee_shift"": {{
-                        ""id"": 1,
-                        ""name"": ""ca2"",
-                        ""shift_key"": ""CA2"",
-                        ""shift_id"": 1,
-                        ""shift_type"": ""hard"",
-                        ""start_time"": ""2025-06-09 08:00:00"",
-                        ""end_time"": ""2025-06-09 17:30:00"",
-                        ""working_hour"": 9.5,
-                        ""working_day"": ""2025-06-09 00:00:00"",
-                        ""week_of_year"": 24,
-                        ""branch_id"": 1,
-                        ""user_id"": 30,
-                        ""checkin_time"": null,
-                        ""checkout_time"": ""2025-06-09 18:46:00"",
-                        ""is_confirm"": 1,
-                        ""is_overtime_shift"": 0,
-                        ""shop_id"": 1,
-                        ""meal_coefficient"": 0,
-                        ""timezone"": ""Asia/Saigon"",
-                        ""is_open_shift"": 0,
-                        ""dynamic_user_id"": null,
-                        ""checkin_type"": """",
-                        ""checkout_type"": ""mobile"",
-                        ""checkout_log_id"": 222,
-                        ""checkout_branch_id"": 1,
-                        ""is_reason"": 0,
-                        ""reason_code"": """"
-                    }},
-                    ""employee_shifts"": [],
-                    ""timekeeper_log"": {{
-                        ""id"": 222,
-                        ""time"": ""2025-06-09 18:46:41"",
-                        ""clock_type"": ""clock_in"",
-                        ""employee_shift_id"": 1
-                    }}
-                }}";
-                }
-                else
-                {
-                    jsonString = $@"{{
-                    ""clock_setting"": {{
-                        ""clock_in_out_requirements"": [""gps""],
-                        ""is_location_tracking"": 0,
-                        ""distance"": 100,
-                        ""debug"": false,
-                        ""logLevel"": 5
-                    }},
-                    ""clock_type"": ""clock_in"",
-                    ""current_employee_shift"": {{
-                        ""id"": 1,
-                        ""name"": ""Ca Cá Nhân""
-                    }},
-                    ""employee_shifts"": [
-                        {{
-                            ""shift"": {{
-                                ""id"": 1,
-                                ""name"": ""ca2"",
-                                ""shift_key"": ""CA2"",
-                                ""shift_id"": 1,
-                                ""shift_type"": ""hard"",
-                                ""start_time"": ""2025-06-09 08:00:00"",
-                                ""end_time"": ""2025-06-09 17:30:00"",
-                                ""working_hour"": 9.5,
-                                ""working_day"": ""2025-06-09 00:00:00"",
-                                ""week_of_year"": 24,
-                                ""branch_id"": 1,
-                                ""user_id"": 30,
-                                ""checkin_time"": null,
-                                ""checkout_time"": null,
-                                ""is_confirm"": 1,
-                                ""is_overtime_shift"": 0,
-                                ""shop_id"": 1,
-                                ""meal_coefficient"": 0,
-                                ""timezone"": ""Asia/Saigon"",
-                                ""is_open_shift"": 0,
-                                ""dynamic_user_id"": null,
-                                ""checkin_type"": """",
-                                ""checkout_type"": """"
-                            }},
-                            ""is_reason"": 0,
-                            ""is_yesterday"": 0,
-                            ""is_end_next_day"": 0
-                        }}
-                    ],
-                    ""timekeeper_log"": {{
-                        ""id"": 222,
-                        ""time"": ""2025-05-29 14:19:08"",
-                        ""clock_type"": ""clock_out"",
-                        ""employee_shift_id"": 1
-                    }}
-                }}";
-                }
-
-                response.Data = JsonConvert.DeserializeObject(jsonString);
-                response.Data = JsonConvert.DeserializeObject(jsonString);
+                #region demo
+                //string clock_type = is_show_button == 0 ? "clock_in" : "clock_out";
+                //string jsonString;
+                //if (clock_type == "clock_in")
+                //{
+                //    jsonString = $@"{{
+                //    ""clock_setting"": {{
+                //        ""clock_in_out_requirements"": [""gps""],
+                //        ""is_location_tracking"": 0,
+                //        ""distance"": 100,
+                //        ""debug"": false,
+                //        ""logLevel"": 5
+                //    }},
+                //    ""clock_type"": ""clock_out"",
+                //    ""current_employee_shift"": {{
+                //        ""id"": 1,
+                //        ""name"": ""ca2"",
+                //        ""shift_key"": ""CA2"",
+                //        ""shift_id"": 1,
+                //        ""shift_type"": ""hard"",
+                //        ""start_time"": ""2025-06-09 08:00:00"",
+                //        ""end_time"": ""2025-06-09 17:30:00"",
+                //        ""working_hour"": 9.5,
+                //        ""working_day"": ""2025-06-09 00:00:00"",
+                //        ""week_of_year"": 24,
+                //        ""branch_id"": 1,
+                //        ""user_id"": 30,
+                //        ""checkin_time"": null,
+                //        ""checkout_time"": ""2025-06-09 18:46:00"",
+                //        ""is_confirm"": 1,
+                //        ""is_overtime_shift"": 0,
+                //        ""shop_id"": 1,
+                //        ""meal_coefficient"": 0,
+                //        ""timezone"": ""Asia/Saigon"",
+                //        ""is_open_shift"": 0,
+                //        ""dynamic_user_id"": null,
+                //        ""checkin_type"": """",
+                //        ""checkout_type"": ""mobile"",
+                //        ""checkout_log_id"": 222,
+                //        ""checkout_branch_id"": 1,
+                //        ""is_reason"": 0,
+                //        ""reason_code"": """"
+                //    }},
+                //    ""employee_shifts"": [],
+                //    ""timekeeper_log"": {{
+                //        ""id"": 222,
+                //        ""time"": ""2025-06-09 18:46:41"",
+                //        ""clock_type"": ""clock_in"",
+                //        ""employee_shift_id"": 1
+                //    }}
+                //}}";
+                //}
+                //else
+                //{
+                //    jsonString = $@"{{
+                //    ""clock_setting"": {{
+                //        ""clock_in_out_requirements"": [""gps""],
+                //        ""is_location_tracking"": 0,
+                //        ""distance"": 100,
+                //        ""debug"": false,
+                //        ""logLevel"": 5
+                //    }},
+                //    ""clock_type"": ""clock_in"",
+                //    ""current_employee_shift"": {{
+                //        ""id"": 1,
+                //        ""name"": ""Ca Cá Nhân""
+                //    }},
+                //    ""employee_shifts"": [
+                //        {{
+                //            ""shift"": {{
+                //                ""id"": 1,
+                //                ""name"": ""ca2"",
+                //                ""shift_key"": ""CA2"",
+                //                ""shift_id"": 1,
+                //                ""shift_type"": ""hard"",
+                //                ""start_time"": ""2025-06-09 08:00:00"",
+                //                ""end_time"": ""2025-06-09 17:30:00"",
+                //                ""working_hour"": 9.5,
+                //                ""working_day"": ""2025-06-09 00:00:00"",
+                //                ""week_of_year"": 24,
+                //                ""branch_id"": 1,
+                //                ""user_id"": 30,
+                //                ""checkin_time"": null,
+                //                ""checkout_time"": null,
+                //                ""is_confirm"": 1,
+                //                ""is_overtime_shift"": 0,
+                //                ""shop_id"": 1,
+                //                ""meal_coefficient"": 0,
+                //                ""timezone"": ""Asia/Saigon"",
+                //                ""is_open_shift"": 0,
+                //                ""dynamic_user_id"": null,
+                //                ""checkin_type"": """",
+                //                ""checkout_type"": """"
+                //            }},
+                //            ""is_reason"": 0,
+                //            ""is_yesterday"": 0,
+                //            ""is_end_next_day"": 0
+                //        }}
+                //    ],
+                //    ""timekeeper_log"": {{
+                //        ""id"": 222,
+                //        ""time"": ""2025-05-29 14:19:08"",
+                //        ""clock_type"": ""clock_out"",
+                //        ""employee_shift_id"": 1
+                //    }}
+                //}}";
+                //}
+                #endregion
+                //response.Data = JsonConvert.DeserializeObject(jsonString);
+                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
+                response = BoFactory.Payroll.StatusClockInOutShift(accountIdMap, DateTime.Now);
             }
             catch (Exception ex)
             {
