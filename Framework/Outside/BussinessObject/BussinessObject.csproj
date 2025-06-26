@@ -150,6 +150,7 @@
     <Compile Include="Models\Shift\ShiftDTO.cs" />
     <Compile Include="Models\Shift\ShiftRequest.cs" />
     <Compile Include="Models\Shift\ShiftResponse.cs" />
+    <Compile Include="Models\Shift\ShiftUserDTO.cs" />
     <Compile Include="Models\Shift\TimeDTO.cs" />
     <Compile Include="Models\Task\TaskRequestDto.cs" />
     <Compile Include="Models\User\UserDto.cs" />

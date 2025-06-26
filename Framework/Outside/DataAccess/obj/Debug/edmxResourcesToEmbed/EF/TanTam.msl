@@ -798,7 +798,6 @@
     <FunctionImportMapping FunctionImportName="Ins_User_UpdateStatus" FunctionName="TanTamModel.Store.Ins_User_UpdateStatus" />
     <FunctionImportMapping FunctionImportName="Sel_CompanyBranch_GetIds" FunctionName="TanTamModel.Store.Sel_CompanyBranch_GetIds" />
     <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
-    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create" />
     <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_ByCompanyID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_ByCompanyID">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_ByCompanyID_Result">
@@ -858,7 +857,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_MultiDay" FunctionName="TanTamModel.Store.Ins_Payroll_User_MultiDay" />
     <FunctionImportMapping FunctionImportName="Ins_Company_GetInfor" FunctionName="TanTamModel.Store.Ins_Company_GetInfor">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Company_GetInfor_Result">
@@ -891,6 +889,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create" />
     <FunctionImportMapping FunctionImportName="Ins_Payroll_User_GetList" FunctionName="TanTamModel.Store.Ins_Payroll_User_GetList">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Payroll_User_GetList_Result">
@@ -944,17 +943,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
-          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
-          <ScalarProperty Name="EmployeeShiftID" ColumnName="EmployeeShiftID" />
-          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_MultiDay" FunctionName="TanTamModel.Store.Ins_Payroll_User_MultiDay" />
     <FunctionImportMapping FunctionImportName="Ins_Shift_User_GetStatus_clock_in_out" FunctionName="TanTamModel.Store.Ins_Shift_User_GetStatus_clock_in_out">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result">
@@ -967,6 +956,8 @@
           <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
           <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
           <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
+          <ScalarProperty Name="CheckoutTime" ColumnName="CheckoutTime" />
           <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
           <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
           <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
@@ -994,8 +985,6 @@
           <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
           <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
-          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
-          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
           <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
           <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
           <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
@@ -1004,6 +993,35 @@
           <ScalarProperty Name="Timezone" ColumnName="Timezone" />
           <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
           <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
+          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
+          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
+          <ScalarProperty Name="StartCheckInHourId" ColumnName="StartCheckInHourId" />
+          <ScalarProperty Name="StartCheckInMinuteId" ColumnName="StartCheckInMinuteId" />
+          <ScalarProperty Name="EndCheckInHourId" ColumnName="EndCheckInHourId" />
+          <ScalarProperty Name="EndCheckInMinuteId" ColumnName="EndCheckInMinuteId" />
+          <ScalarProperty Name="StartCheckOutHourId" ColumnName="StartCheckOutHourId" />
+          <ScalarProperty Name="StartCheckOutMinuteId" ColumnName="StartCheckOutMinuteId" />
+          <ScalarProperty Name="EndCheckOutHourId" ColumnName="EndCheckOutHourId" />
+          <ScalarProperty Name="EndCheckOutMinuteId" ColumnName="EndCheckOutMinuteId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_Insert" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_Insert" />
+    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
+          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
+          <ScalarProperty Name="CurrentBranchId" ColumnName="CurrentBranchId" />
+          <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+          <ScalarProperty Name="TimeKeeperDevice" ColumnName="TimeKeeperDevice" />
+          <ScalarProperty Name="Bssid" ColumnName="Bssid" />
+          <ScalarProperty Name="Ssid" ColumnName="Ssid" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

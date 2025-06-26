@@ -21,6 +21,20 @@ namespace BussinessObject.Models.Shift
         public TimekeeperLog TimekeeperLog { get; set; }
     }
 
+    public class ClockInOutShiftResponse
+    {
+
+        [JsonProperty("next_clock_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string NextClockType { get; set; }
+
+        [JsonProperty("current_employee_shift", NullValueHandling = NullValueHandling.Ignore)]
+        public ClockInOut_Shift CurrentEmployeeShift { get; set; }
+
+
+        [JsonProperty("timekeeper_log", NullValueHandling = NullValueHandling.Ignore)]
+        public TimekeeperLog TimekeeperLog { get; set; }
+    }
+
     public class ClockSetting
     {
         [JsonProperty("clock_in_out_requirements", NullValueHandling = NullValueHandling.Ignore)]
@@ -42,7 +56,7 @@ namespace BussinessObject.Models.Shift
     public class CurrentEmployeeShift
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -51,7 +65,7 @@ namespace BussinessObject.Models.Shift
     public class EmployeeShift
     {
         [JsonProperty("shift", NullValueHandling = NullValueHandling.Ignore)]
-        public Shift ClockInOut_Shift_Info { get; set; }
+        public ClockInOut_Shift ClockInOut_Shift_Info { get; set; }
 
         [JsonProperty("is_reason", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsReason { get; set; }
@@ -63,7 +77,7 @@ namespace BussinessObject.Models.Shift
         public int? IsEndNextDay { get; set; }
     }
 
-    public class Shift
+    public class ClockInOut_Shift
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int Id { get; set; }
@@ -133,6 +147,18 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("checkout_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckoutType { get; set; }
+
+        [JsonProperty("checkout_log_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CheckoutLogId { get; set; }
+
+        [JsonProperty("checkout_branch_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CheckoutBranchId { get; set; }
+
+        [JsonProperty("checkin_log_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CheckinLogId { get; set; }
+
+        [JsonProperty("checkin_branch_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CheckinBranchId { get; set; }
     }
 
     public class TimekeeperLog
@@ -147,6 +173,45 @@ namespace BussinessObject.Models.Shift
         public string ClockType { get; set; }
 
         [JsonProperty("employee_shift_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int EmployeeShiftId { get; set; }
+        public int PayrollUserID { get; set; }
+    }
+
+    public class ClockInOutShiftRequest
+    {
+        [JsonProperty("branch_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BranchId { get; set; }
+
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? UserId { get; set; }
+
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Id { get; set; }
+
+        [JsonProperty("working_day", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkingDay { get; set; }
+
+        [JsonProperty("bssid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Bssid { get; set; }
+
+        [JsonProperty("ssid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ssid { get; set; }
+
+        [JsonProperty("connection_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConnectionType { get; set; }
+
+        [JsonProperty("timekeeper_device", NullValueHandling = NullValueHandling.Ignore)]
+        public string TimekeeperDevice { get; set; }
+
+        [JsonProperty("employee_shift_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EmployeeShiftId { get; set; }
+
+        [JsonProperty("clock_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClockType { get; set; }
+
+        [JsonProperty("latitude", NullValueHandling = NullValueHandling.Ignore)]
+        public float? Latitude { get; set; }
+
+        [JsonProperty("longitude", NullValueHandling = NullValueHandling.Ignore)]
+        public float? Longitude { get; set; }
     }
 } 

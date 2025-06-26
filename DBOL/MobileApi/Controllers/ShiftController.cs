@@ -502,85 +502,90 @@ namespace TanTamApi.Controllers
             };
             try
             {
-                string clock_type = request.ClockType;
-                string jsonString = "";
-                if (clock_type == "clock_out")
-                {
-                    jsonString = @"{
-                ""next_clock_type"": ""clock_in"",
-                ""current_employee_shift"": {
-                    ""id"": ""683412a08fb63932d90cd06b"",
-                    ""name"": ""ca2"",
-                    ""shift_key"": ""CA2"",
-                    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
-                    ""shift_type"": ""hard"",
-                    ""start_time"": ""2025-06-09 08:00:00"",
-                    ""end_time"": ""2025-06-09 17:30:00"",
-                    ""working_hour"": 9.5,
-                    ""working_day"": ""2025-06-09 00:00:00"",
-                    ""week_of_year"": 24,
-                    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
-                    ""user_id"": ""682eefe1189d3q7Nz"",
-                    ""checkin_time"": null,
-                    ""checkout_time"": ""2025-06-09 18:46:00"",
-                    ""is_confirm"": 1,
-                    ""is_overtime_shift"": 0,
-                    ""shop_id"": ""682eefe18cdcf28162021f37"",
-                    ""meal_coefficient"": 0,
-                    ""timezone"": ""Asia/Saigon"",
-                    ""is_open_shift"": 0,
-                    ""dynamic_user_id"": null,
-                    ""checkin_type"": """",
-                    ""checkout_type"": ""mobile"",
-                    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
-                    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
-                },
-                ""timekeeper_log"": {
-                    ""id"": ""6846c9a7fbb1987f350878f3"",
-                    ""time"": ""2025-06-09 18:46:47"",
-                    ""clock_type"": ""clock_out""
-                }
-                }";
-                }
-                else
-                {
-                    jsonString = @"{
-                ""next_clock_type"": ""clock_out"",
-                ""current_employee_shift"": {
-                    ""id"": ""683412a08fb63932d90cd06b"",
-                    ""name"": ""ca2"",
-                    ""shift_key"": ""CA2"",
-                    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
-                    ""shift_type"": ""hard"",
-                    ""start_time"": ""2025-06-09 08:00:00"",
-                    ""end_time"": ""2025-06-09 17:30:00"",
-                    ""working_hour"": 9.5,
-                    ""working_day"": ""2025-06-09 00:00:00"",
-                    ""week_of_year"": 24,
-                    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
-                    ""user_id"": ""682eefe1189d3q7Nz"",
-                    ""checkin_time"": null,
-                    ""checkout_time"": ""2025-06-09 18:46:00"",
-                    ""is_confirm"": 1,
-                    ""is_overtime_shift"": 0,
-                    ""shop_id"": ""682eefe18cdcf28162021f37"",
-                    ""meal_coefficient"": 0,
-                    ""timezone"": ""Asia/Saigon"",
-                    ""is_open_shift"": 0,
-                    ""dynamic_user_id"": null,
-                    ""checkin_type"": """",
-                    ""checkout_type"": ""mobile"",
-                    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
-                    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
-                },
-                ""timekeeper_log"": {
-                    ""id"": ""6846c9a7fbb1987f350878f3"",
-                    ""time"": ""2025-06-09 18:46:47"",
-                    ""clock_type"": ""clock_in""
-                }
-                }";
-                }
-                response.Data = JsonConvert.DeserializeObject(jsonString);
+                #region demo
+                //string clock_type = request.ClockType;
+                //string jsonString = "";
+                //if (clock_type == "clock_out")
+                //{
+                //    jsonString = @"{
+                //""next_clock_type"": ""clock_in"",
+                //""current_employee_shift"": {
+                //    ""id"": ""683412a08fb63932d90cd06b"",
+                //    ""name"": ""ca2"",
+                //    ""shift_key"": ""CA2"",
+                //    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
+                //    ""shift_type"": ""hard"",
+                //    ""start_time"": ""2025-06-09 08:00:00"",
+                //    ""end_time"": ""2025-06-09 17:30:00"",
+                //    ""working_hour"": 9.5,
+                //    ""working_day"": ""2025-06-09 00:00:00"",
+                //    ""week_of_year"": 24,
+                //    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
+                //    ""user_id"": ""682eefe1189d3q7Nz"",
+                //    ""checkin_time"": null,
+                //    ""checkout_time"": ""2025-06-09 18:46:00"",
+                //    ""is_confirm"": 1,
+                //    ""is_overtime_shift"": 0,
+                //    ""shop_id"": ""682eefe18cdcf28162021f37"",
+                //    ""meal_coefficient"": 0,
+                //    ""timezone"": ""Asia/Saigon"",
+                //    ""is_open_shift"": 0,
+                //    ""dynamic_user_id"": null,
+                //    ""checkin_type"": """",
+                //    ""checkout_type"": ""mobile"",
+                //    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
+                //},
+                //""timekeeper_log"": {
+                //    ""id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""time"": ""2025-06-09 18:46:47"",
+                //    ""clock_type"": ""clock_out""
+                //}
+                //}";
+                //}
+                //else
+                //{
+                //    jsonString = @"{
+                //""next_clock_type"": ""clock_out"",
+                //""current_employee_shift"": {
+                //    ""id"": ""683412a08fb63932d90cd06b"",
+                //    ""name"": ""ca2"",
+                //    ""shift_key"": ""CA2"",
+                //    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
+                //    ""shift_type"": ""hard"",
+                //    ""start_time"": ""2025-06-09 08:00:00"",
+                //    ""end_time"": ""2025-06-09 17:30:00"",
+                //    ""working_hour"": 9.5,
+                //    ""working_day"": ""2025-06-09 00:00:00"",
+                //    ""week_of_year"": 24,
+                //    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
+                //    ""user_id"": ""682eefe1189d3q7Nz"",
+                //    ""checkin_time"": null,
+                //    ""checkout_time"": ""2025-06-09 18:46:00"",
+                //    ""is_confirm"": 1,
+                //    ""is_overtime_shift"": 0,
+                //    ""shop_id"": ""682eefe18cdcf28162021f37"",
+                //    ""meal_coefficient"": 0,
+                //    ""timezone"": ""Asia/Saigon"",
+                //    ""is_open_shift"": 0,
+                //    ""dynamic_user_id"": null,
+                //    ""checkin_type"": """",
+                //    ""checkout_type"": ""mobile"",
+                //    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
+                //},
+                //""timekeeper_log"": {
+                //    ""id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""time"": ""2025-06-09 18:46:47"",
+                //    ""clock_type"": ""clock_in""
+                //}
+                //}";
+                //}
+
+                #endregion 
+                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
+                var companyIdMap = JwtHelper.GetCompanyIdFromToken(Request);
+                response.Data = BoFactory.Payroll.ClockInOutShift(request, accountIdMap, companyIdMap,DateTime.Now);
             }
             catch (Exception ex)
             {

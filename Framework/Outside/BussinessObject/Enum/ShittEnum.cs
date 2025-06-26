@@ -1,18 +1,31 @@
 ﻿namespace BussinessObject.Enum
 {
-    public enum generate_timekeeping_type_obj_enum
+    public enum Generate_Timekeeping_Type_Obj_Enum
     {
         generate_from_start_of_month = 1
     }
 
-    public enum shift_type_enum
+    public enum Shift_Type_Enum
     {
         standard_working = 1
     }
 
-    public enum clock_type_enum
+    public enum Clock_Type_Enum
     {
         clock_in  = 1,
         clock_out = 2
+    }
+
+    public enum Connection_Type_Enum
+    {
+        wifi = 1,
+        Gps = 2
+    }
+
+    //TimeKeeperDevice
+    public enum TimeKeeper_Device_Enum
+    {
+        mobile = 1,
+        web = 2
     }
 }

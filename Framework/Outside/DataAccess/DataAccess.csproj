@@ -97,6 +97,7 @@
     <Compile Include="Model\Shift\Ins_Shift_Create_Parameter.cs" />
     <Compile Include="Model\Shift\Payroll_User_CreateMultiDay.cs" />
     <Compile Include="Model\Shift\Ins_Time_GetList.cs" />
+    <Compile Include="Model\Shift\Timekeeper_log_Insert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1585,79 +1585,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Get_Payroll_User_List_Result>("Get_Payroll_User_List", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter);
         }
     
-        public virtual int Ins_Payroll_User_Create(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<double> workingHour, Nullable<System.DateTime> workingDay, Nullable<int> weekOfYear, Nullable<System.DateTime> checkinTime, Nullable<System.DateTime> checkoutTime, string checkinType, string checkouType, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, string realCoefficient, Nullable<int> status, ObjectParameter payrollUserID)
-        {
-            var shiftAssignmentIDParameter = shiftAssignmentID.HasValue ?
-                new ObjectParameter("ShiftAssignmentID", shiftAssignmentID) :
-                new ObjectParameter("ShiftAssignmentID", typeof(int));
-    
-            var accountMapIDParameter = accountMapID.HasValue ?
-                new ObjectParameter("AccountMapID", accountMapID) :
-                new ObjectParameter("AccountMapID", typeof(int));
-    
-            var startTimeParameter = startTime.HasValue ?
-                new ObjectParameter("StartTime", startTime) :
-                new ObjectParameter("StartTime", typeof(System.DateTime));
-    
-            var endTimeParameter = endTime.HasValue ?
-                new ObjectParameter("EndTime", endTime) :
-                new ObjectParameter("EndTime", typeof(System.DateTime));
-    
-            var workingHourParameter = workingHour.HasValue ?
-                new ObjectParameter("WorkingHour", workingHour) :
-                new ObjectParameter("WorkingHour", typeof(double));
-    
-            var workingDayParameter = workingDay.HasValue ?
-                new ObjectParameter("WorkingDay", workingDay) :
-                new ObjectParameter("WorkingDay", typeof(System.DateTime));
-    
-            var weekOfYearParameter = weekOfYear.HasValue ?
-                new ObjectParameter("WeekOfYear", weekOfYear) :
-                new ObjectParameter("WeekOfYear", typeof(int));
-    
-            var checkinTimeParameter = checkinTime.HasValue ?
-                new ObjectParameter("CheckinTime", checkinTime) :
-                new ObjectParameter("CheckinTime", typeof(System.DateTime));
-    
-            var checkoutTimeParameter = checkoutTime.HasValue ?
-                new ObjectParameter("CheckoutTime", checkoutTime) :
-                new ObjectParameter("CheckoutTime", typeof(System.DateTime));
-    
-            var checkinTypeParameter = checkinType != null ?
-                new ObjectParameter("CheckinType", checkinType) :
-                new ObjectParameter("CheckinType", typeof(string));
-    
-            var checkouTypeParameter = checkouType != null ?
-                new ObjectParameter("CheckouType", checkouType) :
-                new ObjectParameter("CheckouType", typeof(string));
-    
-            var realWorkingHourParameter = realWorkingHour.HasValue ?
-                new ObjectParameter("RealWorkingHour", realWorkingHour) :
-                new ObjectParameter("RealWorkingHour", typeof(double));
-    
-            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
-                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
-                new ObjectParameter("RealWorkingMinute", typeof(double));
-    
-            var restStartTimeShortParameter = restStartTimeShort != null ?
-                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
-                new ObjectParameter("RestStartTimeShort", typeof(string));
-    
-            var restEndTimeShortParameter = restEndTimeShort != null ?
-                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
-                new ObjectParameter("RestEndTimeShort", typeof(string));
-    
-            var realCoefficientParameter = realCoefficient != null ?
-                new ObjectParameter("RealCoefficient", realCoefficient) :
-                new ObjectParameter("RealCoefficient", typeof(string));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_Create", shiftAssignmentIDParameter, accountMapIDParameter, startTimeParameter, endTimeParameter, workingHourParameter, workingDayParameter, weekOfYearParameter, checkinTimeParameter, checkoutTimeParameter, checkinTypeParameter, checkouTypeParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter, payrollUserID);
-        }
-    
         public virtual ObjectResult<Ins_ShiftAssignment_ByCompanyID_Result> Ins_ShiftAssignment_ByCompanyID(Nullable<int> companyID)
         {
             var companyIDParameter = companyID.HasValue ?
@@ -1759,71 +1686,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Tasks_Create_Result>("Ins_Tasks_Create", titleParameter, created_user_objParameter, default_viewParameter, colorParameter, department_idsParameter, position_idsParameter, branch_idsParameter, user_idsParameter);
         }
     
-        public virtual int Ins_Payroll_User_MultiDay(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> weekOfYear, string checkinType, string checkouType, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, Nullable<double> realCoefficient, Nullable<int> status)
-        {
-            var assignmentUserIDParameter = assignmentUserID.HasValue ?
-                new ObjectParameter("AssignmentUserID", assignmentUserID) :
-                new ObjectParameter("AssignmentUserID", typeof(int));
-    
-            var accountMapIDParameter = accountMapID.HasValue ?
-                new ObjectParameter("AccountMapID", accountMapID) :
-                new ObjectParameter("AccountMapID", typeof(int));
-    
-            var dateFromParameter = dateFrom.HasValue ?
-                new ObjectParameter("DateFrom", dateFrom) :
-                new ObjectParameter("DateFrom", typeof(System.DateTime));
-    
-            var dateToParameter = dateTo.HasValue ?
-                new ObjectParameter("DateTo", dateTo) :
-                new ObjectParameter("DateTo", typeof(System.DateTime));
-    
-            var startTimeParameter = startTime.HasValue ?
-                new ObjectParameter("StartTime", startTime) :
-                new ObjectParameter("StartTime", typeof(System.DateTime));
-    
-            var endTimeParameter = endTime.HasValue ?
-                new ObjectParameter("EndTime", endTime) :
-                new ObjectParameter("EndTime", typeof(System.DateTime));
-    
-            var weekOfYearParameter = weekOfYear.HasValue ?
-                new ObjectParameter("WeekOfYear", weekOfYear) :
-                new ObjectParameter("WeekOfYear", typeof(int));
-    
-            var checkinTypeParameter = checkinType != null ?
-                new ObjectParameter("CheckinType", checkinType) :
-                new ObjectParameter("CheckinType", typeof(string));
-    
-            var checkouTypeParameter = checkouType != null ?
-                new ObjectParameter("CheckouType", checkouType) :
-                new ObjectParameter("CheckouType", typeof(string));
-    
-            var realWorkingHourParameter = realWorkingHour.HasValue ?
-                new ObjectParameter("RealWorkingHour", realWorkingHour) :
-                new ObjectParameter("RealWorkingHour", typeof(double));
-    
-            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
-                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
-                new ObjectParameter("RealWorkingMinute", typeof(double));
-    
-            var restStartTimeShortParameter = restStartTimeShort != null ?
-                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
-                new ObjectParameter("RestStartTimeShort", typeof(string));
-    
-            var restEndTimeShortParameter = restEndTimeShort != null ?
-                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
-                new ObjectParameter("RestEndTimeShort", typeof(string));
-    
-            var realCoefficientParameter = realCoefficient.HasValue ?
-                new ObjectParameter("RealCoefficient", realCoefficient) :
-                new ObjectParameter("RealCoefficient", typeof(double));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_MultiDay", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter, startTimeParameter, endTimeParameter, weekOfYearParameter, checkinTypeParameter, checkouTypeParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter);
-        }
-    
         public virtual ObjectResult<Ins_Company_GetInfor_Result> Ins_Company_GetInfor(Nullable<int> companyId)
         {
             var companyIdParameter = companyId.HasValue ?
@@ -1854,6 +1716,63 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Account_UpdateFullName_Result>("Ins_Account_UpdateFullName", phoneParameter, emailParameter, fullNameParameter, isUsePhoneParameter);
         }
     
+        public virtual int Ins_Payroll_User_Create(Nullable<int> shiftAssignmentID, Nullable<int> accountMapID, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<double> workingHour, Nullable<System.DateTime> workingDay, Nullable<int> weekOfYear, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, string realCoefficient, Nullable<int> status, ObjectParameter payrollUserID)
+        {
+            var shiftAssignmentIDParameter = shiftAssignmentID.HasValue ?
+                new ObjectParameter("ShiftAssignmentID", shiftAssignmentID) :
+                new ObjectParameter("ShiftAssignmentID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.DateTime));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.DateTime));
+    
+            var workingHourParameter = workingHour.HasValue ?
+                new ObjectParameter("WorkingHour", workingHour) :
+                new ObjectParameter("WorkingHour", typeof(double));
+    
+            var workingDayParameter = workingDay.HasValue ?
+                new ObjectParameter("WorkingDay", workingDay) :
+                new ObjectParameter("WorkingDay", typeof(System.DateTime));
+    
+            var weekOfYearParameter = weekOfYear.HasValue ?
+                new ObjectParameter("WeekOfYear", weekOfYear) :
+                new ObjectParameter("WeekOfYear", typeof(int));
+    
+            var realWorkingHourParameter = realWorkingHour.HasValue ?
+                new ObjectParameter("RealWorkingHour", realWorkingHour) :
+                new ObjectParameter("RealWorkingHour", typeof(double));
+    
+            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
+                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
+                new ObjectParameter("RealWorkingMinute", typeof(double));
+    
+            var restStartTimeShortParameter = restStartTimeShort != null ?
+                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
+                new ObjectParameter("RestStartTimeShort", typeof(string));
+    
+            var restEndTimeShortParameter = restEndTimeShort != null ?
+                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
+                new ObjectParameter("RestEndTimeShort", typeof(string));
+    
+            var realCoefficientParameter = realCoefficient != null ?
+                new ObjectParameter("RealCoefficient", realCoefficient) :
+                new ObjectParameter("RealCoefficient", typeof(string));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_Create", shiftAssignmentIDParameter, accountMapIDParameter, startTimeParameter, endTimeParameter, workingHourParameter, workingDayParameter, weekOfYearParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter, payrollUserID);
+        }
+    
         public virtual ObjectResult<Ins_Payroll_User_GetList_Result> Ins_Payroll_User_GetList(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<int> branchId, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
         {
             var assignmentUserIDParameter = assignmentUserID.HasValue ?
@@ -1879,17 +1798,61 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Payroll_User_GetList_Result>("Ins_Payroll_User_GetList", assignmentUserIDParameter, accountMapIDParameter, branchIdParameter, dateFromParameter, dateToParameter);
         }
     
-        public virtual ObjectResult<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Ins_Timekeeper_log_User_GetLog_OneDay(Nullable<int> accountMapID, Nullable<System.DateTime> dateClock)
+        public virtual int Ins_Payroll_User_MultiDay(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> weekOfYear, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, Nullable<double> realCoefficient, Nullable<int> status)
         {
+            var assignmentUserIDParameter = assignmentUserID.HasValue ?
+                new ObjectParameter("AssignmentUserID", assignmentUserID) :
+                new ObjectParameter("AssignmentUserID", typeof(int));
+    
             var accountMapIDParameter = accountMapID.HasValue ?
                 new ObjectParameter("AccountMapID", accountMapID) :
                 new ObjectParameter("AccountMapID", typeof(int));
     
-            var dateClockParameter = dateClock.HasValue ?
-                new ObjectParameter("DateClock", dateClock) :
-                new ObjectParameter("DateClock", typeof(System.DateTime));
+            var dateFromParameter = dateFrom.HasValue ?
+                new ObjectParameter("DateFrom", dateFrom) :
+                new ObjectParameter("DateFrom", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Timekeeper_log_User_GetLog_OneDay_Result>("Ins_Timekeeper_log_User_GetLog_OneDay", accountMapIDParameter, dateClockParameter);
+            var dateToParameter = dateTo.HasValue ?
+                new ObjectParameter("DateTo", dateTo) :
+                new ObjectParameter("DateTo", typeof(System.DateTime));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.DateTime));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.DateTime));
+    
+            var weekOfYearParameter = weekOfYear.HasValue ?
+                new ObjectParameter("WeekOfYear", weekOfYear) :
+                new ObjectParameter("WeekOfYear", typeof(int));
+    
+            var realWorkingHourParameter = realWorkingHour.HasValue ?
+                new ObjectParameter("RealWorkingHour", realWorkingHour) :
+                new ObjectParameter("RealWorkingHour", typeof(double));
+    
+            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
+                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
+                new ObjectParameter("RealWorkingMinute", typeof(double));
+    
+            var restStartTimeShortParameter = restStartTimeShort != null ?
+                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
+                new ObjectParameter("RestStartTimeShort", typeof(string));
+    
+            var restEndTimeShortParameter = restEndTimeShort != null ?
+                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
+                new ObjectParameter("RestEndTimeShort", typeof(string));
+    
+            var realCoefficientParameter = realCoefficient.HasValue ?
+                new ObjectParameter("RealCoefficient", realCoefficient) :
+                new ObjectParameter("RealCoefficient", typeof(double));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_MultiDay", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter, startTimeParameter, endTimeParameter, weekOfYearParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter);
         }
     
         public virtual ObjectResult<Ins_Shift_User_GetStatus_clock_in_out_Result> Ins_Shift_User_GetStatus_clock_in_out(Nullable<int> accountMapID, Nullable<System.DateTime> dateClock)
@@ -1903,6 +1866,68 @@ namespace DataAccess.EF
                 new ObjectParameter("DateClock", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Shift_User_GetStatus_clock_in_out_Result>("Ins_Shift_User_GetStatus_clock_in_out", accountMapIDParameter, dateClockParameter);
+        }
+    
+        public virtual int Ins_Timekeeper_log_User_Insert(Nullable<int> accountMapID, Nullable<int> payrollUserID, Nullable<System.DateTime> logTime, Nullable<int> clockType, Nullable<int> currentBranchId, Nullable<int> connectionType, Nullable<int> timeKeeperDevice, string bssid, string ssid, Nullable<double> latitude, Nullable<double> longitude, ObjectParameter timekeeper_logID)
+        {
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var payrollUserIDParameter = payrollUserID.HasValue ?
+                new ObjectParameter("PayrollUserID", payrollUserID) :
+                new ObjectParameter("PayrollUserID", typeof(int));
+    
+            var logTimeParameter = logTime.HasValue ?
+                new ObjectParameter("LogTime", logTime) :
+                new ObjectParameter("LogTime", typeof(System.DateTime));
+    
+            var clockTypeParameter = clockType.HasValue ?
+                new ObjectParameter("ClockType", clockType) :
+                new ObjectParameter("ClockType", typeof(int));
+    
+            var currentBranchIdParameter = currentBranchId.HasValue ?
+                new ObjectParameter("CurrentBranchId", currentBranchId) :
+                new ObjectParameter("CurrentBranchId", typeof(int));
+    
+            var connectionTypeParameter = connectionType.HasValue ?
+                new ObjectParameter("ConnectionType", connectionType) :
+                new ObjectParameter("ConnectionType", typeof(int));
+    
+            var timeKeeperDeviceParameter = timeKeeperDevice.HasValue ?
+                new ObjectParameter("TimeKeeperDevice", timeKeeperDevice) :
+                new ObjectParameter("TimeKeeperDevice", typeof(int));
+    
+            var bssidParameter = bssid != null ?
+                new ObjectParameter("Bssid", bssid) :
+                new ObjectParameter("Bssid", typeof(string));
+    
+            var ssidParameter = ssid != null ?
+                new ObjectParameter("Ssid", ssid) :
+                new ObjectParameter("Ssid", typeof(string));
+    
+            var latitudeParameter = latitude.HasValue ?
+                new ObjectParameter("Latitude", latitude) :
+                new ObjectParameter("Latitude", typeof(double));
+    
+            var longitudeParameter = longitude.HasValue ?
+                new ObjectParameter("Longitude", longitude) :
+                new ObjectParameter("Longitude", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Timekeeper_log_User_Insert", accountMapIDParameter, payrollUserIDParameter, logTimeParameter, clockTypeParameter, currentBranchIdParameter, connectionTypeParameter, timeKeeperDeviceParameter, bssidParameter, ssidParameter, latitudeParameter, longitudeParameter, timekeeper_logID);
+        }
+    
+        public virtual ObjectResult<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Ins_Timekeeper_log_User_GetLog_OneDay(Nullable<int> accountMapID, Nullable<System.DateTime> dateClock)
+        {
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var dateClockParameter = dateClock.HasValue ?
+                new ObjectParameter("DateClock", dateClock) :
+                new ObjectParameter("DateClock", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Timekeeper_log_User_GetLog_OneDay_Result>("Ins_Timekeeper_log_User_GetLog_OneDay", accountMapIDParameter, dateClockParameter);
         }
     }
 }

@@ -19,19 +19,19 @@ namespace BussinessObject.Bo.Shift
         public PayrollBo()
             : base(DaoFactory.Payroll)
         {
-            
+
         }
         public void ShiftAssignment_User_Create(Payroll_User_CreateMultiDayParameter parameter, DateTime dateFrom, DateTime dateTo)
         {
-            DaoFactory.Payroll.ShiftAssignment_User_Create(parameter, dateFrom , dateTo);
+            DaoFactory.Payroll.ShiftAssignment_User_Create(parameter, dateFrom, dateTo);
         }
 
         public List<Ins_Payroll_User_GetList_Result> Payroll_User_GetList(int assignmentUserID, int accountMapID, int brandId, DateTime dateFrom, DateTime dateTo)
         {
-            var data  = DaoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountMapID , brandId, dateFrom , dateTo);
-            if(assignmentUserID == 0)
+            var data = DaoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountMapID, brandId, dateFrom, dateTo);
+            if (assignmentUserID == 0)
             {
-                return data.Where(x => x.ShiftType == shift_type_enum.standard_working.Text()).ToList();
+                return data.Where(x => x.ShiftType == Shift_Type_Enum.standard_working.Text()).ToList();
             }
             else
             {
@@ -48,7 +48,7 @@ namespace BussinessObject.Bo.Shift
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
 
-
+            var currentDate = DateTime.Now;
             var dataShift = DaoFactory.Payroll.Shift_User_GetStatus_clock_in_out(accountMapID, dateFrom);
             var dataTimes = DaoFactory.Shift.GetTimes("");
             //if(dataShift == null || dataShift.Any() == false)
@@ -57,6 +57,7 @@ namespace BussinessObject.Bo.Shift
             //    response.Message = "Không có data ca";
             //    return response;
             //}
+            response.Data.ClockType = Clock_Type_Enum.clock_in.Text();
             response.Data.ClockSetting = new ClockSetting()
             {
                 ClockInOutRequirements = new List<string>() { "gps" },
@@ -68,6 +69,11 @@ namespace BussinessObject.Bo.Shift
 
             // kiểm tra ca hợp lệ
 
+            response.Data.CurrentEmployeeShift = new CurrentEmployeeShift()
+            {
+                Id = 999999999,
+                Name = "Ca Cá Nhân"
+            };
 
             var dataTimekeeper = DaoFactory.Payroll.Timekeeper_log_User_GetLog_OneDay(accountMapID, dateFrom);
             if (dataTimekeeper != null && dataTimekeeper.Any())
@@ -77,40 +83,50 @@ namespace BussinessObject.Bo.Shift
                 {
                     Id = currentTimekeeper.ID,
                     Time = currentTimekeeper.LogTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
-                    ClockType = currentTimekeeper.ClockType.ToEnum<clock_type_enum>().Text(),
-                    EmployeeShiftId = currentTimekeeper.EmployeeShiftID ?? 0
+                    ClockType = currentTimekeeper.ClockType.ToEnum<Clock_Type_Enum>().Text(),
+                    PayrollUserID = currentTimekeeper.PayrollUserID ?? 0
                 };
+                if (response.Data.TimekeeperLog.ClockType == Clock_Type_Enum.clock_in.Text())
+                {
+                    response.Data.CurrentEmployeeShift = new CurrentEmployeeShift()
+                    {
+                        Id = response.Data.TimekeeperLog.PayrollUserID,
+                        Name = dataShift.Any(x => x.AssignmentUserID == response.Data.TimekeeperLog.PayrollUserID) ?
+                                dataShift.FirstOrDefault(x => x.AssignmentUserID == response.Data.TimekeeperLog.PayrollUserID).ShiftName : "Ca cá nhân"
+                    };
+                }
             }
 
-            if (response.Data.TimekeeperLog != null 
-                && response.Data.TimekeeperLog.Id > 0 
-                && response.Data.TimekeeperLog.ClockType == clock_type_enum.clock_in.Text())
+            if (response.Data.TimekeeperLog != null
+                && response.Data.TimekeeperLog.Id > 0
+                && response.Data.TimekeeperLog.ClockType == Clock_Type_Enum.clock_in.Text())
             {
-                response.Data.ClockType = clock_type_enum.clock_out.Text();
+                response.Data.ClockType = Clock_Type_Enum.clock_out.Text();
             }
 
 
-            switch (response.Data.ClockType.ToEnum<clock_type_enum>())
+            switch (response.Data.ClockType.ToEnum<Clock_Type_Enum>())
             {
-                case clock_type_enum.clock_out: // nó muốn check out
+                case Clock_Type_Enum.clock_out: // nó muốn check out đã qua ca mới và chưa tới giờ vô // autocheck out
+                    //if (dataShift.Any(x => SetTime(dataTimes, dateFrom, x.chec ?? 0, x.EndCheckOutMinuteId ?? 0) < currentDate))
+                    //{
+
+                    //}
                     break;
-                case clock_type_enum.clock_in: // nó muốn check in
-                    SetTime(dataTimes, dateFrom, x.EndCheckOutHourId, x.EndCheckOutMinuteId)
-                        if (dataShift.Any(x=> new DateTime(dateFrom.Year, dateFrom.Month, dateFrom.Day, x.EndCheckOutHourId ?? 0 ,x.EndCheckOutMinuteId ?? 0,59) > dateFrom))
-                         {
-
-                        }
+                case Clock_Type_Enum.clock_in: // nó muốn check in -> thời gian hiện tại quá thời gian checkout -> ko hiện ca 
+                    if (dataShift.Any(x => SetTime(dataTimes, dateFrom, x.EndCheckOutHourId ?? 0, x.EndCheckOutMinuteId ?? 0) >= currentDate) == false)
+                    {
+                        response.Code = ResponseResultEnum.NoData.Value();
+                        response.Message = "Không có ca nào hợp lệ vui lòng chuyển qua ca cá nhân";
+                        return response;
+                    }
                     break;
                 default:
                     break;
             }
 
-            response.Data.ClockType = clock_type_enum.clock_in.Text();
-            response.Data.CurrentEmployeeShift = new CurrentEmployeeShift()
-            {
-                Id = "on_call",
-                Name = "Ca Cá Nhân"
-            };
+            response.Data.ClockType = Clock_Type_Enum.clock_in.Text();
+
 
             response.Data.EmployeeShifts = new List<EmployeeShift>() { };
 
@@ -118,9 +134,10 @@ namespace BussinessObject.Bo.Shift
             {
                 IsYesterday = x.WorkingDay.GetValueOrDefault().GetBeginOfDay() < dateFrom.GetBeginOfDay() ? 1 : 0,
                 IsEndNextDay = x.WorkingDay.GetValueOrDefault().GetBeginOfDay() <= dateFrom.GetBeginOfDay() ? 0 : 1,
-                IsReason = 1 ,
-                ClockInOut_Shift_Info = new Models.Shift.Shift() {
-                    Id = x.AssignmentUserID,
+                IsReason = 1,
+                ClockInOut_Shift_Info = new Models.Shift.ClockInOut_Shift()
+                {
+                    Id = x.PayrollUserID,
                     Name = x.ShiftName,
                     ShiftKey = x.ShiftKey,
                     ShiftId = x.ShiftId,
@@ -138,14 +155,109 @@ namespace BussinessObject.Bo.Shift
                     MealCoefficient = x.ShiftAssignmentMealCoefficient,
                     Timezone = x.Timezone,
                     IsOpenShift = x.IsOpenShift,
-                    CheckinType = x.CheckinType,
-                    CheckoutType = x.CheckoutType
+                    CheckinType = x.CheckinType != null && x.CheckinType  > 0? x.CheckinType.Value.ToEnum<TimeKeeper_Device_Enum>().Text() : null,
+                    CheckoutType = x.CheckoutType != null && x.CheckoutType > 0  ? x.CheckoutType.Value.ToEnum<TimeKeeper_Device_Enum>().Text() : null
                 }
             }).ToList();
             response.Code = ResponseResultEnum.Success.Value();
             response.Message = ResponseResultEnum.Success.Text();
             return response;
         }
+
+        public ApiResult<ClockInOutShiftResponse> ClockInOutShift(ClockInOutShiftRequest request, int accountMapID, int companyIdMap, DateTime dateFrom)
+        {
+            var response = new ApiResult<ClockInOutShiftResponse>()
+            {
+                Data = new ClockInOutShiftResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            var dataShift = DaoFactory.Payroll.Shift_User_GetStatus_clock_in_out(accountMapID, dateFrom);
+            var clock_shift = new Ins_Shift_User_GetStatus_clock_in_out_Result();
+            if (dataShift != null && dataShift.Any())
+            {
+                clock_shift = dataShift.FirstOrDefault(x => x.PayrollUserID == request.EmployeeShiftId);
+            }
+
+            if (clock_shift == null || clock_shift.AssignmentUserID == 0)
+            {
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = "Ca bạn chọn chưa vào ca hoặc không tồn tại";
+                return response;
+            }
+
+            var dataTimekeeper = DaoFactory.Payroll.Timekeeper_log_User_GetLog_OneDay(accountMapID, dateFrom);
+           
+
+            var logID = DaoFactory.Payroll.Timekeeper_log_User_Insert(new Timekeeper_log_User_Insert_parameter()
+            {
+                AccountMapID = accountMapID,
+                EmployeeShiftID = request.EmployeeShiftId ?? 0,
+                LogTime = dateFrom,
+                ClockType = request.ClockType.ToEnum<Clock_Type_Enum>().Value(),
+                CurrentBranchId = request.BranchId ?? 0,
+                ConnectionType = request.ConnectionType.ToEnum<Connection_Type_Enum>().Value(),
+                TimeKeeperDevice = request.TimekeeperDevice.ToEnum<TimeKeeper_Device_Enum>().Value(),
+                Bssid = request.Bssid,
+                Ssid = request.Ssid,
+                Latitude = request.Latitude ?? 0,
+                Longitude = request.Longitude ?? 0
+            });
+
+            if (logID > 0)
+            {
+                if (request.ClockType.ToEnum<Clock_Type_Enum>() == Clock_Type_Enum.clock_in)
+                {
+                    response.Data.NextClockType = Clock_Type_Enum.clock_out.Text();
+                }
+                else //(request.ClockType.ToEnum<Clock_Type_Enum>() == Clock_Type_Enum.clock_in)
+                {
+                    response.Data.NextClockType = Clock_Type_Enum.clock_out.Text();
+                }
+
+                response.Data.CurrentEmployeeShift = new ClockInOut_Shift()
+                {
+                    Id = clock_shift.AssignmentUserID,
+                    Name = clock_shift.ShiftName,
+                    ShiftKey = clock_shift.ShiftKey,
+                    ShiftId = clock_shift.ShiftId,
+                    ShiftType = clock_shift.ShiftType,
+                    StartTime = clock_shift.StartTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                    EndTime = clock_shift.EndTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                    WorkingHour = clock_shift.WorkingHour,
+                    WorkingDay = clock_shift.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                    WeekOfYear = clock_shift.WeekOfYear,
+                    BranchId = clock_shift.BranchID,
+                    UserId = accountMapID,
+                    IsConfirm = 1,
+                    IsOvertimeShift = clock_shift.IsOvertimeShift,
+                    ShopId = clock_shift.CompanyID ?? 0,
+                    MealCoefficient = clock_shift.ShiftAssignmentMealCoefficient,
+                    Timezone = clock_shift.Timezone,
+                    IsOpenShift = clock_shift.IsOpenShift,
+
+                    CheckinType = clock_shift.CheckinType != null && clock_shift.CheckinType > 0 ? clock_shift.CheckinType.Value.ToEnum<TimeKeeper_Device_Enum>().Text() : null,
+                    CheckoutType = clock_shift.CheckoutType != null && clock_shift.CheckoutType > 0 ? clock_shift.CheckoutType.Value.ToEnum<TimeKeeper_Device_Enum>().Text() : null,
+
+
+                    CheckoutLogId = request.ClockType.ToEnum<Clock_Type_Enum>() == Clock_Type_Enum.clock_in ? null : logID,
+                    CheckoutBranchId = request.ClockType.ToEnum<Clock_Type_Enum>() == Clock_Type_Enum.clock_in ? null : request.BranchId,
+                    CheckinLogId = request.ClockType.ToEnum<Clock_Type_Enum>() == Clock_Type_Enum.clock_out ? null : logID,
+                    CheckinBranchId = request.ClockType.ToEnum<Clock_Type_Enum>() == Clock_Type_Enum.clock_out ? null : request.BranchId
+                };
+
+                response.Data.TimekeeperLog = new TimekeeperLog()
+                {
+                    Id = logID.GetValueOrDefault(0),
+                    Time = dateFrom.ToString("yyyy-MM-dd HH:mm:ss"),
+                    ClockType = request.ClockType.ToEnum<Clock_Type_Enum>().Text(),                   
+                };
+            }
+
+            return response;
+        }
+
 
         /// <summary>
         /// Tạo một đối tượng DateTime mới từ ngày của đối tượng hiện tại và giờ, phút được chỉ định.
@@ -156,14 +268,15 @@ namespace BussinessObject.Bo.Shift
         /// <returns>Một đối tượng DateTime mới với ngày được giữ nguyên và thời gian được cập nhật.</returns>
         public DateTime SetTime(List<Ins_Time_GetList_Result> listTimes, DateTime date, int hourid, int minuteid)
         {
-            return new DateTime(
-                date.Year, 
-                date.Month, 
-                date.Day, 
-                listTimes.FirstOrDefault(x => x.ID == hourid && x.IsHour == 1).Value ?? 0 , 
-                listTimes.FirstOrDefault(x => x.ID == minuteid && x.IsHour == 0).Value ?? 0, 
+            var data = new DateTime(
+                date.Year,
+                date.Month,
+                date.Day,
+                listTimes.FirstOrDefault(x => x.ID == hourid && x.IsHour == 1).Value ?? 0,
+                listTimes.FirstOrDefault(x => x.ID == minuteid && x.IsHour == 0).Value ?? 0,
                 0
             );
+            return data;
         }
     }
 }

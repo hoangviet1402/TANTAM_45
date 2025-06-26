@@ -8,6 +8,7 @@ using MyUtility.Extensions;
 using System;
 using System.Linq;
 using BussinessObject.Helper;
+using MyUtility;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -535,6 +536,8 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Nhân viên không thuộc công ty được chỉ định.";
                     return response;
                 }
+
+                request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
 
                 // Update employee details
                 var result = DaoFactory.Employee.UpdateEmployeeDetails(

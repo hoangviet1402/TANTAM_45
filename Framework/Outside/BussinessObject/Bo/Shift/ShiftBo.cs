@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BussinessObject.Enum;
 using BussinessObject.Models.ApiResponse;
+using BussinessObject.Models.OpenShift;
 using BussinessObject.Models.Shift;
 using DataAccess;
 using DataAccess.Model.Shift;
@@ -488,7 +489,7 @@ namespace BussinessObject.Bo.Shift
                 {
                     DateTime dateFrom, dateTo;
                     
-                    if (shiftAssignmentParameter.GenerateTimekeepingType == generate_timekeeping_type_obj_enum.generate_from_start_of_month.Text())
+                    if (shiftAssignmentParameter.GenerateTimekeepingType == Generate_Timekeeping_Type_Obj_Enum.generate_from_start_of_month.Text())
                     {
                         DateTimeExtension.GetRangeByType(DateTime.Now, 1, out dateFrom, out dateTo);
                     }

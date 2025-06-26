@@ -267,10 +267,6 @@
           <Parameter Name="WorkingHour" Type="float" Mode="In" />
           <Parameter Name="WorkingDay" Type="datetime" Mode="In" />
           <Parameter Name="WeekOfYear" Type="int" Mode="In" />
-          <Parameter Name="CheckinTime" Type="datetime" Mode="In" />
-          <Parameter Name="CheckoutTime" Type="datetime" Mode="In" />
-          <Parameter Name="CheckinType" Type="nvarchar" Mode="In" />
-          <Parameter Name="CheckouType" Type="nvarchar" Mode="In" />
           <Parameter Name="RealWorkingHour" Type="float" Mode="In" />
           <Parameter Name="RealWorkingMinute" Type="float" Mode="In" />
           <Parameter Name="RestStartTimeShort" Type="nvarchar" Mode="In" />
@@ -294,8 +290,6 @@
           <Parameter Name="StartTime" Type="datetime" Mode="In" />
           <Parameter Name="EndTime" Type="datetime" Mode="In" />
           <Parameter Name="WeekOfYear" Type="int" Mode="In" />
-          <Parameter Name="CheckinType" Type="nvarchar" Mode="In" />
-          <Parameter Name="CheckouType" Type="nvarchar" Mode="In" />
           <Parameter Name="RealWorkingHour" Type="float" Mode="In" />
           <Parameter Name="RealWorkingMinute" Type="float" Mode="In" />
           <Parameter Name="RestStartTimeShort" Type="nvarchar" Mode="In" />
@@ -475,6 +469,20 @@
         <Function Name="Ins_Timekeeper_log_User_GetLog_OneDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="AccountMapID" Type="int" Mode="In" />
           <Parameter Name="DateClock" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Ins_Timekeeper_log_User_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountMapID" Type="int" Mode="In" />
+          <Parameter Name="PayrollUserID" Type="int" Mode="In" />
+          <Parameter Name="LogTime" Type="datetime" Mode="In" />
+          <Parameter Name="ClockType" Type="int" Mode="In" />
+          <Parameter Name="CurrentBranchId" Type="int" Mode="In" />
+          <Parameter Name="ConnectionType" Type="int" Mode="In" />
+          <Parameter Name="TimeKeeperDevice" Type="int" Mode="In" />
+          <Parameter Name="Bssid" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ssid" Type="nvarchar" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
+          <Parameter Name="Timekeeper_logID" Type="int" Mode="InOut" />
         </Function>
         <Function Name="Ins_User_ChangePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="user_id" Type="int" Mode="In" />
@@ -1032,26 +1040,6 @@
             <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
             <Parameter Name="DateTo" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="Ins_Payroll_User_Create">
-            <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
-            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
-            <Parameter Name="StartTime" Mode="In" Type="DateTime" />
-            <Parameter Name="EndTime" Mode="In" Type="DateTime" />
-            <Parameter Name="WorkingHour" Mode="In" Type="Double" />
-            <Parameter Name="WorkingDay" Mode="In" Type="DateTime" />
-            <Parameter Name="WeekOfYear" Mode="In" Type="Int32" />
-            <Parameter Name="CheckinTime" Mode="In" Type="DateTime" />
-            <Parameter Name="CheckoutTime" Mode="In" Type="DateTime" />
-            <Parameter Name="CheckinType" Mode="In" Type="String" />
-            <Parameter Name="CheckouType" Mode="In" Type="String" />
-            <Parameter Name="RealWorkingHour" Mode="In" Type="Double" />
-            <Parameter Name="RealWorkingMinute" Mode="In" Type="Double" />
-            <Parameter Name="RestStartTimeShort" Mode="In" Type="String" />
-            <Parameter Name="RestEndTimeShort" Mode="In" Type="String" />
-            <Parameter Name="RealCoefficient" Mode="In" Type="String" />
-            <Parameter Name="Status" Mode="In" Type="Int32" />
-            <Parameter Name="PayrollUserID" Mode="InOut" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="Ins_ShiftAssignment_ByCompanyID" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_ByCompanyID_Result)">
           <Parameter Name="CompanyID" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -1082,23 +1070,6 @@
             <Parameter Name="branch_ids" Mode="In" Type="String" />
             <Parameter Name="user_ids" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="Ins_Payroll_User_MultiDay">
-            <Parameter Name="AssignmentUserID" Mode="In" Type="Int32" />
-            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
-            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
-            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
-            <Parameter Name="StartTime" Mode="In" Type="DateTime" />
-            <Parameter Name="EndTime" Mode="In" Type="DateTime" />
-            <Parameter Name="WeekOfYear" Mode="In" Type="Int32" />
-            <Parameter Name="CheckinType" Mode="In" Type="String" />
-            <Parameter Name="CheckouType" Mode="In" Type="String" />
-            <Parameter Name="RealWorkingHour" Mode="In" Type="Double" />
-            <Parameter Name="RealWorkingMinute" Mode="In" Type="Double" />
-            <Parameter Name="RestStartTimeShort" Mode="In" Type="String" />
-            <Parameter Name="RestEndTimeShort" Mode="In" Type="String" />
-            <Parameter Name="RealCoefficient" Mode="In" Type="Double" />
-            <Parameter Name="Status" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="Ins_Company_GetInfor" ReturnType="Collection(TanTamModel.Ins_Company_GetInfor_Result)">
           <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -1108,6 +1079,22 @@
             <Parameter Name="FullName" Mode="In" Type="String" />
             <Parameter Name="IsUsePhone" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="Ins_Payroll_User_Create">
+            <Parameter Name="ShiftAssignmentID" Mode="In" Type="Int32" />
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="StartTime" Mode="In" Type="DateTime" />
+            <Parameter Name="EndTime" Mode="In" Type="DateTime" />
+            <Parameter Name="WorkingHour" Mode="In" Type="Double" />
+            <Parameter Name="WorkingDay" Mode="In" Type="DateTime" />
+            <Parameter Name="WeekOfYear" Mode="In" Type="Int32" />
+            <Parameter Name="RealWorkingHour" Mode="In" Type="Double" />
+            <Parameter Name="RealWorkingMinute" Mode="In" Type="Double" />
+            <Parameter Name="RestStartTimeShort" Mode="In" Type="String" />
+            <Parameter Name="RestEndTimeShort" Mode="In" Type="String" />
+            <Parameter Name="RealCoefficient" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="PayrollUserID" Mode="InOut" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="Ins_Payroll_User_GetList" ReturnType="Collection(TanTamModel.Ins_Payroll_User_GetList_Result)">
             <Parameter Name="AssignmentUserID" Mode="In" Type="Int32" />
             <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
@@ -1115,11 +1102,40 @@
             <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
             <Parameter Name="DateTo" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="Ins_Timekeeper_log_User_GetLog_OneDay" ReturnType="Collection(TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result)">
+          <FunctionImport Name="Ins_Payroll_User_MultiDay">
+            <Parameter Name="AssignmentUserID" Mode="In" Type="Int32" />
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="StartTime" Mode="In" Type="DateTime" />
+            <Parameter Name="EndTime" Mode="In" Type="DateTime" />
+            <Parameter Name="WeekOfYear" Mode="In" Type="Int32" />
+            <Parameter Name="RealWorkingHour" Mode="In" Type="Double" />
+            <Parameter Name="RealWorkingMinute" Mode="In" Type="Double" />
+            <Parameter Name="RestStartTimeShort" Mode="In" Type="String" />
+            <Parameter Name="RestEndTimeShort" Mode="In" Type="String" />
+            <Parameter Name="RealCoefficient" Mode="In" Type="Double" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Shift_User_GetStatus_clock_in_out" ReturnType="Collection(TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result)">
             <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
             <Parameter Name="DateClock" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="Ins_Shift_User_GetStatus_clock_in_out" ReturnType="Collection(TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result)">
+          <FunctionImport Name="Ins_Timekeeper_log_User_Insert">
+            <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
+            <Parameter Name="PayrollUserID" Mode="In" Type="Int32" />
+            <Parameter Name="LogTime" Mode="In" Type="DateTime" />
+            <Parameter Name="ClockType" Mode="In" Type="Int32" />
+            <Parameter Name="CurrentBranchId" Mode="In" Type="Int32" />
+            <Parameter Name="ConnectionType" Mode="In" Type="Int32" />
+            <Parameter Name="TimeKeeperDevice" Mode="In" Type="Int32" />
+            <Parameter Name="Bssid" Mode="In" Type="String" />
+            <Parameter Name="Ssid" Mode="In" Type="String" />
+            <Parameter Name="Latitude" Mode="In" Type="Double" />
+            <Parameter Name="Longitude" Mode="In" Type="Double" />
+            <Parameter Name="Timekeeper_logID" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Timekeeper_log_User_GetLog_OneDay" ReturnType="Collection(TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result)">
             <Parameter Name="AccountMapID" Mode="In" Type="Int32" />
             <Parameter Name="DateClock" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -1857,8 +1873,8 @@
           <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
           <Property Type="DateTime" Name="CheckinTime" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="CheckoutTime" Nullable="true" Precision="23" />
-          <Property Type="String" Name="CheckinType" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="CheckoutType" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CheckinType" Nullable="true" />
+          <Property Type="Int32" Name="CheckoutType" Nullable="true" />
           <Property Type="Double" Name="RealWorkingHour" Nullable="true" />
           <Property Type="Double" Name="RealWorkingMinute" Nullable="true" />
           <Property Type="String" Name="RestStartTimeShort" Nullable="true" MaxLength="100" />
@@ -1884,8 +1900,8 @@
           <Property Type="String" Name="Note" Nullable="true" />
           <Property Type="Int32" Name="EarlyCheckOut" Nullable="false" />
           <Property Type="Int32" Name="LatelyCheckIn" Nullable="false" />
-          <Property Type="Int32" Name="MaxLateCheckInOutMinute" Nullable="false" />
-          <Property Type="Int32" Name="MinSoonCheckInOutMinute" Nullable="false" />
+          <Property Type="Int32" Name="MaxLateCheckInOutMinute" Nullable="true" />
+          <Property Type="Int32" Name="MinSoonCheckInOutMinute" Nullable="true" />
           <Property Type="Int32" Name="ShiftStatus" Nullable="false" />
           <Property Type="String" Name="ShiftType" Nullable="false" MaxLength="100" />
           <Property Type="Int32" Name="ShiftSortIndex" Nullable="false" />
@@ -1894,13 +1910,6 @@
           <Property Type="String" Name="Timezone" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="NameNosign" Nullable="true" MaxLength="255" />
           <Property Type="Int32" Name="IsOpenShift" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="Ins_Timekeeper_log_User_GetLog_OneDay_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="DateTime" Name="LogTime" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="ClockType" Nullable="true" />
-          <Property Type="Int32" Name="EmployeeShiftID" Nullable="true" />
-          <Property Type="Int32" Name="EmployeeAccountMapID" Nullable="true" />
         </ComplexType>
         <ComplexType Name="Ins_Shift_User_GetStatus_clock_in_out_Result">
           <Property Type="Int32" Name="PayrollUserID" Nullable="false" />
@@ -1912,8 +1921,10 @@
           <Property Type="DateTime" Name="WorkingDay" Nullable="true" Precision="23" />
           <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
           <Property Type="Int32" Name="BranchID" Nullable="false" />
-          <Property Type="String" Name="CheckinType" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="CheckoutType" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="CheckinTime" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="CheckoutTime" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="CheckinType" Nullable="true" />
+          <Property Type="Int32" Name="CheckoutType" Nullable="true" />
           <Property Type="Double" Name="RealWorkingHour" Nullable="true" />
           <Property Type="Double" Name="RealWorkingMinute" Nullable="true" />
           <Property Type="String" Name="RestStartTimeShort" Nullable="true" MaxLength="100" />
@@ -1957,6 +1968,20 @@
           <Property Type="Int32" Name="StartCheckOutMinuteId" Nullable="true" />
           <Property Type="Int32" Name="EndCheckOutHourId" Nullable="true" />
           <Property Type="Int32" Name="EndCheckOutMinuteId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="LogTime" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ClockType" Nullable="true" />
+          <Property Type="Int32" Name="PayrollUserID" Nullable="true" />
+          <Property Type="Int32" Name="EmployeeAccountMapID" Nullable="true" />
+          <Property Type="Int32" Name="CurrentBranchId" Nullable="true" />
+          <Property Type="Int32" Name="ConnectionType" Nullable="true" />
+          <Property Type="Int32" Name="TimeKeeperDevice" Nullable="true" />
+          <Property Type="String" Name="Bssid" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Ssid" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Latitude" Nullable="true" />
+          <Property Type="Double" Name="Longitude" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2761,7 +2786,6 @@
           <FunctionImportMapping FunctionImportName="Ins_User_UpdateStatus" FunctionName="TanTamModel.Store.Ins_User_UpdateStatus" />
           <FunctionImportMapping FunctionImportName="Sel_CompanyBranch_GetIds" FunctionName="TanTamModel.Store.Sel_CompanyBranch_GetIds" />
           <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
-          <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create" />
           <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_ByCompanyID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_ByCompanyID">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_ByCompanyID_Result">
@@ -2821,7 +2845,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Ins_Payroll_User_MultiDay" FunctionName="TanTamModel.Store.Ins_Payroll_User_MultiDay" />
           <FunctionImportMapping FunctionImportName="Ins_Company_GetInfor" FunctionName="TanTamModel.Store.Ins_Company_GetInfor">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TanTamModel.Ins_Company_GetInfor_Result">
@@ -2854,6 +2877,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create" />
           <FunctionImportMapping FunctionImportName="Ins_Payroll_User_GetList" FunctionName="TanTamModel.Store.Ins_Payroll_User_GetList">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TanTamModel.Ins_Payroll_User_GetList_Result">
@@ -2907,17 +2931,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
-                <ScalarProperty Name="ClockType" ColumnName="ClockType" />
-                <ScalarProperty Name="EmployeeShiftID" ColumnName="EmployeeShiftID" />
-                <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Payroll_User_MultiDay" FunctionName="TanTamModel.Store.Ins_Payroll_User_MultiDay" />
           <FunctionImportMapping FunctionImportName="Ins_Shift_User_GetStatus_clock_in_out" FunctionName="TanTamModel.Store.Ins_Shift_User_GetStatus_clock_in_out">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result">
@@ -2930,6 +2944,8 @@
                 <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
                 <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
                 <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
+                <ScalarProperty Name="CheckoutTime" ColumnName="CheckoutTime" />
                 <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
                 <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
                 <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
@@ -2975,6 +2991,25 @@
                 <ScalarProperty Name="StartCheckOutMinuteId" ColumnName="StartCheckOutMinuteId" />
                 <ScalarProperty Name="EndCheckOutHourId" ColumnName="EndCheckOutHourId" />
                 <ScalarProperty Name="EndCheckOutMinuteId" ColumnName="EndCheckOutMinuteId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_Insert" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_Insert" />
+          <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="ClockType" ColumnName="ClockType" />
+                <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+                <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
+                <ScalarProperty Name="CurrentBranchId" ColumnName="CurrentBranchId" />
+                <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+                <ScalarProperty Name="TimeKeeperDevice" ColumnName="TimeKeeperDevice" />
+                <ScalarProperty Name="Bssid" ColumnName="Bssid" />
+                <ScalarProperty Name="Ssid" ColumnName="Ssid" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

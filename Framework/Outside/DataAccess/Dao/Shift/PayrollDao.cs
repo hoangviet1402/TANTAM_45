@@ -19,6 +19,7 @@ namespace DataAccess.Dao.Shift
         List<Ins_Payroll_User_GetList_Result> Payroll_User_GetList(int assignmentUserID, int accountMapID, int brandId, DateTime dateFrom, DateTime dateTo);
         List<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Timekeeper_log_User_GetLog_OneDay(int accountMapID, DateTime dateFrom);
         List<Ins_Shift_User_GetStatus_clock_in_out_Result> Shift_User_GetStatus_clock_in_out(int accountMapID, DateTime dateFrom);
+        int? Timekeeper_log_User_Insert(Timekeeper_log_User_Insert_parameter parameter);
     }
 
     internal class PayrollDao : DaoFactories<TanTamEntities, DBNull>, IPayrollDao
@@ -35,8 +36,6 @@ namespace DataAccess.Dao.Shift
                     parameter.StartTime, 
                     parameter.EndTime, 
                     parameter.WeekOfYear,
-                    parameter.CheckinType,
-                    parameter.CheckouType,
                     parameter.RealWorkingHour,
                     parameter.RealWorkingMinute,
                     parameter.RestStartTimeShort,
@@ -82,6 +81,35 @@ namespace DataAccess.Dao.Shift
                     accountMapID,
                     dateFrom
                 ).ToList();
+            }
+        }
+
+        public int? Timekeeper_log_User_Insert(Timekeeper_log_User_Insert_parameter parameter)
+        {
+            using (Uow)
+            {
+                var outResult = 0;
+
+                var out_OutResult = new ObjectParameter("Timekeeper_logID", typeof(int));
+
+                var data = Uow.Context.Ins_Timekeeper_log_User_Insert(
+                    parameter.AccountMapID,
+                    parameter.EmployeeShiftID,
+                    parameter.LogTime,
+                    parameter.ClockType,
+                    parameter.CurrentBranchId,
+                    parameter.ConnectionType,
+                    parameter.TimeKeeperDevice,
+                    parameter.Bssid,
+                    parameter.Ssid,
+                    parameter.Latitude,
+                    parameter.Longitude,
+                    out_OutResult
+                );
+
+                if (out_OutResult != null && out_OutResult.Value != null)
+                    int.TryParse(out_OutResult.Value.ToString(), out outResult);
+                return outResult;
             }
         }
     }

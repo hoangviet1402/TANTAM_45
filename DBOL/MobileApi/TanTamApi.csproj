@@ -313,9 +313,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>38474</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3991/</IISUrl>
+          <IISUrl>http://localhost:6991/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:3991/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:6991/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

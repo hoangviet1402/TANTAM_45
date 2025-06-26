@@ -16,7 +16,14 @@ namespace EntitiesObject.Entities.TanTamEntities
         public int ID { get; set; }
         public Nullable<System.DateTime> LogTime { get; set; }
         public Nullable<int> ClockType { get; set; }
-        public Nullable<int> EmployeeShiftID { get; set; }
+        public Nullable<int> PayrollUserID { get; set; }
         public Nullable<int> EmployeeAccountMapID { get; set; }
+        public Nullable<int> CurrentBranchId { get; set; }
+        public Nullable<int> ConnectionType { get; set; }
+        public Nullable<int> TimeKeeperDevice { get; set; }
+        public string Bssid { get; set; }
+        public string Ssid { get; set; }
+        public Nullable<double> Latitude { get; set; }
+        public Nullable<double> Longitude { get; set; }
     }
 }

@@ -450,40 +450,7 @@ namespace BussinessObject.Models.Shift
 
     #endregion
 
-    #region ClockInOutShift 
-    public class ClockInOutShiftRequest
-    {
-        [JsonProperty("branch_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int BranchId { get; set; }
 
-        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int UserId { get; set; }
-
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public int Id { get; set; }
-
-        [JsonProperty("working_day", NullValueHandling = NullValueHandling.Ignore)]
-        public string WorkingDay { get; set; }
-
-        [JsonProperty("bssid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Bssid { get; set; }
-
-        [JsonProperty("ssid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Ssid { get; set; }
-
-        [JsonProperty("connection_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ConnectionType { get; set; }
-
-        [JsonProperty("timekeeper_device", NullValueHandling = NullValueHandling.Ignore)]
-        public string TimekeeperDevice { get; set; }
-
-        [JsonProperty("employee_shift_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int EmployeeShiftId { get; set; }
-
-        [JsonProperty("clock_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ClockType { get; set; }
-    }
-    #endregion
 
     public class ListOpenShiftRequest
     {

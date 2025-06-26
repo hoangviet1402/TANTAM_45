@@ -23,8 +23,8 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<int> WeekOfYear { get; set; }
         public Nullable<System.DateTime> CheckinTime { get; set; }
         public Nullable<System.DateTime> CheckoutTime { get; set; }
-        public string CheckinType { get; set; }
-        public string CheckoutType { get; set; }
+        public Nullable<int> CheckinType { get; set; }
+        public Nullable<int> CheckoutType { get; set; }
         public Nullable<double> RealWorkingHour { get; set; }
         public Nullable<double> RealWorkingMinute { get; set; }
         public string RestStartTimeShort { get; set; }
@@ -50,8 +50,8 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string Note { get; set; }
         public int EarlyCheckOut { get; set; }
         public int LatelyCheckIn { get; set; }
-        public int MaxLateCheckInOutMinute { get; set; }
-        public int MinSoonCheckInOutMinute { get; set; }
+        public Nullable<int> MaxLateCheckInOutMinute { get; set; }
+        public Nullable<int> MinSoonCheckInOutMinute { get; set; }
         public int ShiftStatus { get; set; }
         public string ShiftType { get; set; }
         public int ShiftSortIndex { get; set; }
