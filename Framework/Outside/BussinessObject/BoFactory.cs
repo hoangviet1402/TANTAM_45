@@ -27,5 +27,6 @@ namespace BussinessObject
         public static ShiftBo Shift => new ShiftBo();
         public static PayrollBo Payroll => new PayrollBo();
         public static ShiftAssignmentBo ShiftAssignment => new ShiftAssignmentBo();
+        public static OpenShiftBo OpenShift => new OpenShiftBo();
     }
 }

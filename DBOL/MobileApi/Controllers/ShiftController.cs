@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -292,6 +293,30 @@ namespace TanTamApi.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("create-shift")]
+        public HttpResponseMessage CreateShift([FromBody] ShiftCreateAndAssignRequest request)
+        {
+            var response = new ApiResult<ShiftCreateAndAssignResponse>()
+            {
+                Data = new ShiftCreateAndAssignResponse(),
+                Code = ResponseResultEnum.Success.Value(),
+                Message = ResponseResultEnum.Success.Text()
+            };
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                response = BoFactory.Shift.ShiftCreateAndAssign(request, companyId, 0);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("shift CreateShiftAndAssignShift EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+        }
+
         [HttpGet, Route("list-employee-shift")]
         public HttpResponseMessage ListEmployeeShift(int assignmentUserID = 0)
         {
@@ -344,9 +369,7 @@ namespace TanTamApi.Controllers
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
                 var accountId = JwtHelper.GetAccountIdFromToken(Request);
                 var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
-
-
-                //response.Data = BoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountIdMap);
+                response.Data = BoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountIdMap);
             }
             catch (Exception ex)
             {
@@ -360,7 +383,7 @@ namespace TanTamApi.Controllers
 
         [JWT.Middleware.Authorize]
         [HttpGet, Route("status-clock-in-out-shift")]
-        public HttpResponseMessage StatusClockInOutShift()
+        public HttpResponseMessage StatusClockInOutShift(string timekeeper_device = "", int is_show_button = 0,bool isInitial = false)
         {
             var response = new ApiResult<StatusClockInOutShiftResponse>()
             {
@@ -370,117 +393,8 @@ namespace TanTamApi.Controllers
             };
             try
             {
-                #region demo
-                //string clock_type = is_show_button == 0 ? "clock_in" : "clock_out";
-                //string jsonString;
-                //if (clock_type == "clock_in")
-                //{
-                //    jsonString = $@"{{
-                //    ""clock_setting"": {{
-                //        ""clock_in_out_requirements"": [""gps""],
-                //        ""is_location_tracking"": 0,
-                //        ""distance"": 100,
-                //        ""debug"": false,
-                //        ""logLevel"": 5
-                //    }},
-                //    ""clock_type"": ""clock_out"",
-                //    ""current_employee_shift"": {{
-                //        ""id"": 1,
-                //        ""name"": ""ca2"",
-                //        ""shift_key"": ""CA2"",
-                //        ""shift_id"": 1,
-                //        ""shift_type"": ""hard"",
-                //        ""start_time"": ""2025-06-09 08:00:00"",
-                //        ""end_time"": ""2025-06-09 17:30:00"",
-                //        ""working_hour"": 9.5,
-                //        ""working_day"": ""2025-06-09 00:00:00"",
-                //        ""week_of_year"": 24,
-                //        ""branch_id"": 1,
-                //        ""user_id"": 30,
-                //        ""checkin_time"": null,
-                //        ""checkout_time"": ""2025-06-09 18:46:00"",
-                //        ""is_confirm"": 1,
-                //        ""is_overtime_shift"": 0,
-                //        ""shop_id"": 1,
-                //        ""meal_coefficient"": 0,
-                //        ""timezone"": ""Asia/Saigon"",
-                //        ""is_open_shift"": 0,
-                //        ""dynamic_user_id"": null,
-                //        ""checkin_type"": """",
-                //        ""checkout_type"": ""mobile"",
-                //        ""checkout_log_id"": 222,
-                //        ""checkout_branch_id"": 1,
-                //        ""is_reason"": 0,
-                //        ""reason_code"": """"
-                //    }},
-                //    ""employee_shifts"": [],
-                //    ""timekeeper_log"": {{
-                //        ""id"": 222,
-                //        ""time"": ""2025-06-09 18:46:41"",
-                //        ""clock_type"": ""clock_in"",
-                //        ""employee_shift_id"": 1
-                //    }}
-                //}}";
-                //}
-                //else
-                //{
-                //    jsonString = $@"{{
-                //    ""clock_setting"": {{
-                //        ""clock_in_out_requirements"": [""gps""],
-                //        ""is_location_tracking"": 0,
-                //        ""distance"": 100,
-                //        ""debug"": false,
-                //        ""logLevel"": 5
-                //    }},
-                //    ""clock_type"": ""clock_in"",
-                //    ""current_employee_shift"": {{
-                //        ""id"": 1,
-                //        ""name"": ""Ca Cá Nhân""
-                //    }},
-                //    ""employee_shifts"": [
-                //        {{
-                //            ""shift"": {{
-                //                ""id"": 1,
-                //                ""name"": ""ca2"",
-                //                ""shift_key"": ""CA2"",
-                //                ""shift_id"": 1,
-                //                ""shift_type"": ""hard"",
-                //                ""start_time"": ""2025-06-09 08:00:00"",
-                //                ""end_time"": ""2025-06-09 17:30:00"",
-                //                ""working_hour"": 9.5,
-                //                ""working_day"": ""2025-06-09 00:00:00"",
-                //                ""week_of_year"": 24,
-                //                ""branch_id"": 1,
-                //                ""user_id"": 30,
-                //                ""checkin_time"": null,
-                //                ""checkout_time"": null,
-                //                ""is_confirm"": 1,
-                //                ""is_overtime_shift"": 0,
-                //                ""shop_id"": 1,
-                //                ""meal_coefficient"": 0,
-                //                ""timezone"": ""Asia/Saigon"",
-                //                ""is_open_shift"": 0,
-                //                ""dynamic_user_id"": null,
-                //                ""checkin_type"": """",
-                //                ""checkout_type"": """"
-                //            }},
-                //            ""is_reason"": 0,
-                //            ""is_yesterday"": 0,
-                //            ""is_end_next_day"": 0
-                //        }}
-                //    ],
-                //    ""timekeeper_log"": {{
-                //        ""id"": 222,
-                //        ""time"": ""2025-05-29 14:19:08"",
-                //        ""clock_type"": ""clock_out"",
-                //        ""employee_shift_id"": 1
-                //    }}
-                //}}";
-                //}
-                #endregion
-                //response.Data = JsonConvert.DeserializeObject(jsonString);
                 var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
-                response = BoFactory.Payroll.StatusClockInOutShift(accountIdMap, DateTime.Now);
+                response = BoFactory.Payroll.StatusClockInOutShift(accountIdMap, DateTime.Now , timekeeper_device, is_show_button, isInitial);
             }
             catch (Exception ex)
             {
@@ -502,87 +416,6 @@ namespace TanTamApi.Controllers
             };
             try
             {
-                #region demo
-                //string clock_type = request.ClockType;
-                //string jsonString = "";
-                //if (clock_type == "clock_out")
-                //{
-                //    jsonString = @"{
-                //""next_clock_type"": ""clock_in"",
-                //""current_employee_shift"": {
-                //    ""id"": ""683412a08fb63932d90cd06b"",
-                //    ""name"": ""ca2"",
-                //    ""shift_key"": ""CA2"",
-                //    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
-                //    ""shift_type"": ""hard"",
-                //    ""start_time"": ""2025-06-09 08:00:00"",
-                //    ""end_time"": ""2025-06-09 17:30:00"",
-                //    ""working_hour"": 9.5,
-                //    ""working_day"": ""2025-06-09 00:00:00"",
-                //    ""week_of_year"": 24,
-                //    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
-                //    ""user_id"": ""682eefe1189d3q7Nz"",
-                //    ""checkin_time"": null,
-                //    ""checkout_time"": ""2025-06-09 18:46:00"",
-                //    ""is_confirm"": 1,
-                //    ""is_overtime_shift"": 0,
-                //    ""shop_id"": ""682eefe18cdcf28162021f37"",
-                //    ""meal_coefficient"": 0,
-                //    ""timezone"": ""Asia/Saigon"",
-                //    ""is_open_shift"": 0,
-                //    ""dynamic_user_id"": null,
-                //    ""checkin_type"": """",
-                //    ""checkout_type"": ""mobile"",
-                //    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
-                //    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
-                //},
-                //""timekeeper_log"": {
-                //    ""id"": ""6846c9a7fbb1987f350878f3"",
-                //    ""time"": ""2025-06-09 18:46:47"",
-                //    ""clock_type"": ""clock_out""
-                //}
-                //}";
-                //}
-                //else
-                //{
-                //    jsonString = @"{
-                //""next_clock_type"": ""clock_out"",
-                //""current_employee_shift"": {
-                //    ""id"": ""683412a08fb63932d90cd06b"",
-                //    ""name"": ""ca2"",
-                //    ""shift_key"": ""CA2"",
-                //    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
-                //    ""shift_type"": ""hard"",
-                //    ""start_time"": ""2025-06-09 08:00:00"",
-                //    ""end_time"": ""2025-06-09 17:30:00"",
-                //    ""working_hour"": 9.5,
-                //    ""working_day"": ""2025-06-09 00:00:00"",
-                //    ""week_of_year"": 24,
-                //    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
-                //    ""user_id"": ""682eefe1189d3q7Nz"",
-                //    ""checkin_time"": null,
-                //    ""checkout_time"": ""2025-06-09 18:46:00"",
-                //    ""is_confirm"": 1,
-                //    ""is_overtime_shift"": 0,
-                //    ""shop_id"": ""682eefe18cdcf28162021f37"",
-                //    ""meal_coefficient"": 0,
-                //    ""timezone"": ""Asia/Saigon"",
-                //    ""is_open_shift"": 0,
-                //    ""dynamic_user_id"": null,
-                //    ""checkin_type"": """",
-                //    ""checkout_type"": ""mobile"",
-                //    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
-                //    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
-                //},
-                //""timekeeper_log"": {
-                //    ""id"": ""6846c9a7fbb1987f350878f3"",
-                //    ""time"": ""2025-06-09 18:46:47"",
-                //    ""clock_type"": ""clock_in""
-                //}
-                //}";
-                //}
-
-                #endregion 
                 var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
                 var companyIdMap = JwtHelper.GetCompanyIdFromToken(Request);
                 response.Data = BoFactory.Payroll.ClockInOutShift(request, accountIdMap, companyIdMap,DateTime.Now);
@@ -596,9 +429,6 @@ namespace TanTamApi.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, response);
 
         }
-
-
-
 
         /// <summary>
         /// Get list of shift assignments with shift details
@@ -640,9 +470,9 @@ namespace TanTamApi.Controllers
         /// Get summary of employee shifts
         /// </summary>
         [TanTamApi.JWT.Middleware.Authorize]
-        [HttpGet]
+        [HttpPost]
         [Route("summary-employee-shift")]
-        public IHttpActionResult SummaryEmployeeShift()
+        public IHttpActionResult SummaryEmployeeShift([FromBody] EmployeeShiftSummaryRequest request)
         {
             try
             {
@@ -651,59 +481,29 @@ namespace TanTamApi.Controllers
 
                 if (companyId <= 0 || employeeId <= 0)
                 {
-                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<EmployeeShiftSummaryResponse>
                     {
                         Code = ResponseResultEnum.InvalidToken.Value(),
-                        Message = "Phiên đăng nhập không hợp lệ"
+                        Message = "Phiên đăng nhập không hợp lệ",
+                        Data = new EmployeeShiftSummaryResponse()
                     });
                 }
 
-                var result = BoFactory.Shift.GetEmployeeShiftSummary(companyId, employeeId);
+                // Set company_id from token if not provided in request
+                if (request == null) request = new EmployeeShiftSummaryRequest();
+                if (request.CompanyId <= 0) request.CompanyId = companyId;
+
+                var result = BoFactory.Shift.GetEmployeeShiftSummary(request, employeeId);
                 return Ok(result);
             }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error($"SummaryEmployeeShift Exception.", ex);
-                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<EmployeeShiftSummaryResponse>
                 {
                     Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
-                });
-            }
-        }
-
-        /// <summary>
-        /// Get list of open shifts
-        /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
-        [HttpGet]
-        [Route("list-open-shift")]
-        public IHttpActionResult ListOpenShift([FromUri] ListOpenShiftRequest request)
-        {
-            try
-            {
-                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
-                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
-
-                if (companyId <= 0 || employeeId <= 0)
-                {
-                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
-                    {
-                        Code = ResponseResultEnum.InvalidToken.Value(),
-                        Message = "Phiên đăng nhập không hợp lệ"
-                    });
-                }
-
-                var result = BoFactory.Shift.GetListOpenShift(companyId, employeeId, request);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                CommonLogger.DefaultLogger.Error($"ListOpenShift Exception.", ex);
-                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý.",
+                    Data = new EmployeeShiftSummaryResponse()
                 });
             }
         }

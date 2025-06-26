@@ -254,6 +254,44 @@
     <Parameter Name="Phone" Type="nvarchar" Mode="In" />
     <Parameter Name="PhoneCode" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="Ins_OpenShift_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ShiftId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="TotalEmployees" Type="int" Mode="In" />
+    <Parameter Name="WorkingDay" Type="date" Mode="In" />
+    <Parameter Name="IsDraft" Type="bit" Mode="In" />
+    <Parameter Name="CreatedBy" Type="int" Mode="In" />
+    <Parameter Name="BranchIds" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PositionIds" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="OpenShiftId" Type="int" Mode="InOut" />
+    <Parameter Name="IsReactivated" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="Ins_OpenShift_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OpenShiftId" Type="int" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="DeletedBy" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_OpenShift_GetCompleteDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OpenShiftId" Type="int" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_OpenShift_List" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Ins_OpenShift_Publish" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OpenShiftIds" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="PublishedBy" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_OpenShift_ShiftListByWorkingDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="Page" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+    <Parameter Name="WorkingDay" Type="datetime" Mode="In" />
+    <Parameter Name="IsAll" Type="int" Mode="In" />
+  </Function>
   <Function Name="Ins_Payroll_User_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ShiftAssignmentID" Type="int" Mode="In" />
     <Parameter Name="AccountMapID" Type="int" Mode="In" />
@@ -414,8 +452,55 @@
     <Parameter Name="WorkingDayFrom" Type="datetime" Mode="In" />
     <Parameter Name="WorkingDayTo" Type="datetime" Mode="In" />
   </Function>
+  <Function Name="Ins_ShiftAssignment_User_WorkingDay_CreateSingle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="ShiftId" Type="int" Mode="In" />
+    <Parameter Name="WorkingDay" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Ins_ShiftAssignment_User_WorkingDay_GetEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="EmployeeIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Ins_ShiftAssignment_User_WorkingDay_GetShifts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_ShiftAssignment_User_WorkingDay_GetSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="EmployeeIds" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Month" Type="int" Mode="In" />
+    <Parameter Name="Year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Add_Collaborators" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="task_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="user_ids" Type="nvarchar(max)" Mode="In" />
+  </Function>
   <Function Name="Ins_Task_CreatorInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="task_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Field_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="task_id" Type="int" Mode="In" />
+    <Parameter Name="title" Type="nvarchar" Mode="In" />
+    <Parameter Name="type" Type="nvarchar" Mode="In" />
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+    <Parameter Name="add_to_library" Type="bit" Mode="In" />
+    <Parameter Name="notify_on_change" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Field_Options_Bulk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="field_id" Type="int" Mode="In" />
+    <Parameter Name="options" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Get_CustomizedFields_And_Values_ByTask" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="task_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Get_Sub_Field_Value_ByTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="subtask_id" Type="int" Mode="In" />
+    <Parameter Name="title" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Get_Sub_Priority_Value" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="subtask_id" Type="int" Mode="In" />
+    <Parameter Name="field_id" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_Task_GetTaskGroupsByTaskId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="task_id" Type="int" Mode="In" />
@@ -439,8 +524,30 @@
     <Parameter Name="created_user_id" Type="int" Mode="In" />
     <Parameter Name="position" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="Ins_Task_Sub_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="subtask_id" Type="int" Mode="In" />
+  </Function>
   <Function Name="Ins_Task_Sub_ListByBundle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="BundleId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Sub_Update_Completed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="is_completed" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Sub_Update_Deadline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="deadline" Type="datetime" Mode="In" />
+    <Parameter Name="start_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Sub_Update_Title" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="title" Type="nvarchar" Mode="In" />
+    <Parameter Name="title_nosign" Type="varchar" Mode="In" />
+    <Parameter Name="alias" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Update_AssignedUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="task_id" Type="int" Mode="In" />
+    <Parameter Name="assigned_user" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_Task_UsersByTask" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="task_id" Type="int" Mode="In" />

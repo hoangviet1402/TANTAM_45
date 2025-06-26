@@ -116,6 +116,18 @@
     <Compile Include="Entities\TanTamEntities\Ins_Employee_GetShiftsInBranch_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_OpenShift_Delete_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_OpenShift_GetCompleteDetail_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_OpenShift_List_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_OpenShift_ShiftListByWorkingDay_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Payroll_User_GetList_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
@@ -129,6 +141,15 @@
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_Position_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_User_WorkingDay_GetEmployees_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Shift_Branch_Create_Result.cs">
@@ -155,7 +176,19 @@
     <Compile Include="Entities\TanTamEntities\Ins_Task_CreatorInfo_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Field_Create_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Field_Options_Bulk_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Task_GetTaskGroupsByTaskId_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Get_Sub_Field_Value_ByTitle_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Get_Sub_Priority_Value_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Task_Group_Create_Result.cs">
@@ -170,7 +203,22 @@
     <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_Create_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_Delete_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_ListByBundle_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_Update_Completed_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_Update_Deadline_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Sub_Update_Title_Result.cs">
+      <DependentUpon>TanTam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TanTamEntities\Ins_Task_Update_AssignedUser_Result.cs">
       <DependentUpon>TanTam.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TanTamEntities\Ins_Task_UsersByTask_Result.cs">

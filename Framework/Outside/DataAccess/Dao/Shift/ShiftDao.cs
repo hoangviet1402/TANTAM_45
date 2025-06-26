@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Data.Entity.Core.Objects;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.EF;
+﻿using DataAccess.EF;
 using DataAccess.Interface;
 using DataAccess.Model.Shift;
 using EntitiesObject.Entities.TanTamEntities;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
+using System.Linq;
 
-namespace DataAccess.Dao.Shift
+namespace DataAccess.Dao.TanTamDao
 {
     public interface IShiftDao : IBaseFactories<DBNull>
     {
@@ -18,6 +15,10 @@ namespace DataAccess.Dao.Shift
         int ShiftCreateInfo(Ins_Shift_Create_Parameter parameter);
         List<Ins_Shift_Branch_Create_Result> Shift_Branch_Create(Ins_Shift_Branch_Create_Parameter parameter);
         List<Ins_Shift_CreateTimeInOutConfig_Result> ShiftCreateTimeInOutConfig(Ins_Shift_Create_Parameter parameter);
+        int CreateShiftAssignmentUserWorkingDaySingle(int employeeId, int shiftId, DateTime workingDay);
+        List<Ins_ShiftAssignment_User_WorkingDay_GetEmployees_Result> GetEmployees(int companyId, string employeeIds);
+        List<Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result> GetShifts(int companyId);
+        List<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result> GetShiftAssignmentUserWorkingDaySummary(int companyId, DateTime? startDate, DateTime? endDate, string employeeIds, int? month, int? year);
     }
 
     internal class ShiftDao : DaoFactories<TanTamEntities, DBNull>, IShiftDao
@@ -106,5 +107,39 @@ namespace DataAccess.Dao.Shift
             }          
         }
 
+
+
+        public int CreateShiftAssignmentUserWorkingDaySingle(int employeeId, int shiftId, DateTime workingDay)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_ShiftAssignment_User_WorkingDay_CreateSingle(employeeId, shiftId, workingDay);
+                return result.FirstOrDefault() ?? 0;
+            }
+        }
+
+        public List<Ins_ShiftAssignment_User_WorkingDay_GetEmployees_Result> GetEmployees(int companyId, string employeeIds)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_ShiftAssignment_User_WorkingDay_GetEmployees(companyId, employeeIds).ToList();
+            }
+        }
+
+        public List<Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result> GetShifts(int companyId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_ShiftAssignment_User_WorkingDay_GetShifts(companyId).ToList();
+            }
+        }
+
+        public List<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result> GetShiftAssignmentUserWorkingDaySummary(int companyId, DateTime? startDate, DateTime? endDate, string employeeIds, int? month, int? year)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_ShiftAssignment_User_WorkingDay_GetSummary(companyId, startDate, endDate, employeeIds, month, year).ToList();
+            }
+        }
     }
 }

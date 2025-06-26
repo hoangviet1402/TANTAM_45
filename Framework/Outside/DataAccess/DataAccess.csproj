@@ -71,6 +71,7 @@
     <Compile Include="Dao\TanTam\CompanyDao.cs" />
     <Compile Include="Dao\TanTam\DepartmentDao.cs" />
     <Compile Include="Dao\TanTam\EmployeeDao.cs" />
+    <Compile Include="Dao\TanTam\OpenShiftDao.cs" />
     <Compile Include="Dao\TanTam\PositionDao.cs" />
     <Compile Include="Dao\TanTam\TaskDao.cs" />
     <Compile Include="Dao\TanTam\TanTamDao.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Entities\ShiftEntities.cs" />
     <Compile Include="Extension\ContextExtension.cs" />
     <Compile Include="Interface\IBaseDao.cs" />
+    <Compile Include="Model\OpenShift\OpenShiftModels.cs" />
     <Compile Include="Model\Shift\Ins_ShiftAssignment_Branch_Create.cs" />
     <Compile Include="Model\Shift\Ins_ShiftAssignment_CreateAssignment.cs" />
     <Compile Include="Model\Shift\Ins_ShiftAssignment_Creater.cs" />

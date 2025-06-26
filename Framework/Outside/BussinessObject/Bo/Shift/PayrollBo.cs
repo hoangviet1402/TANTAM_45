@@ -39,7 +39,7 @@ namespace BussinessObject.Bo.Shift
             }
         }
 
-        public ApiResult<StatusClockInOutShiftResponse> StatusClockInOutShift(int accountMapID, DateTime dateFrom)
+        public ApiResult<StatusClockInOutShiftResponse> StatusClockInOutShift(int accountMapID, DateTime dateFrom, string timekeeper_device = "", int is_show_button = 0, bool isInitial = false)
         {
             var response = new ApiResult<StatusClockInOutShiftResponse>()
             {
@@ -51,12 +51,6 @@ namespace BussinessObject.Bo.Shift
             var currentDate = DateTime.Now;
             var dataShift = DaoFactory.Payroll.Shift_User_GetStatus_clock_in_out(accountMapID, dateFrom);
             var dataTimes = DaoFactory.Shift.GetTimes("");
-            //if(dataShift == null || dataShift.Any() == false)
-            //{
-            //    response.Code = ResponseResultEnum.NoData.Value();
-            //    response.Message = "Không có data ca";
-            //    return response;
-            //}
             response.Data.ClockType = Clock_Type_Enum.clock_in.Text();
             response.Data.ClockSetting = new ClockSetting()
             {
@@ -127,6 +121,51 @@ namespace BussinessObject.Bo.Shift
 
             response.Data.ClockType = Clock_Type_Enum.clock_in.Text();
 
+            if(isInitial == true && accountMapID > 0)
+            {
+                #region tạo ca làm việc cho nhân viên hiện tại
+                foreach (var dataShiftItem in dataShift.Where(x => string.IsNullOrEmpty(x.GenerateTimekeepingType) == false && x.ShiftType == Shift_Type_Enum.standard_working.Text()).ToList())
+                {
+                    //var assignment_user_id = DaoFactory.ShiftAssignment.ShiftAssignment_User_Create(dataShiftItem.ShiftAssignmentId, accountMapID);
+                    if (dataShiftItem.AssignmentUserID > 0)
+                    {
+                        DateTime dateTo;
+
+                        if (dataShiftItem.GenerateTimekeepingType == Generate_Timekeeping_Type_Obj_Enum.generate_from_start_of_month.Text())
+                        {
+                            DateTimeExtension.GetRangeByType(DateTime.Now, 1, out dateFrom, out dateTo);
+                        }
+                        else
+                        {
+                            DateTimeExtension.GetRangeByType(DateTime.Now, 2, out dateFrom, out dateTo);
+                        }
+
+                        dateFrom = DateTime.Now.GetBeginOfDay();
+
+                        DaoFactory.Payroll.ShiftAssignment_User_Create(new Payroll_User_CreateMultiDayParameter()
+                        {
+                            AccountMapID = accountMapID,
+                            AssignmentUserID = dataShiftItem.AssignmentUserID,
+                            CheckinType = "",
+                            CheckouType = "",
+                            EndTime = dataShiftItem.EndTime,
+                            StartTime = dataShiftItem.StartTime,
+
+                            RealCoefficient = 0,
+                            RealWorkingHour = 0,
+                            RealWorkingMinute = 0,
+                            RestEndTimeShort = "",
+                            RestStartTimeShort = "",
+                            Status = 0,
+                            WeekOfYear = DateTime.Now.GetWeekNumber()
+                        },
+                            dateFrom, dateTo
+                        );
+                    }
+                }
+
+                #endregion
+            }
 
             response.Data.EmployeeShifts = new List<EmployeeShift>() { };
 
@@ -188,8 +227,6 @@ namespace BussinessObject.Bo.Shift
             }
 
             var dataTimekeeper = DaoFactory.Payroll.Timekeeper_log_User_GetLog_OneDay(accountMapID, dateFrom);
-           
-
             var logID = DaoFactory.Payroll.Timekeeper_log_User_Insert(new Timekeeper_log_User_Insert_parameter()
             {
                 AccountMapID = accountMapID,

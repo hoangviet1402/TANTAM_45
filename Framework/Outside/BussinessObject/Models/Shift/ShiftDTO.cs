@@ -450,14 +450,52 @@ namespace BussinessObject.Models.Shift
 
     #endregion
 
-
-
-    public class ListOpenShiftRequest
+    #region EmployeeShiftSummary
+    /// <summary>
+    /// Request model for Employee Shift Summary API
+    /// </summary>
+    public class EmployeeShiftSummaryRequest
     {
-        [JsonProperty("startdate")]
+        [JsonProperty("company_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int CompanyId { get; set; }
+
+        [JsonProperty("month", NullValueHandling = NullValueHandling.Ignore)]
+        public int Month { get; set; }
+
+        [JsonProperty("year", NullValueHandling = NullValueHandling.Ignore)]
+        public int Year { get; set; }
+
+        [JsonProperty("is_shift", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsShift { get; set; }
+
+        [JsonProperty("is_status_shift", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsStatusShift { get; set; }
+
+        [JsonProperty("is_quit", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsQuit { get; set; }
+
+        [JsonProperty("is_no_need_timekeeping", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsNoNeedTimekeeping { get; set; }
+
+        [JsonProperty("task_status_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public int TaskStatusFilter { get; set; }
+
+        [JsonProperty("start_date", NullValueHandling = NullValueHandling.Ignore)]
         public string StartDate { get; set; }
 
-        [JsonProperty("enddate")]
+        [JsonProperty("end_date", NullValueHandling = NullValueHandling.Ignore)]
         public string EndDate { get; set; }
+
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int Limit { get; set; }
+
+        [JsonProperty("employee_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EmployeeIds { get; set; }
+
+        public EmployeeShiftSummaryRequest()
+        {
+            EmployeeIds = new List<string>();
+        }
     }
+    #endregion
 }

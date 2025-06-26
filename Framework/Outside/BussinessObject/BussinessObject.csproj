@@ -89,6 +89,7 @@
     <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
     <Compile Include="Bo\TanTamBo\DepartmentBo.cs" />
     <Compile Include="Bo\TanTamBo\EmployeeBo.cs" />
+    <Compile Include="Bo\TanTamBo\OpenShiftBo.cs" />
     <Compile Include="Bo\TanTamBo\PositionBo.cs" />
     <Compile Include="Bo\TanTamBo\TaskBo.cs" />
     <Compile Include="Bo\TanTamBo\TanTamBo.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Models\Company\PositionDTO.cs" />
     <Compile Include="Models\Company\UpdateInfoWhenSinup.cs" />
     <Compile Include="Models\MyConfigModel.cs" />
+    <Compile Include="Models\OpenShift\OpenShiftDto.cs" />
     <Compile Include="Models\ResourceEnum\Model\MyResourceDetailModel.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceAccountManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceCommonManagement.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="Models\ResourceEnum\MyResourceTransferGoldManagement.cs" />
     <Compile Include="Models\Employee\EmployeeDto.cs" />
     <Compile Include="Models\Employee\EmployeeRequestDto.cs" />
+    <Compile Include="Models\Shift\EmployeeShiftSummaryModels.cs" />
     <Compile Include="Models\Shift\ShiftAssignmentDTO.cs" />
     <Compile Include="Models\Shift\ShiftDTO.cs" />
     <Compile Include="Models\Shift\ShiftRequest.cs" />
@@ -161,6 +164,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Service\ShiftService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\DBOL\MyConfig\MyConfig.csproj">

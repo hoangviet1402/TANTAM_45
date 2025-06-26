@@ -394,4 +394,117 @@ namespace TanTamApi.Models.Request
         [JsonProperty("remove_existing")]
         public bool RemoveExisting { get; set; } = false;
     }
+
+    /// <summary>
+    /// Request check done sub-task
+    /// </summary>
+    public class CheckDoneSubTaskRequestModel : ApiBaseRequest
+    {
+        [Required(ErrorMessage = "ID sub-task không được để trống")]
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "Trạng thái hoàn thành không được để trống")]
+        [JsonProperty("is_completed")]
+        public bool IsCompleted { get; set; }
+    }
+
+    /// <summary>
+    /// Request tạo sub-task (moved from file riêng)
+    /// </summary>
+    public class CreateSubTaskRequestModel
+    {
+        [JsonProperty("bundle_id")]
+        public int BundleId { get; set; }
+
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
+        [JsonProperty("created_user_id")]
+        public int? CreatedUserId { get; set; }
+
+        [JsonProperty("position")]
+        public string Position { get; set; }
+    }
+
+    /// <summary>
+    /// Request cập nhật deadline của sub-task (moved from file riêng)
+    /// </summary>
+    public class UpdateSubTaskDeadlineRequestModel
+    {
+        [Required(ErrorMessage = "ID sub-task không được để trống")]
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("deadline")]
+        public DateTime? Deadline { get; set; }
+
+        [JsonProperty("start_date")]
+        public DateTime? StartDate { get; set; }
+    }
+
+    /// <summary>
+    /// Request cập nhật assigned_user cho task (moved from file riêng)
+    /// </summary>
+    public class UpdateTaskAssignedUserRequestModel
+    {
+        [Required(ErrorMessage = "ID task không được để trống")]
+        [JsonProperty("task_id")]
+        public int TaskId { get; set; }
+
+        [JsonProperty("assigned_user")]
+        public int? AssignedUser { get; set; }
+    }
+
+    /// <summary>
+    /// Request tạo task field với options
+    /// </summary>
+    public class TaskFieldOptionRequest
+    {
+        [JsonProperty("title")]
+        public string Title { get; set; }
+        [JsonProperty("color")]
+        public string Color { get; set; }
+        [JsonProperty("sort_index")]
+        public int SortIndex { get; set; }
+    }
+
+    public class CreateTaskFieldRequest
+    {
+        [Required(ErrorMessage = "ID task không được để trống")]
+        [JsonProperty("task_id")]
+        public int TaskId { get; set; }
+
+        [Required(ErrorMessage = "Tên thuộc tính không được để trống")]
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
+        [Required(ErrorMessage = "Loại thuộc tính không được để trống")]
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("add_to_library")]
+        public bool? AddToLibrary { get; set; }
+
+        [JsonProperty("notify_on_change")]
+        public bool? NotifyOnChange { get; set; }
+
+        [JsonProperty("options")]
+        public List<TaskFieldOptionRequest> Options { get; set; }
+    }
+
+    /// <summary>
+    /// Request cập nhật tiêu đề sub-task
+    /// </summary>
+    public class UpdateSubTaskTitleRequestModel
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("title")]
+        public string Title { get; set; }
+    }
 } 

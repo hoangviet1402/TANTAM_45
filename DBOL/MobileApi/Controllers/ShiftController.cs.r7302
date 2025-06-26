@@ -1,0 +1,711 @@
+﻿using System;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using BussinessObject;
+using BussinessObject.Enum;
+using BussinessObject.Models.ApiResponse;
+using BussinessObject.Models.Company;
+using BussinessObject.Models.Shift;
+using Logger;
+using MyUtility;
+using MyUtility.Extensions;
+using Newtonsoft.Json;
+using ServiceStack.Templates;
+using TanTamApi.JWT.Helper;
+
+namespace TanTamApi.Controllers
+{
+    [RoutePrefix("api/shift")]
+    public class ShiftController : ApiController
+    {
+        [HttpPost, Route("times-get")]
+        public HttpResponseMessage GetTimes([FromBody] GetTimesRequest request)
+        {
+            var response = new ApiResult<TimesResponse>()
+            {
+                Data = new TimesResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+            try
+            {
+                response = BoFactory.Shift.GetTimes(request.Lang ?? "vi");
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("shift GetTimes EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+
+        }
+
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("create-shift-and-assign-shift")]
+        public HttpResponseMessage CreateShiftAndAssignShift([FromBody] ShiftCreateAndAssignRequest request)
+        {
+            var response = new ApiResult<ShiftCreateAndAssignResponse>()
+            {
+                Data = new ShiftCreateAndAssignResponse(),
+                Code = ResponseResultEnum.Success.Value(),
+                Message = ResponseResultEnum.Success.Text()
+            };
+            try
+            {
+                #region demo
+                //    var jsonString = @"{
+                //    ""id"": 1,
+                //    ""title"": ""Ca hành chính"",
+                //    ""type"": ""shift_assignment"",
+                //    ""assignment_type"": ""weekly_loop"",
+                //    ""auto_approve"": 1,
+                //    ""approver_id"": null,
+                //    ""department_ids"": null,
+                //    ""user_ids"": null,
+                //    ""position_ids"": null,
+                //    ""assignments"": [
+                //        1,
+                //        1,
+                //        1,
+                //        null,
+                //        1,
+                //        1,
+                //        null
+                //    ],
+                //    ""branch_ids"": [
+                //        2,
+                //        3
+                //    ],
+                //    ""payroll_config_type"": null,
+                //    ""sort_index"": 0,
+                //    ""meal_coefficient"": 0,
+                //    ""branches"": [
+                //        {
+                //            ""value"": 2,
+                //            ""label"": ""Chi nhánh 2""
+                //        },
+                //        {
+                //            ""value"": 3,
+                //            ""label"": ""Chi nhánh 1""
+                //        }
+                //    ],
+                //    ""assignment_objs"": [
+                //        {
+                //            ""key"": 1,
+                //            ""label"": ""Ca hành chính""
+                //        },
+                //        {
+                //            ""key"": 1,
+                //            ""label"": ""Ca hành chính""
+                //        },
+                //        {
+                //            ""key"": 1,
+                //            ""label"": ""Ca hành chính""
+                //        },
+                //        null,
+                //        {
+                //            ""key"": 1,
+                //            ""label"": ""Ca hành chính""
+                //        },
+                //        {
+                //            ""key"": 1,
+                //            ""label"": ""Ca hành chính""
+                //        },
+                //        null
+                //    ],
+                //    ""generate_timekeeping_type_obj"": {
+                //        ""label"": ""Tháng này"",
+                //        ""key"": ""generate_from_start_of_month""
+                //    },
+                //    ""assignment_type_obj"": {
+                //        ""label"": ""Lặp theo tuần"",
+                //        ""key"": ""weekly_loop""
+                //    },
+                //    ""shift"": {
+                //        ""id"": 1,
+                //        ""name"": ""Ca hành chính"",
+                //        ""name_nosign"": ""Ca hanh chinh"",
+                //        ""shift_key"": ""CA_HANH_CHINH"",
+                //        ""shift_type_obj"": {
+                //            ""id"": 4,
+                //            ""name"": ""Ca làm việc cố định"",
+                //            ""value"": ""standard_working"",
+                //            ""type"": ""shift_type""
+                //        },
+                //        ""shift_type_id"": 4,
+                //        ""start_hour_obj"": {
+                //            ""id"": 5,
+                //            ""name"": ""09 giờ"",
+                //            ""value"": ""9"",
+                //            ""type"": ""hour_working""
+                //        },
+                //        ""start_hour_id"": 5,
+                //        ""start_minute_obj"": {
+                //            ""id"": 6,
+                //            ""name"": ""00 phút"",
+                //            ""value"": ""0"",
+                //            ""type"": ""minute_working""
+                //        },
+                //        ""start_minute_id"": 6,
+                //        ""end_hour_obj"": {
+                //            ""id"": 7,
+                //            ""name"": ""17 giờ"",
+                //            ""value"": ""17"",
+                //            ""type"": ""hour_working""
+                //        },
+                //        ""end_hour_id"": 7,
+                //        ""end_minute_obj"": {
+                //            ""id"": 8,
+                //            ""name"": ""30 phút"",
+                //            ""value"": ""30"",
+                //            ""type"": ""minute_working""
+                //        },
+                //        ""end_minute_id"": 8,
+                //        ""coefficient"": 1,
+                //        ""shop_obj"": {
+                //            ""id"": 9,
+                //            ""name"": ""111111aaaa""
+                //        },
+                //        ""shop_id"": 9,
+                //        ""note"": """",
+                //        ""start_check_in_hour_obj"": {
+                //            ""id"": 10,
+                //            ""name"": ""07 giờ"",
+                //            ""value"": ""7"",
+                //            ""type"": ""hour_working""
+                //        },
+                //        ""start_check_in_hour_id"": 10,
+                //        ""start_check_in_minute_obj"": {
+                //            ""id"": 6,
+                //            ""name"": ""00 phút"",
+                //            ""value"": ""0"",
+                //            ""type"": ""minute_working""
+                //        },
+                //        ""start_check_in_minute_id"": 6,
+                //        ""end_check_in_hour_obj"": {
+                //            ""id"":11,
+                //            ""name"": ""11 giờ"",
+                //            ""value"": ""11"",
+                //            ""type"": ""hour_working""
+                //        },
+                //        ""end_check_in_hour_id"":11,
+                //        ""end_check_in_minute_obj"": {
+                //            ""id"": 6,
+                //            ""name"": ""00 phút"",
+                //            ""value"": ""0"",
+                //            ""type"": ""minute_working""
+                //        },
+                //        ""end_check_in_minute_id"": 6,
+                //        ""start_check_out_hour_obj"": {
+                //            ""id"": 12,
+                //            ""name"": ""15 giờ"",
+                //            ""value"": ""15"",
+                //            ""type"": ""hour_working""
+                //        },
+                //        ""start_check_out_hour_id"": 12,
+                //        ""start_check_out_minute_obj"": {
+                //            ""id"": 8,
+                //            ""name"": ""30 phút"",
+                //            ""value"": ""30"",
+                //            ""type"": ""minute_working""
+                //        },
+                //        ""start_check_out_minute_id"": 8,
+                //        ""end_check_out_hour_obj"": {
+                //            ""id"": 13,
+                //            ""name"": ""19 giờ"",
+                //            ""value"": ""19"",
+                //            ""type"": ""hour_working""
+                //        },
+                //        ""end_check_out_hour_id"": 13,
+                //        ""end_check_out_minute_obj"": {
+                //            ""id"": 8,
+                //            ""name"": ""30 phút"",
+                //            ""value"": ""30"",
+                //            ""type"": ""minute_working""
+                //        },
+                //        ""end_check_out_minute_id"": 8,
+                //        ""early_check_out"": 0,
+                //        ""max_late_check_in_out_minute"": 0,
+                //        ""min_soon_check_in_out_minute"": 0,
+                //        ""lately_check_in"": 0,
+                //        ""status"": 1,
+                //        ""type"": ""shift_working"",
+                //        ""rest_start_hour_id"": """",
+                //        ""rest_start_minute_id"": """",
+                //        ""rest_end_minute_id"": """",
+                //        ""working_hour"": 8.5,
+                //        ""branch_ids"": [
+                //            {
+                //                ""branch_id_obj"": {
+                //                    ""id"": 2,
+                //                    ""name"": ""Chi nhánh 2"",
+                //                    ""color"": null
+                //                },
+                //                ""index"": 0
+                //            },
+                //            {
+                //                ""branch_id_obj"": {
+                //                    ""id"": 3,
+                //                    ""name"": ""Chi nhánh 1"",
+                //                    ""color"": null
+                //                },
+                //                ""index"": 1
+                //            }
+                //        ],
+                //        ""sort_index"": 0,
+                //        ""rest_end_hour_id"": """",
+                //        ""start_time"": ""2025-06-08 09:00:00"",
+                //        ""end_time"": ""2025-06-08 17:30:00"",
+                //        ""start_check_in_time"": ""2025-06-08 07:00:00"",
+                //        ""end_check_in_time"": ""2025-06-08 11:00:00"",
+                //        ""start_check_out_time"": ""2025-06-08 15:30:00"",
+                //        ""end_check_out_time"": ""2025-06-08 19:30:00"",
+                //        ""rest_start_time"": ""2025-06-08 00:00:00"",
+                //        ""rest_end_time"": ""2025-06-08 00:00:00"",
+                //        ""is_overtime_shift"": null,
+                //        ""meal_coefficient"": 0,
+                //        ""list_enable_clock"": null,
+                //        ""timekeeping_config_in"": null,
+                //        ""timekeeping_config_out"": null,
+                //        ""symbol"": null,
+                //        ""minimum_workinghour"": 0,
+                //        ""color"": null,
+                //        ""meal_type_id"": null,
+                //        ""break_times"": null,
+                //        ""timezone"": ""Asia/Bangkok""
+                //    }
+                //}";
+                //    response.Data = JsonConvert.DeserializeObject(jsonString);
+                #endregion
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var accountMapID = JwtHelper.GetAccountMapIDFromToken(Request);
+                response = BoFactory.Shift.ShiftCreateAndAssign(request, companyId , accountMapID);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("shift CreateShiftAndAssignShift EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+        }
+
+        [HttpGet, Route("list-employee-shift")]
+        public HttpResponseMessage ListEmployeeShift(int assignmentUserID = 0)
+        {
+            var response = new ApiResult<object>()
+            {
+                Code = ResponseResultEnum.Success.Value(),
+                Message = ResponseResultEnum.Success.Text()
+            };
+            try
+            {
+                #region demo
+                //    var jsonString = @"[
+                //    {
+                //        ""id"": 6,
+                //        ""name"": ""Ca hành chính"",
+                //        ""shift_key"": ""CA_HANH_CHINH"",
+                //        ""shift_id"": 5,
+                //        ""shift_type"": ""hard"",
+                //        ""start_time"": ""2025-06-09 09:00:00"",
+                //        ""end_time"": ""2025-06-09 17:30:00"",
+                //        ""working_hour"": 8.5,
+                //        ""working_day"": ""2025-06-09 00:00:00"",
+                //        ""week_of_year"": 24,
+                //        ""branch_id"": 3,
+                //        ""user_id"": 2,
+                //        ""checkin_time"": null,
+                //        ""checkout_time"": null,
+                //        ""is_confirm"": 1,
+                //        ""is_overtime_shift"": 0,
+                //        ""shop_id"": 4,
+                //        ""meal_coefficient"": 0,
+                //        ""timezone"": ""Asia/Bangkok"",
+                //        ""is_open_shift"": 0,
+                //        ""dynamic_user_id"": null,
+                //        ""checkin_type"": """",
+                //        ""checkout_type"": """",
+                //        ""employees"": [
+                //            {
+                //                ""username"": ""+84111111121"",
+                //                ""name"": ""111111121"",
+                //                ""user_id"": 2
+                //            }
+                //        ],
+                //        ""clock_status"": ""clock_in"",
+                //        ""is_active"": true,
+                //        ""locations"": []
+                //    }
+                //]"; JsonConvert.DeserializeObject(jsonString);
+                #endregion
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var accountId = JwtHelper.GetAccountIdFromToken(Request);
+                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
+
+
+                //response.Data = BoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountIdMap);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("shift ListEmployeeShift EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+
+        }
+
+        [JWT.Middleware.Authorize]
+        [HttpGet, Route("status-clock-in-out-shift")]
+        public HttpResponseMessage StatusClockInOutShift()
+        {
+            var response = new ApiResult<StatusClockInOutShiftResponse>()
+            {
+                Data = new StatusClockInOutShiftResponse(),
+                Code = ResponseResultEnum.Success.Value(),
+                Message = ResponseResultEnum.Success.Text()
+            };
+            try
+            {
+                #region demo
+                //string clock_type = is_show_button == 0 ? "clock_in" : "clock_out";
+                //string jsonString;
+                //if (clock_type == "clock_in")
+                //{
+                //    jsonString = $@"{{
+                //    ""clock_setting"": {{
+                //        ""clock_in_out_requirements"": [""gps""],
+                //        ""is_location_tracking"": 0,
+                //        ""distance"": 100,
+                //        ""debug"": false,
+                //        ""logLevel"": 5
+                //    }},
+                //    ""clock_type"": ""clock_out"",
+                //    ""current_employee_shift"": {{
+                //        ""id"": 1,
+                //        ""name"": ""ca2"",
+                //        ""shift_key"": ""CA2"",
+                //        ""shift_id"": 1,
+                //        ""shift_type"": ""hard"",
+                //        ""start_time"": ""2025-06-09 08:00:00"",
+                //        ""end_time"": ""2025-06-09 17:30:00"",
+                //        ""working_hour"": 9.5,
+                //        ""working_day"": ""2025-06-09 00:00:00"",
+                //        ""week_of_year"": 24,
+                //        ""branch_id"": 1,
+                //        ""user_id"": 30,
+                //        ""checkin_time"": null,
+                //        ""checkout_time"": ""2025-06-09 18:46:00"",
+                //        ""is_confirm"": 1,
+                //        ""is_overtime_shift"": 0,
+                //        ""shop_id"": 1,
+                //        ""meal_coefficient"": 0,
+                //        ""timezone"": ""Asia/Saigon"",
+                //        ""is_open_shift"": 0,
+                //        ""dynamic_user_id"": null,
+                //        ""checkin_type"": """",
+                //        ""checkout_type"": ""mobile"",
+                //        ""checkout_log_id"": 222,
+                //        ""checkout_branch_id"": 1,
+                //        ""is_reason"": 0,
+                //        ""reason_code"": """"
+                //    }},
+                //    ""employee_shifts"": [],
+                //    ""timekeeper_log"": {{
+                //        ""id"": 222,
+                //        ""time"": ""2025-06-09 18:46:41"",
+                //        ""clock_type"": ""clock_in"",
+                //        ""employee_shift_id"": 1
+                //    }}
+                //}}";
+                //}
+                //else
+                //{
+                //    jsonString = $@"{{
+                //    ""clock_setting"": {{
+                //        ""clock_in_out_requirements"": [""gps""],
+                //        ""is_location_tracking"": 0,
+                //        ""distance"": 100,
+                //        ""debug"": false,
+                //        ""logLevel"": 5
+                //    }},
+                //    ""clock_type"": ""clock_in"",
+                //    ""current_employee_shift"": {{
+                //        ""id"": 1,
+                //        ""name"": ""Ca Cá Nhân""
+                //    }},
+                //    ""employee_shifts"": [
+                //        {{
+                //            ""shift"": {{
+                //                ""id"": 1,
+                //                ""name"": ""ca2"",
+                //                ""shift_key"": ""CA2"",
+                //                ""shift_id"": 1,
+                //                ""shift_type"": ""hard"",
+                //                ""start_time"": ""2025-06-09 08:00:00"",
+                //                ""end_time"": ""2025-06-09 17:30:00"",
+                //                ""working_hour"": 9.5,
+                //                ""working_day"": ""2025-06-09 00:00:00"",
+                //                ""week_of_year"": 24,
+                //                ""branch_id"": 1,
+                //                ""user_id"": 30,
+                //                ""checkin_time"": null,
+                //                ""checkout_time"": null,
+                //                ""is_confirm"": 1,
+                //                ""is_overtime_shift"": 0,
+                //                ""shop_id"": 1,
+                //                ""meal_coefficient"": 0,
+                //                ""timezone"": ""Asia/Saigon"",
+                //                ""is_open_shift"": 0,
+                //                ""dynamic_user_id"": null,
+                //                ""checkin_type"": """",
+                //                ""checkout_type"": """"
+                //            }},
+                //            ""is_reason"": 0,
+                //            ""is_yesterday"": 0,
+                //            ""is_end_next_day"": 0
+                //        }}
+                //    ],
+                //    ""timekeeper_log"": {{
+                //        ""id"": 222,
+                //        ""time"": ""2025-05-29 14:19:08"",
+                //        ""clock_type"": ""clock_out"",
+                //        ""employee_shift_id"": 1
+                //    }}
+                //}}";
+                //}
+                #endregion
+                //response.Data = JsonConvert.DeserializeObject(jsonString);
+                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
+                response = BoFactory.Payroll.StatusClockInOutShift(accountIdMap, DateTime.Now);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("shift ListEmployeeShift EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+
+        }
+
+        [HttpGet, Route("clock-in-out-shift")]
+        public HttpResponseMessage ClockInOutShift([FromBody] ClockInOutShiftRequest request)
+        {
+            var response = new ApiResult<object>()
+            {
+                Code = ResponseResultEnum.Success.Value(),
+                Message = ResponseResultEnum.Success.Text()
+            };
+            try
+            {
+                #region demo
+                //string clock_type = request.ClockType;
+                //string jsonString = "";
+                //if (clock_type == "clock_out")
+                //{
+                //    jsonString = @"{
+                //""next_clock_type"": ""clock_in"",
+                //""current_employee_shift"": {
+                //    ""id"": ""683412a08fb63932d90cd06b"",
+                //    ""name"": ""ca2"",
+                //    ""shift_key"": ""CA2"",
+                //    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
+                //    ""shift_type"": ""hard"",
+                //    ""start_time"": ""2025-06-09 08:00:00"",
+                //    ""end_time"": ""2025-06-09 17:30:00"",
+                //    ""working_hour"": 9.5,
+                //    ""working_day"": ""2025-06-09 00:00:00"",
+                //    ""week_of_year"": 24,
+                //    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
+                //    ""user_id"": ""682eefe1189d3q7Nz"",
+                //    ""checkin_time"": null,
+                //    ""checkout_time"": ""2025-06-09 18:46:00"",
+                //    ""is_confirm"": 1,
+                //    ""is_overtime_shift"": 0,
+                //    ""shop_id"": ""682eefe18cdcf28162021f37"",
+                //    ""meal_coefficient"": 0,
+                //    ""timezone"": ""Asia/Saigon"",
+                //    ""is_open_shift"": 0,
+                //    ""dynamic_user_id"": null,
+                //    ""checkin_type"": """",
+                //    ""checkout_type"": ""mobile"",
+                //    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
+                //},
+                //""timekeeper_log"": {
+                //    ""id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""time"": ""2025-06-09 18:46:47"",
+                //    ""clock_type"": ""clock_out""
+                //}
+                //}";
+                //}
+                //else
+                //{
+                //    jsonString = @"{
+                //""next_clock_type"": ""clock_out"",
+                //""current_employee_shift"": {
+                //    ""id"": ""683412a08fb63932d90cd06b"",
+                //    ""name"": ""ca2"",
+                //    ""shift_key"": ""CA2"",
+                //    ""shift_id"": ""682f0ca6fdeac0f5570d3317"",
+                //    ""shift_type"": ""hard"",
+                //    ""start_time"": ""2025-06-09 08:00:00"",
+                //    ""end_time"": ""2025-06-09 17:30:00"",
+                //    ""working_hour"": 9.5,
+                //    ""working_day"": ""2025-06-09 00:00:00"",
+                //    ""week_of_year"": 24,
+                //    ""branch_id"": ""682ef049dc534fa14b0dedf4"",
+                //    ""user_id"": ""682eefe1189d3q7Nz"",
+                //    ""checkin_time"": null,
+                //    ""checkout_time"": ""2025-06-09 18:46:00"",
+                //    ""is_confirm"": 1,
+                //    ""is_overtime_shift"": 0,
+                //    ""shop_id"": ""682eefe18cdcf28162021f37"",
+                //    ""meal_coefficient"": 0,
+                //    ""timezone"": ""Asia/Saigon"",
+                //    ""is_open_shift"": 0,
+                //    ""dynamic_user_id"": null,
+                //    ""checkin_type"": """",
+                //    ""checkout_type"": ""mobile"",
+                //    ""checkout_log_id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""checkout_branch_id"": ""682ef049dc534fa14b0dedf4""
+                //},
+                //""timekeeper_log"": {
+                //    ""id"": ""6846c9a7fbb1987f350878f3"",
+                //    ""time"": ""2025-06-09 18:46:47"",
+                //    ""clock_type"": ""clock_in""
+                //}
+                //}";
+                //}
+
+                #endregion 
+                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
+                var companyIdMap = JwtHelper.GetCompanyIdFromToken(Request);
+                response.Data = BoFactory.Payroll.ClockInOutShift(request, accountIdMap, companyIdMap,DateTime.Now);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("shift ListEmployeeShift EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+
+        }
+
+
+
+
+        /// <summary>
+        /// Get list of shift assignments with shift details
+        /// </summary>
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("list-shift-assignment-with-shift-v2")]
+        public IHttpActionResult ListShiftAssignmentWithShiftV2()
+        {
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.GetListShiftAssignmentWithShift(companyId, employeeId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error($"ListShiftAssignmentWithShiftV2 Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
+        }
+
+        /// <summary>
+        /// Get summary of employee shifts
+        /// </summary>
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("summary-employee-shift")]
+        public IHttpActionResult SummaryEmployeeShift()
+        {
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.GetEmployeeShiftSummary(companyId, employeeId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error($"SummaryEmployeeShift Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
+        }
+
+        /// <summary>
+        /// Get list of open shifts
+        /// </summary>
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("list-open-shift")]
+        public IHttpActionResult ListOpenShift([FromUri] ListOpenShiftRequest request)
+        {
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.GetListOpenShift(companyId, employeeId, request);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error($"ListOpenShift Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
+        }
+    }
+}
