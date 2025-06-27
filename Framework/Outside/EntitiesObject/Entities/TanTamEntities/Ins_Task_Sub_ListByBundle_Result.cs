@@ -29,8 +29,5 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<int> duration { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
         public Nullable<System.DateTime> updated_at { get; set; }
-        public Nullable<System.DateTime> completed_at { get; set; }
-        public Nullable<bool> is_completed { get; set; }
-        public Nullable<int> completion_percentage { get; set; }
     }
 }

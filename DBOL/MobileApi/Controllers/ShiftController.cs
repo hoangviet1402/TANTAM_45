@@ -318,7 +318,7 @@ namespace TanTamApi.Controllers
         }
 
         [HttpGet, Route("list-employee-shift")]
-        public HttpResponseMessage ListEmployeeShift(int assignmentUserID = 0)
+        public HttpResponseMessage ListEmployeeShift(string working_day = "today,tomorrow")
         {
             var response = new ApiResult<object>()
             {
@@ -368,8 +368,9 @@ namespace TanTamApi.Controllers
                 #endregion
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
                 var accountId = JwtHelper.GetAccountIdFromToken(Request);
-                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
-                response.Data = BoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountIdMap);
+                var accountMapID = JwtHelper.GetAccountMapIDFromToken(Request);
+                
+                response.Data = BoFactory.Payroll.Payroll_User_GetList(companyId, accountMapID, working_day);
             }
             catch (Exception ex)
             {
@@ -507,5 +508,7 @@ namespace TanTamApi.Controllers
                 });
             }
         }
+
+
     }
 }

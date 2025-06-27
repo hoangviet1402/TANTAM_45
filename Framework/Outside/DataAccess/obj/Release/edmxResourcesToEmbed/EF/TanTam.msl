@@ -1293,5 +1293,35 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_EmployeeBranchMap_GetByEmployeeId" FunctionName="TanTamModel.Store.Ins_EmployeeBranchMap_GetByEmployeeId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_EmployeeBranchMap_GetByEmployeeId_Result">
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsOnboarding" ColumnName="IsOnboarding" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsHeadquarter" ColumnName="IsHeadquarter" />
+          <ScalarProperty Name="BranchCreatedAt" ColumnName="BranchCreatedAt" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="EmployeeBranchMapId" ColumnName="EmployeeBranchMapId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="EmployeeBranchCreatedAt" ColumnName="EmployeeBranchCreatedAt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

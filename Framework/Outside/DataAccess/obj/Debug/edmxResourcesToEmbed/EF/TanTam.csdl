@@ -682,6 +682,35 @@
       <Parameter Name="task_id" Mode="In" Type="Int32" />
       <Parameter Name="assigned_user" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Ins_EmployeeBranchMap_GetByEmployeeId" ReturnType="Collection(TanTamModel.Ins_EmployeeBranchMap_GetByEmployeeId_Result)">
+      <Parameter Name="AccountMapId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Shift_GetListByUser" ReturnType="Collection(TanTamModel.Ins_Shift_GetListByUser_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="WorkingDay" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ShiftAssignment_User_WorkingDay_RegisterShift" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="UserIds" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_ShiftAssignment_User_WorkingDay_RejectShift" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_Group_Delete" ReturnType="Collection(TanTamModel.Ins_Task_Group_Delete_Result)">
+      <Parameter Name="group_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_Group_Update_Name" ReturnType="Collection(TanTamModel.Ins_Task_Group_Update_Name_Result)">
+      <Parameter Name="group_id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Task_Sub_Delete_All" ReturnType="Collection(Int32)">
+      <Parameter Name="bundle_id" Mode="In" Type="Int32" />
+      <Parameter Name="task_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ins_Tasks_Delete" ReturnType="Collection(TanTamModel.Ins_Tasks_Delete_Result)">
+      <Parameter Name="task_id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
     <Property Type="Int32" Name="EmployeeAccountMapId" Nullable="false" />
@@ -1724,5 +1753,94 @@
     <Property Type="String" Name="username" Nullable="true" MaxLength="100" />
     <Property Type="Int32" Name="identification" Nullable="true" />
     <Property Type="Int32" Name="branch_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_EmployeeBranchMap_GetByEmployeeId_Result">
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Latitude" Nullable="true" />
+    <Property Type="Double" Name="Longitude" Nullable="true" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Province" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="IsOnboarding" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsHeadquarter" Nullable="true" />
+    <Property Type="DateTime" Name="BranchCreatedAt" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="District" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="EmployeeBranchMapId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="Boolean" Name="IsPrimary" Nullable="true" />
+    <Property Type="DateTime" Name="EmployeeBranchCreatedAt" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Shift_GetListByUser_Result">
+    <Property Type="Int32" Name="SuwId" Nullable="false" />
+    <Property Type="Int32" Name="ShiftAssignmentId" Nullable="false" />
+    <Property Type="Int32" Name="ShiftId" Nullable="false" />
+    <Property Type="String" Name="ShiftName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ShiftKey" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SortIndex" Nullable="false" />
+    <Property Type="Decimal" Name="Coefficient" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="MinimumWorkingHour" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="Timezone" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="WorkingDay" Nullable="false" />
+    <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
+    <Property Type="Int32" Name="TotalRegister" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result">
+    <Property Type="Int32" Name="TotalUpdated" Nullable="false" />
+    <Property Type="DateTime" Name="WorkingDay" Nullable="true" />
+    <Property Type="String" Name="ShiftName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Message" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result">
+    <Property Type="Int32" Name="Success" Nullable="false" />
+    <Property Type="Int32" Name="SuwId" Nullable="true" />
+    <Property Type="DateTime" Name="WorkingDay" Nullable="true" />
+    <Property Type="String" Name="ShiftName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Message" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_Group_Delete_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="task_id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="index" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Task_Group_Update_Name_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="task_id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="index" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Ins_Tasks_Delete_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="icon" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="favored" Nullable="true" />
+    <Property Type="String" Name="view_id" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="is_archived" Nullable="true" />
+    <Property Type="Int32" Name="created_user_id" Nullable="true" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="String" Name="default_deadline_time" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="default_start_time" Nullable="false" MaxLength="5" />
+    <Property Type="Int32" Name="task_done" Nullable="false" />
+    <Property Type="Int32" Name="task_count" Nullable="false" />
+    <Property Type="Int32" Name="task_overdue" Nullable="false" />
+    <Property Type="Int32" Name="user_count" Nullable="false" />
   </ComplexType>
 </Schema>

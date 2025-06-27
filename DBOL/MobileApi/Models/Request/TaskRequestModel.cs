@@ -84,6 +84,20 @@ namespace TanTamApi.Models.Request
     }
 
     /// <summary>
+    /// Request cập nhật tên task group
+    /// </summary>
+    public class UpdateTaskGroupNameRequestModel
+    {
+        [Required(ErrorMessage = "ID group không được để trống")]
+        [JsonProperty("group_id")]
+        public int GroupId { get; set; }
+
+        [Required(ErrorMessage = "Tên group không được để trống")]
+        [JsonProperty("name")]
+        public string Name { get; set; }
+    }
+
+    /// <summary>
     /// Request tạo sub-task
     /// </summary>
     public class CreateTaskSubRequestModel : ApiBaseRequest

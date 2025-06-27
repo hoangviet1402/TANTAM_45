@@ -109,7 +109,7 @@ namespace DataAccess.Dao.TanTamDao
                     
                     using (var reader = command.ExecuteReader())
                     {
-                        // ✅ READ RESULT SET 1: Main Detail - Map directly to result object
+                        // ✅ READ RESULT SET 1: Main Detail - Check if has data first
                         if (reader.HasRows && reader.Read())
                         {
                             result.id = Convert.ToInt32(reader["id"]).ToString();
@@ -128,44 +128,56 @@ namespace DataAccess.Dao.TanTamDao
                                 not_available = Convert.ToInt32(reader["not_available"]),
                                 status_color = new List<string> { "#838BA3", "#EBEBEB" }
                             };
-                        }
-                        
-                        // ✅ READ RESULT SET 2: Branches - Map to branches list
-                        reader.NextResult();
-                        while (reader.Read())
-                        {
-                            result.branches.Add(new OpenShiftBranchResult
+                            
+                            // ✅ Only read other result sets if first result set has data
+                            // READ RESULT SET 2: Branches
+                            if (reader.NextResult())
                             {
-                                id = Convert.ToInt32(reader["id"]).ToString(),
-                                name = reader["name"]?.ToString()
-                            });
-                        }
-                        
-                        // ✅ READ RESULT SET 3: Positions - Map to positions list
-                        reader.NextResult();
-                        while (reader.Read())
-                        {
-                            result.positions.Add(new OpenShiftPositionResult
+                                while (reader.Read())
+                                {
+                                    result.branches.Add(new OpenShiftBranchResult
+                                    {
+                                        id = Convert.ToInt32(reader["id"]).ToString(),
+                                        name = reader["name"]?.ToString()
+                                    });
+                                }
+                            }
+                            
+                            // READ RESULT SET 3: Positions
+                            if (reader.NextResult())
                             {
-                                id = Convert.ToInt32(reader["id"]).ToString(),
-                                name = reader["name"]?.ToString()
-                            });
-                        }
-                        
-                        // ✅ READ RESULT SET 4: Users - Map to users list
-                        reader.NextResult();
-                        while (reader.Read())
-                        {
-                            result.users.Add(new OpenShiftUserResult
+                                while (reader.Read())
+                                {
+                                    result.positions.Add(new OpenShiftPositionResult
+                                    {
+                                        id = Convert.ToInt32(reader["id"]).ToString(),
+                                        name = reader["name"]?.ToString()
+                                    });
+                                }
+                            }
+                            
+                            // READ RESULT SET 4: Users
+                            if (reader.NextResult())
                             {
-                                id = reader["id"]?.ToString(),
-                                name = reader["name"]?.ToString(),
-                                employee_code = reader["employee_code"]?.ToString(),
-                                position = reader["position"]?.ToString(),
-                                avatar = reader["avatar"]?.ToString(),
-                                status = Convert.ToInt32(reader["status"]),
-                                registered_at = reader["registered_at"]?.ToString()
-                            });
+                                while (reader.Read())
+                                {
+                                    result.users.Add(new OpenShiftUserResult
+                                    {
+                                        id = reader["id"]?.ToString(),
+                                        name = reader["name"]?.ToString(),
+                                        employee_code = reader["employee_code"]?.ToString(),
+                                        position = reader["position"]?.ToString(),
+                                        avatar = reader["avatar"]?.ToString(),
+                                        status = Convert.ToInt32(reader["status"]),
+                                        registered_at = reader["registered_at"]?.ToString()
+                                    });
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // ✅ No data in first result set = OpenShift not found
+                            return null;
                         }
                     }
                 }

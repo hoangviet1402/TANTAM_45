@@ -127,28 +127,18 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
             {
-                // Handle Entity Framework exceptions that wrap SQL exceptions
-                // CommonLogger.DefaultLogger.Error($"OpenShiftBo.Create - Entity Exception: {entityEx.Message}", entityEx);
-                
-                // Check if inner exception is SqlException
-                var innerEx = entityEx.InnerException;
-                while (innerEx != null)
+                // ✅ ENTITY FRAMEWORK: Extract SQL error message from wrapped exceptions
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
                 {
-                    // CommonLogger.DefaultLogger.Error($"Inner Exception Type: {innerEx.GetType().Name}, Message: {innerEx.Message}");
-                    
-                    if (innerEx is System.Data.SqlClient.SqlException sqlEx)
-                    {
-                        response.Code = ResponseResultEnum.InvalidInput.Value();
-                        response.Message = sqlEx.Message;
-                        return response;
-                    }
-                    
-                    innerEx = innerEx.InnerException;
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = sqlEx.Message;
                 }
-                
-                // If no SqlException found, treat as system error
-                response.Code = ResponseResultEnum.SystemError.Value();
-                response.Message = "Lỗi hệ thống: " + entityEx.Message;
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("OpenShiftBo.Create - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Lỗi hệ thống: " + entityEx.Message;
+                }
             }
             catch (Exception ex)
             {
@@ -245,6 +235,21 @@ namespace BussinessObject.Bo.TanTamBo
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = ResponseResultEnum.Success.Text();
             }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                // ✅ ENTITY FRAMEWORK: Extract SQL error message from wrapped exceptions
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.Failed.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("OpenShiftBo.GetList - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Lỗi hệ thống: " + entityEx.Message;
+                }
+            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("OpenShiftBo.GetList - Error occurred", ex);
@@ -320,28 +325,18 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
             {
-                // Handle Entity Framework exceptions that wrap SQL exceptions
-                // CommonLogger.DefaultLogger.Error($"OpenShiftBo.Create - Entity Exception: {entityEx.Message}", entityEx);
-                
-                // Check if inner exception is SqlException
-                var innerEx = entityEx.InnerException;
-                while (innerEx != null)
+                // ✅ ENTITY FRAMEWORK: Extract SQL error message from wrapped exceptions
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
                 {
-                    // CommonLogger.DefaultLogger.Error($"Inner Exception Type: {innerEx.GetType().Name}, Message: {innerEx.Message}");
-                    
-                    if (innerEx is System.Data.SqlClient.SqlException sqlEx)
-                    {
-                        response.Code = ResponseResultEnum.InvalidInput.Value();
-                        response.Message = sqlEx.Message;
-                        return response;
-                    }
-                    
-                    innerEx = innerEx.InnerException;
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = sqlEx.Message;
                 }
-                
-                // If no SqlException found, treat as system error
-                response.Code = ResponseResultEnum.SystemError.Value();
-                response.Message = "Lỗi hệ thống: " + entityEx.Message;
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("OpenShiftBo.GetShiftListByWorkingDay - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Lỗi hệ thống: " + entityEx.Message;
+                }
             }
             catch (Exception ex)
             {
@@ -411,7 +406,7 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
             {
-                // ✅ CORRECT SQL ERROR MESSAGE EXTRACTION
+                // ✅ ENTITY FRAMEWORK: Extract SQL error message from wrapped exceptions
                 if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
                 {
                     response.Code = ResponseResultEnum.Failed.Value();
@@ -479,20 +474,11 @@ namespace BussinessObject.Bo.TanTamBo
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Lấy thông tin ca làm mở thành công.";
             }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            catch (System.Data.SqlClient.SqlException sqlEx)
             {
-                // ✅ EXTRACT SQL ERROR MESSAGE
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.Failed.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error($"GetDetail EntityCommandExecutionException. OpenShiftId: {openShiftId}", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi khi lấy thông tin ca làm mở.";
-                }
+                // ✅ RAW SQL: Handle direct SQL exceptions (RAISERROR from stored procedures)
+                response.Code = ResponseResultEnum.Failed.Value();
+                response.Message = sqlEx.Message;
             }
             catch (Exception ex)
             {
@@ -589,7 +575,7 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
             {
-                // ✅ CORRECT SQL ERROR MESSAGE EXTRACTION
+                // ✅ ENTITY FRAMEWORK: Extract SQL error message from wrapped exceptions
                 if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
                 {
                     response.Code = ResponseResultEnum.Failed.Value();

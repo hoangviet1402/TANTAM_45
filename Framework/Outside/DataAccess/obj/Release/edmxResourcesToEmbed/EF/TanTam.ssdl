@@ -254,6 +254,9 @@
     <Parameter Name="Phone" Type="nvarchar" Mode="In" />
     <Parameter Name="PhoneCode" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="Ins_EmployeeBranchMap_GetByEmployeeId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountMapId" Type="int" Mode="In" />
+  </Function>
   <Function Name="Ins_OpenShift_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ShiftId" Type="nvarchar" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />

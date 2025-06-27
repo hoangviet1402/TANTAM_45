@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +5,7 @@ using BussinessObject.Enum;
 using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.OpenShift;
 using BussinessObject.Models.Shift;
+
 using DataAccess;
 using DataAccess.Model.Shift;
 using Logger;
@@ -14,14 +14,18 @@ using MyUtility.Extensions;
 using Newtonsoft.Json;
 using ResxLanguagesUtility;
 using ResxLanguagesUtility.Enums;
+using EntitiesObject.Entities.TanTamEntities;
 
 namespace BussinessObject.Bo.Shift
 {
     public class ShiftBo : BaseBo<DBNull>
     {
+        private readonly ShiftSummaryBo _shiftSummaryBo;
+
         public ShiftBo()
             : base(DaoFactory.Shift)
         {
+            _shiftSummaryBo = new ShiftSummaryBo();
         }
 
         public ApiResult<TimesResponse> GetTimes(string lang)
@@ -692,236 +696,6 @@ namespace BussinessObject.Bo.Shift
         /// <summary>
         /// Get employee shift summary
         /// </summary>
-        public ApiResult<object> GetEmployeeShiftSummary(int companyId, int employeeId)
-        {
-            var response = new ApiResult<object>()
-            {
-                Data = null,
-                Code = ResponseResultEnum.ServiceUnavailable.Value(),
-                Message = ResponseResultEnum.ServiceUnavailable.Text()
-            };
-
-            try
-            {
-                // Static JSON exactly like old project (truncated version for brevity)
-                var jsonString = @"{
-                    ""meta"": {
-                        ""total"": 7,
-                        ""count"": 7,
-                        ""per_page"": 10,
-                        ""current_page"": 1,
-                        ""total_pages"": 1
-                    },
-                    ""items"": [
-                        {
-                            ""user_id"": ""6847d5853c45bcBDe"",
-                            ""phone"": ""+841231231232"",
-                            ""username"": ""+841231231232"",
-                            ""name"": ""asdasdsa"",
-                            ""shop_id"": ""6847d585ef2efb7c9504f8cf"",
-                            ""identification"": ""0001"",
-                            ""branch_id"": ""684fc39e16b9f2ea27078acd"",
-                            ""branch_obj"": {
-                                ""id"": ""684fc39e16b9f2ea27078acd"",
-                                ""name"": ""TDT"",
-                                ""color"": null
-                            },
-                            ""payroll"": [],
-                            ""shifts"": {
-                                ""2025-06-16 00:00:00"": [
-                                    {
-                                        ""id"": ""684fc8349c887a82af0f4e5c"",
-                                        ""name"": ""dasdas"",
-                                        ""shift_key"": ""DASDAS"",
-                                        ""shift_id"": ""684fc8330f843dbb6a00f2e7"",
-                                        ""shift_type"": ""hard"",
-                                        ""start_time"": ""2025-06-16 08:00:00"",
-                                        ""end_time"": ""2025-06-16 17:30:00"",
-                                        ""working_hour"": 9.5,
-                                        ""working_day"": ""2025-06-16 00:00:00"",
-                                        ""week_of_year"": 25,
-                                        ""branch_id"": ""684fc39e16b9f2ea27078acd"",
-                                        ""user_id"": ""6847d5853c45bcBDe"",
-                                        ""checkin_time"": null,
-                                        ""checkout_time"": null,
-                                        ""is_confirm"": 1,
-                                        ""is_overtime_shift"": 0,
-                                        ""shop_id"": ""6847d585ef2efb7c9504f8cf"",
-                                        ""meal_coefficient"": 0,
-                                        ""timezone"": ""Asia/Saigon"",
-                                        ""is_open_shift"": 0,
-                                        ""dynamic_user_id"": null,
-                                        ""checkin_type"": """",
-                                        ""checkout_type"": """",
-                                        ""shift_name"": ""dasdas"",
-                                        ""display_option"": {
-                                            ""shift_name"": ""dasdas"",
-                                            ""option_type"": """",
-                                            ""option_name"": """"
-                                        },
-                                        ""real_working_hour"": 0,
-                                        ""real_working_minute"": 0,
-                                        ""rest_start_time_short"": ""00:00"",
-                                        ""rest_end_time_short"": ""00:00"",
-                                        ""coefficient"": 1,
-                                        ""real_coefficient"": 0,
-                                        ""status"": {
-                                            ""color"": ""#666666"",
-                                            ""status_color"": [
-                                                ""#838BA3"",
-                                                ""#EBEBEB""
-                                            ],
-                                            ""name"": ""Chưa vào/ra ca"",
-                                            ""detail"": [
-                                                ""Thời gian: 0 giờ""
-                                            ]
-                                        },
-                                        ""approved"": false
-                                    }
-                                ]
-                            },
-                            ""conflict_shifts"": [],
-                            ""total_working_hour"": 57,
-                            ""real_working_hour"": 0
-                        }
-                    ]
-                }";
-
-                response.Data = JsonConvert.DeserializeObject(jsonString);
-                response.Code = ResponseResultEnum.Success.Value();
-                response.Message = ResponseResultEnum.Success.Text();
-            }
-            catch (Exception ex)
-            {
-                CommonLogger.DefaultLogger.Error("ShiftBo.GetEmployeeShiftSummary - Error occurred", ex);
-                response.Code = ResponseResultEnum.SystemError.Value();
-                response.Message = "Lỗi hệ thống: " + ex.Message;
-            }
-
-            return response;
-        }
-
-        /// <summary>
-        /// Get list of open shifts
-        /// </summary>
-        public ApiResult<object> GetListOpenShift(int companyId, int employeeId, ListOpenShiftRequest request)
-        {
-            var response = new ApiResult<object>()
-            {
-                Data = null,
-                Code = ResponseResultEnum.ServiceUnavailable.Value(),
-                Message = ResponseResultEnum.ServiceUnavailable.Text()
-            };
-
-            try
-            {
-                // Static JSON exactly like old project
-                var jsonString = @"[
-                    [
-                        {
-                            ""id"": ""685112524a36fd9fe7021681"",
-                            ""shift_name"": ""newca"",
-                            ""total_employees"": 1,
-                            ""shift_id"": ""685112449ce972792b07861f"",
-                            ""start_time"": ""2025-06-16 08:00"",
-                            ""end_time"": ""2025-06-16 17:30"",
-                            ""working_day"": ""2025-06-16"",
-                            ""timezone"": null,
-                            ""is_draft"": false,
-                            ""status"": {
-                                ""not_available"": 0,
-                                ""status_color"": [
-                                    ""#838BA3"",
-                                    ""#EBEBEB""
-                                ]
-                            },
-                            ""registered_employees"": 0
-                        }
-                    ],
-                    [
-                        {
-                            ""id"": ""6851121992d25d377b0fa2e7"",
-                            ""shift_name"": ""testea"",
-                            ""total_employees"": 1,
-                            ""shift_id"": ""685111f073439356d402af6c"",
-                            ""start_time"": ""2025-06-17 08:00"",
-                            ""end_time"": ""2025-06-17 17:30"",
-                            ""working_day"": ""2025-06-17"",
-                            ""timezone"": null,
-                            ""is_draft"": false,
-                            ""status"": {
-                                ""not_available"": 0,
-                                ""status_color"": [
-                                    ""#838BA3"",
-                                    ""#EBEBEB""
-                                ]
-                            },
-                            ""registered_employees"": 0
-                        }
-                    ],
-                    [],
-                    [
-                        {
-                            ""id"": ""6851125519a953ca2e032231"",
-                            ""shift_name"": ""newca"",
-                            ""total_employees"": 1,
-                            ""shift_id"": ""685112449ce972792b07861f"",
-                            ""start_time"": ""2025-06-19 08:00"",
-                            ""end_time"": ""2025-06-19 17:30"",
-                            ""working_day"": ""2025-06-19"",
-                            ""timezone"": null,
-                            ""is_draft"": false,
-                            ""status"": {
-                                ""not_available"": 1,
-                                ""status_color"": [
-                                    ""#838BA3"",
-                                    ""#EBEBEB""
-                                ]
-                            },
-                            ""registered_employees"": 0
-                        }
-                    ],
-                    [
-                        {
-                            ""id"": ""6851124c097147cb0b09d861"",
-                            ""shift_name"": ""newca"",
-                            ""total_employees"": 1,
-                            ""shift_id"": ""685112449ce972792b07861f"",
-                            ""start_time"": ""2025-06-20 08:00"",
-                            ""end_time"": ""2025-06-20 17:30"",
-                            ""working_day"": ""2025-06-20"",
-                            ""timezone"": null,
-                            ""is_draft"": false,
-                            ""status"": {
-                                ""not_available"": 1,
-                                ""status_color"": [
-                                    ""#838BA3"",
-                                    ""#EBEBEB""
-                                ]
-                            },
-                            ""registered_employees"": 0
-                        }
-                    ],
-                    [],
-                    []
-                ]";
-
-                response.Data = JsonConvert.DeserializeObject(jsonString);
-                response.Code = ResponseResultEnum.Success.Value();
-                response.Message = ResponseResultEnum.Success.Text();
-            }
-            catch (Exception ex)
-            {
-                CommonLogger.DefaultLogger.Error("ShiftBo.GetListOpenShift - Error occurred", ex);
-                response.Code = ResponseResultEnum.SystemError.Value();
-                response.Message = "Lỗi hệ thống: " + ex.Message;
-            }
-
-            return response;
-        }
-        /// <summary>
-        /// Get employee shift summary
-        /// </summary>
         public ApiResult<EmployeeShiftSummaryResponse> GetEmployeeShiftSummary(EmployeeShiftSummaryRequest request, int employeeId)
         {
             var response = new ApiResult<EmployeeShiftSummaryResponse>()
@@ -931,196 +705,196 @@ namespace BussinessObject.Bo.Shift
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
 
-            //try
-            //{
-            //    DateTime? startDate = null;
-            //    DateTime? endDate = null;
+            try
+            {
+                DateTime? startDate = null;
+                DateTime? endDate = null;
 
-            //    if (!string.IsNullOrEmpty(request.StartDate))
-            //    {
-            //        if (DateTime.TryParse(request.StartDate, out DateTime parsedStart))
-            //            startDate = parsedStart;
-            //    }
+                if (!string.IsNullOrEmpty(request.StartDate))
+                {
+                    if (DateTime.TryParse(request.StartDate, out DateTime parsedStart))
+                        startDate = parsedStart;
+                }
 
-            //    if (!string.IsNullOrEmpty(request.EndDate))
-            //    {
-            //        if (DateTime.TryParse(request.EndDate, out DateTime parsedEnd))
-            //            endDate = parsedEnd;
-            //    }
+                if (!string.IsNullOrEmpty(request.EndDate))
+                {
+                    if (DateTime.TryParse(request.EndDate, out DateTime parsedEnd))
+                        endDate = parsedEnd;
+                }
 
-            //    if (!startDate.HasValue && request.Month > 0 && request.Year > 0)
-            //    {
-            //        startDate = new DateTime(request.Year, request.Month, 1);
-            //        endDate = startDate.Value.AddMonths(1).AddDays(-1);
-            //    }
+                if (!startDate.HasValue && request.Month > 0 && request.Year > 0)
+                {
+                    startDate = new DateTime(request.Year, request.Month, 1);
+                    endDate = startDate.Value.AddMonths(1).AddDays(-1);
+                }
 
-            //    if (!startDate.HasValue)
-            //    {
-            //        var now = DateTime.Now;
-            //        startDate = new DateTime(now.Year, now.Month, 1);
-            //        endDate = startDate.Value.AddMonths(1).AddDays(-1);
-            //    }
+                if (!startDate.HasValue)
+                {
+                    var now = DateTime.Now;
+                    startDate = new DateTime(now.Year, now.Month, 1);
+                    endDate = startDate.Value.AddMonths(1).AddDays(-1);
+                }
 
-            //    string employeeIdsString = null;
-            //    if (request.EmployeeIds != null && request.EmployeeIds.Any())
-            //    {
-            //        employeeIdsString = string.Join(",", request.EmployeeIds);
-            //    }
+                string employeeIdsString = null;
+                if (request.EmployeeIds != null && request.EmployeeIds.Any())
+                {
+                    employeeIdsString = string.Join(",", request.EmployeeIds);
+                }
 
-            //    if (startDate > endDate)
-            //    {
-            //        response.Code = ResponseResultEnum.InvalidData.Value();
-            //        response.Message = "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.";
-            //        return response;
-            //    }
+                if (startDate > endDate)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.";
+                    return response;
+                }
+                
+                if ((endDate.Value - startDate.Value).TotalDays > 90)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "Khoảng thời gian không được vượt quá 90 ngày để tránh ảnh hưởng đến hiệu suất hệ thống.";
+                    return response;
+                }
 
-            //    if ((endDate.Value - startDate.Value).TotalDays > 90)
-            //    {
-            //        response.Code = ResponseResultEnum.InvalidData.Value();
-            //        response.Message = "Khoảng thời gian không được vượt quá 90 ngày để tránh ảnh hưởng đến hiệu suất hệ thống.";
-            //        return response;
-            //    }
+                var recordsCreated = _shiftSummaryBo.CreateWorkingDayDataBulk(request.CompanyId, startDate.Value, endDate.Value, employeeIdsString);
 
-            //    var recordsCreated = _shiftService.CreateWorkingDayDataBulk(request.CompanyId, startDate.Value, endDate.Value, employeeIdsString);
+                var summaryData = DaoFactory.Shift.GetShiftAssignmentUserWorkingDaySummary(
+                    request.CompanyId,
+                    startDate,
+                    endDate,
+                    employeeIdsString,
+                    request.Month > 0 ? request.Month : (int?)null,
+                    request.Year > 0 ? request.Year : (int?)null
+                );
 
-            //    var summaryData = DaoFactory.Shift.GetShiftAssignmentUserWorkingDaySummary(
-            //        request.CompanyId,
-            //        startDate,
-            //        endDate,
-            //        employeeIdsString,
-            //        request.Month > 0 ? request.Month : (int?)null,
-            //        request.Year > 0 ? request.Year : (int?)null
-            //    );
+                // Group data by employees  
+                var employeeGroups = summaryData
+                    .GroupBy(x => new { x.EmployeeId, x.UserId, x.FullName, x.EmployeeCode, x.Phone })
+                    .ToList();
 
-            //    // Group data by employees  
-            //    var employeeGroups = summaryData
-            //        .GroupBy(x => new { x.EmployeeId, x.UserId, x.FullName, x.EmployeeCode, x.Phone })
-            //        .ToList();
+                var items = new List<EmployeeShiftItem>();
 
-            //    var items = new List<EmployeeShiftItem>();
+                foreach (var empGroup in employeeGroups)
+                {
+                    var employeeItem = new EmployeeShiftItem
+                    {
+                        user_id = empGroup.Key.UserId.ToString(),
+                        employee_id = empGroup.Key.EmployeeId.ToString(),
+                        phone = empGroup.Key.Phone ?? "",
+                        username = empGroup.Key.Phone ?? "",
+                        name = empGroup.Key.FullName ?? "",
+                        company_id = request.CompanyId.ToString(),
+                        identification = empGroup.Key.EmployeeCode ?? ""
+                     };
 
-            //    foreach (var empGroup in employeeGroups)
-            //    {
-            //        var employeeItem = new EmployeeShiftItem
-            //        {
-            //            user_id = empGroup.Key.UserId.ToString(),
-            //            employee_id = empGroup.Key.EmployeeId.ToString(),
-            //            phone = empGroup.Key.Phone ?? "",
-            //            username = empGroup.Key.Phone ?? "",
-            //            name = empGroup.Key.FullName ?? "",
-            //            company_id = request.CompanyId.ToString(),
-            //            identification = empGroup.Key.EmployeeCode ?? ""
-            //        };
+                     // Group shifts by date
+                     var shiftsByDate = empGroup
+                         .GroupBy(d => d.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"))
+                         .ToList();
 
-            //        // Group shifts by date
-            //        var shiftsByDate = empGroup
-            //            .GroupBy(d => d.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"))
-            //            .ToList();
+                     foreach (var dateGroup in shiftsByDate)
+                     {
+                         var dateKey = dateGroup.Key;
+                         var shiftsForDate = new List<ShiftDetailItem>();
 
-            //        foreach (var dateGroup in shiftsByDate)
-            //        {
-            //            var dateKey = dateGroup.Key;
-            //            var shiftsForDate = new List<ShiftDetailItem>();
+                         foreach (var shift in dateGroup)
+                         {
+                            var shiftDetail = new ShiftDetailItem
+                            {
+                                id = shift.SuwId.ToString(),
+                                name = shift.ShiftName ?? "",
+                                shift_key = shift.ShiftKey ?? "",
+                                shift_id = shift.ShiftId.ToString() ?? "",  // This is the actual ShiftId from Shift table
+                                start_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + (shift.StartTime?.ToString(@"hh\:mm\:ss") ?? "08:00:00"),
+                                end_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + (shift.EndTime?.ToString(@"hh\:mm\:ss") ?? "17:30:00"),
+                                working_hour = shift.WorkingHour.GetValueOrDefault() > 0 ? shift.WorkingHour.Value : 9.5m,
+                                working_day = shift.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"),
+                                week_of_year = shift.WeekOfYear.GetValueOrDefault() > 0 ? shift.WeekOfYear.Value : 1,
+                                branch_obj = _shiftSummaryBo.ParseBranches(shift.BranchesJson),
+                                company_id = request.CompanyId.ToString(),
+                                checkin_time = shift.StartCheckInTime?.ToString("yyyy-MM-dd HH:mm:ss"),
+                                checkout_time = shift.StartCheckOutTime?.ToString("yyyy-MM-dd HH:mm:ss"),
+                                shift_name = shift.ShiftName ?? "",
+                                real_working_hour = shift.RealWorkingHour.GetValueOrDefault(),
+                                real_working_minute = (int)shift.RealWorkingMinute
+                            };
 
-            //            foreach (var shift in dateGroup)
-            //            {
-            //                var shiftDetail = new ShiftDetailItem
-            //                {
-            //                    id = shift.SuwId.ToString(),
-            //                    name = shift.ShiftName ?? "",
-            //                    shift_key = shift.ShiftKey ?? "",
-            //                    shift_id = shift.ShiftId.ToString() ?? "",  // This is the actual ShiftId from Shift table
-            //                    start_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + (shift.StartTime?.ToString(@"hh\:mm\:ss") ?? "08:00:00"),
-            //                    end_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + (shift.EndTime?.ToString(@"hh\:mm\:ss") ?? "17:30:00"),
-            //                    working_hour = shift.WorkingHour ?? 9.5m,
-            //                    working_day = shift.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"),
-            //                    week_of_year = shift.WeekOfYear ?? 1,
-            //                    branch_obj = _shiftService.ParseBranches(shift.BranchesJson),
-            //                    company_id = request.CompanyId.ToString(),
-            //                    checkin_time = shift.StartCheckInTime?.ToString("yyyy-MM-dd HH:mm:ss"),
-            //                    checkout_time = shift.StartCheckOutTime?.ToString("yyyy-MM-dd HH:mm:ss"),
-            //                    shift_name = shift.ShiftName ?? "",
-            //                    real_working_hour = shift.RealWorkingHour ?? 0,
-            //                    real_working_minute = (int)(shift.RealWorkingMinute ?? 0)
-            //                };
+                            // Set display option
+                            shiftDetail.display_option = new DisplayOption
+                            {
+                                shift_name = shift.ShiftName ?? ""
+                            };
 
-            //                // Set display option
-            //                shiftDetail.display_option = new DisplayOption
-            //                {
-            //                    shift_name = shift.ShiftName ?? ""
-            //                };
+                            // Set status based on checkin/checkout
+                            _shiftSummaryBo.SetShiftStatus(shiftDetail, shift);
 
-            //                // Set status based on checkin/checkout
-            //                _shiftService.SetShiftStatus(shiftDetail, shift);
+                            // Set checkin/checkout options if available
+                            if (!string.IsNullOrEmpty(shiftDetail.checkin_time))
+                            {
+                                shiftDetail.checkin_option = new CheckinOption
+                                {
+                                    type = "admin",
+                                    name = "Vào ca qua chấm công hộ",
+                                    type_name = "Admin"
+                                };
+                            }
 
-            //                // Set checkin/checkout options if available
-            //                if (!string.IsNullOrEmpty(shiftDetail.checkin_time))
-            //                {
-            //                    shiftDetail.checkin_option = new CheckinOption
-            //                    {
-            //                        type = "admin",
-            //                        name = "Vào ca qua chấm công hộ",
-            //                        type_name = "Admin"
-            //                    };
-            //                }
+                            if (!string.IsNullOrEmpty(shiftDetail.checkout_time))
+                            {
+                                shiftDetail.checkout_option = new CheckoutOption
+                                {
+                                    type = "admin", 
+                                    name = "Ra ca qua chấm công hộ",
+                                    type_name = "Admin"
+                                };
+                            }
 
-            //                if (!string.IsNullOrEmpty(shiftDetail.checkout_time))
-            //                {
-            //                    shiftDetail.checkout_option = new CheckoutOption
-            //                    {
-            //                        type = "admin",
-            //                        name = "Ra ca qua chấm công hộ",
-            //                        type_name = "Admin"
-            //                    };
-            //                }
+                            shiftsForDate.Add(shiftDetail);
+                        }
 
-            //                shiftsForDate.Add(shiftDetail);
-            //            }
+                        employeeItem.shifts[dateKey] = shiftsForDate;
+                    }
 
-            //            employeeItem.shifts[dateKey] = shiftsForDate;
-            //        }
+                    // Calculate totals
+                    var allShifts = employeeItem.shifts.SelectMany(x => x.Value);
+                    employeeItem.total_working_hour = allShifts.Sum(x => x.working_hour);
+                    employeeItem.real_working_hour = allShifts.Sum(x => x.real_working_hour);
 
-            //        // Calculate totals
-            //        var allShifts = employeeItem.shifts.SelectMany(x => x.Value);
-            //        employeeItem.total_working_hour = allShifts.Sum(x => x.working_hour);
-            //        employeeItem.real_working_hour = allShifts.Sum(x => x.real_working_hour);
+                    items.Add(employeeItem);
+                }
 
-            //        items.Add(employeeItem);
-            //    }
+                // Set response data
+                response.Data.items = items;
+                response.Data.meta.total = items.Count;
+                response.Data.meta.count = items.Count;
+                response.Data.meta.total_pages = (int)Math.Ceiling((double)items.Count / response.Data.meta.per_page);
 
-            //    // Set response data
-            //    response.Data.items = items;
-            //    response.Data.meta.total = items.Count;
-            //    response.Data.meta.count = items.Count;
-            //    response.Data.meta.total_pages = (int)Math.Ceiling((double)items.Count / response.Data.meta.per_page);
-
-            //    response.Code = ResponseResultEnum.Success.Value();
-            //    response.Message = "Lấy dữ liệu thành công";
-            //}
-            //catch (InvalidOperationException invalidEx)
-            //{
-            //    response.Code = ResponseResultEnum.InvalidData.Value();
-            //    response.Message = invalidEx.Message;
-            //}
-            //catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            //{
-            //    if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-            //    {
-            //        response.Code = ResponseResultEnum.InvalidData.Value();
-            //        response.Message = sqlEx.Message;
-            //    }
-            //    else
-            //    {
-            //        response.Code = ResponseResultEnum.SystemError.Value();
-            //        response.Message = "Đã xảy ra lỗi hệ thống.";
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    CommonLogger.DefaultLogger.Error("ShiftBo.GetEmployeeShiftSummary - Error occurred", ex);
-            //    response.Code = ResponseResultEnum.SystemError.Value();
-            //    response.Message = "Lỗi hệ thống: " + ex.Message;
-            //}
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = "Lấy dữ liệu thành công";
+            }
+            catch (InvalidOperationException invalidEx)
+            {
+                response.Code = ResponseResultEnum.InvalidData.Value();
+                response.Message = invalidEx.Message;
+            }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("ShiftBo.GetEmployeeShiftSummary - Error occurred", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lỗi hệ thống: " + ex.Message;
+            }
 
             return response;
         }

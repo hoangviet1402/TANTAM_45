@@ -12,6 +12,7 @@ namespace DataAccess.Dao.TanTam
     {
         int CreateBranche(string Name, string Address, string RegionId, int IsOnboarding, float Latitude, float Longitude, int companyId, string Alias, string Code);
         List<Ins_CompanyBranch_GetAllByCompany_Result> GetAllBranchs(int companyId, out int total);
+        List<Ins_EmployeeBranchMap_GetByEmployeeId_Result> AccountGetAllBranchs(int accountMapId);
     }
 
     internal class BranchesDao : DaoFactories<TanTamEntities, DBNull>, IBranchesDao
@@ -41,6 +42,16 @@ namespace DataAccess.Dao.TanTam
 
                 if (out_total != null && out_total.Value != null)
                     int.TryParse(out_total.Value.ToString(), out total);
+
+                return data.ToList();
+            }
+        }
+
+        public List<Ins_EmployeeBranchMap_GetByEmployeeId_Result> AccountGetAllBranchs(int accountMapId)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_EmployeeBranchMap_GetByEmployeeId(accountMapId);
 
                 return data.ToList();
             }

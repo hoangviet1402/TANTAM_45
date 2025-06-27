@@ -120,6 +120,20 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Không tìm thấy thông tin nhân viên";
                 }
             }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeDetailAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeDetailAsync - Error occurred", ex);
@@ -201,6 +215,20 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Không có dữ liệu nhân viên";
                 }
             }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeListAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeListAsync - Error occurred", ex);
@@ -246,6 +274,34 @@ namespace BussinessObject.Bo.TanTamBo
                     request.Role = 3; // Default to Employee role
                 }
 
+                // Handle BranchId: if not provided, get the first branch of the company
+                if (request.BranchId <= 0)
+                {
+                    try
+                    {
+                        int total = 0;
+                        var branches = DaoFactory.Branches.GetAllBranchs(request.CompanyId, out total);
+                        
+                        if (branches != null && branches.Any())
+                        {
+                            request.BranchId = branches.First().BranchId;
+                        }
+                        else
+                        {
+                            response.Code = ResponseResultEnum.InvalidInput.Value();
+                            response.Message = "Công ty chưa có chi nhánh nào. Vui lòng tạo chi nhánh trước khi thêm nhân viên.";
+                            return response;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        CommonLogger.DefaultLogger.Error("EmployeeBo.CreateEmployeeAsync - Error getting branches", ex);
+                        response.Code = ResponseResultEnum.InvalidInput.Value();
+                        response.Message = "Vui lòng cung cấp BranchId hợp lệ.";
+                        return response;
+                    }
+                }
+
                 // Hash password if provided
                 string hashedPassword = string.IsNullOrEmpty(request.Password) ? "" : AESHelper.HashPassword(request.Password);
 
@@ -283,6 +339,20 @@ namespace BussinessObject.Bo.TanTamBo
                         response.Code = ResponseResultEnum.Success.Value();
                         response.Message = $"Tạo tài khoản thành công";
                         break;
+                }
+            }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.CreateEmployeeAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
                 }
             }
             catch (Exception ex)
@@ -354,6 +424,20 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Không thể xóa nhân viên";
                 }
             }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.DeleteEmployeeAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.DeleteEmployeeAsync - Error occurred", ex);
@@ -408,6 +492,20 @@ namespace BussinessObject.Bo.TanTamBo
                 {
                     response.Code = ResponseResultEnum.Failed.Value();
                     response.Message = "Không thể xóa nhân viên";
+                }
+            }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.DeleteMultiEmployeeAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
                 }
             }
             catch (Exception ex)
@@ -480,6 +578,20 @@ namespace BussinessObject.Bo.TanTamBo
                 {
                     response.Code = ResponseResultEnum.Failed.Value();
                     response.Message = "Không thể đặt lại mật khẩu";
+                }
+            }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.ResetEmployeePasswordAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
                 }
             }
             catch (Exception ex)
@@ -564,6 +676,20 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Không thể cập nhật thông tin nhân viên";
                 }
             }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.UpdateEmployeeDetailsAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.UpdateEmployeeDetailsAsync - Error occurred", ex);
@@ -646,6 +772,20 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Không có dữ liệu nhân viên";
                 }
             }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeFilterListAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeFilterListAsync - Error occurred", ex);
@@ -692,6 +832,20 @@ namespace BussinessObject.Bo.TanTamBo
 
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Lấy mã nhân viên tiếp theo thành công";
+            }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetNextEmployeeCodeAsync - Entity Exception", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
             }
             catch (Exception ex)
             {

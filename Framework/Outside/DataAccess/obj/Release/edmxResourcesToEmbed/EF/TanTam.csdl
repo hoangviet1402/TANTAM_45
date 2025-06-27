@@ -682,6 +682,9 @@
       <Parameter Name="task_id" Mode="In" Type="Int32" />
       <Parameter Name="assigned_user" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Ins_EmployeeBranchMap_GetByEmployeeId" ReturnType="Collection(TanTamModel.Ins_EmployeeBranchMap_GetByEmployeeId_Result)">
+      <Parameter Name="AccountMapId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
     <Property Type="Int32" Name="EmployeeAccountMapId" Nullable="false" />
@@ -1724,5 +1727,31 @@
     <Property Type="String" Name="username" Nullable="true" MaxLength="100" />
     <Property Type="Int32" Name="identification" Nullable="true" />
     <Property Type="Int32" Name="branch_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Ins_EmployeeBranchMap_GetByEmployeeId_Result">
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Latitude" Nullable="true" />
+    <Property Type="Double" Name="Longitude" Nullable="true" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Province" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="IsOnboarding" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsHeadquarter" Nullable="true" />
+    <Property Type="DateTime" Name="BranchCreatedAt" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SortIndex" Nullable="true" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="District" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="EmployeeBranchMapId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="Boolean" Name="IsPrimary" Nullable="true" />
+    <Property Type="DateTime" Name="EmployeeBranchCreatedAt" Nullable="true" Precision="23" />
   </ComplexType>
 </Schema>

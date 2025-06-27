@@ -341,7 +341,7 @@ namespace BussinessObject.Models.Task
         public string Name { get; set; }
 
         [JsonProperty("identification")]
-        public string Identification { get; set; }
+        public int? Identification { get; set; }
 
         [JsonProperty("branch_id")]
         public int? BranchId { get; set; }

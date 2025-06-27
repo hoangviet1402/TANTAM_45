@@ -2286,5 +2286,97 @@ namespace DataAccess.EF
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Update_AssignedUser_Result>("Ins_Task_Update_AssignedUser", task_idParameter, assigned_userParameter);
         }
+    
+        public virtual ObjectResult<Ins_EmployeeBranchMap_GetByEmployeeId_Result> Ins_EmployeeBranchMap_GetByEmployeeId(Nullable<int> accountMapId)
+        {
+            var accountMapIdParameter = accountMapId.HasValue ?
+                new ObjectParameter("AccountMapId", accountMapId) :
+                new ObjectParameter("AccountMapId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeBranchMap_GetByEmployeeId_Result>("Ins_EmployeeBranchMap_GetByEmployeeId", accountMapIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Shift_GetListByUser_Result> Ins_Shift_GetListByUser(Nullable<int> userId, Nullable<System.DateTime> workingDay)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var workingDayParameter = workingDay.HasValue ?
+                new ObjectParameter("WorkingDay", workingDay) :
+                new ObjectParameter("WorkingDay", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Shift_GetListByUser_Result>("Ins_Shift_GetListByUser", userIdParameter, workingDayParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result> Ins_ShiftAssignment_User_WorkingDay_RegisterShift(Nullable<int> id, string userIds)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var userIdsParameter = userIds != null ?
+                new ObjectParameter("UserIds", userIds) :
+                new ObjectParameter("UserIds", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result>("Ins_ShiftAssignment_User_WorkingDay_RegisterShift", idParameter, userIdsParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result> Ins_ShiftAssignment_User_WorkingDay_RejectShift(Nullable<int> id, Nullable<int> userId)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result>("Ins_ShiftAssignment_User_WorkingDay_RejectShift", idParameter, userIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Task_Group_Delete_Result> Ins_Task_Group_Delete(Nullable<int> group_id)
+        {
+            var group_idParameter = group_id.HasValue ?
+                new ObjectParameter("group_id", group_id) :
+                new ObjectParameter("group_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Group_Delete_Result>("Ins_Task_Group_Delete", group_idParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Task_Group_Update_Name_Result> Ins_Task_Group_Update_Name(Nullable<int> group_id, string name)
+        {
+            var group_idParameter = group_id.HasValue ?
+                new ObjectParameter("group_id", group_id) :
+                new ObjectParameter("group_id", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Group_Update_Name_Result>("Ins_Task_Group_Update_Name", group_idParameter, nameParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> Ins_Task_Sub_Delete_All(Nullable<int> bundle_id, Nullable<int> task_id)
+        {
+            var bundle_idParameter = bundle_id.HasValue ?
+                new ObjectParameter("bundle_id", bundle_id) :
+                new ObjectParameter("bundle_id", typeof(int));
+    
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Ins_Task_Sub_Delete_All", bundle_idParameter, task_idParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Tasks_Delete_Result> Ins_Tasks_Delete(Nullable<int> task_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Tasks_Delete_Result>("Ins_Tasks_Delete", task_idParameter);
+        }
     }
 }

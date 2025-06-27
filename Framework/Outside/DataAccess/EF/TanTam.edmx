@@ -259,6 +259,9 @@
           <Parameter Name="Phone" Type="nvarchar" Mode="In" />
           <Parameter Name="PhoneCode" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="Ins_EmployeeBranchMap_GetByEmployeeId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountMapId" Type="int" Mode="In" />
+        </Function>
         <Function Name="Ins_OpenShift_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ShiftId" Type="nvarchar" Mode="In" />
           <Parameter Name="CompanyId" Type="int" Mode="In" />
@@ -391,6 +394,10 @@
         <Function Name="Ins_Shift_Get_Status_Clock_In_Out_Shift" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="EmployeeAccountMapId" Type="int" Mode="In" />
         </Function>
+        <Function Name="Ins_Shift_GetListByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="WorkingDay" Type="date" Mode="In" />
+        </Function>
         <Function Name="Ins_Shift_GetTimekeeper_logLastest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="EmployeeShiftID" Type="int" Mode="In" />
           <Parameter Name="EmployeeAccountMapID" Type="int" Mode="In" />
@@ -477,6 +484,14 @@
           <Parameter Name="Month" Type="int" Mode="In" />
           <Parameter Name="Year" Type="int" Mode="In" />
         </Function>
+        <Function Name="Ins_ShiftAssignment_User_WorkingDay_RegisterShift" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="UserIds" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="Ins_ShiftAssignment_User_WorkingDay_RejectShift" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
         <Function Name="Ins_Task_Add_Collaborators" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="task_id" Type="nvarchar" Mode="In" />
           <Parameter Name="user_ids" Type="nvarchar(max)" Mode="In" />
@@ -516,6 +531,13 @@
           <Parameter Name="color" Type="varchar" Mode="In" />
           <Parameter Name="position" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="Ins_Task_Group_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="group_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Ins_Task_Group_Update_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="group_id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="Ins_Task_List" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="task_id" Type="int" Mode="In" />
         </Function>
@@ -531,6 +553,10 @@
         </Function>
         <Function Name="Ins_Task_Sub_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="subtask_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Ins_Task_Sub_Delete_All" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bundle_id" Type="int" Mode="In" />
+          <Parameter Name="task_id" Type="int" Mode="In" />
         </Function>
         <Function Name="Ins_Task_Sub_ListByBundle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BundleId" Type="nvarchar" Mode="In" />
@@ -569,6 +595,9 @@
           <Parameter Name="position_ids" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="branch_ids" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="user_ids" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="Ins_Tasks_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="task_id" Type="int" Mode="In" />
         </Function>
         <Function Name="Ins_Time_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Lang" Type="varchar" Mode="In" />
@@ -1294,7 +1323,7 @@
             <Parameter Name="EmployeeIds" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_ShiftAssignment_User_WorkingDay_GetShifts" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result)">
-            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_ShiftAssignment_User_WorkingDay_GetSummary" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result)">
             <Parameter Name="CompanyId" Mode="In" Type="Int32" />
@@ -1321,7 +1350,7 @@
             <Parameter Name="options" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_Get_CustomizedFields_And_Values_ByTask">
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
+          <Parameter Name="task_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_Get_Sub_Field_Value_ByTitle" ReturnType="Collection(TanTamModel.Ins_Task_Get_Sub_Field_Value_ByTitle_Result)">
             <Parameter Name="subtask_id" Mode="In" Type="Int32" />
@@ -1332,7 +1361,7 @@
             <Parameter Name="field_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_Sub_Delete" ReturnType="Collection(TanTamModel.Ins_Task_Sub_Delete_Result)">
-            <Parameter Name="subtask_id" Mode="In" Type="Int32" />
+          <Parameter Name="subtask_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Ins_Task_Sub_Update_Completed" ReturnType="Collection(TanTamModel.Ins_Task_Sub_Update_Completed_Result)">
             <Parameter Name="id" Mode="In" Type="Int32" />
@@ -1352,6 +1381,35 @@
           <FunctionImport Name="Ins_Task_Update_AssignedUser" ReturnType="Collection(TanTamModel.Ins_Task_Update_AssignedUser_Result)">
             <Parameter Name="task_id" Mode="In" Type="Int32" />
             <Parameter Name="assigned_user" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_EmployeeBranchMap_GetByEmployeeId" ReturnType="Collection(TanTamModel.Ins_EmployeeBranchMap_GetByEmployeeId_Result)">
+          <Parameter Name="AccountMapId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Shift_GetListByUser" ReturnType="Collection(TanTamModel.Ins_Shift_GetListByUser_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="WorkingDay" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_ShiftAssignment_User_WorkingDay_RegisterShift" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="UserIds" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_ShiftAssignment_User_WorkingDay_RejectShift" ReturnType="Collection(TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Task_Group_Delete" ReturnType="Collection(TanTamModel.Ins_Task_Group_Delete_Result)">
+            <Parameter Name="group_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Task_Group_Update_Name" ReturnType="Collection(TanTamModel.Ins_Task_Group_Update_Name_Result)">
+            <Parameter Name="group_id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Task_Sub_Delete_All" ReturnType="Collection(Int32)">
+            <Parameter Name="bundle_id" Mode="In" Type="Int32" />
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Ins_Tasks_Delete" ReturnType="Collection(TanTamModel.Ins_Tasks_Delete_Result)">
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Ins_Account_EmployeesInfoInCompany_Result">
@@ -2395,6 +2453,95 @@
           <Property Type="String" Name="username" Nullable="true" MaxLength="100" />
           <Property Type="Int32" Name="identification" Nullable="true" />
           <Property Type="Int32" Name="branch_id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Ins_EmployeeBranchMap_GetByEmployeeId_Result">
+          <Property Type="Int32" Name="BranchId" Nullable="false" />
+          <Property Type="Int32" Name="CompanyId" Nullable="false" />
+          <Property Type="String" Name="BranchName" Nullable="true" MaxLength="255" />
+          <Property Type="Double" Name="Latitude" Nullable="true" />
+          <Property Type="Double" Name="Longitude" Nullable="true" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Province" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Tel" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="IsOnboarding" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+          <Property Type="Boolean" Name="IsHeadquarter" Nullable="true" />
+          <Property Type="DateTime" Name="BranchCreatedAt" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Color" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Code" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="SortIndex" Nullable="true" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="PhoneCode" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Alias" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="District" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="EmployeeBranchMapId" Nullable="false" />
+          <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+          <Property Type="Boolean" Name="IsPrimary" Nullable="true" />
+          <Property Type="DateTime" Name="EmployeeBranchCreatedAt" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Ins_Shift_GetListByUser_Result">
+          <Property Type="Int32" Name="SuwId" Nullable="false" />
+          <Property Type="Int32" Name="ShiftAssignmentId" Nullable="false" />
+          <Property Type="Int32" Name="ShiftId" Nullable="false" />
+          <Property Type="String" Name="ShiftName" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="ShiftKey" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="SortIndex" Nullable="false" />
+          <Property Type="Decimal" Name="Coefficient" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="MinimumWorkingHour" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="Timezone" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="WorkingDay" Nullable="false" />
+          <Property Type="Int32" Name="WeekOfYear" Nullable="true" />
+          <Property Type="Int32" Name="TotalRegister" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result">
+          <Property Type="Int32" Name="TotalUpdated" Nullable="false" />
+          <Property Type="DateTime" Name="WorkingDay" Nullable="true" />
+          <Property Type="String" Name="ShiftName" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Message" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result">
+          <Property Type="Int32" Name="Success" Nullable="false" />
+          <Property Type="Int32" Name="SuwId" Nullable="true" />
+          <Property Type="DateTime" Name="WorkingDay" Nullable="true" />
+          <Property Type="String" Name="ShiftName" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Message" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="Ins_Task_Group_Delete_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="task_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="index" Nullable="true" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Ins_Task_Group_Update_Name_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="task_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="index" Nullable="true" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Ins_Tasks_Delete_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="icon" Nullable="true" MaxLength="255" />
+          <Property Type="Boolean" Name="favored" Nullable="true" />
+          <Property Type="String" Name="view_id" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="color" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="updated_at" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="is_archived" Nullable="true" />
+          <Property Type="Int32" Name="created_user_id" Nullable="true" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+          <Property Type="String" Name="default_deadline_time" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="default_start_time" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="task_done" Nullable="false" />
+          <Property Type="Int32" Name="task_count" Nullable="false" />
+          <Property Type="Int32" Name="task_overdue" Nullable="false" />
+          <Property Type="Int32" Name="user_count" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3691,6 +3838,124 @@
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="identification" ColumnName="identification" />
                 <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_EmployeeBranchMap_GetByEmployeeId" FunctionName="TanTamModel.Store.Ins_EmployeeBranchMap_GetByEmployeeId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_EmployeeBranchMap_GetByEmployeeId_Result">
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsOnboarding" ColumnName="IsOnboarding" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsHeadquarter" ColumnName="IsHeadquarter" />
+                <ScalarProperty Name="BranchCreatedAt" ColumnName="BranchCreatedAt" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="EmployeeBranchMapId" ColumnName="EmployeeBranchMapId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+                <ScalarProperty Name="EmployeeBranchCreatedAt" ColumnName="EmployeeBranchCreatedAt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Shift_GetListByUser" FunctionName="TanTamModel.Store.Ins_Shift_GetListByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_GetListByUser_Result">
+                <ScalarProperty Name="SuwId" ColumnName="SuwId" />
+                <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+                <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+                <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
+                <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
+                <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+                <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+                <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+                <ScalarProperty Name="TotalRegister" ColumnName="TotalRegister" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_RegisterShift" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_RegisterShift">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result">
+                <ScalarProperty Name="TotalUpdated" ColumnName="TotalUpdated" />
+                <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+                <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_RejectShift" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_RejectShift">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result">
+                <ScalarProperty Name="Success" ColumnName="Success" />
+                <ScalarProperty Name="SuwId" ColumnName="SuwId" />
+                <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+                <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Task_Group_Delete" FunctionName="TanTamModel.Store.Ins_Task_Group_Delete">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Delete_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="index" ColumnName="index" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Task_Group_Update_Name" FunctionName="TanTamModel.Store.Ins_Task_Group_Update_Name">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Update_Name_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="index" ColumnName="index" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ins_Task_Sub_Delete_All" FunctionName="TanTamModel.Store.Ins_Task_Sub_Delete_All" />
+          <FunctionImportMapping FunctionImportName="Ins_Tasks_Delete" FunctionName="TanTamModel.Store.Ins_Tasks_Delete">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TanTamModel.Ins_Tasks_Delete_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="favored" ColumnName="favored" />
+                <ScalarProperty Name="view_id" ColumnName="view_id" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="is_archived" ColumnName="is_archived" />
+                <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="default_deadline_time" ColumnName="default_deadline_time" />
+                <ScalarProperty Name="default_start_time" ColumnName="default_start_time" />
+                <ScalarProperty Name="task_done" ColumnName="task_done" />
+                <ScalarProperty Name="task_count" ColumnName="task_count" />
+                <ScalarProperty Name="task_overdue" ColumnName="task_overdue" />
+                <ScalarProperty Name="user_count" ColumnName="user_count" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

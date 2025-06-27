@@ -26,17 +26,106 @@ namespace BussinessObject.Bo.Shift
             DaoFactory.Payroll.ShiftAssignment_User_Create(parameter, dateFrom, dateTo);
         }
 
-        public List<Ins_Payroll_User_GetList_Result> Payroll_User_GetList(int assignmentUserID, int accountMapID, int brandId, DateTime dateFrom, DateTime dateTo)
+        public ApiResult<List<ClockInOut_Shift>> Payroll_User_GetList(int companyId, int accountMapID, string working_day)
         {
-            var data = DaoFactory.Payroll.Payroll_User_GetList(assignmentUserID, accountMapID, brandId, dateFrom, dateTo);
-            if (assignmentUserID == 0)
+            var response = new ApiResult<List<ClockInOut_Shift>>()
             {
-                return data.Where(x => x.ShiftType == Shift_Type_Enum.standard_working.Text()).ToList();
-            }
-            else
+                Data = new List<ClockInOut_Shift>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            DateTime dateFrom = DateTime.Now;
+            DateTime dateTo = DateTime.Now;
+            List<string> getDatePayroll = working_day.ToLower().Split(',').ToList();
+            var user_Branches = DaoFactory.Branches.AccountGetAllBranchs(accountMapID);
+            List<Ins_Payroll_User_GetList_Result> clock_shift = null;
+            foreach (var item in user_Branches)
             {
-                return data;
+                var data = DaoFactory.Payroll.Payroll_User_GetList(0, accountMapID, item.BranchId, dateFrom.GetBeginOfDay(), dateTo.LastDayOfMonth());
+                foreach (var item_getDatePayroll in getDatePayroll)
+                {
+                    clock_shift = null;
+                    switch (item_getDatePayroll)
+                    {
+                        case "today":
+                            clock_shift = data.Where(x => x.WorkingDay.GetValueOrDefault().GetBeginOfDay() == dateFrom.GetBeginOfDay()).ToList();
+                            response.Data.AddRange(clock_shift.Select(aa => new ClockInOut_Shift()
+                            {
+                                Id = aa.AssignmentUserID,
+                                Name = aa.ShiftName,
+                                ShiftKey = aa.ShiftKey,
+                                ShiftId = aa.ShiftId,
+                                ShiftType = aa.ShiftType,
+                                StartTime = aa.StartTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                EndTime = aa.EndTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                WorkingHour = aa.WorkingHour,
+                                WorkingDay = aa.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                WeekOfYear = aa.WeekOfYear,
+                                BranchId = item.BranchId,
+                                UserId = accountMapID,
+                                IsConfirm = 1,
+                                IsOvertimeShift = aa.IsOvertimeShift,
+                                ShopId = aa.CompanyID ?? 0,
+                                MealCoefficient = aa.ShiftAssignmentMealCoefficient,
+                                Timezone = aa.Timezone,
+                                IsOpenShift = aa.IsOpenShift,
+                            }));
+                            break;
+                        case "tomorrow":
+                            clock_shift = data.Where(x => x.WorkingDay.GetValueOrDefault().GetBeginOfDay() > dateFrom.AddDays(1).GetBeginOfDay()).OrderBy(x => x.WorkingDay.GetValueOrDefault()).Take(1).ToList();
+                            response.Data.AddRange(clock_shift.Select( aa => new ClockInOut_Shift()
+                            {
+                                Id = aa.AssignmentUserID,
+                                Name = aa.ShiftName,
+                                ShiftKey = aa.ShiftKey,
+                                ShiftId = aa.ShiftId,
+                                ShiftType = aa.ShiftType,
+                                StartTime = aa.StartTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                EndTime = aa.EndTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                WorkingHour = aa.WorkingHour,
+                                WorkingDay = aa.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                WeekOfYear = aa.WeekOfYear,
+                                BranchId = item.BranchId,
+                                UserId = accountMapID,
+                                IsConfirm = 1,
+                                IsOvertimeShift = aa.IsOvertimeShift,
+                                ShopId = aa.CompanyID ?? 0,
+                                MealCoefficient = aa.ShiftAssignmentMealCoefficient,
+                                Timezone = aa.Timezone,
+                                IsOpenShift = aa.IsOpenShift,
+                            }));
+                            break;
+                        case "week":
+                            clock_shift = data.Where(x => x.WorkingDay.GetValueOrDefault().GetBeginOfDay() > dateFrom.AddDays(1).GetBeginOfDay()).OrderBy(x => x.WorkingDay.GetValueOrDefault()).Take(7).ToList();
+                            response.Data.AddRange(clock_shift.Select(aa => new ClockInOut_Shift()
+                            {
+                                Id = aa.AssignmentUserID,
+                                Name = aa.ShiftName,
+                                ShiftKey = aa.ShiftKey,
+                                ShiftId = aa.ShiftId,
+                                ShiftType = aa.ShiftType,
+                                StartTime = aa.StartTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                EndTime = aa.EndTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                WorkingHour = aa.WorkingHour,
+                                WorkingDay = aa.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                WeekOfYear = aa.WeekOfYear,
+                                BranchId = item.BranchId,
+                                UserId = accountMapID,
+                                IsConfirm = 1,
+                                IsOvertimeShift = aa.IsOvertimeShift,
+                                ShopId = aa.CompanyID ?? 0,
+                                MealCoefficient = aa.ShiftAssignmentMealCoefficient,
+                                Timezone = aa.Timezone,
+                                IsOpenShift = aa.IsOpenShift,
+                            }));
+                            break;
+                        default:
+                            break;
+                    }
+                }        
             }
+            return response;
         }
 
         public ApiResult<StatusClockInOutShiftResponse> StatusClockInOutShift(int accountMapID, DateTime dateFrom, string timekeeper_device = "", int is_show_button = 0, bool isInitial = false)

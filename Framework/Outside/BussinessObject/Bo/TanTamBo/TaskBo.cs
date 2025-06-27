@@ -85,6 +85,27 @@ namespace BussinessObject.Bo.TanTamBo
             return DaoFactory.Task.CreateTaskGroup(bundleId, name, color, position);
         }
 
+        /// <summary>
+        /// Xóa group và tất cả subtasks trong group
+        /// </summary>
+        /// <param name="groupId">ID của group cần xóa</param>
+        /// <returns>Danh sách group còn lại trong task</returns>
+        public List<Ins_Task_Group_Delete_Result> DeleteTaskGroup(int groupId)
+        {
+            return DaoFactory.Task.DeleteTaskGroup(groupId);
+        }
+
+        /// <summary>
+        /// Cập nhật tên của group
+        /// </summary>
+        /// <param name="groupId">ID của group cần cập nhật</param>
+        /// <param name="name">Tên mới của group</param>
+        /// <returns>Thông tin group đã cập nhật</returns>
+        public Ins_Task_Group_Update_Name_Result UpdateTaskGroupName(int groupId, string name)
+        {
+            return DaoFactory.Task.UpdateTaskGroupName(groupId, name);
+        }
+
         #endregion
 
         #region Task Users & Managers
@@ -151,6 +172,63 @@ namespace BussinessObject.Bo.TanTamBo
             return DaoFactory.Task.GetTaskSubListByBundle(bundleId);
         }
 
+        /// <summary>
+        /// Cập nhật trạng thái hoàn thành của sub-task
+        /// </summary>
+        /// <param name="id">ID của sub-task</param>
+        /// <param name="isCompleted">Trạng thái hoàn thành</param>
+        /// <returns>Thông tin sub-task đã cập nhật</returns>
+        public Ins_Task_Sub_Update_Completed_Result UpdateTaskSubCompleted(int id, bool isCompleted)
+        {
+            return DaoFactory.Task.UpdateTaskSubCompleted(id, isCompleted);
+        }
+
+        /// <summary>
+        /// Cập nhật deadline của sub-task
+        /// </summary>
+        /// <param name="id">ID của sub-task</param>
+        /// <param name="deadline">Deadline mới</param>
+        /// <param name="startDate">Ngày bắt đầu</param>
+        /// <returns>Thông tin sub-task đã cập nhật</returns>
+        public Ins_Task_Sub_Update_Deadline_Result UpdateTaskSubDeadline(int id, DateTime? deadline, DateTime? startDate)
+        {
+            return DaoFactory.Task.UpdateTaskSubDeadline(id, deadline, startDate);
+        }
+
+        /// <summary>
+        /// Xóa sub-task và trả về danh sách sub-task còn lại trong group
+        /// </summary>
+        /// <param name="subtaskId">ID của sub-task cần xóa</param>
+        /// <returns>Danh sách sub-task còn lại trong group</returns>
+        public List<Ins_Task_Sub_Delete_Result> DeleteTaskSub(int subtaskId)
+        {
+            return DaoFactory.Task.DeleteTaskSub(subtaskId);
+        }
+
+        /// <summary>
+        /// Thêm collaborators cho task
+        /// </summary>
+        /// <param name="taskId">ID của task</param>
+        /// <param name="userIds">Danh sách ID người dùng (phân cách bằng dấu phẩy)</param>
+        /// <returns>Số lượng collaborators đã thêm</returns>
+        public int AddTaskCollaborators(string taskId, string userIds)
+        {
+            return DaoFactory.Task.AddTaskCollaborators(taskId, userIds);
+        }
+
+        /// <summary>
+        /// Cập nhật tiêu đề của sub-task
+        /// </summary>
+        /// <param name="id">ID của sub-task</param>
+        /// <param name="title">Tiêu đề mới</param>
+        /// <param name="titleNosign">Tiêu đề không dấu mới</param>
+        /// <param name="alias">Alias của sub-task</param>
+        /// <returns>Thông tin sub-task đã cập nhật</returns>
+        public Ins_Task_Sub_Update_Title_Result UpdateSubTaskTitle(int id, string title, string titleNosign, string alias)
+        {
+            return DaoFactory.Task.UpdateSubTaskTitle(id, title, titleNosign, alias);
+        }
+
         #endregion
 
         #region Task Fields
@@ -180,6 +258,48 @@ namespace BussinessObject.Bo.TanTamBo
                 objectSortIndex, objectActive);
         }
 
+        /// <summary>
+        /// Tạo trường task với các tùy chọn
+        /// </summary>
+        /// <param name="taskId">ID của task</param>
+        /// <param name="title">Tiêu đề trường</param>
+        /// <param name="type">Loại trường</param>
+        /// <param name="description">Mô tả trường</param>
+        /// <param name="addToLibrary">Thêm vào thư viện</param>
+        /// <param name="notifyOnChange">Thông báo khi giá trị thay đổi</param>
+        /// <returns>Kết quả tạo trường</returns>
+        public Ins_Task_Field_Create_Result CreateTaskField(int taskId, string title, string type, string description, bool? addToLibrary, bool? notifyOnChange)
+        {
+            return DaoFactory.Task.CreateTaskField(taskId, title, type, description, addToLibrary, notifyOnChange);
+        }
+
         #endregion
+
+        public List<Ins_Task_Update_AssignedUser_Result> UpdateTaskAssignedUser(int taskId, int? assignedUser)
+        {
+            return DaoFactory.Task.UpdateTaskAssignedUser(taskId, assignedUser);
+        }
+
+        // Lấy customized fields cho subtask/task (dùng store Ins_Task_Get_CustomizedFields_And_Values_ByTask)
+        /// <summary>
+        /// Lấy customized fields cho subtask/task
+        /// </summary>
+        /// <param name="taskId">ID của task</param>
+        /// <returns>Số lượng customized fields đã xử lý</returns>
+        public int GetCustomizedFieldsAndValuesByTask(int taskId)
+        {
+            return DaoFactory.Task.GetCustomizedFieldsAndValuesByTask(taskId);
+        }
+
+        // Lấy field value của subtask theo title (dùng store Ins_Task_Get_Sub_Field_Value_ByTitle)
+        public List<Ins_Task_Get_Sub_Field_Value_ByTitle_Result> GetSubFieldValueByTitle(int subtaskId, string title = null)
+        {
+            return DaoFactory.Task.GetSubFieldValueByTitle(subtaskId, title);
+        }
+
+        public void InsertTaskFieldOptionsBulk(int fieldId, string options)
+        {
+            DaoFactory.Task.InsertTaskFieldOptionsBulk(fieldId, options);
+        }
     }
 }

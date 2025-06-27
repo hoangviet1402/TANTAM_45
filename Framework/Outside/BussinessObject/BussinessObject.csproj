@@ -84,6 +84,7 @@
     <Compile Include="Bo\Shift\PayrollBo.cs" />
     <Compile Include="Bo\Shift\ShiftAssignmentBo.cs" />
     <Compile Include="Bo\Shift\ShiftBo.cs" />
+    <Compile Include="Bo\Shift\ShiftSummaryBo.cs" />
     <Compile Include="Bo\TanTamBo\AuthBo.cs" />
     <Compile Include="Bo\TanTamBo\BranchesBo.cs" />
     <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
@@ -164,7 +165,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Service\ShiftService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\DBOL\MyConfig\MyConfig.csproj">
