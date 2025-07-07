@@ -1,3 +1,5 @@
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csprojAssemblyReference.cache
+D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CoreCompileInputs.cache
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll.config
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\TanTamApi.pdb
@@ -78,8 +80,6 @@ D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.Optimization.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.Deployment.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.Razor.xml
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\bin\System.Web.WebPages.xml
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csprojAssemblyReference.cache
-D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CoreCompileInputs.cache
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.dll
 D:\CRM\TANTAM_SVN\DBOL\MobileApi\obj\Debug\TanTamApi.pdb

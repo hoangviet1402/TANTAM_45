@@ -31,5 +31,7 @@ namespace DataAccess
         public static IPayrollDao Payroll => new PayrollDao();
         public static IShiftAssignmentDao ShiftAssignment => new ShiftAssignmentDao();
         public static IOpenShiftDao OpenShift => new OpenShiftDao();
+        public static IWifiDao Wifi => new WifiDao();
+        public static ITimekeeperDao Timekeeper => new TimekeeperDao();
     }
 }

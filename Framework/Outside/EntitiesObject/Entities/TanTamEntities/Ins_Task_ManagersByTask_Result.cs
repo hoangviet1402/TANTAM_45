@@ -15,7 +15,7 @@ namespace EntitiesObject.Entities.TanTamEntities
     {
         public Nullable<int> id { get; set; }
         public string name { get; set; }
-        public string username { get; set; }
+        public string phone_number { get; set; }
         public Nullable<int> department_id { get; set; }
         public Nullable<int> branch_id { get; set; }
     }

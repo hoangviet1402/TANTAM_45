@@ -21,7 +21,15 @@ namespace DataAccess.Model.Shift
         public int TimeKeeperDevice { get; set; }
         public string Bssid { get; set; }
         public string Ssid { get; set; }
+        public float Accuracy { get; set; }
         public float Latitude { get; set; }
         public float Longitude { get; set; }
+        public float Altitude { get; set; }
+        public float AltitudeAccuracy { get; set; }
+        public float Speed { get; set; }
+        public float SpeedAccuracy { get; set; }
+        public float Course { get; set; }
+        public float CourseAccuracy { get; set; }
+        public bool Mocked { get; set; }
     }
 }

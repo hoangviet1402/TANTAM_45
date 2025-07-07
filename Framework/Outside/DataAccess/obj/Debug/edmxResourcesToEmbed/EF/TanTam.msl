@@ -100,6 +100,16 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Ins_Account_Register" FunctionName="TanTamModel.Store.Ins_Account_Register" />
     <FunctionImportMapping FunctionImportName="Ins_Account_RevokeToken" FunctionName="TanTamModel.Store.Ins_Account_RevokeToken" />
+    <FunctionImportMapping FunctionImportName="Ins_Account_UpdateFullName" FunctionName="TanTamModel.Store.Ins_Account_UpdateFullName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Account_UpdateFullName_Result">
+          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountRole" ColumnName="AccountRole" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Ins_Account_UpdatePass" FunctionName="TanTamModel.Store.Ins_Account_UpdatePass" />
     <FunctionImportMapping FunctionImportName="Ins_Account_UpdateToken_JwtID" FunctionName="TanTamModel.Store.Ins_Account_UpdateToken_JwtID" />
     <FunctionImportMapping FunctionImportName="Ins_Account_Validata" FunctionName="TanTamModel.Store.Ins_Account_Validata">
@@ -140,6 +150,28 @@
           <ScalarProperty Name="NeedSetPassword" ColumnName="NeedSetPassword" />
           <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Company_GetInfor" FunctionName="TanTamModel.Store.Ins_Company_GetInfor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Company_GetInfor_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="TotalEmployees" ColumnName="TotalEmployees" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreateStep" ColumnName="CreateStep" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="HearAbout" ColumnName="HearAbout" />
+          <ScalarProperty Name="UsePurpose" ColumnName="UsePurpose" />
+          <ScalarProperty Name="BusinesFieldIds" ColumnName="BusinesFieldIds" />
+          <ScalarProperty Name="GetStartedStep" ColumnName="GetStartedStep" />
+          <ScalarProperty Name="FirstStepModalOff" ColumnName="FirstStepModalOff" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -297,7 +329,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Employee_AddIntoBranch" FunctionName="TanTamModel.Store.Ins_Employee_AddIntoBranch" />
     <FunctionImportMapping FunctionImportName="Ins_Employee_Create" FunctionName="TanTamModel.Store.Ins_Employee_Create" />
     <FunctionImportMapping FunctionImportName="Ins_Employee_Delete" FunctionName="TanTamModel.Store.Ins_Employee_Delete" />
     <FunctionImportMapping FunctionImportName="Ins_Employee_GetAll" FunctionName="TanTamModel.Store.Ins_Employee_GetAll">
@@ -384,23 +415,128 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Employee_GetShiftsInBranch" FunctionName="TanTamModel.Store.Ins_Employee_GetShiftsInBranch">
+    <FunctionImportMapping FunctionImportName="Ins_Employee_GetShiftsInBranch" FunctionName="TanTamModel.Store.Ins_Employee_GetShiftsInBranch" />
+    <FunctionImportMapping FunctionImportName="Ins_Employee_GetTokensByEmployeeID" FunctionName="TanTamModel.Store.Ins_Employee_GetTokensByEmployeeID" />
+    <FunctionImportMapping FunctionImportName="Ins_Employee_ResetPass" FunctionName="TanTamModel.Store.Ins_Employee_ResetPass" />
+    <FunctionImportMapping FunctionImportName="Ins_Employee_UpdateDetails" FunctionName="TanTamModel.Store.Ins_Employee_UpdateDetails" />
+    <FunctionImportMapping FunctionImportName="Ins_EmployeeBranchMap_GetByEmployeeId" FunctionName="TanTamModel.Store.Ins_EmployeeBranchMap_GetByEmployeeId">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Employee_GetShiftsInBranch_Result">
-          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_EmployeeBranchMap_GetByEmployeeId_Result">
           <ScalarProperty Name="BranchId" ColumnName="BranchId" />
-          <ScalarProperty Name="ShiftAssignmentID" ColumnName="ShiftAssignmentID" />
-          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsOnboarding" ColumnName="IsOnboarding" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsHeadquarter" ColumnName="IsHeadquarter" />
+          <ScalarProperty Name="BranchCreatedAt" ColumnName="BranchCreatedAt" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="EmployeeBranchMapId" ColumnName="EmployeeBranchMapId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="EmployeeBranchCreatedAt" ColumnName="EmployeeBranchCreatedAt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_OpenShift_Create" FunctionName="TanTamModel.Store.Ins_OpenShift_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_OpenShift_Delete" FunctionName="TanTamModel.Store.Ins_OpenShift_Delete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_Delete_Result">
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_OpenShift_GetCompleteDetail" FunctionName="TanTamModel.Store.Ins_OpenShift_GetCompleteDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_GetCompleteDetail_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shift_name" ColumnName="shift_name" />
+          <ScalarProperty Name="total_employees" ColumnName="total_employees" />
+          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="working_day" ColumnName="working_day" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
+          <ScalarProperty Name="not_available" ColumnName="not_available" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_OpenShift_List" FunctionName="TanTamModel.Store.Ins_OpenShift_List">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_List_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shift_name" ColumnName="shift_name" />
+          <ScalarProperty Name="total_employees" ColumnName="total_employees" />
+          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="working_day" ColumnName="working_day" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
+          <ScalarProperty Name="not_available" ColumnName="not_available" />
+          <ScalarProperty Name="registered_employees" ColumnName="registered_employees" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_OpenShift_Publish" FunctionName="TanTamModel.Store.Ins_OpenShift_Publish" />
+    <FunctionImportMapping FunctionImportName="Ins_OpenShift_ShiftListByWorkingDay" FunctionName="TanTamModel.Store.Ins_OpenShift_ShiftListByWorkingDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_ShiftListByWorkingDay_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+          <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_GetList" FunctionName="TanTamModel.Store.Ins_Payroll_User_GetList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Payroll_User_GetList_Result">
+          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+          <ScalarProperty Name="AssignmentUserID" ColumnName="AssignmentUserID" />
+          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+          <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
+          <ScalarProperty Name="CheckoutTime" ColumnName="CheckoutTime" />
+          <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
+          <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
+          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
+          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
+          <ScalarProperty Name="RestStartTimeShort" ColumnName="RestStartTimeShort" />
+          <ScalarProperty Name="RestEndTimeShort" ColumnName="RestEndTimeShort" />
+          <ScalarProperty Name="RealCoefficient" ColumnName="RealCoefficient" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
           <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
           <ScalarProperty Name="Assignments" ColumnName="Assignments" />
-          <ScalarProperty Name="MealCoefficient" ColumnName="MealCoefficient" />
-          <ScalarProperty Name="GenerateTimekeepingTypeObj" ColumnName="GenerateTimekeepingTypeObj" />
-          <ScalarProperty Name="AssignmentTypeObj" ColumnName="AssignmentTypeObj" />
+          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
           <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
-          <ScalarProperty Name="ShiftAssignmentType" ColumnName="ShiftAssignmentType" />
+          <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
+          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
           <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
           <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
           <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
           <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
@@ -412,18 +548,16 @@
           <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
           <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
           <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
-          <ScalarProperty Name="SortIndex1" ColumnName="SortIndex1" />
+          <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
           <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
-          <ScalarProperty Name="MealCoefficient1" ColumnName="MealCoefficient1" />
+          <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
           <ScalarProperty Name="Timezone" ColumnName="Timezone" />
           <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
+          <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Employee_GetTokensByEmployeeID" FunctionName="TanTamModel.Store.Ins_Employee_GetTokensByEmployeeID" />
-    <FunctionImportMapping FunctionImportName="Ins_Employee_MultiDelete" FunctionName="TanTamModel.Store.Ins_Employee_MultiDelete" />
-    <FunctionImportMapping FunctionImportName="Ins_Employee_ResetPass" FunctionName="TanTamModel.Store.Ins_Employee_ResetPass" />
-    <FunctionImportMapping FunctionImportName="Ins_Employee_UpdateDetails" FunctionName="TanTamModel.Store.Ins_Employee_UpdateDetails" />
+    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_MultiDay" FunctionName="TanTamModel.Store.Ins_Payroll_User_MultiDay" />
     <FunctionImportMapping FunctionImportName="Ins_Shift_Branch_Create" FunctionName="TanTamModel.Store.Ins_Shift_Branch_Create">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_Branch_Create_Result">
@@ -515,435 +649,26 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Shift_Get_Status_Clock_In_Out_Shift" FunctionName="TanTamModel.Store.Ins_Shift_Get_Status_Clock_In_Out_Shift">
+    <FunctionImportMapping FunctionImportName="Ins_Shift_Get_Status_Clock_In_Out_Shift" FunctionName="TanTamModel.Store.Ins_Shift_Get_Status_Clock_In_Out_Shift" />
+    <FunctionImportMapping FunctionImportName="Ins_Shift_GetListByUser" FunctionName="TanTamModel.Store.Ins_Shift_GetListByUser">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_Get_Status_Clock_In_Out_Shift_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ShiftAssignmentID" ColumnName="ShiftAssignmentID" />
-          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Shift_GetTimekeeper_logLastest" FunctionName="TanTamModel.Store.Ins_Shift_GetTimekeeper_logLastest">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_GetTimekeeper_logLastest_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
-          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
-          <ScalarProperty Name="EmployeeShiftID" ColumnName="EmployeeShiftID" />
-          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Branch_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Branch_Create">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_Branch_Create_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
-          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
-          <ScalarProperty Name="Color" ColumnName="Color" />
-          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Create" />
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_CreateAssignment" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_CreateAssignment" />
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Department_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Department_Create">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_Department_Create_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
-          <ScalarProperty Name="Color" ColumnName="Color" />
-          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Position_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Position_Create">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_Position_Create_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
-          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
-          <ScalarProperty Name="Color" ColumnName="Color" />
-          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_CreatorInfo" FunctionName="TanTamModel.Store.Ins_Task_CreatorInfo">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_CreatorInfo_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="identification" ColumnName="identification" />
-          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_GetTaskGroupsByTaskId" FunctionName="TanTamModel.Store.Ins_Task_GetTaskGroupsByTaskId">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_GetTaskGroupsByTaskId_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="task_id" ColumnName="task_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="color" ColumnName="color" />
-          <ScalarProperty Name="index" ColumnName="index" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Group_Create" FunctionName="TanTamModel.Store.Ins_Task_Group_Create">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Create_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="color" ColumnName="color" />
-          <ScalarProperty Name="index" ColumnName="index" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_List" FunctionName="TanTamModel.Store.Ins_Task_List">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_List_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="icon" ColumnName="icon" />
-          <ScalarProperty Name="favored" ColumnName="favored" />
-          <ScalarProperty Name="view_id" ColumnName="view_id" />
-          <ScalarProperty Name="color" ColumnName="color" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-          <ScalarProperty Name="is_archived" ColumnName="is_archived" />
-          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="default_deadline_time" ColumnName="default_deadline_time" />
-          <ScalarProperty Name="default_start_time" ColumnName="default_start_time" />
-          <ScalarProperty Name="task_done" ColumnName="task_done" />
-          <ScalarProperty Name="task_count" ColumnName="task_count" />
-          <ScalarProperty Name="task_overdue" ColumnName="task_overdue" />
-          <ScalarProperty Name="user_count" ColumnName="user_count" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_ManagersByTask" FunctionName="TanTamModel.Store.Ins_Task_ManagersByTask">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_ManagersByTask_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="department_id" ColumnName="department_id" />
-          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_Create" FunctionName="TanTamModel.Store.Ins_Task_Sub_Create">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Sub_Create_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
-          <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
-          <ScalarProperty Name="sort_index" ColumnName="sort_index" />
-          <ScalarProperty Name="private_sort_index" ColumnName="private_sort_index" />
-          <ScalarProperty Name="title" ColumnName="title" />
-          <ScalarProperty Name="title_nosign" ColumnName="title_nosign" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="alias" ColumnName="alias" />
-          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
-          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
-          <ScalarProperty Name="deadline" ColumnName="deadline" />
-          <ScalarProperty Name="start_date" ColumnName="start_date" />
-          <ScalarProperty Name="duration" ColumnName="duration" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_ListByBundle" FunctionName="TanTamModel.Store.Ins_Task_Sub_ListByBundle">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Sub_ListByBundle_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
-          <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
-          <ScalarProperty Name="sort_index" ColumnName="sort_index" />
-          <ScalarProperty Name="private_sort_index" ColumnName="private_sort_index" />
-          <ScalarProperty Name="title" ColumnName="title" />
-          <ScalarProperty Name="title_nosign" ColumnName="title_nosign" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="alias" ColumnName="alias" />
-          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
-          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
-          <ScalarProperty Name="deadline" ColumnName="deadline" />
-          <ScalarProperty Name="start_date" ColumnName="start_date" />
-          <ScalarProperty Name="duration" ColumnName="duration" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_UsersByTask" FunctionName="TanTamModel.Store.Ins_Task_UsersByTask">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_UsersByTask_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="department_id" ColumnName="department_id" />
-          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_UsersByUser" FunctionName="TanTamModel.Store.Ins_Task_UsersByUser">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_UsersByUser_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="identification" ColumnName="identification" />
-          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Time_GetList" FunctionName="TanTamModel.Store.Ins_Time_GetList">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Time_GetList_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Value" ColumnName="Value" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Lang" ColumnName="Lang" />
-          <ScalarProperty Name="IsHour" ColumnName="IsHour" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_User_ChangePassword" FunctionName="TanTamModel.Store.Ins_User_ChangePassword" />
-    <FunctionImportMapping FunctionImportName="Ins_User_Count" FunctionName="TanTamModel.Store.Ins_User_Count" />
-    <FunctionImportMapping FunctionImportName="Ins_User_Create" FunctionName="TanTamModel.Store.Ins_User_Create" />
-    <FunctionImportMapping FunctionImportName="Ins_User_GetDetail" FunctionName="TanTamModel.Store.Ins_User_GetDetail">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_User_GetDetail_Result">
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
-          <ScalarProperty Name="PhoneFull" ColumnName="PhoneFull" />
-          <ScalarProperty Name="AccountIsActive" ColumnName="AccountIsActive" />
-          <ScalarProperty Name="AccountCreatedAt" ColumnName="AccountCreatedAt" />
-          <ScalarProperty Name="EmployeeAccountMapId" ColumnName="EmployeeAccountMapId" />
-          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
-          <ScalarProperty Name="CompanyFullName" ColumnName="CompanyFullName" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="UserIsActive" ColumnName="UserIsActive" />
-          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
-          <ScalarProperty Name="IsNewUser" ColumnName="IsNewUser" />
-          <ScalarProperty Name="NeedSetPassword" ColumnName="NeedSetPassword" />
-          <ScalarProperty Name="UserCreatedAt" ColumnName="UserCreatedAt" />
-          <ScalarProperty Name="Role" ColumnName="Role" />
-          <ScalarProperty Name="EmployeeInfoId" ColumnName="EmployeeInfoId" />
-          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
-          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
-          <ScalarProperty Name="Skype" ColumnName="Skype" />
-          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
-          <ScalarProperty Name="EmergencyName" ColumnName="EmergencyName" />
-          <ScalarProperty Name="EmergencyMobile" ColumnName="EmergencyMobile" />
-          <ScalarProperty Name="EmergencyLandline" ColumnName="EmergencyLandline" />
-          <ScalarProperty Name="EmergencyRelation" ColumnName="EmergencyRelation" />
-          <ScalarProperty Name="EmergencyAddress" ColumnName="EmergencyAddress" />
-          <ScalarProperty Name="Country" ColumnName="Country" />
-          <ScalarProperty Name="Province" ColumnName="Province" />
-          <ScalarProperty Name="District" ColumnName="District" />
-          <ScalarProperty Name="Ward" ColumnName="Ward" />
-          <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
-          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
-          <ScalarProperty Name="CurrentAddress" ColumnName="CurrentAddress" />
-          <ScalarProperty Name="IdentityCard" ColumnName="IdentityCard" />
-          <ScalarProperty Name="IdentityCardCreateDate" ColumnName="IdentityCardCreateDate" />
-          <ScalarProperty Name="IdentityCardPlace" ColumnName="IdentityCardPlace" />
-          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
-          <ScalarProperty Name="PassporCreateDate" ColumnName="PassporCreateDate" />
-          <ScalarProperty Name="PassporExp" ColumnName="PassporExp" />
-          <ScalarProperty Name="PassporPlace" ColumnName="PassporPlace" />
-          <ScalarProperty Name="BankHolder" ColumnName="BankHolder" />
-          <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
-          <ScalarProperty Name="BankName" ColumnName="BankName" />
-          <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
-          <ScalarProperty Name="TaxIdentification" ColumnName="TaxIdentification" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_User_GetList" FunctionName="TanTamModel.Store.Ins_User_GetList">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_User_GetList_Result">
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="Role" ColumnName="Role" />
-          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
-          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
-          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_User_IsEmailExist" FunctionName="TanTamModel.Store.Ins_User_IsEmailExist" />
-    <FunctionImportMapping FunctionImportName="Ins_User_IsPhoneExist" FunctionName="TanTamModel.Store.Ins_User_IsPhoneExist" />
-    <FunctionImportMapping FunctionImportName="Ins_User_IsUsernameExist" FunctionName="TanTamModel.Store.Ins_User_IsUsernameExist" />
-    <FunctionImportMapping FunctionImportName="Ins_User_Update" FunctionName="TanTamModel.Store.Ins_User_Update" />
-    <FunctionImportMapping FunctionImportName="Ins_User_UpdateProfile" FunctionName="TanTamModel.Store.Ins_User_UpdateProfile" />
-    <FunctionImportMapping FunctionImportName="Ins_User_UpdateStatus" FunctionName="TanTamModel.Store.Ins_User_UpdateStatus" />
-    <FunctionImportMapping FunctionImportName="Sel_CompanyBranch_GetIds" FunctionName="TanTamModel.Store.Sel_CompanyBranch_GetIds" />
-    <FunctionImportMapping FunctionImportName="Sel_CompanyDepartment_GetCreated" FunctionName="TanTamModel.Store.Sel_CompanyDepartment_GetCreated" />
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_ByCompanyID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_ByCompanyID">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_ByCompanyID_Result">
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_GetListByUser_Result">
+          <ScalarProperty Name="SuwId" ColumnName="SuwId" />
           <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
           <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
-          <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
-          <ScalarProperty Name="Assignments" ColumnName="Assignments" />
-          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
-          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
-          <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
-          <ScalarProperty Name="AssignmentType1" ColumnName="AssignmentType1" />
-          <ScalarProperty Name="ShiftAssignmentTypeEnum" ColumnName="ShiftAssignmentTypeEnum" />
-          <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
-          <ScalarProperty Name="ShiftId_PK" ColumnName="ShiftId_PK" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
           <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
           <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
           <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
           <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
-          <ScalarProperty Name="Note" ColumnName="Note" />
-          <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
-          <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
-          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
-          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
-          <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
-          <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
-          <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
-          <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
-          <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
           <ScalarProperty Name="Timezone" ColumnName="Timezone" />
-          <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_Create" />
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByAccountMapID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByAccountMapID" />
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByShiftAssignmentID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByShiftAssignmentID" />
-    <FunctionImportMapping FunctionImportName="Ins_Tasks_Create" FunctionName="TanTamModel.Store.Ins_Tasks_Create">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Tasks_Create_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="icon" ColumnName="icon" />
-          <ScalarProperty Name="favored" ColumnName="favored" />
-          <ScalarProperty Name="view_id" ColumnName="view_id" />
-          <ScalarProperty Name="color" ColumnName="color" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-          <ScalarProperty Name="is_archived" ColumnName="is_archived" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="default_deadline_time" ColumnName="default_deadline_time" />
-          <ScalarProperty Name="default_start_time" ColumnName="default_start_time" />
-          <ScalarProperty Name="task_done" ColumnName="task_done" />
-          <ScalarProperty Name="task_count" ColumnName="task_count" />
-          <ScalarProperty Name="task_overdue" ColumnName="task_overdue" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Company_GetInfor" FunctionName="TanTamModel.Store.Ins_Company_GetInfor">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Company_GetInfor_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="Alias" ColumnName="Alias" />
-          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="TotalEmployees" ColumnName="TotalEmployees" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="CreateStep" ColumnName="CreateStep" />
-          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
-          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="HearAbout" ColumnName="HearAbout" />
-          <ScalarProperty Name="UsePurpose" ColumnName="UsePurpose" />
-          <ScalarProperty Name="BusinesFieldIds" ColumnName="BusinesFieldIds" />
-          <ScalarProperty Name="GetStartedStep" ColumnName="GetStartedStep" />
-          <ScalarProperty Name="FirstStepModalOff" ColumnName="FirstStepModalOff" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Account_UpdateFullName" FunctionName="TanTamModel.Store.Ins_Account_UpdateFullName">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Account_UpdateFullName_Result">
-          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
-          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
-          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
-          <ScalarProperty Name="AccountRole" ColumnName="AccountRole" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create" />
-    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_GetList" FunctionName="TanTamModel.Store.Ins_Payroll_User_GetList">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Payroll_User_GetList_Result">
-          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
-          <ScalarProperty Name="AssignmentUserID" ColumnName="AssignmentUserID" />
-          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
-          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
           <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
           <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
-          <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
-          <ScalarProperty Name="CheckoutTime" ColumnName="CheckoutTime" />
-          <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
-          <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
-          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
-          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
-          <ScalarProperty Name="RestStartTimeShort" ColumnName="RestStartTimeShort" />
-          <ScalarProperty Name="RestEndTimeShort" ColumnName="RestEndTimeShort" />
-          <ScalarProperty Name="RealCoefficient" ColumnName="RealCoefficient" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
-          <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
-          <ScalarProperty Name="Assignments" ColumnName="Assignments" />
-          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
-          <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
-          <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
-          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
-          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
-          <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
-          <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
-          <ScalarProperty Name="Note" ColumnName="Note" />
-          <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
-          <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
-          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
-          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
-          <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
-          <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
-          <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
-          <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
-          <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
-          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
-          <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
-          <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
+          <ScalarProperty Name="TotalRegister" ColumnName="TotalRegister" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_MultiDay" FunctionName="TanTamModel.Store.Ins_Payroll_User_MultiDay" />
+    <FunctionImportMapping FunctionImportName="Ins_Shift_GetTimekeeper_logLastest" FunctionName="TanTamModel.Store.Ins_Shift_GetTimekeeper_logLastest" />
     <FunctionImportMapping FunctionImportName="Ins_Shift_User_GetStatus_clock_in_out" FunctionName="TanTamModel.Store.Ins_Shift_User_GetStatus_clock_in_out">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_User_GetStatus_clock_in_out_Result">
@@ -1006,79 +731,45 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_Insert" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_Insert" />
-    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Branch_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Branch_Create">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_Branch_Create_Result">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
-          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
-          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
-          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
-          <ScalarProperty Name="CurrentBranchId" ColumnName="CurrentBranchId" />
-          <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
-          <ScalarProperty Name="TimeKeeperDevice" ColumnName="TimeKeeperDevice" />
-          <ScalarProperty Name="Bssid" ColumnName="Bssid" />
-          <ScalarProperty Name="Ssid" ColumnName="Ssid" />
-          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
-          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_OpenShift_Create" FunctionName="TanTamModel.Store.Ins_OpenShift_Create" />
-    <FunctionImportMapping FunctionImportName="Ins_OpenShift_Delete" FunctionName="TanTamModel.Store.Ins_OpenShift_Delete">
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_ByCompanyID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_ByCompanyID" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_CreateAssignment" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_CreateAssignment" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Department_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Department_Create">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_Delete_Result">
-          <ScalarProperty Name="Success" ColumnName="Success" />
-          <ScalarProperty Name="Message" ColumnName="Message" />
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_Department_Create_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_OpenShift_GetCompleteDetail" FunctionName="TanTamModel.Store.Ins_OpenShift_GetCompleteDetail">
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_Position_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_Position_Create">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_GetCompleteDetail_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="shift_name" ColumnName="shift_name" />
-          <ScalarProperty Name="total_employees" ColumnName="total_employees" />
-          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
-          <ScalarProperty Name="start_time" ColumnName="start_time" />
-          <ScalarProperty Name="end_time" ColumnName="end_time" />
-          <ScalarProperty Name="working_day" ColumnName="working_day" />
-          <ScalarProperty Name="timezone" ColumnName="timezone" />
-          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
-          <ScalarProperty Name="not_available" ColumnName="not_available" />
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_Position_Create_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_OpenShift_List" FunctionName="TanTamModel.Store.Ins_OpenShift_List">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_List_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="shift_name" ColumnName="shift_name" />
-          <ScalarProperty Name="total_employees" ColumnName="total_employees" />
-          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
-          <ScalarProperty Name="start_time" ColumnName="start_time" />
-          <ScalarProperty Name="end_time" ColumnName="end_time" />
-          <ScalarProperty Name="working_day" ColumnName="working_day" />
-          <ScalarProperty Name="timezone" ColumnName="timezone" />
-          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
-          <ScalarProperty Name="not_available" ColumnName="not_available" />
-          <ScalarProperty Name="registered_employees" ColumnName="registered_employees" />
-          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_OpenShift_Publish" FunctionName="TanTamModel.Store.Ins_OpenShift_Publish" />
-    <FunctionImportMapping FunctionImportName="Ins_OpenShift_ShiftListByWorkingDay" FunctionName="TanTamModel.Store.Ins_OpenShift_ShiftListByWorkingDay">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_OpenShift_ShiftListByWorkingDay_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
-          <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByAccountMapID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByAccountMapID" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_GetByShiftAssignmentID" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_GetByShiftAssignmentID" />
     <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_CreateSingle" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_CreateSingle" />
     <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_GetEmployees" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_GetEmployees">
       <ResultMapping>
@@ -1096,39 +787,39 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_GetSummary" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_GetSummary">
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_RegisterShift" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_RegisterShift">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result">
-          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result">
+          <ScalarProperty Name="TotalUpdated" ColumnName="TotalUpdated" />
           <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
-          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
-          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
-          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
           <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
-          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
-          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
-          <ScalarProperty Name="BranchesJson" ColumnName="BranchesJson" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_RejectShift" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_RejectShift">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result">
+          <ScalarProperty Name="Success" ColumnName="Success" />
           <ScalarProperty Name="SuwId" ColumnName="SuwId" />
-          <ScalarProperty Name="IsCheckIn" ColumnName="IsCheckIn" />
-          <ScalarProperty Name="IsCheckOut" ColumnName="IsCheckOut" />
-          <ScalarProperty Name="StartCheckInTime" ColumnName="StartCheckInTime" />
-          <ScalarProperty Name="StartCheckOutTime" ColumnName="StartCheckOutTime" />
-          <ScalarProperty Name="IsCheckInTimeNextDay" ColumnName="IsCheckInTimeNextDay" />
-          <ScalarProperty Name="IsCheckOutTimeNextDay" ColumnName="IsCheckOutTimeNextDay" />
-          <ScalarProperty Name="Reason" ColumnName="Reason" />
-          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
-          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
-          <ScalarProperty Name="StatusText" ColumnName="StatusText" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Ins_Task_Add_Collaborators" FunctionName="TanTamModel.Store.Ins_Task_Add_Collaborators" />
+    <FunctionImportMapping FunctionImportName="Ins_Task_CreatorInfo" FunctionName="TanTamModel.Store.Ins_Task_CreatorInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_CreatorInfo_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="identification" ColumnName="identification" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Ins_Task_Field_Create" FunctionName="TanTamModel.Store.Ins_Task_Field_Create">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Field_Create_Result">
@@ -1140,17 +831,6 @@
           <ScalarProperty Name="add_to_library" ColumnName="add_to_library" />
           <ScalarProperty Name="notify_on_change" ColumnName="notify_on_change" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Field_Options_Bulk" FunctionName="TanTamModel.Store.Ins_Task_Field_Options_Bulk">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Field_Options_Bulk_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="field_id" ColumnName="field_id" />
-          <ScalarProperty Name="title" ColumnName="title" />
-          <ScalarProperty Name="color" ColumnName="color" />
-          <ScalarProperty Name="sort_index" ColumnName="sort_index" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -1182,9 +862,106 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_Delete" FunctionName="TanTamModel.Store.Ins_Task_Sub_Delete">
+    <FunctionImportMapping FunctionImportName="Ins_Task_GetTaskGroupsByTaskId" FunctionName="TanTamModel.Store.Ins_Task_GetTaskGroupsByTaskId">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Sub_Delete_Result">
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_GetTaskGroupsByTaskId_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Group_Create" FunctionName="TanTamModel.Store.Ins_Task_Group_Create">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Create_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Group_Update_Name" FunctionName="TanTamModel.Store.Ins_Task_Group_Update_Name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Update_Name_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_List" FunctionName="TanTamModel.Store.Ins_Task_List">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_List_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="favored" ColumnName="favored" />
+          <ScalarProperty Name="view_id" ColumnName="view_id" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="is_archived" ColumnName="is_archived" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="default_deadline_time" ColumnName="default_deadline_time" />
+          <ScalarProperty Name="default_start_time" ColumnName="default_start_time" />
+          <ScalarProperty Name="task_done" ColumnName="task_done" />
+          <ScalarProperty Name="task_count" ColumnName="task_count" />
+          <ScalarProperty Name="task_overdue" ColumnName="task_overdue" />
+          <ScalarProperty Name="user_count" ColumnName="user_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_ManagersByTask" FunctionName="TanTamModel.Store.Ins_Task_ManagersByTask">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_ManagersByTask_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_Create" FunctionName="TanTamModel.Store.Ins_Task_Sub_Create">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Sub_Create_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
+          <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
+          <ScalarProperty Name="sort_index" ColumnName="sort_index" />
+          <ScalarProperty Name="private_sort_index" ColumnName="private_sort_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="title_nosign" ColumnName="title_nosign" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="completed_at" ColumnName="completed_at" />
+          <ScalarProperty Name="is_completed" ColumnName="is_completed" />
+          <ScalarProperty Name="completion_percentage" ColumnName="completion_percentage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_Delete_All" FunctionName="TanTamModel.Store.Ins_Task_Sub_Delete_All" />
+    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_ListByBundle" FunctionName="TanTamModel.Store.Ins_Task_Sub_ListByBundle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Sub_ListByBundle_Result">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
           <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
@@ -1293,102 +1070,48 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_EmployeeBranchMap_GetByEmployeeId" FunctionName="TanTamModel.Store.Ins_EmployeeBranchMap_GetByEmployeeId">
+    <FunctionImportMapping FunctionImportName="Ins_Task_UsersByTask" FunctionName="TanTamModel.Store.Ins_Task_UsersByTask">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_EmployeeBranchMap_GetByEmployeeId_Result">
-          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
-          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
-          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
-          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
-          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
-          <ScalarProperty Name="Country" ColumnName="Country" />
-          <ScalarProperty Name="Province" ColumnName="Province" />
-          <ScalarProperty Name="Tel" ColumnName="Tel" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="IsOnboarding" ColumnName="IsOnboarding" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="IsHeadquarter" ColumnName="IsHeadquarter" />
-          <ScalarProperty Name="BranchCreatedAt" ColumnName="BranchCreatedAt" />
-          <ScalarProperty Name="Color" ColumnName="Color" />
-          <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
-          <ScalarProperty Name="Alias" ColumnName="Alias" />
-          <ScalarProperty Name="District" ColumnName="District" />
-          <ScalarProperty Name="EmployeeBranchMapId" ColumnName="EmployeeBranchMapId" />
-          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
-          <ScalarProperty Name="EmployeeBranchCreatedAt" ColumnName="EmployeeBranchCreatedAt" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Shift_GetListByUser" FunctionName="TanTamModel.Store.Ins_Shift_GetListByUser">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Shift_GetListByUser_Result">
-          <ScalarProperty Name="SuwId" ColumnName="SuwId" />
-          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
-          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
-          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
-          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
-          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
-          <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
-          <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
-          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
-          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
-          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
-          <ScalarProperty Name="TotalRegister" ColumnName="TotalRegister" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_RegisterShift" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_RegisterShift">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result">
-          <ScalarProperty Name="TotalUpdated" ColumnName="TotalUpdated" />
-          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
-          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
-          <ScalarProperty Name="Message" ColumnName="Message" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_RejectShift" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_RejectShift">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result">
-          <ScalarProperty Name="Success" ColumnName="Success" />
-          <ScalarProperty Name="SuwId" ColumnName="SuwId" />
-          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
-          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
-          <ScalarProperty Name="Message" ColumnName="Message" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Group_Delete" FunctionName="TanTamModel.Store.Ins_Task_Group_Delete">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Delete_Result">
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_UsersByTask_Result">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="task_id" ColumnName="task_id" />
           <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="color" ColumnName="color" />
-          <ScalarProperty Name="index" ColumnName="index" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Group_Update_Name" FunctionName="TanTamModel.Store.Ins_Task_Group_Update_Name">
+    <FunctionImportMapping FunctionImportName="Ins_Task_UsersByUser" FunctionName="TanTamModel.Store.Ins_Task_UsersByUser">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Update_Name_Result">
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_UsersByUser_Result">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="task_id" ColumnName="task_id" />
           <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="color" ColumnName="color" />
-          <ScalarProperty Name="index" ColumnName="index" />
-          <ScalarProperty Name="created_at" ColumnName="created_at" />
-          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="identification" ColumnName="identification" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_Delete_All" FunctionName="TanTamModel.Store.Ins_Task_Sub_Delete_All" />
+    <FunctionImportMapping FunctionImportName="Ins_Tasks_Create" FunctionName="TanTamModel.Store.Ins_Tasks_Create">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Tasks_Create_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="favored" ColumnName="favored" />
+          <ScalarProperty Name="view_id" ColumnName="view_id" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="is_archived" ColumnName="is_archived" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="default_deadline_time" ColumnName="default_deadline_time" />
+          <ScalarProperty Name="default_start_time" ColumnName="default_start_time" />
+          <ScalarProperty Name="task_done" ColumnName="task_done" />
+          <ScalarProperty Name="task_count" ColumnName="task_count" />
+          <ScalarProperty Name="task_overdue" ColumnName="task_overdue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Ins_Tasks_Delete" FunctionName="TanTamModel.Store.Ins_Tasks_Delete">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TanTamModel.Ins_Tasks_Delete_Result">
@@ -1411,5 +1134,521 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Time_GetList" FunctionName="TanTamModel.Store.Ins_Time_GetList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Time_GetList_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="IsHour" ColumnName="IsHour" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_GetLog_OneDay" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_GetLog_OneDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_User_GetLog_OneDay_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
+          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
+          <ScalarProperty Name="CurrentBranchId" ColumnName="CurrentBranchId" />
+          <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+          <ScalarProperty Name="TimeKeeperDevice" ColumnName="TimeKeeperDevice" />
+          <ScalarProperty Name="Bssid" ColumnName="Bssid" />
+          <ScalarProperty Name="Ssid" ColumnName="Ssid" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_User_ChangePassword" FunctionName="TanTamModel.Store.Ins_User_ChangePassword" />
+    <FunctionImportMapping FunctionImportName="Ins_User_Count" FunctionName="TanTamModel.Store.Ins_User_Count" />
+    <FunctionImportMapping FunctionImportName="Ins_User_Create" FunctionName="TanTamModel.Store.Ins_User_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_User_GetDetail" FunctionName="TanTamModel.Store.Ins_User_GetDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_User_GetDetail_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="PhoneFull" ColumnName="PhoneFull" />
+          <ScalarProperty Name="AccountIsActive" ColumnName="AccountIsActive" />
+          <ScalarProperty Name="AccountCreatedAt" ColumnName="AccountCreatedAt" />
+          <ScalarProperty Name="EmployeeAccountMapId" ColumnName="EmployeeAccountMapId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyFullName" ColumnName="CompanyFullName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserIsActive" ColumnName="UserIsActive" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="IsNewUser" ColumnName="IsNewUser" />
+          <ScalarProperty Name="NeedSetPassword" ColumnName="NeedSetPassword" />
+          <ScalarProperty Name="UserCreatedAt" ColumnName="UserCreatedAt" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="EmployeeInfoId" ColumnName="EmployeeInfoId" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+          <ScalarProperty Name="Skype" ColumnName="Skype" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="EmergencyName" ColumnName="EmergencyName" />
+          <ScalarProperty Name="EmergencyMobile" ColumnName="EmergencyMobile" />
+          <ScalarProperty Name="EmergencyLandline" ColumnName="EmergencyLandline" />
+          <ScalarProperty Name="EmergencyRelation" ColumnName="EmergencyRelation" />
+          <ScalarProperty Name="EmergencyAddress" ColumnName="EmergencyAddress" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Ward" ColumnName="Ward" />
+          <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="CurrentAddress" ColumnName="CurrentAddress" />
+          <ScalarProperty Name="IdentityCard" ColumnName="IdentityCard" />
+          <ScalarProperty Name="IdentityCardCreateDate" ColumnName="IdentityCardCreateDate" />
+          <ScalarProperty Name="IdentityCardPlace" ColumnName="IdentityCardPlace" />
+          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+          <ScalarProperty Name="PassporCreateDate" ColumnName="PassporCreateDate" />
+          <ScalarProperty Name="PassporExp" ColumnName="PassporExp" />
+          <ScalarProperty Name="PassporPlace" ColumnName="PassporPlace" />
+          <ScalarProperty Name="BankHolder" ColumnName="BankHolder" />
+          <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+          <ScalarProperty Name="TaxIdentification" ColumnName="TaxIdentification" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_User_GetList" FunctionName="TanTamModel.Store.Ins_User_GetList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_User_GetList_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_User_IsEmailExist" FunctionName="TanTamModel.Store.Ins_User_IsEmailExist" />
+    <FunctionImportMapping FunctionImportName="Ins_User_IsPhoneExist" FunctionName="TanTamModel.Store.Ins_User_IsPhoneExist" />
+    <FunctionImportMapping FunctionImportName="Ins_User_IsUsernameExist" FunctionName="TanTamModel.Store.Ins_User_IsUsernameExist" />
+    <FunctionImportMapping FunctionImportName="Ins_User_Update" FunctionName="TanTamModel.Store.Ins_User_Update" />
+    <FunctionImportMapping FunctionImportName="Ins_User_UpdateProfile" FunctionName="TanTamModel.Store.Ins_User_UpdateProfile" />
+    <FunctionImportMapping FunctionImportName="Ins_User_UpdateStatus" FunctionName="TanTamModel.Store.Ins_User_UpdateStatus" />
+    <FunctionImportMapping FunctionImportName="Ins_Employee_AddIntoBranch" FunctionName="TanTamModel.Store.Ins_Employee_AddIntoBranch" />
+    <FunctionImportMapping FunctionImportName="Ins_Wifi_Account_Insert" FunctionName="TanTamModel.Store.Ins_Wifi_Account_Insert" />
+    <FunctionImportMapping FunctionImportName="Ins_Wifi_Department_Insert" FunctionName="TanTamModel.Store.Ins_Wifi_Department_Insert" />
+    <FunctionImportMapping FunctionImportName="Ins_Wifi_Insert" FunctionName="TanTamModel.Store.Ins_Wifi_Insert" />
+    <FunctionImportMapping FunctionImportName="Ins_Wifi_Get" FunctionName="TanTamModel.Store.Ins_Wifi_Get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Wifi_Get_Result">
+          <ScalarProperty Name="WifiID" ColumnName="WifiID" />
+          <ScalarProperty Name="Radius" ColumnName="Radius" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Accuracy" ColumnName="Accuracy" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="WifiName" ColumnName="WifiName" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="WifiAddress" ColumnName="WifiAddress" />
+          <ScalarProperty Name="WifiType" ColumnName="WifiType" />
+          <ScalarProperty Name="Bssid" ColumnName="Bssid" />
+          <ScalarProperty Name="WifiAccountID" ColumnName="WifiAccountID" />
+          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+          <ScalarProperty Name="WifiDepartmentID" ColumnName="WifiDepartmentID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Assignment_GetDateOfWeekByShiftIds" FunctionName="TanTamModel.Store.Ins_Assignment_GetDateOfWeekByShiftIds">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Assignment_GetDateOfWeekByShiftIds_Result">
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="DateOfWeek" ColumnName="DateOfWeek" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_HourData_GetAll" FunctionName="TanTamModel.Store.Ins_HourData_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_HourData_GetAll_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HourValue" ColumnName="HourValue" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_MinuteData_GetAll" FunctionName="TanTamModel.Store.Ins_MinuteData_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_MinuteData_GetAll_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MinuteValue" ColumnName="MinuteValue" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_UncheckInOut" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_UncheckInOut">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_UncheckInOut_Result">
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="SuwId" ColumnName="SuwId" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="IsCheckIn" ColumnName="IsCheckIn" />
+          <ScalarProperty Name="IsCheckOut" ColumnName="IsCheckOut" />
+          <ScalarProperty Name="StartCheckInTime" ColumnName="StartCheckInTime" />
+          <ScalarProperty Name="StartCheckOutTime" ColumnName="StartCheckOutTime" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut_Result">
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="SuwId" ColumnName="SuwId" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="IsCheckIn" ColumnName="IsCheckIn" />
+          <ScalarProperty Name="IsCheckOut" ColumnName="IsCheckOut" />
+          <ScalarProperty Name="StartCheckInTime" ColumnName="StartCheckInTime" />
+          <ScalarProperty Name="StartCheckOutTime" ColumnName="StartCheckOutTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftTimeInOutConfig_GetByShiftId" FunctionName="TanTamModel.Store.Ins_ShiftTimeInOutConfig_GetByShiftId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftTimeInOutConfig_GetByShiftId_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="StartHourId" ColumnName="StartHourId" />
+          <ScalarProperty Name="StartMinuteId" ColumnName="StartMinuteId" />
+          <ScalarProperty Name="EndHourId" ColumnName="EndHourId" />
+          <ScalarProperty Name="EndMinuteId" ColumnName="EndMinuteId" />
+          <ScalarProperty Name="StartCheckInHourId" ColumnName="StartCheckInHourId" />
+          <ScalarProperty Name="StartCheckInMinuteId" ColumnName="StartCheckInMinuteId" />
+          <ScalarProperty Name="EndCheckInHourId" ColumnName="EndCheckInHourId" />
+          <ScalarProperty Name="EndCheckInMinuteId" ColumnName="EndCheckInMinuteId" />
+          <ScalarProperty Name="StartCheckOutHourId" ColumnName="StartCheckOutHourId" />
+          <ScalarProperty Name="StartCheckOutMinuteId" ColumnName="StartCheckOutMinuteId" />
+          <ScalarProperty Name="EndCheckOutHourId" ColumnName="EndCheckOutHourId" />
+          <ScalarProperty Name="EndCheckOutMinuteId" ColumnName="EndCheckOutMinuteId" />
+          <ScalarProperty Name="RestStartHourId" ColumnName="RestStartHourId" />
+          <ScalarProperty Name="RestStartMinuteId" ColumnName="RestStartMinuteId" />
+          <ScalarProperty Name="RestEndHourId" ColumnName="RestEndHourId" />
+          <ScalarProperty Name="RestEndMinuteId" ColumnName="RestEndMinuteId" />
+          <ScalarProperty Name="MaxLateCheckInOutMinute" ColumnName="MaxLateCheckInOutMinute" />
+          <ScalarProperty Name="MinSoonCheckInOutMinute" ColumnName="MinSoonCheckInOutMinute" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Group_Delete_ByGroupId" FunctionName="TanTamModel.Store.Ins_Task_Group_Delete_ByGroupId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Delete_ByGroupId_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Group_Update_Color" FunctionName="TanTamModel.Store.Ins_Task_Group_Update_Color">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Group_Update_Color_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_Delete_BySubTaskId" FunctionName="TanTamModel.Store.Ins_Task_Sub_Delete_BySubTaskId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Sub_Delete_BySubTaskId_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
+          <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
+          <ScalarProperty Name="sort_index" ColumnName="sort_index" />
+          <ScalarProperty Name="private_sort_index" ColumnName="private_sort_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="title_nosign" ColumnName="title_nosign" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="completed_at" ColumnName="completed_at" />
+          <ScalarProperty Name="is_completed" ColumnName="is_completed" />
+          <ScalarProperty Name="completion_percentage" ColumnName="completion_percentage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Task_Sub_ListBySubTaskId" FunctionName="TanTamModel.Store.Ins_Task_Sub_ListBySubTaskId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Task_Sub_ListBySubTaskId_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
+          <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
+          <ScalarProperty Name="sort_index" ColumnName="sort_index" />
+          <ScalarProperty Name="private_sort_index" ColumnName="private_sort_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="title_nosign" ColumnName="title_nosign" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+          <ScalarProperty Name="assigned_id" ColumnName="assigned_id" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="completed_at" ColumnName="completed_at" />
+          <ScalarProperty Name="is_completed" ColumnName="is_completed" />
+          <ScalarProperty Name="completion_percentage" ColumnName="completion_percentage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_TaskBranches_Create" FunctionName="TanTamModel.Store.Ins_TaskBranches_Create">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_TaskBranches_Create_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_TaskDepartments_Create" FunctionName="TanTamModel.Store.Ins_TaskDepartments_Create">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_TaskDepartments_Create_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_TaskPositions_Create" FunctionName="TanTamModel.Store.Ins_TaskPositions_Create">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_TaskPositions_Create_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Tasks_Delete_all_Fields" FunctionName="TanTamModel.Store.Ins_Tasks_Delete_all_Fields" />
+    <FunctionImportMapping FunctionImportName="Ins_Tasks_Delete_All_Groups_ByTaskId" FunctionName="TanTamModel.Store.Ins_Tasks_Delete_All_Groups_ByTaskId" />
+    <FunctionImportMapping FunctionImportName="Ins_Tasks_Delete_All_Relations" FunctionName="TanTamModel.Store.Ins_Tasks_Delete_All_Relations" />
+    <FunctionImportMapping FunctionImportName="Ins_Tasks_Delete_All_SubTasks_ByTaskId" FunctionName="TanTamModel.Store.Ins_Tasks_Delete_All_SubTasks_ByTaskId" />
+    <FunctionImportMapping FunctionImportName="Ins_Tasks_Delete_Main" FunctionName="TanTamModel.Store.Ins_Tasks_Delete_Main">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Tasks_Delete_Main_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="favored" ColumnName="favored" />
+          <ScalarProperty Name="view_id" ColumnName="view_id" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="is_archived" ColumnName="is_archived" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="default_deadline_time" ColumnName="default_deadline_time" />
+          <ScalarProperty Name="default_start_time" ColumnName="default_start_time" />
+          <ScalarProperty Name="task_done" ColumnName="task_done" />
+          <ScalarProperty Name="task_count" ColumnName="task_count" />
+          <ScalarProperty Name="task_overdue" ColumnName="task_overdue" />
+          <ScalarProperty Name="user_count" ColumnName="user_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_TaskTaskUsers_Create" FunctionName="TanTamModel.Store.Ins_TaskTaskUsers_Create">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_TaskTaskUsers_Create_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="user_account_id" ColumnName="user_account_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_GetListByAccountMapID" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_GetListByAccountMapID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_Timekeeper_log_GetListByAccountMapID_Result">
+          <ScalarProperty Name="PayrollUserID" ColumnName="PayrollUserID" />
+          <ScalarProperty Name="AssignmentUserID" ColumnName="AssignmentUserID" />
+          <ScalarProperty Name="AccountMapID" ColumnName="AccountMapID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+          <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
+          <ScalarProperty Name="CheckoutTime" ColumnName="CheckoutTime" />
+          <ScalarProperty Name="CheckinType" ColumnName="CheckinType" />
+          <ScalarProperty Name="CheckoutType" ColumnName="CheckoutType" />
+          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
+          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
+          <ScalarProperty Name="RestStartTimeShort" ColumnName="RestStartTimeShort" />
+          <ScalarProperty Name="RestEndTimeShort" ColumnName="RestEndTimeShort" />
+          <ScalarProperty Name="RealCoefficient" ColumnName="RealCoefficient" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CheckoutLogId" ColumnName="CheckoutLogId" />
+          <ScalarProperty Name="CheckoutBranchId" ColumnName="CheckoutBranchId" />
+          <ScalarProperty Name="CheckinLogId" ColumnName="CheckinLogId" />
+          <ScalarProperty Name="CheckinBranchId" ColumnName="CheckinBranchId" />
+          <ScalarProperty Name="PayrollAutoApprove" ColumnName="PayrollAutoApprove" />
+          <ScalarProperty Name="IsConfirm" ColumnName="IsConfirm" />
+          <ScalarProperty Name="CheckinBranchName" ColumnName="CheckinBranchName" />
+          <ScalarProperty Name="CheckoutBranchName" ColumnName="CheckoutBranchName" />
+          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ShiftAssignmentSortIndex" ColumnName="ShiftAssignmentSortIndex" />
+          <ScalarProperty Name="AutoApprove" ColumnName="AutoApprove" />
+          <ScalarProperty Name="Assignments" ColumnName="Assignments" />
+          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
+          <ScalarProperty Name="PayrollConfigType" ColumnName="PayrollConfigType" />
+          <ScalarProperty Name="GenerateTimekeepingType" ColumnName="GenerateTimekeepingType" />
+          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ShiftAssignmentBranchID" ColumnName="ShiftAssignmentBranchID" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
+          <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
+          <ScalarProperty Name="MinimumWorkingHour" ColumnName="MinimumWorkingHour" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EarlyCheckOut" ColumnName="EarlyCheckOut" />
+          <ScalarProperty Name="LatelyCheckIn" ColumnName="LatelyCheckIn" />
+          <ScalarProperty Name="ShiftStatus" ColumnName="ShiftStatus" />
+          <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
+          <ScalarProperty Name="ShiftSortIndex" ColumnName="ShiftSortIndex" />
+          <ScalarProperty Name="IsOvertimeShift" ColumnName="IsOvertimeShift" />
+          <ScalarProperty Name="ShiftMealCoefficient" ColumnName="ShiftMealCoefficient" />
+          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+          <ScalarProperty Name="NameNosign" ColumnName="NameNosign" />
+          <ScalarProperty Name="IsOpenShift" ColumnName="IsOpenShift" />
+          <ScalarProperty Name="TimekeeperID" ColumnName="TimekeeperID" />
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
+          <ScalarProperty Name="TimekeeperPayrollUserID" ColumnName="TimekeeperPayrollUserID" />
+          <ScalarProperty Name="EmployeeAccountMapID" ColumnName="EmployeeAccountMapID" />
+          <ScalarProperty Name="CurrentBranchId" ColumnName="CurrentBranchId" />
+          <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+          <ScalarProperty Name="TimeKeeperDevice" ColumnName="TimeKeeperDevice" />
+          <ScalarProperty Name="Bssid" ColumnName="Bssid" />
+          <ScalarProperty Name="Ssid" ColumnName="Ssid" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="TimekeeperCreateDate" ColumnName="TimekeeperCreateDate" />
+          <ScalarProperty Name="IsCheck" ColumnName="IsCheck" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_Payroll_User_Create_MultiDay" FunctionName="TanTamModel.Store.Ins_Payroll_User_Create_MultiDay" />
+    <FunctionImportMapping FunctionImportName="Ins_Timekeeper_log_User_Insert" FunctionName="TanTamModel.Store.Ins_Timekeeper_log_User_Insert" />
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="ClockType" ColumnName="ClockType" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="is_trashed" ColumnName="is_trashed" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="trashed_at" ColumnName="trashed_at" />
+          <ScalarProperty Name="created_user_name" ColumnName="created_user_name" />
+          <ScalarProperty Name="created_user_username" ColumnName="created_user_username" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_Log_Trash" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_Log_Trash">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result">
+          <ScalarProperty Name="TrashResult" ColumnName="TrashResult" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_GetSummary" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_GetSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+          <ScalarProperty Name="ShiftAssignmentId" ColumnName="ShiftAssignmentId" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+          <ScalarProperty Name="ShiftKey" ColumnName="ShiftKey" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="WorkingHour" ColumnName="WorkingHour" />
+          <ScalarProperty Name="Coefficient" ColumnName="Coefficient" />
+          <ScalarProperty Name="MealCoefficient" ColumnName="MealCoefficient" />
+          <ScalarProperty Name="ShiftAssignmentMealCoefficient" ColumnName="ShiftAssignmentMealCoefficient" />
+          <ScalarProperty Name="BranchesJson" ColumnName="BranchesJson" />
+          <ScalarProperty Name="SuwId" ColumnName="SuwId" />
+          <ScalarProperty Name="IsCheckIn" ColumnName="IsCheckIn" />
+          <ScalarProperty Name="IsCheckOut" ColumnName="IsCheckOut" />
+          <ScalarProperty Name="StartCheckInTime" ColumnName="StartCheckInTime" />
+          <ScalarProperty Name="StartCheckOutTime" ColumnName="StartCheckOutTime" />
+          <ScalarProperty Name="IsCheckInTimeNextDay" ColumnName="IsCheckInTimeNextDay" />
+          <ScalarProperty Name="IsCheckOutTimeNextDay" ColumnName="IsCheckOutTimeNextDay" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="RealWorkingHour" ColumnName="RealWorkingHour" />
+          <ScalarProperty Name="RealWorkingMinute" ColumnName="RealWorkingMinute" />
+          <ScalarProperty Name="StatusText" ColumnName="StatusText" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_ShiftAssignment_User_WorkingDay_Log_Create" FunctionName="TanTamModel.Store.Ins_ShiftAssignment_User_WorkingDay_Log_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_CompanyRegion_Create" FunctionName="TanTamModel.Store.Ins_CompanyRegion_Create" />
+    <FunctionImportMapping FunctionImportName="Ins_CompanyRegion_GetListByCompany" FunctionName="TanTamModel.Store.Ins_CompanyRegion_GetListByCompany">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TanTamModel.Ins_CompanyRegion_GetListByCompany_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ins_CompanyRegion_Update" FunctionName="TanTamModel.Store.Ins_CompanyRegion_Update" />
   </EntityContainerMapping>
 </Mapping>

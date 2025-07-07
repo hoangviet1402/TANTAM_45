@@ -24,6 +24,7 @@ namespace BussinessObject.Bo.TanTamBo
         /// </summary>
         /// <param name="title">Tiêu đề task</param>
         /// <param name="createdUserObj">ID người tạo</param>
+        /// <param name="companyId">ID công ty</param>
         /// <param name="defaultView">View mặc định</param>
         /// <param name="color">Màu sắc</param>
         /// <param name="departmentIds">Danh sách ID phòng ban (phân cách bằng dấu phẩy)</param>
@@ -31,10 +32,10 @@ namespace BussinessObject.Bo.TanTamBo
         /// <param name="branchIds">Danh sách ID chi nhánh (phân cách bằng dấu phẩy)</param>
         /// <param name="userIds">Danh sách ID người dùng (phân cách bằng dấu phẩy)</param>
         /// <returns>Thông tin task đã tạo</returns>
-        public Ins_Tasks_Create_Result CreateTask(string title, int createdUserObj, string defaultView, string color, 
+        public Ins_Tasks_Create_Result CreateTask(string title, int createdUserObj, int companyId, string defaultView, string color, 
             string departmentIds, string positionIds, string branchIds, string userIds)
         {
-            return DaoFactory.Task.CreateTask(title, createdUserObj, defaultView, color, 
+            return DaoFactory.Task.CreateTask(title, createdUserObj, companyId, defaultView, color, 
                 departmentIds, positionIds, branchIds, userIds);
         }
 
@@ -42,20 +43,41 @@ namespace BussinessObject.Bo.TanTamBo
         /// Lấy chi tiết task theo ID
         /// </summary>
         /// <param name="taskId">ID của task</param>
+        /// <param name="companyId">ID của công ty</param>
         /// <returns>Thông tin chi tiết task</returns>
-        public Ins_Task_List_Result GetTaskDetail(int taskId)
+        public Ins_Task_List_Result GetTaskDetail(int taskId, int companyId)
         {
-            return DaoFactory.Task.GetTaskDetail(taskId);
+            return DaoFactory.Task.GetTaskDetail(taskId, companyId);
         }
 
         /// <summary>
         /// Lấy danh sách tasks
         /// </summary>
         /// <param name="taskId">ID task cụ thể (null để lấy tất cả)</param>
+        /// <param name="companyId">ID của công ty</param>
         /// <returns>Danh sách tasks</returns>
-        public List<Ins_Task_List_Result> GetTaskList(int? taskId = null)
+        public List<Ins_Task_List_Result> GetTaskList(int? taskId, int companyId)
         {
-            return DaoFactory.Task.GetTaskList(taskId);
+            return DaoFactory.Task.GetTaskList(taskId, companyId);
+        }
+
+        /// <summary>
+        /// Xóa task và tất cả dữ liệu liên quan (gọi lần lượt các stored procedure nhỏ)
+        /// </summary>
+        /// <param name="taskId">ID của task cần xóa</param>
+        /// <returns>Danh sách tasks còn lại</returns>
+        public List<Ins_Tasks_Delete_Main_Result> DeleteTask(int taskId, int companyId)
+        {
+            // Xóa fields và options
+            DeleteAllFields(taskId);
+            // Xóa các quan hệ (users, managers, departments, ...)
+            DeleteAllRelations(taskId);
+            // Xóa tất cả subtasks và collaborators
+            DeleteAllSubTasksByTaskId(taskId);
+            // Xóa tất cả group
+            DeleteAllGroupsByTaskId(taskId);
+            // Xóa task chính
+            return DeleteMainTask(taskId, companyId);
         }
 
         #endregion
@@ -104,6 +126,17 @@ namespace BussinessObject.Bo.TanTamBo
         public Ins_Task_Group_Update_Name_Result UpdateTaskGroupName(int groupId, string name)
         {
             return DaoFactory.Task.UpdateTaskGroupName(groupId, name);
+        }
+
+        /// <summary>
+        /// Cập nhật màu sắc của group
+        /// </summary>
+        /// <param name="groupId">ID của group cần cập nhật</param>
+        /// <param name="color">Màu sắc mới của group</param>
+        /// <returns>Thông tin group đã cập nhật</returns>
+        public Ins_Task_Group_Update_Color_Result UpdateTaskGroupColor(int groupId, string color)
+        {
+            return DaoFactory.Task.UpdateTaskGroupColor(groupId, color);
         }
 
         #endregion
@@ -157,9 +190,9 @@ namespace BussinessObject.Bo.TanTamBo
         /// <summary>
         /// Tạo sub-task mới
         /// </summary>
-        public Ins_Task_Sub_Create_Result CreateTaskSub(string title, string alias, int? bundleId, int? createdUserId, string position)
+        public Ins_Task_Sub_Create_Result CreateTaskSub(string title, string alias, int? bundleId, int? createdUserId, int? assignedId, string position)
         {
-            return DaoFactory.Task.CreateTaskSub(title, alias, bundleId, createdUserId, position);
+            return DaoFactory.Task.CreateTaskSub(title, alias, bundleId, createdUserId, assignedId, position);
         }
 
         /// <summary>
@@ -196,16 +229,6 @@ namespace BussinessObject.Bo.TanTamBo
         }
 
         /// <summary>
-        /// Xóa sub-task và trả về danh sách sub-task còn lại trong group
-        /// </summary>
-        /// <param name="subtaskId">ID của sub-task cần xóa</param>
-        /// <returns>Danh sách sub-task còn lại trong group</returns>
-        public List<Ins_Task_Sub_Delete_Result> DeleteTaskSub(int subtaskId)
-        {
-            return DaoFactory.Task.DeleteTaskSub(subtaskId);
-        }
-
-        /// <summary>
         /// Thêm collaborators cho task
         /// </summary>
         /// <param name="taskId">ID của task</param>
@@ -232,31 +255,6 @@ namespace BussinessObject.Bo.TanTamBo
         #endregion
 
         #region Task Fields
-
-        /// <summary>
-        /// Tạo trường task với các tùy chọn
-        /// </summary>
-        /// <param name="objectId">ID đối tượng</param>
-        /// <param name="title">Tiêu đề trường</param>
-        /// <param name="titleNosign">Tiêu đề không dấu</param>
-        /// <param name="addToLib">Thêm vào thư viện</param>
-        /// <param name="notifyWhenValueChanged">Thông báo khi giá trị thay đổi</param>
-        /// <param name="fieldKey">Khóa trường</param>
-        /// <param name="isDefault">Có phải mặc định</param>
-        /// <param name="createdUserId">ID người tạo</param>
-        /// <param name="sortIndex">Thứ tự sắp xếp</param>
-        /// <param name="active">Trạng thái hoạt động</param>
-        /// <param name="objectSortIndex">Thứ tự sắp xếp đối tượng</param>
-        /// <param name="objectActive">Trạng thái hoạt động đối tượng</param>
-        /// <returns>Kết quả tạo trường</returns>
-        public int CreateTaskFieldWithOptions(int objectId, string title, string titleNosign, bool? addToLib, 
-            bool? notifyWhenValueChanged, string fieldKey, bool? isDefault, int? createdUserId, 
-            int? sortIndex, bool? active, int? objectSortIndex, bool? objectActive)
-        {
-            return DaoFactory.Task.CreateTaskFieldWithOptions(objectId, title, titleNosign, addToLib, 
-                notifyWhenValueChanged, fieldKey, isDefault, createdUserId, sortIndex, active, 
-                objectSortIndex, objectActive);
-        }
 
         /// <summary>
         /// Tạo trường task với các tùy chọn
@@ -300,6 +298,63 @@ namespace BussinessObject.Bo.TanTamBo
         public void InsertTaskFieldOptionsBulk(int fieldId, string options)
         {
             DaoFactory.Task.InsertTaskFieldOptionsBulk(fieldId, options);
+        }
+
+        /// <summary>
+        /// Xóa tất cả quan hệ của task (managers, users, departments, v.v.)
+        /// </summary>
+        public int DeleteAllRelations(int taskId)
+        {
+            return DaoFactory.Task.DeleteAllRelations(taskId);
+        }
+
+        /// <summary>
+        /// Xóa tất cả fields và options của task
+        /// </summary>
+        public int DeleteAllFields(int taskId)
+        {
+            return DaoFactory.Task.DeleteAllFields(taskId);
+        }
+
+        /// <summary>
+        /// Xóa tất cả subtasks và collaborators theo taskId
+        /// </summary>
+        public int DeleteAllSubTasksByTaskId(int taskId)
+        {
+            return DaoFactory.Task.DeleteAllSubTasksByTaskId(taskId);
+        }
+
+        /// <summary>
+        /// Xóa tất cả group theo taskId
+        /// </summary>
+        public int DeleteAllGroupsByTaskId(int taskId)
+        {
+            return DaoFactory.Task.DeleteAllGroupsByTaskId(taskId);
+        }
+
+        /// <summary>
+        /// Xóa task chính (không xóa dữ liệu liên quan)
+        /// </summary>
+        public List<Ins_Tasks_Delete_Main_Result> DeleteMainTask(int taskId, int companyId)
+        {
+            return DaoFactory.Task.DeleteMainTask(taskId, companyId);
+        }
+
+        public Ins_TaskBranches_Create_Result CreateTaskBranch(int taskId, int branchId)
+        {
+            return DaoFactory.Task.CreateTaskBranch(taskId, branchId);
+        }
+        public Ins_TaskDepartments_Create_Result CreateTaskDepartment(int taskId, int departmentId)
+        {
+            return DaoFactory.Task.CreateTaskDepartment(taskId, departmentId);
+        }
+        public Ins_TaskPositions_Create_Result CreateTaskPosition(int taskId, int positionId)
+        {
+            return DaoFactory.Task.CreateTaskPosition(taskId, positionId);
+        }
+        public Ins_TaskTaskUsers_Create_Result CreateTaskUser(int taskId, int userId)
+        {
+            return DaoFactory.Task.CreateTaskUser(taskId, userId);
         }
     }
 }

@@ -66,11 +66,11 @@ namespace BussinessObject.Bo.TanTamBo
                     // For now, we calculate based on returned data
                     response.Data.Meta = new MetaResponse
                     {
-                        Total = usersFromDb.Count, // This should come from DB
-                        Count = response.Data.Items.Count,
-                        PerPage = limit,
-                        CurrentPage = page,
-                        TotalPages = (int)Math.Ceiling((double)usersFromDb.Count / limit),
+                        total = usersFromDb.Count, // This should come from DB
+                        count = response.Data.Items.Count,
+                        perPage = limit,
+                        currentPage = page,
+                        totalPages = (int)Math.Ceiling((double)usersFromDb.Count / limit),
                     };
 
                     response.Code = ResponseResultEnum.Success.Value();

@@ -25,8 +25,10 @@ namespace BussinessObject
         public static DepartmentBo Department => new DepartmentBo();
         public static PositionBo Position => new PositionBo();
         public static ShiftBo Shift => new ShiftBo();
+        public static ShiftSummaryBo ShiftSummary => new ShiftSummaryBo();
         public static PayrollBo Payroll => new PayrollBo();
         public static ShiftAssignmentBo ShiftAssignment => new ShiftAssignmentBo();
         public static OpenShiftBo OpenShift => new OpenShiftBo();
+        public static TimekeeperBo Timekeeper => new TimekeeperBo();
     }
 }

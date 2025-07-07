@@ -9,6 +9,7 @@ using System;
 using System.Linq;
 using BussinessObject.Helper;
 using MyUtility;
+using System.Collections.Generic;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -63,52 +64,52 @@ namespace BussinessObject.Bo.TanTamBo
                     // Map from DB result to DTO
                     response.Data = new EmployeeDetailResponse
                     {
-                        Id = employeeFromDb.Id,
-                        CompanyId = employeeFromDb.CompanyId,
-                        EmployeesInfoId = employeeFromDb.EmployeesInfoId,
-                        Role = employeeFromDb.Role,
-                        EmployeeMapIsActive = employeeFromDb.EmployeeMapIsActive,
-                        IsNewUser = employeeFromDb.IsNewUser,
-                        NeedSetPassword = employeeFromDb.NeedSetPassword,
-                        EmployeeMapCreatedAt = employeeFromDb.EmployeeMapCreatedAt,
-                        FullName = employeeFromDb.FullName,
-                        EmployeeCode = employeeFromDb.EmployeeCode,
-                        BirthDate = employeeFromDb.BirthDate,
-                        Gender = employeeFromDb.Gender,
-                        DisplayOrder = employeeFromDb.DisplayOrder,
-                        ContactAddress = employeeFromDb.ContactAddress,
-                        Skype = employeeFromDb.Skype,
-                        Facebook = employeeFromDb.Facebook,
-                        EmergencyName = employeeFromDb.EmergencyName,
-                        EmergencyMobile = employeeFromDb.EmergencyMobile,
-                        EmergencyLandline = employeeFromDb.EmergencyLandline,
-                        EmergencyRelation = employeeFromDb.EmergencyRelation,
-                        EmergencyAddress = employeeFromDb.EmergencyAddress,
-                        Country = employeeFromDb.Country,
-                        Province = employeeFromDb.Province,
-                        District = employeeFromDb.District,
-                        Ward = employeeFromDb.Ward,
-                        PermanentAddress = employeeFromDb.PermanentAddress,
-                        Hometown = employeeFromDb.Hometown,
-                        CurrentAddress = employeeFromDb.CurrentAddress,
-                        IdentityCard = employeeFromDb.IdentityCard,
-                        IdentityCardCreateDate = employeeFromDb.IdentityCardCreateDate,
-                        IdentityCardPlace = employeeFromDb.IdentityCardPlace,
-                        PassportID = employeeFromDb.PassportID,
-                        PassporCreateDate = employeeFromDb.PassporCreateDate,
-                        PassporExp = employeeFromDb.PassporExp,
-                        PassporPlace = employeeFromDb.PassporPlace,
-                        BankHolder = employeeFromDb.BankHolder,
-                        BankAccount = employeeFromDb.BankAccount,
-                        BankName = employeeFromDb.BankName,
-                        BankBranch = employeeFromDb.BankBranch,
-                        TaxIdentification = employeeFromDb.TaxIdentification,
-                        EmployeesInfoCreatedAt = employeeFromDb.EmployeesInfoCreatedAt,
-                        Email = employeeFromDb.Email,
-                        Phone = employeeFromDb.Phone,
-                        PhoneCode = employeeFromDb.PhoneCode,
-                        AccountIsActive = employeeFromDb.AccountIsActive,
-                        DeviceId = employeeFromDb.DeviceId
+                        id = employeeFromDb.Id,
+                        companyId = employeeFromDb.CompanyId,
+                        employeesInfoId = employeeFromDb.EmployeesInfoId,
+                        role = employeeFromDb.Role,
+                        employeeMapIsActive = employeeFromDb.EmployeeMapIsActive,
+                        isNewUser = employeeFromDb.IsNewUser,
+                        needSetPassword = employeeFromDb.NeedSetPassword,
+                        employeeMapCreatedAt = employeeFromDb.EmployeeMapCreatedAt,
+                        fullName = employeeFromDb.FullName,
+                        employeeCode = employeeFromDb.EmployeeCode,
+                        birthDate = employeeFromDb.BirthDate,
+                        gender = employeeFromDb.Gender,
+                        displayOrder = employeeFromDb.DisplayOrder,
+                        contactAddress = employeeFromDb.ContactAddress,
+                        skype = employeeFromDb.Skype,
+                        facebook = employeeFromDb.Facebook,
+                        emergencyName = employeeFromDb.EmergencyName,
+                        emergencyMobile = employeeFromDb.EmergencyMobile,
+                        emergencyLandline = employeeFromDb.EmergencyLandline,
+                        emergencyRelation = employeeFromDb.EmergencyRelation,
+                        emergencyAddress = employeeFromDb.EmergencyAddress,
+                        country = employeeFromDb.Country,
+                        province = employeeFromDb.Province,
+                        district = employeeFromDb.District,
+                        ward = employeeFromDb.Ward,
+                        permanentAddress = employeeFromDb.PermanentAddress,
+                        hometown = employeeFromDb.Hometown,
+                        currentAddress = employeeFromDb.CurrentAddress,
+                        identityCard = employeeFromDb.IdentityCard,
+                        identityCardCreateDate = employeeFromDb.IdentityCardCreateDate,
+                        identityCardPlace = employeeFromDb.IdentityCardPlace,
+                        passportId = employeeFromDb.PassportID,
+                        passportCreateDate = employeeFromDb.PassporCreateDate,
+                        passportExp = employeeFromDb.PassporExp,
+                        passportPlace = employeeFromDb.PassporPlace,
+                        bankHolder = employeeFromDb.BankHolder,
+                        bankAccount = employeeFromDb.BankAccount,
+                        bankName = employeeFromDb.BankName,
+                        bankBranch = employeeFromDb.BankBranch,
+                        taxIdentification = employeeFromDb.TaxIdentification,
+                        employeesInfoCreatedAt = employeeFromDb.EmployeesInfoCreatedAt,
+                        email = employeeFromDb.Email,
+                        phone = employeeFromDb.Phone,
+                        phoneCode = employeeFromDb.PhoneCode,
+                        accountIsActive = employeeFromDb.AccountIsActive,
+                        deviceId = employeeFromDb.DeviceId
                     };
 
                     response.Code = ResponseResultEnum.Success.Value();
@@ -183,27 +184,27 @@ namespace BussinessObject.Bo.TanTamBo
                 if (employeesFromDb != null && employeesFromDb.Any())
                 {
                     // Map from DB result to DTO
-                    response.Data.Items = employeesFromDb.Select(emp => new EmployeeListDto
+                    response.Data.items = employeesFromDb.Select(emp => new EmployeeListDto
                     {
-                        EmployeeId = emp.EmployeeId,
-                        EmployeeName = emp.EmployeeName,
-                        EmployeeCode = emp.EmployeeCode,
-                        Phone = emp.Phone,
-                        UserRole = emp.UserRole,
-                        Branch = emp.Branch,
-                        Department = emp.Department,
-                        Title = emp.Title,
-                        EmployeeAccountMapIsActive = emp.EmployeeAccountMapIsActive,
-                        AccountIsActive = emp.AccountIsActive
+                        employeeId = emp.EmployeeId,
+                        employeeName = emp.EmployeeName,
+                        employeeCode = emp.EmployeeCode,
+                        phone = emp.Phone,
+                        userRole = emp.UserRole,
+                        branch = emp.Branch,
+                        department = emp.Department,
+                        title = emp.Title,
+                        employeeAccountMapIsActive = emp.EmployeeAccountMapIsActive,
+                        accountIsActive = emp.AccountIsActive
                     }).ToList();
 
-                    response.Data.Meta = new MetaResponse
+                    response.Data.meta = new MetaResponse
                     {
-                        Total = employeesFromDb.Count, // This should come from DB
-                        Count = response.Data.Items.Count,
-                        PerPage = limit,
-                        CurrentPage = page,
-                        TotalPages = (int)Math.Ceiling((double)employeesFromDb.Count / limit),
+                        total = employeesFromDb.Count, // This should come from DB
+                        count = response.Data.items.Count,
+                        perPage = limit,
+                        currentPage = page,
+                        totalPages = (int)Math.Ceiling((double)employeesFromDb.Count / limit),
                     };
 
                     response.Code = ResponseResultEnum.Success.Value();
@@ -324,11 +325,23 @@ namespace BussinessObject.Bo.TanTamBo
                     out needSetCompany
                 );
 
-                response.Data.EmployeeAccountId = employeeAccountId;
-                response.Data.IsNewUser = isNewUser;
-                response.Data.NeedSetPassword = needSetPassword;
-                response.Data.NeedSetCompany = needSetCompany;
+                                    response.Data.employeeAccountId = employeeAccountId;
+                    response.Data.isNewUser = isNewUser;
+                    response.Data.needSetPassword = needSetPassword;
+                    response.Data.needSetCompany = needSetCompany;
 
+                var result = DaoFactory.Company.UpdateCompanyStep(request.CompanyId, SetupStepEnum.ONBOARDING_CREATE_EMPLOYEE.Value());
+                if (result > 0)
+                {
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = "Tạo tài khoản thành công";
+                }
+                else
+                {
+                    response.Code = ResponseResultEnum.Failed.Value();
+                    response.Message = "Không thể cập nhật bước đặt công ty";
+                }
+                
                 switch (employeeAccountId)
                 {
                     case 0:
@@ -366,7 +379,7 @@ namespace BussinessObject.Bo.TanTamBo
         }
 
         /// <summary>
-        /// Delete employee
+        /// Delete employee - simplified version (validation moved to stored procedure)
         /// </summary>
         public ApiResult<bool> DeleteEmployeeAsync(int employeeId, int companyId)
         {
@@ -379,7 +392,7 @@ namespace BussinessObject.Bo.TanTamBo
 
             try
             {
-                // Validate input
+                // Only basic input validation
                 if (employeeId <= 0)
                 {
                     response.Code = ResponseResultEnum.InvalidInput.Value();
@@ -387,49 +400,19 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
-                if (companyId <= 0)
-                {
-                    response.Code = ResponseResultEnum.InvalidInput.Value();
-                    response.Message = "Vui lòng cung cấp ID công ty hợp lệ.";
-                    return response;
-                }
-
-                // Check if employee exists and belongs to company
-                var employee = DaoFactory.Employee.GetEmployeeDetail(employeeId);
-                if (employee == null)
-                {
-                    response.Code = ResponseResultEnum.NotFound.Value();
-                    response.Message = "Không tìm thấy nhân viên.";
-                    return response;
-                }
-
-                if (employee.CompanyId != companyId)
-                {
-                    response.Code = ResponseResultEnum.InvalidInput.Value();
-                    response.Message = "Nhân viên không thuộc công ty được chỉ định.";
-                    return response;
-                }
-
-                // Delete employee
+                // Call stored procedure - all business validation is done there
                 var result = DaoFactory.Employee.DeleteEmployee(employeeId);
-                if (result > 0)
-                {
-                    response.Data = true;
-                    response.Code = ResponseResultEnum.Success.Value();
-                    response.Message = "Xóa nhân viên thành công";
-                }
-                else
-                {
-                    response.Code = ResponseResultEnum.Failed.Value();
-                    response.Message = "Không thể xóa nhân viên";
-                }
+
+                response.Data = true;
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = "Xóa nhân viên thành công";
             }
             catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
             {
                 if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
                 {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
+                    response.Code = ResponseResultEnum.Failed.Value();
+                    response.Message = sqlEx.Message; // SQL error message from stored procedure
                 }
                 else
                 {
@@ -449,7 +432,7 @@ namespace BussinessObject.Bo.TanTamBo
         }
 
         /// <summary>
-        /// Delete multiple employees
+        /// Delete multiple employees - simplified version (validation moved to stored procedure)
         /// </summary>
         public ApiResult<bool> DeleteMultiEmployeeAsync(DeleteMultiEmployeeRequest request)
         {
@@ -462,14 +445,7 @@ namespace BussinessObject.Bo.TanTamBo
 
             try
             {
-                // Validate input
-                if (request.CompanyId <= 0)
-                {
-                    response.Code = ResponseResultEnum.InvalidInput.Value();
-                    response.Message = "Vui lòng cung cấp ID công ty hợp lệ.";
-                    return response;
-                }
-
+                // Only basic input validation
                 if (request.EmployeeIds == null || !request.EmployeeIds.Any())
                 {
                     response.Code = ResponseResultEnum.InvalidInput.Value();
@@ -477,40 +453,77 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
-                // Convert array to comma-separated string
-                string employeeIds = string.Join(",", request.EmployeeIds);
+                // Track results
+                int successCount = 0;
+                int failedCount = 0;
+                var errorMessages = new List<string>();
 
-                // Delete multiple employees
-                var result = DaoFactory.Employee.DeleteMultiEmployee(employeeIds);
-                if (result > 0)
+                // Loop through each employee and delete individually
+                // Stored procedure handles all validation
+                foreach (var employeeId in request.EmployeeIds)
                 {
+                    try
+                    {
+                        // Call stored procedure - all validation is done there
+                        var deleteResult = DaoFactory.Employee.DeleteEmployee(employeeId);
+                        if (deleteResult > 0)
+                        {
+                            successCount++;
+                        }
+                        else
+                        {
+                            failedCount++;
+                            errorMessages.Add($"ID {employeeId}: Không thể xóa");
+                        }
+                    }
+                    catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+                    {
+                        if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                        {
+                            failedCount++;
+                            errorMessages.Add($"ID {employeeId}: {sqlEx.Message}");
+                        }
+                        else
+                        {
+                            failedCount++;
+                            errorMessages.Add($"ID {employeeId}: Lỗi hệ thống");
+                            CommonLogger.DefaultLogger.Error($"EmployeeBo.DeleteMultiEmployeeAsync - Entity Exception for ID {employeeId}", entityEx);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        failedCount++;
+                        errorMessages.Add($"ID {employeeId}: {ex.Message}");
+                        CommonLogger.DefaultLogger.Error($"EmployeeBo.DeleteMultiEmployeeAsync - Error for ID {employeeId}", ex);
+                    }
+                }
+
+                // Prepare response based on results
+                if (successCount > 0 && failedCount == 0)
+                {
+                    // All successful
                     response.Data = true;
                     response.Code = ResponseResultEnum.Success.Value();
-                    response.Message = "Xóa nhân viên thành công";
+                    response.Message = $"Xóa thành công {successCount} nhân viên";
+                }
+                else if (successCount > 0 && failedCount > 0)
+                {
+                    // Partial success
+                    response.Data = true;
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = $"Xóa thành công {successCount} nhân viên. Thất bại {failedCount} nhân viên: {string.Join("; ", errorMessages.Take(2))}";
                 }
                 else
                 {
+                    // All failed
+                    response.Data = false;
                     response.Code = ResponseResultEnum.Failed.Value();
-                    response.Message = "Không thể xóa nhân viên";
-                }
-            }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.DeleteMultiEmployeeAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                    response.Message = $"Không thể xóa nhân viên. Lỗi: {string.Join("; ", errorMessages.Take(2))}";
                 }
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.Error("EmployeeBo.DeleteMultiEmployeeAsync - Error occurred", ex);
+                CommonLogger.DefaultLogger.Error("EmployeeBo.DeleteMultiEmployeeAsync - Unexpected error occurred", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Lỗi hệ thống: " + ex.Message;
             }
@@ -564,7 +577,7 @@ namespace BussinessObject.Bo.TanTamBo
                 }
 
                 // Hash the new password
-                string hashedPassword = AESHelper.HashPassword(request.NewPassword);
+                string hashedPassword = SecurityCommon.sha256_hash(request.NewPassword);
 
                 // Reset password
                 var result = DaoFactory.Employee.ResetEmployeePassword(employeeId, hashedPassword);
@@ -749,20 +762,21 @@ namespace BussinessObject.Bo.TanTamBo
 
                 if (employeesFromDb != null && employeesFromDb.Any())
                 {
-                    response.Data.Items = employeesFromDb.Select(emp => new EmployeeFilterListDto
+                    response.Data.items = employeesFromDb.Select(emp => new EmployeeFilterListDto
                     {
-                        Name = emp.Name,
-                        UserId = emp.UserId,
-                        Username = emp.Username,
-                        RegionId = emp.RegionId,
-                        BranchId = emp.BranchId,
-                        DepartmentId = emp.DepartmentId,
-                        PositionId = emp.PositionId,
-                        Identification = emp.Identification,
-                        IsNoNeedTimekeeping = emp.IsNoNeedTimekeeping
+                        name = emp.Name,
+                        userId = emp.UserId,
+                        employeeId = emp.UserId,
+                        username = emp.Username,
+                        regionId = emp.RegionId,
+                        branchId = emp.BranchId,
+                        departmentId = emp.DepartmentId,
+                        positionId = emp.PositionId,
+                        identification = emp.Identification,
+                        isNoNeedTimekeeping = emp.IsNoNeedTimekeeping
                     }).ToList();
 
-                    response.Data.Total = employeesFromDb.Count;
+                    response.Data.total = employeesFromDb.Count;
                     response.Code = ResponseResultEnum.Success.Value();
                     response.Message = "Lấy danh sách nhân viên thành công";
                 }
@@ -818,16 +832,19 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
-                // Get last employee code
-                var lastCode = DaoFactory.Employee.GetNextEmployeeCode(request.CompanyId);
+                // Get all employee codes from database
+                var allEmployeeCodes = DaoFactory.Employee.GetAllEmployeeCodes(request.CompanyId);
+                
+                // Find the highest/last employee code using C# logic
+                var lastCode = FindHighestEmployeeCode(allEmployeeCodes);
                 
                 if (!string.IsNullOrEmpty(lastCode))
                 {
-                    response.Data.NextCode = GenerateNextEmployeeCode(lastCode);
+                    response.Data.nextCode = GenerateNextEmployeeCode(lastCode);
                 }
                 else
                 {
-                    response.Data.NextCode = "EMP001";
+                    response.Data.nextCode = "EMP001";
                 }
 
                 response.Code = ResponseResultEnum.Success.Value();
@@ -858,6 +875,85 @@ namespace BussinessObject.Bo.TanTamBo
         }
 
         /// <summary>
+        /// Find the highest employee code from the list using complex logic
+        /// </summary>
+        private string FindHighestEmployeeCode(List<string> employeeCodes)
+        {
+            if (employeeCodes == null || !employeeCodes.Any())
+            {
+                return null;
+            }
+
+            // Filter out empty codes
+            var validCodes = employeeCodes.Where(code => !string.IsNullOrWhiteSpace(code)).ToList();
+            if (!validCodes.Any())
+            {
+                return null;
+            }
+
+            // Sort using custom logic that handles different formats
+            var sortedCodes = validCodes
+                .Select(code => new
+                {
+                    Code = code,
+                    // Extract numeric part for proper sorting
+                    NumericPart = ExtractNumericPart(code),
+                    CodeLength = code.Length
+                })
+                .OrderByDescending(item => item.NumericPart)    // First sort by numeric value
+                .ThenByDescending(item => item.CodeLength)      // Then by code length
+                .ThenByDescending(item => item.Code)            // Finally alphabetically
+                .Select(item => item.Code)
+                .ToList();
+
+            return sortedCodes.FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Extract numeric part from employee code for sorting
+        /// </summary>
+        private long ExtractNumericPart(string employeeCode)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(employeeCode))
+                {
+                    return 0;
+                }
+
+                // Check if code contains any numbers
+                if (!System.Text.RegularExpressions.Regex.IsMatch(employeeCode, @"\d"))
+                {
+                    return 0;
+                }
+
+                // If entire code is numeric
+                if (long.TryParse(employeeCode, out long fullNumeric))
+                {
+                    return fullNumeric;
+                }
+
+                // Extract the last continuous numeric part
+                var matches = System.Text.RegularExpressions.Regex.Matches(employeeCode, @"\d+");
+                if (matches.Count > 0)
+                {
+                    // Get the last numeric match
+                    var lastMatch = matches[matches.Count - 1];
+                    if (long.TryParse(lastMatch.Value, out long numericPart))
+                    {
+                        return numericPart;
+                    }
+                }
+
+                return 0;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
         /// Generate next employee code based on last code
         /// </summary>
         private string GenerateNextEmployeeCode(string lastCode)
@@ -869,16 +965,32 @@ namespace BussinessObject.Bo.TanTamBo
                     return "EMP001";
                 }
 
-                // Extract number from code (e.g., EMP001 -> 001)
-                var numberPart = System.Text.RegularExpressions.Regex.Match(lastCode, @"\d+").Value;
-                if (int.TryParse(numberPart, out int number))
+                // Extract all numeric parts
+                var matches = System.Text.RegularExpressions.Regex.Matches(lastCode, @"\d+");
+                if (matches.Count > 0)
                 {
-                    number++;
-                    var prefix = lastCode.Substring(0, lastCode.Length - numberPart.Length);
-                    return $"{prefix}{number:D3}";
+                    // Get the last numeric match
+                    var lastMatch = matches[matches.Count - 1];
+                    var numberPart = lastMatch.Value;
+                    var startIndex = lastMatch.Index;
+                    
+                    if (int.TryParse(numberPart, out int number))
+                    {
+                        number++;
+                        
+                        // Preserve the original format with same number of digits
+                        var newNumberPart = number.ToString().PadLeft(numberPart.Length, '0');
+                        
+                        // Replace the numeric part in the original string
+                        var prefix = lastCode.Substring(0, startIndex);
+                        var suffix = lastCode.Substring(startIndex + numberPart.Length);
+                        
+                        return $"{prefix}{newNumberPart}{suffix}";
+                    }
                 }
 
-                return "EMP001";
+                // If no numeric part found, append 001
+                return $"{lastCode}001";
             }
             catch
             {

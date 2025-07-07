@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Linq;
 using System.Web.Mvc;
 using TanTamApi.JWT.Helper;
+using Logger;
 
 namespace TanTamApi.JWT.Middleware
 {
@@ -31,6 +32,7 @@ namespace TanTamApi.JWT.Middleware
                 return;
 
             var token = context.Request.Headers["Authorization"]?.Split(' ').Last();
+            CommonLogger.PerformanceLogger.DebugFormat("token {0}", token);
             if (!string.IsNullOrEmpty(token))
             {
                 _jwtTokenHelper.AttachUserToContext(context, token);

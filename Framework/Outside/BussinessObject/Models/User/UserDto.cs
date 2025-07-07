@@ -86,20 +86,11 @@ namespace BussinessObject.Models.User
 
     public class MetaResponse
     {
-        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
-        public int Total { get; set; }
-
-        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int Count { get; set; }
-
-        [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]
-        public int PerPage { get; set; }
-
-        [JsonProperty("current_page", NullValueHandling = NullValueHandling.Ignore)]
-        public int CurrentPage { get; set; }
-
-        [JsonProperty("total_pages", NullValueHandling = NullValueHandling.Ignore)]
-        public int TotalPages { get; set; }
+        public int total { get; set; }
+        public int count { get; set; }
+        public int perPage { get; set; }
+        public int currentPage { get; set; }
+        public int totalPages { get; set; }
     }
 
     public class UserDetailRequest

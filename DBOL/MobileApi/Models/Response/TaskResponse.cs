@@ -305,6 +305,9 @@ namespace TanTamApi.Models.Response
 
         [JsonProperty("created_user_obj")]
         public new UserSimpleResponse CreatedUserObj { get; set; }
+
+        [JsonProperty("assigned_user")]
+        public new UserSimpleResponse AssignedUser { get; set; }
     }
 
     /// <summary>

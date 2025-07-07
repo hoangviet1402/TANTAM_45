@@ -16,8 +16,8 @@ namespace EntitiesObject.Entities.TanTamEntities
         public int BranchId { get; set; }
         public int CompanyId { get; set; }
         public string BranchName { get; set; }
-        public Nullable<int> Latitude { get; set; }
-        public Nullable<int> Longitude { get; set; }
+        public Nullable<double> Latitude { get; set; }
+        public Nullable<double> Longitude { get; set; }
         public string Country { get; set; }
         public string Province { get; set; }
         public string District { get; set; }

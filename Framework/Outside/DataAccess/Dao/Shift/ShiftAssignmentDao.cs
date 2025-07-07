@@ -18,6 +18,17 @@ namespace DataAccess.Dao.Shift
         List<Ins_ShiftAssignment_Position_Create_Result> ShiftAssignment_CreatePosition(Ins_ShiftAssignment_Position_Create_Parameter parameter);
         List<Ins_ShiftAssignment_Department_Create_Result> ShiftAssignment_CreateDepartment(Ins_ShiftAssignment_Department_Create_Parameter parameter);
         int ShiftAssignment_User_Create(int shiftAssignmentID, int accountMapID);
+        List<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result> GetShiftAssignmentUserWorkingDayLogsByShiftAssignmentUserWorkingDay(int shiftAssignmentUserWorkingDayId);
+        int GetCompanyIdByShiftAssignmentUserWorkingDayId(int shiftAssignmentUserWorkingDayId);
+        decimal? CreateShiftAssignmentUserWorkingDayLog(
+            int shiftAssignmentUserWorkingDayId,
+            int actionType,
+            int clockType,
+            DateTime actionTime,
+            string reason,
+            int createdBy
+        );
+        Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result TrashShiftAssignmentUserWorkingDayLog(int logId, int trashedBy, string reason);
     }
 
     internal class ShiftAssignmentDao : DaoFactories<TanTamEntities, DBNull>, IShiftAssignmentDao
@@ -128,6 +139,61 @@ namespace DataAccess.Dao.Shift
                 if (out_shiftAssignment_UserId != null && out_shiftAssignment_UserId.Value != null)
                     int.TryParse(out_shiftAssignment_UserId.Value.ToString(), out shiftAssignment_UserId);
                 return shiftAssignment_UserId;
+            }
+        }
+
+        public List<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result> GetShiftAssignmentUserWorkingDayLogsByShiftAssignmentUserWorkingDay(int shiftAssignmentUserWorkingDayId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay(shiftAssignmentUserWorkingDayId).ToList();
+            }
+        }
+
+        // Lấy CompanyId từ ShiftAssignmentUserWorkingDayId
+        public int GetCompanyIdByShiftAssignmentUserWorkingDayId(int shiftAssignmentUserWorkingDayId)
+        {
+            using (Uow)
+            {
+                var sql = @"SELECT TOP 1 eam.CompanyID
+                            FROM ShiftAssignment_User_WorkingDay suw
+                            INNER JOIN ShiftAssignment_User sau ON suw.ShiftAssignmentUserId = sau.ID
+                            INNER JOIN EmployeeAccountMap eam ON sau.AccountMapID = eam.Id
+                            WHERE suw.Id = @p0";
+                var result = Uow.Context.Database.SqlQuery<int?>(sql, shiftAssignmentUserWorkingDayId).FirstOrDefault();
+                return result ?? 0;
+            }
+        }
+
+        public decimal? CreateShiftAssignmentUserWorkingDayLog(
+            int shiftAssignmentUserWorkingDayId,
+            int actionType,
+            int clockType,
+            DateTime actionTime,
+            string reason,
+            int createdBy
+        )
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_ShiftAssignment_User_WorkingDay_Log_Create(
+                    shiftAssignmentUserWorkingDayId,
+                    actionType,
+                    clockType,
+                    actionTime,
+                    reason,
+                    createdBy
+                );
+                return result?.FirstOrDefault();
+            }
+        }
+
+        public Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result TrashShiftAssignmentUserWorkingDayLog(int logId, int trashedBy, string reason)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_ShiftAssignment_User_WorkingDay_Log_Trash(logId, trashedBy, reason);
+                return result?.FirstOrDefault();
             }
         }
     }

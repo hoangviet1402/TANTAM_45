@@ -85,6 +85,7 @@
     <Compile Include="Bo\Shift\ShiftAssignmentBo.cs" />
     <Compile Include="Bo\Shift\ShiftBo.cs" />
     <Compile Include="Bo\Shift\ShiftSummaryBo.cs" />
+    <Compile Include="Bo\Shift\TimekeeperBo.cs" />
     <Compile Include="Bo\TanTamBo\AuthBo.cs" />
     <Compile Include="Bo\TanTamBo\BranchesBo.cs" />
     <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Enum\UserRole.cs" />
     <Compile Include="Helper\AESHelper.cs" />
     <Compile Include="Helper\CacheApiHelper.cs" />
+    <Compile Include="Helper\ShiftTimeConfigHelper.cs" />
     <Compile Include="Models\ApiResponse\ApiBaseResponse.cs" />
     <Compile Include="Models\ApiResponse\ApiResult.cs" />
     <Compile Include="Models\Auth\AuthResponse.cs" />
@@ -137,7 +139,6 @@
     <Compile Include="Models\Company\PositionDTO.cs" />
     <Compile Include="Models\Company\UpdateInfoWhenSinup.cs" />
     <Compile Include="Models\MyConfigModel.cs" />
-    <Compile Include="Models\OpenShift\OpenShiftDto.cs" />
     <Compile Include="Models\ResourceEnum\Model\MyResourceDetailModel.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceAccountManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceCommonManagement.cs" />
@@ -149,8 +150,11 @@
     <Compile Include="Models\ResourceEnum\MyResourceTransferGoldManagement.cs" />
     <Compile Include="Models\Employee\EmployeeDto.cs" />
     <Compile Include="Models\Employee\EmployeeRequestDto.cs" />
+    <Compile Include="Models\OpenShift\OpenShiftDto.cs" />
+    <Compile Include="Models\Shift\CheckInOutModels.cs" />
     <Compile Include="Models\Shift\EmployeeShiftSummaryModels.cs" />
     <Compile Include="Models\Shift\ShiftAssignmentDTO.cs" />
+    <Compile Include="Models\Shift\TimekeeperDTO.cs" />
     <Compile Include="Models\Shift\ShiftDTO.cs" />
     <Compile Include="Models\Shift\ShiftRequest.cs" />
     <Compile Include="Models\Shift\ShiftResponse.cs" />
@@ -196,12 +200,7 @@
       <Name>MyUtility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserModule\Contract\" />
-    <Folder Include="UserModule\Enums\" />
-    <Folder Include="UserModule\Models\Request\" />
-    <Folder Include="UserModule\Models\Response\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

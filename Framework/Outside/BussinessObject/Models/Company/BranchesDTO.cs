@@ -5,6 +5,16 @@ using Newtonsoft.Json;
 namespace BussinessObject.Models.Company
 
 {
+    public class CreateRegionRequest
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+    }
+
     public class CreateBranchesRequest
     {
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -124,5 +134,20 @@ namespace BussinessObject.Models.Company
 
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
+
+        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
+        public string Code { get; set; }
+
+        [JsonProperty("sort_index", NullValueHandling = NullValueHandling.Ignore)]
+        public int SortIndex { get; set; }
+
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
+
+        [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string Alias { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using BussinessObject.Helper;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -207,23 +208,33 @@ namespace BussinessObject.Bo.TanTamBo
                 {
                     var dayData = openShifts
                         .Where(os => DateTime.TryParse(os.working_day, out var workingDay) && workingDay.Date == currentDate.Date)
-                        .Select(os => new OpenShiftListItemDto
+                        .Select(os => 
                         {
-                            id = os.id.ToString(),
-                            shift_name = os.shift_name,
-                            total_employees = os.total_employees,
-                            shift_id = os.shift_id,
-                            start_time = $"{os.start_time:yyyy-MM-dd} 08:30",
-                            end_time = $"{os.end_time:yyyy-MM-dd} 17:30",
-                            working_day = os.working_day,
-                            timezone = os.timezone,
-                            is_draft = os.is_draft,
-                            status = new OpenShiftStatusDto
+                            // ✅ NEW: Get time configuration using shared helper
+                            // Parse shift_id from string to int for helper method
+                            int shiftIdInt = 0;
+                            int.TryParse(os.shift_id, out shiftIdInt);
+                            var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shiftIdInt);
+                            
+                            return new OpenShiftListItemDto
                             {
-                                not_available = DateTime.TryParse(os.working_day, out var workingDay) && DateTime.Now.Date < workingDay.Date ? 1 : os.not_available,
-                                status_color = new System.Collections.Generic.List<string> { "#838BA3", "#EBEBEB" }
-                            },
-                            registered_employees = os.registered_employees
+                                id = os.id.ToString(),
+                                shift_name = os.shift_name,
+                                total_employees = os.total_employees,
+                                shift_id = os.shift_id,
+                                // ✅ FIXED: Use time config from database instead of hardcode
+                                start_time = $"{os.start_time:yyyy-MM-dd} {timeConfig.StartTime}",
+                                end_time = $"{os.end_time:yyyy-MM-dd} {timeConfig.EndTime}",
+                                working_day = os.working_day,
+                                timezone = os.timezone,
+                                is_draft = os.is_draft,
+                                status = new OpenShiftStatusDto
+                                {
+                                    not_available = DateTime.TryParse(os.working_day, out var workingDay) && DateTime.Now.Date < workingDay.Date ? 1 : os.not_available,
+                                    status_color = new System.Collections.Generic.List<string> { "#838BA3", "#EBEBEB" }
+                                },
+                                registered_employees = os.registered_employees
+                            };
                         })
                         .ToList();
 
@@ -310,13 +321,21 @@ namespace BussinessObject.Bo.TanTamBo
                 var shifts = DaoFactory.OpenShift.GetShiftListByWorkingDay(companyId, request.page, request.status, workingDay, request.is_all);
 
                 // Transform data to match expected response format
-                var responseData = shifts.Select(shift => new ShiftListByWorkingDayItemDto
+                var responseData = shifts.Select(shift => 
                 {
-                    id = shift.Id.ToString(),
-                    name = shift.ShiftName,
-                    start_time = $"{workingDay:yyyy-MM-dd} 08:00", // Default start time since stored procedure doesn't return time
-                    end_time = $"{workingDay:yyyy-MM-dd} 17:30",   // Default end time since stored procedure doesn't return time
-                    timezone = shift.TimeZone ?? "Asia/Saigon"
+                    // ✅ NEW: Get time configuration using shared helper
+                    // Note: shift.Id is the actual ShiftId from Shift table
+                    var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shift.Id);
+                    
+                    return new ShiftListByWorkingDayItemDto
+                    {
+                        id = shift.Id.ToString(),
+                        name = shift.ShiftName,
+                        // ✅ FIXED: Use time config from database instead of hardcode
+                        start_time = $"{workingDay:yyyy-MM-dd} {timeConfig.StartTime}",
+                        end_time = $"{workingDay:yyyy-MM-dd} {timeConfig.EndTime}",
+                        timezone = shift.TimeZone ?? "Asia/Saigon"
+                    };
                 }).ToList();
 
                 response.Data = responseData;

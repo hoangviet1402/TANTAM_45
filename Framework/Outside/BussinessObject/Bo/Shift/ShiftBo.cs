@@ -20,12 +20,9 @@ namespace BussinessObject.Bo.Shift
 {
     public class ShiftBo : BaseBo<DBNull>
     {
-        private readonly ShiftSummaryBo _shiftSummaryBo;
-
         public ShiftBo()
             : base(DaoFactory.Shift)
         {
-            _shiftSummaryBo = new ShiftSummaryBo();
         }
 
         public ApiResult<TimesResponse> GetTimes(string lang)
@@ -150,7 +147,8 @@ namespace BussinessObject.Bo.Shift
                 };
 
 
-                var shiftId = DaoFactory.Shift.ShiftCreateInfo(shiftParameter);
+                var shiftId = DaoFactory.Shift.Shift_Create_Info(shiftParameter);
+                shiftParameter.ShiftId = shiftId;
                 if (shiftId <= 0)
                 {
                     response.Code = ResponseResultEnum.SystemError.Value();
@@ -175,41 +173,45 @@ namespace BussinessObject.Bo.Shift
 
                 #region tạo Shift_Branch
                 response.Data.Shift.BranchIds = new List<BranchDetail>();
-                if (request.Shift.BranchIds != null && request.Shift.BranchIds.Count > 0)
+                if (request.Shift.BranchIds == null || request.Shift.BranchIds.Count == 0)
                 {
-                    // tạo Shift_Branch theo ID Branch mà CLient truyền lên
-                    foreach (var item in request.Shift.BranchIds)
-                    {
-                        var shiftBranchCreateed = DaoFactory.Shift.Shift_Branch_Create(new Ins_Shift_Branch_Create_Parameter()
-                        {
-                            BranchID = item,
-                            CompanyID = companyId,
-                            IsInsertOne = true,
-                            ShiftID = shiftId,
-                        });
-                        if (shiftBranchCreateed != null)
-                        {
-                            response.Data.Shift.BranchIds.AddRange(
-                                shiftBranchCreateed.Select(x => new BranchDetail()
-                                {
-                                    BranchIdObj = new BranchObject()
-                                    {
-                                        Color = x.Color,
-                                        Id = x.BranchID,
-                                        Name = x.BranchName
-                                    },
-                                    Index = x.SortIndex ?? 0
-                                })
-                            );
-                        }
-                    }
-
+                    var totalBranchs = 0;
+                    var data_companyBranchs =  DaoFactory.Branches.GetAllBranchs(companyId, out totalBranchs);
+                    request.Shift.BranchIds = data_companyBranchs.Select(x => x.BranchId).ToList();
                 }
+
+                // tạo Shift_Branch theo ID Branch mà CLient truyền lên
+                foreach (var item in request.Shift.BranchIds)
+                {
+                    var shiftBranchCreateed = DaoFactory.Shift.Shift_Branch_Create(new Ins_Shift_Branch_Create_Parameter()
+                    {
+                        BranchID = item,
+                        CompanyID = companyId,
+                        IsInsertOne = true,
+                        ShiftID = shiftId,
+                    });
+                    if (shiftBranchCreateed != null)
+                    {
+                        response.Data.Shift.BranchIds.AddRange(
+                            shiftBranchCreateed.Select(x => new BranchDetail()
+                            {
+                                BranchIdObj = new BranchObject()
+                                {
+                                    Color = x.Color,
+                                    Id = x.BranchID,
+                                    Name = x.BranchName
+                                },
+                                Index = x.SortIndex ?? 0
+                            })
+                        );
+                    }
+                }
+
                 #endregion
 
                 #region tạo ShiftTimeInOutConfig
 
-                var shiftCreateTimeInOutConfig = DaoFactory.Shift.ShiftCreateTimeInOutConfig(shiftParameter);
+                var shiftCreateTimeInOutConfig = DaoFactory.Shift.Shift_Create_TimeInOutConfig(shiftParameter);
                 var shiftCreateTimeInOutConfig_One = shiftCreateTimeInOutConfig.FirstOrDefault();
 
                 if (shiftCreateTimeInOutConfig_One != null)
@@ -361,27 +363,28 @@ namespace BussinessObject.Bo.Shift
                 }
                 #region tạo ShiftAssignment_Branch
                 response.Data.Branches = new List<BranchInfo>();
-                if (request.ShiftAssignment.BranchIds != null && request.ShiftAssignment.BranchIds.Count > 0)
+                if (request.ShiftAssignment.BranchIds == null || request.ShiftAssignment.BranchIds.Count == 0)
                 {
-                    // tạo ShiftAssignment_Branch theo ID Branch mà CLient truyền lên store [Ins_ShiftAssignment_Branch_Create]
-                    int assignmentID = 0;
-                    foreach (var item in request.ShiftAssignment.BranchIds)
+                    request.ShiftAssignment.BranchIds = request.Shift.BranchIds;
+                }
+                // tạo ShiftAssignment_Branch theo ID Branch mà CLient truyền lên store [Ins_ShiftAssignment_Branch_Create]
+                int assignmentID = 0;
+                foreach (var item in request.ShiftAssignment.BranchIds)
+                {
+                    var shiftAssignmentCreateBranch = DaoFactory.ShiftAssignment.ShiftAssignment_CreateBranch(new Ins_ShiftAssignment_Branch_Create_Parameter()
                     {
-                        var shiftAssignmentCreateBranch = DaoFactory.ShiftAssignment.ShiftAssignment_CreateBranch(new Ins_ShiftAssignment_Branch_Create_Parameter()
+                        BranchID = item,
+                        CompanyID = 0,
+                        IsInsertOne = true,
+                        ShiftAssignmentID = shiftAssignmentId
+                    }, out assignmentID);
+                    response.Data.Branches.AddRange(
+                        shiftAssignmentCreateBranch.Select(x => new BranchInfo()
                         {
-                            BranchID = item,
-                            CompanyID = 0,
-                            IsInsertOne = true,
-                            ShiftAssignmentID = shiftAssignmentId
-                        },out assignmentID);
-                        response.Data.Branches.AddRange(
-                            shiftAssignmentCreateBranch.Select(x => new BranchInfo()
-                            {
-                                Label = x.BranchName,
-                                Value = x.BranchID
-                            })
-                        );
-                    }
+                            Label = x.BranchName,
+                            Value = x.BranchID
+                        })
+                    );
                 }
                 #endregion
 
@@ -489,47 +492,52 @@ namespace BussinessObject.Bo.Shift
                 };
 
                 #region tạo ca làm việc cho nhân viên hiện tại
-                if (accountMapID > 0)
+                if (request.ShiftAssignment.UserIds != null && request.ShiftAssignment.UserIds.Any())
                 {
-                    var assignment_user_id = DaoFactory.ShiftAssignment.ShiftAssignment_User_Create(shiftAssignmentId, accountMapID);
-                    if (assignment_user_id > 0)
+                    foreach (var item_UserIds in request.ShiftAssignment.UserIds)
                     {
-                        DateTime dateFrom, dateTo;
-
-                        if (shiftAssignmentParameter.GenerateTimekeepingType == Generate_Timekeeping_Type_Obj_Enum.generate_from_start_of_month.Text())
+                        var assignment_user_id = DaoFactory.ShiftAssignment.ShiftAssignment_User_Create(shiftAssignmentId, item_UserIds);
+                        if (assignment_user_id > 0)
                         {
-                            DateTimeExtension.GetRangeByType(DateTime.Now, 1, out dateFrom, out dateTo);
+                            DateTime dateFrom, dateTo;
+
+                            if (shiftAssignmentParameter.GenerateTimekeepingType == Generate_Timekeeping_Type_Obj_Enum.generate_from_start_of_month.Text())
+                            {
+                                DateTimeExtension.GetRangeByType(DateTime.Now, 1, out dateFrom, out dateTo);
+                            }
+                            else
+                            {
+                                DateTimeExtension.GetRangeByType(DateTime.Now, 2, out dateFrom, out dateTo);
+                            }
+
+                            dateFrom = DateTime.Now.GetBeginOfDay();
+
+                            DaoFactory.Payroll.Payroll_User_Create_MultiDay(new Payroll_User_CreateMultiDayParameter()
+                            {
+                                AccountMapID = item_UserIds,
+                                AssignmentUserID = assignment_user_id,
+                                CheckinType = "",
+                                CheckouType = "",
+                                EndTime = response.Data.Shift.EndTime,
+                                StartTime = response.Data.Shift.StartTime,
+
+                                RealCoefficient = 0,
+                                RealWorkingHour = 0,
+                                RealWorkingMinute = 0,
+                                RestEndTimeShort = "",
+                                RestStartTimeShort = "",
+                                Status = 0,
+                                WeekOfYear = DateTime.Now.GetWeekNumber()
+                            },
+                                dateFrom, dateTo
+                            );
                         }
-                        else
-                        {
-                            DateTimeExtension.GetRangeByType(DateTime.Now, 2, out dateFrom, out dateTo);
-                        }
-
-                        dateFrom = DateTime.Now.GetBeginOfDay();
-
-                        DaoFactory.Payroll.ShiftAssignment_User_Create(new Payroll_User_CreateMultiDayParameter()
-                        {
-                            AccountMapID = accountMapID,
-                            AssignmentUserID = assignment_user_id,
-                            CheckinType = "",
-                            CheckouType = "",
-                            EndTime = response.Data.Shift.EndTime,
-                            StartTime = response.Data.Shift.StartTime,
-
-                            RealCoefficient = 0,
-                            RealWorkingHour = 0,
-                            RealWorkingMinute = 0,
-                            RestEndTimeShort = "",
-                            RestStartTimeShort = "",
-                            Status = 0,
-                            WeekOfYear = DateTime.Now.GetWeekNumber()
-                        },
-                            dateFrom, dateTo
-                        );
                     }
                 }
                 #endregion
 
+                var result = DaoFactory.Company.UpdateCompanyStep(companyId, SetupStepEnum.ONBOARDING_CREATE_SHIFT.Value());
+                
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Tạo ca làm việc thành công";
             }
@@ -575,6 +583,267 @@ namespace BussinessObject.Bo.Shift
         /// <summary>
         /// Get list of shift assignments with shift details
         /// </summary>
+        public ApiResult<CheckInOutShiftUpdateResponse> UpdateCheckInOut(CheckInOutShiftUpdateRequest request)
+        {
+            var response = new ApiResult<CheckInOutShiftUpdateResponse>()
+            {
+                Data = new CheckInOutShiftUpdateResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                // Validate request
+                if (request == null)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "Dữ liệu yêu cầu không hợp lệ.";
+                    return response;
+                }
+
+                // Parse and validate ID
+                if (string.IsNullOrEmpty(request.Id) || !int.TryParse(request.Id, out int workingDayId) || workingDayId <= 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "ID ca làm việc không hợp lệ.";
+                    return response;
+                }
+
+                if (string.IsNullOrEmpty(request.UserId) || !int.TryParse(request.UserId, out int userId) || userId <= 0 || userId == 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "ID nhân viên không hợp lệ.";
+                    return response;
+                }
+
+                // Validate at least one action is requested
+                if (request.IsCheckin == 0 && request.IsCheckout == 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "Phải chỉ định ít nhất một hành động check-in hoặc check-out.";
+                    return response;
+                }
+
+                // Call DAO to update check-in/out
+                var result = DaoFactory.Shift.UpdateCheckInOut(
+                    workingDayId, 
+                    userId,
+                    request.CheckinTime, 
+                    request.CheckoutTime, 
+                    request.IsCheckin == 1, 
+                    request.IsCheckout == 1
+                );
+
+                if (result != null && result.Success == 1)
+                {
+                    // Map result to response using snake_case convention
+                    response.Data.success = result.Success;
+                    response.Data.suw_id = result.SuwId.GetValueOrDefault(0);
+                    response.Data.working_day = result.WorkingDay?.ToString("yyyy-MM-dd") ?? "";
+                    response.Data.message = result.Message ?? "Cập nhật chấm công thành công";
+                    response.Data.is_check_in = result.IsCheckIn.GetValueOrDefault(0) == 1;
+                    response.Data.is_check_out = result.IsCheckOut.GetValueOrDefault(0) == 1;
+                    response.Data.start_check_in_time = result.StartCheckInTime?.ToString(@"hh\:mm\:ss");
+                    response.Data.start_check_out_time = result.StartCheckOutTime?.ToString(@"hh\:mm\:ss");
+
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = result.Message ?? "Cập nhật thời gian chấm công thành công";
+
+                    // Check-in log
+                    if (request.IsCheckin == 1)
+                    {
+                        var logResult = DaoFactory.ShiftAssignment.CreateShiftAssignmentUserWorkingDayLog(
+                            workingDayId,
+                            Shift_ActionType_Enum.checkin.Value(), // ActionType: checkin
+                            Clock_Type_Enum.admin.Value(), // ClockType: admin
+                            DateTime.Now,
+                            request.Reason,
+                            userId
+                        );
+                    }
+                    // Check-out log
+                    if (request.IsCheckout == 1)
+                    {
+                        var logResult = DaoFactory.ShiftAssignment.CreateShiftAssignmentUserWorkingDayLog(
+                            workingDayId,
+                            Shift_ActionType_Enum.checkout.Value(), // ActionType: checkout
+                            Clock_Type_Enum.admin.Value(), // ClockType: admin
+                            DateTime.Now,
+                            request.Reason,
+                            userId
+                        );
+                    }
+                }
+                else
+                {
+                    response.Code = ResponseResultEnum.Failed.Value();
+                    response.Message = result?.Message ?? "Không thể cập nhật thời gian chấm công";
+                }
+            }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                // Handle Entity Framework specific exceptions (from stored procedure errors)
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.Failed.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("ShiftBo.UpdateCheckInOut - EntityCommandExecutionException", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("ShiftBo.UpdateCheckInOut - Error occurred: {0}", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+
+            return response;
+        }
+
+        public ApiResult<UncheckInOutShiftResponse> UncheckInOut(UncheckInOutShiftRequest request)
+        {
+            var response = new ApiResult<UncheckInOutShiftResponse>()
+            {
+                Data = new UncheckInOutShiftResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                // Validate request
+                if (request == null)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "Dữ liệu yêu cầu không hợp lệ.";
+                    return response;
+                }
+
+                // Parse and validate ID
+                if (string.IsNullOrEmpty(request.Id) || !int.TryParse(request.Id, out int workingDayId) || workingDayId <= 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "ID ca làm việc không hợp lệ.";
+                    return response;
+                }
+
+                // Parse and validate user_id from request
+                if (string.IsNullOrEmpty(request.UserId) || !int.TryParse(request.UserId, out int userId) || userId <= 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "User ID không hợp lệ.";
+                    return response;
+                }
+
+                // Validate at least one action is requested
+                if (request.IsUncheckin == 0 && request.IsUncheckout == 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "Phải chỉ định ít nhất một hành động hủy check-in hoặc check-out.";
+                    return response;
+                }
+
+                // Call DAO to uncheck in/out
+                var result = DaoFactory.Shift.UncheckInOut(
+                    workingDayId, 
+                    userId, 
+                    request.IsUncheckin == 1, 
+                    request.IsUncheckout == 1, 
+                    request.Reason
+                );
+
+                if (result != null && result.Success == 1)
+                {
+                    response.Data.success = result.Success;
+                    response.Data.suw_id = result.SuwId.GetValueOrDefault(0);
+                    response.Data.working_day = result.WorkingDay?.ToString("yyyy-MM-dd") ?? "";
+                    response.Data.message = result.Message ?? "Hủy chấm công thành công";
+                    response.Data.is_check_in = result.IsCheckIn.GetValueOrDefault(0) == 1;
+                    response.Data.is_check_out = result.IsCheckOut.GetValueOrDefault(0) == 1;
+                    response.Data.start_check_in_time = result.StartCheckInTime?.ToString(@"hh\:mm\:ss");
+                    response.Data.start_check_out_time = result.StartCheckOutTime?.ToString(@"hh\:mm\:ss");
+                    response.Data.reason = result.Reason ?? "";
+
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = result.Message ?? "Hủy chấm công thành công";
+
+                    // Trash check-in log if uncheckin
+                    if (request.IsUncheckin == 1)
+                    {
+                        // Find latest non-trashed check-in log for this working day
+                        var logs = DaoFactory.ShiftAssignment.GetShiftAssignmentUserWorkingDayLogsByShiftAssignmentUserWorkingDay(workingDayId);
+                        var logToTrash = logs?.FirstOrDefault(l => l.ActionType == 1 && !l.is_trashed);
+                        if (logToTrash != null)
+                        {
+                            var trashResult = DaoFactory.ShiftAssignment.TrashShiftAssignmentUserWorkingDayLog(logToTrash.Id, userId, request.Reason);
+                        }
+                        // Create uncheckin log
+                        var logResult = DaoFactory.ShiftAssignment.CreateShiftAssignmentUserWorkingDayLog(
+                            workingDayId,
+                            Shift_ActionType_Enum.uncheckin.Value(), // ActionType: uncheckin
+                            Clock_Type_Enum.admin.Value(), // ClockType: admin
+                            DateTime.Now,
+                            request.Reason,
+                            userId
+                        );
+                    }
+                    // Trash checkout log if uncheckout
+                    if (request.IsUncheckout == 1)
+                    {
+                        var logs = DaoFactory.ShiftAssignment.GetShiftAssignmentUserWorkingDayLogsByShiftAssignmentUserWorkingDay(workingDayId);
+                        var logToTrash = logs?.FirstOrDefault(l => l.ActionType == 2 && !l.is_trashed);
+                        if (logToTrash != null)
+                        {
+                            var trashResult = DaoFactory.ShiftAssignment.TrashShiftAssignmentUserWorkingDayLog(logToTrash.Id, userId, request.Reason);
+                        }
+                        // Create uncheckout log
+                        var logResult = DaoFactory.ShiftAssignment.CreateShiftAssignmentUserWorkingDayLog(
+                            workingDayId,
+                            Shift_ActionType_Enum.uncheckout.Value(), // ActionType: uncheckout
+                            Clock_Type_Enum.admin.Value(), // ClockType: admin
+                            DateTime.Now,
+                            request.Reason,
+                            userId
+                        );
+                    }
+                }
+                else
+                {
+                    response.Code = ResponseResultEnum.Failed.Value();
+                    response.Message = result?.Message ?? "Không thể hủy chấm công";
+                }
+            }
+            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
+            {
+                // Handle Entity Framework specific exceptions (from stored procedure errors)
+                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
+                {
+                    response.Code = ResponseResultEnum.Failed.Value();
+                    response.Message = sqlEx.Message;
+                }
+                else
+                {
+                    CommonLogger.DefaultLogger.Error("ShiftBo.UncheckInOut - EntityCommandExecutionException", entityEx);
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Đã xảy ra lỗi hệ thống.";
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("ShiftBo.UncheckInOut - Error occurred: {0}", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý";
+            }
+
+            return response;
+        }
+
         public ApiResult<object> GetListShiftAssignmentWithShift(int companyId, int employeeId)
         {
             var response = new ApiResult<object>()
@@ -686,212 +955,6 @@ namespace BussinessObject.Bo.Shift
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("ShiftBo.GetListShiftAssignmentWithShift - Error occurred", ex);
-                response.Code = ResponseResultEnum.SystemError.Value();
-                response.Message = "Lỗi hệ thống: " + ex.Message;
-            }
-
-            return response;
-        }
-
-        /// <summary>
-        /// Get employee shift summary
-        /// </summary>
-        public ApiResult<EmployeeShiftSummaryResponse> GetEmployeeShiftSummary(EmployeeShiftSummaryRequest request, int employeeId)
-        {
-            var response = new ApiResult<EmployeeShiftSummaryResponse>()
-            {
-                Data = new EmployeeShiftSummaryResponse(),
-                Code = ResponseResultEnum.ServiceUnavailable.Value(),
-                Message = ResponseResultEnum.ServiceUnavailable.Text()
-            };
-
-            try
-            {
-                DateTime? startDate = null;
-                DateTime? endDate = null;
-
-                if (!string.IsNullOrEmpty(request.StartDate))
-                {
-                    if (DateTime.TryParse(request.StartDate, out DateTime parsedStart))
-                        startDate = parsedStart;
-                }
-
-                if (!string.IsNullOrEmpty(request.EndDate))
-                {
-                    if (DateTime.TryParse(request.EndDate, out DateTime parsedEnd))
-                        endDate = parsedEnd;
-                }
-
-                if (!startDate.HasValue && request.Month > 0 && request.Year > 0)
-                {
-                    startDate = new DateTime(request.Year, request.Month, 1);
-                    endDate = startDate.Value.AddMonths(1).AddDays(-1);
-                }
-
-                if (!startDate.HasValue)
-                {
-                    var now = DateTime.Now;
-                    startDate = new DateTime(now.Year, now.Month, 1);
-                    endDate = startDate.Value.AddMonths(1).AddDays(-1);
-                }
-
-                string employeeIdsString = null;
-                if (request.EmployeeIds != null && request.EmployeeIds.Any())
-                {
-                    employeeIdsString = string.Join(",", request.EmployeeIds);
-                }
-
-                if (startDate > endDate)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.";
-                    return response;
-                }
-                
-                if ((endDate.Value - startDate.Value).TotalDays > 90)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = "Khoảng thời gian không được vượt quá 90 ngày để tránh ảnh hưởng đến hiệu suất hệ thống.";
-                    return response;
-                }
-
-                var recordsCreated = _shiftSummaryBo.CreateWorkingDayDataBulk(request.CompanyId, startDate.Value, endDate.Value, employeeIdsString);
-
-                var summaryData = DaoFactory.Shift.GetShiftAssignmentUserWorkingDaySummary(
-                    request.CompanyId,
-                    startDate,
-                    endDate,
-                    employeeIdsString,
-                    request.Month > 0 ? request.Month : (int?)null,
-                    request.Year > 0 ? request.Year : (int?)null
-                );
-
-                // Group data by employees  
-                var employeeGroups = summaryData
-                    .GroupBy(x => new { x.EmployeeId, x.UserId, x.FullName, x.EmployeeCode, x.Phone })
-                    .ToList();
-
-                var items = new List<EmployeeShiftItem>();
-
-                foreach (var empGroup in employeeGroups)
-                {
-                    var employeeItem = new EmployeeShiftItem
-                    {
-                        user_id = empGroup.Key.UserId.ToString(),
-                        employee_id = empGroup.Key.EmployeeId.ToString(),
-                        phone = empGroup.Key.Phone ?? "",
-                        username = empGroup.Key.Phone ?? "",
-                        name = empGroup.Key.FullName ?? "",
-                        company_id = request.CompanyId.ToString(),
-                        identification = empGroup.Key.EmployeeCode ?? ""
-                     };
-
-                     // Group shifts by date
-                     var shiftsByDate = empGroup
-                         .GroupBy(d => d.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"))
-                         .ToList();
-
-                     foreach (var dateGroup in shiftsByDate)
-                     {
-                         var dateKey = dateGroup.Key;
-                         var shiftsForDate = new List<ShiftDetailItem>();
-
-                         foreach (var shift in dateGroup)
-                         {
-                            var shiftDetail = new ShiftDetailItem
-                            {
-                                id = shift.SuwId.ToString(),
-                                name = shift.ShiftName ?? "",
-                                shift_key = shift.ShiftKey ?? "",
-                                shift_id = shift.ShiftId.ToString() ?? "",  // This is the actual ShiftId from Shift table
-                                start_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + (shift.StartTime?.ToString(@"hh\:mm\:ss") ?? "08:00:00"),
-                                end_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + (shift.EndTime?.ToString(@"hh\:mm\:ss") ?? "17:30:00"),
-                                working_hour = shift.WorkingHour.GetValueOrDefault() > 0 ? shift.WorkingHour.Value : 9.5m,
-                                working_day = shift.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"),
-                                week_of_year = shift.WeekOfYear.GetValueOrDefault() > 0 ? shift.WeekOfYear.Value : 1,
-                                branch_obj = _shiftSummaryBo.ParseBranches(shift.BranchesJson),
-                                company_id = request.CompanyId.ToString(),
-                                checkin_time = shift.StartCheckInTime?.ToString("yyyy-MM-dd HH:mm:ss"),
-                                checkout_time = shift.StartCheckOutTime?.ToString("yyyy-MM-dd HH:mm:ss"),
-                                shift_name = shift.ShiftName ?? "",
-                                real_working_hour = shift.RealWorkingHour.GetValueOrDefault(),
-                                real_working_minute = (int)shift.RealWorkingMinute
-                            };
-
-                            // Set display option
-                            shiftDetail.display_option = new DisplayOption
-                            {
-                                shift_name = shift.ShiftName ?? ""
-                            };
-
-                            // Set status based on checkin/checkout
-                            _shiftSummaryBo.SetShiftStatus(shiftDetail, shift);
-
-                            // Set checkin/checkout options if available
-                            if (!string.IsNullOrEmpty(shiftDetail.checkin_time))
-                            {
-                                shiftDetail.checkin_option = new CheckinOption
-                                {
-                                    type = "admin",
-                                    name = "Vào ca qua chấm công hộ",
-                                    type_name = "Admin"
-                                };
-                            }
-
-                            if (!string.IsNullOrEmpty(shiftDetail.checkout_time))
-                            {
-                                shiftDetail.checkout_option = new CheckoutOption
-                                {
-                                    type = "admin", 
-                                    name = "Ra ca qua chấm công hộ",
-                                    type_name = "Admin"
-                                };
-                            }
-
-                            shiftsForDate.Add(shiftDetail);
-                        }
-
-                        employeeItem.shifts[dateKey] = shiftsForDate;
-                    }
-
-                    // Calculate totals
-                    var allShifts = employeeItem.shifts.SelectMany(x => x.Value);
-                    employeeItem.total_working_hour = allShifts.Sum(x => x.working_hour);
-                    employeeItem.real_working_hour = allShifts.Sum(x => x.real_working_hour);
-
-                    items.Add(employeeItem);
-                }
-
-                // Set response data
-                response.Data.items = items;
-                response.Data.meta.total = items.Count;
-                response.Data.meta.count = items.Count;
-                response.Data.meta.total_pages = (int)Math.Ceiling((double)items.Count / response.Data.meta.per_page);
-
-                response.Code = ResponseResultEnum.Success.Value();
-                response.Message = "Lấy dữ liệu thành công";
-            }
-            catch (InvalidOperationException invalidEx)
-            {
-                response.Code = ResponseResultEnum.InvalidData.Value();
-                response.Message = invalidEx.Message;
-            }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
-            }
-            catch (Exception ex)
-            {
-                CommonLogger.DefaultLogger.Error("ShiftBo.GetEmployeeShiftSummary - Error occurred", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Lỗi hệ thống: " + ex.Message;
             }

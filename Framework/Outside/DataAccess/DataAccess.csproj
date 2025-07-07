@@ -63,9 +63,11 @@
     <Compile Include="Base\UnitOfWork.cs" />
     <Compile Include="DaoFactory.cs" />
     <Compile Include="Dao\DaoFactories.cs" />
+    <Compile Include="Dao\Shift\TimekeeperDao.cs" />
     <Compile Include="Dao\Shift\PayrollDao.cs" />
     <Compile Include="Dao\Shift\ShiftAssignmentDao.cs" />
     <Compile Include="Dao\Shift\ShiftDao.cs" />
+    <Compile Include="Dao\Shift\WifiDao.cs" />
     <Compile Include="Dao\TanTam\AuthDao.cs" />
     <Compile Include="Dao\TanTam\BranchesDao.cs" />
     <Compile Include="Dao\TanTam\CompanyDao.cs" />

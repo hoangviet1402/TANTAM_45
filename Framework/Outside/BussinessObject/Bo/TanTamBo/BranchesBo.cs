@@ -57,6 +57,15 @@ namespace BussinessObject.Bo.TanTamBo
                         StringCommon.NormalizeText(branch.Name, "-"),
                         StringCommon.NormalizeText(branch.Name, "_").ToUpper());
 
+                    try
+                    {
+                        // tạo thêm thông tin wifi cho chi nhánh 
+                        var resultWifi = DaoFactory.Wifi.CreateWifi(200, 0, 10, 0, branch.Latitude ?? 0, branch.Longitude ?? 0, branch.Name, branchId, branch.Address, Wifi_type_Enum.wifi.Value());
+                    }
+                    catch (Exception ex)
+                    {
+                        CommonLogger.DefaultLogger.ErrorFormat("SetupCompany_CreateBranches CreateWifi {0} ,companyId {1} , {2} EX: {3}", accountid, companyId , branchId , ex.ToString());
+                    }
                     response.Data.Add(new CreateBranchesResponse
                     {
                         Id = branchId,
@@ -85,6 +94,8 @@ namespace BussinessObject.Bo.TanTamBo
 
                     DaoFactory.Company.Employee_AddIntoBranch(accountid, branchId, true);
                     var result = DaoFactory.Company.UpdateCompanyStep(companyId, SetupStepEnum.ONBOARDING_CREATE_BRANCH.Value());
+                    
+                    
                     response.Code = ResponseResultEnum.Success.Value();
                     response.Message = "Tạo chi nhánh thành công";
                     return response;
@@ -95,7 +106,7 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("SetupCompany_CreateBranches accountId {0} ,companyId {1} EX:", accountid, companyId, ex);
+                CommonLogger.DefaultLogger.ErrorFormat("SetupCompany_CreateBranches accountId {0} ,companyId {1} ,  EX: {3}", accountid, companyId, ex.ToString());
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Tạo chi nhánh thất bại";
             }
@@ -164,9 +175,130 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyGetAllBranches companyId {0} EX:", companyId, ex);
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyGetAllBranches companyId {0} EX: {1}", companyId, ex.ToString());
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Lấy danh sách phòng ban thất bại";
+            }
+
+            return response;
+        }
+
+        public ApiResult<List<RegionInfo>> CompanyGetAllRegion(int companyId)
+        {
+            var response = new ApiResult<List<RegionInfo>>()
+            {
+                Data = new List<RegionInfo>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var total = 0;
+                var dataSQL = DaoFactory.Branches.GetAllRegion(companyId);                
+                if (dataSQL == null || total == 0)
+                {
+                    response.Code = ResponseResultEnum.NoData.Value();
+                    return response;
+                }
+                response.Data = dataSQL.Select(d => new RegionInfo
+                {
+                    Id = d.ID,
+                    Name = d.Region, 
+                    Code = d.Code,
+                    Alias = d.Alias,
+                    CreatedAt = d.CreateAt.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                    Description = d.Description,
+                    SortIndex = d.SortIndex ?? 0
+                }).ToList();
+
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = "Lấy danh sách vùng thành công";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyGetAllBranches companyId {0} EX: {1}", companyId, ex.ToString());
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lấy danh sách vùng thất bại";
+            }
+
+            return response;
+        }
+
+        public ApiResult<int> CompanyRegionCreate(string regionName,string description, int companyId)
+        {
+            var response = new ApiResult<int>()
+            {
+                Data = 0,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                try
+                {
+                    var id = DaoFactory.Branches.CreateCompanyRegion(regionName, companyId, "", StringCommon.NormalizeText(regionName, "_").ToUpper(), 0, description, StringCommon.NormalizeText(regionName, "-").ToLower());
+
+                    if (id <= 0)
+                    {
+                        response.Code = ResponseResultEnum.Failed.Value();
+                        response.Message = "Tạo vùng thất bại";
+                    }
+                    else
+                    {
+                        response.Code = ResponseResultEnum.Success.Value();
+                        response.Message = ResponseResultEnum.Success.Text();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CommonLogger.DefaultLogger.ErrorFormat("SetupCompany_CreateBranches regionName {0} ,companyId {1} ,  EX: {3}", regionName, companyId, ex.ToString());
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Tạo vùng thất bại";
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyGetAllBranches companyId {0} EX: {1}", companyId, ex.ToString());
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Tạo vùng thất bại";
+            }
+
+            return response;
+        }
+
+        public ApiResult<int> CompanyRegionUpdate(string regionName, string description, int companyId, int idRegion)
+        {
+            var response = new ApiResult<int>()
+            {
+                Data = 0,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                try
+                {
+                    DaoFactory.Branches.UpdateCompanyRegion(regionName, companyId, "", StringCommon.NormalizeText(regionName, "_").ToUpper(), 0, description, StringCommon.NormalizeText(regionName, "-").ToLower(), idRegion);
+
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = ResponseResultEnum.Success.Text();
+                }
+                catch (Exception ex)
+                {
+                    CommonLogger.DefaultLogger.ErrorFormat("SetupCompany_CreateBranches regionName {0} ,companyId {1} ,  EX: {3}", regionName, companyId, ex.ToString());
+                    response.Code = ResponseResultEnum.SystemError.Value();
+                    response.Message = "Cập nhật vùng thất bại";
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyGetAllBranches companyId {0} EX: {1}", companyId, ex.ToString());
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Cập nhật vùng thất bại";
             }
 
             return response;

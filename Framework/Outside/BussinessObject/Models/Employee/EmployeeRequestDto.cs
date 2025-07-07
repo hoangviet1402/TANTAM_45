@@ -138,8 +138,8 @@ namespace BussinessObject.Models.Employee
     /// </summary>
     public class EmployeeListResponse
     {
-        public List<EmployeeListDto> Items { get; set; } = new List<EmployeeListDto>();
-        public MetaResponse Meta { get; set; }
+        public List<EmployeeListDto> items { get; set; } = new List<EmployeeListDto>();
+        public MetaResponse meta { get; set; }
     }
 
     /// <summary>
@@ -154,7 +154,7 @@ namespace BussinessObject.Models.Employee
     /// </summary>
     public class EmployeeFilterListResponse
     {
-        public List<EmployeeFilterListDto> Items { get; set; } = new List<EmployeeFilterListDto>();
-        public int Total { get; set; }
+        public List<EmployeeFilterListDto> items { get; set; } = new List<EmployeeFilterListDto>();
+        public int total { get; set; }
     }
 } 

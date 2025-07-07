@@ -18,11 +18,11 @@ namespace DataAccess.Dao.TanTamDao
     {
         // Task management
         
-        Ins_Task_List_Result GetTaskDetail(int taskId);
+        Ins_Task_List_Result GetTaskDetail(int taskId, int companyId);
         
-        List<Ins_Task_List_Result> GetTaskList(int? taskId = null);
+        List<Ins_Task_List_Result> GetTaskList(int? taskId, int companyId);
         
-        Ins_Tasks_Create_Result CreateTask(string title, int createdUserObj, string defaultView, string color, 
+        Ins_Tasks_Create_Result CreateTask(string title, int createdUserObj, int companyId, string defaultView, string color, 
             string departmentIds, string positionIds, string branchIds, string userIds);
         
         List<Ins_Task_GetTaskGroupsByTaskId_Result> GetTaskGroupsByTaskId(int taskId);
@@ -41,22 +41,18 @@ namespace DataAccess.Dao.TanTamDao
         
         Ins_Task_Group_Update_Name_Result UpdateTaskGroupName(int groupId, string name);
         
-        Ins_Task_Sub_Create_Result CreateTaskSub(string title, string alias, int? bundleId, int? createdUserId, string position);
+        Ins_Task_Group_Update_Color_Result UpdateTaskGroupColor(int groupId, string color);
+        
+        Ins_Task_Sub_Create_Result CreateTaskSub(string title, string alias, int? bundleId, int? createdUserId, int? assignedId, string position);
         
         List<Ins_Task_Sub_ListByBundle_Result> GetTaskSubListByBundle(string bundleId);
         
         Ins_Task_Sub_Update_Completed_Result UpdateTaskSubCompleted(int id, bool isCompleted);
         
         Ins_Task_Sub_Update_Deadline_Result UpdateTaskSubDeadline(int id, DateTime? deadline, DateTime? startDate);
-        
-        List<Ins_Task_Sub_Delete_Result> DeleteTaskSub(int subtaskId);
-        
+                
         int AddTaskCollaborators(string taskId, string userIds);
-        
-        int CreateTaskFieldWithOptions(int objectId, string title, string titleNosign, bool? addToLib, 
-            bool? notifyWhenValueChanged, string fieldKey, bool? isDefault, int? createdUserId, 
-            int? sortIndex, bool? active, int? objectSortIndex, bool? objectActive);
-        
+       
         List<Ins_Task_Update_AssignedUser_Result> UpdateTaskAssignedUser(int taskId, int? assignedUser);
         
         int GetCustomizedFieldsAndValuesByTask(int taskId);
@@ -68,6 +64,23 @@ namespace DataAccess.Dao.TanTamDao
         void InsertTaskFieldOptionsBulk(int fieldId, string options);
         
         Ins_Task_Sub_Update_Title_Result UpdateSubTaskTitle(int id, string title, string titleNosign, string alias);
+        
+        List<Ins_Tasks_Delete_Result> DeleteTask(int taskId);
+
+        int DeleteAllRelations(int taskId);
+
+        int DeleteAllFields(int taskId);
+
+        int DeleteAllSubTasksByTaskId(int taskId);
+
+        int DeleteAllGroupsByTaskId(int taskId);
+
+        List<Ins_Tasks_Delete_Main_Result> DeleteMainTask(int taskId, int companyId);
+
+        Ins_TaskBranches_Create_Result CreateTaskBranch(int taskId, int branchId);
+        Ins_TaskDepartments_Create_Result CreateTaskDepartment(int taskId, int departmentId);
+        Ins_TaskPositions_Create_Result CreateTaskPosition(int taskId, int positionId);
+        Ins_TaskTaskUsers_Create_Result CreateTaskUser(int taskId, int userId);
     }
 
     /// <summary>
@@ -77,31 +90,30 @@ namespace DataAccess.Dao.TanTamDao
     {
 
 
-        public Ins_Task_List_Result GetTaskDetail(int taskId)
+        public Ins_Task_List_Result GetTaskDetail(int taskId, int companyId)
         {
             using (Uow)
             {
-                var result = Uow.Context.Ins_Task_List(taskId);
+                var result = Uow.Context.Ins_Task_List(taskId, companyId);
                 return result.FirstOrDefault();
             }
         }
 
-        public List<Ins_Task_List_Result> GetTaskList(int? taskId = null)
+        public List<Ins_Task_List_Result> GetTaskList(int? taskId, int companyId)
         {
             using (Uow)
             {
-                var result = Uow.Context.Ins_Task_List(taskId);
+                var result = Uow.Context.Ins_Task_List(taskId, companyId);
                 return result.ToList();
             }
         }
 
-        public Ins_Tasks_Create_Result CreateTask(string title, int createdUserObj, string defaultView, string color, 
+        public Ins_Tasks_Create_Result CreateTask(string title, int createdUserObj, int companyId, string defaultView, string color, 
             string departmentIds, string positionIds, string branchIds, string userIds)
         {
             using (Uow)
             {
-                var result = Uow.Context.Ins_Tasks_Create(title, createdUserObj, defaultView, color, 
-                    departmentIds, positionIds, branchIds, userIds);
+                var result = Uow.Context.Ins_Tasks_Create(title, createdUserObj, companyId, defaultView, color);
                 return result.FirstOrDefault();
             }
         }
@@ -178,11 +190,20 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
-        public Ins_Task_Sub_Create_Result CreateTaskSub(string title, string alias, int? bundleId, int? createdUserId, string position)
+        public Ins_Task_Group_Update_Color_Result UpdateTaskGroupColor(int groupId, string color)
         {
             using (Uow)
             {
-                var result = Uow.Context.Ins_Task_Sub_Create(title, alias, bundleId, createdUserId, position);
+                var result = Uow.Context.Ins_Task_Group_Update_Color(groupId, color);
+                return result.FirstOrDefault();
+            }
+        }
+
+        public Ins_Task_Sub_Create_Result CreateTaskSub(string title, string alias, int? bundleId, int? createdUserId, int? assignedId, string position)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Task_Sub_Create(title, alias, bundleId, createdUserId, assignedId, position);
                 return result.FirstOrDefault();
             }
         }
@@ -214,32 +235,11 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
-        public List<Ins_Task_Sub_Delete_Result> DeleteTaskSub(int subtaskId)
-        {
-            using (Uow)
-            {
-                var result = Uow.Context.Ins_Task_Sub_Delete(subtaskId);
-                return result.ToList();
-            }
-        }
-
         public int AddTaskCollaborators(string taskId, string userIds)
         {
             using (Uow)
             {
                 return Uow.Context.Ins_Task_Add_Collaborators(taskId, userIds);
-            }
-        }
-
-        public int CreateTaskFieldWithOptions(int objectId, string title, string titleNosign, bool? addToLib, 
-            bool? notifyWhenValueChanged, string fieldKey, bool? isDefault, int? createdUserId, 
-            int? sortIndex, bool? active, int? objectSortIndex, bool? objectActive)
-        {
-            using (Uow)
-            {
-                return Uow.Context.Ins_Task_CreateTaskFieldWithOptions(objectId, title, titleNosign, addToLib, 
-                    notifyWhenValueChanged, fieldKey, isDefault, createdUserId, sortIndex, active, 
-                    objectSortIndex, objectActive);
             }
         }
 
@@ -295,6 +295,92 @@ namespace DataAccess.Dao.TanTamDao
             using (Uow)
             {
                 var result = Uow.Context.Ins_Task_Sub_Update_Title(id, title, titleNosign, alias);
+                return result.FirstOrDefault();
+            }
+        }
+
+        public List<Ins_Tasks_Delete_Result> DeleteTask(int taskId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Tasks_Delete(taskId);
+                return result.ToList();
+            }
+        }
+
+        public int DeleteAllRelations(int taskId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Tasks_Delete_All_Relations(taskId);
+            }
+        }
+
+        public int DeleteAllFields(int taskId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Tasks_Delete_all_Fields(taskId);
+            }
+        }
+
+        public int DeleteAllSubTasksByTaskId(int taskId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Tasks_Delete_All_SubTasks_ByTaskId(taskId);
+            }
+        }
+
+        public int DeleteAllGroupsByTaskId(int taskId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Tasks_Delete_All_Groups_ByTaskId(taskId);
+            }
+        }
+
+        public List<Ins_Tasks_Delete_Main_Result> DeleteMainTask(int taskId, int companyId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Tasks_Delete_Main(taskId, companyId);
+                return result.ToList();
+            }
+        }
+
+        public Ins_TaskBranches_Create_Result CreateTaskBranch(int taskId, int branchId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_TaskBranches_Create(taskId, branchId);
+                return result.FirstOrDefault();
+            }
+        }
+
+        public Ins_TaskDepartments_Create_Result CreateTaskDepartment(int taskId, int departmentId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_TaskDepartments_Create(taskId, departmentId);
+                return result.FirstOrDefault();
+            }
+        }
+
+        public Ins_TaskPositions_Create_Result CreateTaskPosition(int taskId, int positionId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_TaskPositions_Create(taskId, positionId);
+                return result.FirstOrDefault();
+            }
+        }
+
+        public Ins_TaskTaskUsers_Create_Result CreateTaskUser(int taskId, int userId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_TaskTaskUsers_Create(taskId, userId);
                 return result.FirstOrDefault();
             }
         }

@@ -25,8 +25,6 @@ namespace DataAccess.Dao.TanTamDao
         
         int DeleteEmployee(int employeeAccountId);
         
-        int DeleteMultiEmployee(string employeeAccountIds);
-        
         int ResetEmployeePassword(int employeeAccountMapId, string passwordHash);
         
         int UpdateEmployeeDetails(int employeeId, string fullName, DateTime? birthDate, string gender, 
@@ -35,7 +33,7 @@ namespace DataAccess.Dao.TanTamDao
         List<Ins_Employee_GetList_Result> GetEmployeeFilterList(int companyId, int page, int pageSize, 
             DateTime startDate, DateTime endDate, bool isNoNeedTimekeeping, int totalRecords);
         
-        string GetNextEmployeeCode(int companyId);
+        List<string> GetAllEmployeeCodes(int companyId);
     }
 
     /// <summary>
@@ -104,14 +102,6 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
-        public int DeleteMultiEmployee(string employeeAccountIds)
-        {
-            using (Uow)
-            {
-                return Uow.Context.Ins_Employee_MultiDelete(employeeAccountIds);
-            }
-        }
-
         public int ResetEmployeePassword(int employeeAccountMapId, string passwordHash)
         {
             using (Uow)
@@ -142,12 +132,12 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
-        public string GetNextEmployeeCode(int companyId)
+        public List<string> GetAllEmployeeCodes(int companyId)
         {
             using (Uow)
             {
                 var result = Uow.Context.Ins_Employee_GetLastEmployeeCode(companyId);
-                return result.FirstOrDefault();
+                return result?.ToList() ?? new List<string>();
             }
         }
     }

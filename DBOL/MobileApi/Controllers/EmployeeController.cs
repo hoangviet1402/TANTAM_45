@@ -18,7 +18,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get employee detail by id
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpGet]
         [Route("detail")]
         public IHttpActionResult GetEmployeeDetail([FromUri] int employee_id, [FromUri] int company_id)
@@ -85,7 +85,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get employee list with pagination and filtering
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpGet]
         [Route("get-dynamic-list")]
         public IHttpActionResult GetEmployeeList([FromUri] EmployeeListRequest request)
@@ -138,7 +138,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Create a new employee
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpPost]
         [Route("create-employee")]
         public IHttpActionResult CreateEmployee([FromBody] CreateEmployeeRequest request)
@@ -197,7 +197,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Delete an employee
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpPost]
         [Route("delete-employee")]
         public IHttpActionResult DeleteEmployee([FromUri] int employee_id, [FromUri] int company_id)
@@ -262,7 +262,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Delete multiple employees
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpPost]
         [Route("delete-multi-employee")]
         public IHttpActionResult DeleteMultiEmployee([FromBody] DeleteMultiEmployeeRequest request)
@@ -333,7 +333,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Reset employee password
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpPost]
         [Route("reset-password")]
         public IHttpActionResult ResetEmployeePassword([FromUri] int employee_id, [FromUri] int company_id, 
@@ -408,7 +408,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Update employee details
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpPost]
         [Route("update-details")]
         public IHttpActionResult UpdateEmployeeDetails([FromUri] int employee_id, [FromUri] int company_id, 
@@ -488,7 +488,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get employee filter list
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpPost]
         [Route("list")]
         public IHttpActionResult GetEmployeeFilterList([FromBody] EmployeeFilterListRequest request)
@@ -559,7 +559,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get next employee code
         /// </summary>
-        //[Authorize]
+        [JWT.Middleware.Authorize]
         [HttpGet]
         [Route("get-last-item")]
         public IHttpActionResult GetNextEmployeeCode([FromUri] int company_id)
@@ -615,12 +615,6 @@ namespace TanTamApi.Controllers
                 response.Message = ResponseResultEnum.SystemError.Text();
                 return Content(HttpStatusCode.OK, response);
             }
-        }
-
-        [HttpGet]
-        public IHttpActionResult Get()
-        {
-            return Ok("Employee Controller");
         }
     }
 } 

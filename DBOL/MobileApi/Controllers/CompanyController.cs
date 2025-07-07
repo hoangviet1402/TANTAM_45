@@ -7,6 +7,7 @@ using EntitiesObject.Entities.TanTamEntities;
 using Logger;
 using MyUtility;
 using MyUtility.Extensions;
+using Newtonsoft.Json;
 using ServiceStack.Web;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,96 @@ namespace TanTamApi.Controllers
     [RoutePrefix("api/Company")]
     public class CompanyController : ApiController
     {
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("region-add")]
+        public HttpResponseMessage CreateRegion([FromBody] CreateRegionRequest request)
+        {
+            var response = new ApiResult<int>()
+            {
+                Data = 0,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var accountMapId = JwtHelper.GetAccountMapIDFromToken(Request);
+                if (companyId <= 0 || accountMapId <= 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = "Thông tin tài khoản hoặc công ty không hợp lệ.";
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+
+                if (request == null || string.IsNullOrEmpty(request.Name))
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = "Vui lòng nhập tên vùng.";
+                    return Request.CreateResponse(HttpStatusCode.OK, response);
+                }
+
+                response = BoFactory.Branches.CompanyRegionCreate(request.Name, request.Description, companyId);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("CompanyController CreateBranches EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình tạo vùng.";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+        }
+
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("region-list")]
+        public HttpResponseMessage RegionList()
+        {
+            var response = new ApiResult<List<RegionInfo>>()
+            {
+                Data = new List<RegionInfo>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                response = BoFactory.Branches.CompanyGetAllRegion(companyId);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("CompanyController RegionList EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình lấy danh sách vùng của công ty.";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+        }
+
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("region-udpate")]
+        public HttpResponseMessage RegionUpdate([FromBody] CreateRegionRequest request)
+        {
+            var response = new ApiResult<int>()
+            {
+                Data = 0,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                response = BoFactory.Branches.CompanyRegionUpdate(request.Name, request.Description, companyId, request.Id);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("CompanyController RegionList EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình lấy danh sách vùng của công ty.";
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+        }
+
         [JWT.Middleware.Authorize]
         [HttpPost, Route("branch-add")]
         public HttpResponseMessage CreateBranches([FromBody] List<CreateBranchesRequest> request)
@@ -56,7 +147,7 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyController CreateBranches EX:", ex);
+                CommonLogger.DefaultLogger.Error("CompanyController CreateBranches EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình tạo chi nhánh.";               
             }
@@ -88,7 +179,7 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyController ListBranch EX:", ex);
+                CommonLogger.DefaultLogger.Error("CompanyController ListBranch EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình lấy danh sách chi nhánh.";
             }
@@ -124,12 +215,12 @@ namespace TanTamApi.Controllers
                     response.Message = "Danh sách phòng ban không được để trống.";
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
-
+                
                 response = BoFactory.Department.SetupCompany_CreateDepartmentAllBranchAsync(companyId, request);               
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyController CreateDepartment EX:", ex);
+                CommonLogger.DefaultLogger.Error("CompanyController CreateDepartment EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình tạo phòng ban.";               
             }
@@ -139,7 +230,7 @@ namespace TanTamApi.Controllers
 
         [JWT.Middleware.Authorize]
         [HttpPost, Route("list-departments")]
-        public HttpResponseMessage ListDepartments([FromBody] string refreshToken)
+        public HttpResponseMessage ListDepartments()
         {
             var response = new ApiResult<List<CreateDepartmentResponse>>()
             {
@@ -158,11 +249,14 @@ namespace TanTamApi.Controllers
                     response.Message = "Thông tin tài khoản hoặc công ty không hợp lệ.";
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
+                CommonLogger.PerformanceLogger.DebugFormat("position-add companyId {0}, accountId {1}", companyId, accountId);
                 response = BoFactory.Department.CompanyGetAllDepartment(companyId);
+
+                CommonLogger.PerformanceLogger.DebugFormat("position-add response {0}", JsonConvert.SerializeObject(response));
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyController ListDepartments EX:", ex);
+                CommonLogger.DefaultLogger.Error("CompanyController ListDepartments EX:", ex);
                 response.Code = ResponseResultEnum.InvalidInput.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình lấy danh sách phòng ban.";
             }
@@ -180,7 +274,7 @@ namespace TanTamApi.Controllers
                 Code = ResponseResultEnum.ServiceUnavailable.Value(),
                 Message = ResponseResultEnum.ServiceUnavailable.Text()
             };
-
+           
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
@@ -212,12 +306,13 @@ namespace TanTamApi.Controllers
                     response.Code = ResponseResultEnum.InvalidData.Value();
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
-
+                CommonLogger.PerformanceLogger.DebugFormat("position-add request {0}", JsonConvert.SerializeObject(request));
                 response = BoFactory.Position.SetupCompany_CreatePositionInAllBranchesAsync(request.CompanyId, request);
+                CommonLogger.PerformanceLogger.DebugFormat("position-add response {0}", JsonConvert.SerializeObject(response));
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyController CreatePosition EX:", ex);
+                CommonLogger.DefaultLogger.Error("CompanyController CreatePosition EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
             }
@@ -238,7 +333,9 @@ namespace TanTamApi.Controllers
 
             try
             {
+                CommonLogger.PerformanceLogger.DebugFormat("element/list-business-field request {0}", JsonConvert.SerializeObject(response));
                 var result = BoFactory.Company.ListBusinessResponseAsync();
+                CommonLogger.PerformanceLogger.DebugFormat("element/list-business-field result {0}", JsonConvert.SerializeObject(response));
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
             catch (Exception ex)
@@ -306,12 +403,17 @@ namespace TanTamApi.Controllers
                     response.Code = ResponseResultEnum.InvalidData.Value();
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
-
+                CommonLogger.PerformanceLogger.DebugFormat("update-user-and-shop-name request {0}", JsonConvert.SerializeObject(request));
                 response = BoFactory.Company.UpdateUserAndShopNameAsync(request);
+                if (response.Code == ResponseResultEnum.Success.Value())
+                {
+                    BoFactory.Branches.CompanyRegionCreate(request.CompanyName, request.CompanyName, request.CompanyId);
+                }
+                CommonLogger.PerformanceLogger.DebugFormat("update-user-and-shop-name request {0}", JsonConvert.SerializeObject(response));
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyController UpdateUserAndShopName EX:", ex);
+                CommonLogger.DefaultLogger.Error("CompanyController UpdateUserAndShopName EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
             }
@@ -335,11 +437,13 @@ namespace TanTamApi.Controllers
                 CompanyDetailRequest request = new CompanyDetailRequest();
                 request.CompanyId = JwtHelper.GetCompanyIdFromToken(Request);
                 request.AccountId = JwtHelper.GetAccountIdFromToken(Request);
+                CommonLogger.PerformanceLogger.DebugFormat("detail request {0}", JsonConvert.SerializeObject(request));
                 response = BoFactory.Company.CompanyDetail(request);
+                CommonLogger.PerformanceLogger.DebugFormat("detail response {0}", JsonConvert.SerializeObject(response));
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyController CompanyDetail EX:", ex);
+                CommonLogger.DefaultLogger.Error("CompanyController CompanyDetail EX:", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
             }

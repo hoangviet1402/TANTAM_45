@@ -27,14 +27,17 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<int> StartTime { get; set; }
         public Nullable<int> EndTime { get; set; }
         public Nullable<int> WorkingHour { get; set; }
+        public decimal Coefficient { get; set; }
+        public decimal MealCoefficient { get; set; }
+        public decimal ShiftAssignmentMealCoefficient { get; set; }
         public string BranchesJson { get; set; }
         public int SuwId { get; set; }
         public bool IsCheckIn { get; set; }
         public bool IsCheckOut { get; set; }
-        public Nullable<System.TimeSpan> StartCheckInTime { get; set; }
-        public Nullable<System.TimeSpan> StartCheckOutTime { get; set; }
-        public bool IsCheckInTimeNextDay { get; set; }
-        public bool IsCheckOutTimeNextDay { get; set; }
+        public Nullable<System.DateTime> StartCheckInTime { get; set; }
+        public Nullable<System.DateTime> StartCheckOutTime { get; set; }
+        public Nullable<int> IsCheckInTimeNextDay { get; set; }
+        public Nullable<int> IsCheckOutTimeNextDay { get; set; }
         public string Reason { get; set; }
         public Nullable<decimal> RealWorkingHour { get; set; }
         public Nullable<int> RealWorkingMinute { get; set; }

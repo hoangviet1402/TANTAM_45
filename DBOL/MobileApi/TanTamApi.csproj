@@ -178,6 +178,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OpenShiftController.cs" />
+    <Compile Include="Controllers\TimeKeeperController.cs" />
     <Compile Include="Controllers\ShiftController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Enum\AccountEnum.cs" />

@@ -93,7 +93,7 @@ namespace BussinessObject.Bo.TanTamBo
             catch (Exception ex)
             {
                 response.Data = null;
-                CommonLogger.DefaultLogger.ErrorFormat("CompanyDetail FullName {0}, Address {1} Exception EX:", request.CompanyId, request.AccountId, ex);
+                CommonLogger.DefaultLogger.ErrorFormat("CompanyDetail FullName {0}, Address {1} Exception EX: {2}", request.CompanyId, request.AccountId, ex.ToString());
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = "Lỗi hệ thống";
             }
@@ -169,6 +169,8 @@ namespace BussinessObject.Bo.TanTamBo
                     string.Join(",", request.BusinesFieldIds));
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = ResponseResultEnum.Success.Text();
+
+                
             }
             catch (Exception ex)
             {

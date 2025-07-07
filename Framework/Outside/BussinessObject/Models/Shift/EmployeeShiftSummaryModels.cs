@@ -113,8 +113,9 @@ namespace BussinessObject.Models.Shift
             checkout_type = "";
             rest_start_time_short = "00:00";
             rest_end_time_short = "00:00";
-            coefficient = 1;
-            real_coefficient = 0;
+            // ✅ DEFAULT VALUES: Will be overridden with database values in Business Object
+            coefficient = 1; // Default fallback, overridden from database
+            real_coefficient = 1; // Default fallback, overridden from database
             approved = false;
             branch_obj = new List<EmployeeBranchObject>();
             display_option = new DisplayOption();

@@ -22,8 +22,6 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
         public int IsOnboarding { get; set; }
-
-        
     }
 
     public class ShiftData
@@ -492,10 +490,203 @@ namespace BussinessObject.Models.Shift
         [JsonProperty("employee_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EmployeeIds { get; set; }
 
+        /// <summary>
+        /// Filter để chỉ lấy ca làm việc (không bao gồm các thông tin khác)
+        /// </summary>
+        [JsonProperty("is_shift_only", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsShiftOnly { get; set; }
+
+        /// <summary>
+        /// ID của employee shift (user working day) để lọc dữ liệu cụ thể
+        /// </summary>
+        [JsonProperty("employee_shift_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EmployeeShiftId { get; set; }
+
+        /// <summary>
+        /// Có bao gồm thông tin project hay không
+        /// </summary>
+        [JsonProperty("with_project", NullValueHandling = NullValueHandling.Ignore)]
+        public int WithProject { get; set; }
+
+        /// <summary>
+        /// Có bao gồm thông tin chi nhánh hay không
+        /// </summary>
+        [JsonProperty("with_branch", NullValueHandling = NullValueHandling.Ignore)]
+        public int WithBranch { get; set; }
+
+        /// <summary>
+        /// Chế độ hiển thị: tasks, calendar, list, etc.
+        /// </summary>
+        [JsonProperty("view_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ViewMode { get; set; }
+
         public EmployeeShiftSummaryRequest()
         {
             EmployeeIds = new List<string>();
+            ViewMode = "tasks"; // Default view mode
         }
     }
     #endregion
+
+    #region RejectShift
+
+    /// <summary>
+    /// Request model for Reject Shift API
+    /// </summary>
+    public class RejectShiftRequest
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("user_id")]
+        public int UserId { get; set; }
+    }
+
+    /// <summary>
+    /// Response model for Reject Shift API
+    /// </summary>
+    public class RejectShiftResponse
+    {
+        [JsonProperty("id")]
+        public int id { get; set; }
+
+        [JsonProperty("working_day")]
+        public string working_day { get; set; }
+
+        [JsonProperty("shift_name")]
+        public string shift_name { get; set; }
+    }
+
+    #endregion
+
+    #region RegisterShift
+
+    /// <summary>
+    /// Request model for Register Shift API
+    /// </summary>
+    public class RegisterShiftRequest
+    {
+        [JsonProperty("shift_id")]
+        public int shift_id { get; set; }
+
+        [JsonProperty("working_day")]
+        public string working_day { get; set; }
+
+        [JsonProperty("user_id")]
+        public int user_id { get; set; }
+    }
+
+    /// <summary>
+    /// Response model for Register Shift API
+    /// </summary>
+    public class RegisterShiftResponse
+    {
+        [JsonProperty("total_updated")]
+        public int total_updated { get; set; }
+
+        [JsonProperty("working_day")]
+        public string working_day { get; set; }
+
+        [JsonProperty("shift_name")]
+        public string shift_name { get; set; }
+    }
+
+    #endregion
+
+    #region ListShift
+
+    /// <summary>
+    /// Request model for List Shift API
+    /// </summary>
+    public class ListShiftRequest
+    {
+        [JsonProperty("year")]
+        public int Year { get; set; }
+
+        [JsonProperty("week")]
+        public int Week { get; set; }
+
+        [JsonProperty("week_of_year")]
+        public int WeekOfYear { get; set; }
+
+        [JsonProperty("branch_id")]
+        public string BranchId { get; set; }
+
+        [JsonProperty("weekly_rebuild")]
+        public int WeeklyRebuild { get; set; }
+
+        [JsonProperty("is_only_shift_week")]
+        public int IsOnlyShiftWeek { get; set; }
+
+        [JsonProperty("is_bypass_week_register_shift")]
+        public int IsBypassWeekRegisterShift { get; set; }
+
+        [JsonProperty("working_day")]
+        public string WorkingDay { get; set; }
+
+        [JsonProperty("user_id")]
+        public string UserId { get; set; }
+    }
+
+    /// <summary>
+    /// Response model for List Shift API  
+    /// </summary>
+    public class ListShiftResponse : Dictionary<string, ShiftListItem>
+    {
+    }
+
+    /// <summary>
+    /// Shift list item model
+    /// </summary>
+    public class ShiftListItem
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("shift_key")]
+        public string shift_key { get; set; }
+
+        [JsonProperty("shift_id")]
+        public string shift_id { get; set; }
+
+        [JsonProperty("start_time")]
+        public string start_time { get; set; }
+
+        [JsonProperty("end_time")]
+        public string end_time { get; set; }
+
+        [JsonProperty("working_hour")]
+        public decimal working_hour { get; set; }
+
+        [JsonProperty("working_day")]
+        public string working_day { get; set; }
+
+        [JsonProperty("week_of_year")]
+        public int week_of_year { get; set; }
+
+        [JsonProperty("branch_id")]
+        public string branch_id { get; set; }
+
+        [JsonProperty("total_register")]
+        public int total_register { get; set; }
+
+        [JsonProperty("is_confirm")]
+        public object is_confirm { get; set; }
+
+        [JsonProperty("sort_index")]
+        public int sort_index { get; set; }
+
+        [JsonProperty("end_working_date")]
+        public object end_working_date { get; set; }
+
+        [JsonProperty("timezone")]
+        public string timezone { get; set; }
+    }
+
+    #endregion
+
+
 }

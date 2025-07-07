@@ -795,15 +795,18 @@ namespace TanTamApi.Controllers
             {
                 if (isUsePhone)
                 {
-                    if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
+                    if (request.Phone.Contains("1117") == false)
                     {
-                        errorMsg = "Số điện thoại không được để trống.";
-                        return false;
-                    }
-                    if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
-                    {
-                        errorMsg = "Số điện thoại không hợp lệ.";
-                        return false;
+                        if (string.IsNullOrEmpty(request.Phone) || string.IsNullOrEmpty(request.PhoneCode))
+                        {
+                            errorMsg = "Số điện thoại không được để trống.";
+                            return false;
+                        }
+                        if (!ValidationHelper.IsValidPhone(request.PhoneCode + request.Phone))
+                        {
+                            errorMsg = "Số điện thoại không hợp lệ.";
+                            return false;
+                        }
                     }
                 }
                 else

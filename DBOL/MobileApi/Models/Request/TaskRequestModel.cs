@@ -15,10 +15,6 @@ namespace TanTamApi.Models.Request
         [JsonProperty("title")]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "ID người tạo không được để trống")]
-        [JsonProperty("created_user_obj")]
-        public int CreatedUserObj { get; set; }
-
         [JsonProperty("default_view")]
         public string DefaultView { get; set; } = "list";
 
@@ -95,6 +91,20 @@ namespace TanTamApi.Models.Request
         [Required(ErrorMessage = "Tên group không được để trống")]
         [JsonProperty("name")]
         public string Name { get; set; }
+    }
+
+    /// <summary>
+    /// Request cập nhật màu sắc task group
+    /// </summary>
+    public class UpdateTaskGroupColorRequestModel
+    {
+        [Required(ErrorMessage = "ID group không được để trống")]
+        [JsonProperty("group_id")]
+        public int GroupId { get; set; }
+
+        [Required(ErrorMessage = "Màu sắc không được để trống")]
+        [JsonProperty("color")]
+        public string Color { get; set; }
     }
 
     /// <summary>
@@ -434,8 +444,8 @@ namespace TanTamApi.Models.Request
         [JsonProperty("title")]
         public string Title { get; set; }
 
-        [JsonProperty("created_user_id")]
-        public int? CreatedUserId { get; set; }
+        [JsonProperty("assigned_id")]
+        public int? AssignedId { get; set; }
 
         [JsonProperty("position")]
         public string Position { get; set; }
