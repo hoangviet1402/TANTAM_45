@@ -113,4 +113,77 @@ namespace BussinessObject.Models.Employee
     {
         public string nextCode { get; set; }
     }
+
+    /// <summary>
+    /// DTO cho validation employee account map trong BO layer
+    /// </summary>
+    public class EmployeeAccountMapValidationDto
+    {
+        public int EmployeeAccountMapId { get; set; }
+        public int AccountId { get; set; }
+        public int CompanyId { get; set; }
+        public int? EmployeesInfoId { get; set; }
+        public int? Role { get; set; }
+        public bool EmployeeAccountMapIsActive { get; set; }
+        public bool IsNewUser { get; set; }
+        public bool NeedSetPassword { get; set; }
+        public DateTime? EmployeeAccountMapCreatedAt { get; set; }
+        public string EmployeeFullName { get; set; }
+        public string EmployeeCode { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public int? Gender { get; set; }
+        public int? DisplayOrder { get; set; }
+        public string ContactAddress { get; set; }
+        public string Skype { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string PhoneCode { get; set; }
+        public bool AccountIsActive { get; set; }
+        public DateTime? AccountCreatedAt { get; set; }
+        public string DeviceId { get; set; }
+        public string CompanyFullName { get; set; }
+        public string CompanyAlias { get; set; }
+        public string CompanyPrefix { get; set; }
+    }
+
+    /// <summary>
+    /// Employee Account Map DTO for API response
+    /// </summary>
+    public class EmployeeAccountMapDto
+    {
+        public int employee_account_map_id { get; set; }
+        public int account_id { get; set; }
+        public int company_id { get; set; }
+        public int? employees_info_id { get; set; }
+        public int? role { get; set; }
+        public bool employee_account_map_is_active { get; set; }
+        public bool is_new_user { get; set; }
+        public bool need_set_password { get; set; }
+        public DateTime? employee_account_map_created_at { get; set; }
+        public string employee_full_name { get; set; }
+        public string employee_code { get; set; }
+        public DateTime? birth_date { get; set; }
+        public int? gender { get; set; }
+        public int? display_order { get; set; }
+        public string contact_address { get; set; }
+        public string skype { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public string phone_code { get; set; }
+        public bool account_is_active { get; set; }
+        public DateTime? account_created_at { get; set; }
+        public string device_id { get; set; }
+        public string company_full_name { get; set; }
+        public string company_alias { get; set; }
+        public string company_prefix { get; set; }
+    }
+
+    /// <summary>
+    /// Employee Account Map List Response
+    /// </summary>
+    public class EmployeeAccountMapListResponse
+    {
+        public System.Collections.Generic.List<EmployeeAccountMapDto> items { get; set; }
+        public int total { get; set; }
+    }
 } 

@@ -19,7 +19,6 @@ namespace DataAccess.Dao.Shift
         List<Ins_ShiftAssignment_Department_Create_Result> ShiftAssignment_CreateDepartment(Ins_ShiftAssignment_Department_Create_Parameter parameter);
         int ShiftAssignment_User_Create(int shiftAssignmentID, int accountMapID);
         List<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result> GetShiftAssignmentUserWorkingDayLogsByShiftAssignmentUserWorkingDay(int shiftAssignmentUserWorkingDayId);
-        int GetCompanyIdByShiftAssignmentUserWorkingDayId(int shiftAssignmentUserWorkingDayId);
         decimal? CreateShiftAssignmentUserWorkingDayLog(
             int shiftAssignmentUserWorkingDayId,
             int actionType,
@@ -147,21 +146,6 @@ namespace DataAccess.Dao.Shift
             using (Uow)
             {
                 return Uow.Context.Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay(shiftAssignmentUserWorkingDayId).ToList();
-            }
-        }
-
-        // Lấy CompanyId từ ShiftAssignmentUserWorkingDayId
-        public int GetCompanyIdByShiftAssignmentUserWorkingDayId(int shiftAssignmentUserWorkingDayId)
-        {
-            using (Uow)
-            {
-                var sql = @"SELECT TOP 1 eam.CompanyID
-                            FROM ShiftAssignment_User_WorkingDay suw
-                            INNER JOIN ShiftAssignment_User sau ON suw.ShiftAssignmentUserId = sau.ID
-                            INNER JOIN EmployeeAccountMap eam ON sau.AccountMapID = eam.Id
-                            WHERE suw.Id = @p0";
-                var result = Uow.Context.Database.SqlQuery<int?>(sql, shiftAssignmentUserWorkingDayId).FirstOrDefault();
-                return result ?? 0;
             }
         }
 

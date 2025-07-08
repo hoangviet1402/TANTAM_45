@@ -662,10 +662,29 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
+                var all_employee_account_map = GetEmployeeAccountMapForValidation(employee.CompanyId);
+
                 request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
 
+                // Kiểm tra trùng lặp email và số điện thoại với nhân viên khác
+                string errorMessage;
+                if (CheckDuplicateContactInfo(all_employee_account_map, request.Email, request.Phone, employeeId, out errorMessage))
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = errorMessage;
+                    return response;
+                }
+
+                // Kiểm tra trùng lặp employee code
+                if (CheckDuplicateEmployeeCode(all_employee_account_map, request.EmployeeCode, employeeId, out errorMessage))
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = errorMessage;
+                    return response;
+                }
+
                 // Update employee details
-                var result = DaoFactory.Employee.UpdateEmployeeDetails(
+                var result = DaoFactory.Employee.UpdateEmployeeDetails_v2(
                     employeeId,
                     request.FullName,
                     request.BirthDate,
@@ -677,17 +696,9 @@ namespace BussinessObject.Bo.TanTamBo
                     request.PhoneCode
                 );
 
-                if (result > 0)
-                {
-                    response.Data = true;
-                    response.Code = ResponseResultEnum.Success.Value();
-                    response.Message = "Cập nhật thông tin nhân viên thành công";
-                }
-                else
-                {
-                    response.Code = ResponseResultEnum.Failed.Value();
-                    response.Message = "Không thể cập nhật thông tin nhân viên";
-                }
+                response.Data = true;
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = "Cập nhật thông tin nhân viên thành công";
             }
             catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
             {
@@ -766,7 +777,7 @@ namespace BussinessObject.Bo.TanTamBo
                     {
                         name = emp.Name,
                         userId = emp.UserId,
-                        employeeId = emp.UserId,
+                        employeeId = emp.EmployeeId,
                         username = emp.Username,
                         regionId = emp.RegionId,
                         branchId = emp.BranchId,
@@ -995,6 +1006,111 @@ namespace BussinessObject.Bo.TanTamBo
             catch
             {
                 return "EMP001";
+            }
+        }
+
+        /// <summary>
+        /// Kiểm tra trùng lặp email và số điện thoại (kiểu cũ, dùng out string)
+        /// </summary>
+        private bool CheckDuplicateContactInfo(
+            List<EmployeeAccountMapValidationDto> allEmployees,
+            string email,
+            string phone,
+            int excludeEmployeeId,
+            out string errorMessage)
+        {
+            errorMessage = string.Empty;
+            if (!string.IsNullOrEmpty(email))
+            {
+                var duplicateEmail = allEmployees
+                    .FirstOrDefault(map => map.Email != null
+                        && map.Email.ToLower().Trim() == email.ToLower().Trim()
+                        && map.EmployeeAccountMapId != excludeEmployeeId);
+                if (duplicateEmail != null)
+                {
+                    errorMessage = $"Email '{email}' đã được sử dụng bởi nhân viên khác.";
+                    return true;
+                }
+            }
+            if (!string.IsNullOrEmpty(phone))
+            {
+                var duplicatePhone = allEmployees
+                    .FirstOrDefault(map => map.Phone != null
+                        && map.Phone.Trim() == phone.Trim()
+                        && map.EmployeeAccountMapId != excludeEmployeeId);
+                if (duplicatePhone != null)
+                {
+                    errorMessage = $"Số điện thoại '{phone}' đã được sử dụng bởi nhân viên khác.";
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Kiểm tra trùng lặp employee code (kiểu cũ, dùng out string)
+        /// </summary>
+        private bool CheckDuplicateEmployeeCode(
+            List<EmployeeAccountMapValidationDto> allEmployees,
+            string employeeCode,
+            int excludeEmployeeId,
+            out string errorMessage)
+        {
+            errorMessage = string.Empty;
+            if (!string.IsNullOrEmpty(employeeCode))
+            {
+                var duplicateCode = allEmployees
+                    .FirstOrDefault(map => map.EmployeeCode != null
+                        && map.EmployeeCode.Trim() == employeeCode.Trim()
+                        && map.EmployeeAccountMapId != excludeEmployeeId);
+                if (duplicateCode != null)
+                {
+                    errorMessage = $"Mã nhân viên '{employeeCode}' đã được sử dụng bởi nhân viên khác.";
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Lấy dữ liệu employee account map cho validation (không dùng Entity result)
+        /// </summary>
+        private List<EmployeeAccountMapValidationDto> GetEmployeeAccountMapForValidation(int companyId)
+        {
+            try
+            {
+                // Gọi DAO để lấy dữ liệu
+                var entityResults = DaoFactory.Employee.GetEmployeeAccountMapByCompanyId(companyId);
+                
+                if (entityResults == null || !entityResults.Any())
+                    return new List<EmployeeAccountMapValidationDto>();
+
+                // Map sang DTO validation
+                var validationList = new List<EmployeeAccountMapValidationDto>();
+                
+                foreach (var entity in entityResults)
+                {
+                    // Sử dụng reflection để lấy properties an toàn
+                    var validationDto = new EmployeeAccountMapValidationDto();
+                    
+                    // Map EmployeeAccountMapId (Id property)
+                    validationDto.EmployeeAccountMapId = entity.Id;
+                    
+                    // Map Email và Phone từ Account (cần thêm properties vào Entity result)
+                    // Tạm thời để null cho đến khi Entity result được update
+                    validationDto.Email = entity.Email; // entity.Email
+                    validationDto.Phone = entity.Phone; // entity.Phone
+                    validationDto.EmployeeCode = entity.AccountId.ToString(); // entity.EmployeeCode
+                    
+                    validationList.Add(validationDto);
+                }
+                
+                return validationList;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeAccountMapForValidation - Error", ex);
+                return new List<EmployeeAccountMapValidationDto>();
             }
         }
     }

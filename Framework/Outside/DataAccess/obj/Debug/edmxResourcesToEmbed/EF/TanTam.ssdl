@@ -172,6 +172,10 @@
   <Function Name="Ins_CompanyDepartment_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CompanyId" Type="int" Mode="In" />
   </Function>
+  <Function Name="Ins_CompanyDepartment_SelectByBrandId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+  </Function>
   <Function Name="Ins_CompanyPosition_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Name" Type="nvarchar" Mode="In" />
     <Parameter Name="DepartmentId" Type="int" Mode="In" />
@@ -184,6 +188,10 @@
     <Parameter Name="Code" Type="nvarchar" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />
     <Parameter Name="ExpYear" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_CompanyPosition_SelectByBrandid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_CompanyRegion_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="RegionName" Type="nvarchar" Mode="In" />
@@ -223,6 +231,9 @@
     <Parameter Name="Password" Type="nvarchar" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />
     <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="DepartmentId" Type="int" Mode="In" />
+    <Parameter Name="PositionId" Type="int" Mode="In" />
+    <Parameter Name="RegionId" Type="int" Mode="In" />
     <Parameter Name="Role" Type="int" Mode="In" />
     <Parameter Name="DeviceId" Type="nvarchar" Mode="In" />
     <Parameter Name="EmployeeAccountId" Type="int" Mode="InOut" />
@@ -239,6 +250,9 @@
     <Parameter Name="PageSize" Type="int" Mode="In" />
     <Parameter Name="FullName" Type="nvarchar" Mode="In" />
     <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Ins_Employee_GetEmployeeAccountMap_ByCompanyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_Employee_GetEmployeeID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="EmployeeID" Type="int" Mode="In" />
@@ -267,6 +281,17 @@
     <Parameter Name="Pass" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="Ins_Employee_UpdateDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+    <Parameter Name="BirthDate" Type="date" Mode="In" />
+    <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmployeeCode" Type="varchar" Mode="In" />
+    <Parameter Name="DisplayOrder" Type="int" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="PhoneCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Ins_Employee_UpdateDetails_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="EmployeeId" Type="int" Mode="In" />
     <Parameter Name="FullName" Type="nvarchar" Mode="In" />
     <Parameter Name="BirthDate" Type="date" Mode="In" />

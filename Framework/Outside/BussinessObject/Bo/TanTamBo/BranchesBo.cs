@@ -196,7 +196,7 @@ namespace BussinessObject.Bo.TanTamBo
             {
                 var total = 0;
                 var dataSQL = DaoFactory.Branches.GetAllRegion(companyId);                
-                if (dataSQL == null || total == 0)
+                if (dataSQL == null || dataSQL.Count == 0)
                 {
                     response.Code = ResponseResultEnum.NoData.Value();
                     return response;

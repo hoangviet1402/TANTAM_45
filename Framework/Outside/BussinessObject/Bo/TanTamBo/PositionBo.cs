@@ -92,10 +92,10 @@ namespace BussinessObject.Bo.TanTamBo
             };
             try
             {
-                List<Ins_CompanyPosition_CreateInAllBranchId_Result> dataSQL;
+                List<Ins_CompanyPosition_CreateInAllDepartmentId_Result> dataSQL;
                 foreach (var item in request.Posisions)
                 {
-                    dataSQL = DaoFactory.Position.CreatePositionInAllBranches(
+                    dataSQL = DaoFactory.Position.CreatePositionInAllDepartment(
                         item.Names, 
                         companyId,
                         StringCommon.NormalizeText(item.Names,"-"),

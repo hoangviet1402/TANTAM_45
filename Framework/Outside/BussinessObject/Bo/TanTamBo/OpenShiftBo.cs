@@ -1,16 +1,14 @@
 using BussinessObject.Enum;
+using BussinessObject.Helper;
 using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.OpenShift;
-using BussinessObject.Models.Shift;
 using DataAccess;
 using DataAccess.Model.OpenShift;
 using Logger;
 using MyUtility.Extensions;
-using Newtonsoft.Json;
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using BussinessObject.Helper;
+using System.Linq;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -200,7 +198,7 @@ namespace BussinessObject.Bo.TanTamBo
                 var openShifts = DaoFactory.OpenShift.GetList(companyId, startDate, endDate);
 
                 // Group by working day and create the response format
-                var groupedData = new System.Collections.Generic.List<System.Collections.Generic.List<OpenShiftListItemDto>>();
+                var groupedData = new List<List<OpenShiftListItemDto>>();
                 
                 // Create a list for each day in the range
                 var currentDate = startDate;
@@ -231,7 +229,7 @@ namespace BussinessObject.Bo.TanTamBo
                                 status = new OpenShiftStatusDto
                                 {
                                     not_available = DateTime.TryParse(os.working_day, out var workingDay) && DateTime.Now.Date < workingDay.Date ? 1 : os.not_available,
-                                    status_color = new System.Collections.Generic.List<string> { "#838BA3", "#EBEBEB" }
+                                    status_color = new List<string> { "#838BA3", "#EBEBEB" }
                                 },
                                 registered_employees = os.registered_employees
                             };

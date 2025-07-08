@@ -603,3 +603,6 @@
 2025-07-07 18:32:11,198 - list-employee-shift today,tomorrow
 2025-07-07 18:32:11,198 - list-employee-shift companyId 267, accountId 360, accountMapID 362
 2025-07-07 18:32:11,202 - list-employee-shift response {"error_code":1,"data":[],"message":"Success"}
+2025-07-08 11:04:22,865 - token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBY2NvdW50SWQiOiIzOTUiLCJBY2NvdW50TWFwSUQiOiIzOTciLCJDb21wYW55SWQiOiIyNzYiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiSnd0SUQiOiIwNWQ1MjljMmFhMWU0MmRjOTdhMzkwNzdjZTBhNzk2NiIsImV4cCI6MTc1MTk0NzUwOSwiaXNzIjoiVGFuVGFtQXBpIiwiYXVkIjoiVGFuVGFtQ2xpZW50In0.GFH8vSiE3ApzOwxGBzQvbATCEaWD7La-ds149vK3P_E
+2025-07-08 11:04:31,144 - position-add companyId 276, accountId 395
+2025-07-08 11:07:19,314 - position-add response {"error_code":60,"data":[],"message":"Không có d? li?u"}

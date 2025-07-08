@@ -29,11 +29,16 @@ namespace DataAccess.Dao.TanTamDao
         
         int UpdateEmployeeDetails(int employeeId, string fullName, DateTime? birthDate, string gender, 
             string employeeCode, int? displayOrder, string email, string phone, string phoneCode);
-        
+
+        int UpdateEmployeeDetails_v2(int employeeId, string fullName, DateTime? birthDate, string gender,
+            string employeeCode, int? displayOrder, string email, string phone, string phoneCode);
+
         List<Ins_Employee_GetList_Result> GetEmployeeFilterList(int companyId, int page, int pageSize, 
             DateTime startDate, DateTime endDate, bool isNoNeedTimekeeping, int totalRecords);
         
         List<string> GetAllEmployeeCodes(int companyId);
+        
+        List<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result> GetEmployeeAccountMapByCompanyId(int companyId);
     }
 
     /// <summary>
@@ -58,7 +63,7 @@ namespace DataAccess.Dao.TanTamDao
                 var out_needSetCompany = new ObjectParameter("NeedSetCompany", typeof(int));
                 
                 Uow.Context.Ins_Employee_Create(fullName, employeesCode, phone, phoneCode, email, 
-                    password, companyId, branchId, role, deviceId, out_employeeAccountId, out_isNewUser, 
+                    password, companyId, branchId,0,0,0, role, deviceId, out_employeeAccountId, out_isNewUser, 
                     out_needSetPassword, out_needSetCompany);
 
                 if (out_employeeAccountId != null && out_employeeAccountId.Value != null)
@@ -120,6 +125,17 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
+        public int UpdateEmployeeDetails_v2(int employeeId, string fullName, DateTime? birthDate, string gender,
+            string employeeCode, int? displayOrder, string email, string phone, string phoneCode)
+        {
+            using (Uow)
+            {
+                Uow.Context.Ins_Employee_UpdateDetails_v2(employeeId, fullName, birthDate, gender,
+                    employeeCode, displayOrder, email, phone, phoneCode);
+                return 1;
+            }
+        }
+
         public List<Ins_Employee_GetList_Result> GetEmployeeFilterList(int companyId, int page, int pageSize, 
             DateTime startDate, DateTime endDate, bool isNoNeedTimekeeping, int totalRecords)
         {
@@ -138,6 +154,15 @@ namespace DataAccess.Dao.TanTamDao
             {
                 var result = Uow.Context.Ins_Employee_GetLastEmployeeCode(companyId);
                 return result?.ToList() ?? new List<string>();
+            }
+        }
+        
+        public List<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result> GetEmployeeAccountMapByCompanyId(int companyId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Employee_GetEmployeeAccountMap_ByCompanyId(companyId);
+                return result?.ToList() ?? new List<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result>();
             }
         }
     }

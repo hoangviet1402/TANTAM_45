@@ -15,6 +15,7 @@ namespace EntitiesObject.Entities.TanTamEntities
     {
         public string Name { get; set; }
         public string UserId { get; set; }
+        public string EmployeeId { get; set; }
         public string Username { get; set; }
         public string RegionId { get; set; }
         public string BranchId { get; set; }

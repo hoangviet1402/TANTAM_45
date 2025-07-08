@@ -659,7 +659,7 @@ namespace BussinessObject.Models.Shift
         public string end_time { get; set; }
 
         [JsonProperty("working_hour")]
-        public decimal working_hour { get; set; }
+        public double working_hour { get; set; }
 
         [JsonProperty("working_day")]
         public string working_day { get; set; }

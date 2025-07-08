@@ -492,6 +492,35 @@ namespace BussinessObject.Bo.Shift
                 };
 
                 #region tạo ca làm việc cho nhân viên hiện tại
+                if(request.ShiftAssignment.BranchIds.Count() > 0)
+                {
+                    // trường hợp không có DepartmentIds và PositionIds thì insert cho toàn bộ nhân viên của chi nhánh
+                    if (
+                        (request.ShiftAssignment.DepartmentIds == null || request.ShiftAssignment.DepartmentIds.Any() == false) &&
+                        (request.ShiftAssignment.PositionIds == null || request.ShiftAssignment.PositionIds.Any() == false)
+                      )
+                    {
+
+                    }
+                    else
+                    {
+                        if (request.ShiftAssignment.DepartmentIds.Count() > 0)
+                        {
+
+                        }
+
+                        if (request.ShiftAssignment.PositionIds.Count() > 0)
+                        {
+
+                        }
+                    }
+                }
+
+                
+                // danh sách chi nhanh 
+                #endregion
+
+                #region tạo ca làm việc cho nhân viên hiện tại
                 if (request.ShiftAssignment.UserIds != null && request.ShiftAssignment.UserIds.Any())
                 {
                     foreach (var item_UserIds in request.ShiftAssignment.UserIds)

@@ -363,7 +363,6 @@ namespace BussinessObject.Bo.Shift
                     request.Month > 0 ? request.Month : (int?)null,
                     request.Year > 0 ? request.Year : (int?)null
                 );
-
                 
                 // Apply employee_shift_id filter if provided (filter by SuwId - user working day ID)
                 if (employeeShiftIdInt.HasValue)
@@ -400,7 +399,7 @@ namespace BussinessObject.Bo.Shift
 
                      // Group shifts by date
                      var shiftsByDate = empGroup
-                         .GroupBy(d => d.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"))
+                         .GroupBy(d => d.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"))
                          .ToList();
 
                      foreach (var dateGroup in shiftsByDate)
@@ -411,7 +410,7 @@ namespace BussinessObject.Bo.Shift
                          foreach (var shift in dateGroup)
                          {
                             // ✅ NEW: Get time configuration using shared helper
-                            var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shift.ShiftId);
+                            //var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shift.ShiftId);
 
                             var shiftDetail = new ShiftDetailItem
                             {
@@ -420,10 +419,10 @@ namespace BussinessObject.Bo.Shift
                                 shift_key = shift.ShiftKey ?? "",
                                 shift_id = shift.ShiftId.ToString() ?? "",  // This is the actual ShiftId from Shift table
                                 // ✅ FIXED: Use time config from shared helper instead of hardcode
-                                start_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + timeConfig.StartTime,
-                                end_time = shift.WorkingDay.ToString("yyyy-MM-dd") + " " + timeConfig.EndTime,
-                                working_hour = timeConfig.WorkingHour,
-                                working_day = shift.WorkingDay.ToString("yyyy-MM-dd HH:mm:ss"),
+                                start_time = shift.StartTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                end_time = shift.EndTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                                working_hour = shift.WorkingHour.GetValueOrDefault(),
+                                working_day = shift.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
                                 week_of_year = shift.WeekOfYear.GetValueOrDefault() > 0 ? shift.WeekOfYear.Value : 1,
                                 company_id = request.CompanyId.ToString(),
                                 // ✅ UPDATED: Format checkin/checkout time properly - combine working day with actual time
@@ -431,7 +430,7 @@ namespace BussinessObject.Bo.Shift
                                 checkout_time = shift.StartCheckOutTime.HasValue ? shift.StartCheckOutTime.Value.ToString(@"yyyy-MM-dd HH\:mm\:ss") : null,
                                 shift_name = shift.ShiftName ?? "",
                                 real_working_hour = shift.RealWorkingHour.GetValueOrDefault(),
-                                real_working_minute = (int)shift.RealWorkingMinute,
+                                real_working_minute = shift.RealWorkingMinute.GetValueOrDefault(),
                                 // ✅ IMPLEMENTED: Set coefficients from database instead of hardcode
                                 coefficient = shift.Coefficient,
                                 real_coefficient = shift.Coefficient,
@@ -493,9 +492,6 @@ namespace BussinessObject.Bo.Shift
                                 };
                             }
 
-                            // TODO: Add with_project logic when project data is available in database
-                            // This would require extending the stored procedure to include project information
-                            
                             shiftsForDate.Add(shiftDetail);
                         }
 

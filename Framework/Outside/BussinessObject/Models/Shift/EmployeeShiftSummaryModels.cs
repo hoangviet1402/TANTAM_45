@@ -42,8 +42,8 @@ namespace BussinessObject.Models.Shift
         public List<object> payroll { get; set; }
         public Dictionary<string, List<ShiftDetailItem>> shifts { get; set; }
         public Dictionary<string, string> conflict_shifts { get; set; }
-        public decimal total_working_hour { get; set; }
-        public decimal real_working_hour { get; set; }
+        public double total_working_hour { get; set; }
+        public double real_working_hour { get; set; }
 
         public EmployeeShiftItem()
         {
@@ -69,7 +69,7 @@ namespace BussinessObject.Models.Shift
         public string shift_type { get; set; }
         public string start_time { get; set; }
         public string end_time { get; set; }
-        public decimal working_hour { get; set; }
+        public double working_hour { get; set; }
         public string working_day { get; set; }
         public int week_of_year { get; set; }
         public List<EmployeeBranchObject> branch_obj { get; set; }
@@ -92,7 +92,7 @@ namespace BussinessObject.Models.Shift
         public CheckoutOption checkout_option { get; set; }
         public string shift_name { get; set; }
         public DisplayOption display_option { get; set; }
-        public decimal real_working_hour { get; set; }
+        public double real_working_hour { get; set; }
         public int real_working_minute { get; set; }
         public string rest_start_time_short { get; set; }
         public string rest_end_time_short { get; set; }

@@ -246,19 +246,19 @@ namespace BussinessObject.Bo.Shift
                 {
                     foreach (var shift in shifts)
                     {
-                        var shiftKey = string.IsNullOrEmpty(shift.ShiftKey) ? $"SHIFT_{shift.ShiftId}" : shift.ShiftKey;
-                        
+                        //var shiftKey = string.IsNullOrEmpty(shift.ShiftKey) ? $"SHIFT_{shift.ShiftId}" : shift.ShiftKey;
+
                         // ✅ NEW: Get time configuration using shared helper
-                        var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shift.ShiftId);
-                        
+                        //var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shift.ShiftId);
+
                         var shiftItem = new ShiftListItem
                         {
                             id = shift.SuwId.ToString() ?? "", // SuwId will be NULL from new stored procedure
                             name = shift.ShiftName ?? "",
-                            shift_key = shiftKey,
+                            shift_key = shift.ShiftKey,
                             shift_id = shift.ShiftId.ToString(),
                             // ✅ FIXED: Use time config working hour instead of hardcode
-                            working_hour = timeConfig.WorkingHour,
+                            working_hour = shift.WorkingHour.GetValueOrDefault(),
                             week_of_year = shift.WeekOfYear.GetValueOrDefault(0) > 0 ? shift.WeekOfYear.Value : request.WeekOfYear,
                             branch_id = "",
                             total_register = shift.TotalRegister,
@@ -269,14 +269,14 @@ namespace BussinessObject.Bo.Shift
                         };
 
                         // Format working day - use exact date provided
-                        shiftItem.working_day = workingDay.ToString("yyyy-MM-dd HH:mm:ss");
-                        
+                        shiftItem.working_day = shift.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss");
+
                         // ✅ FIXED: Use time config from database instead of hardcode
-                        shiftItem.start_time = workingDay.ToString("yyyy-MM-dd") + " " + timeConfig.StartTime;
-                        shiftItem.end_time = workingDay.ToString("yyyy-MM-dd") + " " + timeConfig.EndTime;
+                        shiftItem.start_time = shift.StartTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss");
+                        shiftItem.end_time = shift.EndTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss");
 
                         // Use shift_key as dictionary key
-                        response.Data[shiftKey] = shiftItem;
+                        response.Data[shift.ShiftKey] = shiftItem;
                     }
 
                     response.Code = ResponseResultEnum.Success.Value();

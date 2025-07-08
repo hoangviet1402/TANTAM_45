@@ -13,10 +13,30 @@ namespace DataAccess.Dao.TanTam
         int CreateDepartment(string name, int branchId, int companyId);
         List<Ins_CompanyDepartment_CreateInAllBranchId_Result> CreateDepartmentInAllBranches(string name, int companyId, string alias, string code);
         List<Ins_CompanyDepartment_GetAll_Result> GetAllDepartments(int companyId);
+        List<Ins_CompanyDepartment_SelectByBrandId_Result> GetAllDepartmentsByBranch(int companyId, int branchID);
+        List<Ins_EmployeeDepartmentMap_GetCompanyId_Result> EmployeeDepartmentMap_GetCompanyId(int companyId)
     }
 
     internal class DepartmentDao : DaoFactories<TanTamEntities, DBNull>, IDepartmentDao
     {
+        public List<Ins_EmployeeDepartmentMap_GetCompanyId_Result> EmployeeDepartmentMap_GetCompanyId(int companyId)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_EmployeeDepartmentMap_GetCompanyId(companyId);
+                return data.ToList();
+            }
+        }
+
+        public List<Ins_CompanyDepartment_SelectByBrandId_Result> GetAllDepartmentsByBranch(int companyId, int branchID)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_CompanyDepartment_SelectByBrandId(companyId, branchID);
+                return data.ToList();
+            }
+        }
+
         public List<Ins_CompanyDepartment_CreateInAllBranchId_Result> CreateDepartmentInAllBranches(string name, int companyId, string alias, string code)
         {
             using (Uow)

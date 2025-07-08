@@ -12,10 +12,21 @@ namespace DataAccess.Dao.TanTam
     {
         int CreatePosition(string name, int departmentId, int companyId);
         List<Ins_CompanyPosition_CreateInAllBranchId_Result> CreatePositionInAllBranches(string name, int companyId, string alias, string code, int expYear);
+        List<Ins_EmployeePositionMap_GetCompanyId_Result> EmployeePositionMap_GetCompanyId(int companyId);
+        List<Ins_CompanyPosition_CreateInAllDepartmentId_Result> CreatePositionInAllDepartment(string name, int companyId, string alias, string code, int expYear);
     }
 
     internal class PositionDao : DaoFactories<TanTamEntities, DBNull>, IPositionDao
     {
+        public List<Ins_EmployeePositionMap_GetCompanyId_Result> EmployeePositionMap_GetCompanyId(int companyId)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_EmployeePositionMap_GetCompanyId(companyId);
+                return data.ToList();
+            }
+        }
+
         public int CreatePosition(string name, int departmentId, int companyId)
         {
             using (Uow)
@@ -34,6 +45,14 @@ namespace DataAccess.Dao.TanTam
             using (Uow)
             {
                 return Uow.Context.Ins_CompanyPosition_CreateInAllBranchId(name, alias, code, companyId, expYear).ToList();
+            }
+        }
+
+        public List<Ins_CompanyPosition_CreateInAllDepartmentId_Result> CreatePositionInAllDepartment(string name, int companyId, string alias, string code, int expYear)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_CompanyPosition_CreateInAllDepartmentId(name, alias, code, companyId, expYear).ToList();
             }
         }
     }
