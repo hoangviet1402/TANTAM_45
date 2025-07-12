@@ -257,8 +257,43 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
+
+        [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
+        public Timekeeper_Location_Info Location { get; set; }
     }
 
+    public class Timekeeper_Location_Info
+    {
+        [JsonProperty("latitude", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Latitude { get; set; }
+
+        [JsonProperty("longitude", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Longitude { get; set; }
+
+        [JsonProperty("altitude", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Altitude { get; set; }
+
+        [JsonProperty("altitudeAccuracy", NullValueHandling = NullValueHandling.Ignore)]
+        public double? AltitudeAccuracy { get; set; }
+
+        [JsonProperty("speed", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Speed { get; set; }
+
+        [JsonProperty("accuracy", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Accuracy { get; set; }
+
+        [JsonProperty("speedAccuracy", NullValueHandling = NullValueHandling.Ignore)]
+        public double? SpeedAccuracy { get; set; }
+
+        [JsonProperty("course", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Course { get; set; }
+
+        [JsonProperty("courseAccuracy", NullValueHandling = NullValueHandling.Ignore)]
+        public double? CourseAccuracy { get; set; }
+
+        [JsonProperty("mocked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Mocked { get; set; }
+    }
     public class Timekeeper_Connection_Info
     {
         [JsonProperty("connection_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -316,7 +351,7 @@ namespace BussinessObject.Models.Shift
         public float? AltitudeAccuracy { get; set; }
 
         [JsonProperty("accuracy", NullValueHandling = NullValueHandling.Ignore)]
-        public float? Accuracy { get; set; }        
+        public float? Accuracy { get; set; }
 
         [JsonProperty("speed", NullValueHandling = NullValueHandling.Ignore)]
         public float? Speed { get; set; }

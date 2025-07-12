@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TanTamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <Function Name="Ins_Account_CreateForEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Email" Type="nvarchar" Mode="In" />
-    <Parameter Name="Password" Type="nvarchar" Mode="In" />
-    <Parameter Name="CompanyId" Type="int" Mode="In" />
-    <Parameter Name="Role" Type="int" Mode="In" />
-    <Parameter Name="AccountId" Type="int" Mode="InOut" />
-  </Function>
   <Function Name="Ins_Account_CreatePass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="EmployeeAccountMapId" Type="int" Mode="In" />
     <Parameter Name="Pass" Type="nvarchar" Mode="In" />
@@ -127,7 +120,7 @@
   <Function Name="Ins_CompanyBranch_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="BranchName" Type="nvarchar" Mode="In" />
     <Parameter Name="BranchAddress" Type="nvarchar" Mode="In" />
-    <Parameter Name="RegionId" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegionId" Type="int" Mode="In" />
     <Parameter Name="IsOnboarding" Type="int" Mode="In" />
     <Parameter Name="Latitude" Type="float" Mode="In" />
     <Parameter Name="Longitude" Type="float" Mode="In" />
@@ -141,6 +134,11 @@
     <Parameter Name="BranchNames" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="OutResult" Type="int" Mode="InOut" />
   </Function>
+  <Function Name="Ins_CompanyBranch_CreateRelate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BranchID" Type="int" Mode="In" />
+    <Parameter Name="RegionId" Type="int" Mode="In" />
+    <Parameter Name="OutResult" Type="int" Mode="InOut" />
+  </Function>
   <Function Name="Ins_CompanyBranch_GetAllByCompany" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CompanyId" Type="int" Mode="In" />
     <Parameter Name="PerPage" Type="int" Mode="In" />
@@ -152,6 +150,9 @@
   <Function Name="Ins_CompanyBranch_GetInfor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CompanyId" Type="int" Mode="In" />
   </Function>
+  <Function Name="Ins_CompanyBranch_GetListByRegion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RegionId" Type="int" Mode="In" />
+  </Function>
   <Function Name="Ins_CompanyDepartment_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Name" Type="nvarchar" Mode="In" />
     <Parameter Name="BranchId" Type="int" Mode="In" />
@@ -160,6 +161,7 @@
   </Function>
   <Function Name="Ins_CompanyDepartment_CreateInAllBranchId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsOnboarding" Type="int" Mode="In" />
     <Parameter Name="Alias" Type="nvarchar" Mode="In" />
     <Parameter Name="Code" Type="nvarchar" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />
@@ -169,12 +171,26 @@
     <Parameter Name="DepartmentNames" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="OutResult" Type="int" Mode="InOut" />
   </Function>
+  <Function Name="Ins_CompanyDepartment_CreateRelate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DepartmentID" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="OutResult" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Ins_CompanyDepartment_CreateSimple" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsOnboarding" Type="int" Mode="In" />
+    <Parameter Name="Alias" Type="nvarchar" Mode="In" />
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="CompanyDepartment" Type="int" Mode="InOut" />
+  </Function>
   <Function Name="Ins_CompanyDepartment_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CompanyId" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_CompanyDepartment_SelectByBrandId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="BranchId" Type="int" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_CompanyPosition_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Name" Type="nvarchar" Mode="In" />
@@ -189,9 +205,32 @@
     <Parameter Name="CompanyId" Type="int" Mode="In" />
     <Parameter Name="ExpYear" Type="int" Mode="In" />
   </Function>
+  <Function Name="Ins_CompanyPosition_CreateInAllDepartmentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Alias" Type="nvarchar" Mode="In" />
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="ExpYear" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_CompanyPosition_CreateRelate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BranchID" Type="int" Mode="In" />
+    <Parameter Name="CompanyPositionID" Type="int" Mode="In" />
+    <Parameter Name="DepartmentID" Type="int" Mode="In" />
+    <Parameter Name="RegionId" Type="int" Mode="In" />
+    <Parameter Name="OutResult" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Ins_CompanyPosition_CreateSimple" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Alias" Type="nvarchar" Mode="In" />
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="ExpYear" Type="int" Mode="In" />
+    <Parameter Name="CompanyPositionID" Type="int" Mode="InOut" />
+  </Function>
   <Function Name="Ins_CompanyPosition_SelectByBrandid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="BranchId" Type="int" Mode="In" />
     <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="DepartmentId" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_CompanyRegion_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="RegionName" Type="nvarchar" Mode="In" />
@@ -249,6 +288,7 @@
     <Parameter Name="Page" Type="int" Mode="In" />
     <Parameter Name="PageSize" Type="int" Mode="In" />
     <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsQuit" Type="bit" Mode="In" />
     <Parameter Name="IsActive" Type="bit" Mode="In" />
   </Function>
   <Function Name="Ins_Employee_GetEmployeeAccountMap_ByCompanyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -268,6 +308,9 @@
     <Parameter Name="end_date" Type="datetime" Mode="In" />
     <Parameter Name="is_no_need_timekeeping" Type="bit" Mode="In" />
     <Parameter Name="TotalRecords" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Ins_Employee_GetObjectData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_Employee_GetShiftsInBranch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="EmployeeAccountMapId" Type="int" Mode="In" />
@@ -301,9 +344,34 @@
     <Parameter Name="Email" Type="nvarchar" Mode="In" />
     <Parameter Name="Phone" Type="nvarchar" Mode="In" />
     <Parameter Name="PhoneCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="DepartmentId" Type="int" Mode="In" />
+    <Parameter Name="RegionId" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="PositionId" Type="int" Mode="In" />
+    <Parameter Name="IsQuit" Type="bit" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Ins_EmployeeBranchMap_GetByBranchId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="IsGetAll" Type="bit" Mode="In" />
   </Function>
   <Function Name="Ins_EmployeeBranchMap_GetByEmployeeId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="AccountMapId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_EmployeeDepartmentMap_GetCompanyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_EmployeePositionMap_GetCompanyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ins_EmployeePositionMap_GetCompanyIdAndBranchId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
   </Function>
   <Function Name="Ins_HourData_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="Ins_MinuteData_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -603,6 +671,14 @@
     <Parameter Name="add_to_library" Type="bit" Mode="In" />
     <Parameter Name="notify_on_change" Type="bit" Mode="In" />
   </Function>
+  <Function Name="Ins_Task_Field_Create_Options_Bulk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="field_id" Type="int" Mode="In" />
+    <Parameter Name="options" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Field_GetByTaskAndType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TaskId" Type="int" Mode="In" />
+    <Parameter Name="field_type" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="Ins_Task_Get_CustomizedFields_And_Values_ByTask" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="task_id" Type="int" Mode="In" />
   </Function>
@@ -670,6 +746,17 @@
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="deadline" Type="datetime" Mode="In" />
     <Parameter Name="start_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Sub_Update_Description" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="description" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Ins_Task_Sub_Update_Priority" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="task_id" Type="int" Mode="In" />
+    <Parameter Name="subtask_id" Type="int" Mode="In" />
+    <Parameter Name="field_id" Type="int" Mode="In" />
+    <Parameter Name="option_id" Type="int" Mode="In" />
+    <Parameter Name="option_title" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="Ins_Task_Sub_Update_Title" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
@@ -860,6 +947,7 @@
     <Parameter Name="BranchID" Type="int" Mode="In" />
     <Parameter Name="Address" Type="nvarchar" Mode="In" />
     <Parameter Name="Type" Type="int" Mode="In" />
+    <Parameter Name="IsBothBssidSsid" Type="bit" Mode="In" />
     <Parameter Name="WifiID" Type="int" Mode="InOut" />
   </Function>
   <EntityContainer Name="TanTamModelStoreContainer" />

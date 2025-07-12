@@ -34,7 +34,7 @@ namespace BussinessObject.Models.Employee
         
         public string FullName { get; set; }
         
-        public bool? IsActive { get; set; }
+        public int? IsQuit { get; set; }
     }
 
     /// <summary>
@@ -54,6 +54,7 @@ namespace BussinessObject.Models.Employee
         public int BranchId { get; set; }
         public int DepartmentId { get; set; }
         public int PositionId { get; set; }
+        public int RegionId { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public string PhoneCode { get; set; } = "+84";
@@ -75,6 +76,12 @@ namespace BussinessObject.Models.Employee
         public string Email { get; set; }
         public string Phone { get; set; }
         public string PhoneCode { get; set; }
+        public int? DepartmentId { get; set; }
+        public int? RegionId { get; set; }
+        public int? BranchId { get; set; }
+        public int? PositionId { get; set; }
+        public bool? IsQuit { get; set; }
+        public bool? IsActive { get; set; }
     }
 
     /// <summary>

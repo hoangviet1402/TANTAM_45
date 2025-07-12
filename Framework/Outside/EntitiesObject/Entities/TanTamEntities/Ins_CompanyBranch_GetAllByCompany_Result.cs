@@ -23,7 +23,7 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string District { get; set; }
         public string Tel { get; set; }
         public string Address { get; set; }
-        public Nullable<int> IsOnboarding { get; set; }
+        public int IsOnboarding { get; set; }
         public string Description { get; set; }
         public Nullable<bool> IsHeadquarter { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }

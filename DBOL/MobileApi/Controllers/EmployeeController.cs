@@ -9,6 +9,7 @@ using System.Net;
 using System.Web.Http;
 using TanTamApi.JWT.Helper;
 using TanTamApi.Enum;
+using System.Collections.Generic;
 
 namespace TanTamApi.Controllers
 {
@@ -611,6 +612,61 @@ namespace TanTamApi.Controllers
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.ErrorFormat("GetNextEmployeeCode Exception company_id {0}, EX:", company_id, ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = ResponseResultEnum.SystemError.Text();
+                return Content(HttpStatusCode.OK, response);
+            }
+        }
+
+        /// <summary>
+        /// Lấy danh sách trạng thái nhân viên (enum) động
+        /// </summary>
+        [JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("get-employee-status-enum")]
+        public IHttpActionResult GetEmployeeStatusEnum()
+        {
+            var response = new ApiResult<List<EnumToList>>()
+            {
+                Data = new List<EnumToList>(),
+                Code = ResponseResultEnum.Success.Value(),
+                Message = "Lấy danh sách trạng thái nhân viên thành công."
+            };
+            try
+            {
+                response.Data = typeof(EmployeeStatusEnum).ToList();
+                return Content(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("GetEmployeeStatusEnum Exception: {0}", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = ResponseResultEnum.SystemError.Text();
+                return Content(HttpStatusCode.OK, response);
+            }
+        }
+
+
+        [JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("list-by-shift-assignment")]
+        public IHttpActionResult ListForAddShiftAssignment()
+        {
+            var response = new ApiResult<List<EnumToList>>()
+            {
+                Data = new List<EnumToList>(),
+                Code = ResponseResultEnum.Success.Value(),
+                Message = "Lấy danh sách trạng thái nhân viên thành công."
+            };
+            try
+            {
+                response.Data = typeof(EmployeeStatusEnum).ToList();
+
+                return Content(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("GetEmployeeStatusEnum Exception: {0}", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = ResponseResultEnum.SystemError.Text();
                 return Content(HttpStatusCode.OK, response);

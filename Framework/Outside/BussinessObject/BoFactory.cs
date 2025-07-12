@@ -30,5 +30,6 @@ namespace BussinessObject
         public static ShiftAssignmentBo ShiftAssignment => new ShiftAssignmentBo();
         public static OpenShiftBo OpenShift => new OpenShiftBo();
         public static TimekeeperBo Timekeeper => new TimekeeperBo();
+        //public static WifiBo Wifi => new WifiBo();
     }
 }

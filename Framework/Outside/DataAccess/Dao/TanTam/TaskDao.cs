@@ -37,7 +37,7 @@ namespace DataAccess.Dao.TanTamDao
         
         Ins_Task_Group_Create_Result CreateTaskGroup(int bundleId, string name, string color, string position);
         
-        List<Ins_Task_Group_Delete_Result> DeleteTaskGroup(int groupId);
+        //List<Ins_Task_Group_Delete_Result> DeleteTaskGroup(int groupId);
         
         Ins_Task_Group_Update_Name_Result UpdateTaskGroupName(int groupId, string name);
         
@@ -55,7 +55,7 @@ namespace DataAccess.Dao.TanTamDao
        
         List<Ins_Task_Update_AssignedUser_Result> UpdateTaskAssignedUser(int taskId, int? assignedUser);
         
-        int GetCustomizedFieldsAndValuesByTask(int taskId);
+        //int GetCustomizedFieldsAndValuesByTask(int taskId);
         
         List<Ins_Task_Get_Sub_Field_Value_ByTitle_Result> GetSubFieldValueByTitle(int subtaskId, string title = null);
         
@@ -172,14 +172,14 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
-        public List<Ins_Task_Group_Delete_Result> DeleteTaskGroup(int groupId)
-        {
-            using (Uow)
-            {
-                var result = Uow.Context.Ins_Task_Group_Delete(groupId);
-                return result.ToList();
-            }
-        }
+        //public List<Ins_Task_Group_Delete_Result> DeleteTaskGroup(int groupId)
+        //{
+        //    using (Uow)
+        //    {
+        //        var result = Uow.Context.Ins_Task_Group_Delete(groupId);
+        //        return result.ToList();
+        //    }
+        //}
 
         public Ins_Task_Group_Update_Name_Result UpdateTaskGroupName(int groupId, string name)
         {
@@ -252,13 +252,13 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
         
-        public int GetCustomizedFieldsAndValuesByTask(int taskId)
-        {
-            using (Uow)
-            {
-                return Uow.Context.Ins_Task_Get_CustomizedFields_And_Values_ByTask(taskId);
-            }
-        }
+        //public int GetCustomizedFieldsAndValuesByTask(int taskId)
+        //{
+        //    using (Uow)
+        //    {
+        //        return Uow.Context.Ins_Task_Get_CustomizedFields_And_Values_ByTask(taskId);
+        //    }
+        //}
 
         public List<Ins_Task_Get_Sub_Field_Value_ByTitle_Result> GetSubFieldValueByTitle(int subtaskId, string title = null)
         {

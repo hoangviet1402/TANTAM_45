@@ -29,27 +29,6 @@ namespace DataAccess.EF
         }
     
     
-        public virtual int Ins_Account_CreateForEmployees(string email, string password, Nullable<int> companyId, Nullable<int> role, ObjectParameter accountId)
-        {
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("Password", password) :
-                new ObjectParameter("Password", typeof(string));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var roleParameter = role.HasValue ?
-                new ObjectParameter("Role", role) :
-                new ObjectParameter("Role", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Account_CreateForEmployees", emailParameter, passwordParameter, companyIdParameter, roleParameter, accountId);
-        }
-    
         public virtual int Ins_Account_CreatePass(Nullable<int> employeeAccountMapId, string pass, ObjectParameter outResult)
         {
             var employeeAccountMapIdParameter = employeeAccountMapId.HasValue ?
@@ -284,6 +263,15 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Account_Validata_Result>("Ins_Account_Validata", accountNameParameter, isUsePhoneParameter);
         }
     
+        public virtual ObjectResult<Ins_Assignment_GetDateOfWeekByShiftIds_Result> Ins_Assignment_GetDateOfWeekByShiftIds(string shiftIds)
+        {
+            var shiftIdsParameter = shiftIds != null ?
+                new ObjectParameter("ShiftIds", shiftIds) :
+                new ObjectParameter("ShiftIds", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Assignment_GetDateOfWeekByShiftIds_Result>("Ins_Assignment_GetDateOfWeekByShiftIds", shiftIdsParameter);
+        }
+    
         public virtual ObjectResult<Ins_Business_GetList_Result> Ins_Business_GetList()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Business_GetList_Result>("Ins_Business_GetList");
@@ -404,7 +392,7 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_ComPany_UpdateSetupStep", companyIdParameter, codeParameter, outResult);
         }
     
-        public virtual int Ins_CompanyBranch_Create(string branchName, string branchAddress, string regionId, Nullable<int> isOnboarding, Nullable<double> latitude, Nullable<double> longitude, Nullable<int> companyId, string alias, string code, ObjectParameter outResult)
+        public virtual int Ins_CompanyBranch_Create(string branchName, string branchAddress, Nullable<int> regionId, Nullable<int> isOnboarding, Nullable<double> latitude, Nullable<double> longitude, Nullable<int> companyId, string alias, string code, ObjectParameter outResult)
         {
             var branchNameParameter = branchName != null ?
                 new ObjectParameter("BranchName", branchName) :
@@ -414,9 +402,9 @@ namespace DataAccess.EF
                 new ObjectParameter("BranchAddress", branchAddress) :
                 new ObjectParameter("BranchAddress", typeof(string));
     
-            var regionIdParameter = regionId != null ?
+            var regionIdParameter = regionId.HasValue ?
                 new ObjectParameter("RegionId", regionId) :
-                new ObjectParameter("RegionId", typeof(string));
+                new ObjectParameter("RegionId", typeof(int));
     
             var isOnboardingParameter = isOnboarding.HasValue ?
                 new ObjectParameter("IsOnboarding", isOnboarding) :
@@ -489,6 +477,15 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyBranch_GetInfor_Result>("Ins_CompanyBranch_GetInfor", companyIdParameter);
         }
     
+        public virtual ObjectResult<Ins_CompanyBranch_GetListByRegion_Result> Ins_CompanyBranch_GetListByRegion(Nullable<int> regionId)
+        {
+            var regionIdParameter = regionId.HasValue ?
+                new ObjectParameter("RegionId", regionId) :
+                new ObjectParameter("RegionId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyBranch_GetListByRegion_Result>("Ins_CompanyBranch_GetListByRegion", regionIdParameter);
+        }
+    
         public virtual int Ins_CompanyDepartment_Create(string name, Nullable<int> branchId, Nullable<int> companyId, ObjectParameter outResult)
         {
             var nameParameter = name != null ?
@@ -506,11 +503,15 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyDepartment_Create", nameParameter, branchIdParameter, companyIdParameter, outResult);
         }
     
-        public virtual ObjectResult<Ins_CompanyDepartment_CreateInAllBranchId_Result> Ins_CompanyDepartment_CreateInAllBranchId(string name, string alias, string code, Nullable<int> companyId)
+        public virtual ObjectResult<Ins_CompanyDepartment_CreateInAllBranchId_Result> Ins_CompanyDepartment_CreateInAllBranchId(string name, Nullable<int> isOnboarding, string alias, string code, Nullable<int> companyId)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("Name", name) :
                 new ObjectParameter("Name", typeof(string));
+    
+            var isOnboardingParameter = isOnboarding.HasValue ?
+                new ObjectParameter("IsOnboarding", isOnboarding) :
+                new ObjectParameter("IsOnboarding", typeof(int));
     
             var aliasParameter = alias != null ?
                 new ObjectParameter("Alias", alias) :
@@ -524,7 +525,7 @@ namespace DataAccess.EF
                 new ObjectParameter("CompanyId", companyId) :
                 new ObjectParameter("CompanyId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyDepartment_CreateInAllBranchId_Result>("Ins_CompanyDepartment_CreateInAllBranchId", nameParameter, aliasParameter, codeParameter, companyIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyDepartment_CreateInAllBranchId_Result>("Ins_CompanyDepartment_CreateInAllBranchId", nameParameter, isOnboardingParameter, aliasParameter, codeParameter, companyIdParameter);
         }
     
         public virtual int Ins_CompanyDepartment_CreateMultipleInAllBranches(Nullable<int> companyId, string departmentNames, ObjectParameter outResult)
@@ -540,6 +541,35 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyDepartment_CreateMultipleInAllBranches", companyIdParameter, departmentNamesParameter, outResult);
         }
     
+        public virtual int Ins_CompanyDepartment_CreateSimple(string name, Nullable<int> isOnboarding, string alias, string code, Nullable<int> companyId, Nullable<int> branchId, ObjectParameter companyDepartment)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var isOnboardingParameter = isOnboarding.HasValue ?
+                new ObjectParameter("IsOnboarding", isOnboarding) :
+                new ObjectParameter("IsOnboarding", typeof(int));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("Code", code) :
+                new ObjectParameter("Code", typeof(string));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyDepartment_CreateSimple", nameParameter, isOnboardingParameter, aliasParameter, codeParameter, companyIdParameter, branchIdParameter, companyDepartment);
+        }
+    
         public virtual ObjectResult<Ins_CompanyDepartment_GetAll_Result> Ins_CompanyDepartment_GetAll(Nullable<int> companyId)
         {
             var companyIdParameter = companyId.HasValue ?
@@ -547,6 +577,19 @@ namespace DataAccess.EF
                 new ObjectParameter("CompanyId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyDepartment_GetAll_Result>("Ins_CompanyDepartment_GetAll", companyIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_CompanyDepartment_SelectByBrandId_Result> Ins_CompanyDepartment_SelectByBrandId(Nullable<int> companyId, Nullable<int> branchId)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyDepartment_SelectByBrandId_Result>("Ins_CompanyDepartment_SelectByBrandId", companyIdParameter, branchIdParameter);
         }
     
         public virtual int Ins_CompanyPosition_Create(string name, Nullable<int> departmentId, Nullable<int> companyId, ObjectParameter outResult)
@@ -589,6 +632,190 @@ namespace DataAccess.EF
                 new ObjectParameter("ExpYear", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyPosition_CreateInAllBranchId_Result>("Ins_CompanyPosition_CreateInAllBranchId", nameParameter, aliasParameter, codeParameter, companyIdParameter, expYearParameter);
+        }
+    
+        public virtual ObjectResult<Ins_CompanyPosition_CreateInAllDepartmentId_Result> Ins_CompanyPosition_CreateInAllDepartmentId(string name, string alias, string code, Nullable<int> companyId, Nullable<int> expYear)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("Code", code) :
+                new ObjectParameter("Code", typeof(string));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var expYearParameter = expYear.HasValue ?
+                new ObjectParameter("ExpYear", expYear) :
+                new ObjectParameter("ExpYear", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyPosition_CreateInAllDepartmentId_Result>("Ins_CompanyPosition_CreateInAllDepartmentId", nameParameter, aliasParameter, codeParameter, companyIdParameter, expYearParameter);
+        }
+    
+        public virtual int Ins_CompanyPosition_CreateRelate(Nullable<int> branchID, Nullable<int> companyPositionID, Nullable<int> departmentID, Nullable<int> regionId, ObjectParameter outResult)
+        {
+            var branchIDParameter = branchID.HasValue ?
+                new ObjectParameter("BranchID", branchID) :
+                new ObjectParameter("BranchID", typeof(int));
+    
+            var companyPositionIDParameter = companyPositionID.HasValue ?
+                new ObjectParameter("CompanyPositionID", companyPositionID) :
+                new ObjectParameter("CompanyPositionID", typeof(int));
+    
+            var departmentIDParameter = departmentID.HasValue ?
+                new ObjectParameter("DepartmentID", departmentID) :
+                new ObjectParameter("DepartmentID", typeof(int));
+    
+            var regionIdParameter = regionId.HasValue ?
+                new ObjectParameter("RegionId", regionId) :
+                new ObjectParameter("RegionId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyPosition_CreateRelate", branchIDParameter, companyPositionIDParameter, departmentIDParameter, regionIdParameter, outResult);
+        }
+    
+        public virtual int Ins_CompanyPosition_CreateSimple(string name, string alias, string code, Nullable<int> companyId, Nullable<int> expYear, ObjectParameter companyPositionID)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("Code", code) :
+                new ObjectParameter("Code", typeof(string));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var expYearParameter = expYear.HasValue ?
+                new ObjectParameter("ExpYear", expYear) :
+                new ObjectParameter("ExpYear", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyPosition_CreateSimple", nameParameter, aliasParameter, codeParameter, companyIdParameter, expYearParameter, companyPositionID);
+        }
+    
+        public virtual ObjectResult<Ins_CompanyPosition_SelectByBrandid_Result> Ins_CompanyPosition_SelectByBrandid(Nullable<int> branchId, Nullable<int> companyId, Nullable<int> departmentId)
+        {
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var departmentIdParameter = departmentId.HasValue ?
+                new ObjectParameter("DepartmentId", departmentId) :
+                new ObjectParameter("DepartmentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyPosition_SelectByBrandid_Result>("Ins_CompanyPosition_SelectByBrandid", branchIdParameter, companyIdParameter, departmentIdParameter);
+        }
+    
+        public virtual int Ins_CompanyRegion_Create(string regionName, Nullable<int> companyID, string color, string code, Nullable<int> sortIndex, string description, string alias, ObjectParameter regionID)
+        {
+            var regionNameParameter = regionName != null ?
+                new ObjectParameter("RegionName", regionName) :
+                new ObjectParameter("RegionName", typeof(string));
+    
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var colorParameter = color != null ?
+                new ObjectParameter("Color", color) :
+                new ObjectParameter("Color", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("Code", code) :
+                new ObjectParameter("Code", typeof(string));
+    
+            var sortIndexParameter = sortIndex.HasValue ?
+                new ObjectParameter("SortIndex", sortIndex) :
+                new ObjectParameter("SortIndex", typeof(int));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyRegion_Create", regionNameParameter, companyIDParameter, colorParameter, codeParameter, sortIndexParameter, descriptionParameter, aliasParameter, regionID);
+        }
+    
+        public virtual ObjectResult<Ins_CompanyRegion_GetListByCompany_Result> Ins_CompanyRegion_GetListByCompany(Nullable<int> companyID)
+        {
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyRegion_GetListByCompany_Result>("Ins_CompanyRegion_GetListByCompany", companyIDParameter);
+        }
+    
+        public virtual int Ins_CompanyRegion_Update(string regionName, Nullable<int> companyID, string color, string code, Nullable<int> sortIndex, string description, string alias, Nullable<int> regionID)
+        {
+            var regionNameParameter = regionName != null ?
+                new ObjectParameter("RegionName", regionName) :
+                new ObjectParameter("RegionName", typeof(string));
+    
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var colorParameter = color != null ?
+                new ObjectParameter("Color", color) :
+                new ObjectParameter("Color", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("Code", code) :
+                new ObjectParameter("Code", typeof(string));
+    
+            var sortIndexParameter = sortIndex.HasValue ?
+                new ObjectParameter("SortIndex", sortIndex) :
+                new ObjectParameter("SortIndex", typeof(int));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var aliasParameter = alias != null ?
+                new ObjectParameter("Alias", alias) :
+                new ObjectParameter("Alias", typeof(string));
+    
+            var regionIDParameter = regionID.HasValue ?
+                new ObjectParameter("RegionID", regionID) :
+                new ObjectParameter("RegionID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyRegion_Update", regionNameParameter, companyIDParameter, colorParameter, codeParameter, sortIndexParameter, descriptionParameter, aliasParameter, regionIDParameter);
+        }
+    
+        public virtual int Ins_Employee_AddIntoBranch(Nullable<int> employeeId, Nullable<int> branchId, Nullable<bool> isPrimary, ObjectParameter outResult)
+        {
+            var employeeIdParameter = employeeId.HasValue ?
+                new ObjectParameter("EmployeeId", employeeId) :
+                new ObjectParameter("EmployeeId", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            var isPrimaryParameter = isPrimary.HasValue ?
+                new ObjectParameter("IsPrimary", isPrimary) :
+                new ObjectParameter("IsPrimary", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_AddIntoBranch", employeeIdParameter, branchIdParameter, isPrimaryParameter, outResult);
         }
     
         public virtual int Ins_Employee_Create(string fullName, string employeesCode, string phone, string phoneCode, string email, string password, Nullable<int> companyId, Nullable<int> branchId, Nullable<int> departmentId, Nullable<int> positionId, Nullable<int> regionId, Nullable<int> role, string deviceId, ObjectParameter employeeAccountId, ObjectParameter isNewUser, ObjectParameter needSetPassword, ObjectParameter needSetCompany)
@@ -648,13 +875,13 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_Create", fullNameParameter, employeesCodeParameter, phoneParameter, phoneCodeParameter, emailParameter, passwordParameter, companyIdParameter, branchIdParameter, departmentIdParameter, positionIdParameter, regionIdParameter, roleParameter, deviceIdParameter, employeeAccountId, isNewUser, needSetPassword, needSetCompany);
         }
     
-        public virtual int Ins_Employee_Delete(Nullable<int> employeeAccountId)
+        public virtual ObjectResult<Nullable<int>> Ins_Employee_Delete(Nullable<int> employeeAccountId)
         {
             var employeeAccountIdParameter = employeeAccountId.HasValue ?
                 new ObjectParameter("EmployeeAccountId", employeeAccountId) :
                 new ObjectParameter("EmployeeAccountId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_Delete", employeeAccountIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Ins_Employee_Delete", employeeAccountIdParameter);
         }
     
         public virtual ObjectResult<Ins_Employee_GetAll_Result> Ins_Employee_GetAll(Nullable<int> companyId, Nullable<int> page, Nullable<int> pageSize, string fullName, Nullable<bool> isQuit, Nullable<bool> isActive)
@@ -686,6 +913,15 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Employee_GetAll_Result>("Ins_Employee_GetAll", companyIdParameter, pageParameter, pageSizeParameter, fullNameParameter, isQuitParameter, isActiveParameter);
         }
     
+        public virtual ObjectResult<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result> Ins_Employee_GetEmployeeAccountMap_ByCompanyId(Nullable<int> companyId)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result>("Ins_Employee_GetEmployeeAccountMap_ByCompanyId", companyIdParameter);
+        }
+    
         public virtual ObjectResult<Ins_Employee_GetEmployeeID_Result> Ins_Employee_GetEmployeeID(Nullable<int> employeeID)
         {
             var employeeIDParameter = employeeID.HasValue ?
@@ -702,6 +938,44 @@ namespace DataAccess.EF
                 new ObjectParameter("CompanyId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Ins_Employee_GetLastEmployeeCode", companyIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Employee_GetList_Result> Ins_Employee_GetList(Nullable<int> company_id, Nullable<int> page, Nullable<int> page_size, Nullable<System.DateTime> start_date, Nullable<System.DateTime> end_date, Nullable<bool> is_no_need_timekeeping, ObjectParameter totalRecords)
+        {
+            var company_idParameter = company_id.HasValue ?
+                new ObjectParameter("company_id", company_id) :
+                new ObjectParameter("company_id", typeof(int));
+    
+            var pageParameter = page.HasValue ?
+                new ObjectParameter("page", page) :
+                new ObjectParameter("page", typeof(int));
+    
+            var page_sizeParameter = page_size.HasValue ?
+                new ObjectParameter("page_size", page_size) :
+                new ObjectParameter("page_size", typeof(int));
+    
+            var start_dateParameter = start_date.HasValue ?
+                new ObjectParameter("start_date", start_date) :
+                new ObjectParameter("start_date", typeof(System.DateTime));
+    
+            var end_dateParameter = end_date.HasValue ?
+                new ObjectParameter("end_date", end_date) :
+                new ObjectParameter("end_date", typeof(System.DateTime));
+    
+            var is_no_need_timekeepingParameter = is_no_need_timekeeping.HasValue ?
+                new ObjectParameter("is_no_need_timekeeping", is_no_need_timekeeping) :
+                new ObjectParameter("is_no_need_timekeeping", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Employee_GetList_Result>("Ins_Employee_GetList", company_idParameter, pageParameter, page_sizeParameter, start_dateParameter, end_dateParameter, is_no_need_timekeepingParameter, totalRecords);
+        }
+    
+        public virtual ObjectResult<Ins_Employee_GetObjectData_Result> Ins_Employee_GetObjectData(Nullable<int> employeeId)
+        {
+            var employeeIdParameter = employeeId.HasValue ?
+                new ObjectParameter("EmployeeId", employeeId) :
+                new ObjectParameter("EmployeeId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Employee_GetObjectData_Result>("Ins_Employee_GetObjectData", employeeIdParameter);
         }
     
         public virtual int Ins_Employee_GetShiftsInBranch(Nullable<int> employeeAccountMapId, Nullable<int> companyId)
@@ -724,15 +998,6 @@ namespace DataAccess.EF
                 new ObjectParameter("EmployeeID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_GetTokensByEmployeeID", employeeIDParameter);
-        }
-    
-        public virtual int Ins_Employee_MultiDelete(string employeeAccountIds)
-        {
-            var employeeAccountIdsParameter = employeeAccountIds != null ?
-                new ObjectParameter("EmployeeAccountIds", employeeAccountIds) :
-                new ObjectParameter("EmployeeAccountIds", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_MultiDelete", employeeAccountIdsParameter);
         }
     
         public virtual int Ins_Employee_ResetPass(Nullable<int> employeeAccountMapId, string pass)
@@ -789,13 +1054,123 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_UpdateDetails", employeeIdParameter, fullNameParameter, birthDateParameter, genderParameter, employeeCodeParameter, displayOrderParameter, emailParameter, phoneParameter, phoneCodeParameter);
         }
     
-        public virtual ObjectResult<Ins_EmployeeBranchMap_GetByEmployeeId_Result> Ins_EmployeeBranchMap_GetByEmployeeId(Nullable<int> accountMapId)
+        public virtual int Ins_Employee_UpdateDetails_v2(Nullable<int> employeeId, string fullName, Nullable<System.DateTime> birthDate, string gender, string employeeCode, Nullable<int> displayOrder, string email, string phone, string phoneCode, Nullable<int> departmentId, Nullable<int> regionId, Nullable<int> branchId, Nullable<int> positionId, Nullable<bool> isQuit, Nullable<bool> isActive)
         {
-            var accountMapIdParameter = accountMapId.HasValue ?
-                new ObjectParameter("AccountMapId", accountMapId) :
-                new ObjectParameter("AccountMapId", typeof(int));
+            var employeeIdParameter = employeeId.HasValue ?
+                new ObjectParameter("EmployeeId", employeeId) :
+                new ObjectParameter("EmployeeId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeBranchMap_GetByEmployeeId_Result>("Ins_EmployeeBranchMap_GetByEmployeeId", accountMapIdParameter);
+            var fullNameParameter = fullName != null ?
+                new ObjectParameter("FullName", fullName) :
+                new ObjectParameter("FullName", typeof(string));
+    
+            var birthDateParameter = birthDate.HasValue ?
+                new ObjectParameter("BirthDate", birthDate) :
+                new ObjectParameter("BirthDate", typeof(System.DateTime));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var employeeCodeParameter = employeeCode != null ?
+                new ObjectParameter("EmployeeCode", employeeCode) :
+                new ObjectParameter("EmployeeCode", typeof(string));
+    
+            var displayOrderParameter = displayOrder.HasValue ?
+                new ObjectParameter("DisplayOrder", displayOrder) :
+                new ObjectParameter("DisplayOrder", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("Phone", phone) :
+                new ObjectParameter("Phone", typeof(string));
+    
+            var phoneCodeParameter = phoneCode != null ?
+                new ObjectParameter("PhoneCode", phoneCode) :
+                new ObjectParameter("PhoneCode", typeof(string));
+    
+            var departmentIdParameter = departmentId.HasValue ?
+                new ObjectParameter("DepartmentId", departmentId) :
+                new ObjectParameter("DepartmentId", typeof(int));
+    
+            var regionIdParameter = regionId.HasValue ?
+                new ObjectParameter("RegionId", regionId) :
+                new ObjectParameter("RegionId", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            var positionIdParameter = positionId.HasValue ?
+                new ObjectParameter("PositionId", positionId) :
+                new ObjectParameter("PositionId", typeof(int));
+    
+            var isQuitParameter = isQuit.HasValue ?
+                new ObjectParameter("IsQuit", isQuit) :
+                new ObjectParameter("IsQuit", typeof(bool));
+    
+            var isActiveParameter = isActive.HasValue ?
+                new ObjectParameter("IsActive", isActive) :
+                new ObjectParameter("IsActive", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_UpdateDetails_v2", employeeIdParameter, fullNameParameter, birthDateParameter, genderParameter, employeeCodeParameter, displayOrderParameter, emailParameter, phoneParameter, phoneCodeParameter, departmentIdParameter, regionIdParameter, branchIdParameter, positionIdParameter, isQuitParameter, isActiveParameter);
+        }
+    
+        public virtual ObjectResult<Ins_EmployeeDepartmentMap_GetCompanyId_Result> Ins_EmployeeDepartmentMap_GetCompanyId(Nullable<int> companyId)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeDepartmentMap_GetCompanyId_Result>("Ins_EmployeeDepartmentMap_GetCompanyId", companyIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId_Result> Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId(Nullable<int> companyId, Nullable<int> branchId)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId_Result>("Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId", companyIdParameter, branchIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_EmployeePositionMap_GetCompanyId_Result> Ins_EmployeePositionMap_GetCompanyId(Nullable<int> companyId)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeePositionMap_GetCompanyId_Result>("Ins_EmployeePositionMap_GetCompanyId", companyIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_EmployeePositionMap_GetCompanyIdAndBranchId_Result> Ins_EmployeePositionMap_GetCompanyIdAndBranchId(Nullable<int> companyId, Nullable<int> branchId)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeePositionMap_GetCompanyIdAndBranchId_Result>("Ins_EmployeePositionMap_GetCompanyIdAndBranchId", companyIdParameter, branchIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_HourData_GetAll_Result> Ins_HourData_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_HourData_GetAll_Result>("Ins_HourData_GetAll");
+        }
+    
+        public virtual ObjectResult<Ins_MinuteData_GetAll_Result> Ins_MinuteData_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_MinuteData_GetAll_Result>("Ins_MinuteData_GetAll");
         }
     
         public virtual int Ins_OpenShift_Create(string shiftId, Nullable<int> companyId, Nullable<int> totalEmployees, Nullable<System.DateTime> workingDay, Nullable<bool> isDraft, Nullable<int> createdBy, string branchIds, string positionIds, ObjectParameter openShiftId, ObjectParameter isReactivated)
@@ -979,6 +1354,63 @@ namespace DataAccess.EF
                 new ObjectParameter("Status", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_Create", shiftAssignmentIDParameter, accountMapIDParameter, startTimeParameter, endTimeParameter, workingHourParameter, workingDayParameter, weekOfYearParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter, payrollUserID);
+        }
+    
+        public virtual int Ins_Payroll_User_Create_MultiDay(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> weekOfYear, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, Nullable<double> realCoefficient, Nullable<int> status)
+        {
+            var assignmentUserIDParameter = assignmentUserID.HasValue ?
+                new ObjectParameter("AssignmentUserID", assignmentUserID) :
+                new ObjectParameter("AssignmentUserID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var dateFromParameter = dateFrom.HasValue ?
+                new ObjectParameter("DateFrom", dateFrom) :
+                new ObjectParameter("DateFrom", typeof(System.DateTime));
+    
+            var dateToParameter = dateTo.HasValue ?
+                new ObjectParameter("DateTo", dateTo) :
+                new ObjectParameter("DateTo", typeof(System.DateTime));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.DateTime));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.DateTime));
+    
+            var weekOfYearParameter = weekOfYear.HasValue ?
+                new ObjectParameter("WeekOfYear", weekOfYear) :
+                new ObjectParameter("WeekOfYear", typeof(int));
+    
+            var realWorkingHourParameter = realWorkingHour.HasValue ?
+                new ObjectParameter("RealWorkingHour", realWorkingHour) :
+                new ObjectParameter("RealWorkingHour", typeof(double));
+    
+            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
+                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
+                new ObjectParameter("RealWorkingMinute", typeof(double));
+    
+            var restStartTimeShortParameter = restStartTimeShort != null ?
+                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
+                new ObjectParameter("RestStartTimeShort", typeof(string));
+    
+            var restEndTimeShortParameter = restEndTimeShort != null ?
+                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
+                new ObjectParameter("RestEndTimeShort", typeof(string));
+    
+            var realCoefficientParameter = realCoefficient.HasValue ?
+                new ObjectParameter("RealCoefficient", realCoefficient) :
+                new ObjectParameter("RealCoefficient", typeof(double));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_Create_MultiDay", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter, startTimeParameter, endTimeParameter, weekOfYearParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter);
         }
     
         public virtual ObjectResult<Ins_Payroll_User_GetList_Result> Ins_Payroll_User_GetList(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<int> branchId, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
@@ -1539,6 +1971,90 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result>("Ins_ShiftAssignment_User_WorkingDay_GetShifts", companyIdParameter);
         }
     
+        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result> Ins_ShiftAssignment_User_WorkingDay_GetSummary(Nullable<int> companyId, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate, string employeeIds, Nullable<int> month, Nullable<int> year)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("EndDate", endDate) :
+                new ObjectParameter("EndDate", typeof(System.DateTime));
+    
+            var employeeIdsParameter = employeeIds != null ?
+                new ObjectParameter("EmployeeIds", employeeIds) :
+                new ObjectParameter("EmployeeIds", typeof(string));
+    
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("Month", month) :
+                new ObjectParameter("Month", typeof(int));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("Year", year) :
+                new ObjectParameter("Year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result>("Ins_ShiftAssignment_User_WorkingDay_GetSummary", companyIdParameter, startDateParameter, endDateParameter, employeeIdsParameter, monthParameter, yearParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> Ins_ShiftAssignment_User_WorkingDay_Log_Create(Nullable<int> shiftAssignmentUserWorkingDayId, Nullable<int> actionType, Nullable<int> clockType, Nullable<System.DateTime> actionTime, string reason, Nullable<int> createdBy)
+        {
+            var shiftAssignmentUserWorkingDayIdParameter = shiftAssignmentUserWorkingDayId.HasValue ?
+                new ObjectParameter("ShiftAssignmentUserWorkingDayId", shiftAssignmentUserWorkingDayId) :
+                new ObjectParameter("ShiftAssignmentUserWorkingDayId", typeof(int));
+    
+            var actionTypeParameter = actionType.HasValue ?
+                new ObjectParameter("ActionType", actionType) :
+                new ObjectParameter("ActionType", typeof(int));
+    
+            var clockTypeParameter = clockType.HasValue ?
+                new ObjectParameter("ClockType", clockType) :
+                new ObjectParameter("ClockType", typeof(int));
+    
+            var actionTimeParameter = actionTime.HasValue ?
+                new ObjectParameter("ActionTime", actionTime) :
+                new ObjectParameter("ActionTime", typeof(System.DateTime));
+    
+            var reasonParameter = reason != null ?
+                new ObjectParameter("Reason", reason) :
+                new ObjectParameter("Reason", typeof(string));
+    
+            var createdByParameter = createdBy.HasValue ?
+                new ObjectParameter("CreatedBy", createdBy) :
+                new ObjectParameter("CreatedBy", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Ins_ShiftAssignment_User_WorkingDay_Log_Create", shiftAssignmentUserWorkingDayIdParameter, actionTypeParameter, clockTypeParameter, actionTimeParameter, reasonParameter, createdByParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result> Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay(Nullable<int> shiftAssignmentUserWorkingDayId)
+        {
+            var shiftAssignmentUserWorkingDayIdParameter = shiftAssignmentUserWorkingDayId.HasValue ?
+                new ObjectParameter("ShiftAssignmentUserWorkingDayId", shiftAssignmentUserWorkingDayId) :
+                new ObjectParameter("ShiftAssignmentUserWorkingDayId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result>("Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay", shiftAssignmentUserWorkingDayIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result> Ins_ShiftAssignment_User_WorkingDay_Log_Trash(Nullable<int> logId, Nullable<int> trashedBy, string reason)
+        {
+            var logIdParameter = logId.HasValue ?
+                new ObjectParameter("LogId", logId) :
+                new ObjectParameter("LogId", typeof(int));
+    
+            var trashedByParameter = trashedBy.HasValue ?
+                new ObjectParameter("TrashedBy", trashedBy) :
+                new ObjectParameter("TrashedBy", typeof(int));
+    
+            var reasonParameter = reason != null ?
+                new ObjectParameter("Reason", reason) :
+                new ObjectParameter("Reason", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result>("Ins_ShiftAssignment_User_WorkingDay_Log_Trash", logIdParameter, trashedByParameter, reasonParameter);
+        }
+    
         public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result> Ins_ShiftAssignment_User_WorkingDay_RegisterShift(Nullable<int> shiftId, Nullable<System.DateTime> workingDay, Nullable<int> userId)
         {
             var shiftIdParameter = shiftId.HasValue ?
@@ -1567,6 +2083,69 @@ namespace DataAccess.EF
                 new ObjectParameter("UserId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_RejectShift_Result>("Ins_ShiftAssignment_User_WorkingDay_RejectShift", idParameter, userIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_UncheckInOut_Result> Ins_ShiftAssignment_User_WorkingDay_UncheckInOut(Nullable<int> id, Nullable<int> userId, Nullable<bool> isUncheckin, Nullable<bool> isUncheckout, string reason)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var isUncheckinParameter = isUncheckin.HasValue ?
+                new ObjectParameter("IsUncheckin", isUncheckin) :
+                new ObjectParameter("IsUncheckin", typeof(bool));
+    
+            var isUncheckoutParameter = isUncheckout.HasValue ?
+                new ObjectParameter("IsUncheckout", isUncheckout) :
+                new ObjectParameter("IsUncheckout", typeof(bool));
+    
+            var reasonParameter = reason != null ?
+                new ObjectParameter("Reason", reason) :
+                new ObjectParameter("Reason", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_UncheckInOut_Result>("Ins_ShiftAssignment_User_WorkingDay_UncheckInOut", idParameter, userIdParameter, isUncheckinParameter, isUncheckoutParameter, reasonParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut_Result> Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut(Nullable<int> id, Nullable<int> userId, string checkinTime, string checkoutTime, Nullable<bool> isCheckin, Nullable<bool> isCheckout)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var checkinTimeParameter = checkinTime != null ?
+                new ObjectParameter("CheckinTime", checkinTime) :
+                new ObjectParameter("CheckinTime", typeof(string));
+    
+            var checkoutTimeParameter = checkoutTime != null ?
+                new ObjectParameter("CheckoutTime", checkoutTime) :
+                new ObjectParameter("CheckoutTime", typeof(string));
+    
+            var isCheckinParameter = isCheckin.HasValue ?
+                new ObjectParameter("IsCheckin", isCheckin) :
+                new ObjectParameter("IsCheckin", typeof(bool));
+    
+            var isCheckoutParameter = isCheckout.HasValue ?
+                new ObjectParameter("IsCheckout", isCheckout) :
+                new ObjectParameter("IsCheckout", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut_Result>("Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut", idParameter, userIdParameter, checkinTimeParameter, checkoutTimeParameter, isCheckinParameter, isCheckoutParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftTimeInOutConfig_GetByShiftId_Result> Ins_ShiftTimeInOutConfig_GetByShiftId(Nullable<int> shiftId)
+        {
+            var shiftIdParameter = shiftId.HasValue ?
+                new ObjectParameter("ShiftId", shiftId) :
+                new ObjectParameter("ShiftId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftTimeInOutConfig_GetByShiftId_Result>("Ins_ShiftTimeInOutConfig_GetByShiftId", shiftIdParameter);
         }
     
         public virtual int Ins_Task_Add_Collaborators(string task_id, string user_ids)
@@ -1620,7 +2199,7 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Field_Create_Result>("Ins_Task_Field_Create", task_idParameter, titleParameter, typeParameter, descriptionParameter, add_to_libraryParameter, notify_on_changeParameter);
         }
     
-        public virtual ObjectResult<Ins_Task_Field_Options_Bulk_Result> Ins_Task_Field_Options_Bulk(Nullable<int> field_id, string options)
+        public virtual ObjectResult<Ins_Task_Field_Create_Options_Bulk_Result> Ins_Task_Field_Create_Options_Bulk(Nullable<int> field_id, string options)
         {
             var field_idParameter = field_id.HasValue ?
                 new ObjectParameter("field_id", field_id) :
@@ -1630,16 +2209,29 @@ namespace DataAccess.EF
                 new ObjectParameter("options", options) :
                 new ObjectParameter("options", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Field_Options_Bulk_Result>("Ins_Task_Field_Options_Bulk", field_idParameter, optionsParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Field_Create_Options_Bulk_Result>("Ins_Task_Field_Create_Options_Bulk", field_idParameter, optionsParameter);
         }
     
-        public virtual int Ins_Task_Get_CustomizedFields_And_Values_ByTask(Nullable<int> task_id)
+        public virtual ObjectResult<Ins_Task_Field_GetByTaskAndType_Result> Ins_Task_Field_GetByTaskAndType(Nullable<int> taskId, string field_type)
+        {
+            var taskIdParameter = taskId.HasValue ?
+                new ObjectParameter("TaskId", taskId) :
+                new ObjectParameter("TaskId", typeof(int));
+    
+            var field_typeParameter = field_type != null ?
+                new ObjectParameter("field_type", field_type) :
+                new ObjectParameter("field_type", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Field_GetByTaskAndType_Result>("Ins_Task_Field_GetByTaskAndType", taskIdParameter, field_typeParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Task_Get_CustomizedFields_And_Values_ByTask_Result> Ins_Task_Get_CustomizedFields_And_Values_ByTask(Nullable<int> task_id)
         {
             var task_idParameter = task_id.HasValue ?
                 new ObjectParameter("task_id", task_id) :
                 new ObjectParameter("task_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Task_Get_CustomizedFields_And_Values_ByTask", task_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Get_CustomizedFields_And_Values_ByTask_Result>("Ins_Task_Get_CustomizedFields_And_Values_ByTask", task_idParameter);
         }
     
         public virtual ObjectResult<Ins_Task_Get_Sub_Field_Value_ByTitle_Result> Ins_Task_Get_Sub_Field_Value_ByTitle(Nullable<int> subtask_id, string title)
@@ -1698,13 +2290,17 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Group_Create_Result>("Ins_Task_Group_Create", bundle_idParameter, nameParameter, colorParameter, positionParameter);
         }
     
-        public virtual ObjectResult<Ins_Task_Group_Delete_Result> Ins_Task_Group_Delete(Nullable<int> group_id)
+        public virtual ObjectResult<Ins_Task_Group_Update_Color_Result> Ins_Task_Group_Update_Color(Nullable<int> group_id, string color)
         {
             var group_idParameter = group_id.HasValue ?
                 new ObjectParameter("group_id", group_id) :
                 new ObjectParameter("group_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Group_Delete_Result>("Ins_Task_Group_Delete", group_idParameter);
+            var colorParameter = color != null ?
+                new ObjectParameter("color", color) :
+                new ObjectParameter("color", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Group_Update_Color_Result>("Ins_Task_Group_Update_Color", group_idParameter, colorParameter);
         }
     
         public virtual ObjectResult<Ins_Task_Group_Update_Name_Result> Ins_Task_Group_Update_Name(Nullable<int> group_id, string name)
@@ -1771,15 +2367,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_Create_Result>("Ins_Task_Sub_Create", titleParameter, aliasParameter, bundle_idParameter, created_user_idParameter, assigned_idParameter, positionParameter);
         }
     
-        public virtual ObjectResult<Ins_Task_Sub_Delete_Result> Ins_Task_Sub_Delete(Nullable<int> subtask_id)
-        {
-            var subtask_idParameter = subtask_id.HasValue ?
-                new ObjectParameter("subtask_id", subtask_id) :
-                new ObjectParameter("subtask_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_Delete_Result>("Ins_Task_Sub_Delete", subtask_idParameter);
-        }
-    
         public virtual ObjectResult<Nullable<int>> Ins_Task_Sub_Delete_All(Nullable<int> bundle_id, Nullable<int> task_id)
         {
             var bundle_idParameter = bundle_id.HasValue ?
@@ -1793,6 +2380,15 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Ins_Task_Sub_Delete_All", bundle_idParameter, task_idParameter);
         }
     
+        public virtual ObjectResult<Ins_Task_Sub_Delete_BySubTaskId_Result> Ins_Task_Sub_Delete_BySubTaskId(Nullable<int> subtask_id)
+        {
+            var subtask_idParameter = subtask_id.HasValue ?
+                new ObjectParameter("subtask_id", subtask_id) :
+                new ObjectParameter("subtask_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_Delete_BySubTaskId_Result>("Ins_Task_Sub_Delete_BySubTaskId", subtask_idParameter);
+        }
+    
         public virtual ObjectResult<Ins_Task_Sub_ListByBundle_Result> Ins_Task_Sub_ListByBundle(string bundleId)
         {
             var bundleIdParameter = bundleId != null ?
@@ -1800,6 +2396,15 @@ namespace DataAccess.EF
                 new ObjectParameter("BundleId", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_ListByBundle_Result>("Ins_Task_Sub_ListByBundle", bundleIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Task_Sub_ListBySubTaskId_Result> Ins_Task_Sub_ListBySubTaskId(Nullable<int> subTask_id)
+        {
+            var subTask_idParameter = subTask_id.HasValue ?
+                new ObjectParameter("SubTask_id", subTask_id) :
+                new ObjectParameter("SubTask_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_ListBySubTaskId_Result>("Ins_Task_Sub_ListBySubTaskId", subTask_idParameter);
         }
     
         public virtual ObjectResult<Ins_Task_Sub_Update_Completed_Result> Ins_Task_Sub_Update_Completed(Nullable<int> id, Nullable<bool> is_completed)
@@ -1830,6 +2435,44 @@ namespace DataAccess.EF
                 new ObjectParameter("start_date", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_Update_Deadline_Result>("Ins_Task_Sub_Update_Deadline", idParameter, deadlineParameter, start_dateParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Task_Sub_Update_Description_Result> Ins_Task_Sub_Update_Description(Nullable<int> id, string description)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_Update_Description_Result>("Ins_Task_Sub_Update_Description", idParameter, descriptionParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Task_Sub_Update_Priority_Result> Ins_Task_Sub_Update_Priority(Nullable<int> task_id, Nullable<int> subtask_id, Nullable<int> field_id, Nullable<int> option_id, string option_title)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var subtask_idParameter = subtask_id.HasValue ?
+                new ObjectParameter("subtask_id", subtask_id) :
+                new ObjectParameter("subtask_id", typeof(int));
+    
+            var field_idParameter = field_id.HasValue ?
+                new ObjectParameter("field_id", field_id) :
+                new ObjectParameter("field_id", typeof(int));
+    
+            var option_idParameter = option_id.HasValue ?
+                new ObjectParameter("option_id", option_id) :
+                new ObjectParameter("option_id", typeof(int));
+    
+            var option_titleParameter = option_title != null ?
+                new ObjectParameter("option_title", option_title) :
+                new ObjectParameter("option_title", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_Update_Priority_Result>("Ins_Task_Sub_Update_Priority", task_idParameter, subtask_idParameter, field_idParameter, option_idParameter, option_titleParameter);
         }
     
         public virtual ObjectResult<Ins_Task_Sub_Update_Title_Result> Ins_Task_Sub_Update_Title(Nullable<int> id, string title, string title_nosign, string alias)
@@ -1884,6 +2527,45 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_UsersByUser_Result>("Ins_Task_UsersByUser", user_idParameter);
         }
     
+        public virtual ObjectResult<Ins_TaskBranches_Create_Result> Ins_TaskBranches_Create(Nullable<int> task_id, Nullable<int> branch_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var branch_idParameter = branch_id.HasValue ?
+                new ObjectParameter("branch_id", branch_id) :
+                new ObjectParameter("branch_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskBranches_Create_Result>("Ins_TaskBranches_Create", task_idParameter, branch_idParameter);
+        }
+    
+        public virtual ObjectResult<Ins_TaskDepartments_Create_Result> Ins_TaskDepartments_Create(Nullable<int> task_id, Nullable<int> department_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var department_idParameter = department_id.HasValue ?
+                new ObjectParameter("department_id", department_id) :
+                new ObjectParameter("department_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskDepartments_Create_Result>("Ins_TaskDepartments_Create", task_idParameter, department_idParameter);
+        }
+    
+        public virtual ObjectResult<Ins_TaskPositions_Create_Result> Ins_TaskPositions_Create(Nullable<int> task_id, Nullable<int> position_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var position_idParameter = position_id.HasValue ?
+                new ObjectParameter("position_id", position_id) :
+                new ObjectParameter("position_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskPositions_Create_Result>("Ins_TaskPositions_Create", task_idParameter, position_idParameter);
+        }
+    
         public virtual ObjectResult<Ins_Tasks_Create_Result> Ins_Tasks_Create(string title, Nullable<int> created_user_obj, Nullable<int> company_id, string default_view, string color)
         {
             var titleParameter = title != null ?
@@ -1918,6 +2600,68 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Tasks_Delete_Result>("Ins_Tasks_Delete", task_idParameter);
         }
     
+        public virtual int Ins_Tasks_Delete_all_Fields(Nullable<int> task_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_all_Fields", task_idParameter);
+        }
+    
+        public virtual int Ins_Tasks_Delete_All_Groups_ByTaskId(Nullable<int> task_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_All_Groups_ByTaskId", task_idParameter);
+        }
+    
+        public virtual int Ins_Tasks_Delete_All_Relations(Nullable<int> task_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_All_Relations", task_idParameter);
+        }
+    
+        public virtual int Ins_Tasks_Delete_All_SubTasks_ByTaskId(Nullable<int> task_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_All_SubTasks_ByTaskId", task_idParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Tasks_Delete_Main_Result> Ins_Tasks_Delete_Main(Nullable<int> task_id, Nullable<int> company_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var company_idParameter = company_id.HasValue ?
+                new ObjectParameter("company_id", company_id) :
+                new ObjectParameter("company_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Tasks_Delete_Main_Result>("Ins_Tasks_Delete_Main", task_idParameter, company_idParameter);
+        }
+    
+        public virtual ObjectResult<Ins_TaskTaskUsers_Create_Result> Ins_TaskTaskUsers_Create(Nullable<int> task_id, Nullable<int> user_account_id)
+        {
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var user_account_idParameter = user_account_id.HasValue ?
+                new ObjectParameter("user_account_id", user_account_id) :
+                new ObjectParameter("user_account_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskTaskUsers_Create_Result>("Ins_TaskTaskUsers_Create", task_idParameter, user_account_idParameter);
+        }
+    
         public virtual ObjectResult<Ins_Time_GetList_Result> Ins_Time_GetList(string lang)
         {
             var langParameter = lang != null ?
@@ -1938,6 +2682,87 @@ namespace DataAccess.EF
                 new ObjectParameter("DateClock", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Timekeeper_log_User_GetLog_OneDay_Result>("Ins_Timekeeper_log_User_GetLog_OneDay", accountMapIDParameter, dateClockParameter);
+        }
+    
+        public virtual int Ins_Timekeeper_log_User_Insert(Nullable<int> accountMapID, Nullable<int> payrollUserID, Nullable<System.DateTime> logTime, Nullable<int> clockType, Nullable<int> currentBranchId, Nullable<int> connectionType, Nullable<int> timeKeeperDevice, string bssid, string ssid, Nullable<double> latitude, Nullable<double> longitude, Nullable<double> accuracy, Nullable<double> altitude, Nullable<double> altitudeAccuracy, Nullable<double> speed, Nullable<double> speedAccuracy, Nullable<double> course, Nullable<double> courseAccuracy, Nullable<bool> mocked, ObjectParameter timekeeper_logID)
+        {
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            var payrollUserIDParameter = payrollUserID.HasValue ?
+                new ObjectParameter("PayrollUserID", payrollUserID) :
+                new ObjectParameter("PayrollUserID", typeof(int));
+    
+            var logTimeParameter = logTime.HasValue ?
+                new ObjectParameter("LogTime", logTime) :
+                new ObjectParameter("LogTime", typeof(System.DateTime));
+    
+            var clockTypeParameter = clockType.HasValue ?
+                new ObjectParameter("ClockType", clockType) :
+                new ObjectParameter("ClockType", typeof(int));
+    
+            var currentBranchIdParameter = currentBranchId.HasValue ?
+                new ObjectParameter("CurrentBranchId", currentBranchId) :
+                new ObjectParameter("CurrentBranchId", typeof(int));
+    
+            var connectionTypeParameter = connectionType.HasValue ?
+                new ObjectParameter("ConnectionType", connectionType) :
+                new ObjectParameter("ConnectionType", typeof(int));
+    
+            var timeKeeperDeviceParameter = timeKeeperDevice.HasValue ?
+                new ObjectParameter("TimeKeeperDevice", timeKeeperDevice) :
+                new ObjectParameter("TimeKeeperDevice", typeof(int));
+    
+            var bssidParameter = bssid != null ?
+                new ObjectParameter("Bssid", bssid) :
+                new ObjectParameter("Bssid", typeof(string));
+    
+            var ssidParameter = ssid != null ?
+                new ObjectParameter("Ssid", ssid) :
+                new ObjectParameter("Ssid", typeof(string));
+    
+            var latitudeParameter = latitude.HasValue ?
+                new ObjectParameter("Latitude", latitude) :
+                new ObjectParameter("Latitude", typeof(double));
+    
+            var longitudeParameter = longitude.HasValue ?
+                new ObjectParameter("Longitude", longitude) :
+                new ObjectParameter("Longitude", typeof(double));
+    
+            var accuracyParameter = accuracy.HasValue ?
+                new ObjectParameter("Accuracy", accuracy) :
+                new ObjectParameter("Accuracy", typeof(double));
+    
+            var altitudeParameter = altitude.HasValue ?
+                new ObjectParameter("Altitude", altitude) :
+                new ObjectParameter("Altitude", typeof(double));
+    
+            var altitudeAccuracyParameter = altitudeAccuracy.HasValue ?
+                new ObjectParameter("AltitudeAccuracy", altitudeAccuracy) :
+                new ObjectParameter("AltitudeAccuracy", typeof(double));
+    
+            var speedParameter = speed.HasValue ?
+                new ObjectParameter("Speed", speed) :
+                new ObjectParameter("Speed", typeof(double));
+    
+            var speedAccuracyParameter = speedAccuracy.HasValue ?
+                new ObjectParameter("SpeedAccuracy", speedAccuracy) :
+                new ObjectParameter("SpeedAccuracy", typeof(double));
+    
+            var courseParameter = course.HasValue ?
+                new ObjectParameter("Course", course) :
+                new ObjectParameter("Course", typeof(double));
+    
+            var courseAccuracyParameter = courseAccuracy.HasValue ?
+                new ObjectParameter("CourseAccuracy", courseAccuracy) :
+                new ObjectParameter("CourseAccuracy", typeof(double));
+    
+            var mockedParameter = mocked.HasValue ?
+                new ObjectParameter("Mocked", mocked) :
+                new ObjectParameter("Mocked", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Timekeeper_log_User_Insert", accountMapIDParameter, payrollUserIDParameter, logTimeParameter, clockTypeParameter, currentBranchIdParameter, connectionTypeParameter, timeKeeperDeviceParameter, bssidParameter, ssidParameter, latitudeParameter, longitudeParameter, accuracyParameter, altitudeParameter, altitudeAccuracyParameter, speedParameter, speedAccuracyParameter, courseParameter, courseAccuracyParameter, mockedParameter, timekeeper_logID);
         }
     
         public virtual int Ins_User_ChangePassword(Nullable<int> user_id, string old_password, string new_password)
@@ -2183,23 +3008,6 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_User_UpdateStatus", user_idParameter, is_activeParameter);
         }
     
-        public virtual int Ins_Employee_AddIntoBranch(Nullable<int> employeeId, Nullable<int> branchId, Nullable<bool> isPrimary, ObjectParameter outResult)
-        {
-            var employeeIdParameter = employeeId.HasValue ?
-                new ObjectParameter("EmployeeId", employeeId) :
-                new ObjectParameter("EmployeeId", typeof(int));
-    
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            var isPrimaryParameter = isPrimary.HasValue ?
-                new ObjectParameter("IsPrimary", isPrimary) :
-                new ObjectParameter("IsPrimary", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_AddIntoBranch", employeeIdParameter, branchIdParameter, isPrimaryParameter, outResult);
-        }
-    
         public virtual int Ins_Wifi_Account_Insert(Nullable<int> wifiID, Nullable<int> accountMapID, ObjectParameter wifiAccountID)
         {
             var wifiIDParameter = wifiID.HasValue ?
@@ -2224,6 +3032,27 @@ namespace DataAccess.EF
                 new ObjectParameter("DepartmentID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_Department_Insert", wifiIDParameter, departmentIDParameter, wifiDepartmentID);
+        }
+    
+        public virtual ObjectResult<Ins_Wifi_Get_Result> Ins_Wifi_Get(Nullable<int> wifiID, Nullable<int> branchID, Nullable<int> departmentID, Nullable<int> accountMapID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            var branchIDParameter = branchID.HasValue ?
+                new ObjectParameter("BranchID", branchID) :
+                new ObjectParameter("BranchID", typeof(int));
+    
+            var departmentIDParameter = departmentID.HasValue ?
+                new ObjectParameter("DepartmentID", departmentID) :
+                new ObjectParameter("DepartmentID", typeof(int));
+    
+            var accountMapIDParameter = accountMapID.HasValue ?
+                new ObjectParameter("AccountMapID", accountMapID) :
+                new ObjectParameter("AccountMapID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_Get_Result>("Ins_Wifi_Get", wifiIDParameter, branchIDParameter, departmentIDParameter, accountMapIDParameter);
         }
     
         public virtual int Ins_Wifi_Insert(Nullable<int> radius, Nullable<int> speed, Nullable<int> accuracy, Nullable<int> altitude, Nullable<double> longitude, Nullable<double> latitude, string name, Nullable<int> branchID, string address, Nullable<int> type, ObjectParameter wifiID)
@@ -2271,124 +3100,13 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_Insert", radiusParameter, speedParameter, accuracyParameter, altitudeParameter, longitudeParameter, latitudeParameter, nameParameter, branchIDParameter, addressParameter, typeParameter, wifiID);
         }
     
-        public virtual ObjectResult<Ins_Wifi_Get_Result> Ins_Wifi_Get(Nullable<int> wifiID, Nullable<int> branchID, Nullable<int> departmentID, Nullable<int> accountMapID)
+        public virtual ObjectResult<Ins_EmployeeBranchMap_GetByEmployeeId_Result> Ins_EmployeeBranchMap_GetByEmployeeId(Nullable<int> accountMapId)
         {
-            var wifiIDParameter = wifiID.HasValue ?
-                new ObjectParameter("WifiID", wifiID) :
-                new ObjectParameter("WifiID", typeof(int));
+            var accountMapIdParameter = accountMapId.HasValue ?
+                new ObjectParameter("AccountMapId", accountMapId) :
+                new ObjectParameter("AccountMapId", typeof(int));
     
-            var branchIDParameter = branchID.HasValue ?
-                new ObjectParameter("BranchID", branchID) :
-                new ObjectParameter("BranchID", typeof(int));
-    
-            var departmentIDParameter = departmentID.HasValue ?
-                new ObjectParameter("DepartmentID", departmentID) :
-                new ObjectParameter("DepartmentID", typeof(int));
-    
-            var accountMapIDParameter = accountMapID.HasValue ?
-                new ObjectParameter("AccountMapID", accountMapID) :
-                new ObjectParameter("AccountMapID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_Get_Result>("Ins_Wifi_Get", wifiIDParameter, branchIDParameter, departmentIDParameter, accountMapIDParameter);
-        }
-    
-        public virtual ObjectResult<Ins_Assignment_GetDateOfWeekByShiftIds_Result> Ins_Assignment_GetDateOfWeekByShiftIds(string shiftIds)
-        {
-            var shiftIdsParameter = shiftIds != null ?
-                new ObjectParameter("ShiftIds", shiftIds) :
-                new ObjectParameter("ShiftIds", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Assignment_GetDateOfWeekByShiftIds_Result>("Ins_Assignment_GetDateOfWeekByShiftIds", shiftIdsParameter);
-        }
-    
-        public virtual ObjectResult<Ins_HourData_GetAll_Result> Ins_HourData_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_HourData_GetAll_Result>("Ins_HourData_GetAll");
-        }
-    
-        public virtual ObjectResult<Ins_MinuteData_GetAll_Result> Ins_MinuteData_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_MinuteData_GetAll_Result>("Ins_MinuteData_GetAll");
-        }
-    
-        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_CreateBulk_Result> Ins_ShiftAssignment_User_WorkingDay_CreateBulk(Nullable<int> companyId, string employeeShiftDataXml, Nullable<int> createdBy)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var employeeShiftDataXmlParameter = employeeShiftDataXml != null ?
-                new ObjectParameter("EmployeeShiftDataXml", employeeShiftDataXml) :
-                new ObjectParameter("EmployeeShiftDataXml", typeof(string));
-    
-            var createdByParameter = createdBy.HasValue ?
-                new ObjectParameter("CreatedBy", createdBy) :
-                new ObjectParameter("CreatedBy", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_CreateBulk_Result>("Ins_ShiftAssignment_User_WorkingDay_CreateBulk", companyIdParameter, employeeShiftDataXmlParameter, createdByParameter);
-        }
-    
-        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_UncheckInOut_Result> Ins_ShiftAssignment_User_WorkingDay_UncheckInOut(Nullable<int> id, Nullable<int> userId, Nullable<bool> isUncheckin, Nullable<bool> isUncheckout, string reason)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("Id", id) :
-                new ObjectParameter("Id", typeof(int));
-    
-            var userIdParameter = userId.HasValue ?
-                new ObjectParameter("UserId", userId) :
-                new ObjectParameter("UserId", typeof(int));
-    
-            var isUncheckinParameter = isUncheckin.HasValue ?
-                new ObjectParameter("IsUncheckin", isUncheckin) :
-                new ObjectParameter("IsUncheckin", typeof(bool));
-    
-            var isUncheckoutParameter = isUncheckout.HasValue ?
-                new ObjectParameter("IsUncheckout", isUncheckout) :
-                new ObjectParameter("IsUncheckout", typeof(bool));
-    
-            var reasonParameter = reason != null ?
-                new ObjectParameter("Reason", reason) :
-                new ObjectParameter("Reason", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_UncheckInOut_Result>("Ins_ShiftAssignment_User_WorkingDay_UncheckInOut", idParameter, userIdParameter, isUncheckinParameter, isUncheckoutParameter, reasonParameter);
-        }
-    
-        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut_Result> Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut(Nullable<int> id, Nullable<int> userId, string checkinTime, string checkoutTime, Nullable<bool> isCheckin, Nullable<bool> isCheckout)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("Id", id) :
-                new ObjectParameter("Id", typeof(int));
-    
-            var userIdParameter = userId.HasValue ?
-                new ObjectParameter("UserId", userId) :
-                new ObjectParameter("UserId", typeof(int));
-    
-            var checkinTimeParameter = checkinTime != null ?
-                new ObjectParameter("CheckinTime", checkinTime) :
-                new ObjectParameter("CheckinTime", typeof(string));
-    
-            var checkoutTimeParameter = checkoutTime != null ?
-                new ObjectParameter("CheckoutTime", checkoutTime) :
-                new ObjectParameter("CheckoutTime", typeof(string));
-    
-            var isCheckinParameter = isCheckin.HasValue ?
-                new ObjectParameter("IsCheckin", isCheckin) :
-                new ObjectParameter("IsCheckin", typeof(bool));
-    
-            var isCheckoutParameter = isCheckout.HasValue ?
-                new ObjectParameter("IsCheckout", isCheckout) :
-                new ObjectParameter("IsCheckout", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut_Result>("Ins_ShiftAssignment_User_WorkingDay_UpdateCheckInOut", idParameter, userIdParameter, checkinTimeParameter, checkoutTimeParameter, isCheckinParameter, isCheckoutParameter);
-        }
-    
-        public virtual ObjectResult<Ins_ShiftTimeInOutConfig_GetByShiftId_Result> Ins_ShiftTimeInOutConfig_GetByShiftId(Nullable<int> shiftId)
-        {
-            var shiftIdParameter = shiftId.HasValue ?
-                new ObjectParameter("ShiftId", shiftId) :
-                new ObjectParameter("ShiftId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftTimeInOutConfig_GetByShiftId_Result>("Ins_ShiftTimeInOutConfig_GetByShiftId", shiftIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeBranchMap_GetByEmployeeId_Result>("Ins_EmployeeBranchMap_GetByEmployeeId", accountMapIdParameter);
         }
     
         public virtual ObjectResult<Ins_Task_Group_Delete_ByGroupId_Result> Ins_Task_Group_Delete_ByGroupId(Nullable<int> group_id)
@@ -2400,136 +3118,47 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Group_Delete_ByGroupId_Result>("Ins_Task_Group_Delete_ByGroupId", group_idParameter);
         }
     
-        public virtual ObjectResult<Ins_Task_Group_Update_Color_Result> Ins_Task_Group_Update_Color(Nullable<int> group_id, string color)
+        public virtual ObjectResult<Ins_EmployeeBranchMap_GetByBranchId_Result> Ins_EmployeeBranchMap_GetByBranchId(Nullable<int> branchId, Nullable<int> companyId, Nullable<bool> isGetAll)
         {
-            var group_idParameter = group_id.HasValue ?
-                new ObjectParameter("group_id", group_id) :
-                new ObjectParameter("group_id", typeof(int));
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
     
-            var colorParameter = color != null ?
-                new ObjectParameter("color", color) :
-                new ObjectParameter("color", typeof(string));
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Group_Update_Color_Result>("Ins_Task_Group_Update_Color", group_idParameter, colorParameter);
+            var isGetAllParameter = isGetAll.HasValue ?
+                new ObjectParameter("IsGetAll", isGetAll) :
+                new ObjectParameter("IsGetAll", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeBranchMap_GetByBranchId_Result>("Ins_EmployeeBranchMap_GetByBranchId", branchIdParameter, companyIdParameter, isGetAllParameter);
         }
     
-        public virtual ObjectResult<Ins_Task_Sub_Delete_BySubTaskId_Result> Ins_Task_Sub_Delete_BySubTaskId(Nullable<int> subtask_id)
+        public virtual int Ins_CompanyBranch_CreateRelate(Nullable<int> branchID, Nullable<int> regionId, ObjectParameter outResult)
         {
-            var subtask_idParameter = subtask_id.HasValue ?
-                new ObjectParameter("subtask_id", subtask_id) :
-                new ObjectParameter("subtask_id", typeof(int));
+            var branchIDParameter = branchID.HasValue ?
+                new ObjectParameter("BranchID", branchID) :
+                new ObjectParameter("BranchID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_Delete_BySubTaskId_Result>("Ins_Task_Sub_Delete_BySubTaskId", subtask_idParameter);
+            var regionIdParameter = regionId.HasValue ?
+                new ObjectParameter("RegionId", regionId) :
+                new ObjectParameter("RegionId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyBranch_CreateRelate", branchIDParameter, regionIdParameter, outResult);
         }
     
-        public virtual ObjectResult<Ins_Task_Sub_ListBySubTaskId_Result> Ins_Task_Sub_ListBySubTaskId(Nullable<int> subTask_id)
+        public virtual int Ins_CompanyDepartment_CreateRelate(Nullable<int> departmentID, Nullable<int> branchId, ObjectParameter outResult)
         {
-            var subTask_idParameter = subTask_id.HasValue ?
-                new ObjectParameter("SubTask_id", subTask_id) :
-                new ObjectParameter("SubTask_id", typeof(int));
+            var departmentIDParameter = departmentID.HasValue ?
+                new ObjectParameter("DepartmentID", departmentID) :
+                new ObjectParameter("DepartmentID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Task_Sub_ListBySubTaskId_Result>("Ins_Task_Sub_ListBySubTaskId", subTask_idParameter);
-        }
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
     
-        public virtual ObjectResult<Ins_TaskBranches_Create_Result> Ins_TaskBranches_Create(Nullable<int> task_id, Nullable<int> branch_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            var branch_idParameter = branch_id.HasValue ?
-                new ObjectParameter("branch_id", branch_id) :
-                new ObjectParameter("branch_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskBranches_Create_Result>("Ins_TaskBranches_Create", task_idParameter, branch_idParameter);
-        }
-    
-        public virtual ObjectResult<Ins_TaskDepartments_Create_Result> Ins_TaskDepartments_Create(Nullable<int> task_id, Nullable<int> department_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            var department_idParameter = department_id.HasValue ?
-                new ObjectParameter("department_id", department_id) :
-                new ObjectParameter("department_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskDepartments_Create_Result>("Ins_TaskDepartments_Create", task_idParameter, department_idParameter);
-        }
-    
-        public virtual ObjectResult<Ins_TaskPositions_Create_Result> Ins_TaskPositions_Create(Nullable<int> task_id, Nullable<int> position_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            var position_idParameter = position_id.HasValue ?
-                new ObjectParameter("position_id", position_id) :
-                new ObjectParameter("position_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskPositions_Create_Result>("Ins_TaskPositions_Create", task_idParameter, position_idParameter);
-        }
-    
-        public virtual int Ins_Tasks_Delete_all_Fields(Nullable<int> task_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_all_Fields", task_idParameter);
-        }
-    
-        public virtual int Ins_Tasks_Delete_All_Groups_ByTaskId(Nullable<int> task_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_All_Groups_ByTaskId", task_idParameter);
-        }
-    
-        public virtual int Ins_Tasks_Delete_All_Relations(Nullable<int> task_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_All_Relations", task_idParameter);
-        }
-    
-        public virtual int Ins_Tasks_Delete_All_SubTasks_ByTaskId(Nullable<int> task_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Tasks_Delete_All_SubTasks_ByTaskId", task_idParameter);
-        }
-    
-        public virtual ObjectResult<Ins_Tasks_Delete_Main_Result> Ins_Tasks_Delete_Main(Nullable<int> task_id, Nullable<int> company_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            var company_idParameter = company_id.HasValue ?
-                new ObjectParameter("company_id", company_id) :
-                new ObjectParameter("company_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Tasks_Delete_Main_Result>("Ins_Tasks_Delete_Main", task_idParameter, company_idParameter);
-        }
-    
-        public virtual ObjectResult<Ins_TaskTaskUsers_Create_Result> Ins_TaskTaskUsers_Create(Nullable<int> task_id, Nullable<int> user_account_id)
-        {
-            var task_idParameter = task_id.HasValue ?
-                new ObjectParameter("task_id", task_id) :
-                new ObjectParameter("task_id", typeof(int));
-    
-            var user_account_idParameter = user_account_id.HasValue ?
-                new ObjectParameter("user_account_id", user_account_id) :
-                new ObjectParameter("user_account_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_TaskTaskUsers_Create_Result>("Ins_TaskTaskUsers_Create", task_idParameter, user_account_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyDepartment_CreateRelate", departmentIDParameter, branchIdParameter, outResult);
         }
     
         public virtual ObjectResult<Ins_Timekeeper_log_GetListByAccountMapID_Result> Ins_Timekeeper_log_GetListByAccountMapID(Nullable<int> companyID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
@@ -2553,15 +3182,262 @@ namespace DataAccess.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Timekeeper_log_GetListByAccountMapID_Result>("Ins_Timekeeper_log_GetListByAccountMapID", companyIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter);
         }
     
-        public virtual int Ins_Payroll_User_Create_MultiDay(Nullable<int> assignmentUserID, Nullable<int> accountMapID, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> weekOfYear, Nullable<double> realWorkingHour, Nullable<double> realWorkingMinute, string restStartTimeShort, string restEndTimeShort, Nullable<double> realCoefficient, Nullable<int> status)
+        public virtual ObjectResult<Ins_Wifi_Branch_Get_ByWifiId_And_BranchId_Result> Ins_Wifi_Branch_Get_ByWifiId_And_BranchId(Nullable<int> wifiId, Nullable<int> branchId)
         {
-            var assignmentUserIDParameter = assignmentUserID.HasValue ?
-                new ObjectParameter("AssignmentUserID", assignmentUserID) :
-                new ObjectParameter("AssignmentUserID", typeof(int));
+            var wifiIdParameter = wifiId.HasValue ?
+                new ObjectParameter("WifiId", wifiId) :
+                new ObjectParameter("WifiId", typeof(int));
     
-            var accountMapIDParameter = accountMapID.HasValue ?
-                new ObjectParameter("AccountMapID", accountMapID) :
-                new ObjectParameter("AccountMapID", typeof(int));
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_Branch_Get_ByWifiId_And_BranchId_Result>("Ins_Wifi_Branch_Get_ByWifiId_And_BranchId", wifiIdParameter, branchIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Wifi_Create_Result> Ins_Wifi_Create(Nullable<int> radius, Nullable<int> speed, Nullable<int> accuracy, Nullable<int> altitude, Nullable<double> longitude, Nullable<double> latitude, string name, Nullable<int> branchID, string address, string type, Nullable<bool> isBothBssidSsid, string bssid, ObjectParameter wifiID)
+        {
+            var radiusParameter = radius.HasValue ?
+                new ObjectParameter("Radius", radius) :
+                new ObjectParameter("Radius", typeof(int));
+    
+            var speedParameter = speed.HasValue ?
+                new ObjectParameter("Speed", speed) :
+                new ObjectParameter("Speed", typeof(int));
+    
+            var accuracyParameter = accuracy.HasValue ?
+                new ObjectParameter("Accuracy", accuracy) :
+                new ObjectParameter("Accuracy", typeof(int));
+    
+            var altitudeParameter = altitude.HasValue ?
+                new ObjectParameter("Altitude", altitude) :
+                new ObjectParameter("Altitude", typeof(int));
+    
+            var longitudeParameter = longitude.HasValue ?
+                new ObjectParameter("Longitude", longitude) :
+                new ObjectParameter("Longitude", typeof(double));
+    
+            var latitudeParameter = latitude.HasValue ?
+                new ObjectParameter("Latitude", latitude) :
+                new ObjectParameter("Latitude", typeof(double));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var branchIDParameter = branchID.HasValue ?
+                new ObjectParameter("BranchID", branchID) :
+                new ObjectParameter("BranchID", typeof(int));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("Address", address) :
+                new ObjectParameter("Address", typeof(string));
+    
+            var typeParameter = type != null ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(string));
+    
+            var isBothBssidSsidParameter = isBothBssidSsid.HasValue ?
+                new ObjectParameter("IsBothBssidSsid", isBothBssidSsid) :
+                new ObjectParameter("IsBothBssidSsid", typeof(bool));
+    
+            var bssidParameter = bssid != null ?
+                new ObjectParameter("Bssid", bssid) :
+                new ObjectParameter("Bssid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_Create_Result>("Ins_Wifi_Create", radiusParameter, speedParameter, accuracyParameter, altitudeParameter, longitudeParameter, latitudeParameter, nameParameter, branchIDParameter, addressParameter, typeParameter, isBothBssidSsidParameter, bssidParameter, wifiID);
+        }
+    
+        public virtual int Ins_Wifi_Delete_ByWifiId(Nullable<int> wifiID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_Delete_ByWifiId", wifiIDParameter);
+        }
+    
+        public virtual int Ins_Wifi_Department_Delete_ByWifiId(Nullable<int> wifiID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_Department_Delete_ByWifiId", wifiIDParameter);
+        }
+    
+        public virtual int Ins_Wifi_Department_Delete_ByWifiId_And_DepartmentId(Nullable<int> wifiID, Nullable<int> departmentId)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            var departmentIdParameter = departmentId.HasValue ?
+                new ObjectParameter("DepartmentId", departmentId) :
+                new ObjectParameter("DepartmentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_Department_Delete_ByWifiId_And_DepartmentId", wifiIDParameter, departmentIdParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> Ins_Wifi_Department_Get_ByWifiId(Nullable<int> wifiID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Ins_Wifi_Department_Get_ByWifiId", wifiIDParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Wifi_Department_Get_ByWifiId_Value_Result> Ins_Wifi_Department_Get_ByWifiId_Value(Nullable<int> wifiId)
+        {
+            var wifiIdParameter = wifiId.HasValue ?
+                new ObjectParameter("WifiId", wifiId) :
+                new ObjectParameter("WifiId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_Department_Get_ByWifiId_Value_Result>("Ins_Wifi_Department_Get_ByWifiId_Value", wifiIdParameter);
+        }
+    
+        public virtual int Ins_Wifi_ExtraBranch_Delete_ByWifiId(Nullable<int> wifiID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_ExtraBranch_Delete_ByWifiId", wifiIDParameter);
+        }
+    
+        public virtual int Ins_Wifi_ExtraBranch_Delete_ByWifiId_And_BranchId(Nullable<int> wifiID, Nullable<int> branchId)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_ExtraBranch_Delete_ByWifiId_And_BranchId", wifiIDParameter, branchIdParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> Ins_Wifi_ExtraBranch_Get_ByWifiId(Nullable<int> wifiID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Ins_Wifi_ExtraBranch_Get_ByWifiId", wifiIDParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Wifi_ExtraBranch_Get_ByWifiId_Value_Result> Ins_Wifi_ExtraBranch_Get_ByWifiId_Value(Nullable<int> wifiID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_ExtraBranch_Get_ByWifiId_Value_Result>("Ins_Wifi_ExtraBranch_Get_ByWifiId_Value", wifiIDParameter);
+        }
+    
+        public virtual int Ins_Wifi_ExtraBranch_Insert(Nullable<int> wifiID, Nullable<int> branchID, ObjectParameter wifiBranchID)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            var branchIDParameter = branchID.HasValue ?
+                new ObjectParameter("BranchID", branchID) :
+                new ObjectParameter("BranchID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Wifi_ExtraBranch_Insert", wifiIDParameter, branchIDParameter, wifiBranchID);
+        }
+    
+        public virtual ObjectResult<Ins_Wifi_Get_ByCompanyId_Result> Ins_Wifi_Get_ByCompanyId(Nullable<int> companyId, string type)
+        {
+            var companyIdParameter = companyId.HasValue ?
+                new ObjectParameter("CompanyId", companyId) :
+                new ObjectParameter("CompanyId", typeof(int));
+    
+            var typeParameter = type != null ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_Get_ByCompanyId_Result>("Ins_Wifi_Get_ByCompanyId", companyIdParameter, typeParameter);
+        }
+    
+        public virtual ObjectResult<Ins_Wifi_Update_ByWifiId_Result> Ins_Wifi_Update_ByWifiId(Nullable<int> wifiID, Nullable<int> radius, Nullable<int> speed, Nullable<int> accuracy, Nullable<int> altitude, Nullable<double> longitude, Nullable<double> latitude, string wifiName, Nullable<int> branchID, string address, string type, Nullable<bool> isBothBssidSsid, string bssid)
+        {
+            var wifiIDParameter = wifiID.HasValue ?
+                new ObjectParameter("WifiID", wifiID) :
+                new ObjectParameter("WifiID", typeof(int));
+    
+            var radiusParameter = radius.HasValue ?
+                new ObjectParameter("Radius", radius) :
+                new ObjectParameter("Radius", typeof(int));
+    
+            var speedParameter = speed.HasValue ?
+                new ObjectParameter("Speed", speed) :
+                new ObjectParameter("Speed", typeof(int));
+    
+            var accuracyParameter = accuracy.HasValue ?
+                new ObjectParameter("Accuracy", accuracy) :
+                new ObjectParameter("Accuracy", typeof(int));
+    
+            var altitudeParameter = altitude.HasValue ?
+                new ObjectParameter("Altitude", altitude) :
+                new ObjectParameter("Altitude", typeof(int));
+    
+            var longitudeParameter = longitude.HasValue ?
+                new ObjectParameter("Longitude", longitude) :
+                new ObjectParameter("Longitude", typeof(double));
+    
+            var latitudeParameter = latitude.HasValue ?
+                new ObjectParameter("Latitude", latitude) :
+                new ObjectParameter("Latitude", typeof(double));
+    
+            var wifiNameParameter = wifiName != null ?
+                new ObjectParameter("WifiName", wifiName) :
+                new ObjectParameter("WifiName", typeof(string));
+    
+            var branchIDParameter = branchID.HasValue ?
+                new ObjectParameter("BranchID", branchID) :
+                new ObjectParameter("BranchID", typeof(int));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("Address", address) :
+                new ObjectParameter("Address", typeof(string));
+    
+            var typeParameter = type != null ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(string));
+    
+            var isBothBssidSsidParameter = isBothBssidSsid.HasValue ?
+                new ObjectParameter("IsBothBssidSsid", isBothBssidSsid) :
+                new ObjectParameter("IsBothBssidSsid", typeof(bool));
+    
+            var bssidParameter = bssid != null ?
+                new ObjectParameter("Bssid", bssid) :
+                new ObjectParameter("Bssid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Wifi_Update_ByWifiId_Result>("Ins_Wifi_Update_ByWifiId", wifiIDParameter, radiusParameter, speedParameter, accuracyParameter, altitudeParameter, longitudeParameter, latitudeParameter, wifiNameParameter, branchIDParameter, addressParameter, typeParameter, isBothBssidSsidParameter, bssidParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_GetByBranchSimple_Result> Ins_ShiftAssignment_GetByBranchSimple(Nullable<int> branchId)
+        {
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_GetByBranchSimple_Result>("Ins_ShiftAssignment_GetByBranchSimple", branchIdParameter);
+        }
+    
+        public virtual ObjectResult<Ins_ShiftAssignment_GetAllEmployerInShift_Result> Ins_ShiftAssignment_GetAllEmployerInShift(Nullable<int> shiftAssignmentId, Nullable<int> weekOfYear, Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)
+        {
+            var shiftAssignmentIdParameter = shiftAssignmentId.HasValue ?
+                new ObjectParameter("ShiftAssignmentId", shiftAssignmentId) :
+                new ObjectParameter("ShiftAssignmentId", typeof(int));
+    
+            var weekOfYearParameter = weekOfYear.HasValue ?
+                new ObjectParameter("WeekOfYear", weekOfYear) :
+                new ObjectParameter("WeekOfYear", typeof(int));
     
             var dateFromParameter = dateFrom.HasValue ?
                 new ObjectParameter("DateFrom", dateFrom) :
@@ -2571,490 +3447,20 @@ namespace DataAccess.EF
                 new ObjectParameter("DateTo", dateTo) :
                 new ObjectParameter("DateTo", typeof(System.DateTime));
     
-            var startTimeParameter = startTime.HasValue ?
-                new ObjectParameter("StartTime", startTime) :
-                new ObjectParameter("StartTime", typeof(System.DateTime));
-    
-            var endTimeParameter = endTime.HasValue ?
-                new ObjectParameter("EndTime", endTime) :
-                new ObjectParameter("EndTime", typeof(System.DateTime));
-    
-            var weekOfYearParameter = weekOfYear.HasValue ?
-                new ObjectParameter("WeekOfYear", weekOfYear) :
-                new ObjectParameter("WeekOfYear", typeof(int));
-    
-            var realWorkingHourParameter = realWorkingHour.HasValue ?
-                new ObjectParameter("RealWorkingHour", realWorkingHour) :
-                new ObjectParameter("RealWorkingHour", typeof(double));
-    
-            var realWorkingMinuteParameter = realWorkingMinute.HasValue ?
-                new ObjectParameter("RealWorkingMinute", realWorkingMinute) :
-                new ObjectParameter("RealWorkingMinute", typeof(double));
-    
-            var restStartTimeShortParameter = restStartTimeShort != null ?
-                new ObjectParameter("RestStartTimeShort", restStartTimeShort) :
-                new ObjectParameter("RestStartTimeShort", typeof(string));
-    
-            var restEndTimeShortParameter = restEndTimeShort != null ?
-                new ObjectParameter("RestEndTimeShort", restEndTimeShort) :
-                new ObjectParameter("RestEndTimeShort", typeof(string));
-    
-            var realCoefficientParameter = realCoefficient.HasValue ?
-                new ObjectParameter("RealCoefficient", realCoefficient) :
-                new ObjectParameter("RealCoefficient", typeof(double));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Payroll_User_Create_MultiDay", assignmentUserIDParameter, accountMapIDParameter, dateFromParameter, dateToParameter, startTimeParameter, endTimeParameter, weekOfYearParameter, realWorkingHourParameter, realWorkingMinuteParameter, restStartTimeShortParameter, restEndTimeShortParameter, realCoefficientParameter, statusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_GetAllEmployerInShift_Result>("Ins_ShiftAssignment_GetAllEmployerInShift", shiftAssignmentIdParameter, weekOfYearParameter, dateFromParameter, dateToParameter);
         }
     
-        public virtual int Ins_Timekeeper_log_User_Insert(Nullable<int> accountMapID, Nullable<int> payrollUserID, Nullable<System.DateTime> logTime, Nullable<int> clockType, Nullable<int> currentBranchId, Nullable<int> connectionType, Nullable<int> timeKeeperDevice, string bssid, string ssid, Nullable<double> latitude, Nullable<double> longitude, Nullable<double> accuracy, Nullable<double> altitude, Nullable<double> altitudeAccuracy, Nullable<double> speed, Nullable<double> speedAccuracy, Nullable<double> course, Nullable<double> courseAccuracy, Nullable<bool> mocked, ObjectParameter timekeeper_logID)
-        {
-            var accountMapIDParameter = accountMapID.HasValue ?
-                new ObjectParameter("AccountMapID", accountMapID) :
-                new ObjectParameter("AccountMapID", typeof(int));
-    
-            var payrollUserIDParameter = payrollUserID.HasValue ?
-                new ObjectParameter("PayrollUserID", payrollUserID) :
-                new ObjectParameter("PayrollUserID", typeof(int));
-    
-            var logTimeParameter = logTime.HasValue ?
-                new ObjectParameter("LogTime", logTime) :
-                new ObjectParameter("LogTime", typeof(System.DateTime));
-    
-            var clockTypeParameter = clockType.HasValue ?
-                new ObjectParameter("ClockType", clockType) :
-                new ObjectParameter("ClockType", typeof(int));
-    
-            var currentBranchIdParameter = currentBranchId.HasValue ?
-                new ObjectParameter("CurrentBranchId", currentBranchId) :
-                new ObjectParameter("CurrentBranchId", typeof(int));
-    
-            var connectionTypeParameter = connectionType.HasValue ?
-                new ObjectParameter("ConnectionType", connectionType) :
-                new ObjectParameter("ConnectionType", typeof(int));
-    
-            var timeKeeperDeviceParameter = timeKeeperDevice.HasValue ?
-                new ObjectParameter("TimeKeeperDevice", timeKeeperDevice) :
-                new ObjectParameter("TimeKeeperDevice", typeof(int));
-    
-            var bssidParameter = bssid != null ?
-                new ObjectParameter("Bssid", bssid) :
-                new ObjectParameter("Bssid", typeof(string));
-    
-            var ssidParameter = ssid != null ?
-                new ObjectParameter("Ssid", ssid) :
-                new ObjectParameter("Ssid", typeof(string));
-    
-            var latitudeParameter = latitude.HasValue ?
-                new ObjectParameter("Latitude", latitude) :
-                new ObjectParameter("Latitude", typeof(double));
-    
-            var longitudeParameter = longitude.HasValue ?
-                new ObjectParameter("Longitude", longitude) :
-                new ObjectParameter("Longitude", typeof(double));
-    
-            var accuracyParameter = accuracy.HasValue ?
-                new ObjectParameter("Accuracy", accuracy) :
-                new ObjectParameter("Accuracy", typeof(double));
-    
-            var altitudeParameter = altitude.HasValue ?
-                new ObjectParameter("Altitude", altitude) :
-                new ObjectParameter("Altitude", typeof(double));
-    
-            var altitudeAccuracyParameter = altitudeAccuracy.HasValue ?
-                new ObjectParameter("AltitudeAccuracy", altitudeAccuracy) :
-                new ObjectParameter("AltitudeAccuracy", typeof(double));
-    
-            var speedParameter = speed.HasValue ?
-                new ObjectParameter("Speed", speed) :
-                new ObjectParameter("Speed", typeof(double));
-    
-            var speedAccuracyParameter = speedAccuracy.HasValue ?
-                new ObjectParameter("SpeedAccuracy", speedAccuracy) :
-                new ObjectParameter("SpeedAccuracy", typeof(double));
-    
-            var courseParameter = course.HasValue ?
-                new ObjectParameter("Course", course) :
-                new ObjectParameter("Course", typeof(double));
-    
-            var courseAccuracyParameter = courseAccuracy.HasValue ?
-                new ObjectParameter("CourseAccuracy", courseAccuracy) :
-                new ObjectParameter("CourseAccuracy", typeof(double));
-    
-            var mockedParameter = mocked.HasValue ?
-                new ObjectParameter("Mocked", mocked) :
-                new ObjectParameter("Mocked", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Timekeeper_log_User_Insert", accountMapIDParameter, payrollUserIDParameter, logTimeParameter, clockTypeParameter, currentBranchIdParameter, connectionTypeParameter, timeKeeperDeviceParameter, bssidParameter, ssidParameter, latitudeParameter, longitudeParameter, accuracyParameter, altitudeParameter, altitudeAccuracyParameter, speedParameter, speedAccuracyParameter, courseParameter, courseAccuracyParameter, mockedParameter, timekeeper_logID);
-        }
-    
-        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result> Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay(Nullable<int> shiftAssignmentUserWorkingDayId)
-        {
-            var shiftAssignmentUserWorkingDayIdParameter = shiftAssignmentUserWorkingDayId.HasValue ?
-                new ObjectParameter("ShiftAssignmentUserWorkingDayId", shiftAssignmentUserWorkingDayId) :
-                new ObjectParameter("ShiftAssignmentUserWorkingDayId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result>("Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay", shiftAssignmentUserWorkingDayIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result> Ins_ShiftAssignment_User_WorkingDay_Log_Trash(Nullable<int> logId, Nullable<int> trashedBy, string reason)
-        {
-            var logIdParameter = logId.HasValue ?
-                new ObjectParameter("LogId", logId) :
-                new ObjectParameter("LogId", typeof(int));
-    
-            var trashedByParameter = trashedBy.HasValue ?
-                new ObjectParameter("TrashedBy", trashedBy) :
-                new ObjectParameter("TrashedBy", typeof(int));
-    
-            var reasonParameter = reason != null ?
-                new ObjectParameter("Reason", reason) :
-                new ObjectParameter("Reason", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result>("Ins_ShiftAssignment_User_WorkingDay_Log_Trash", logIdParameter, trashedByParameter, reasonParameter);
-        }
-    
-        public virtual ObjectResult<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result> Ins_ShiftAssignment_User_WorkingDay_GetSummary(Nullable<int> companyId, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate, string employeeIds, Nullable<int> month, Nullable<int> year)
+        public virtual ObjectResult<Ins_EmployeesInfo_GetDetailForAddShift_Result> Ins_EmployeesInfo_GetDetailForAddShift(Nullable<int> companyId, Nullable<int> shift)
         {
             var companyIdParameter = companyId.HasValue ?
                 new ObjectParameter("CompanyId", companyId) :
                 new ObjectParameter("CompanyId", typeof(int));
     
-            var startDateParameter = startDate.HasValue ?
-                new ObjectParameter("StartDate", startDate) :
-                new ObjectParameter("StartDate", typeof(System.DateTime));
-    
-            var endDateParameter = endDate.HasValue ?
-                new ObjectParameter("EndDate", endDate) :
-                new ObjectParameter("EndDate", typeof(System.DateTime));
-    
-            var employeeIdsParameter = employeeIds != null ?
-                new ObjectParameter("EmployeeIds", employeeIds) :
-                new ObjectParameter("EmployeeIds", typeof(string));
-    
-            var monthParameter = month.HasValue ?
-                new ObjectParameter("Month", month) :
-                new ObjectParameter("Month", typeof(int));
-    
-            var yearParameter = year.HasValue ?
-                new ObjectParameter("Year", year) :
-                new ObjectParameter("Year", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Result>("Ins_ShiftAssignment_User_WorkingDay_GetSummary", companyIdParameter, startDateParameter, endDateParameter, employeeIdsParameter, monthParameter, yearParameter);
-        }
-    
-        public virtual ObjectResult<Nullable<decimal>> Ins_ShiftAssignment_User_WorkingDay_Log_Create(Nullable<int> shiftAssignmentUserWorkingDayId, Nullable<int> actionType, Nullable<int> clockType, Nullable<System.DateTime> actionTime, string reason, Nullable<int> createdBy)
-        {
-            var shiftAssignmentUserWorkingDayIdParameter = shiftAssignmentUserWorkingDayId.HasValue ?
-                new ObjectParameter("ShiftAssignmentUserWorkingDayId", shiftAssignmentUserWorkingDayId) :
-                new ObjectParameter("ShiftAssignmentUserWorkingDayId", typeof(int));
-    
-            var actionTypeParameter = actionType.HasValue ?
-                new ObjectParameter("ActionType", actionType) :
-                new ObjectParameter("ActionType", typeof(int));
-    
-            var clockTypeParameter = clockType.HasValue ?
-                new ObjectParameter("ClockType", clockType) :
-                new ObjectParameter("ClockType", typeof(int));
-    
-            var actionTimeParameter = actionTime.HasValue ?
-                new ObjectParameter("ActionTime", actionTime) :
-                new ObjectParameter("ActionTime", typeof(System.DateTime));
-    
-            var reasonParameter = reason != null ?
-                new ObjectParameter("Reason", reason) :
-                new ObjectParameter("Reason", typeof(string));
-    
-            var createdByParameter = createdBy.HasValue ?
-                new ObjectParameter("CreatedBy", createdBy) :
-                new ObjectParameter("CreatedBy", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Ins_ShiftAssignment_User_WorkingDay_Log_Create", shiftAssignmentUserWorkingDayIdParameter, actionTypeParameter, clockTypeParameter, actionTimeParameter, reasonParameter, createdByParameter);
-        }
-    
-        public virtual int Ins_CompanyRegion_Create(string regionName, Nullable<int> companyID, string color, string code, Nullable<int> sortIndex, string description, string alias, ObjectParameter regionID)
-        {
-            var regionNameParameter = regionName != null ?
-                new ObjectParameter("RegionName", regionName) :
-                new ObjectParameter("RegionName", typeof(string));
-    
-            var companyIDParameter = companyID.HasValue ?
-                new ObjectParameter("CompanyID", companyID) :
-                new ObjectParameter("CompanyID", typeof(int));
-    
-            var colorParameter = color != null ?
-                new ObjectParameter("Color", color) :
-                new ObjectParameter("Color", typeof(string));
-    
-            var codeParameter = code != null ?
-                new ObjectParameter("Code", code) :
-                new ObjectParameter("Code", typeof(string));
-    
-            var sortIndexParameter = sortIndex.HasValue ?
-                new ObjectParameter("SortIndex", sortIndex) :
-                new ObjectParameter("SortIndex", typeof(int));
-    
-            var descriptionParameter = description != null ?
-                new ObjectParameter("Description", description) :
-                new ObjectParameter("Description", typeof(string));
-    
-            var aliasParameter = alias != null ?
-                new ObjectParameter("Alias", alias) :
-                new ObjectParameter("Alias", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyRegion_Create", regionNameParameter, companyIDParameter, colorParameter, codeParameter, sortIndexParameter, descriptionParameter, aliasParameter, regionID);
-        }
-    
-        public virtual ObjectResult<Ins_CompanyRegion_GetListByCompany_Result> Ins_CompanyRegion_GetListByCompany(Nullable<int> companyID)
-        {
-            var companyIDParameter = companyID.HasValue ?
-                new ObjectParameter("CompanyID", companyID) :
-                new ObjectParameter("CompanyID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyRegion_GetListByCompany_Result>("Ins_CompanyRegion_GetListByCompany", companyIDParameter);
-        }
-    
-        public virtual int Ins_CompanyRegion_Update(string regionName, Nullable<int> companyID, string color, string code, Nullable<int> sortIndex, string description, string alias, Nullable<int> regionID)
-        {
-            var regionNameParameter = regionName != null ?
-                new ObjectParameter("RegionName", regionName) :
-                new ObjectParameter("RegionName", typeof(string));
-    
-            var companyIDParameter = companyID.HasValue ?
-                new ObjectParameter("CompanyID", companyID) :
-                new ObjectParameter("CompanyID", typeof(int));
-    
-            var colorParameter = color != null ?
-                new ObjectParameter("Color", color) :
-                new ObjectParameter("Color", typeof(string));
-    
-            var codeParameter = code != null ?
-                new ObjectParameter("Code", code) :
-                new ObjectParameter("Code", typeof(string));
-    
-            var sortIndexParameter = sortIndex.HasValue ?
-                new ObjectParameter("SortIndex", sortIndex) :
-                new ObjectParameter("SortIndex", typeof(int));
-    
-            var descriptionParameter = description != null ?
-                new ObjectParameter("Description", description) :
-                new ObjectParameter("Description", typeof(string));
-    
-            var aliasParameter = alias != null ?
-                new ObjectParameter("Alias", alias) :
-                new ObjectParameter("Alias", typeof(string));
-    
-            var regionIDParameter = regionID.HasValue ?
-                new ObjectParameter("RegionID", regionID) :
-                new ObjectParameter("RegionID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_CompanyRegion_Update", regionNameParameter, companyIDParameter, colorParameter, codeParameter, sortIndexParameter, descriptionParameter, aliasParameter, regionIDParameter);
-        }
-    
-        public virtual ObjectResult<Ins_Employee_GetList_Result> Ins_Employee_GetList(Nullable<int> company_id, Nullable<int> page, Nullable<int> page_size, Nullable<System.DateTime> start_date, Nullable<System.DateTime> end_date, Nullable<bool> is_no_need_timekeeping, ObjectParameter totalRecords)
-        {
-            var company_idParameter = company_id.HasValue ?
-                new ObjectParameter("company_id", company_id) :
-                new ObjectParameter("company_id", typeof(int));
-    
-            var pageParameter = page.HasValue ?
-                new ObjectParameter("page", page) :
-                new ObjectParameter("page", typeof(int));
-    
-            var page_sizeParameter = page_size.HasValue ?
-                new ObjectParameter("page_size", page_size) :
-                new ObjectParameter("page_size", typeof(int));
-    
-            var start_dateParameter = start_date.HasValue ?
-                new ObjectParameter("start_date", start_date) :
-                new ObjectParameter("start_date", typeof(System.DateTime));
-    
-            var end_dateParameter = end_date.HasValue ?
-                new ObjectParameter("end_date", end_date) :
-                new ObjectParameter("end_date", typeof(System.DateTime));
-    
-            var is_no_need_timekeepingParameter = is_no_need_timekeeping.HasValue ?
-                new ObjectParameter("is_no_need_timekeeping", is_no_need_timekeeping) :
-                new ObjectParameter("is_no_need_timekeeping", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Employee_GetList_Result>("Ins_Employee_GetList", company_idParameter, pageParameter, page_sizeParameter, start_dateParameter, end_dateParameter, is_no_need_timekeepingParameter, totalRecords);
-        }
-    
-        public virtual ObjectResult<Ins_CompanyDepartment_SelectByBrandId_Result> Ins_CompanyDepartment_SelectByBrandId(Nullable<int> branchId, Nullable<int> companyId)
-        {
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyDepartment_SelectByBrandId_Result>("Ins_CompanyDepartment_SelectByBrandId", branchIdParameter, companyIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_CompanyPosition_SelectByBrandid_Result> Ins_CompanyPosition_SelectByBrandid(Nullable<int> branchId, Nullable<int> companyId)
-        {
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyPosition_SelectByBrandid_Result>("Ins_CompanyPosition_SelectByBrandid", branchIdParameter, companyIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result> Ins_Employee_GetEmployeeAccountMap_ByCompanyId(Nullable<int> companyId)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result>("Ins_Employee_GetEmployeeAccountMap_ByCompanyId", companyIdParameter);
-        }
-    
-        public virtual int Ins_Employee_UpdateDetails_v2(Nullable<int> employeeId, string fullName, Nullable<System.DateTime> birthDate, string gender, string employeeCode, Nullable<int> displayOrder, string email, string phone, string phoneCode, Nullable<int> departmentId, Nullable<int> regionId, Nullable<int> branchId, Nullable<int> positionId)
-        {
-            var employeeIdParameter = employeeId.HasValue ?
-                new ObjectParameter("EmployeeId", employeeId) :
-                new ObjectParameter("EmployeeId", typeof(int));
-    
-            var fullNameParameter = fullName != null ?
-                new ObjectParameter("FullName", fullName) :
-                new ObjectParameter("FullName", typeof(string));
-    
-            var birthDateParameter = birthDate.HasValue ?
-                new ObjectParameter("BirthDate", birthDate) :
-                new ObjectParameter("BirthDate", typeof(System.DateTime));
-    
-            var genderParameter = gender != null ?
-                new ObjectParameter("Gender", gender) :
-                new ObjectParameter("Gender", typeof(string));
-    
-            var employeeCodeParameter = employeeCode != null ?
-                new ObjectParameter("EmployeeCode", employeeCode) :
-                new ObjectParameter("EmployeeCode", typeof(string));
-    
-            var displayOrderParameter = displayOrder.HasValue ?
-                new ObjectParameter("DisplayOrder", displayOrder) :
-                new ObjectParameter("DisplayOrder", typeof(int));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var phoneParameter = phone != null ?
-                new ObjectParameter("Phone", phone) :
-                new ObjectParameter("Phone", typeof(string));
-    
-            var phoneCodeParameter = phoneCode != null ?
-                new ObjectParameter("PhoneCode", phoneCode) :
-                new ObjectParameter("PhoneCode", typeof(string));
-    
-            var departmentIdParameter = departmentId.HasValue ?
-                new ObjectParameter("DepartmentId", departmentId) :
-                new ObjectParameter("DepartmentId", typeof(int));
-    
-            var regionIdParameter = regionId.HasValue ?
-                new ObjectParameter("RegionId", regionId) :
-                new ObjectParameter("RegionId", typeof(int));
-    
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            var positionIdParameter = positionId.HasValue ?
-                new ObjectParameter("PositionId", positionId) :
-                new ObjectParameter("PositionId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ins_Employee_UpdateDetails_v2", employeeIdParameter, fullNameParameter, birthDateParameter, genderParameter, employeeCodeParameter, displayOrderParameter, emailParameter, phoneParameter, phoneCodeParameter, departmentIdParameter, regionIdParameter, branchIdParameter, positionIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_EmployeeBranchMap_GetByBranchId_Result> Ins_EmployeeBranchMap_GetByBranchId(Nullable<int> branchId, Nullable<int> companyId)
-        {
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeBranchMap_GetByBranchId_Result>("Ins_EmployeeBranchMap_GetByBranchId", branchIdParameter, companyIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_EmployeeDepartmentMap_GetCompanyId_Result> Ins_EmployeeDepartmentMap_GetCompanyId(Nullable<int> companyId)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeDepartmentMap_GetCompanyId_Result>("Ins_EmployeeDepartmentMap_GetCompanyId", companyIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_EmployeePositionMap_GetCompanyId_Result> Ins_EmployeePositionMap_GetCompanyId(Nullable<int> companyId)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeePositionMap_GetCompanyId_Result>("Ins_EmployeePositionMap_GetCompanyId", companyIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId_Result> Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId(Nullable<int> companyId, Nullable<int> branchId)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId_Result>("Ins_EmployeeDepartmentMap_GetCompanyIdAndBranchId", companyIdParameter, branchIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_EmployeePositionMap_GetCompanyIdAndBranchId_Result> Ins_EmployeePositionMap_GetCompanyIdAndBranchId(Nullable<int> companyId, Nullable<int> branchId)
-        {
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeePositionMap_GetCompanyIdAndBranchId_Result>("Ins_EmployeePositionMap_GetCompanyIdAndBranchId", companyIdParameter, branchIdParameter);
-        }
-    
-        public virtual ObjectResult<Ins_CompanyPosition_CreateInAllDepartmentId_Result> Ins_CompanyPosition_CreateInAllDepartmentId(string name, string alias, string code, Nullable<int> companyId, Nullable<int> expYear)
-        {
-            var nameParameter = name != null ?
-                new ObjectParameter("Name", name) :
-                new ObjectParameter("Name", typeof(string));
-    
-            var aliasParameter = alias != null ?
-                new ObjectParameter("Alias", alias) :
-                new ObjectParameter("Alias", typeof(string));
-    
-            var codeParameter = code != null ?
-                new ObjectParameter("Code", code) :
-                new ObjectParameter("Code", typeof(string));
-    
-            var companyIdParameter = companyId.HasValue ?
-                new ObjectParameter("CompanyId", companyId) :
-                new ObjectParameter("CompanyId", typeof(int));
-    
-            var expYearParameter = expYear.HasValue ?
-                new ObjectParameter("ExpYear", expYear) :
-                new ObjectParameter("ExpYear", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_CompanyPosition_CreateInAllDepartmentId_Result>("Ins_CompanyPosition_CreateInAllDepartmentId", nameParameter, aliasParameter, codeParameter, companyIdParameter, expYearParameter);
+            var shiftParameter = shift.HasValue ?
+                new ObjectParameter("Shift", shift) :
+                new ObjectParameter("Shift", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ins_EmployeesInfo_GetDetailForAddShift_Result>("Ins_EmployeesInfo_GetDetailForAddShift", companyIdParameter, shiftParameter);
         }
     }
 }

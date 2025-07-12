@@ -16,6 +16,13 @@ namespace BussinessObject.Models.Company
         public List<CreatePosisionRequest> Posisions { get; set; }
         public int CompanyId { get; set; }
         public int ExpYear { get; set; }
+        [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsOnboarding { get; set; }
+    }
+
+    public class PosisionListRequest
+    {
+       
     }
 
     public class CreatePosisionRequest

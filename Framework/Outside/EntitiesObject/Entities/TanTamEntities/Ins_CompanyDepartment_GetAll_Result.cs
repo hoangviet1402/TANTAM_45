@@ -23,7 +23,7 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string Alias { get; set; }
         public string Code { get; set; }
         public Nullable<bool> IsHead { get; set; }
-        public int BranchId { get; set; }
+        public Nullable<int> BranchId { get; set; }
         public string BranchName { get; set; }
         public string Color { get; set; }
     }

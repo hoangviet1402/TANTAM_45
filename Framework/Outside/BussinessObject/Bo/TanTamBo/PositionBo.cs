@@ -53,7 +53,7 @@ namespace BussinessObject.Bo.TanTamBo
 
             try
             {
-                var positionId =  DaoFactory.Position.CreatePosition(request.Name, request.BrandId, request.CompanyId);
+                var positionId = DaoFactory.Position.CreatePosition(request.Name, request.BrandId, request.CompanyId);
 
                 if (positionId > 0)
                 {
@@ -69,9 +69,9 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("CreatePositionAsync Exception Name {0}, DepartmentId {1}, CompanyId {2} EX:", 
+                CommonLogger.DefaultLogger.ErrorFormat("CreatePositionAsync Exception Name {0}, DepartmentId {1}, CompanyId {2} EX:",
                     request.Name,
-                    request.BrandId ,
+                    request.BrandId,
                     request.CompanyId,
                     ex
                 );
@@ -92,34 +92,39 @@ namespace BussinessObject.Bo.TanTamBo
             };
             try
             {
-                List<Ins_CompanyPosition_CreateInAllDepartmentId_Result> dataSQL;
+                var total = 0;
+                int positionID = 0;
+                var dataBrandID = DaoFactory.Branches.GetAllBranchs(companyId, out total).OrderBy(x => x.BranchId).ToList();
+
                 foreach (var item in request.Posisions)
                 {
-                    dataSQL = DaoFactory.Position.CreatePositionInAllDepartment(
-                        item.Names, 
-                        companyId,
-                        StringCommon.NormalizeText(item.Names,"-"),
+                    positionID = DaoFactory.Position.CreatePosition_Simple(
+                        item.Names,
+                        StringCommon.NormalizeText(item.Names, "-"),
                         StringCommon.NormalizeText(item.Names, "_").ToUpper(),
-                        item.ExpYear);
+                        companyId,
+                        item.ExpYear
+                    );
 
-                    if (dataSQL == null || !dataSQL.Any())
+                    if (positionID <= 0)
                     {
                         continue;
                     }
 
-                    var positions = dataSQL.Select(x => new
+                    foreach (var item_dataBrandID in dataBrandID)
                     {
-                        x.Id,
-                        x.BranchId,
-                        x.BranchName,
-                        x.CreatedAt,
-                        x.Name
-                    }).Distinct().ToList();
+                        DaoFactory.Position.CreatePosition_CreateRelate(
+                            item_dataBrandID.BranchId,
+                            positionID,
+                            0,
+                            0
+                        );
+                    }
 
-                    response.Data.AddRange(
-                        positions.Select(itemPostion => new CreatePosisionResponse()
+                    response.Data.Add(
+                        new CreatePosisionResponse()
                         {
-                            Id = itemPostion.Id ?? 0,
+                            Id = positionID,
                             Name = item.Names,
                             Code = StringCommon.NormalizeText(item.Names, "_").ToUpper(),
                             SortIndex = 0,
@@ -127,15 +132,15 @@ namespace BussinessObject.Bo.TanTamBo
                             ExpYear = item.ExpYear,
                             Description = null,
                             Alias = StringCommon.NormalizeText(item.Names, "-"),
-                            BranchIds = dataSQL.Where(x => x.Id == itemPostion.Id).Select(x => x.BranchId.GetValueOrDefault(0)).Distinct().ToList(),
-                            Branchs = dataSQL.Where(x => x.Id == itemPostion.Id).Select(x => new PosisionsBranchsResponseList
+                            BranchIds = dataBrandID.Select(x => x.BranchId).Distinct().ToList(),
+                            Branchs = dataBrandID.Select(x => new PosisionsBranchsResponseList
                             {
-                                Id = x.BranchId ?? 0,
+                                Id = x.BranchId,
                                 Name = x.BranchName ?? string.Empty,
                                 Color = x.Color ?? string.Empty,
                             }).Distinct().ToList()
                         }
-                    ));
+                    );
                 }
                 if (response.Data != null && response.Data.Any())
                 {

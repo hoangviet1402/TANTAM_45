@@ -59,6 +59,11 @@ namespace BussinessObject.Models.Employee
         public string phoneCode { get; set; }
         public bool accountIsActive { get; set; }
         public string deviceId { get; set; }
+        public object position_obj { get; set; }
+        public object department_obj { get; set; }
+        public object company_obj { get; set; }
+        public object region_obj { get; set; }
+        public object branch_obj { get; set; }
     }
 
     /// <summary>
@@ -76,6 +81,14 @@ namespace BussinessObject.Models.Employee
         public int? title { get; set; }
         public bool employeeAccountMapIsActive { get; set; }
         public bool accountIsActive { get; set; }
+        public bool isActive { get; set; }
+        public bool isQuit { get; set; }
+        // New object fields for detailed information
+        public object company_obj { get; set; }
+        public object branch_obj { get; set; }
+        public object department_obj { get; set; }
+        public object position_obj { get; set; }
+        public object region_obj { get; set; }
     }
 
     /// <summary>

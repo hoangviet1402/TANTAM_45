@@ -688,5 +688,262 @@ namespace BussinessObject.Models.Shift
 
     #endregion
 
+    #region  HistoryEmployeeShift
 
+    public class HistoryEmployeeShiftRequest
+    {
+        [JsonProperty("shift_key", NullValueHandling = NullValueHandling.Ignore)]
+        public int ShiftID { get; set; }
+        [JsonProperty("week_of_year", NullValueHandling = NullValueHandling.Ignore)]
+        public int WeekOfYear { get; set; }
+        [JsonProperty("year", NullValueHandling = NullValueHandling.Ignore)]
+        public int Year { get; set; }
+        [JsonProperty("branch_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int BranchId { get; set; }
+        //?shift_key=H
+        //&branch_id=682ef049dc534fa14b0dedf4
+        //&week_of_year=26&year=2025
+    }
+    public class HistoryEmployeeShiftResponse
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        [JsonProperty("shift_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string ShiftKey { get; set; }
+
+        [JsonProperty("shift_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int ShiftId { get; set; }
+
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string StartTime { get; set; }
+
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndTime { get; set; }
+
+        [JsonProperty("working_hour", NullValueHandling = NullValueHandling.Ignore)]
+        public double WorkingHour { get; set; }
+
+        [JsonProperty("working_day", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkingDay { get; set; }
+
+        [JsonProperty("week_of_year", NullValueHandling = NullValueHandling.Ignore)]
+        public int WeekOfYear { get; set; }
+
+        [JsonProperty("branch_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int BranchId { get; set; }
+
+        [JsonProperty("total_register", NullValueHandling = NullValueHandling.Ignore)]
+        public int TotalRegister { get; set; }
+
+        [JsonProperty("is_confirm", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsConfirm { get; set; }
+
+        [JsonProperty("sort_index", NullValueHandling = NullValueHandling.Ignore)]
+        public int SortIndex { get; set; }
+
+        [JsonProperty("end_working_date", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? EndWorkingDate { get; set; }
+
+        [JsonProperty("timezone", NullValueHandling = NullValueHandling.Ignore)]
+        public string Timezone { get; set; }
+
+        [JsonProperty("employees", NullValueHandling = NullValueHandling.Ignore)]
+        public List<HistoryEmployeeShiftResponse_EmployeeInfo> Employees { get; set; }
+    }
+
+    public class HistoryEmployeeShiftResponse_EmployeeInfo
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int UserId { get; set; }
+
+        [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
+        public string Username { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+    }
+
+    public class ShiftLite_ForRegisterRequest
+    {
+        [JsonProperty("week_of_year", NullValueHandling = NullValueHandling.Ignore)]
+        public int WeekOfYear { get; set; }
+        [JsonProperty("year", NullValueHandling = NullValueHandling.Ignore)]
+        public int Year { get; set; }
+        [JsonProperty("branch_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int BranchId { get; set; }
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+        //?week_of_year=26
+        //&year=2025
+        //&branch_id=682ef049dc534fa14b0dedf4
+        //&type=register-shift
+    }
+    public class ShiftLite_ForRegisterResponse
+    {
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        [JsonProperty("shift_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string ShiftKey { get; set; }
+
+        [JsonProperty("shift_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int ShiftId { get; set; }   // Yêu cầu để int, cần đảm bảo JSON trả về số thay vì chuỗi
+
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string StartTime { get; set; }
+
+        [JsonProperty("working_day", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkingDay { get; set; }
+
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndTime { get; set; }
+
+        [JsonProperty("working_hour", NullValueHandling = NullValueHandling.Ignore)]
+        public double WorkingHour { get; set; }
+
+        [JsonProperty("end_working_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndWorkingDate { get; set; }
+
+        [JsonProperty("timezone", NullValueHandling = NullValueHandling.Ignore)]
+        public string Timezone { get; set; }
+    }
+    #endregion
+
+    #region  list-by-shift-assignment
+    public class ListForAddShiftAssignmentResponse
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        [JsonProperty("phone", NullValueHandling = NullValueHandling.Ignore)]
+        public string Phone { get; set; }
+
+        [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
+        public string Username { get; set; }
+
+        [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
+        public string Email { get; set; }
+
+        [JsonProperty("shop_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ShopId { get; set; }
+
+        [JsonProperty("identification", NullValueHandling = NullValueHandling.Ignore)]
+        public string Identification { get; set; }
+
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime UpdatedAt { get; set; }
+
+        [JsonProperty("is_tanca_phone", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsTancaPhone { get; set; }
+
+        [JsonProperty("is_tanca_email", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsTancaEmail { get; set; }
+
+        [JsonProperty("sort_index", NullValueHandling = NullValueHandling.Ignore)]
+        public int SortIndex { get; set; }
+
+        [JsonProperty("last_activity", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime LastActivity { get; set; }
+
+        [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RegionId { get; set; }
+
+        [JsonProperty("branch_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BranchId { get; set; }
+
+        [JsonProperty("position", NullValueHandling = NullValueHandling.Ignore)]
+        public string Position { get; set; }
+
+        [JsonProperty("department", NullValueHandling = NullValueHandling.Ignore)]
+        public string Department { get; set; }
+
+        [JsonProperty("shop", NullValueHandling = NullValueHandling.Ignore)]
+        public string Shop { get; set; }
+
+        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
+        public string Region { get; set; }
+
+        [JsonProperty("branch", NullValueHandling = NullValueHandling.Ignore)]
+        public string Branch { get; set; }
+
+        [JsonProperty("payroll_config", NullValueHandling = NullValueHandling.Ignore)]
+        public string PayrollConfig { get; set; }
+
+        [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
+        public string Group { get; set; }
+
+        [JsonProperty("position_obj", NullValueHandling = NullValueHandling.Ignore)]
+        public ListForAddShiftAssignmentResponse_PositionObj PositionObj { get; set; }
+
+        [JsonProperty("department_obj", NullValueHandling = NullValueHandling.Ignore)]
+        public ListForAddShiftAssignmentResponse_DepartmentObj DepartmentObj { get; set; }
+
+        [JsonProperty("branch_obj", NullValueHandling = NullValueHandling.Ignore)]
+        public ListForAddShiftAssignmentResponse_BranchObj BranchObj { get; set; }
+
+        [JsonProperty("group_obj", NullValueHandling = NullValueHandling.Ignore)]
+        public ListForAddShiftAssignmentResponse_GroupObj GroupObj { get; set; }
+
+        [JsonProperty("region_obj")]
+        public ListForAddShiftAssignmentResponse_RegionObj RegionObj { get; set; }
+    }
+
+    public class ListForAddShiftAssignmentResponse_PositionObj
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+    }
+
+    public class ListForAddShiftAssignmentResponse_DepartmentObj
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+    }
+
+    public class ListForAddShiftAssignmentResponse_BranchObj
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+    }
+
+    public class ListForAddShiftAssignmentResponse_GroupObj
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        [JsonProperty("client_role", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClientRole { get; set; }
+    }
+
+    public class ListForAddShiftAssignmentResponse_RegionObj
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+    }
+    #endregion 
 }

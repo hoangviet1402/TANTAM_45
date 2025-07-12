@@ -23,5 +23,6 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<int> Title { get; set; }
         public bool EmployeeAccountMapIsActive { get; set; }
         public bool AccountIsActive { get; set; }
+        public bool IsQuit { get; set; }
     }
 }

@@ -28,10 +28,32 @@ namespace DataAccess.Dao.Shift
             int createdBy
         );
         Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result TrashShiftAssignmentUserWorkingDayLog(int logId, int trashedBy, string reason);
+
+        List<Ins_ShiftAssignment_GetByBranchSimple_Result> ShiftAssignment_GetByBranchSimple(int branchId);
+
+        List<Ins_ShiftAssignment_GetAllEmployerInShift_Result> ShiftAssignment_GetAllEmployerInShift(int shiftAssignmentId, int weekOfYear, DateTime dateFrom, DateTime dateTo);
+
+        List<Ins_EmployeesInfo_GetDetailForAddShift_Result> EmployeesInfo_GetDetailForAddShift(int companyId, int shiftID);
     }
 
     internal class ShiftAssignmentDao : DaoFactories<TanTamEntities, DBNull>, IShiftAssignmentDao
     {
+        public List<Ins_ShiftAssignment_GetAllEmployerInShift_Result> ShiftAssignment_GetAllEmployerInShift(int shiftAssignmentId, int weekOfYear, DateTime dateFrom, DateTime dateTo)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_ShiftAssignment_GetAllEmployerInShift(shiftAssignmentId, weekOfYear, dateFrom, dateTo);
+                return data.ToList();
+            }
+        }
+        public List<Ins_ShiftAssignment_GetByBranchSimple_Result> ShiftAssignment_GetByBranchSimple(int branchId)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_ShiftAssignment_GetByBranchSimple(branchId);
+                return data.ToList();
+            }
+        }
         public int ShiftAssignmentCreate(Ins_ShiftAssignment_Create_Parameter parameter)
         {
             using (Uow)
@@ -178,6 +200,15 @@ namespace DataAccess.Dao.Shift
             {
                 var result = Uow.Context.Ins_ShiftAssignment_User_WorkingDay_Log_Trash(logId, trashedBy, reason);
                 return result?.FirstOrDefault();
+            }
+        }
+
+        public List<Ins_EmployeesInfo_GetDetailForAddShift_Result> EmployeesInfo_GetDetailForAddShift(int companyId, int shiftID)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_EmployeesInfo_GetDetailForAddShift(companyId, shiftID);
+                return result.ToList();
             }
         }
     }

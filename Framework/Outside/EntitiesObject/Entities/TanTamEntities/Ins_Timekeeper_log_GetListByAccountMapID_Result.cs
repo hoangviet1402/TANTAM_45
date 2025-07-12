@@ -49,7 +49,6 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string GenerateTimekeepingType { get; set; }
         public string AssignmentType { get; set; }
         public string Type { get; set; }
-        public int ShiftAssignmentBranchID { get; set; }
         public int ShiftId { get; set; }
         public Nullable<int> CompanyID { get; set; }
         public string ShiftName { get; set; }
@@ -79,9 +78,18 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string Ssid { get; set; }
         public Nullable<double> Latitude { get; set; }
         public Nullable<double> Longitude { get; set; }
+        public Nullable<double> Accuracy { get; set; }
+        public Nullable<double> Altitude { get; set; }
+        public Nullable<double> AltitudeAccuracy { get; set; }
+        public Nullable<double> Speed { get; set; }
+        public Nullable<double> SpeedAccuracy { get; set; }
+        public Nullable<double> Course { get; set; }
+        public Nullable<double> CourseAccuracy { get; set; }
+        public Nullable<bool> Mocked { get; set; }
         public Nullable<System.DateTime> TimekeeperCreateDate { get; set; }
         public Nullable<int> IsCheck { get; set; }
         public string BranchName { get; set; }
         public string Color { get; set; }
+        public int ShiftAssignmentBranchID { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using BussinessObject.Enum;
 using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.Shift;
 using Logger;
+using MyUtility;
 using MyUtility.Extensions;
 using Newtonsoft.Json;
 using TanTamApi.JWT.Helper;
@@ -372,7 +373,9 @@ namespace TanTamApi.Controllers
             try
             {
                 // Call business logic to update check-in/out
-                var result = BoFactory.Shift.UpdateCheckInOut(request);
+                var userId = JwtHelper.GetAccountIdFromToken(Request);
+
+                var result = BoFactory.Shift.UpdateCheckInOut(request, userId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -398,8 +401,9 @@ namespace TanTamApi.Controllers
         {
             try
             {
+                var userId = JwtHelper.GetAccountIdFromToken(Request);
                 // Call business logic to uncheck in/out
-                var result = BoFactory.Shift.UncheckInOut(request);
+                var result = BoFactory.Shift.UncheckInOut(request, userId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -449,5 +453,81 @@ namespace TanTamApi.Controllers
                 });
             }
         }
+
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("for-register")]
+        public IHttpActionResult ListShiftForRegister(int week_of_year , int year, int branch_id, string type)
+        {
+            var response = new ApiResult<List<ShiftLite_ForRegisterResponse>>()
+            {
+                Data = new List<ShiftLite_ForRegisterResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                ShiftLite_ForRegisterRequest request = new ShiftLite_ForRegisterRequest()
+                {
+                    WeekOfYear = week_of_year,
+                    Year = year,
+                    BranchId = branch_id,
+                    Type = type
+                };
+                response = BoFactory.ShiftAssignment.ShiftLite_ForRegister(request);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("ShiftController.UncheckInOutShift - Error occurred: {0}", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<UncheckInOutShiftResponse>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                    Data = new UncheckInOutShiftResponse()
+                });
+            }
+            return Ok(response);
+        }
+
+        [TanTamApi.JWT.Middleware.Authorize]
+        [HttpGet]
+        [Route("history-employee-shift")]
+        public IHttpActionResult HistoryEmployeeShift(int week_of_year, int year, int branch_id, int shift_id)
+        {
+            var response = new ApiResult<List<HistoryEmployeeShiftResponse>>()
+            {
+                Data = new List<HistoryEmployeeShiftResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+            try
+            {
+
+                HistoryEmployeeShiftRequest request = new HistoryEmployeeShiftRequest()
+                {
+                    BranchId = branch_id,
+                    WeekOfYear = week_of_year,
+                    Year = year,
+                    ShiftID = shift_id
+                };
+                var userId = JwtHelper.GetAccountIdFromToken(Request);
+                response = BoFactory.ShiftAssignment.HistoryEmployeeShift(request);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("ShiftController.UncheckInOutShift - Error occurred: {0}", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<UncheckInOutShiftResponse>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                    Data = new UncheckInOutShiftResponse()
+                });
+            }
+
+            return Ok(response);
+        }
+
+
     }
 }

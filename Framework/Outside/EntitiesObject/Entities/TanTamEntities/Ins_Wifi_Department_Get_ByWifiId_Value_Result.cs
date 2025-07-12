@@ -11,9 +11,10 @@ namespace EntitiesObject.Entities.TanTamEntities
 {
     using System;
     
-    public partial class Ins_ShiftAssignment_User_WorkingDay_CreateBulk_Result
+    public partial class Ins_Wifi_Department_Get_ByWifiId_Value_Result
     {
-        public int TotalRecordsCreated { get; set; }
-        public string ErrorMessage { get; set; }
+        public Nullable<int> Id { get; set; }
+        public string DepartmentName { get; set; }
+        public Nullable<int> ParentId { get; set; }
     }
 }

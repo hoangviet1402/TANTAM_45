@@ -34,8 +34,25 @@ namespace BussinessObject.Bo.TanTamBo
                 var branchIds = 0;
                 var branchId = 0;
                 var now = DateTime.Now;
+
+                var isOnboarding = request.Any(x => x.IsOnboarding.GetValueOrDefault(0) == 1);
+                var regionid = 0;
+                if (isOnboarding == true)
+                {
+                    regionid = DaoFactory.Branches.GetAllRegion(companyId).FirstOrDefault().ID;
+                }
+
                 foreach (var branch in request)
                 {
+                    if (isOnboarding == true && (branch.RegionId == null || branch.RegionId.GetValueOrDefault() <= 0)) //  ko truyền thì xài mặc định chỉ áp dụng cho isOnboarding
+                    {
+                        branch.RegionId = regionid;
+                    }
+                    else if(isOnboarding == false && (branch.RegionId == null || branch.RegionId.GetValueOrDefault() <= 0))
+                    {
+                        continue;
+                    }
+
                     if (string.IsNullOrEmpty(branch.Name))
                     {
                         branch.Name = "Chi nhánh " + (branchIds + 1);
@@ -49,8 +66,8 @@ namespace BussinessObject.Bo.TanTamBo
                     branchId = DaoFactory.Branches.CreateBranche(
                         branch.Name,
                         branch.Address,
-                        branch.RegionId,
-                        branch.IsOnboarding ?? 0,
+                        branch.RegionId ?? 0,
+                        isOnboarding == true ? 1 :0,
                         branch.Latitude ?? 0,
                         branch.Longitude ?? 0,
                         companyId,
@@ -240,7 +257,7 @@ namespace BussinessObject.Bo.TanTamBo
                 try
                 {
                     var id = DaoFactory.Branches.CreateCompanyRegion(regionName, companyId, "", StringCommon.NormalizeText(regionName, "_").ToUpper(), 0, description, StringCommon.NormalizeText(regionName, "-").ToLower());
-
+                    response.Data = id;
                     if (id <= 0)
                     {
                         response.Code = ResponseResultEnum.Failed.Value();

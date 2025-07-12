@@ -24,6 +24,7 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string alias { get; set; }
         public Nullable<int> shop_id { get; set; }
         public Nullable<int> created_user_id { get; set; }
+        public Nullable<int> assigned_id { get; set; }
         public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<System.DateTime> start_date { get; set; }
         public Nullable<int> duration { get; set; }

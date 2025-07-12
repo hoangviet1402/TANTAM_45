@@ -15,5 +15,8 @@ namespace EntitiesObject.Entities.TanTamEntities
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
+        public int AccountId { get; set; }
+        public Nullable<int> EmployeesInfoId { get; set; }
+        public bool IsActive { get; set; }
     }
 }

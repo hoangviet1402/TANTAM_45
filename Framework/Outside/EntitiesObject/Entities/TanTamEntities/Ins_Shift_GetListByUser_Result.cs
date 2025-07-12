@@ -13,17 +13,18 @@ namespace EntitiesObject.Entities.TanTamEntities
     
     public partial class Ins_Shift_GetListByUser_Result
     {
-        public int SuwId { get; set; }
-        public int ShiftAssignmentId { get; set; }
-        public int ShiftId { get; set; }
+        public Nullable<int> SuwId { get; set; }
         public string ShiftName { get; set; }
         public string ShiftKey { get; set; }
-        public int SortIndex { get; set; }
-        public decimal Coefficient { get; set; }
+        public int ShiftId { get; set; }
         public decimal MinimumWorkingHour { get; set; }
-        public string Timezone { get; set; }
-        public System.DateTime WorkingDay { get; set; }
+        public Nullable<double> WorkingHour { get; set; }
         public Nullable<int> WeekOfYear { get; set; }
+        public Nullable<System.DateTime> WorkingDay { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public Nullable<System.DateTime> EndTime { get; set; }
         public int TotalRegister { get; set; }
+        public int SortIndex { get; set; }
+        public string Timezone { get; set; }
     }
 }

@@ -17,7 +17,8 @@ namespace DataAccess.Dao.Shift
     {
         void Payroll_User_Create_MultiDay(Payroll_User_CreateMultiDayParameter parameter, DateTime dateFrom, DateTime dateTo);
         List<Ins_Payroll_User_GetList_Result> Payroll_User_GetList(int assignmentUserID, int accountMapID, int brandId, DateTime dateFrom, DateTime dateTo);
-        List<Ins_Shift_User_GetStatus_clock_in_out_Result> Payroll_User_GetStatus_clock_in_out(int accountMapID, DateTime dateFrom);        
+        List<Ins_Shift_User_GetStatus_clock_in_out_Result> Payroll_User_GetStatus_clock_in_out(int accountMapID, DateTime dateFrom);
+        
     }
 
     internal class PayrollDao : DaoFactories<TanTamEntities, DBNull>, IPayrollDao

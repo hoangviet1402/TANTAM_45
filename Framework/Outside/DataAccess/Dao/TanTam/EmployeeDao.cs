@@ -15,13 +15,14 @@ namespace DataAccess.Dao.TanTamDao
     {
         // Employee management
         void CreateEmployee(string fullName, string employeesCode, string phone, string phoneCode, 
-            string email, string password, int companyId, int branchId, int role, string deviceId, 
-            out int employeeAccountId, out int isNewUser, out int needSetPassword, out int needSetCompany);
+            string email, string password, int companyId, int branchId, int departmentId, int positionId, 
+            int regionId, int role, string deviceId, out int employeeAccountId, out int isNewUser, 
+            out int needSetPassword, out int needSetCompany);
         
         Ins_Employee_GetEmployeeID_Result GetEmployeeDetail(int employeeId);
         
         List<Ins_Employee_GetAll_Result> GetEmployeeList(int companyId, int page, int pageSize, 
-            string fullName = null, bool? isActive = null);
+            string fullName = null, bool? isQuit = null, bool? isActive = null, bool isAll = false);
         
         int DeleteEmployee(int employeeAccountId);
         
@@ -31,7 +32,9 @@ namespace DataAccess.Dao.TanTamDao
             string employeeCode, int? displayOrder, string email, string phone, string phoneCode);
 
         int UpdateEmployeeDetails_v2(int employeeId, string fullName, DateTime? birthDate, string gender,
-            string employeeCode, int? displayOrder, string email, string phone, string phoneCode);
+            string employeeCode, int? displayOrder, string email, string phone, string phoneCode,
+            int? departmentId = null, int? regionId = null, int? branchId = null, int? positionId = null,
+            bool? isQuit = null, bool? isActive = null);
 
         List<Ins_Employee_GetList_Result> GetEmployeeFilterList(int companyId, int page, int pageSize, 
             DateTime startDate, DateTime endDate, bool isNoNeedTimekeeping, int totalRecords);
@@ -39,6 +42,9 @@ namespace DataAccess.Dao.TanTamDao
         List<string> GetAllEmployeeCodes(int companyId);
         
         List<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result> GetEmployeeAccountMapByCompanyId(int companyId);
+        
+        // Get employee object data
+        Ins_Employee_GetObjectData_Result GetEmployeeObjectData(int employeeId);
     }
 
     /// <summary>
@@ -47,8 +53,9 @@ namespace DataAccess.Dao.TanTamDao
     internal class EmployeeDao : DaoFactories<TanTamEntities, DBNull>, IEmployeeDao
     {
         public void CreateEmployee(string fullName, string employeesCode, string phone, string phoneCode, 
-            string email, string password, int companyId, int branchId, int role, string deviceId, 
-            out int employeeAccountId, out int isNewUser, out int needSetPassword, out int needSetCompany)
+            string email, string password, int companyId, int branchId, int departmentId, int positionId, 
+            int regionId, int role, string deviceId, out int employeeAccountId, out int isNewUser, 
+            out int needSetPassword, out int needSetCompany)
         {
             using (Uow)
             {
@@ -63,8 +70,8 @@ namespace DataAccess.Dao.TanTamDao
                 var out_needSetCompany = new ObjectParameter("NeedSetCompany", typeof(int));
                 
                 Uow.Context.Ins_Employee_Create(fullName, employeesCode, phone, phoneCode, email, 
-                    password, companyId, branchId,0,0,0, role, deviceId, out_employeeAccountId, out_isNewUser, 
-                    out_needSetPassword, out_needSetCompany);
+                    password, companyId, branchId, departmentId, positionId, regionId, role, deviceId, 
+                    out_employeeAccountId, out_isNewUser, out_needSetPassword, out_needSetCompany);
 
                 if (out_employeeAccountId != null && out_employeeAccountId.Value != null)
                     int.TryParse(out_employeeAccountId.Value.ToString(), out employeeAccountId);
@@ -89,12 +96,12 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
-        public List<Ins_Employee_GetAll_Result> GetEmployeeList(int companyId, int page, int pageSize, 
-            string fullName = null, bool? isActive = null)
+        public List<Ins_Employee_GetAll_Result> GetEmployeeList(int companyId, int page, int pageSize,
+            string fullName = null, bool? isQuit = null, bool? isActive = null, bool isAll = false)
         {
             using (Uow)
             {
-                var result = Uow.Context.Ins_Employee_GetAll(companyId, page, pageSize, fullName, isActive);
+                var result = Uow.Context.Ins_Employee_GetAll(companyId, page, pageSize, fullName, isQuit, isActive);
                 return result.ToList();
             }
         }
@@ -103,7 +110,8 @@ namespace DataAccess.Dao.TanTamDao
         {
             using (Uow)
             {
-                return Uow.Context.Ins_Employee_Delete(employeeAccountId);
+                var result = Uow.Context.Ins_Employee_Delete(employeeAccountId);
+                return result?.FirstOrDefault() ?? 0;
             }
         }
 
@@ -111,7 +119,8 @@ namespace DataAccess.Dao.TanTamDao
         {
             using (Uow)
             {
-                return Uow.Context.Ins_Employee_ResetPass(employeeAccountMapId, passwordHash);
+                var result = Uow.Context.Ins_Employee_ResetPass(employeeAccountMapId, passwordHash);
+                return result;
             }
         }
 
@@ -120,18 +129,22 @@ namespace DataAccess.Dao.TanTamDao
         {
             using (Uow)
             {
-                return Uow.Context.Ins_Employee_UpdateDetails(employeeId, fullName, birthDate, gender, 
+                var result = Uow.Context.Ins_Employee_UpdateDetails(employeeId, fullName, birthDate, gender, 
                     employeeCode, displayOrder, email, phone, phoneCode);
+                return result;
             }
         }
 
         public int UpdateEmployeeDetails_v2(int employeeId, string fullName, DateTime? birthDate, string gender,
-            string employeeCode, int? displayOrder, string email, string phone, string phoneCode)
+            string employeeCode, int? displayOrder, string email, string phone, string phoneCode,
+            int? departmentId = null, int? regionId = null, int? branchId = null, int? positionId = null,
+            bool? isQuit = null, bool? isActive = null)
         {
             using (Uow)
             {
                 Uow.Context.Ins_Employee_UpdateDetails_v2(employeeId, fullName, birthDate, gender,
-                    employeeCode, displayOrder, email, phone, phoneCode);
+                    employeeCode, displayOrder, email, phone, phoneCode, departmentId, regionId, branchId, positionId,
+                    isQuit, isActive);
                 return 1;
             }
         }
@@ -163,6 +176,15 @@ namespace DataAccess.Dao.TanTamDao
             {
                 var result = Uow.Context.Ins_Employee_GetEmployeeAccountMap_ByCompanyId(companyId);
                 return result?.ToList() ?? new List<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result>();
+            }
+        }
+        
+        public Ins_Employee_GetObjectData_Result GetEmployeeObjectData(int employeeId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Employee_GetObjectData(employeeId);
+                return result?.FirstOrDefault();
             }
         }
     }

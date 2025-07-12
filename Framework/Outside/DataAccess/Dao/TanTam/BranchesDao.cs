@@ -10,23 +10,25 @@ namespace DataAccess.Dao.TanTam
 {
     public interface IBranchesDao : IBaseFactories<DBNull>
     {
-        int CreateBranche(string Name, string Address, string RegionId, int IsOnboarding, float Latitude, float Longitude, int companyId, string Alias, string Code);
+        int CreateBranche(string Name, string Address, int regionId, int IsOnboarding, float Latitude, float Longitude, int companyId, string Alias, string Code);
         List<Ins_CompanyBranch_GetAllByCompany_Result> GetAllBranchs(int companyId, out int total);
         List<Ins_EmployeeBranchMap_GetByEmployeeId_Result> AccountGetAllBranchs(int accountMapId);
         List<Ins_CompanyRegion_GetListByCompany_Result> GetAllRegion(int companyId);
         int CreateCompanyRegion(string regionName, int companyID, string color, string code, int sortIndex, string description, string alias);
         void UpdateCompanyRegion(string regionName, int companyID, string color, string code, int sortIndex, string description, string alias, int idRegion);
+        List<Ins_EmployeeBranchMap_GetByBranchId_Result> EmployeeBranchMap_GetByBranchId(int branchid, int companyId, bool isGetAll = true);
+        int CreateBranch_CreateRelate(int branchID, int regionId);
     }
 
     internal class BranchesDao : DaoFactories<TanTamEntities, DBNull>, IBranchesDao
     {
-        public int CreateBranche(string Name, string Address, string RegionId, int IsOnboarding, float Latitude, float Longitude, int companyId, string Alias, string Code)
+        public int CreateBranche(string Name, string Address, int regionId, int IsOnboarding, float Latitude, float Longitude, int companyId, string Alias, string Code)
         {
             using (Uow)
             {
                 var outResult = 0;
                 var out_OutResult = new ObjectParameter("OutResult", typeof(int));
-                var data = Uow.Context.Ins_CompanyBranch_Create(Name, Address, RegionId, IsOnboarding, Latitude, Longitude, companyId, Alias, Code, out_OutResult);
+                var data = Uow.Context.Ins_CompanyBranch_Create(Name, Address, regionId, IsOnboarding, Latitude, Longitude, companyId, Alias, Code, out_OutResult);
 
                 if (out_OutResult != null && out_OutResult.Value != null)
                     int.TryParse(out_OutResult.Value.ToString(), out outResult);
@@ -91,6 +93,30 @@ namespace DataAccess.Dao.TanTam
                 var data = Uow.Context.Ins_CompanyRegion_GetListByCompany(companyId);
               
                 return data.ToList();
+            }
+        }
+
+        public List<Ins_EmployeeBranchMap_GetByBranchId_Result> EmployeeBranchMap_GetByBranchId(int branchid , int companyId, bool isGetAll = true)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_EmployeeBranchMap_GetByBranchId(branchid, companyId, isGetAll);
+
+                return data.ToList();
+            }
+        }
+
+        public int CreateBranch_CreateRelate(int branchID, int regionId)
+        {
+            using (Uow)
+            {
+                var outResult = 0;
+                var out_OutResult = new ObjectParameter("OutResult", typeof(int));
+                var data = Uow.Context.Ins_CompanyBranch_CreateRelate(branchID, regionId, out_OutResult);
+
+                if (out_OutResult != null && out_OutResult.Value != null)
+                    int.TryParse(out_OutResult.Value.ToString(), out outResult);
+                return outResult;
             }
         }
     }

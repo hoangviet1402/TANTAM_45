@@ -107,15 +107,15 @@ namespace BussinessObject.Bo.TanTamBo
             return DaoFactory.Task.CreateTaskGroup(bundleId, name, color, position);
         }
 
-        /// <summary>
-        /// Xóa group và tất cả subtasks trong group
-        /// </summary>
-        /// <param name="groupId">ID của group cần xóa</param>
-        /// <returns>Danh sách group còn lại trong task</returns>
-        public List<Ins_Task_Group_Delete_Result> DeleteTaskGroup(int groupId)
-        {
-            return DaoFactory.Task.DeleteTaskGroup(groupId);
-        }
+        ///// <summary>
+        ///// Xóa group và tất cả subtasks trong group
+        ///// </summary>
+        ///// <param name="groupId">ID của group cần xóa</param>
+        ///// <returns>Danh sách group còn lại trong task</returns>
+        //public List<Ins_Task_Group_Delete_Result> DeleteTaskGroup(int groupId)
+        //{
+        //    return DaoFactory.Task.DeleteTaskGroup(groupId);
+        //}
 
         /// <summary>
         /// Cập nhật tên của group
@@ -284,10 +284,10 @@ namespace BussinessObject.Bo.TanTamBo
         /// </summary>
         /// <param name="taskId">ID của task</param>
         /// <returns>Số lượng customized fields đã xử lý</returns>
-        public int GetCustomizedFieldsAndValuesByTask(int taskId)
-        {
-            return DaoFactory.Task.GetCustomizedFieldsAndValuesByTask(taskId);
-        }
+        //public int GetCustomizedFieldsAndValuesByTask(int taskId)
+        //{
+        //    return DaoFactory.Task.GetCustomizedFieldsAndValuesByTask(taskId);
+        //}
 
         // Lấy field value của subtask theo title (dùng store Ins_Task_Get_Sub_Field_Value_ByTitle)
         public List<Ins_Task_Get_Sub_Field_Value_ByTitle_Result> GetSubFieldValueByTitle(int subtaskId, string title = null)

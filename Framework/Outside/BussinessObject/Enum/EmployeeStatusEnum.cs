@@ -13,12 +13,21 @@ namespace BussinessObject.Enum
         /// <summary>
         /// Đã nghỉ việc
         /// </summary>
-        Inactive = 2,
+        IsQuit = 2,
 
         /// <summary>
-        /// Đã bị khóa
+        /// Ngưng hoạt động
         /// </summary>
-        Locked = 3,
+        InActive = 3,
 
+        /// <summary>
+        /// Chưa làm việc
+        /// </summary>
+        NotWorking = 4,
+
+        /// <summary>
+        /// Lấy tất cả
+        /// </summary>
+        All = -99,
     }
 }

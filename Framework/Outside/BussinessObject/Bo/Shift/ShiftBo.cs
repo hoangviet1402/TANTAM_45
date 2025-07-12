@@ -491,8 +491,14 @@ namespace BussinessObject.Bo.Shift
                     Key = shiftAssignmentParameter.AssignmentType
                 };
 
-                #region tạo ca làm việc cho nhân viên hiện tại
-                if(request.ShiftAssignment.BranchIds.Count() > 0)
+                #region tạo ca làm việc chi nhánh được chọn
+                if (request.IsOnboarding == 1 && (request.ShiftAssignment.BranchIds == null || request.ShiftAssignment.BranchIds.Any() == false))
+                {
+                    var total = 0;
+                    request.ShiftAssignment.BranchIds = DaoFactory.Branches.GetAllBranchs(companyId, out total).Select(x => x.BranchId).ToList();
+                }
+
+                if (request.ShiftAssignment.BranchIds.Count() > 0)
                 {
                     // trường hợp không có DepartmentIds và PositionIds thì insert cho toàn bộ nhân viên của chi nhánh
                     if (
@@ -500,7 +506,49 @@ namespace BussinessObject.Bo.Shift
                         (request.ShiftAssignment.PositionIds == null || request.ShiftAssignment.PositionIds.Any() == false)
                       )
                     {
+                        foreach (var item in request.ShiftAssignment.BranchIds)
+                        {
+                            var data = DaoFactory.Branches.EmployeeBranchMap_GetByBranchId(item, companyId, true);
+                            foreach (var item_UserIds in data)
+                            {
+                                var assignment_user_id = DaoFactory.ShiftAssignment.ShiftAssignment_User_Create(shiftAssignmentId, item_UserIds.EmployeeId);
+                                if (assignment_user_id > 0)
+                                {
+                                    DateTime dateFrom, dateTo;
 
+                                    if (shiftAssignmentParameter.GenerateTimekeepingType == Generate_Timekeeping_Type_Obj_Enum.generate_from_start_of_month.Text())
+                                    {
+                                        DateTimeExtension.GetRangeByType(DateTime.Now, 1, out dateFrom, out dateTo);
+                                    }
+                                    else
+                                    {
+                                        DateTimeExtension.GetRangeByType(DateTime.Now, 2, out dateFrom, out dateTo);
+                                    }
+
+                                    dateFrom = DateTime.Now.GetBeginOfDay();
+
+                                    DaoFactory.Payroll.Payroll_User_Create_MultiDay(new Payroll_User_CreateMultiDayParameter()
+                                    {
+                                        AccountMapID = item_UserIds.EmployeeId,
+                                        AssignmentUserID = assignment_user_id,
+                                        CheckinType = "",
+                                        CheckouType = "",
+                                        EndTime = response.Data.Shift.EndTime,
+                                        StartTime = response.Data.Shift.StartTime,
+
+                                        RealCoefficient = 0,
+                                        RealWorkingHour = 0,
+                                        RealWorkingMinute = 0,
+                                        RestEndTimeShort = "",
+                                        RestStartTimeShort = "",
+                                        Status = 0,
+                                        WeekOfYear = DateTime.Now.GetWeekNumber()
+                                    },
+                                        dateFrom, dateTo
+                                    );
+                                }
+                            }
+                        }
                     }
                     else
                     {
@@ -515,12 +563,12 @@ namespace BussinessObject.Bo.Shift
                         }
                     }
                 }
-
-                
                 // danh sách chi nhanh 
                 #endregion
 
+
                 #region tạo ca làm việc cho nhân viên hiện tại
+
                 if (request.ShiftAssignment.UserIds != null && request.ShiftAssignment.UserIds.Any())
                 {
                     foreach (var item_UserIds in request.ShiftAssignment.UserIds)
@@ -612,7 +660,7 @@ namespace BussinessObject.Bo.Shift
         /// <summary>
         /// Get list of shift assignments with shift details
         /// </summary>
-        public ApiResult<CheckInOutShiftUpdateResponse> UpdateCheckInOut(CheckInOutShiftUpdateRequest request)
+        public ApiResult<CheckInOutShiftUpdateResponse> UpdateCheckInOut(CheckInOutShiftUpdateRequest request, int userId_check)
         {
             var response = new ApiResult<CheckInOutShiftUpdateResponse>()
             {
@@ -688,7 +736,7 @@ namespace BussinessObject.Bo.Shift
                             Clock_Type_Enum.admin.Value(), // ClockType: admin
                             DateTime.Now,
                             request.Reason,
-                            userId
+                            userId_check
                         );
                     }
                     // Check-out log
@@ -700,7 +748,7 @@ namespace BussinessObject.Bo.Shift
                             Clock_Type_Enum.admin.Value(), // ClockType: admin
                             DateTime.Now,
                             request.Reason,
-                            userId
+                            userId_check
                         );
                     }
                 }
@@ -735,7 +783,7 @@ namespace BussinessObject.Bo.Shift
             return response;
         }
 
-        public ApiResult<UncheckInOutShiftResponse> UncheckInOut(UncheckInOutShiftRequest request)
+        public ApiResult<UncheckInOutShiftResponse> UncheckInOut(UncheckInOutShiftRequest request,int userId_check)
         {
             var response = new ApiResult<UncheckInOutShiftResponse>()
             {
@@ -819,7 +867,7 @@ namespace BussinessObject.Bo.Shift
                             Clock_Type_Enum.admin.Value(), // ClockType: admin
                             DateTime.Now,
                             request.Reason,
-                            userId
+                            userId_check
                         );
                     }
                     // Trash checkout log if uncheckout
@@ -838,7 +886,7 @@ namespace BussinessObject.Bo.Shift
                             Clock_Type_Enum.admin.Value(), // ClockType: admin
                             DateTime.Now,
                             request.Reason,
-                            userId
+                            userId_check
                         );
                     }
                 }

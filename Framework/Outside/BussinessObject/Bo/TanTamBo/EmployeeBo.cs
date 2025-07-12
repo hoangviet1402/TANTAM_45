@@ -10,6 +10,7 @@ using System.Linq;
 using BussinessObject.Helper;
 using MyUtility;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -62,6 +63,9 @@ namespace BussinessObject.Bo.TanTamBo
                     }
 
                     // Map from DB result to DTO
+                    // Get object data using common stored procedure
+                    var objectData = DaoFactory.Employee.GetEmployeeObjectData(request.EmployeeId);
+                    
                     response.Data = new EmployeeDetailResponse
                     {
                         id = employeeFromDb.Id,
@@ -109,7 +113,14 @@ namespace BussinessObject.Bo.TanTamBo
                         phone = employeeFromDb.Phone,
                         phoneCode = employeeFromDb.PhoneCode,
                         accountIsActive = employeeFromDb.AccountIsActive,
-                        deviceId = employeeFromDb.DeviceId
+                        deviceId = employeeFromDb.DeviceId,
+
+                        // Map nested objects using common stored procedure
+                        company_obj = objectData?.CompanyObjId.HasValue == true ? new { id = objectData.CompanyObjId.Value, name = objectData.CompanyObjName } : null,
+                        branch_obj = objectData?.BranchObjId.HasValue == true ? new { id = objectData.BranchObjId.Value, name = objectData.BranchObjName } : null,
+                        department_obj = objectData?.DepartmentObjId.HasValue == true ? new { id = objectData.DepartmentObjId.Value, name = objectData.DepartmentObjName } : null,
+                        position_obj = objectData?.PositionObjId.HasValue == true ? new { id = objectData.PositionObjId.Value, name = objectData.PositionObjName } : null,
+                        region_obj = objectData?.RegionObjId.HasValue == true ? new { id = objectData.RegionObjId.Value, name = objectData.RegionObjName } : null
                     };
 
                     response.Code = ResponseResultEnum.Success.Value();
@@ -177,25 +188,73 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
-                // Call stored procedure to get employee list
+                // Sửa logic truyền filter: chỉ truyền true/false nếu filter, còn lại truyền null
+                bool? isActive = null;
+                bool? isQuit = null;
+                bool isAll = false;
+
+                var statusType = request.IsQuit.HasValue ? request.IsQuit.Value.ToEnum<EmployeeStatusEnum>() : EmployeeStatusEnum.All;
+                // Nếu request có trường IsActive, có thể bổ sung thêm logic ở đây nếu cần
+
+                switch (statusType)
+                {
+                    case EmployeeStatusEnum.Active:
+                        isActive = true;
+                        break;
+                    case EmployeeStatusEnum.InActive:
+                        isActive = false;
+                        break;
+                    case EmployeeStatusEnum.IsQuit:
+                        isQuit = true;
+                        break;
+                    case EmployeeStatusEnum.NotWorking:
+                        // Hard case: NotWorking không trả về data
+                        response.Code = ResponseResultEnum.NoData.Value();
+                        response.Message = "Không có dữ liệu cho trạng thái không làm việc";
+                        return response;
+                    case EmployeeStatusEnum.All:
+                        isAll = true;
+                        break;
+                    default:
+                        isActive = null;
+                        isQuit = null;
+                        isAll = false;
+                        break;
+                }
+
+                // Gọi DAO với nullable
                 var employeesFromDb = DaoFactory.Employee.GetEmployeeList(
-                    request.CompanyId, page, limit, request.FullName, request.IsActive);
+                    request.CompanyId, page, limit, request.FullName, isQuit, isActive, isAll);
 
                 if (employeesFromDb != null && employeesFromDb.Any())
                 {
                     // Map from DB result to DTO
-                    response.Data.items = employeesFromDb.Select(emp => new EmployeeListDto
+                    response.Data.items = employeesFromDb.Select(emp => 
                     {
-                        employeeId = emp.EmployeeId,
-                        employeeName = emp.EmployeeName,
-                        employeeCode = emp.EmployeeCode,
-                        phone = emp.Phone,
-                        userRole = emp.UserRole,
-                        branch = emp.Branch,
-                        department = emp.Department,
-                        title = emp.Title,
-                        employeeAccountMapIsActive = emp.EmployeeAccountMapIsActive,
-                        accountIsActive = emp.AccountIsActive
+                        // Get object data for each employee using common stored procedure
+                        var objectData = DaoFactory.Employee.GetEmployeeObjectData(emp.EmployeeId);
+                        
+                        return new EmployeeListDto
+                        {
+                            employeeId = emp.EmployeeId,
+                            employeeName = emp.EmployeeName,
+                            employeeCode = emp.EmployeeCode,
+                            phone = emp.Phone,
+                            userRole = emp.UserRole,
+                            branch = emp.Branch,
+                            department = emp.Department,
+                            title = emp.Title,
+                            employeeAccountMapIsActive = emp.EmployeeAccountMapIsActive,
+                            accountIsActive = emp.AccountIsActive,
+                            isActive = emp.EmployeeAccountMapIsActive,
+                            isQuit = emp.IsQuit,
+                            // Map nested objects using common stored procedure
+                            company_obj = objectData?.CompanyObjId.HasValue == true ? new { id = objectData.CompanyObjId.Value, name = objectData.CompanyObjName } : null,
+                            branch_obj = objectData?.BranchObjId.HasValue == true ? new { id = objectData.BranchObjId.Value, name = objectData.BranchObjName } : null,
+                            department_obj = objectData?.DepartmentObjId.HasValue == true ? new { id = objectData.DepartmentObjId.Value, name = objectData.DepartmentObjName } : null,
+                            position_obj = objectData?.PositionObjId.HasValue == true ? new { id = objectData.PositionObjId.Value, name = objectData.PositionObjName } : null,
+                            region_obj = objectData?.RegionObjId.HasValue == true ? new { id = objectData.RegionObjId.Value, name = objectData.RegionObjName } : null
+                        };
                     }).ToList();
 
                     response.Data.meta = new MetaResponse
@@ -254,6 +313,39 @@ namespace BussinessObject.Bo.TanTamBo
 
             try
             {
+                // Validate input
+                if (request.CompanyId <= 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = "Vui lòng cung cấp ID công ty hợp lệ.";
+                    return response;
+                }
+
+                // Validate employee code
+                if (!string.IsNullOrEmpty(request.EmployeeCode))
+                {
+                    var validationResult = EmployeeBoHelper.ValidateEmployeeCodeForCreate(request.CompanyId, request.EmployeeCode);
+                    if (!validationResult.IsValid)
+                    {
+                        if (validationResult.ShouldAutoGenerate)
+                        {
+                            // Auto generate next employee code
+                            request.EmployeeCode = EmployeeBoHelper.GenerateNextEmployeeCodeForCompany(request.CompanyId);
+                        }
+                        else
+                        {
+                            response.Code = ResponseResultEnum.InvalidInput.Value();
+                            response.Message = validationResult.ErrorMessage;
+                            return response;
+                        }
+                    }
+                }
+                else
+                {
+                    // Auto generate employee code if not provided
+                    request.EmployeeCode = EmployeeBoHelper.GenerateNextEmployeeCodeForCompany(request.CompanyId);
+                }
+
                 // Generate default values if not provided
                 if (string.IsNullOrEmpty(request.Phone))
                 {
@@ -317,6 +409,9 @@ namespace BussinessObject.Bo.TanTamBo
                     hashedPassword,
                     request.CompanyId,
                     request.BranchId,
+                    request.DepartmentId,
+                    request.PositionId,
+                    request.RegionId,
                     request.Role,
                     request.DeviceId,
                     out employeeAccountId,
@@ -325,10 +420,10 @@ namespace BussinessObject.Bo.TanTamBo
                     out needSetCompany
                 );
 
-                                    response.Data.employeeAccountId = employeeAccountId;
-                    response.Data.isNewUser = isNewUser;
-                    response.Data.needSetPassword = needSetPassword;
-                    response.Data.needSetCompany = needSetCompany;
+                response.Data.employeeAccountId = employeeAccountId;
+                response.Data.isNewUser = isNewUser;
+                response.Data.needSetPassword = needSetPassword;
+                response.Data.needSetCompany = needSetCompany;
 
                 var result = DaoFactory.Company.UpdateCompanyStep(request.CompanyId, SetupStepEnum.ONBOARDING_CREATE_EMPLOYEE.Value());
                 if (result > 0)
@@ -662,21 +757,25 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
-                var all_employee_account_map = GetEmployeeAccountMapForValidation(employee.CompanyId);
+                // Validate employee code for update
+                if (!string.IsNullOrEmpty(request.EmployeeCode))
+                {
+                    var validationResult = EmployeeBoHelper.ValidateEmployeeCodeForUpdate(companyId, request.EmployeeCode, employeeId);
+                    if (!validationResult.IsValid)
+                    {
+                        response.Code = ResponseResultEnum.InvalidInput.Value();
+                        response.Message = validationResult.ErrorMessage;
+                        return response;
+                    }
+                }
+
+                var all_employee_account_map = EmployeeBoHelper.GetEmployeeAccountMapForValidation(employee.CompanyId);
 
                 request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
 
                 // Kiểm tra trùng lặp email và số điện thoại với nhân viên khác
                 string errorMessage;
-                if (CheckDuplicateContactInfo(all_employee_account_map, request.Email, request.Phone, employeeId, out errorMessage))
-                {
-                    response.Code = ResponseResultEnum.InvalidInput.Value();
-                    response.Message = errorMessage;
-                    return response;
-                }
-
-                // Kiểm tra trùng lặp employee code
-                if (CheckDuplicateEmployeeCode(all_employee_account_map, request.EmployeeCode, employeeId, out errorMessage))
+                if (EmployeeBoHelper.CheckDuplicateContactInfo(all_employee_account_map, request.Email, request.Phone, employeeId, out errorMessage))
                 {
                     response.Code = ResponseResultEnum.InvalidInput.Value();
                     response.Message = errorMessage;
@@ -693,7 +792,13 @@ namespace BussinessObject.Bo.TanTamBo
                     request.DisplayOrder,
                     request.Email,
                     request.Phone,
-                    request.PhoneCode
+                    request.PhoneCode,
+                    request.DepartmentId,
+                    request.RegionId,
+                    request.BranchId,
+                    request.PositionId,
+                    request.IsQuit,
+                    request.IsActive
                 );
 
                 response.Data = true;
@@ -847,15 +952,15 @@ namespace BussinessObject.Bo.TanTamBo
                 var allEmployeeCodes = DaoFactory.Employee.GetAllEmployeeCodes(request.CompanyId);
                 
                 // Find the highest/last employee code using C# logic
-                var lastCode = FindHighestEmployeeCode(allEmployeeCodes);
+                var lastCode = EmployeeBoHelper.FindHighestEmployeeCode(allEmployeeCodes);
                 
                 if (!string.IsNullOrEmpty(lastCode))
                 {
-                    response.Data.nextCode = GenerateNextEmployeeCode(lastCode);
+                    response.Data.nextCode = EmployeeBoHelper.GenerateNextEmployeeCode(lastCode);
                 }
                 else
                 {
-                    response.Data.nextCode = "EMP001";
+                    response.Data.nextCode = "0001";
                 }
 
                 response.Code = ResponseResultEnum.Success.Value();
@@ -883,235 +988,6 @@ namespace BussinessObject.Bo.TanTamBo
             }
 
             return response;
-        }
-
-        /// <summary>
-        /// Find the highest employee code from the list using complex logic
-        /// </summary>
-        private string FindHighestEmployeeCode(List<string> employeeCodes)
-        {
-            if (employeeCodes == null || !employeeCodes.Any())
-            {
-                return null;
-            }
-
-            // Filter out empty codes
-            var validCodes = employeeCodes.Where(code => !string.IsNullOrWhiteSpace(code)).ToList();
-            if (!validCodes.Any())
-            {
-                return null;
-            }
-
-            // Sort using custom logic that handles different formats
-            var sortedCodes = validCodes
-                .Select(code => new
-                {
-                    Code = code,
-                    // Extract numeric part for proper sorting
-                    NumericPart = ExtractNumericPart(code),
-                    CodeLength = code.Length
-                })
-                .OrderByDescending(item => item.NumericPart)    // First sort by numeric value
-                .ThenByDescending(item => item.CodeLength)      // Then by code length
-                .ThenByDescending(item => item.Code)            // Finally alphabetically
-                .Select(item => item.Code)
-                .ToList();
-
-            return sortedCodes.FirstOrDefault();
-        }
-
-        /// <summary>
-        /// Extract numeric part from employee code for sorting
-        /// </summary>
-        private long ExtractNumericPart(string employeeCode)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(employeeCode))
-                {
-                    return 0;
-                }
-
-                // Check if code contains any numbers
-                if (!System.Text.RegularExpressions.Regex.IsMatch(employeeCode, @"\d"))
-                {
-                    return 0;
-                }
-
-                // If entire code is numeric
-                if (long.TryParse(employeeCode, out long fullNumeric))
-                {
-                    return fullNumeric;
-                }
-
-                // Extract the last continuous numeric part
-                var matches = System.Text.RegularExpressions.Regex.Matches(employeeCode, @"\d+");
-                if (matches.Count > 0)
-                {
-                    // Get the last numeric match
-                    var lastMatch = matches[matches.Count - 1];
-                    if (long.TryParse(lastMatch.Value, out long numericPart))
-                    {
-                        return numericPart;
-                    }
-                }
-
-                return 0;
-            }
-            catch
-            {
-                return 0;
-            }
-        }
-
-        /// <summary>
-        /// Generate next employee code based on last code
-        /// </summary>
-        private string GenerateNextEmployeeCode(string lastCode)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(lastCode))
-                {
-                    return "EMP001";
-                }
-
-                // Extract all numeric parts
-                var matches = System.Text.RegularExpressions.Regex.Matches(lastCode, @"\d+");
-                if (matches.Count > 0)
-                {
-                    // Get the last numeric match
-                    var lastMatch = matches[matches.Count - 1];
-                    var numberPart = lastMatch.Value;
-                    var startIndex = lastMatch.Index;
-                    
-                    if (int.TryParse(numberPart, out int number))
-                    {
-                        number++;
-                        
-                        // Preserve the original format with same number of digits
-                        var newNumberPart = number.ToString().PadLeft(numberPart.Length, '0');
-                        
-                        // Replace the numeric part in the original string
-                        var prefix = lastCode.Substring(0, startIndex);
-                        var suffix = lastCode.Substring(startIndex + numberPart.Length);
-                        
-                        return $"{prefix}{newNumberPart}{suffix}";
-                    }
-                }
-
-                // If no numeric part found, append 001
-                return $"{lastCode}001";
-            }
-            catch
-            {
-                return "EMP001";
-            }
-        }
-
-        /// <summary>
-        /// Kiểm tra trùng lặp email và số điện thoại (kiểu cũ, dùng out string)
-        /// </summary>
-        private bool CheckDuplicateContactInfo(
-            List<EmployeeAccountMapValidationDto> allEmployees,
-            string email,
-            string phone,
-            int excludeEmployeeId,
-            out string errorMessage)
-        {
-            errorMessage = string.Empty;
-            if (!string.IsNullOrEmpty(email))
-            {
-                var duplicateEmail = allEmployees
-                    .FirstOrDefault(map => map.Email != null
-                        && map.Email.ToLower().Trim() == email.ToLower().Trim()
-                        && map.EmployeeAccountMapId != excludeEmployeeId);
-                if (duplicateEmail != null)
-                {
-                    errorMessage = $"Email '{email}' đã được sử dụng bởi nhân viên khác.";
-                    return true;
-                }
-            }
-            if (!string.IsNullOrEmpty(phone))
-            {
-                var duplicatePhone = allEmployees
-                    .FirstOrDefault(map => map.Phone != null
-                        && map.Phone.Trim() == phone.Trim()
-                        && map.EmployeeAccountMapId != excludeEmployeeId);
-                if (duplicatePhone != null)
-                {
-                    errorMessage = $"Số điện thoại '{phone}' đã được sử dụng bởi nhân viên khác.";
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Kiểm tra trùng lặp employee code (kiểu cũ, dùng out string)
-        /// </summary>
-        private bool CheckDuplicateEmployeeCode(
-            List<EmployeeAccountMapValidationDto> allEmployees,
-            string employeeCode,
-            int excludeEmployeeId,
-            out string errorMessage)
-        {
-            errorMessage = string.Empty;
-            if (!string.IsNullOrEmpty(employeeCode))
-            {
-                var duplicateCode = allEmployees
-                    .FirstOrDefault(map => map.EmployeeCode != null
-                        && map.EmployeeCode.Trim() == employeeCode.Trim()
-                        && map.EmployeeAccountMapId != excludeEmployeeId);
-                if (duplicateCode != null)
-                {
-                    errorMessage = $"Mã nhân viên '{employeeCode}' đã được sử dụng bởi nhân viên khác.";
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Lấy dữ liệu employee account map cho validation (không dùng Entity result)
-        /// </summary>
-        private List<EmployeeAccountMapValidationDto> GetEmployeeAccountMapForValidation(int companyId)
-        {
-            try
-            {
-                // Gọi DAO để lấy dữ liệu
-                var entityResults = DaoFactory.Employee.GetEmployeeAccountMapByCompanyId(companyId);
-                
-                if (entityResults == null || !entityResults.Any())
-                    return new List<EmployeeAccountMapValidationDto>();
-
-                // Map sang DTO validation
-                var validationList = new List<EmployeeAccountMapValidationDto>();
-                
-                foreach (var entity in entityResults)
-                {
-                    // Sử dụng reflection để lấy properties an toàn
-                    var validationDto = new EmployeeAccountMapValidationDto();
-                    
-                    // Map EmployeeAccountMapId (Id property)
-                    validationDto.EmployeeAccountMapId = entity.Id;
-                    
-                    // Map Email và Phone từ Account (cần thêm properties vào Entity result)
-                    // Tạm thời để null cho đến khi Entity result được update
-                    validationDto.Email = entity.Email; // entity.Email
-                    validationDto.Phone = entity.Phone; // entity.Phone
-                    validationDto.EmployeeCode = entity.AccountId.ToString(); // entity.EmployeeCode
-                    
-                    validationList.Add(validationDto);
-                }
-                
-                return validationList;
-            }
-            catch (Exception ex)
-            {
-                CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeAccountMapForValidation - Error", ex);
-                return new List<EmployeeAccountMapValidationDto>();
-            }
         }
     }
 } 

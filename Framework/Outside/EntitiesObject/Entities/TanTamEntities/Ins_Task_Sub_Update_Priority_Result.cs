@@ -11,14 +11,9 @@ namespace EntitiesObject.Entities.TanTamEntities
 {
     using System;
     
-    public partial class Ins_Task_Group_Delete_Result
+    public partial class Ins_Task_Sub_Update_Priority_Result
     {
-        public int id { get; set; }
-        public int task_id { get; set; }
-        public string name { get; set; }
-        public string color { get; set; }
-        public Nullable<int> index { get; set; }
-        public Nullable<System.DateTime> created_at { get; set; }
-        public Nullable<System.DateTime> updated_at { get; set; }
+        public string value_text { get; set; }
+        public Nullable<int> value_option_id { get; set; }
     }
 }

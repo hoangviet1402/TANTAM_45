@@ -651,10 +651,10 @@ namespace TanTamApi.Controllers
                         }, isUsePhone);
 
                         if (resultValidate.Code == ResponseResultEnum.Success.Value() &&
-                            resultValidate.Data != null && ((ValidateAccountResponse)resultValidate.Data).AccountId != null)
+                            resultValidate.Data != null && resultValidate.Data.AccountId != null)
                         {
                             response = BoFactory.Auth.GetDataAlterAsync(
-                                ((ValidateAccountResponse)resultValidate.Data).AccountId.Value,
+                                resultValidate.Data.AccountId.Value,
                                 isUsePhone,
                                 request.PhoneCode + request.Phone,
                                 new List<string>() { "phone" });

@@ -155,7 +155,7 @@ namespace TanTamApi.Controllers
         }
 
         [JWT.Middleware.Authorize]
-        [HttpPost, Route("list-branch")]
+        [HttpPost, Route("branch-list")]
         public HttpResponseMessage ListBranch()
         {
             var response = new ApiResult<ListBranchesReponse>()
@@ -229,7 +229,7 @@ namespace TanTamApi.Controllers
         }
 
         [JWT.Middleware.Authorize]
-        [HttpPost, Route("list-departments")]
+        [HttpPost, Route("department-list")]
         public HttpResponseMessage ListDepartments()
         {
             var response = new ApiResult<List<CreateDepartmentResponse>>()
@@ -320,6 +320,30 @@ namespace TanTamApi.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
+        [JWT.Middleware.Authorize]
+        [HttpPost, Route("position-list")]
+        public HttpResponseMessage ListPosition([FromBody] PosisionListRequest request)
+        {
+            var response = new ApiResult<List<CreatePosisionResponse>>()
+            {
+                Data = new List<CreatePosisionResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                //var data = BoFactory.Position
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("CompanyController CreatePosition EX:", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+        }
 
         [HttpPost, Route("element/list-business-field")]
         public HttpResponseMessage listBusinessField()
@@ -407,7 +431,7 @@ namespace TanTamApi.Controllers
                 response = BoFactory.Company.UpdateUserAndShopNameAsync(request);
                 if (response.Code == ResponseResultEnum.Success.Value())
                 {
-                    BoFactory.Branches.CompanyRegionCreate(request.CompanyName, request.CompanyName, request.CompanyId);
+                    response.Data =  BoFactory.Branches.CompanyRegionCreate(request.CompanyName, request.CompanyName, request.CompanyId).Data;
                 }
                 CommonLogger.PerformanceLogger.DebugFormat("update-user-and-shop-name request {0}", JsonConvert.SerializeObject(response));
             }

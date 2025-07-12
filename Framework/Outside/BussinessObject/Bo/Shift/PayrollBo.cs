@@ -199,10 +199,7 @@ namespace BussinessObject.Bo.Shift
             switch (response.Data.ClockType.ToEnum<Clock_Type_Enum>())
             {
                 case Clock_Type_Enum.clock_out: // nó muốn check out đã qua ca mới và chưa tới giờ vô // autocheck out
-                    //if (dataShift.Any(x => SetTime(dataTimes, dateFrom, x.chec ?? 0, x.EndCheckOutMinuteId ?? 0) < currentDate))
-                    //{
-
-                    //}
+                    // cho check out thoải mái
                     break;
                 case Clock_Type_Enum.clock_in: // nó muốn check in -> thời gian hiện tại quá thời gian checkout -> ko hiện ca 
                     if (dataShift.Any(x => SetTime(dataTimes, dateFrom, x.EndCheckOutHourId ?? 0, x.EndCheckOutMinuteId ?? 0) >= currentDate) == false)
@@ -364,29 +361,27 @@ namespace BussinessObject.Bo.Shift
             if (clock_shift.AutoApprove == 0)
             {
                 List<Ins_Wifi_Get_Result> wifi_account = DaoFactory.Wifi.WifiGet(0, request.BranchId ?? clock_shift.BranchID, 0, accountMapID);
-                var check_access = false;
-                if(wifi_account != null && wifi_account.Any())
+                var check_wifi = true;
+                var check_gps = true;
+                if (wifi_account != null && wifi_account.Any())
                 {
                     if(string.IsNullOrEmpty(request.Bssid) == false && wifi_account.Any( x => x.Bssid == request.Bssid) == true)
                     {
-                        //check in/out đúng wifi
-                        check_access = true;
+                        //check wifi
+                        check_wifi = true;
                     }
-                    if (check_access == false
-                            && request.Latitude != 0 
-                            && request.Longitude != 0  
-                            && wifi_account.Any(x => GeoHelper.IsInCoverage(
+                    if (wifi_account.Any(x => GeoHelper.IsInCoverage(
                                 request.Latitude ?? 0, request.Longitude ?? 0, x.Accuracy ?? 0,
                                 x.Latitude ?? 0, x.Longitude ?? 0, x.Radius ?? 0
                                 ) == true) == true
                         )
                     {
-                        //check in/out đúng tọa độ 
-                        check_access = true;
+                        //check  tọa độ 
+                        check_gps = true;
                     }
                 }
 
-                if(check_access == false)
+                if(check_wifi == false && check_gps == false)
                 {
                     response.Code = ResponseResultEnum.Success.Value();
                     response.Message = "vị trí bạn vào / ra ca không hợp lệ";

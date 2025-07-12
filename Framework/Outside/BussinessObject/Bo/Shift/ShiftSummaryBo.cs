@@ -429,7 +429,7 @@ namespace BussinessObject.Bo.Shift
                                 checkin_time = shift.StartCheckInTime.HasValue ? shift.StartCheckInTime.Value.ToString(@"yyyy-MM-dd HH\:mm\:ss") : null,
                                 checkout_time = shift.StartCheckOutTime.HasValue ? shift.StartCheckOutTime.Value.ToString(@"yyyy-MM-dd HH\:mm\:ss") : null,
                                 shift_name = shift.ShiftName ?? "",
-                                real_working_hour = shift.RealWorkingHour.GetValueOrDefault(),
+                                real_working_hour = (double)(shift.RealWorkingHour ?? 0),
                                 real_working_minute = shift.RealWorkingMinute.GetValueOrDefault(),
                                 // ✅ IMPLEMENTED: Set coefficients from database instead of hardcode
                                 coefficient = shift.Coefficient,

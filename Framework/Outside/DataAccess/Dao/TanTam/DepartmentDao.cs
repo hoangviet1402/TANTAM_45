@@ -11,10 +11,11 @@ namespace DataAccess.Dao.TanTam
     public interface IDepartmentDao : IBaseFactories<DBNull>
     {
         int CreateDepartment(string name, int branchId, int companyId);
-        List<Ins_CompanyDepartment_CreateInAllBranchId_Result> CreateDepartmentInAllBranches(string name, int companyId, string alias, string code);
+        List<Ins_CompanyDepartment_CreateInAllBranchId_Result> CreateDepartmentInAllBranches(string name, int companyId, string alias, string code, int isOnboarding);
+        int CreateDepartmentInAllBranches_Simple(string name, int companyId, int branchID, string alias, string code, int isOnboarding);
         List<Ins_CompanyDepartment_GetAll_Result> GetAllDepartments(int companyId);
         List<Ins_CompanyDepartment_SelectByBrandId_Result> GetAllDepartmentsByBranch(int companyId, int branchID);
-        List<Ins_EmployeeDepartmentMap_GetCompanyId_Result> EmployeeDepartmentMap_GetCompanyId(int companyId)
+        List<Ins_EmployeeDepartmentMap_GetCompanyId_Result> EmployeeDepartmentMap_GetCompanyId(int companyId);
     }
 
     internal class DepartmentDao : DaoFactories<TanTamEntities, DBNull>, IDepartmentDao
@@ -37,11 +38,24 @@ namespace DataAccess.Dao.TanTam
             }
         }
 
-        public List<Ins_CompanyDepartment_CreateInAllBranchId_Result> CreateDepartmentInAllBranches(string name, int companyId, string alias, string code)
+        public List<Ins_CompanyDepartment_CreateInAllBranchId_Result> CreateDepartmentInAllBranches(string name, int companyId, string alias, string code, int isOnboarding)
         {
             using (Uow)
             {
-                return Uow.Context.Ins_CompanyDepartment_CreateInAllBranchId(name, alias, code, companyId).ToList();
+                return Uow.Context.Ins_CompanyDepartment_CreateInAllBranchId(name, isOnboarding , alias, code, companyId).ToList();
+            }
+        }
+
+        public int CreateDepartmentInAllBranches_Simple(string name, int companyId, int branchID, string alias, string code, int isOnboarding)
+        {
+            using (Uow)
+            {
+                var outResult = 0;
+                var out_OutResult = new ObjectParameter("CompanyDepartment", typeof(int));
+                var data =  Uow.Context.Ins_CompanyDepartment_CreateSimple(name, isOnboarding, alias, code, companyId, branchID, out_OutResult);
+                if (out_OutResult != null && out_OutResult.Value != null)
+                    int.TryParse(out_OutResult.Value.ToString(), out outResult);
+                return outResult;
             }
         }
         public int CreateDepartment(string name, int branchId, int companyId)

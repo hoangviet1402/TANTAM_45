@@ -24,7 +24,7 @@ namespace BussinessObject.Models.Company
         public string Address { get; set; }
 
         [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RegionId { get; set; }
+        public int? RegionId { get; set; }
 
         [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsOnboarding { get; set; }

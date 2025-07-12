@@ -13,7 +13,7 @@ namespace EntitiesObject.Entities.TanTamEntities
     
     public partial class Ins_ShiftAssignment_User_WorkingDay_RegisterShift_Result
     {
-        public int TotalUpdated { get; set; }
+        public Nullable<int> TotalUpdated { get; set; }
         public Nullable<System.DateTime> WorkingDay { get; set; }
         public string ShiftName { get; set; }
         public string Message { get; set; }

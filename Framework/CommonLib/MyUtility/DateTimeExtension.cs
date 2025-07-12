@@ -617,6 +617,26 @@ namespace MyUtility
             return firstMonday.AddDays(weekOfYear * 7);
         }
 
+        public static void GetStartAndEndDateOfWeek(int year, int weekOfYear,out DateTime StartDate, out DateTime EndDate)
+        {
+            StartDate = DateTime.Now;
+            EndDate = DateTime.Now;
+            // Lấy Monday đầu tiên của năm (theo ISO 8601)
+            var jan1 = new DateTime(year, 1, 1);
+            var cal = CultureInfo.InvariantCulture.Calendar;
+
+            // Tìm tuần của ngày 4/1 (chuẩn ISO: tuần chứa ngày 4/1 luôn là tuần 1)
+            int daysOffset = DayOfWeek.Monday - jan1.DayOfWeek;
+            if (daysOffset > 0) daysOffset -= 7; // lùi về Monday trước đó nếu cần
+
+            var firstMonday = jan1.AddDays(daysOffset);
+
+            // Tính ngày đầu của tuần thứ N
+            StartDate = firstMonday.AddDays((weekOfYear - 1) * 7);
+            EndDate = StartDate.AddDays(6);
+            
+        }
+
         /// <summary>
         ///     <para>Author:TrungLD</para>
         ///     <para>DateCreated: 10/04/2015</para>

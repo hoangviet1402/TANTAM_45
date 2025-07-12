@@ -91,6 +91,7 @@
     <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
     <Compile Include="Bo\TanTamBo\DepartmentBo.cs" />
     <Compile Include="Bo\TanTamBo\EmployeeBo.cs" />
+    <Compile Include="Bo\TanTamBo\EmployeeBoHelper.cs" />
     <Compile Include="Bo\TanTamBo\OpenShiftBo.cs" />
     <Compile Include="Bo\TanTamBo\PositionBo.cs" />
     <Compile Include="Bo\TanTamBo\TaskBo.cs" />

@@ -61,6 +61,19 @@ namespace BussinessObject.Bo.Shift
                         Bssid = x.Bssid,
                         Ssid = x.Ssid
                     },
+                    Location = new Timekeeper_Location_Info()
+                    {
+                        Latitude = x.Latitude ?? 0,
+                        Longitude = x.Longitude,
+                        Accuracy = x.Accuracy,
+                        Altitude = x.Altitude,
+                        AltitudeAccuracy = x.AltitudeAccuracy,
+                        Speed = x.Speed,
+                        SpeedAccuracy = x.SpeedAccuracy,
+                        Course = x.Course,
+                        CourseAccuracy = x.CourseAccuracy,
+                        Mocked  = false
+                    },
                     EmployeeShift = new ClockInOut_Shift()
                     {
                         Id = x.PayrollUserID,

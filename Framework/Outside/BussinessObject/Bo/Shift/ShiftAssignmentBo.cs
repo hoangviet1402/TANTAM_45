@@ -10,6 +10,7 @@ using BussinessObject.Models.Shift;
 using Logger;
 using MyUtility.Extensions;
 using BussinessObject.Helper;
+using MyUtility;
 
 namespace BussinessObject.Bo.Shift
 {
@@ -151,7 +152,7 @@ namespace BussinessObject.Bo.Shift
                 
                 if (result != null)
                 {
-                    response.Data.total_updated = result.TotalUpdated;
+                    response.Data.total_updated = result.TotalUpdated.GetValueOrDefault();
                     
                     // Handle WorkingDay formatting
                     if (result.WorkingDay != null)
@@ -363,11 +364,11 @@ namespace BussinessObject.Bo.Shift
 
                         return new
                         {
-                            time = log.time,
+                            log.time,
                             log_id = log.Id,
                             is_trashed = log.is_trashed ? 1 : 0,
-                            created_at = log.created_at,
-                            trashed_at = log.trashed_at,
+                            log.created_at,
+                            log.trashed_at,
                             created_user = createdUser,
                             trashed_user = (object)null, // Always null as requested
                             clock_type = clockType,
@@ -449,6 +450,188 @@ namespace BussinessObject.Bo.Shift
                 default:
                     return "Khác";
             }
+        }
+
+        public ApiResult<List<ShiftLite_ForRegisterResponse>> ShiftLite_ForRegister(ShiftLite_ForRegisterRequest request)
+        {
+            var response = new ApiResult<List<ShiftLite_ForRegisterResponse>>()
+            {
+                Data = new List<ShiftLite_ForRegisterResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var currentdate = DateTime.Now;
+                // Validate input
+                if (request == null)
+                {
+                    response.Code = ResponseResultEnum.InvalidData.Value();
+                    response.Message = "Request không hợp lệ.";
+                    return response;
+                }
+                var dataHour = DaoFactory.Shift.GetTimes("vn");
+                var data = DaoFactory.ShiftAssignment.ShiftAssignment_GetByBranchSimple(request.BranchId);
+                if (data == null || data.Any() == false)
+                {
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = ResponseResultEnum.NoData.Text();
+                    return response;
+                }
+                response.Data = data.Select(x => new ShiftLite_ForRegisterResponse()
+                {
+                    Name = x.ShiftName,
+                    ShiftKey = x.ShiftKey,
+                    ShiftId = x.ShiftId,
+                    StartTime  = new DateTime(
+                                              currentdate.Year,
+                                              currentdate.Month,
+                                              currentdate.Day,
+                                              dataHour.FirstOrDefault(z => z.ID == x.StartHourId && z.IsHour == 1).Value ?? 0,
+                                              dataHour.FirstOrDefault(z => z.ID == x.StartMinuteId && z.IsHour == 0).Value ?? 0,
+                                              0
+                                              ).ToString("yyyy-MM-dd HH:mm:ss"),
+                    EndTime = new DateTime(
+                                              currentdate.Year,
+                                              currentdate.Month,
+                                              currentdate.Day,
+                                              dataHour.FirstOrDefault(z => z.ID == x.EndHourId && z.IsHour == 1).Value ?? 0,
+                                              dataHour.FirstOrDefault(z => z.ID == x.EndMinuteId && z.IsHour == 0).Value ?? 0,
+                                              0
+                                              ).ToString("yyyy-MM-dd HH:mm:ss"),
+                    WorkingDay = currentdate.ToString("yyyy-MM-dd HH:mm:ss"),
+                    Timezone = x.Timezone
+                }).OrderByDescending(x => x.WorkingDay).ToList();
+
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = ResponseResultEnum.Success.Text();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("ShiftAssignmentBo.ShiftLite_ForRegister - Error occurred", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lỗi hệ thống: " + ex.Message;
+            }
+
+            return response;
+        }
+
+        public ApiResult<List<HistoryEmployeeShiftResponse>> HistoryEmployeeShift(HistoryEmployeeShiftRequest request)
+        {
+            var response = new ApiResult<List<HistoryEmployeeShiftResponse>>()
+            {
+                Data = new List<HistoryEmployeeShiftResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+            try
+            {
+                var currentdate = DateTime.Now;
+                var dateFrom = DateTime.Now;
+                var dateTo = DateTime.Now;
+
+                DateTimeExtension.GetStartAndEndDateOfWeek(request.Year, request.WeekOfYear, out dateFrom, out dateTo);
+
+                var dataShift = DaoFactory.ShiftAssignment.ShiftAssignment_GetByBranchSimple(request.BranchId);
+                if (dataShift == null || dataShift.Any() == false)
+                {
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = ResponseResultEnum.NoData.Text();
+                    return response;
+                }
+                var checkShift = dataShift.FirstOrDefault(x => x.ShiftId == request.ShiftID);
+                if (checkShift == null || checkShift.ShiftId <= 0)
+                {
+                    response.Code = ResponseResultEnum.Success.Value();
+                    response.Message = ResponseResultEnum.NoData.Text();
+                    return response;
+                }
+                var listEmployerInShift = DaoFactory.ShiftAssignment.ShiftAssignment_GetAllEmployerInShift(request.ShiftID, request.WeekOfYear, dateFrom, dateTo);
+                var dataHour = DaoFactory.Shift.GetTimes("vn");
+                var data_date = new HistoryEmployeeShiftResponse();
+                for (DateTime date = dateTo; date > dateFrom; date = date.AddDays(-1))
+                {
+                    data_date = new HistoryEmployeeShiftResponse()
+                    {
+                        Id = Guid.NewGuid().ToString("N"),
+                        Name = checkShift.ShiftName,
+                        ShiftKey = checkShift.ShiftKey,
+                        ShiftId = checkShift.ShiftId,
+                        StartTime = new DateTime(
+                                                  date.Year,
+                                                  date.Month,
+                                                  date.Day,
+                                                  dataHour.FirstOrDefault(z => z.ID == checkShift.StartHourId && z.IsHour == 1).Value ?? 0,
+                                                  dataHour.FirstOrDefault(z => z.ID == checkShift.StartMinuteId && z.IsHour == 0).Value ?? 0,
+                                                  0
+                                                  ).ToString("yyyy-MM-dd HH:mm:ss"),
+                        EndTime = new DateTime(
+                                                  date.Year,
+                                                  date.Month,
+                                                  date.Day,
+                                                  dataHour.FirstOrDefault(z => z.ID == checkShift.EndHourId && z.IsHour == 1).Value ?? 0,
+                                                  dataHour.FirstOrDefault(z => z.ID == checkShift.EndMinuteId && z.IsHour == 0).Value ?? 0,
+                                                  0
+                                                  ).ToString("yyyy-MM-dd HH:mm:ss"),
+                        WorkingDay = date.ToString("yyyy-MM-dd HH:mm:ss"),
+                        WeekOfYear = request.WeekOfYear,
+                        BranchId = checkShift.ShiftAssignmentBranchID,
+                        TotalRegister = 0,
+                        Timezone = checkShift.Timezone,
+                        Employees = listEmployerInShift.Where(x => x.WorkingDay.GetValueOrDefault().GetBeginOfDay() == date)
+                                    .Select(x => new HistoryEmployeeShiftResponse_EmployeeInfo()
+                                    {
+                                        Id = Guid.NewGuid().ToString("N"),
+                                        Name = x.FullName,
+                                        Username = string.Format("{0}{1}", x.PhoneCode, x.Phone),
+                                        UserId = x.AccountMapID
+                                    }).ToList()
+                    };
+                    response.Data.Add(data_date);
+                }
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = ResponseResultEnum.Success.Text();
+            }
+            catch (Exception ex )
+            {
+                CommonLogger.DefaultLogger.Error("ShiftAssignmentBo.HistoryEmployeeShift - Error occurred", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lỗi hệ thống: " + ex.Message;
+            }
+            return response;
+        }
+
+        public ApiResult<List<ListForAddShiftAssignmentResponse>> ListForAddShiftAssignment(HistoryEmployeeShiftRequest request)
+        {
+             
+ 	
+        //?branch_id = 682ef049dc534fa14b0dedf4
+        //& is_only_branch = 1
+        //& shift_id = 685b9a707b0a6ac42e0894f4
+        // & is_quit = 0
+        // & working_day = 2025 - 06 - 23
+        // & keyword =
+        // &filter % 5Bname % 5D =
+        //&page = 1
+            var response = new ApiResult<List<ListForAddShiftAssignmentResponse>>()
+            {
+                Data = new List<ListForAddShiftAssignmentResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+            try
+            {
+                response.Code = ResponseResultEnum.Success.Value();
+                response.Message = ResponseResultEnum.Success.Text();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("ShiftAssignmentBo.HistoryEmployeeShift - Error occurred", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Lỗi hệ thống: " + ex.Message;
+            }
+            return response;
         }
     }
 }
