@@ -17,14 +17,18 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string ShiftName { get; set; }
         public string ShiftKey { get; set; }
         public int ShiftId { get; set; }
-        public decimal MinimumWorkingHour { get; set; }
-        public Nullable<double> WorkingHour { get; set; }
+        public int MinimumWorkingHour { get; set; }
+        public Nullable<int> WorkingHour { get; set; }
         public Nullable<int> WeekOfYear { get; set; }
-        public Nullable<System.DateTime> WorkingDay { get; set; }
-        public Nullable<System.DateTime> StartTime { get; set; }
-        public Nullable<System.DateTime> EndTime { get; set; }
+        public Nullable<int> WorkingDay { get; set; }
+        public Nullable<int> StartTime { get; set; }
+        public Nullable<int> EndTime { get; set; }
         public int TotalRegister { get; set; }
         public int SortIndex { get; set; }
         public string Timezone { get; set; }
+        public Nullable<int> StartHourValue { get; set; }
+        public Nullable<int> StartMinuteValue { get; set; }
+        public Nullable<int> EndHourValue { get; set; }
+        public Nullable<int> EndMinuteValue { get; set; }
     }
 }

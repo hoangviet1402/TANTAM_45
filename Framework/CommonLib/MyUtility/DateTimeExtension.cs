@@ -769,6 +769,25 @@ namespace MyUtility
             }
         }
 
-// ... existing code ...
+        // ... existing code ...
+
+        /// <summary>
+        /// Tính số phút đã trôi qua kể từ 0h cùng ngày của thời điểm được truyền vào.
+        /// </summary>
+        /// <param name="now">Thời điểm hiện tại (DateTime)</param>
+        /// <returns>Số phút đã trôi qua từ 0h</returns>
+        public static int GetMinutesSinceMidnight(DateTime currentDate)
+        {
+            var midnight = currentDate.Date; // tức là 00:00 của ngày đó
+            TimeSpan elapsed = currentDate - midnight;
+            return (int)elapsed.TotalMinutes;
+        }
+
+        public static long ToUnixTimestamp(this DateTime data)
+        {
+            var utc = data.ToUniversalTime();
+            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return (long)(utc - epoch).TotalSeconds;
+        }
     }
 }

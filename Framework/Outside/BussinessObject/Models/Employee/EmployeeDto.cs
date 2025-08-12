@@ -13,6 +13,7 @@ namespace BussinessObject.Models.Employee
         public int companyId { get; set; }
         public int? employeesInfoId { get; set; }
         public int? role { get; set; }
+        public string roleName { get; set; }
         public bool employeeMapIsActive { get; set; }
         public bool isNewUser { get; set; }
         public bool needSetPassword { get; set; }
@@ -64,6 +65,9 @@ namespace BussinessObject.Models.Employee
         public object company_obj { get; set; }
         public object region_obj { get; set; }
         public object branch_obj { get; set; }
+
+        public int is_root { get; set; }
+        public bool is_hide_email_and_phone { get; set; }
     }
 
     /// <summary>
@@ -74,8 +78,10 @@ namespace BussinessObject.Models.Employee
         public int employeeId { get; set; }
         public string employeeName { get; set; }
         public string employeeCode { get; set; }
+        public string email { get; set; }
         public string phone { get; set; }
         public int? userRole { get; set; }
+        public string userRoleName { get; set; }
         public int? branch { get; set; }
         public int? department { get; set; }
         public int? title { get; set; }
@@ -89,6 +95,7 @@ namespace BussinessObject.Models.Employee
         public object department_obj { get; set; }
         public object position_obj { get; set; }
         public object region_obj { get; set; }
+        public int is_root { get; set; }
     }
 
     /// <summary>

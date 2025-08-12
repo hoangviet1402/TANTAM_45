@@ -135,6 +135,9 @@ namespace BussinessObject.Models.Company
         [JsonProperty("setup_steps", NullValueHandling = NullValueHandling.Ignore)]
         public List<SetupStep> SetupSteps { get; set; }
 
+        [JsonProperty("tutorials", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TutorialsInfo> Tutorials { get; set; }
+
         [JsonProperty("integration", NullValueHandling = NullValueHandling.Ignore)]
         public Integration Integration { get; set; }
 
@@ -275,6 +278,18 @@ namespace BussinessObject.Models.Company
 
         [JsonProperty("use_publish_shifts", NullValueHandling = NullValueHandling.Ignore)]
         public int UsePublishShifts { get; set; }
+    }
+
+    public class TutorialsInfo
+    {
+        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
+        public string Code { get; set; }
+
+        [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
+        public int Weight { get; set; }
+
+        [JsonProperty("is_done", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsDone { get; set; }
     }
 
     public class SetupStep

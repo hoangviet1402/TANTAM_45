@@ -22,7 +22,7 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<int> Role { get; set; }
         public int AccountId { get; set; }
         public int CompanyId { get; set; }
-        public Nullable<int> EmployeesInfoId { get; set; }
+        public int EmployeesInfoId { get; set; }
         public Nullable<bool> CompanyIsActive { get; set; }
         public Nullable<bool> AccountIsActive { get; set; }
     }

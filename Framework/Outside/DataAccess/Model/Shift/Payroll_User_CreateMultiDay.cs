@@ -18,5 +18,6 @@ namespace DataAccess.Model.Shift
         public string RestEndTimeShort { get; set; }
         public double? RealCoefficient { get; set; }
         public int? Status { get; set; }
+        public int? IsAddPayRollManual { get; set; }
     }
 }

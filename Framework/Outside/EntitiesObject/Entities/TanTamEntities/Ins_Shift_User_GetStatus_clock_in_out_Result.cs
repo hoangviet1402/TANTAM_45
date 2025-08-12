@@ -31,7 +31,8 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string RestStartTimeShort { get; set; }
         public string RestEndTimeShort { get; set; }
         public Nullable<double> RealCoefficient { get; set; }
-        public Nullable<int> Status { get; set; }
+        public int Status { get; set; }
+        public bool IsClockOut { get; set; }
         public int ShiftAssignmentId { get; set; }
         public string Title { get; set; }
         public int ShiftAssignmentSortIndex { get; set; }

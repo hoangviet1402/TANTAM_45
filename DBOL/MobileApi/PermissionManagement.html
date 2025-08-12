@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Phân quyền</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-right: 1px solid #e9ecef;
+        }
+
+        .tab:last-child {
+            border-right: none;
+        }
+
+        .tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab:hover:not(.active) {
+            background: #e9ecef;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #495057;
+            font-weight: 600;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .btn-warning {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+            position: sticky;
+            top: 0;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .modal-title {
+            font-size: 1.5em;
+            color: #495057;
+            font-weight: 600;
+        }
+
+        .close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6c757d;
+        }
+
+        .close:hover {
+            color: #495057;
+        }
+
+        .alert {
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+
+        .permission-tree {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        .permission-group {
+            margin-bottom: 15px;
+        }
+
+        .permission-group-title {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .permission-item {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .permission-item label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+        }
+
+        .permission-item label:hover {
+            background: #f8f9fa;
+        }
+
+        .permission-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .col-6 {
+            flex: 0 0 50%;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab {
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+            
+            .tab:last-child {
+                border-bottom: none;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .row {
+                flex-direction: column;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.7);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #667eea;
+            display: none;
+        }
+        .loading-spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #667eea;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 1s linear infinite;
+            margin-right: 16px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .menu-role-tree-outer {
+            border: 1px solid #e0e7ef;
+            border-radius: 12px;
+            background: #f9fbfd;
+            padding: 18px 12px 12px 12px;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(80,120,200,0.06);
+            max-height: 600px;
+            overflow-y: auto;
+            transition: box-shadow 0.2s;
+        }
+        .menu-role-row {
+            border-radius: 6px;
+            padding: 6px 8px 6px 0;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            transition: background 0.18s;
+        }
+        .menu-role-row:hover {
+            background: #eaf2ff;
+        }
+        .menu-role-checked {
+            background: #e6ffe6 !important;
+        }
+        .menu-role-label {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            cursor: pointer;
+            gap: 6px;
+        }
+        .menu-role-checkbox {
+            width: 20px;
+            height: 20px;
+            accent-color: #667eea;
+            margin-right: 8px;
+        }
+        .menu-role-title {
+            font-size: 15px;
+            color: #222;
+        }
+        .menu-role-key {
+            color: #888;
+            font-size: 12px;
+        }
+        .expand-icon {
+            margin-right: 6px;
+            color: #667eea;
+            transition: transform 0.18s;
+        }
+        .expand-icon.expanded {
+            color: #3b82f6;
+        }
+        .expand-anim {
+            animation: fadeInMenuRole 0.18s;
+        }
+        @keyframes fadeInMenuRole {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .menu-role-tree-outer { padding: 8px 2px; }
+            .menu-role-title { font-size: 14px; }
+            .menu-role-row { padding: 4px 2px 4px 0; }
+        }
+        .menu-inactive-row {
+            opacity: 0.5;
+            background: #f8f8f8 !important;
+        }
+        .menu-inactive-tag {
+            display: inline-block;
+            background: #e0e0e0;
+            color: #888;
+            font-size: 12px;
+            border-radius: 6px;
+            padding: 2px 8px;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+        .modal-content {
+            max-height: 90vh;
+            overflow-y: auto;
+            width: 600px;
+        }
+        @media (max-width: 700px) {
+            .modal-content {
+                width: 98vw;
+                min-width: 0;
+                max-width: 98vw;
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        // Chặn scroll khi mở modal, trả lại khi đóng
+        function setModalScrollLock(lock) {
+            document.body.style.overflow = lock ? 'hidden' : '';
+        }
+        // Hook vào tất cả modal mở/đóng
+        window.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                const observer = new MutationObserver(() => {
+                    if (modal.style.display === 'block') setModalScrollLock(true);
+                    else setModalScrollLock(false);
+                });
+                observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+            });
+        });
+        // Đảm bảo khi bấm ESC cũng trả lại scroll
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (modal.style.display === 'block') modal.style.display = 'none';
+                });
+                setModalScrollLock(false);
+            }
+        });
+        // Đảm bảo khi bấm nút đóng cũng trả lại scroll
+        function closeMenuModal() {
+            document.getElementById('menuModal').style.display = 'none';
+            setModalScrollLock(false);
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            setModalScrollLock(false);
+        }
+    </script>
+</head>
+<body>
+    <div class="loading-overlay" id="globalLoadingOverlay">
+        <div class="loading-spinner"></div> Đang xử lý...
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Quản lý Phân quyền</h1>
+            <p>Hệ thống quản lý quyền hạn và phân quyền người dùng</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('permission-groups', this)">📁 Nhóm Quyền</button>
+            <button class="tab" onclick="showTab('permissions', this)">🔑 Quyền Hạn</button>
+            <button class="tab" onclick="showTab('role-permissions', this)">👥 Quyền Theo Role</button>
+            <button class="tab" onclick="showTab('employee-permissions', this)">👤 Quyền Nhân Viên</button>
+            <button class="tab" onclick="showTab('menu-management', this)">📋 Menu</button>
+            <button class="tab" onclick="showTab('menu-role', this)">👥 Phân quyền Menu</button>
+        </div>
+
+        <!-- Permission Groups Tab -->
+        <div id="permission-groups" class="tab-content active">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý Nhóm Quyền</h2>
+                <button class="btn btn-primary" onclick="showAddPermissionGroupModal()">➕ Thêm Nhóm Quyền</button>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="🔍 Tìm kiếm nhóm quyền..." onkeyup="searchPermissionGroups(this.value)">
+            </div>
+            <div class="table-container">
+                <table id="permissionGroupsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên Nhóm</th>
+                            <th>Nhóm Cha</th>
+                            <th>URL</th>
+                            <th>Icon</th>
+                            <th>API Route</th>
+                            <th>Thứ Tự</th>
+                            <th>Hệ Thống</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="9" class="loading">Đang tải dữ liệu...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Permissions Tab -->
+        <div id="permissions" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý Quyền Hạn</h2>
+                <button class="btn btn-primary" onclick="showAddPermissionModal()">➕ Thêm Quyền</button>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="🔍 Tìm kiếm quyền hạn..." onkeyup="searchPermissions(this.value)">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label>Lọc theo loại quyền:</label>
+                <select id="permissionTypeFilter" class="form-control" style="width: 200px; display: inline-block; margin-left: 10px;">
+                    <option value="1">Web</option>
+                    <option value="2">Mobile</option>
+                </select>
+            </div>
+            <div class="table-container">
+                <table id="permissionsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên Quyền</th>
+                            <th>Key</th>
+                            <th>Nhóm</th>
+                            <th>Route</th>
+                            <th>Loại</th>
+                            <th>Thứ Tự</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="8" class="loading">Đang tải dữ liệu...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Role Permissions Tab -->
+        <div id="role-permissions" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý Quyền Theo Role</h2>
+                <button class="btn btn-primary" onclick="showRolePermissionModal()">⚙️ Cấu Hình Quyền Role</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Chọn Role:</label>
+                        <select id="roleSelect" class="form-control" onchange="loadRolePermissions()">
+                            <option value="">-- Chọn Role --</option>
+                            <option value="1">System Admin</option>
+                            <option value="2">Manager</option>
+                            <option value="3">Regional Manager</option>
+                            <option value="4">Branch Manager</option>
+                            <option value="10">Employee</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Loại Quyền:</label>
+                        <select id="rolePermissionType" class="form-control" onchange="loadRolePermissions()">
+                            <option value="web">Web</option>
+                            <option value="mobile">Mobile</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="rolePermissionTree" class="permission-tree">
+                <p class="loading">Vui lòng chọn Role để xem quyền</p>
+            </div>
+        </div>
+
+        <!-- Employee Permissions Tab -->
+        <div id="employee-permissions" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý Quyền Nhân Viên</h2>
+                <button class="btn btn-primary" onclick="showEmployeePermissionModal()">👤 Cấu Hình Quyền Nhân Viên</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>ID Nhân Viên:</label>
+                        <input type="number" id="employeeIdInput" class="form-control" placeholder="Nhập ID nhân viên">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Loại Quyền:</label>
+                        <select id="employeePermissionType" class="form-control">
+                            <option value="web">Web</option>
+                            <option value="mobile">Mobile</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button class="btn btn-primary form-control" onclick="loadEmployeePermissions()">🔍 Tải Quyền</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-warning" onclick="resetEmployeePermissionsUI()">🔄 Reset Quyền Mặc Định</button>
+                </div>
+            </div>
+            <div id="employeePermissionTree" class="permission-tree">
+                <p class="loading">Vui lòng nhập ID nhân viên và tải quyền</p>
+            </div>
+        </div>
+
+        <!-- Menu Management Tab -->
+        <div id="menu-management" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý Menu</h2>
+                <button class="btn btn-primary" onclick="showMenuModal()">➕ Thêm Menu</button>
+            </div>
+            <div class="table-container">
+                <table id="menuTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tiêu đề</th>
+                            <th>Key</th>
+                            <th>URL</th>
+                            <th>Icon</th>
+                            <th>MenuType</th>
+                            <th>ParentId</th>
+                            <th>Thứ tự</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="9" class="loading">Đang tải dữ liệu...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Menu Role Tab -->
+        <div id="menu-role" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">Phân quyền Menu cho Role</h2>
+                <select id="menuRoleSelect" class="form-control" onchange="loadMenuRoleTree()">
+                    <option value="1">System Admin</option>
+                    <option value="2">Manager</option>
+                    <option value="3">Regional Manager</option>
+                    <option value="4">Branch Manager</option>
+                    <option value="10">Employee</option>
+                </select>
+            </div>
+            <div id="menuRoleTree"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Permission Group -->
+    <div id="permissionGroupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="permissionGroupModalTitle">Thêm Nhóm Quyền</h3>
+                <button class="close" onclick="closeModal('permissionGroupModal')">&times;</button>
+            </div>
+            <form id="permissionGroupForm">
+                <input type="hidden" id="permissionGroupId">
+                <div class="form-group">
+                    <label>Tên Nhóm:</label>
+                    <input type="text" id="permissionGroupTitle" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Label:</label>
+                    <input type="text" id="permissionGroupLabel" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Nhóm Cha:</label>
+                    <select id="permissionGroupParent" class="form-control">
+                        <option value="">-- Không có nhóm cha --</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>URL:</label>
+                            <input type="text" id="permissionGroupUrl" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Icon:</label>
+                            <input type="text" id="permissionGroupIcon" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>API Route:</label>
+                            <input type="text" id="permissionGroupApiRoute" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Thứ Tự:</label>
+                            <input type="number" id="permissionGroupSortIndex" class="form-control" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="permissionGroupIsSystem"> Là nhóm hệ thống
+                    </label>
+                </div>
+                <div style="text-align: right; margin-top: 25px;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('permissionGroupModal')">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Permission -->
+    <div id="permissionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="permissionModalTitle">Thêm Quyền</h3>
+                <button class="close" onclick="closeModal('permissionModal')">&times;</button>
+            </div>
+            <form id="permissionForm">
+                <input type="hidden" id="permissionId">
+                <div class="form-group">
+                    <label>Tên Quyền:</label>
+                    <input type="text" id="permissionName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Key:</label>
+                    <input type="text" id="permissionKey" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Nhóm:</label>
+                    <select id="permissionGroupIdNew" class="form-control" required>
+                        <option value="">-- Chọn nhóm --</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Route:</label>
+                            <input type="text" id="permissionRouteName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Loại:</label>
+                            <select id="permissionType" class="form-control" required>
+                                <option value="1">Web</option>
+                                <option value="2">Mobile</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Thứ Tự:</label>
+                    <input type="number" id="permissionSortIndex" class="form-control" value="1">
+                </div>
+                <div style="text-align: right; margin-top: 25px;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('permissionModal')">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal xác nhận xóa quyền -->
+    <div id="deletePermissionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Xác nhận xóa quyền</h3>
+                <button class="close" onclick="closeModal('deletePermissionModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xóa quyền này không?</p>
+            </div>
+            <div class="modal-footer" style="text-align:right;">
+                <button class="btn btn-secondary" onclick="closeModal('deletePermissionModal')">Hủy</button>
+                <button class="btn btn-danger" id="confirmDeletePermissionBtn">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal xác nhận xóa nhóm quyền -->
+    <div id="deletePermissionGroupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Xác nhận xóa nhóm quyền</h3>
+                <button class="close" onclick="closeModal('deletePermissionGroupModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xóa nhóm quyền này không?</p>
+                <p style="color: #dc3545; font-size: 14px; margin-top: 10px;">
+                    <strong>⚠️ Cảnh báo:</strong> Việc xóa nhóm quyền sẽ xóa tất cả quyền thuộc nhóm này!
+                </p>
+            </div>
+            <div class="modal-footer" style="text-align:right;">
+                <button class="btn btn-secondary" onclick="closeModal('deletePermissionGroupModal')">Hủy</button>
+                <button class="btn btn-danger" id="confirmDeletePermissionGroupBtn">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Thêm/Sửa Menu -->
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="menuModalTitle">Thêm Menu</h3>
+                <button class="close" onclick="closeMenuModal()">&times;</button>
+            </div>
+            <form id="menuForm">
+                <input type="hidden" id="menuId">
+                <div class="form-group">
+                    <label>Key:</label>
+                    <input type="text" id="menuKey" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Tiêu đề:</label>
+                    <input type="text" id="menuTitle" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>URL:</label>
+                    <input type="text" id="menuUrl" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Icon:</label>
+                    <input type="text" id="menuIcon" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>MenuType:</label>
+                    <select id="menuType" class="form-control">
+                        <option value="0">Menu chính</option>
+                        <option value="1">SubMenu</option>
+                        <option value="2">Children</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ParentId:</label>
+                    <input type="number" id="menuParentId" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Thứ tự:</label>
+                    <input type="number" id="menuOrder" class="form-control" value="1">
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái:</label>
+                    <select id="menuStatus" class="form-control">
+                        <option value="1">Hoạt động</option>
+                        <option value="0">Không hoạt động</option>
+                    </select>
+                </div>
+                <div style="text-align: right; margin-top: 25px;">
+                    <button type="button" class="btn btn-secondary" onclick="closeMenuModal()">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal xác nhận xóa menu -->
+    <div id="deleteMenuModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Xác nhận xóa menu</h3>
+                <button class="close" onclick="closeModal('deleteMenuModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xóa menu này không?</p>
+            </div>
+            <div class="modal-footer" style="text-align:right;">
+                <button class="btn btn-secondary" onclick="closeModal('deleteMenuModal')">Hủy</button>
+                <button class="btn btn-danger" id="confirmDeleteMenuBtn">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let permissionGroups = [];
+        let permissions = [];
+        let currentEmployeeId = null;
+        let currentEmployeePermissions = [];
+
+        // API Base URL
+        const API_BASE = '/api/permission-management';
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadPermissionGroups();
+            await loadPermissionsByType(document.getElementById('permissionTypeFilter').value || 1);
+
+            const savedTab = localStorage.getItem('permissionTab');
+            if (savedTab && document.getElementById(savedTab)) {
+                showTab(savedTab); // Không truyền tabButton khi gọi từ JS
+            }
+            restoreGroupExpandState();
+        });
+
+        // Tab management
+        function showTab(tabName, tabButton = null) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked tab (nếu có)
+            if (tabButton) {
+                tabButton.classList.add('active');
+            }
+
+            // Lưu tab hiện tại vào localStorage
+            localStorage.setItem('permissionTab', tabName);
+            // Gọi API khi chuyển tab menu/role
+            if (tabName === 'menu-management') loadMenuTree();
+            if (tabName === 'menu-role') loadMenuRoleTree();
+        }
+
+        // Modal management
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Show alert
+        function showAlert(message, type = 'success') {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.textContent = message;
+            
+            const container = document.querySelector('.container');
+            container.insertBefore(alertDiv, container.firstChild);
+            
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        }
+
+        // Hiệu ứng loading overlay toàn trang
+        function showLoading() {
+            document.getElementById('globalLoadingOverlay').style.display = 'flex';
+        }
+        function hideLoading() {
+            document.getElementById('globalLoadingOverlay').style.display = 'none';
+        }
+
+        // --- API Helper chuẩn hóa ---
+        async function apiCall(url, options = {}) {
+            showLoading();
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...options.headers
+                    },
+                    ...options
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                hideLoading();
+                return data;
+            } catch (error) {
+                hideLoading();
+                console.error('API call failed:', error);
+                throw error;
+            }
+        }
+
+        // --- API Client chuẩn hóa ---
+        async function fetchPermissionTree(type = 'web') {
+            const response = await apiCall(`${API_BASE}/list-tree?type=${type}`);
+            if (response.error_code === 1) {
+                return response.data;
+            } else {
+                throw new Error(response.message || 'Không thể tải cây quyền');
+            }
+        }
+
+        async function fetchPermissionTreeFiltered(type = 'web') {
+            const response = await apiCall(`${API_BASE}/list-tree-filtered?type=${type}`);
+            if (response.error_code === 1) {
+                return response.data;
+            } else {
+                throw new Error(response.message || 'Không thể tải cây quyền đã lọc');
+            }
+        }
+        async function fetchEmployeePermissionIds(employeeId, type = 'web') {
+            const response = await apiCall(`${API_BASE}/list-id-available?employeeId=${employeeId}&type=${type}`);
+            if (response.error_code === 1) {
+                return response.data;
+            } else {
+                throw new Error(response.message || 'Không thể tải quyền nhân viên');
+            }
+        }
+        async function updateEmployeePermissions(employeeId, type, permissionIds) {
+            const response = await apiCall(`${API_BASE}/update`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    employee_id: employeeId,
+                    type: type,
+                    permission_ids: permissionIds
+                })
+            });
+            if (response.error_code === 1) {
+                return true;
+            } else {
+                throw new Error(response.message || 'Cập nhật quyền thất bại');
+            }
+        }
+        async function resetEmployeePermissions(employeeId, type) {
+            const response = await apiCall(`${API_BASE}/reset-default-permission?employeeId=${employeeId}&type=${type}`, {
+                method: 'POST'
+            });
+            if (response.error_code === 1) {
+                return true;
+            } else {
+                throw new Error(response.message || 'Reset quyền thất bại');
+            }
+        }
+        async function addPermissionGroup(groupDto) {
+            const response = await apiCall(`${API_BASE}/group-add`, {
+                method: 'POST',
+                body: JSON.stringify(groupDto)
+            });
+            if (response.error_code === 1) {
+                return response.data;
+            } else {
+                throw new Error(response.message || 'Thêm nhóm quyền thất bại');
+            }
+        }
+        async function updatePermissionGroup(groupDto) {
+            const response = await apiCall(`${API_BASE}/group-update`, {
+                method: 'POST',
+                body: JSON.stringify(groupDto)
+            });
+            if (response.error_code === 1) {
+                return true;
+            } else {
+                throw new Error(response.message || 'Cập nhật nhóm quyền thất bại');
+            }
+        }
+        async function deletePermissionGroup(id) {
+            const response = await apiCall(`${API_BASE}/group-delete`, {
+                method: 'POST',
+                body: JSON.stringify(id)
+            });
+            if (response.error_code === 1) {
+                return true;
+            } else {
+                throw new Error(response.message || 'Xóa nhóm quyền thất bại');
+            }
+        }
+        async function addPermission(permissionDto) {
+            const response = await apiCall(`${API_BASE}/permission-add`, {
+                method: 'POST',
+                body: JSON.stringify(permissionDto)
+            });
+            if (response.error_code === 1) {
+                return response.data;
+            } else {
+                throw new Error(response.message || 'Thêm quyền thất bại');
+            }
+        }
+        async function updatePermission(permissionDto) {
+            const response = await apiCall(`${API_BASE}/permission-update`, {
+                method: 'POST',
+                body: JSON.stringify(permissionDto)
+            });
+            if (response.error_code === 1) {
+                return true;
+            } else {
+                throw new Error(response.message || 'Cập nhật quyền thất bại');
+            }
+        }
+        async function deletePermission(id) {
+            const response = await apiCall(`${API_BASE}/permission-delete`, {
+                method: 'POST',
+                body: JSON.stringify(id)
+            });
+            if (response.error_code === 1) {
+                return true;
+            } else {
+                throw new Error(response.message || 'Xóa quyền thất bại');
+            }
+        }
+
+        // --- API Client cho RolePermission ---
+        async function fetchRolePermissions(roleId) {
+            const response = await apiCall(`${API_BASE}/role-permission-list?roleId=${roleId}`);
+            if (response.code === 1 || response.error_code === 1) {
+                // Lấy đúng key PermissionId (PascalCase) từ API
+                return (response.data || []).map(x => x.PermissionId ?? x.permission_id ?? x.permissionId);
+            } else {
+                throw new Error(response.message || 'Không thể tải quyền role');
+            }
+        }
+        async function addRolePermission(roleId, permissionId) {
+            const response = await apiCall(`${API_BASE}/role-permission-add`, {
+                method: 'POST',
+                body: JSON.stringify({ role_id: roleId, permission_id: permissionId })
+            });
+            if (!(response.code === 1 || response.error_code === 1)) {
+                throw new Error(response.message || 'Thêm quyền thất bại');
+            }
+        }
+        async function deleteRolePermission(roleId, permissionId) {
+            const response = await apiCall(`${API_BASE}/role-permission-delete`, {
+                method: 'POST',
+                body: JSON.stringify({ role_id: roleId, permission_id: permissionId })
+            });
+            if (!(response.code === 1 || response.error_code === 1)) {
+                throw new Error(response.message || 'Xóa quyền thất bại');
+            }
+        }
+
+        // Load Permission Groups
+        async function loadPermissionGroups() {
+            try {
+                const response = await apiCall(`${API_BASE}/list-tree?type=web`);
+                if (response.error_code === 1) {
+                    permissionGroups = response.data || [];
+                    renderPermissionGroupsTable();
+                    populatePermissionGroupSelect();
+                } else {
+                    showAlert('Không thể tải danh sách nhóm quyền: ' + response.message, 'danger');
+                }
+            } catch (error) {
+                showAlert('Lỗi tải nhóm quyền: ' + error.message, 'danger');
+            }
+        }
+
+        // Render Permission Groups Table (tree view, modern, user-friendly, show permissions under each group)
+        function renderPermissionGroupsTable() {
+            const tbody = document.querySelector('#permissionGroupsTable tbody');
+            if (permissionGroups.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="loading">Không có dữ liệu</td></tr>';
+                return;
+            }
+
+            let html = '';
+            let groupIdToRowId = {};
+            let rowIdCounter = 0;
+
+            // Tạo tree structure từ flat list
+            function buildTree(groups) {
+                const map = {};
+                const roots = [];
+                groups.forEach(g => {
+                    map[g.id] = { ...g, children: g.children ? g.children.map(c => ({ ...c })) : [], permissions: g.permissions ? g.permissions.map(p => ({ ...p })) : [] };
+                });
+                groups.forEach(g => {
+                    if (g.parentId && map[g.parentId]) {
+                        map[g.parentId].children.push(map[g.id]);
+                    } else {
+                        roots.push(map[g.id]);
+                    }
+                });
+                return roots;
+            }
+
+            // Render tree row (group and permissions)
+            function renderGroupRow(group, level = 0, parentRowId = null) {
+                const rowId = 'group-row-' + (++rowIdCounter);
+                groupIdToRowId[group.id] = rowId;
+                const hasChildren = group.children && group.children.length > 0;
+                const hasPermissions = group.permissions && group.permissions.length > 0;
+                const indent = `<span style="display:inline-block;width:${level * 24}px"></span>`;
+                const expandIcon = hasChildren
+                    ? `<span class="expand-icon" data-rowid="${rowId}" style="cursor:pointer;font-size:16px;user-select:none;">&#9654;</span>`
+                    : '';
+                html += `
+                    <tr id="${rowId}" data-parent="${parentRowId || ''}" style="${parentRowId ? 'display:none;' : ''}">
+                        <td>${group.id}</td>
+                        <td>${indent}${expandIcon} <span style="font-weight:600;">${group.title}</span></td>
+                        <td>${group.parentId ? (permissionGroups.find(g => g.id === group.parentId)?.title || 'N/A') : 'Gốc'}</td>
+                        <td>${group.url || ''}</td>
+                        <td>${group.icon || ''}</td>
+                        <td>${group.apiRouteName || ''}</td>
+                        <td>${group.sortIndex}</td>
+                        <td>${group.isSystem ? '✅' : '❌'}</td>
+                        <td>
+                            <button class="btn btn-success btn-sm" onclick="showAddPermissionModalQuick(${group.id})">➕ Thêm quyền</button>
+                            <button class="btn btn-warning btn-sm" onclick="editPermissionGroup(${group.id})">✏️ Sửa</button>
+                            <button class="btn btn-danger btn-sm" onclick="deletePermissionGroup(${group.id})">🗑️ Xóa</button>
+                        </td>
+                    </tr>
+                `;
+                // Hiển thị quyền dưới nhóm
+                if (hasPermissions) {
+                    group.permissions.sort((a, b) => a.sortIndex - b.sortIndex).forEach(permission => {
+                        html += `
+                            <tr class="permission-row" data-parent="${rowId}" style="display:none;">
+                                <td></td>
+                                <td>${indent}<span style="display:inline-block;width:24px"></span>🔑 <span style="color:#007bff;">${permission.name}</span></td>
+                                <td colspan="7">
+                                    <span style="color:#888;font-size:13px;">Key: <code>${permission.key}</code> | Route: ${permission.routeName || ''} | Loại: ${permission.type === 1 ? 'Web' : 'Mobile'}</span>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+                if (hasChildren) {
+                    group.children.sort((a, b) => a.sortIndex - b.sortIndex).forEach(child => renderGroupRow(child, level + 1, rowId));
+                }
+            }
+
+            // Build tree and render
+            const tree = buildTree(permissionGroups);
+            tree.sort((a, b) => a.sortIndex - b.sortIndex).forEach(g => renderGroupRow(g));
+            tbody.innerHTML = html;
+
+            // Expand/collapse logic (show/hide permissions and children)
+            tbody.querySelectorAll('.expand-icon').forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const rowId = this.getAttribute('data-rowid');
+                    const row = document.getElementById(rowId);
+                    const isExpanded = this.classList.toggle('expanded');
+                    this.innerHTML = isExpanded ? '&#9660;' : '&#9654;';
+                    toggleChildrenAndPermissions(rowId, isExpanded);
+                });
+            });
+            function toggleChildrenAndPermissions(parentRowId, show) {
+                tbody.querySelectorAll(`tr[data-parent='${parentRowId}']`).forEach(row => {
+                    row.style.display = show ? '' : 'none';
+                });
+            }
+        }
+
+        // Load Permissions
+        async function loadPermissionsByType(typeValue) {
+            try {
+                const typeStr = typeValue === "2" ? "mobile" : "web";
+                const response = await apiCall(`${API_BASE}/list-tree-filtered?type=${typeStr}`);
+                if (response.error_code === 1) {
+                    permissions = [];
+                    // Sử dụng dữ liệu từ API trực tiếp
+                    const filteredGroups = response.data || [];
+                    
+                    // Flatten permissions from groups
+                    function extractPermissions(groups) {
+                        groups.forEach(group => {
+                            if (group.permissions) {
+                                permissions.push(...group.permissions);
+                            }
+                            if (group.children) {
+                                extractPermissions(group.children);
+                            }
+                        });
+                    }
+                    extractPermissions(filteredGroups);
+                    renderPermissionsTable(filteredGroups);
+                    // Hiển thị tất cả permissions ngay khi filter
+                    filteredGroups.forEach(group => {
+                        const rows = document.querySelectorAll(`.perm-row-group-${group.id}`);
+                        rows.forEach(row => { row.style.display = ''; });
+                        const btn = document.querySelector(`button[onclick*="toggleAllPerms('${group.id}'"]`);
+                        if (btn) btn.textContent = 'Ẩn tất cả quyền';
+                        // Lưu trạng thái expanded cho group này
+                        saveGroupExpandState(group.id, true);
+                    });
+                } else {
+                    showAlert('Không thể tải danh sách quyền: ' + response.message, 'danger');
+                }
+            } catch (error) {
+                showAlert('Lỗi tải quyền: ' + error.message, 'danger');
+            }
+        }
+
+        // Search functions
+        function searchPermissionGroups(query) {
+            const rows = document.querySelectorAll('#permissionGroupsTable tbody tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(query.toLowerCase()) ? '' : 'none';
+            });
+        }
+
+        function searchPermissions(query) {
+            const rows = document.querySelectorAll('#permissionsTable tbody tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(query.toLowerCase()) ? '' : 'none';
+            });
+        }
+
+        // Permission Group CRUD
+        function showAddPermissionGroupModal() {
+            document.getElementById('permissionGroupModalTitle').textContent = 'Thêm Nhóm Quyền';
+            document.getElementById('permissionGroupForm').reset();
+            document.getElementById('permissionGroupId').value = '';
+            document.getElementById('permissionGroupModal').style.display = 'block';
+        }
+
+        function editPermissionGroup(id) {
+            const group = findGroupById(permissionGroups, id);
+            if (!group) return;
+
+            document.getElementById('permissionGroupModalTitle').textContent = 'Sửa Nhóm Quyền';
+            document.getElementById('permissionGroupId').value = group.id;
+            document.getElementById('permissionGroupTitle').value = group.title;
+            document.getElementById('permissionGroupLabel').value = group.label || '';
+            document.getElementById('permissionGroupParent').value = group.parentId || '';
+            document.getElementById('permissionGroupUrl').value = group.url || '';
+            document.getElementById('permissionGroupIcon').value = group.icon || '';
+            document.getElementById('permissionGroupApiRoute').value = group.apiRouteName || '';
+            document.getElementById('permissionGroupSortIndex').value = group.sortIndex;
+            document.getElementById('permissionGroupIsSystem').checked = group.isSystem;
+            document.getElementById('permissionGroupModal').style.display = 'block';
+        }
+
+        // Xóa nhóm quyền dùng modal xác nhận đẹp
+        let permissionGroupIdToDelete = null;
+        function deletePermissionGroup(id) {
+            permissionGroupIdToDelete = id;
+            document.getElementById('deletePermissionGroupModal').style.display = 'block';
+        }
+        document.getElementById('confirmDeletePermissionGroupBtn').onclick = function() {
+            if (!permissionGroupIdToDelete) return;
+            // Gọi API xóa nhóm quyền
+            deletePermissionGroupApi(permissionGroupIdToDelete)
+                .then(async () => {
+                    showAlert('Xóa nhóm quyền thành công!', 'success');
+                    await loadPermissionGroups();
+                    await loadPermissionsByType(document.getElementById('permissionTypeFilter').value);
+                    await loadRolePermissions();
+                    // Chỉ reload employee permissions nếu đang có employee được chọn
+                    if (currentEmployeeId) {
+                        await loadEmployeePermissions();
+                    }
+                    closeModal('deletePermissionGroupModal');
+                })
+                .catch(error => {
+                    showAlert('Lỗi xóa nhóm quyền: ' + error.message, 'danger');
+                    closeModal('deletePermissionGroupModal');
+                });
+            permissionGroupIdToDelete = null;
+        };
+        async function deletePermissionGroupApi(id) {
+            const response = await apiCall(`${API_BASE}/group-delete`, {
+                method: 'POST',
+                body: JSON.stringify(id)
+            });
+            if (!(response.error_code === 1)) {
+                throw new Error(response.message || 'Xóa nhóm quyền thất bại');
+            }
+        }
+
+        // Permission CRUD
+        async function showAddPermissionModal() {
+            document.getElementById('permissionModalTitle').textContent = 'Thêm Quyền';
+            document.getElementById('permissionForm').reset();
+            document.getElementById('permissionId').value = '';
+            await loadPermissionGroups();
+            populatePermissionGroupSelect();
+            document.getElementById('permissionModal').style.display = 'block';
+            return Promise.resolve();
+        }
+
+        function editPermission(id) {
+            const permission = permissions.find(p => p.id === id);
+            if (!permission) return;
+
+            document.getElementById('permissionModalTitle').textContent = 'Sửa Quyền';
+            document.getElementById('permissionForm').reset(); // Đảm bảo reset trước khi set
+            document.getElementById('permissionId').value = permission.id; // PHẢI set đúng ID
+            document.getElementById('permissionName').value = permission.name;
+            document.getElementById('permissionKey').value = permission.key;
+            document.getElementById('permissionGroupIdNew').value = permission.groupId;
+            document.getElementById('permissionRouteName').value = permission.routeName || '';
+            document.getElementById('permissionType').value = permission.type;
+            document.getElementById('permissionSortIndex').value = permission.sortIndex;
+            populatePermissionGroupSelect();
+            document.getElementById('permissionModal').style.display = 'block';
+        }
+
+        // Xóa quyền dùng modal xác nhận đẹp
+        let permissionIdToDelete = null;
+        function deletePermission(id) {
+            permissionIdToDelete = id;
+            document.getElementById('deletePermissionModal').style.display = 'block';
+        }
+        document.getElementById('confirmDeletePermissionBtn').onclick = function() {
+            if (!permissionIdToDelete) return;
+            // Gọi API xóa quyền
+            deletePermissionApi(permissionIdToDelete)
+                .then(async () => {
+                    showAlert('Xóa quyền thành công!', 'success');
+                    await loadPermissionGroups();
+                    await loadPermissionsByType(document.getElementById('permissionTypeFilter').value);
+                    await loadRolePermissions();
+                    // Chỉ reload employee permissions nếu đang có employee được chọn
+                    if (currentEmployeeId) {
+                        await loadEmployeePermissions();
+                    }
+                    closeModal('deletePermissionModal');
+                })
+                .catch(error => {
+                    showAlert('Lỗi xóa quyền: ' + error.message, 'danger');
+                    closeModal('deletePermissionModal');
+                });
+            permissionIdToDelete = null;
+        };
+        async function deletePermissionApi(id) {
+            const response = await apiCall(`${API_BASE}/permission-delete`, {
+                method: 'POST',
+                body: JSON.stringify(id)
+            });
+            if (!(response.error_code === 1)) {
+                throw new Error(response.message || 'Xóa quyền thất bại');
+            }
+        }
+
+        // Helper functions
+        function findGroupById(groups, id) {
+            for (const group of groups) {
+                if (group.id === id) return group;
+                if (group.children) {
+                    const found = findGroupById(group.children, id);
+                    if (found) return found;
+                }
+            }
+            return null;
+        }
+
+        // Helper: Populate nhóm quyền cho select (dạng cây, thụt lề rõ ràng)
+        function populatePermissionGroupSelect() {
+            const selects = ['permissionGroupParent', 'permissionGroupIdNew'];
+            selects.forEach(selectId => {
+                const select = document.getElementById(selectId);
+                if (!select) {
+                    return;
+                }
+                const currentValue = select.value;
+                select.innerHTML = selectId === 'permissionGroupParent' ? 
+                    '<option value="">-- Không có nhóm cha --</option>' : 
+                    '<option value="">-- Chọn nhóm --</option>';
+                // Build tree
+                function buildTree(groups) {
+                    const map = {};
+                    const roots = [];
+                    groups.forEach(g => { map[g.id] = { ...g, children: g.children ? g.children.map(c => ({ ...c })) : [] }; });
+                    groups.forEach(g => {
+                        if (g.parentId && map[g.parentId]) {
+                            map[g.parentId].children.push(map[g.id]);
+                        } else {
+                            roots.push(map[g.id]);
+                        }
+                    });
+                    return roots;
+                }
+                function addOptions(groups, level = 0) {
+                    if (!groups || groups.length === 0) {
+                        return;
+                    }
+                    groups.forEach(group => {
+                        const indent = '&nbsp;'.repeat(level * 4);
+                        const option = document.createElement('option');
+                        option.value = group.id;
+                        option.innerHTML = indent + group.title;
+                        select.appendChild(option);
+                        if (group.children && group.children.length > 0) {
+                            addOptions(group.children, level + 1);
+                        }
+                    });
+                }
+                const tree = buildTree(permissionGroups);
+                addOptions(tree);
+                select.value = currentValue;
+            });
+        }
+
+        // Tab Quyền hạn: hiển thị quyền theo nhóm cha-con, UX đẹp
+        function renderPermissionsTable(groups = null) {
+            const tbody = document.querySelector('#permissionsTable tbody');
+            if (permissions.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="loading">Không có dữ liệu</td></tr>';
+                return;
+            }
+            
+            // Sử dụng groups từ API nếu có, nếu không thì tạo từ permissions
+            let filteredGroups = groups;
+            if (!filteredGroups) {
+                const groupMap = new Map();
+                
+                // Tạo groups từ permissions
+                permissions.forEach(permission => {
+                    if (!groupMap.has(permission.groupId)) {
+                        groupMap.set(permission.groupId, {
+                            id: permission.groupId,
+                            title: permission.groupTitle || permission.groupName || `Group ${permission.groupId}`,
+                            permissions: []
+                        });
+                    }
+                    groupMap.get(permission.groupId).permissions.push(permission);
+                });
+                
+                // Chuyển Map thành Array
+                filteredGroups = Array.from(groupMap.values());
+            }
+            
+            // Build group tree
+            function buildTree(groups) {
+                const map = {};
+                const roots = [];
+                groups.forEach(g => { map[g.id] = { ...g, children: g.children ? g.children.map(c => ({ ...c })) : [], permissions: g.permissions ? g.permissions.map(p => ({ ...p })) : [] }; });
+                groups.forEach(g => {
+                    if (g.parentId && map[g.parentId]) {
+                        map[g.parentId].children.push(map[g.id]);
+                    } else {
+                        roots.push(map[g.id]);
+                    }
+                });
+                return roots;
+            }
+            let html = '';
+            function renderGroup(group, level = 0) {
+                // Header nhóm + nút ẩn/hiện tất cả quyền + nút thêm quyền nhanh
+                const groupRowId = `perm-group-row-${group.id}`;
+                html += `<tr style="background:${level === 0 ? '#f0f4ff' : '#f8f9fa'};font-weight:600;">
+                    <td colspan="8">${'&nbsp;'.repeat(level * 4)}📁 ${group.title}
+                        <button class="btn btn-link btn-sm" style="margin-left:10px;" onclick="toggleAllPerms('${group.id}', this)">Hiện tất cả quyền</button>
+                        <button class="btn btn-success btn-sm" style="margin-left:10px;" onclick="showAddPermissionModalQuick(${group.id})">➕ Thêm quyền</button>
+                    </td>
+                </tr>`;
+                // Quyền trong nhóm (mặc định ẩn hết)
+                if (group.permissions && group.permissions.length > 0) {
+                    group.permissions.sort((a, b) => a.sortIndex - b.sortIndex);
+                    group.permissions.forEach((permission, idx) => {
+                        const typeName = permission.type === 1 ? 'Web' : 'Mobile';
+                        html += `
+                            <tr class="perm-row-group-${group.id}" style="display:none;">
+                                <td></td>
+                                <td style="color:#007bff;padding-left:${(level + 1) * 24}px;">🔑 ${permission.name}</td>
+                                <td><code>${permission.key}</code></td>
+                                <td>${group.title}</td>
+                                <td>${permission.routeName || ''}</td>
+                                <td>${typeName}</td>
+                                <td>${permission.sortIndex}</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm" onclick="editPermission(${permission.id})">✏️ Sửa</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deletePermission(${permission.id})">🗑️ Xóa</button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+                // Nhóm con
+                if (group.children && group.children.length > 0) {
+                    group.children.forEach(child => renderGroup(child, level + 1));
+                }
+            }
+            const tree = buildTree(filteredGroups);
+            tree.forEach(g => renderGroup(g));
+            tbody.innerHTML = html;
+            restoreGroupExpandState(); // Khởi tạo trạng thái expand/collapse cho nhóm quyền
+        }
+
+        // Nút mở rộng/thu gọn quyền trong nhóm
+        window.toggleShowAllPerms = function(groupId, btn) {
+            const rows = document.querySelectorAll(`.perm-row-group-${groupId}`);
+            const isCollapsed = btn.textContent.includes('Hiện thêm');
+            rows.forEach((row, idx) => {
+                if (isCollapsed) {
+                    row.style.display = '';
+                } else {
+                    if (idx >= 5) row.style.display = 'none';
+                }
+            });
+            btn.textContent = isCollapsed ? 'Thu gọn' : 'Hiện thêm...';
+        }
+
+        // Role Permissions
+        async function loadRolePermissions() {
+            const roleId = document.getElementById('roleSelect').value;
+            const type = document.getElementById('rolePermissionType').value;
+            
+            if (!roleId) {
+                document.getElementById('rolePermissionTree').innerHTML = '<p class="loading">Vui lòng chọn Role để xem quyền</p>';
+                return;
+            }
+            
+            try {
+                const groups = await fetchPermissionTreeFiltered(type);
+                const allRolePermissionIds = await fetchRolePermissions(roleId);
+                
+                // Filter role permissions theo type hiện tại
+                const typeValue = type === 'mobile' ? 2 : 1;
+                const filteredRolePermissionIds = [];
+                
+                // Lấy tất cả permissions của type hiện tại
+                const allPermissionsOfType = [];
+                function extractPermissions(groups) {
+                    groups.forEach(group => {
+                        if (group.permissions) {
+                            allPermissionsOfType.push(...group.permissions);
+                        }
+                        if (group.children) {
+                            extractPermissions(group.children);
+                        }
+                    });
+                }
+                extractPermissions(groups);
+                
+                // Chỉ lấy role permissions thuộc type hiện tại
+                allRolePermissionIds.forEach(rolePermissionId => {
+                    const permission = allPermissionsOfType.find(p => p.id === rolePermissionId);
+                    if (permission && permission.type === typeValue) {
+                        filteredRolePermissionIds.push(rolePermissionId);
+                    }
+                });
+                
+                renderPermissionTree('rolePermissionTree', groups, filteredRolePermissionIds, true, roleId);
+                
+                // Gọi lại checkRolePermissionTab sau khi render xong
+                checkRolePermissionTab();
+            } catch (error) {
+                showAlert('Lỗi tải quyền role: ' + error.message, 'danger');
+            }
+        }
+
+        // Employee Permissions
+        async function loadEmployeePermissions() {
+            const employeeId = document.getElementById('employeeIdInput').value;
+            const type = document.getElementById('employeePermissionType').value;
+            
+            // Nếu không có employeeId từ input nhưng có currentEmployeeId, sử dụng currentEmployeeId
+            const finalEmployeeId = employeeId || currentEmployeeId;
+            
+            if (!finalEmployeeId) {
+                showAlert('Vui lòng nhập ID nhân viên', 'warning');
+                return;
+            }
+            
+            currentEmployeeId = finalEmployeeId;
+            
+            try {
+                // Load permission tree (đã lọc)
+                const treeGroups = await fetchPermissionTreeFiltered(type);
+                // Load employee permissions
+                const empPermissionIds = await fetchEmployeePermissionIds(finalEmployeeId, type);
+                
+                currentEmployeePermissions = empPermissionIds;
+                renderPermissionTree('employeePermissionTree', treeGroups, currentEmployeePermissions, true);
+            } catch (error) {
+                showAlert('Lỗi tải quyền nhân viên: ' + error.message, 'danger');
+            }
+        }
+
+        async function resetEmployeePermissionsUI() {
+            if (!currentEmployeeId) {
+                showAlert('Vui lòng tải quyền nhân viên trước', 'warning');
+                return;
+            }
+            
+            if (!confirm('Bạn có chắc chắn muốn reset quyền về mặc định?')) {
+                return;
+            }
+            
+            const type = document.getElementById('employeePermissionType').value;
+            
+            try {
+                await resetEmployeePermissions(parseInt(currentEmployeeId), type);
+                showAlert('Reset quyền thành công!', 'success');
+                loadEmployeePermissions(); // Reload to show updated permissions
+            } catch (error) {
+                showAlert('Lỗi reset quyền: ' + error.message, 'danger');
+            }
+        }
+
+        // Render Permission Tree (role/employee) - hiển thị đúng cha-con, UX tốt
+        function renderPermissionTree(containerId, groups, selectedPermissions = [], editable = false, roleId = null) {
+            const container = document.getElementById(containerId);
+            if (!groups || groups.length === 0) {
+                container.innerHTML = '<p class="loading">Không có dữ liệu quyền</p>';
+                return;
+            }
+            let html = '';
+            function renderGroup(group, level = 0) {
+                html += `<div class="permission-group" style="margin-left:${level * 24}px;">`;
+                html += `<div class="permission-group-title" style="background:${level === 0 ? '#f0f4ff' : '#f8f9fa'};">📁 ${group.title}</div>`;
+                if (group.permissions && group.permissions.length > 0) {
+                    group.permissions.forEach(permission => {
+                        const isChecked = selectedPermissions.map(Number).includes(Number(permission.id));
+                        let checkboxHtml;
+                        if (editable) {
+                            if (roleId) {
+                                // Role permissions
+                                checkboxHtml = `<input type="checkbox" value="${permission.id}" ${isChecked ? 'checked' : ''} onchange="onRolePermissionChangeHandler(${roleId}, ${permission.id}, this.checked)"> `;
+                            } else {
+                                // Employee permissions
+                                checkboxHtml = `<input type="checkbox" value="${permission.id}" ${isChecked ? 'checked' : ''} onchange="onEmployeePermissionChange(${permission.id}, this.checked)"> `;
+                            }
+                        } else {
+                            checkboxHtml = (isChecked ? '✅ ' : '❌ ');
+                        }
+                        html += `
+                            <div class="permission-item" style="margin-left:24px;">
+                                <label>
+                                    ${checkboxHtml}${permission.name}
+                                    <small style="color: #6c757d; margin-left: 10px;">(${permission.key})</small>
+                                </label>
+                            </div>
+                        `;
+                    });
+                }
+                if (group.children && group.children.length > 0) {
+                    group.children.forEach(child => renderGroup(child, level + 1));
+                }
+                html += `</div>`;
+            }
+            groups.forEach(group => renderGroup(group));
+            container.innerHTML = html;
+        }
+
+        // Modal functions
+        function showRolePermissionModal() {
+            showAlert('Chức năng cấu hình quyền role đang được phát triển', 'warning');
+        }
+
+        function showEmployeePermissionModal() {
+            showAlert('Vui lòng sử dụng form bên dưới để cấu hình quyền nhân viên', 'info');
+        }
+
+        // Form submissions
+        document.getElementById('permissionGroupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const isUpdate = !!document.getElementById('permissionGroupId').value;
+            const groupDto = {
+                id: document.getElementById('permissionGroupId').value,
+                title: document.getElementById('permissionGroupTitle').value,
+                label: document.getElementById('permissionGroupLabel').value,
+                parentId: document.getElementById('permissionGroupParent').value,
+                url: document.getElementById('permissionGroupUrl').value,
+                icon: document.getElementById('permissionGroupIcon').value,
+                apiRouteName: document.getElementById('permissionGroupApiRoute').value,
+                sortIndex: parseInt(document.getElementById('permissionGroupSortIndex').value),
+                isSystem: document.getElementById('permissionGroupIsSystem').checked
+            };
+
+            if (isUpdate) {
+                // Update nhóm quyền
+                updatePermissionGroup(groupDto)
+                    .then(async () => {
+                        showAlert('Cập nhật nhóm quyền thành công!', 'success');
+                        await loadPermissionGroups();
+                        await loadPermissionsByType(document.getElementById('permissionTypeFilter').value);
+                        await loadRolePermissions();
+                        // Chỉ reload employee permissions nếu đang có employee được chọn
+                        if (currentEmployeeId) {
+                            await loadEmployeePermissions();
+                        }
+                        closeModal('permissionGroupModal');
+                    })
+                    .catch(error => {
+                        showAlert('Lỗi cập nhật nhóm quyền: ' + error.message, 'danger');
+                    });
+            } else {
+                // Thêm mới nhóm quyền
+                addPermissionGroup(groupDto)
+                    .then(async () => {
+                        showAlert('Thêm nhóm quyền thành công!', 'success');
+                        await loadPermissionGroups();
+                        await loadPermissionsByType(document.getElementById('permissionTypeFilter').value);
+                        await loadRolePermissions();
+                        // Chỉ reload employee permissions nếu đang có employee được chọn
+                        if (currentEmployeeId) {
+                            await loadEmployeePermissions();
+                        }
+                        closeModal('permissionGroupModal');
+                    })
+                    .catch(error => {
+                        showAlert('Lỗi thêm nhóm quyền: ' + error.message, 'danger');
+                    });
+            }
+        });
+
+        document.getElementById('permissionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const isUpdate = !!document.getElementById('permissionId').value;
+            const permissionDto = {
+                id: document.getElementById('permissionId').value,
+                name: document.getElementById('permissionName').value,
+                key: document.getElementById('permissionKey').value,
+                groupId: document.getElementById('permissionGroupIdNew').value,
+                routeName: document.getElementById('permissionRouteName').value,
+                type: parseInt(document.getElementById('permissionType').value),
+                sortIndex: parseInt(document.getElementById('permissionSortIndex').value)
+            };
+            if (!permissionDto.name || !permissionDto.key || !permissionDto.groupId) {
+                showAlert('Vui lòng nhập đầy đủ thông tin quyền!', 'danger');
+                return;
+            }
+            if (isUpdate) {
+                // Update quyền
+                updatePermission(permissionDto)
+                    .then(async () => {
+                        showAlert('Cập nhật quyền thành công!', 'success');
+                        await loadPermissionGroups();
+                        await loadPermissionsByType(document.getElementById('permissionTypeFilter').value);
+                        await loadRolePermissions();
+                        // Chỉ reload employee permissions nếu đang có employee được chọn
+                        if (currentEmployeeId) {
+                            await loadEmployeePermissions();
+                        }
+                        closeModal('permissionModal');
+                    })
+                    .catch(error => {
+                        showAlert('Lỗi cập nhật quyền: ' + error.message, 'danger');
+                    });
+            } else {
+                // Thêm mới quyền
+                addPermission(permissionDto)
+                    .then(async () => {
+                        showAlert('Thêm quyền thành công!', 'success');
+                        await loadPermissionGroups();
+                        await loadPermissionsByType(document.getElementById('permissionTypeFilter').value);
+                        await loadRolePermissions();
+                        // Chỉ reload employee permissions nếu đang có employee được chọn
+                        if (currentEmployeeId) {
+                            await loadEmployeePermissions();
+                        }
+                        closeModal('permissionModal');
+                    })
+                    .catch(error => {
+                        showAlert('Lỗi thêm quyền: ' + error.message, 'danger');
+                    });
+            }
+        });
+
+        // Close modals when clicking outside (xoá hoặc vô hiệu hoá)
+        // window.addEventListener('click', function(event) {
+        //     const modals = document.querySelectorAll('.modal');
+        //     modals.forEach(modal => {
+        //         if (event.target === modal) {
+        //             modal.style.display = 'none';
+        //         }
+        //     });
+        // });
+        // Đóng modal khi bấm ESC
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (modal.style.display === 'block') modal.style.display = 'none';
+                });
+            }
+        });
+
+        // Lưu trạng thái expand/collapse nhóm quyền vào localStorage
+        function saveGroupExpandState(groupId, expanded) {
+            let state = JSON.parse(localStorage.getItem('groupExpandState') || '{}');
+            state[groupId] = expanded;
+            localStorage.setItem('groupExpandState', JSON.stringify(state));
+        }
+        function restoreGroupExpandState() {
+            let state = JSON.parse(localStorage.getItem('groupExpandState') || '{}');
+            Object.keys(state).forEach(groupId => {
+                if (state[groupId]) {
+                    const btn = document.querySelector(`button[onclick*="toggleAllPerms('${groupId}'"]`);
+                    if (btn && btn.textContent.includes('Hiện')) btn.click();
+                }
+            });
+        }
+        // Sửa toggleAllPerms để lưu trạng thái
+        window.toggleAllPerms = function(groupId, btn) {
+            const rows = document.querySelectorAll(`.perm-row-group-${groupId}`);
+            if (rows.length === 0) {
+                return;
+            }
+            let allVisible = Array.from(rows).every(row => row.style.display !== 'none');
+            if (allVisible) {
+                rows.forEach(row => { row.style.display = 'none'; });
+                btn.textContent = 'Hiện tất cả quyền';
+                saveGroupExpandState(groupId, false);
+            } else {
+                rows.forEach(row => { row.style.display = ''; });
+                btn.textContent = 'Ẩn tất cả quyền';
+                saveGroupExpandState(groupId, true);
+            }
+        };
+
+        // Hàm xử lý tick/untick quyền cho role (tự động lưu)
+        window.onRolePermissionChangeHandler = async function(roleId, permissionId, checked) {
+            try {
+                if (checked) {
+                    await addRolePermission(roleId, permissionId);
+                    showAlert('Đã thêm quyền cho role!', 'success');
+                } else {
+                    await deleteRolePermission(roleId, permissionId);
+                    showAlert('Đã xoá quyền khỏi role!', 'success');
+                }
+                // Reload lại cây quyền để cập nhật trạng thái
+                await loadRolePermissions();
+            } catch (error) {
+                showAlert('Lỗi cập nhật quyền role: ' + error.message, 'danger');
+            }
+        };
+
+        // Hàm xử lý tick/untick quyền cho nhân viên (tự động lưu)
+        window.onEmployeePermissionChange = async function(permissionId, checked) {
+            // Kiểm tra xem có currentEmployeeId không
+            if (!currentEmployeeId) {
+                showAlert('Vui lòng tải quyền nhân viên trước', 'warning');
+                return;
+            }
+            
+            permissionId = Number(permissionId);
+            if (checked) {
+                if (!currentEmployeePermissions.includes(permissionId)) currentEmployeePermissions.push(permissionId);
+            } else {
+                currentEmployeePermissions = currentEmployeePermissions.filter(id => id !== permissionId);
+            }
+            // Tự động lưu quyền khi tick/untick
+            const employeeId = currentEmployeeId;
+            const type = document.getElementById('employeePermissionType').value;
+            try {
+                await updateEmployeePermissions(parseInt(employeeId), type, currentEmployeePermissions);
+                showAlert('Cập nhật quyền nhân viên thành công!', 'success');
+            } catch (error) {
+                showAlert('Lỗi cập nhật quyền: ' + error.message, 'danger');
+            }
+        };
+        // Khi bấm Reset cũng lưu và reload lại quyền mới nhất
+        async function resetEmployeePermissionsUI() {
+            if (!currentEmployeeId) {
+                showAlert('Vui lòng tải quyền nhân viên trước', 'warning');
+                return;
+            }
+            if (!confirm('Bạn có chắc chắn muốn reset quyền về mặc định?')) {
+                return;
+            }
+            const type = document.getElementById('employeePermissionType').value;
+            try {
+                await resetEmployeePermissions(parseInt(currentEmployeeId), type);
+                showAlert('Reset quyền thành công!', 'success');
+                await loadEmployeePermissions(); // Reload to show updated permissions
+            } catch (error) {
+                showAlert('Lỗi reset quyền: ' + error.message, 'danger');
+            }
+        }
+
+        // Disable quyền theo role cho các role đặc biệt
+        function checkRolePermissionTab() {
+            const roleId = document.getElementById('roleSelect').value;
+            const type = document.getElementById('rolePermissionType').value;
+            const tree = document.getElementById('rolePermissionTree');
+            
+            // Chỉ chặn SystemAdmin (role 1)
+            const disabledRoles = ['1'];
+            
+            // Cho phép Employee (role 10) cấu hình quyền mobile
+            const isEmployeeWithMobile = roleId === '10' && type === 'mobile';
+            
+            if (disabledRoles.includes(roleId) && !isEmployeeWithMobile) {
+                tree.innerHTML = '<p class="loading">Role này không được phép cấu hình quyền mặc định.</p>';
+                tree.style.pointerEvents = 'none';
+                tree.style.opacity = 0.6;
+            } else {
+                tree.style.pointerEvents = '';
+                tree.style.opacity = 1;
+                
+                // Hiển thị thông báo đặc biệt cho Employee với mobile
+                if (isEmployeeWithMobile) {
+                    const existingMessage = tree.querySelector('.employee-mobile-notice');
+                    if (!existingMessage) {
+                        const notice = document.createElement('div');
+                        notice.className = 'alert alert-info employee-mobile-notice';
+                        notice.style.marginBottom = '15px';
+                        notice.innerHTML = '✅ <strong>Employee Role với Mobile:</strong> Bạn có thể cấu hình quyền mobile cho role Employee.';
+                        tree.insertBefore(notice, tree.firstChild);
+                    }
+                } else {
+                    // Xóa thông báo nếu không phải Employee + Mobile
+                    const existingMessage = tree.querySelector('.employee-mobile-notice');
+                    if (existingMessage) {
+                        existingMessage.remove();
+                    }
+                }
+            }
+        }
+        // Gọi lại khi chọn role hoặc thay đổi type
+        document.getElementById('roleSelect').addEventListener('change', checkRolePermissionTab);
+        document.getElementById('rolePermissionType').addEventListener('change', checkRolePermissionTab);
+        // Gọi khi load lần đầu
+        checkRolePermissionTab();
+
+        // 3. Gắn sự kiện onchange cho filter
+        if (document.getElementById('permissionTypeFilter')) {
+            document.getElementById('permissionTypeFilter').onchange = function() {
+                loadPermissionsByType(this.value);
+            };
+        }
+
+        // Hàm mở modal thêm quyền nhanh cho group (async)
+        window.showAddPermissionModalQuick = async function(groupId) {
+            await showAddPermissionModal();
+            document.getElementById('permissionGroupIdNew').value = groupId;
+        };
+
+        // Menu Management
+        async function loadMenuTree() {
+            const res = await fetch('/api/permission-management/menu-tree-all');
+            const data = await res.json();
+            window._lastMenuTree = data.data;
+            renderMenuTreeModern(data.data);
+        }
+        // --- MENU TREE MODERN RENDER ---
+        function renderMenuTreeModern(menuTree) {
+            const tbody = document.querySelector('#menuTable tbody');
+            if (!menuTree || menuTree.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" class="loading">Không có dữ liệu</td></tr>';
+                return;
+            }
+            let html = '';
+            let nodeId = 0;
+            function renderNode(menu, level = 0, parentId = null) {
+                const thisId = 'menu-node-' + (++nodeId);
+                const hasChildren = (menu.subMenu && menu.subMenu.length > 0) || (menu.children && menu.children.length > 0);
+                const indent = `<span style="display:inline-block;width:${level * 24}px"></span>`;
+                const expandIcon = hasChildren ? `<span class="expand-icon" data-target="${thisId}" style="cursor:pointer;font-size:16px;user-select:none;">&#9654;</span>` : '';
+                const rowClass = menu.status === 0 ? 'menu-inactive-row' : '';
+                const statusTag = menu.status === 0 ? '<span class="menu-inactive-tag">Đã tắt</span>' : '';
+                const statusBtn = `<button class="btn btn-sm btn-toggle-status" onclick="toggleMenuStatus(${menu.id}, ${menu.status === 1 ? 0 : 1})" style="margin-left:8px;">${menu.status === 1 ? 'Tắt' : 'Bật'}</button>`;
+                html += `<tr id="${thisId}" data-parent="${parentId || ''}" class="${rowClass}" style="${parentId ? 'display:none;' : ''};background:${level === 0 ? '#f0f4ff' : '#fff'};\">\n`
+                    + `<td>${menu.id}</td>`
+                    + `<td>${indent}${expandIcon} <span style=\"font-weight:600;\">${menu.title}</span> ${statusTag} ${statusBtn}</td>`
+                    + `<td>${'&nbsp;'.repeat(level * 4) + menu.key}</td>`
+                    + `<td>${menu.url || ''}</td>`
+                    + `<td>${menu.icon || ''}</td>`
+                    + `<td>${menuTypeText(menu.menuType)}</td>`
+                    + `<td>${menu.parentId ? menu.parentId : ''}</td>`
+                    + `<td>${menu.order}</td>`
+                    + `<td>`
+                    + `<button class=\"btn btn-warning btn-sm\" onclick=\"showMenuModal(${menu.id})\">✏️ Sửa</button>`
+                    + `<button class=\"btn btn-danger btn-sm\" onclick=\"deleteMenu(${menu.id})\">🗑️ Xóa</button>`
+                    + `</td>`
+                    + `</tr>`;
+                if (menu.subMenu && menu.subMenu.length > 0) menu.subMenu.forEach(sub => renderNode(sub, level + 1, thisId));
+                if (menu.children && menu.children.length > 0) menu.children.forEach(child => renderNode(child, level + 1, thisId));
+            }
+            menuTree.forEach(menu => renderNode(menu));
+            tbody.innerHTML = html;
+            // Expand/collapse logic
+            tbody.querySelectorAll('.expand-icon').forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const isExpanded = this.classList.toggle('expanded');
+                    this.innerHTML = isExpanded ? '&#9660;' : '&#9654;';
+                    toggleChildrenRows(targetId, isExpanded);
+                });
+            });
+            function toggleChildrenRows(parentId, show) {
+                tbody.querySelectorAll(`tr[data-parent='${parentId}']`).forEach(row => {
+                    row.style.display = show ? '' : 'none';
+                });
+            }
+        }
+        // Gọi lại renderMenuTreeModern khi load menu
+        async function loadMenuTree() {
+            const res = await fetch('/api/permission-management/menu-tree-all');
+            const data = await res.json();
+            window._lastMenuTree = data.data;
+            renderMenuTreeModern(data.data);
+        }
+        function showMenuModal(id = null) {
+            document.getElementById('menuForm').reset();
+            document.getElementById('menuId').value = '';
+            document.getElementById('menuModalTitle').textContent = id ? 'Sửa Menu' : 'Thêm Menu';
+            if (id) {
+                // Tìm đúng menu object từ menuTree để lấy giá trị chuẩn
+                if (window._lastMenuTree) {
+                    function findMenuById(menus, id) {
+                        for (const m of menus) {
+                            if (m.id == id) return m;
+                            if (m.subMenu) { const found = findMenuById(m.subMenu, id); if (found) return found; }
+                            if (m.children) { const found = findMenuById(m.children, id); if (found) return found; }
+                        }
+                        return null;
+                    }
+                    const menuObj = findMenuById(window._lastMenuTree, id);
+                    if (menuObj) {
+                        document.getElementById('menuId').value = menuObj.id;
+                        document.getElementById('menuKey').value = menuObj.key;
+                        document.getElementById('menuTitle').value = menuObj.title;
+                        document.getElementById('menuUrl').value = menuObj.url || '';
+                        document.getElementById('menuIcon').value = menuObj.icon || '';
+                        document.getElementById('menuType').value = menuObj.menuType;
+                        document.getElementById('menuParentId').value = menuObj.parentId || '';
+                        document.getElementById('menuOrder').value = menuObj.order;
+                        document.getElementById('menuStatus').value = menuObj.status;
+                    }
+                } else {
+                    // fallback: lấy từ row như cũ (ít chính xác hơn)
+                    const row = Array.from(document.querySelectorAll('#menuTable tbody tr')).find(tr => tr.children[0].textContent == id);
+                    if (row) {
+                        document.getElementById('menuId').value = id;
+                        document.getElementById('menuKey').value = row.children[2].textContent.trim();
+                        document.getElementById('menuTitle').value = row.children[1].textContent.trim();
+                        document.getElementById('menuUrl').value = row.children[3].textContent.trim();
+                        document.getElementById('menuIcon').value = row.children[4].textContent.trim();
+                        // menuType là text, cần map lại về số
+                        const typeText = row.children[5].textContent.trim();
+                        let typeVal = 0;
+                        if (typeText === 'Menu chính') typeVal = 0;
+                        else if (typeText === 'SubMenu') typeVal = 1;
+                        else if (typeText === 'Children') typeVal = 2;
+                        document.getElementById('menuType').value = typeVal;
+                        document.getElementById('menuParentId').value = row.children[6].textContent.trim();
+                        document.getElementById('menuOrder').value = row.children[7].textContent.trim();
+                    }
+                }
+            }
+            document.getElementById('menuModal').style.display = 'block';
+        }
+        function closeMenuModal() {
+            document.getElementById('menuModal').style.display = 'none';
+        }
+        document.getElementById('menuForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const dto = {
+                id: document.getElementById('menuId').value || null,
+                key: document.getElementById('menuKey').value,
+                title: document.getElementById('menuTitle').value,
+                url: document.getElementById('menuUrl').value,
+                icon: document.getElementById('menuIcon').value,
+                menuType: parseInt(document.getElementById('menuType').value),
+                parentId: document.getElementById('menuParentId').value ? parseInt(document.getElementById('menuParentId').value) : null,
+                order: parseInt(document.getElementById('menuOrder').value),
+                status: parseInt(document.getElementById('menuStatus').value)
+            };
+            if (dto.id) {
+                await updateMenu(dto);
+            } else {
+                await addMenu(dto);
+            }
+            closeMenuModal();
+        };
+        async function addMenu(menuDto) {
+            try {
+                const response = await fetch('/api/permission-management/menu-add', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(menuDto)
+                });
+                const data = await response.json();
+                if (data.success === true || data.code === 1 || data.error_code === 1) {
+                    showAlert('Thêm menu thành công!', 'success');
+                    closeMenuModal();
+                    loadMenuTree();
+                } else {
+                    showAlert('Lỗi thêm menu: ' + (data.message || 'Không rõ nguyên nhân'), 'danger');
+                }
+            } catch (error) {
+                showAlert('Lỗi thêm menu: ' + error.message, 'danger');
+            }
+        }
+        async function updateMenu(menuDto) {
+            try {
+                const response = await fetch('/api/permission-management/menu-update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(menuDto)
+                });
+                const data = await response.json();
+                if (data.success === true || data.code === 1 || data.error_code === 1) {
+                    showAlert('Cập nhật menu thành công!', 'success');
+                    closeMenuModal();
+                    loadMenuTree();
+                } else {
+                    showAlert('Lỗi cập nhật menu: ' + (data.message || 'Không rõ nguyên nhân'), 'danger');
+                }
+            } catch (error) {
+                showAlert('Lỗi cập nhật menu: ' + error.message, 'danger');
+            }
+        }
+        // Xoá menu dùng modal xác nhận đẹp
+        let menuIdToDelete = null;
+        function deleteMenu(id) {
+            menuIdToDelete = id;
+            document.getElementById('deleteMenuModal').style.display = 'block';
+        }
+        document.getElementById('confirmDeleteMenuBtn').onclick = async function() {
+            if (!menuIdToDelete) return;
+            try {
+                await deleteMenuApi(menuIdToDelete);
+                showAlert('Xóa menu thành công!', 'success');
+                loadMenuTree();
+                closeModal('deleteMenuModal');
+            } catch (error) {
+                showAlert('Lỗi xóa menu: ' + error.message, 'danger');
+                closeModal('deleteMenuModal');
+            }
+            menuIdToDelete = null;
+        };
+        async function deleteMenuApi(id) {
+            const response = await fetch('/api/permission-management/menu-delete', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id })
+            });
+            const data = await response.json();
+            if (!(data.success === true || data.code === 1 || data.error_code === 1)) {
+                throw new Error(data.message || 'Xóa menu thất bại');
+            }
+        }
+        async function loadMenuRoleTree() {
+            const roleId = document.getElementById('menuRoleSelect').value;
+            // Lấy toàn bộ menu (không filter theo role)
+            const res = await fetch(`/api/permission-management/menu-tree-all`);
+            let menuTree = (await res.json()).data;
+            if (!Array.isArray(menuTree)) menuTree = [];
+            // Lấy danh sách menuIds đã có quyền cho role này
+            const resRole = await fetch(`/api/permission-management/menu-role-list?roleId=${roleId}`);
+            let menuIds = [];
+            try {
+                const data = await resRole.json();
+                menuIds = Array.isArray(data) ? data : (data.data || []);
+            } catch { menuIds = []; }
+            renderMenuRoleTreeModern(menuTree, menuIds, roleId);
+        }
+        // --- MENU ROLE MODERN TREE ---
+        function renderMenuRoleTreeModern(menuTree, menuIds, roleId) {
+            const container = document.getElementById('menuRoleTree');
+            if (!menuTree || menuTree.length === 0) {
+                container.innerHTML = '<p class="loading">Không có dữ liệu menu</p>';
+                return;
+            }
+            let html = '<div class="menu-role-tree-outer">';
+            let nodeId = 0;
+            function renderNode(menu, level = 0, parentId = null) {
+                const thisId = 'menu-role-node-' + (++nodeId);
+                const hasChildren = (menu.subMenu && menu.subMenu.length > 0) || (menu.children && menu.children.length > 0);
+                const checked = menuIds.includes(Number(menu.id)) ? 'checked' : '';
+                const highlight = checked ? 'menu-role-checked' : '';
+                const expandIcon = hasChildren ? `<span class="expand-icon" data-target="${thisId}" tabindex="0" style="cursor:pointer;font-size:18px;user-select:none;vertical-align:middle;">&#9654;</span>` : '';
+                const rowClass = menu.status === 0 ? 'menu-inactive-row' : '';
+                const statusTag = menu.status === 0 ? '<span class="menu-inactive-tag">Đã tắt</span>' : '';
+                html += `<div id="${thisId}" data-parent="${parentId || ''}" class="menu-role-row ${highlight} menu-role-level-${level} ${rowClass}" style="margin-left:${level * 24}px;${parentId ? 'display:none;' : ''}">
+                    ${expandIcon}
+                    <label class="menu-role-label" style="font-weight:${level === 0 ? 600 : 400};">
+                        <input type="checkbox" class="menu-role-checkbox" value="${menu.id}" ${checked} onchange="onRolePermissionChange(${roleId}, ${menu.id}, this.checked)">
+                        <span class="menu-role-title">${menu.title}</span> <small class="menu-role-key">(${menu.key})</small> ${statusTag}
+                    </label>
+                </div>`;
+                if (menu.subMenu && menu.subMenu.length > 0) menu.subMenu.forEach(sub => renderNode(sub, level + 1, thisId));
+                if (menu.children && menu.children.length > 0) menu.children.forEach(child => renderNode(child, level + 1, thisId));
+            }
+            menuTree.forEach(menu => renderNode(menu));
+            html += '</div>';
+            container.innerHTML = html;
+            // Expand/collapse logic
+            container.querySelectorAll('.expand-icon').forEach(icon => {
+                icon.classList.remove('expanded');
+                icon.innerHTML = '&#9654;';
+                icon.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const isExpanded = this.classList.toggle('expanded');
+                    this.innerHTML = isExpanded ? '&#9660;' : '&#9654;';
+                    toggleChildrenDivs(targetId, isExpanded);
+                });
+                icon.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') this.click();
+                });
+            });
+            function toggleChildrenDivs(parentId, show) {
+                // Ẩn/hiện tất cả node con mọi cấp
+                const children = container.querySelectorAll(`div[data-parent='${parentId}']`);
+                children.forEach(div => {
+                    div.style.display = show ? '' : 'none';
+                    if (show) div.classList.add('expand-anim');
+                    else div.classList.remove('expand-anim');
+                    // Nếu collapse, ẩn luôn các node con lồng sâu hơn và reset icon
+                    if (!show) {
+                        // Tìm icon con và reset về trạng thái chưa xổ
+                        const icon = div.querySelector('.expand-icon.expanded');
+                        if (icon) {
+                            icon.classList.remove('expanded');
+                            icon.innerHTML = '&#9654;';
+                        }
+                        // Đệ quy ẩn các node con sâu hơn
+                        const thisId = div.id;
+                        toggleChildrenDivs(thisId, false);
+                    }
+                });
+            }
+        }
+        // Gọi lại renderMenuRoleTreeModern khi load menu role
+        async function loadMenuRoleTree() {
+            const roleId = document.getElementById('menuRoleSelect').value;
+            const res = await fetch(`/api/permission-management/menu-tree-all`);
+            let menuTree = (await res.json()).data;
+            if (!Array.isArray(menuTree)) menuTree = [];
+            const resRole = await fetch(`/api/permission-management/menu-role-list?roleId=${roleId}`);
+            let menuIds = [];
+            try {
+                const data = await resRole.json();
+                menuIds = Array.isArray(data) ? data : (data.data || []);
+            } catch { menuIds = []; }
+            renderMenuRoleTreeModern(menuTree, menuIds, roleId);
+        }
+        async function toggleMenuRole(menuId, roleId, checked) {
+            const url = checked ? '/api/permission-management/menu-role-add' : '/api/permission-management/menu-role-delete';
+            await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ menuId, roleId })
+            });
+            loadMenuRoleTree();
+        }
+
+        // Hàm chuyển menuType sang text (đặt ở đầu script để dùng toàn cục)
+        function menuTypeText(type) {
+            if (type === 0) return 'Menu chính';
+            if (type === 1) return 'SubMenu';
+            if (type === 2) return 'Children';
+            return type;
+        }
+
+        // Hàm xử lý tick/untick menu cho role (tự động lưu)
+        window.onRolePermissionChange = async function(roleId, menuId, checked) {
+            try {
+                if (checked) {
+                    await addMenuRole(menuId, roleId);
+                    showAlert('Đã thêm menu cho role!', 'success');
+                } else {
+                    await deleteMenuRole(menuId, roleId);
+                    showAlert('Đã xoá menu khỏi role!', 'success');
+                }
+                // Reload lại cây menu-role để cập nhật trạng thái
+                await loadMenuRoleTree();
+            } catch (error) {
+                showAlert('Lỗi cập nhật menu: ' + error.message, 'danger');
+            }
+        };
+
+        // --- API Client cho MenuRole (bổ sung nếu thiếu) ---
+        async function addMenuRole(menuId, roleId) {
+            const response = await apiCall(`/api/permission-management/menu-role-add`, {
+                method: 'POST',
+                body: JSON.stringify({ menuId, roleId })
+            });
+            if (!(response.success === true || response.code === 1 || response.error_code === 1)) {
+                throw new Error(response.message || 'Thêm menu thất bại');
+            }
+        }
+        async function deleteMenuRole(menuId, roleId) {
+            const response = await apiCall(`/api/permission-management/menu-role-delete`, {
+                method: 'POST',
+                body: JSON.stringify({ menuId, roleId })
+            });
+            if (!(response.success === true || response.code === 1 || response.error_code === 1)) {
+                throw new Error(response.message || 'Xoá menu thất bại');
+            }
+        }
+
+        // Hàm chuyển trạng thái menu nhanh
+        async function toggleMenuStatus(menuId, newStatus) {
+            try {
+                // Lấy menu hiện tại từ window._lastMenuTree
+                const menu = findMenuById(window._lastMenuTree, menuId);
+                if (!menu) throw new Error('Không tìm thấy menu');
+                const dto = {
+                    id: menu.id,
+                    key: menu.key,
+                    title: menu.title,
+                    url: menu.url,
+                    icon: menu.icon,
+                    menuType: menu.menuType,
+                    parentId: menu.parentId,
+                    order: menu.order,
+                    status: newStatus
+                };
+                await updateMenu(dto);
+                showAlert('Cập nhật trạng thái menu thành công!', 'success');
+                loadMenuTree();
+            } catch (error) {
+                showAlert('Lỗi cập nhật trạng thái: ' + error.message, 'danger');
+            }
+        }
+        // Helper tìm menu theo id
+        function findMenuById(menus, id) {
+            for (const m of menus) {
+                if (m.id == id) return m;
+                if (m.subMenu) { const found = findMenuById(m.subMenu, id); if (found) return found; }
+                if (m.children) { const found = findMenuById(m.children, id); if (found) return found; }
+            }
+            return null;
+        }
+    </script>
+</body>
+</html>

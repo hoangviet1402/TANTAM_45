@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Common.cs" />
     <Compile Include="EmailHandler.cs" />
+    <Compile Include="Extensions\VietnameseSearchHelper.cs" />
     <Compile Include="FileExtension.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="DateTimeExtension.cs" />

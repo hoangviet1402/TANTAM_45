@@ -52,6 +52,14 @@ namespace EntitiesObject.Entities.TanTamEntities
         public int LatelyCheckIn { get; set; }
         public Nullable<int> MaxLateCheckInOutMinute { get; set; }
         public Nullable<int> MinSoonCheckInOutMinute { get; set; }
+        public Nullable<int> StartCheckInHourId { get; set; }
+        public Nullable<int> StartCheckInMinuteId { get; set; }
+        public Nullable<int> EndCheckInHourId { get; set; }
+        public Nullable<int> EndCheckInMinuteId { get; set; }
+        public Nullable<int> StartCheckOutHourId { get; set; }
+        public Nullable<int> StartCheckOutMinuteId { get; set; }
+        public Nullable<int> EndCheckOutHourId { get; set; }
+        public Nullable<int> EndCheckOutMinuteId { get; set; }
         public int ShiftStatus { get; set; }
         public string ShiftType { get; set; }
         public int ShiftSortIndex { get; set; }

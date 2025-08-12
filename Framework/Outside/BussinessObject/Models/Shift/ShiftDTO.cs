@@ -22,6 +22,9 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
         public int IsOnboarding { get; set; }
+
+        [JsonProperty("skip_auto_register_shift", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SkipAutoRegisterShift { get; set; }
     }
 
     public class ShiftData
@@ -111,6 +114,14 @@ namespace BussinessObject.Models.Shift
         public int? EndCheckOutHourId { get; set; }        
     }
 
+    /// <summary>
+    /// Request model for update-shift-assignment-with-shift API
+    /// </summary>
+    public class ShiftUpdateAndAssignRequest : ShiftCreateAndAssignRequest
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+    }
 
     #endregion
 
@@ -519,6 +530,9 @@ namespace BussinessObject.Models.Shift
         /// </summary>
         [JsonProperty("view_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ViewMode { get; set; }
+
+        [JsonProperty("is_web_view", NullValueHandling = NullValueHandling.Ignore)]
+        public bool IsWebView { get; set; } = false;
 
         public EmployeeShiftSummaryRequest()
         {
@@ -946,4 +960,611 @@ namespace BussinessObject.Models.Shift
         public string Name { get; set; }
     }
     #endregion 
+
+    #region GetListShiftAssignmentWithShift
+
+    /// <summary>
+    /// Request model for GetListShiftAssignmentWithShift API
+    /// </summary>
+    public class GetListShiftAssignmentWithShiftRequest
+    {
+        [JsonProperty("page")]
+        public int Page { get; set; } = 1;
+
+        [JsonProperty("page_size")]
+        public int PageSize { get; set; } = 15;
+
+        [JsonProperty("status")]
+        public string Status { get; set; } = "active";
+
+        [JsonProperty("start_hour_value")]
+        public int? StartHourValue { get; set; }
+
+        [JsonProperty("end_hour_value")]
+        public int? EndHourValue { get; set; }
+
+        [JsonProperty("keyword")]
+        public string Keyword { get; set; }
+    }
+
+    /// <summary>
+    /// Response model for GetListShiftAssignmentWithShift API
+    /// </summary>
+    public class ShiftAssignmentWithShiftResponse
+    {
+        [JsonProperty("meta")]
+        public ShiftAssignmentMeta meta { get; set; }
+
+        [JsonProperty("items")]
+        public List<ShiftAssignmentWithShiftItem> items { get; set; }
+
+        public ShiftAssignmentWithShiftResponse()
+        {
+            meta = new ShiftAssignmentMeta();
+            items = new List<ShiftAssignmentWithShiftItem>();
+        }
+    }
+
+    /// <summary>
+    /// Meta information for pagination
+    /// </summary>
+    public class ShiftAssignmentMeta
+    {
+        [JsonProperty("total")]
+        public int total { get; set; }
+
+        [JsonProperty("count")]
+        public int count { get; set; }
+
+        [JsonProperty("per_page")]
+        public int per_page { get; set; }
+
+        [JsonProperty("current_page")]
+        public int current_page { get; set; }
+
+        [JsonProperty("total_pages")]
+        public int total_pages { get; set; }
+
+        public ShiftAssignmentMeta()
+        {
+            per_page = 15;
+            current_page = 1;
+        }
+    }
+
+    /// <summary>
+    /// Shift assignment with shift details item
+    /// </summary>
+    public class ShiftAssignmentWithShiftItem
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("title")]
+        public string title { get; set; }
+
+        [JsonProperty("sort_index")]
+        public int sort_index { get; set; }
+
+        [JsonProperty("shift")]
+        public ShiftDetailForAssignment shift { get; set; }
+
+        public ShiftAssignmentWithShiftItem()
+        {
+            shift = new ShiftDetailForAssignment();
+        }
+    }
+
+    /// <summary>
+    /// Shift details for assignment response
+    /// </summary>
+    public class ShiftDetailForAssignment
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("shift_key")]
+        public string shift_key { get; set; }
+
+        [JsonProperty("symbol")]
+        public string symbol { get; set; }
+
+        [JsonProperty("color")]
+        public string color { get; set; }
+
+        [JsonProperty("sort_index")]
+        public int sort_index { get; set; }
+
+        [JsonProperty("working_hour")]
+        public double working_hour { get; set; }
+
+        [JsonProperty("start_hour_obj")]
+        public TimeObjectInfo start_hour_obj { get; set; }
+
+        [JsonProperty("start_minute_obj")]
+        public TimeObjectInfo start_minute_obj { get; set; }
+
+        [JsonProperty("end_hour_obj")]
+        public TimeObjectInfo end_hour_obj { get; set; }
+
+        [JsonProperty("end_minute_obj")]
+        public TimeObjectInfo end_minute_obj { get; set; }
+
+        [JsonProperty("is_overtime_shift")]
+        public int? is_overtime_shift { get; set; }
+
+        [JsonProperty("timezone")]
+        public string timezone { get; set; }
+
+        public ShiftDetailForAssignment()
+        {
+            start_hour_obj = new TimeObjectInfo();
+            start_minute_obj = new TimeObjectInfo();
+            end_hour_obj = new TimeObjectInfo();
+            end_minute_obj = new TimeObjectInfo();
+        }
+    }
+
+    /// <summary>
+    /// Time object information
+    /// </summary>
+    public class TimeObjectInfo
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("value")]
+        public string value { get; set; }
+
+        [JsonProperty("type")]
+        public string type { get; set; }
+    }
+
+    #endregion
+
+    #region ShiftAssignmentDetailResponse
+
+    /// <summary>
+    /// Response model for detail-shift-assignment-with-shift API
+    /// </summary>
+    public class ShiftAssignmentDetailResponse
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("title")]
+        public string title { get; set; }
+
+        [JsonProperty("type")]
+        public string type { get; set; }
+
+        [JsonProperty("assignment_type")]
+        public string assignment_type { get; set; }
+
+        [JsonProperty("auto_approve")]
+        public int auto_approve { get; set; }
+
+        [JsonProperty("approver_id")]
+        public object approver_id { get; set; }
+
+        [JsonProperty("department_ids")]
+        public object department_ids { get; set; }
+
+        [JsonProperty("user_ids")]
+        public object user_ids { get; set; }
+
+        [JsonProperty("position_ids")]
+        public object position_ids { get; set; }
+
+        [JsonProperty("assignments")]
+        public object[] assignments { get; set; }
+
+        [JsonProperty("branch_ids")]
+        public List<string> branch_ids { get; set; }
+
+        [JsonProperty("payroll_config_type")]
+        public object payroll_config_type { get; set; }
+
+        [JsonProperty("sort_index")]
+        public int sort_index { get; set; }
+
+        [JsonProperty("meal_coefficient")]
+        public decimal meal_coefficient { get; set; }
+
+        [JsonProperty("branches")]
+        public List<BranchInfoDetail> branches { get; set; }
+
+        [JsonProperty("departments")]
+        public List<DepartmentInfoDetail> departments { get; set; }
+
+        [JsonProperty("positions")]
+        public List<PositionInfoDetail> positions { get; set; }
+
+        [JsonProperty("assignment_objs")]
+        public List<AssignmentObjectDetail> assignment_objs { get; set; }
+
+        [JsonProperty("generate_timekeeping_type_obj")]
+        public TypeObjectDetail generate_timekeeping_type_obj { get; set; }
+
+        [JsonProperty("assignment_type_obj")]
+        public TypeObjectDetail assignment_type_obj { get; set; }
+
+        [JsonProperty("shift")]
+        public ShiftDetailForDetail shift { get; set; }
+
+        public ShiftAssignmentDetailResponse()
+        {
+            assignments = new object[7];
+            branch_ids = new List<string>();
+            branches = new List<BranchInfoDetail>();
+            assignment_objs = new List<AssignmentObjectDetail>();
+        }
+    }
+
+    public class BranchInfoDetail
+    {
+        [JsonProperty("value")]
+        public string value { get; set; }
+
+        [JsonProperty("label")]
+        public string label { get; set; }
+    }
+
+    public class DepartmentInfoDetail
+    {
+        [JsonProperty("value")]
+        public string value { get; set; }
+
+        [JsonProperty("label")]
+        public string label { get; set; }
+    }
+
+    public class PositionInfoDetail
+    {
+        [JsonProperty("value")]
+        public string value { get; set; }
+
+        [JsonProperty("label")]
+        public string label { get; set; }
+    }
+
+    public class AssignmentObjectDetail
+    {
+        [JsonProperty("key")]
+        public string key { get; set; }
+
+        [JsonProperty("label")]
+        public string label { get; set; }
+    }
+
+    public class TypeObjectDetail
+    {
+        [JsonProperty("label")]
+        public string label { get; set; }
+
+        [JsonProperty("key")]
+        public string key { get; set; }
+    }
+
+    public class ShiftDetailForDetail
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("name_nosign")]
+        public string name_nosign { get; set; }
+
+        [JsonProperty("shift_key")]
+        public string shift_key { get; set; }
+
+        [JsonProperty("shift_type_obj")]
+        public ShiftTypeObjectDetail shift_type_obj { get; set; }
+
+        [JsonProperty("shift_type_id")]
+        public string shift_type_id { get; set; }
+
+        [JsonProperty("start_hour_obj")]
+        public TimeObjectDetail start_hour_obj { get; set; }
+
+        [JsonProperty("start_hour_id")]
+        public string start_hour_id { get; set; }
+
+        [JsonProperty("start_minute_obj")]
+        public TimeObjectDetail start_minute_obj { get; set; }
+
+        [JsonProperty("start_minute_id")]
+        public string start_minute_id { get; set; }
+
+        [JsonProperty("end_hour_obj")]
+        public TimeObjectDetail end_hour_obj { get; set; }
+
+        [JsonProperty("end_hour_id")]
+        public string end_hour_id { get; set; }
+
+        [JsonProperty("end_minute_obj")]
+        public TimeObjectDetail end_minute_obj { get; set; }
+
+        [JsonProperty("end_minute_id")]
+        public string end_minute_id { get; set; }
+
+        [JsonProperty("coefficient")]
+        public decimal coefficient { get; set; }
+
+        [JsonProperty("company_obj")]
+        public CompanyObjectDetail company_obj { get; set; }
+
+        [JsonProperty("company_id")]
+        public string company_id { get; set; }
+
+        [JsonProperty("note")]
+        public string note { get; set; }
+
+        [JsonProperty("start_check_in_hour_obj")]
+        public TimeObjectDetail start_check_in_hour_obj { get; set; }
+
+        [JsonProperty("start_check_in_hour_id")]
+        public string start_check_in_hour_id { get; set; }
+
+        [JsonProperty("start_check_in_minute_obj")]
+        public TimeObjectDetail start_check_in_minute_obj { get; set; }
+
+        [JsonProperty("start_check_in_minute_id")]
+        public string start_check_in_minute_id { get; set; }
+
+        [JsonProperty("end_check_in_hour_obj")]
+        public TimeObjectDetail end_check_in_hour_obj { get; set; }
+
+        [JsonProperty("end_check_in_hour_id")]
+        public string end_check_in_hour_id { get; set; }
+
+        [JsonProperty("end_check_in_minute_obj")]
+        public TimeObjectDetail end_check_in_minute_obj { get; set; }
+
+        [JsonProperty("end_check_in_minute_id")]
+        public string end_check_in_minute_id { get; set; }
+
+        [JsonProperty("start_check_out_hour_obj")]
+        public TimeObjectDetail start_check_out_hour_obj { get; set; }
+
+        [JsonProperty("start_check_out_hour_id")]
+        public string start_check_out_hour_id { get; set; }
+
+        [JsonProperty("start_check_out_minute_obj")]
+        public TimeObjectDetail start_check_out_minute_obj { get; set; }
+
+        [JsonProperty("start_check_out_minute_id")]
+        public string start_check_out_minute_id { get; set; }
+
+        [JsonProperty("end_check_out_hour_obj")]
+        public TimeObjectDetail end_check_out_hour_obj { get; set; }
+
+        [JsonProperty("end_check_out_hour_id")]
+        public string end_check_out_hour_id { get; set; }
+
+        [JsonProperty("end_check_out_minute_obj")]
+        public TimeObjectDetail end_check_out_minute_obj { get; set; }
+
+        [JsonProperty("end_check_out_minute_id")]
+        public string end_check_out_minute_id { get; set; }
+
+        [JsonProperty("early_check_out")]
+        public int early_check_out { get; set; }
+
+        [JsonProperty("max_late_check_in_out_minute")]
+        public int max_late_check_in_out_minute { get; set; }
+
+        [JsonProperty("min_soon_check_in_out_minute")]
+        public int min_soon_check_in_out_minute { get; set; }
+
+        [JsonProperty("lately_check_in")]
+        public int lately_check_in { get; set; }
+
+        [JsonProperty("status")]
+        public int status { get; set; }
+
+        [JsonProperty("type")]
+        public string type { get; set; }
+
+        [JsonProperty("rest_start_hour_id")]
+        public string rest_start_hour_id { get; set; }
+
+        [JsonProperty("rest_start_minute_id")]
+        public string rest_start_minute_id { get; set; }
+
+        [JsonProperty("rest_end_minute_id")]
+        public string rest_end_minute_id { get; set; }
+
+        [JsonProperty("working_hour")]
+        public double working_hour { get; set; }
+
+        [JsonProperty("branch_ids")]
+        public List<BranchIdDetail> branch_ids { get; set; }
+
+        [JsonProperty("sort_index")]
+        public int sort_index { get; set; }
+
+        [JsonProperty("rest_end_hour_id")]
+        public string rest_end_hour_id { get; set; }
+
+        [JsonProperty("start_time")]
+        public string start_time { get; set; }
+
+        [JsonProperty("end_time")]
+        public string end_time { get; set; }
+
+        [JsonProperty("start_check_in_time")]
+        public string start_check_in_time { get; set; }
+
+        [JsonProperty("end_check_in_time")]
+        public string end_check_in_time { get; set; }
+
+        [JsonProperty("start_check_out_time")]
+        public string start_check_out_time { get; set; }
+
+        [JsonProperty("end_check_out_time")]
+        public string end_check_out_time { get; set; }
+
+        [JsonProperty("rest_start_time")]
+        public string rest_start_time { get; set; }
+
+        [JsonProperty("rest_end_time")]
+        public string rest_end_time { get; set; }
+
+        [JsonProperty("is_overtime_shift")]
+        public int is_overtime_shift { get; set; }
+
+        [JsonProperty("meal_coefficient")]
+        public decimal meal_coefficient { get; set; }
+
+        [JsonProperty("list_enable_clock")]
+        public object list_enable_clock { get; set; }
+
+        [JsonProperty("timekeeping_config_in")]
+        public object timekeeping_config_in { get; set; }
+
+        [JsonProperty("timekeeping_config_out")]
+        public object timekeeping_config_out { get; set; }
+
+        [JsonProperty("symbol")]
+        public object symbol { get; set; }
+
+        [JsonProperty("minimum_workinghour")]
+        public decimal minimum_workinghour { get; set; }
+
+        [JsonProperty("color")]
+        public object color { get; set; }
+
+        [JsonProperty("meal_type_id")]
+        public string meal_type_id { get; set; }
+
+        [JsonProperty("break_times")]
+        public object break_times { get; set; }
+
+        [JsonProperty("timezone")]
+        public string timezone { get; set; }
+
+        public ShiftDetailForDetail()
+        {
+            branch_ids = new List<BranchIdDetail>();
+            meal_type_id = "";
+            rest_start_hour_id = "";
+            rest_start_minute_id = "";
+            rest_end_minute_id = "";
+            rest_end_hour_id = "";
+        }
+    }
+
+    public class ShiftTypeObjectDetail
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("value")]
+        public string value { get; set; }
+
+        [JsonProperty("type")]
+        public string type { get; set; }
+    }
+
+    public class TimeObjectDetail
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("value")]
+        public string value { get; set; }
+
+        [JsonProperty("type")]
+        public string type { get; set; }
+    }
+
+    public class CompanyObjectDetail
+    {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+    }
+
+    public class BranchIdDetail
+    {
+        [JsonProperty("branch_id_obj")]
+        public BranchObjectDetail branch_id_obj { get; set; }
+
+        [JsonProperty("index")]
+        public int index { get; set; }
+    }
+
+    public class BranchObjectDetail
+    {
+        [JsonProperty("id")]
+        public int id { get; set; }
+
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("color")]
+        public string color { get; set; }
+    }
+
+    #endregion
+
+    #region DeleteShiftAssignment
+
+    /// <summary>
+    /// Request model for delete shift assignment with shift API
+    /// </summary>
+    public class DeleteShiftAssignmentRequest
+    {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+    }
+
+    /// <summary>
+    /// Response model for delete shift assignment with shift API using snake_case convention
+    /// </summary>
+    public class DeleteShiftAssignmentResponse
+    {
+        [JsonProperty("success")]
+        public int success { get; set; }
+
+        [JsonProperty("shift_assignment_id")]
+        public int shift_assignment_id { get; set; }
+
+        [JsonProperty("shift_id")]
+        public int shift_id { get; set; }
+
+        [JsonProperty("shift_assignment_title")]
+        public string shift_assignment_title { get; set; }
+
+        [JsonProperty("shift_name")]
+        public string shift_name { get; set; }
+
+        [JsonProperty("deleted_at")]
+        public string deleted_at { get; set; }
+
+        [JsonProperty("deleted_by")]
+        public int deleted_by { get; set; }
+
+        [JsonProperty("message")]
+        public string message { get; set; }
+    }
+
+    #endregion
 }

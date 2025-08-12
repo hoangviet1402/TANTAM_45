@@ -18,10 +18,24 @@ namespace DataAccess.Dao.Shift
         List<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Timekeeper_log_User_GetLog_OneDay(int accountMapID, DateTime dateFrom);
         int? Timekeeper_log_User_Insert(Timekeeper_log_User_Insert_parameter parameter);
         List<Ins_Timekeeper_log_GetListByAccountMapID_Result> Timekeeper_log_GetListByAccountMapID(int companyID,int accountMapID, DateTime dateFrom, DateTime dateTo);
+        List<Ins_Timekeeper_log_GetListByAccountMapID_ByPayrollUserID_Result> Timekeeper_log_GetListByAccountMapID_ByPayrollUserID(int companyID,int accountMapID, int PayrollUserI);
+        List<Ins_Timekeeper_log_GetListByAccountMapID_Simple_Result> GetListByAccountMapID_Simple(int accountMapID, DateTime dateFrom, DateTime dateTo);
     }
 
     internal class TimekeeperDao : DaoFactories<TanTamEntities, DBNull>, ITimekeeperDao
     {
+        public List<Ins_Timekeeper_log_GetListByAccountMapID_Simple_Result> GetListByAccountMapID_Simple(int accountMapID, DateTime dateFrom, DateTime dateTo)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Timekeeper_log_GetListByAccountMapID_Simple(
+                    accountMapID,
+                    dateFrom,
+                    dateTo
+                ).ToList();
+            }
+        }
+
         public List<Ins_Timekeeper_log_User_GetLog_OneDay_Result> Timekeeper_log_User_GetLog_OneDay(int accountMapID, DateTime dateFrom)
         {
             using (Uow)
@@ -60,6 +74,7 @@ namespace DataAccess.Dao.Shift
                     parameter.Course,
                     parameter.CourseAccuracy,
                     parameter.Mocked,
+                    parameter.Reason,
                     out_OutResult
                 );
 
@@ -77,6 +92,18 @@ namespace DataAccess.Dao.Shift
                     accountMapID,
                     dateFrom,
                     dateTo
+                ).ToList();
+            }
+        }
+
+        public List<Ins_Timekeeper_log_GetListByAccountMapID_ByPayrollUserID_Result> Timekeeper_log_GetListByAccountMapID_ByPayrollUserID(int companyID, int accountMapID, int PayrollUserID)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Timekeeper_log_GetListByAccountMapID_ByPayrollUserID(
+                    companyID,
+                    accountMapID,
+                    PayrollUserID
                 ).ToList();
             }
         }

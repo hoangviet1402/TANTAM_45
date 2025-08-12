@@ -31,5 +31,7 @@ namespace DataAccess.Model.Shift
         public float Course { get; set; }
         public float CourseAccuracy { get; set; }
         public bool Mocked { get; set; }
+        public string Reason { get; set; }
+        
     }
 }

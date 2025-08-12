@@ -17,32 +17,75 @@ namespace DataAccess.Dao.Shift
         List<Ins_ShiftAssignment_Branch_Create_Result> ShiftAssignment_CreateBranch(Ins_ShiftAssignment_Branch_Create_Parameter parameter, out int assignmentID);
         List<Ins_ShiftAssignment_Position_Create_Result> ShiftAssignment_CreatePosition(Ins_ShiftAssignment_Position_Create_Parameter parameter);
         List<Ins_ShiftAssignment_Department_Create_Result> ShiftAssignment_CreateDepartment(Ins_ShiftAssignment_Department_Create_Parameter parameter);
-        int ShiftAssignment_User_Create(int shiftAssignmentID, int accountMapID);
+        int ShiftAssignment_User_Create(int shiftAssignmentID, int accountMapID, int type);
         List<Ins_ShiftAssignment_User_WorkingDay_Log_GetByShiftAssignmentUserWorkingDay_Result> GetShiftAssignmentUserWorkingDayLogsByShiftAssignmentUserWorkingDay(int shiftAssignmentUserWorkingDayId);
-        decimal? CreateShiftAssignmentUserWorkingDayLog(
-            int shiftAssignmentUserWorkingDayId,
-            int actionType,
-            int clockType,
-            DateTime actionTime,
-            string reason,
-            int createdBy
-        );
+        decimal? CreateShiftAssignmentUserWorkingDayLog(int shiftAssignmentUserWorkingDayId, int actionType, int clockType, DateTime actionTime, string reason, int createdBy);
+        bool ClearShiftAssignmentBranches(int shiftAssignmentId);
+        bool ClearShiftAssignmentDepartments(int shiftAssignmentId);
+        bool ClearShiftAssignmentPositions(int shiftAssignmentId);
+        bool ClearAllAssignments(int shiftAssignmentId);
         Ins_ShiftAssignment_User_WorkingDay_Log_Trash_Result TrashShiftAssignmentUserWorkingDayLog(int logId, int trashedBy, string reason);
-
         List<Ins_ShiftAssignment_GetByBranchSimple_Result> ShiftAssignment_GetByBranchSimple(int branchId);
+        List<Ins_ShiftAssignment_GetAllEmployerInShift_Result> ShiftAssignment_GetAllEmployerInShift(int shiftAssignmentId, int weekOfYear, DateTime dateFrom, DateTime dateTo, int companyId);
+        List<Ins_EmployeesInfo_GetDetailForAddShift_Result> EmployeesInfo_GetDetailForAddShift(int companyId, int shiftID, int branchID, DateTime dateCheck);
+        List<Ins_ShiftAssignment_User_WorkingDay_Log_FromDayToDay_Result> ShiftAssignment_User_WorkingDay_Log_FromDayToDay(int accountMapID, int companyId, DateTime dateFrom, DateTime dateTo);
+        List<Ins_ShiftAssignment_User_GeSimpletByAccountId_Result> ShiftAssignment_User_GeSimpletByAccountId(int accountMapID, int type);
 
-        List<Ins_ShiftAssignment_GetAllEmployerInShift_Result> ShiftAssignment_GetAllEmployerInShift(int shiftAssignmentId, int weekOfYear, DateTime dateFrom, DateTime dateTo);
-
-        List<Ins_EmployeesInfo_GetDetailForAddShift_Result> EmployeesInfo_GetDetailForAddShift(int companyId, int shiftID);
+        List<Ins_ShiftAssignment_Department_GetByShiftID_Result>   ShiftAssignment_Department_GetByShiftID(int accountMapID, int shiftID);
+        List<Ins_ShiftAssignment_Position_GetByShiftID_Result> ShiftAssignment_Position_GetByShiftID(int accountMapID, int type);
+        List<Ins_ShiftAssignment_Branch_GetByShiftID_Result> ShiftAssignment_Branch_GetByShiftID(int accountMapID, int type);
+        List<Ins_ShiftAssignment_User_WorkingDay_GetDateToDate_Result> LogChamCongHo_GetDateToDate(int accountMapID, DateTime dateFrom, DateTime dateTo);
     }
 
     internal class ShiftAssignmentDao : DaoFactories<TanTamEntities, DBNull>, IShiftAssignmentDao
     {
-        public List<Ins_ShiftAssignment_GetAllEmployerInShift_Result> ShiftAssignment_GetAllEmployerInShift(int shiftAssignmentId, int weekOfYear, DateTime dateFrom, DateTime dateTo)
+        public List<Ins_ShiftAssignment_User_WorkingDay_GetDateToDate_Result> LogChamCongHo_GetDateToDate(int accountMapID, DateTime dateFrom, DateTime dateTo)
         {
             using (Uow)
             {
-                var data = Uow.Context.Ins_ShiftAssignment_GetAllEmployerInShift(shiftAssignmentId, weekOfYear, dateFrom, dateTo);
+                var data = Uow.Context.Ins_ShiftAssignment_User_WorkingDay_GetDateToDate(accountMapID, dateFrom, dateTo);
+                return data.ToList();
+            }
+        }
+        public List<Ins_ShiftAssignment_Department_GetByShiftID_Result> ShiftAssignment_Department_GetByShiftID(int accountMapID, int shiftID)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_ShiftAssignment_Department_GetByShiftID(accountMapID, shiftID);
+                return data.ToList();
+            }
+        }
+
+        public List<Ins_ShiftAssignment_Position_GetByShiftID_Result> ShiftAssignment_Position_GetByShiftID(int accountMapID, int shiftID)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_ShiftAssignment_Position_GetByShiftID(accountMapID, shiftID);
+                return data.ToList();
+            }
+        }
+
+        public List<Ins_ShiftAssignment_Branch_GetByShiftID_Result> ShiftAssignment_Branch_GetByShiftID(int accountMapID, int shiftID)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_ShiftAssignment_Branch_GetByShiftID(accountMapID, shiftID);
+                return data.ToList();
+            }
+        }
+        public List<Ins_ShiftAssignment_User_GeSimpletByAccountId_Result> ShiftAssignment_User_GeSimpletByAccountId(int accountMapID, int type)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_ShiftAssignment_User_GeSimpletByAccountId(accountMapID, type);
+                return data.ToList();
+            }
+        }
+        public List<Ins_ShiftAssignment_GetAllEmployerInShift_Result> ShiftAssignment_GetAllEmployerInShift(int shiftAssignmentId, int weekOfYear, DateTime dateFrom, DateTime dateTo, int companyId)
+        {
+            using (Uow)
+            {
+                var data = Uow.Context.Ins_ShiftAssignment_GetAllEmployerInShift(shiftAssignmentId, weekOfYear, dateFrom, dateTo, companyId);
                 return data.ToList();
             }
         }
@@ -63,8 +106,8 @@ namespace DataAccess.Dao.Shift
                 var out_OutResult = new ObjectParameter("ShiftAssignmentId", typeof(int));
 
                 var data = Uow.Context.Ins_ShiftAssignment_Create(
-                    parameter.CompanyID, 
-                    parameter.ShiftID, 
+                    parameter.CompanyID,
+                    parameter.ShiftID,
                     parameter.Title,
                     parameter.SortIndex,
                     parameter.AutoApprove,
@@ -92,7 +135,7 @@ namespace DataAccess.Dao.Shift
                     parameter.ShiftAssignmentID,
                     parameter.ShiftID,
                     parameter.Label,
-                    parameter.DateOfWeek,                  
+                    parameter.DateOfWeek,
                     out_OutResult);
 
                 if (out_OutResult != null && out_OutResult.Value != null)
@@ -113,7 +156,7 @@ namespace DataAccess.Dao.Shift
                     parameter.BranchID,
                     parameter.IsInsertOne);
                 return data.ToList();
-            }       
+            }
         }
 
         public List<Ins_ShiftAssignment_Position_Create_Result> ShiftAssignment_CreatePosition(Ins_ShiftAssignment_Position_Create_Parameter parameter)
@@ -133,7 +176,7 @@ namespace DataAccess.Dao.Shift
         public List<Ins_ShiftAssignment_Department_Create_Result> ShiftAssignment_CreateDepartment(Ins_ShiftAssignment_Department_Create_Parameter parameter)
         {
             using (Uow)
-            {                
+            {
                 var data = Uow.Context.Ins_ShiftAssignment_Department_Create(
                     parameter.ShiftAssignmentID,
                     parameter.CompanyID,
@@ -144,7 +187,7 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public int ShiftAssignment_User_Create(int shiftAssignmentID,int accountMapID)
+        public int ShiftAssignment_User_Create(int shiftAssignmentID, int accountMapID, int type)
         {
             using (Uow)
             {
@@ -155,7 +198,8 @@ namespace DataAccess.Dao.Shift
                 var data = Uow.Context.Ins_ShiftAssignment_User_Create(
                     shiftAssignmentID,
                     accountMapID,
-                    out_shiftAssignment_UserId);
+                    out_shiftAssignment_UserId,
+                    type);
 
                 if (out_shiftAssignment_UserId != null && out_shiftAssignment_UserId.Value != null)
                     int.TryParse(out_shiftAssignment_UserId.Value.ToString(), out shiftAssignment_UserId);
@@ -203,11 +247,59 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public List<Ins_EmployeesInfo_GetDetailForAddShift_Result> EmployeesInfo_GetDetailForAddShift(int companyId, int shiftID)
+        public List<Ins_EmployeesInfo_GetDetailForAddShift_Result> EmployeesInfo_GetDetailForAddShift(int companyId, int shiftID, int branchID, DateTime dateCheck)
         {
             using (Uow)
             {
-                var result = Uow.Context.Ins_EmployeesInfo_GetDetailForAddShift(companyId, shiftID);
+                var result = Uow.Context.Ins_EmployeesInfo_GetDetailForAddShift(companyId, shiftID, branchID, dateCheck);
+                return result.ToList();
+            }
+        }
+
+        public bool ClearShiftAssignmentBranches(int shiftAssignmentId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_ShiftAssignment_ClearBranches(shiftAssignmentId);
+                var resultValue = result.FirstOrDefault();
+                return resultValue.HasValue && resultValue.Value > 0;
+            }
+        }
+
+        public bool ClearShiftAssignmentDepartments(int shiftAssignmentId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_ShiftAssignment_ClearDepartments(shiftAssignmentId);
+                var resultValue = result.FirstOrDefault();
+                return resultValue.HasValue && resultValue.Value > 0;
+            }
+        }
+
+        public bool ClearShiftAssignmentPositions(int shiftAssignmentId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_ShiftAssignment_ClearPositions(shiftAssignmentId);
+                var resultValue = result.FirstOrDefault();
+                return resultValue.HasValue && resultValue.Value > 0;
+            }
+        }
+
+        public bool ClearAllAssignments(int shiftAssignmentId)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Assignment_ClearAll(shiftAssignmentId);
+                var resultValue = result.FirstOrDefault();
+                return resultValue.HasValue && resultValue.Value > 0;
+            }
+        }
+        public List<Ins_ShiftAssignment_User_WorkingDay_Log_FromDayToDay_Result> ShiftAssignment_User_WorkingDay_Log_FromDayToDay(int accountMapID, int companyId, DateTime dateFrom, DateTime dateTo)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_ShiftAssignment_User_WorkingDay_Log_FromDayToDay(accountMapID, companyId, dateFrom, dateTo);
                 return result.ToList();
             }
         }

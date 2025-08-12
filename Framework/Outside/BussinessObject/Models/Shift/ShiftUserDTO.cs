@@ -234,6 +234,9 @@ namespace BussinessObject.Models.Shift
         [JsonProperty("is_check", NullValueHandling = NullValueHandling.Ignore)]
         public int IsCheck { get; set; }
 
+        [JsonProperty("is_trashed", NullValueHandling = NullValueHandling.Ignore)]
+        public int isTrashed { get; set; }
+
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public int AccountMapId { get; set; }
 
@@ -260,7 +263,35 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public Timekeeper_Location_Info Location { get; set; }
+
+        [JsonProperty("created_user", NullValueHandling = NullValueHandling.Ignore)]
+        public CreatedUser CreatedUser { get; set; }
+
+        [JsonProperty("option", NullValueHandling = NullValueHandling.Ignore)]
+        public TimekeeperLogOption Option { get; set; }
     }
+
+    public class TimekeeperLogOption
+    {
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        [JsonProperty("type_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string TypeName { get; set; }
+    }
+
+    public class CreatedUser
+    {
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+        [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
+        public string Username { get; set; }
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int UserId { get; set; }
+    }   
 
     public class Timekeeper_Location_Info
     {
@@ -367,5 +398,9 @@ namespace BussinessObject.Models.Shift
 
         [JsonProperty("mocked", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Mocked { get; set; }
+
+        [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string reason { get; set; }
+        
     }
 }

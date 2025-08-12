@@ -27,5 +27,6 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string Phone { get; set; }
         public string PhoneFull { get; set; }
         public string Email { get; set; }
+        public string EmployeeCode { get; set; }
     }
 }

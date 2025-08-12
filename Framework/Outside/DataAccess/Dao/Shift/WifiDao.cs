@@ -17,7 +17,7 @@ namespace DataAccess.Dao.Shift
         /// <summary>
         /// Tạo WiFi sử dụng stored procedure Ins_Wifi_Create
         /// </summary>
-        List<Ins_Wifi_Create_Result> CreateWifiWithResult(int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string name, int branchID, string address, string type, bool isBothBssidSsid = false, string bssid = "");
+        List<Ins_Wifi_Create_Result> CreateWifiWithResult(int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string name, int branchID, string address, int type, bool isBothBssidSsid = false, string bssid = "");
         int CreateWifiAccount(int wifiID, int accountMapID);
         int CreateWifiDepartment(int wifiID, int departmentID);
         int CreateWifiExtraBranch(int wifiID, int branchID);
@@ -28,7 +28,7 @@ namespace DataAccess.Dao.Shift
         /// <summary>
         /// lấy danh sách wifi theo company ID
         /// </summary>
-        List<Ins_Wifi_Get_ByCompanyId_Result> WifiGetByCompanyId(int companyID, string type);
+        List<Ins_Wifi_Get_ByCompanyId_Result> WifiGetByCompanyId(int companyID, int type);
         /// <summary>
         /// lấy thông tin branch theo wifi ID và branch ID
         /// </summary>
@@ -39,7 +39,7 @@ namespace DataAccess.Dao.Shift
         /// <summary>
         /// Cập nhật WiFi theo WiFi ID
         /// </summary>
-        List<Ins_Wifi_Update_ByWifiId_Result> UpdateWifiByWifiId(int wifiId, int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string wifiName, int branchId, string wifiAddress, string wifiType, string bssid, bool isBothBssidSsid = false);
+        List<Ins_Wifi_Update_ByWifiId_Result> UpdateWifiByWifiId(int wifiId, int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string wifiName, int branchId, string wifiAddress, int wifiType, string bssid, bool isBothBssidSsid = false);
 
         /// <summary>
         /// Lấy danh sách department IDs theo WiFi ID
@@ -84,12 +84,12 @@ namespace DataAccess.Dao.Shift
         /// <summary>
         /// Lấy danh sách WiFi với thông tin đầy đủ theo Company ID
         /// </summary>
-        List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListWithFullInfo(int companyId, string type = "wifi");
+        List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListWithFullInfo(int companyId, int type);
 
         /// <summary>
         /// Lấy danh sách WiFi sử dụng Ins_Wifi_Get_ByCompanyId (temporary)
         /// </summary>
-        List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListUsingCreatePattern(int companyId, string type = "wifi");
+        List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListUsingCreatePattern(int companyId, int type);
 
         /// <summary>
         /// Lấy thông tin department theo WiFi ID sử dụng Ins_Wifi_Department_Get_ByWifiId_Value
@@ -121,7 +121,7 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public List<Ins_Wifi_Create_Result> CreateWifiWithResult(int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string name, int branchID, string address, string type, bool isBothBssidSsid = false, string bssid = "")
+        public List<Ins_Wifi_Create_Result> CreateWifiWithResult(int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string name, int branchID, string address, int type, bool isBothBssidSsid = false, string bssid = "")
         {
             using (Uow)
             {
@@ -191,7 +191,7 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public List<Ins_Wifi_Get_ByCompanyId_Result> WifiGetByCompanyId(int companyID, string type)
+        public List<Ins_Wifi_Get_ByCompanyId_Result> WifiGetByCompanyId(int companyID, int type)
         {
             using (Uow)
             {
@@ -209,7 +209,7 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public List<Ins_Wifi_Update_ByWifiId_Result> UpdateWifiByWifiId(int wifiId, int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string wifiName, int branchId, string wifiAddress, string wifiType, string bssid, bool isBothBssidSsid = false)
+        public List<Ins_Wifi_Update_ByWifiId_Result> UpdateWifiByWifiId(int wifiId, int radius, int speed, int accuracy, int altitude, double longitude, double latitude, string wifiName, int branchId, string wifiAddress, int wifiType, string bssid, bool isBothBssidSsid = false)
         {
             using (Uow)
             {
@@ -288,7 +288,7 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListWithFullInfo(int companyId, string type = "wifi")
+        public List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListWithFullInfo(int companyId, int type)
         {
             using (Uow)
             {
@@ -297,7 +297,7 @@ namespace DataAccess.Dao.Shift
             }
         }
 
-        public List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListUsingCreatePattern(int companyId, string type = "wifi")
+        public List<Ins_Wifi_Get_ByCompanyId_Result> GetWifiListUsingCreatePattern(int companyId, int type)
         {
             using (Uow)
             {

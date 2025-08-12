@@ -1,16 +1,15 @@
-using System;
-using System.Data;
-using System.Net;
-using System.Web.Http;
 using BussinessObject;
 using BussinessObject.Enum;
 using BussinessObject.Models.ApiResponse;
-using BussinessObject.Models.Shift;
 using BussinessObject.Models.OpenShift;
 using Logger;
-using TanTamApi.JWT.Helper;
 using MyUtility.Extensions;
+using System;
 using System.Linq;
+using System.Net;
+using System.Web.Http;
+using TanTamApi.JWT.Helper;
+using TanTamApi.JWT.Middleware;
 
 namespace TanTamApi.Controllers
 {
@@ -22,7 +21,7 @@ namespace TanTamApi.Controllers
     {
         // TODO: Implement API endpoints
 
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpGet]
         [Route("list")]
         public IHttpActionResult ListOpenShift([FromUri] ListOpenShiftRequest request)
@@ -58,7 +57,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Create open shift
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpPost]
         [Route("create")]
         public IHttpActionResult CreateOpenShift([FromBody] CreateOpenShiftRequest request)
@@ -94,17 +93,16 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get shift list by working day
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpGet]
         [Route("shift-list-by-working-day")]
         public IHttpActionResult GetShiftListByWorkingDay([FromUri] ShiftListByWorkingDayRequest request)
         {
             try
             {
-                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
-                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+                var userId = JwtHelper.GetAccountIdFromToken(Request);
 
-                if (companyId <= 0 || employeeId <= 0)
+                if (userId <= 0)
                 {
                     return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
                     {
@@ -113,7 +111,7 @@ namespace TanTamApi.Controllers
                     });
                 }
 
-                var result = BoFactory.OpenShift.GetShiftListByWorkingDay(companyId, request);
+                var result = BoFactory.OpenShift.GetShiftListByWorkingDay(userId, request);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -130,7 +128,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Delete open shift
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpPost]
         [Route("delete/{id}")]
         public IHttpActionResult DeleteOpenShift(int id)
@@ -187,7 +185,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get open shift detail
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpGet]
         [Route("detail/{id}")]
         public IHttpActionResult GetOpenShiftDetail(int id)
@@ -256,7 +254,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Publish open shifts (set is_draft = false)
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpPost]
         [Route("publish")]
         public IHttpActionResult PublishOpenShift([FromBody] PublishOpenShiftRequest request)

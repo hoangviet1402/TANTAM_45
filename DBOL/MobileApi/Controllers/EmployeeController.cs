@@ -2,24 +2,28 @@ using BussinessObject;
 using BussinessObject.Enum;
 using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.Employee;
+using BussinessObject.Models.Shift;
+using BussinessObject.Permission;
 using Logger;
+using MyUtility;
 using MyUtility.Extensions;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using System.Web.Http;
 using TanTamApi.JWT.Helper;
-using TanTamApi.Enum;
-using System.Collections.Generic;
+using TanTamApi.JWT.Middleware;
 
 namespace TanTamApi.Controllers
 {
+    [ApiAuthorize]
     [RoutePrefix("api/employee")]
     public class EmployeeController : ApiController
     {
         /// <summary>
         /// Get employee detail by id
         /// </summary>
-        [JWT.Middleware.Authorize]
         [HttpGet]
         [Route("detail")]
         public IHttpActionResult GetEmployeeDetail([FromUri] int employee_id, [FromUri] int company_id)
@@ -45,10 +49,10 @@ namespace TanTamApi.Controllers
                 //    return Content(HttpStatusCode.OK, response);
                 //}
 
-                var request = new EmployeeDetailRequest 
-                { 
-                    EmployeeId = employee_id, 
-                    CompanyId = company_id 
+                var request = new EmployeeDetailRequest
+                {
+                    EmployeeId = employee_id,
+                    CompanyId = company_id
                 };
 
                 //if (!ModelState.IsValid)
@@ -57,8 +61,10 @@ namespace TanTamApi.Controllers
                 //    response.Message = "Thông tin đầu vào không hợp lệ.";
                 //    return Content(HttpStatusCode.OK, response);
                 //}
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+                var userRole = JwtHelper.GetRoleFromToken(Request);
 
-                var result = BoFactory.Employee.GetEmployeeDetailAsync(request);
+                var result = BoFactory.Employee.GetEmployeeDetailAsync(request, employeeId, userRole);
 
                 if (result.Code == ResponseResultEnum.NotFound.Value() || result.Code == ResponseResultEnum.NoData.Value())
                 {
@@ -86,7 +92,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get employee list with pagination and filtering
         /// </summary>
-        [JWT.Middleware.Authorize]
+        [RequiredPermission]
         [HttpGet]
         [Route("get-dynamic-list")]
         public IHttpActionResult GetEmployeeList([FromUri] EmployeeListRequest request)
@@ -124,7 +130,10 @@ namespace TanTamApi.Controllers
                 //    return Content(HttpStatusCode.OK, response);
                 //}
 
-                var result = BoFactory.Employee.GetEmployeeListAsync(request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+                var userRole = JwtHelper.GetRoleFromToken(Request);
+
+                var result = BoFactory.Employee.GetEmployeeListAsync(request, employeeId, userRole);
                 return Content(HttpStatusCode.OK, result);
             }
             catch (Exception ex)
@@ -139,7 +148,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Create a new employee
         /// </summary>
-        [JWT.Middleware.Authorize]
+        [RequiredPermission]
         [HttpPost]
         [Route("create-employee")]
         public IHttpActionResult CreateEmployee([FromBody] CreateEmployeeRequest request)
@@ -163,7 +172,7 @@ namespace TanTamApi.Controllers
                 // Get company info from JWT token
                 //var tokenCompanyId = JwtHelper.GetCompanyIdFromToken(Request);
                 //var accountId = JwtHelper.GetAccountIdFromToken(Request);
-
+                var role = JwtHelper.GetRoleFromToken(Request);
                 // Validate JWT token info
                 //if (tokenCompanyId != request.CompanyId)
                 //{
@@ -173,7 +182,6 @@ namespace TanTamApi.Controllers
                 //}
 
                 // Set additional info
-                request.Role = (int)UserRole.Employees;
                 request.DeviceId = Request.Headers.UserAgent?.ToString() ?? "";
 
                 //if (!ModelState.IsValid)
@@ -183,7 +191,7 @@ namespace TanTamApi.Controllers
                 //    return Content(HttpStatusCode.OK, response);
                 //}
 
-                var result = BoFactory.Employee.CreateEmployeeAsync(request);
+                var result = BoFactory.Employee.CreateEmployeeAsync(request, role);
                 return Content(HttpStatusCode.OK, result);
             }
             catch (Exception ex)
@@ -198,7 +206,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Delete an employee
         /// </summary>
-        [JWT.Middleware.Authorize]
+        [RequiredPermission]
         [HttpPost]
         [Route("delete-employee")]
         public IHttpActionResult DeleteEmployee([FromUri] int employee_id, [FromUri] int company_id)
@@ -215,6 +223,7 @@ namespace TanTamApi.Controllers
                 // Get company info from JWT token
                 //var tokenCompanyId = JwtHelper.GetCompanyIdFromToken(Request);
                 //var accountId = JwtHelper.GetAccountIdFromToken(Request);
+                var myEmployeeId = JwtHelper.GetAccountMapIDFromToken(Request);
 
                 // Validate JWT token info
                 //if (tokenCompanyId != company_id)
@@ -232,7 +241,7 @@ namespace TanTamApi.Controllers
                     return Content(HttpStatusCode.OK, response);
                 }
 
-                var result = BoFactory.Employee.DeleteEmployeeAsync(employee_id, company_id);
+                var result = BoFactory.Employee.DeleteEmployeeAsync(employee_id, company_id, myEmployeeId);
 
                 if (result.Code == ResponseResultEnum.NotFound.Value())
                 {
@@ -263,7 +272,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Delete multiple employees
         /// </summary>
-        [JWT.Middleware.Authorize]
+        [RequiredPermission]
         [HttpPost]
         [Route("delete-multi-employee")]
         public IHttpActionResult DeleteMultiEmployee([FromBody] DeleteMultiEmployeeRequest request)
@@ -287,6 +296,7 @@ namespace TanTamApi.Controllers
                 // Get company info from JWT token
                 //var tokenCompanyId = JwtHelper.GetCompanyIdFromToken(Request);
                 //var accountId = JwtHelper.GetAccountIdFromToken(Request);
+                var myEmployeeId = JwtHelper.GetAccountMapIDFromToken(Request);
 
                 // Validate JWT token info
                 //if (tokenCompanyId != request.CompanyId)
@@ -303,7 +313,7 @@ namespace TanTamApi.Controllers
                 //    return Content(HttpStatusCode.OK, response);
                 //}
 
-                var result = BoFactory.Employee.DeleteMultiEmployeeAsync(request);
+                var result = BoFactory.Employee.DeleteMultiEmployeeAsync(request, myEmployeeId);
 
                 if (result.Code == ResponseResultEnum.NotFound.Value())
                 {
@@ -334,7 +344,6 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Reset employee password
         /// </summary>
-        [JWT.Middleware.Authorize]
         [HttpPost]
         [Route("reset-password")]
         public IHttpActionResult ResetEmployeePassword([FromUri] int employee_id, [FromUri] int company_id, 
@@ -409,7 +418,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Update employee details
         /// </summary>
-        [JWT.Middleware.Authorize]
+        [RequiredPermission]
         [HttpPost]
         [Route("update-details")]
         public IHttpActionResult UpdateEmployeeDetails([FromUri] int employee_id, [FromUri] int company_id, 
@@ -442,6 +451,7 @@ namespace TanTamApi.Controllers
                 //    response.Message = "Thông tin công ty không hợp lệ.";
                 //    return Content(HttpStatusCode.OK, response);
                 //}
+                var role = JwtHelper.GetRoleFromToken(Request);
 
                 // Validate input
                 if (employee_id <= 0 || company_id <= 0)
@@ -458,7 +468,7 @@ namespace TanTamApi.Controllers
                 //    return Content(HttpStatusCode.OK, response);
                 //}
 
-                var result = BoFactory.Employee.UpdateEmployeeDetailsAsync(employee_id, company_id, request);
+                var result = BoFactory.Employee.UpdateEmployeeDetailsAsync(employee_id, company_id, request, role);
 
                 if (result.Code == ResponseResultEnum.InvalidInput.Value())
                 {
@@ -489,7 +499,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get employee filter list
         /// </summary>
-        [JWT.Middleware.Authorize]
+        [RequiredPermission(WebPermissionKeys.EmployeeViewList)]
         [HttpPost]
         [Route("list")]
         public IHttpActionResult GetEmployeeFilterList([FromBody] EmployeeFilterListRequest request)
@@ -529,7 +539,10 @@ namespace TanTamApi.Controllers
                 //     return Content(HttpStatusCode.OK, response);
                 // }
 
-                var result = BoFactory.Employee.GetEmployeeFilterListAsync(request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+                var userRole = JwtHelper.GetRoleFromToken(Request);
+
+                var result = BoFactory.Employee.GetEmployeeFilterListAsync(request, employeeId, userRole);
 
                 if (result.Code == ResponseResultEnum.NotFound.Value())
                 {
@@ -560,7 +573,6 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get next employee code
         /// </summary>
-        [JWT.Middleware.Authorize]
         [HttpGet]
         [Route("get-last-item")]
         public IHttpActionResult GetNextEmployeeCode([FromUri] int company_id)
@@ -621,7 +633,6 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Lấy danh sách trạng thái nhân viên (enum) động
         /// </summary>
-        [JWT.Middleware.Authorize]
         [HttpGet]
         [Route("get-employee-status-enum")]
         public IHttpActionResult GetEmployeeStatusEnum()
@@ -646,21 +657,60 @@ namespace TanTamApi.Controllers
             }
         }
 
-
-        [JWT.Middleware.Authorize]
+        /// <summary>
+        /// Lấy danh sách role user (không bao gồm SystemAdmin)
+        /// </summary>
         [HttpGet]
-        [Route("list-by-shift-assignment")]
-        public IHttpActionResult ListForAddShiftAssignment()
+        [Route("roles")]
+        public IHttpActionResult GetUserRoles()
         {
             var response = new ApiResult<List<EnumToList>>()
             {
                 Data = new List<EnumToList>(),
                 Code = ResponseResultEnum.Success.Value(),
-                Message = "Lấy danh sách trạng thái nhân viên thành công."
+                Message = "Lấy danh sách vai trò thành công."
             };
             try
             {
-                response.Data = typeof(EmployeeStatusEnum).ToList();
+                var allRoles = typeof(UserRole).ToList();
+                // Loại bỏ SystemAdmin (Key = 1)
+                response.Data = allRoles.FindAll(r => r.Key != (int)UserRole.SystemAdmin);
+                return Content(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("GetUserRoles Exception: {0}", ex);
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = ResponseResultEnum.SystemError.Text();
+                return Content(HttpStatusCode.OK, response);
+            }
+        }
+
+        [HttpPost]
+        [Route("list-by-shift-assignment")]
+        public IHttpActionResult ListForAddShiftAssignment([FromBody] EmployeesInfo_ForAddShiftRequest request)
+        {
+            var response = new ApiResult<List<EmployeesInfo_ForAddShiftResponse>>()
+            {
+                Data = new List<EmployeesInfo_ForAddShiftResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var accountId = JwtHelper.GetAccountIdFromToken(Request);
+                DateTime dateFrom = DateTime.Now.GetBeginOfDay();
+                if (string.IsNullOrEmpty(request.WorkingDay) == false)
+                {
+                    dateFrom = DateTime.ParseExact(
+                        request.WorkingDay,
+                        "yyyy-MM-dd HH:mm:ss",
+                        CultureInfo.InvariantCulture
+                    );
+                }
+                response = BoFactory.ShiftAssignment.EmployeesInfo_GetDetailForAddShift(companyId, accountId, request.ShiftId, request.BranchId, request.IsOnlyBranch, dateFrom);
 
                 return Content(HttpStatusCode.OK, response);
             }
@@ -673,4 +723,4 @@ namespace TanTamApi.Controllers
             }
         }
     }
-} 
+}

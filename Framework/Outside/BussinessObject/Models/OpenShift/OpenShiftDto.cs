@@ -6,7 +6,6 @@ namespace BussinessObject.Models.OpenShift
     public class CreateOpenShiftRequest
     {
         public List<string> branch_ids { get; set; }
-        public List<string> position_ids { get; set; }
         public int total_employees { get; set; }
         public string shift_id { get; set; }
         public string working_day { get; set; }
@@ -83,17 +82,5 @@ namespace BussinessObject.Models.OpenShift
         public int status { get; set; } = 1;
         public string working_day { get; set; }
         public int is_all { get; set; } = 1;
-    }
-
-    /// <summary>
-    /// Shift item for shift list by working day response
-    /// </summary>
-    public class ShiftListByWorkingDayItemDto
-    {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string start_time { get; set; }
-        public string end_time { get; set; }
-        public string timezone { get; set; }
     }
 } 

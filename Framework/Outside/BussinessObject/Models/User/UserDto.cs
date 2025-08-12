@@ -153,6 +153,8 @@ namespace BussinessObject.Models.User
 
         [JsonProperty("role")]
         public int? Role { get; set; }
+        [JsonProperty("role_name")]
+        public string RoleName { get; set; }
 
         [JsonProperty("employee_info_id")]
         public int? EmployeeInfoId { get; set; }
@@ -168,5 +170,72 @@ namespace BussinessObject.Models.User
 
         [JsonProperty("contact_address")]
         public string ContactAddress { get; set; }
+
+        [JsonProperty("is_root")]
+        public int? IsRoot { get; set; }
+        [JsonProperty("view_allowance_info")]
+        public bool ViewAllowanceInfo { get; set; }
+        [JsonProperty("view_promotion_history")]
+        public bool ViewPromotionHistory { get; set; }
+
+        [JsonProperty("can_update_permission")]
+        public bool CanUpdatePermission { get; set; }
+
+        [JsonProperty("can_update_timetracking_config")]
+        public bool CanUpdateTimeTrackingConfig { get; set; }
+
+        [JsonProperty("export_file_permission")]
+        public ExportFilePermission ExportFilePermission { get; set; } = new ExportFilePermission();
+    }
+
+    public class ExportFilePermission {
+        [JsonProperty("employee")]
+        public bool Employee { get; set; }
+        [JsonProperty("insurance")]
+        public bool Insurance { get; set; }
+        [JsonProperty("contract")]
+        public bool Contract { get; set; }
+        [JsonProperty("asset")]
+        public bool Asset { get; set; }
+        [JsonProperty("timesheet")]
+        public bool Timesheet { get; set; }
+        [JsonProperty("time_tracking")]
+        public bool TimeTracking { get; set; }
+        [JsonProperty("edit_time_tracking")]
+        public bool EditTimeTracking { get; set; }
+        [JsonProperty("request")]
+        public bool Request { get; set; }
+        [JsonProperty("payroll")]
+        public bool Payroll { get; set; }
+        [JsonProperty("kpi")]
+        public bool Kpi { get; set; }
+        [JsonProperty("task")]
+        public bool Task { get; set; }
+        [JsonProperty("my_report")]
+        public bool MyReport { get; set; }
+        [JsonProperty("request_approval")]
+        public bool RequestApproval { get; set; }
+        [JsonProperty("gps")]
+        public bool Gps { get; set; }
+        [JsonProperty("wifi")]
+        public bool Wifi { get; set; }
+        [JsonProperty("qr")]
+        public bool Qr { get; set; }
+        [JsonProperty("wanip")]
+        public bool Wanip { get; set; }
+        [JsonProperty("project")]
+        public bool Project { get; set; }
+        [JsonProperty("shift_list")]
+        public bool ShiftList { get; set; }
+        [JsonProperty("who_is_working")]
+        public bool WhoIsWorking { get; set; }
+        [JsonProperty("meal")]
+        public bool Meal { get; set; }
+        [JsonProperty("employee_dayleft")]
+        public bool EmployeeDayleft { get; set; }
+        [JsonProperty("promotion_history")]
+        public bool PromotionHistory { get; set; }
+        [JsonProperty("timesheet_task")]
+        public bool TimesheetTask { get; set; }
     }
 } 

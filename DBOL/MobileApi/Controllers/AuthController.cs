@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Web.Http;
 using TanTamApi.Helper;
 using TanTamApi.JWT.Helper;
+using TanTamApi.JWT.Middleware;
 using WebUtility;
 
 namespace TanTamApi.Controllers
@@ -20,8 +21,6 @@ namespace TanTamApi.Controllers
     [RoutePrefix("api/auth")]
     public class AuthController : ApiController
     {
-        
-        [JWT.Middleware.Authorize]
         [HttpPost, Route("refreshtoken")]
         public HttpResponseMessage RefreshToken([FromBody] string refreshToken)
         {
@@ -70,35 +69,35 @@ namespace TanTamApi.Controllers
                     {
                         CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Invalid refresh token for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.InvalidToken.Value();
-                        response.Message = $"Phiên đăng nhập Không tồn tại.";
+                        response.Message = "Phiên đăng nhập Không tồn tại.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                     else if (tokenInfo.JwtID.Equals(SecurityCommon.sha256_hash(jwtID), StringComparison.OrdinalIgnoreCase) == false)
                     {
                         CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Invalid JWT ID for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.InvalidToken.Value();
-                        response.Message = $"Phiên đăng nhập Không tồn tại.";
+                        response.Message = "Phiên đăng nhập Không tồn tại.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                     else if (tokenInfo.Expires < DateTime.Now)
                     {
                         CommonLogger.DefaultLogger.InfoFormat("RefreshToken: Expired token for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.TokenExpired.Value();
-                        response.Message = $"Phiên đăng nhập hết hạn vui lòng đăng nhập lại.";
+                        response.Message = "Phiên đăng nhập hết hạn vui lòng đăng nhập lại.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
-                    else if (tokenInfo.AccountIsActive ?? true == false)
+                    else if (tokenInfo.AccountIsActive.GetValueOrDefault(true) == false)
                     {
                         CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Locked account for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
-                        response.Message = $"Tài Khoản nhân viên này hiện bị khóa.";
+                        response.Message = "Tài Khoản nhân viên này hiện bị khóa.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
-                    else if (tokenInfo.CompanyIsActive ?? true == false)
+                    else if (tokenInfo.CompanyIsActive.GetValueOrDefault(true) == false)
                     {
                         CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Locked company for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
-                        response.Message = $"Công ty nhân viên đang làm việc hiện bị khóa.";
+                        response.Message = "Công ty nhân viên đang làm việc hiện bị khóa.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
 
@@ -106,7 +105,7 @@ namespace TanTamApi.Controllers
                     {
                         CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Inactive employee for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
-                        response.Message = $"Nhân viên đang làm việc hiện bị khóa.";
+                        response.Message = "Nhân viên đang làm việc hiện bị khóa.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
 
@@ -116,7 +115,7 @@ namespace TanTamApi.Controllers
                     var imie = "";
                     var newAccessToken = JwtHelper.GenerateAccessToken(
                         tokenInfo.AccountId, 
-                        tokenInfo.EmployeesInfoId ?? 0,
+                        tokenInfo.EmployeesInfoId,
                         tokenInfo.CompanyId, 
                         tokenInfo.Role ?? 0, 
                     out newJwtID);
@@ -131,14 +130,14 @@ namespace TanTamApi.Controllers
                             AccessToken = newAccessToken,
                         };
                         response.Code = ResponseResultEnum.Success.Value();
-
+                        response.Message = ResponseResultEnum.Success.Text();
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                     else
                     {
                         CommonLogger.DefaultLogger.ErrorFormat("RefreshToken: Failed to update JWT ID for accountId {0}, companyId {1}", accountId, companyId);
                         response.Code = ResponseResultEnum.AccountLocked.Value();
-                        response.Message = $"Không tạo được token.";
+                        response.Message = "Không tạo được token.";
                         return Request.CreateResponse(HttpStatusCode.OK, response);
                     }
                 }
@@ -146,7 +145,7 @@ namespace TanTamApi.Controllers
                 {
                     CommonLogger.DefaultLogger.WarnFormat("RefreshToken: Token info not found for accountId {0}, companyId {1}", accountId, companyId);
                     response.Code = ResponseResultEnum.InvalidToken.Value();
-                    response.Message = $"Phiên đăng nhập Không tồn tại.";
+                    response.Message = "Phiên đăng nhập Không tồn tại.";
                     return Request.CreateResponse(HttpStatusCode.OK, response);
                 }
             }
@@ -159,7 +158,7 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpPost, Route("logout")]
         public HttpResponseMessage Logout([FromBody] string refreshToken)
         {
@@ -280,7 +279,7 @@ namespace TanTamApi.Controllers
                     else
                     {
                         response.Code = ResponseResultEnum.InvalidToken.Value();
-                        response.Message = $"Sai thông tin.";
+                        response.Message = "Sai thông tin.";
                     }
                 }
                 catch (Exception ex)
@@ -300,7 +299,7 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpPost, Route("changepass")]
         public HttpResponseMessage ChangePass([FromBody] ChangePassRequest request)
         {
@@ -354,7 +353,7 @@ namespace TanTamApi.Controllers
                     else
                     {
                         response.Code = ResponseResultEnum.InvalidToken.Value();
-                        response.Message = $"Sai thông tin.";
+                        response.Message = "Sai thông tin.";
                         
                     }
                 }
@@ -635,11 +634,11 @@ namespace TanTamApi.Controllers
                 var isUsePhone = true;
                 var ip = WebUitility.GetIpAddressRequest();
                 var userAgent = "";
-                request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
+                //request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
 
                 if (!ValidateInput(request, isUsePhone, out var errorMsg))
                     return Request.CreateResponse(HttpStatusCode.OK, new ApiResult<int?> { Code = ResponseResultEnum.InvalidInput.Value(), Message = errorMsg });
-
+                request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
                 switch (request.Stage.ToLower())
                 {
                     case "validate":

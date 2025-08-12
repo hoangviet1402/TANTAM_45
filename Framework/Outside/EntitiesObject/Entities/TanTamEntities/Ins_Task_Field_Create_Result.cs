@@ -14,12 +14,12 @@ namespace EntitiesObject.Entities.TanTamEntities
     public partial class Ins_Task_Field_Create_Result
     {
         public int id { get; set; }
-        public int task_id { get; set; }
         public string title { get; set; }
-        public string type { get; set; }
+        public Nullable<int> type { get; set; }
         public string description { get; set; }
         public Nullable<bool> add_to_library { get; set; }
         public Nullable<bool> notify_on_change { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
+        public Nullable<bool> is_default { get; set; }
     }
 }

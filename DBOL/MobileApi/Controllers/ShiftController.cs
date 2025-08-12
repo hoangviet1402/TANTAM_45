@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -7,11 +9,14 @@ using BussinessObject;
 using BussinessObject.Enum;
 using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.Shift;
+using BussinessObject.Permission;
+using DataAccess;
 using Logger;
 using MyUtility;
 using MyUtility.Extensions;
 using Newtonsoft.Json;
 using TanTamApi.JWT.Helper;
+using TanTamApi.JWT.Middleware;
 
 namespace TanTamApi.Controllers
 {
@@ -42,7 +47,8 @@ namespace TanTamApi.Controllers
 
         }
 
-        [JWT.Middleware.Authorize]
+        [ApiAuthorize]
+        [RequiredPermission]
         [HttpPost, Route("create-shift-and-assign-shift")]
         public HttpResponseMessage CreateShiftAndAssignShift([FromBody] ShiftCreateAndAssignRequest request)
         {
@@ -68,7 +74,7 @@ namespace TanTamApi.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
-        [JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpPost, Route("create-shift")]
         public HttpResponseMessage CreateShift([FromBody] ShiftCreateAndAssignRequest request)
         {
@@ -93,7 +99,7 @@ namespace TanTamApi.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
-        [JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpGet, Route("list-employee-shift")]
         public HttpResponseMessage ListEmployeeShift(string working_day = "today,tomorrow")
         {
@@ -125,7 +131,7 @@ namespace TanTamApi.Controllers
 
         }
 
-        [JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpGet, Route("status-clock-in-out-shift")]
         public HttpResponseMessage StatusClockInOutShift(string timekeeper_device = "", int is_show_button = 0,bool isInitial = false)
         {
@@ -139,7 +145,8 @@ namespace TanTamApi.Controllers
             {
                 CommonLogger.PerformanceLogger.DebugFormat("status-clock-in-out-shift timekeeper_device {0},is_show_button {1},isInitial {2}", timekeeper_device, is_show_button, isInitial);
                 var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
-                response = BoFactory.Payroll.Payroll_StatusClockInOutShift(accountIdMap, DateTime.Now, timekeeper_device, is_show_button, isInitial);
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                response = BoFactory.Payroll.Payroll_StatusClockInOutShift(companyId,accountIdMap, DateTime.Now, timekeeper_device, is_show_button, isInitial);
             }
             catch (Exception ex)
             {
@@ -155,8 +162,9 @@ namespace TanTamApi.Controllers
         [HttpPost, Route("clock-in-out-shift")]
         public HttpResponseMessage ClockInOutShift([FromBody] ClockInOutShiftRequest request)
         {
-            var response = new ApiResult<object>()
+            var response = new ApiResult<ClockInOutShiftResponse>()
             {
+                Data = new ClockInOutShiftResponse(),
                 Code = ResponseResultEnum.Success.Value(),
                 Message = ResponseResultEnum.Success.Text()
             };
@@ -165,7 +173,7 @@ namespace TanTamApi.Controllers
                 CommonLogger.PerformanceLogger.DebugFormat("clock-in-out-shift {0}", JsonConvert.SerializeObject(request));
                 var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
                 var companyIdMap = JwtHelper.GetCompanyIdFromToken(Request);
-                response.Data = BoFactory.Payroll.Payroll_ClockInOutShift(request, accountIdMap, companyIdMap,DateTime.Now);
+                response = BoFactory.Payroll.Payroll_ClockInOutShift(request, accountIdMap, companyIdMap,DateTime.Now);
             }
             catch (Exception ex)
             {
@@ -181,10 +189,17 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// Get list of shift assignments with shift details
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
+        [RequiredPermission]
         [HttpGet]
-        [Route("list-shift-assignment-with-shift-v2")]
-        public IHttpActionResult ListShiftAssignmentWithShiftV2()
+        [Route("list-shift-assignment-with-shift")]
+        public IHttpActionResult ListShiftAssignmentWithShift(
+            int page = 1,
+            int page_size = 15,
+            string status = "active",
+            int? start_hour_value = null,
+            int? end_hour_value = null,
+            string keyword = null)
         {
             try
             {
@@ -200,12 +215,23 @@ namespace TanTamApi.Controllers
                     });
                 }
 
-                var result = BoFactory.Shift.GetListShiftAssignmentWithShift(companyId, employeeId);
+                // Create request object from query parameters
+                var request = new GetListShiftAssignmentWithShiftRequest
+                {
+                    Page = page,
+                    PageSize = page_size,
+                    Status = status,
+                    StartHourValue = start_hour_value,
+                    EndHourValue = end_hour_value,
+                    Keyword = keyword
+                };
+
+                var result = BoFactory.Shift.GetListShiftAssignmentWithShift(companyId, employeeId, request);
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.Error("ListShiftAssignmentWithShiftV2 Exception.", ex);
+                CommonLogger.DefaultLogger.Error("ListShiftAssignmentWithShift Exception.", ex);
                 return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
                 {
                     Code = ResponseResultEnum.SystemError.Value(),
@@ -214,15 +240,185 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [TanTamApi.JWT.Middleware.Authorize]
-        [HttpPost]
-        [Route("summary-employee-shift")]
-        public IHttpActionResult SummaryEmployeeShift([FromBody] EmployeeShiftSummaryRequest request)
+        /// <summary>
+        /// Get detailed shift assignment with shift information by ID
+        /// </summary>
+        [ApiAuthorize]
+        [HttpGet]
+        [Route("detail-shift-assignment-with-shift")]
+        public IHttpActionResult DetailShiftAssignmentWithShift(int id)
         {
             try
             {
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
                 var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                if (id <= 0)
+                {
+                    return Content(HttpStatusCode.BadRequest, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidData.Value(),
+                        Message = "ID shift assignment không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.GetShiftAssignmentDetailWithShift(id, companyId, employeeId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("DetailShiftAssignmentWithShift Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
+        }
+
+        /// <summary>
+        /// Update shift assignment with shift information
+        /// </summary>
+        [ApiAuthorize]
+        [RequiredPermission]
+        [HttpPost]
+        [Route("update-shift-assignment-with-shift")]
+        public IHttpActionResult UpdateShiftAssignmentWithShift([FromBody] ShiftUpdateAndAssignRequest request)
+        {
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ"
+                    });
+                }
+
+                if (request == null || string.IsNullOrEmpty(request.Id))
+                {
+                    return Content(HttpStatusCode.BadRequest, new ApiResult<object>
+                    {
+                        Code = ResponseResultEnum.InvalidData.Value(),
+                        Message = "Dữ liệu không hợp lệ"
+                    });
+                }
+
+                var result = BoFactory.Shift.UpdateShiftAssignmentWithShiftSimplified(request, companyId, employeeId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("UpdateShiftAssignmentWithShift Exception.", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<object>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý."
+                });
+            }
+        }
+
+        /// <summary>
+        /// API để xóa shift assignment cùng với shift
+        /// </summary>
+        [ApiAuthorize]
+        [RequiredPermission]
+        [HttpPost]
+        [Route("delete-shift-assignment-with-shift")]
+        public IHttpActionResult DeleteShiftAssignmentWithShift([FromBody] DeleteShiftAssignmentRequest request)
+        {
+            var response = new ApiResult<DeleteShiftAssignmentResponse>()
+            {
+                Data = new DeleteShiftAssignmentResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+
+                if (companyId <= 0 || employeeId <= 0)
+                {
+                    return Content(HttpStatusCode.Unauthorized, new ApiResult<DeleteShiftAssignmentResponse>
+                    {
+                        Code = ResponseResultEnum.InvalidToken.Value(),
+                        Message = "Phiên đăng nhập không hợp lệ",
+                        Data = new DeleteShiftAssignmentResponse()
+                    });
+                }
+
+                if (request == null || string.IsNullOrEmpty(request.Id))
+                {
+                    return Content(HttpStatusCode.BadRequest, new ApiResult<DeleteShiftAssignmentResponse>
+                    {
+                        Code = ResponseResultEnum.InvalidData.Value(),
+                        Message = "Dữ liệu không hợp lệ",
+                        Data = new DeleteShiftAssignmentResponse()
+                    });
+                }
+
+
+                response = BoFactory.Shift.DeleteShiftAssignmentWithShift(int.Parse(request.Id), companyId, employeeId);
+                
+                if (response.Code == ResponseResultEnum.Success.Value())
+                {
+                    return Ok(response);
+                }
+                else if (response.Code == ResponseResultEnum.InvalidData.Value())
+                {
+                    return Content(HttpStatusCode.BadRequest, response);
+                }
+                else
+                {
+                    return Content(HttpStatusCode.InternalServerError, response);
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.Error("ShiftController.DeleteShiftAssignmentWithShift - Error occurred", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<DeleteShiftAssignmentResponse>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                    Data = new DeleteShiftAssignmentResponse()
+                });
+            }
+        }
+
+        [ApiAuthorize]
+        [RequiredPermission]
+        [HttpPost]
+        [Route("summary-employee-shift")]
+        public IHttpActionResult SummaryEmployeeShift([FromBody] EmployeeShiftSummaryRequest request)
+        {
+            var response = new ApiResult<EmployeeShiftSummaryResponse>()
+            {
+                Data = new EmployeeShiftSummaryResponse(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+
+                var companyId = JwtHelper.GetCompanyIdFromToken(Request);
+                var employeeId = JwtHelper.GetAccountMapIDFromToken(Request);
+                var role = JwtHelper.GetRoleFromToken(Request);
 
                 if (companyId <= 0 || employeeId <= 0)
                 {
@@ -234,29 +430,52 @@ namespace TanTamApi.Controllers
                     });
                 }
 
+                // Sử dụng PermissionHelper để kiểm tra quyền
+                // var permissionKeysToCheck = new List<string> 
+                // { 
+                //     MobilePermissionKeys.MobileWorkTimekeeping,
+                //     WebPermissionKeys.ShiftViewSummaryEmployee,
+                //     WebPermissionKeys.EmployeeViewList
+                // };
+                
+                // var validPermissions = PermissionHelper.GetValidPermissions(employeeId, permissionKeysToCheck, role);
+                
+                // // Kiểm tra logic quyền: có MobileWorkTimekeeping HOẶC (có ShiftViewSummaryEmployee VÀ EmployeeViewList)
+                // var hasPermission = validPermissions.Contains(MobilePermissionKeys.MobileWorkTimekeeping) || 
+                //                   (validPermissions.Contains(WebPermissionKeys.ShiftViewSummaryEmployee) && 
+                //                    validPermissions.Contains(WebPermissionKeys.EmployeeViewList));
+
+                // if (!hasPermission)
+                // {
+                //     return Content(HttpStatusCode.Unauthorized, new ApiResult<EmployeeShiftSummaryResponse>
+                //     {
+                //         Code = ResponseResultEnum.InvalidToken.Value(),
+                //         Message = "Phiên đăng nhập không hợp lệ",
+                //         Data = new EmployeeShiftSummaryResponse()
+                //     });
+                // }
+                
                 // Set company_id from token if not provided in request
                 if (request == null) request = new EmployeeShiftSummaryRequest();
                 if (request.CompanyId <= 0) request.CompanyId = companyId;
 
-                var result = BoFactory.ShiftSummary.GetEmployeeShiftSummary(request, employeeId);
-                return Ok(result);
+                response = BoFactory.ShiftSummary.GetEmployeeShiftSummary(request, employeeId, role);
             }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error($"SummaryEmployeeShift Exception.", ex);
-                return Content(HttpStatusCode.InternalServerError, new ApiResult<EmployeeShiftSummaryResponse>
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình xử lý.",
-                    Data = new EmployeeShiftSummaryResponse()
-                });
+                response.Code = ResponseResultEnum.SystemError.Value();
+                response.Message = "Đã xảy ra lỗi trong quá trình xử lý.";
             }
+            
+            return Ok(response);
         }
 
         /// <summary>
         /// API để từ chối/xóa ca làm việc đã được đăng ký
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
+        [RequiredPermission]
         [HttpPost]
         [Route("reject-shift")]
         public IHttpActionResult RejectShift([FromBody] RejectShiftRequest request)
@@ -292,7 +511,8 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// API để đăng ký ca làm việc với shift_id, working_day, user_id
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
+        [RequiredPermission]
         [HttpPost]
         [Route("register-shift")]
         public IHttpActionResult RegisterShift([FromBody] RegisterShiftRequest request)
@@ -328,7 +548,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// API để lấy danh sách ca làm việc theo company của user
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpPost]
         [Route("list-shift")]
         public IHttpActionResult ListShift([FromBody] ListShiftRequest request)
@@ -365,7 +585,7 @@ namespace TanTamApi.Controllers
         /// API để check in/out shift với thông tin chi tiết
         /// Format request: {"reason":"","id":"6862564289d492ce0d0f9c18","branch_id":"685e12a14c2104da69073d96","user_id":"685e123922a34XN0l","checkin_time":"2025-07-03 08:00:00","checkout_time":"2025-07-03 17:30:00","is_checkin":1,"is_checkout":1,"working_day":"2025-07-02 00:00:00"}
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize(UserRole.SystemAdmin, UserRole.Manager, UserRole.RegionalManager, UserRole.BranchManager)]
         [HttpPost]
         [Route("check-in-out-shift")]
         public IHttpActionResult CheckInOutShift([FromBody] CheckInOutShiftUpdateRequest request)
@@ -374,7 +594,6 @@ namespace TanTamApi.Controllers
             {
                 // Call business logic to update check-in/out
                 var userId = JwtHelper.GetAccountIdFromToken(Request);
-
                 var result = BoFactory.Shift.UpdateCheckInOut(request, userId);
                 return Ok(result);
             }
@@ -394,7 +613,7 @@ namespace TanTamApi.Controllers
         /// API để hủy check in/out shift
         /// Format request: {"id":"6862564289d492ce0d0f9c18","branch_id":"685e12a14c2104da69073d96","user_id":"685e123922a34XN0l","is_uncheckin":1,"reason":""}
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize(UserRole.SystemAdmin, UserRole.Manager, UserRole.RegionalManager, UserRole.BranchManager)]
         [HttpPost]
         [Route("uncheckin-uncheckout-shift")]
         public IHttpActionResult UncheckInOutShift([FromBody] UncheckInOutShiftRequest request)
@@ -421,7 +640,7 @@ namespace TanTamApi.Controllers
         /// <summary>
         /// API để lấy thời gian chấm công của nhân viên theo ca làm việc
         /// </summary>
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpGet]
         [Route("get-checked-time-employee-shift")]
         public IHttpActionResult GetCheckedTimeEmployeeShift(int employee_shift_id = 0)
@@ -454,7 +673,8 @@ namespace TanTamApi.Controllers
             }
         }
 
-        [TanTamApi.JWT.Middleware.Authorize]
+        #region dùng cho admin add ca của nhân viên
+        [ApiAuthorize]
         [HttpGet]
         [Route("for-register")]
         public IHttpActionResult ListShiftForRegister(int week_of_year , int year, int branch_id, string type)
@@ -475,7 +695,8 @@ namespace TanTamApi.Controllers
                     BranchId = branch_id,
                     Type = type
                 };
-                response = BoFactory.ShiftAssignment.ShiftLite_ForRegister(request);
+                var companyID = JwtHelper.GetCompanyIdFromToken(Request);
+                response = BoFactory.ShiftAssignment.ShiftLite_ForRegister(request, companyID);
             }
             catch (Exception ex)
             {
@@ -490,7 +711,7 @@ namespace TanTamApi.Controllers
             return Ok(response);
         }
 
-        [TanTamApi.JWT.Middleware.Authorize]
+        [ApiAuthorize]
         [HttpGet]
         [Route("history-employee-shift")]
         public IHttpActionResult HistoryEmployeeShift(int week_of_year, int year, int branch_id, int shift_id)
@@ -512,7 +733,8 @@ namespace TanTamApi.Controllers
                     ShiftID = shift_id
                 };
                 var userId = JwtHelper.GetAccountIdFromToken(Request);
-                response = BoFactory.ShiftAssignment.HistoryEmployeeShift(request);
+                var companyID = JwtHelper.GetCompanyIdFromToken(Request);
+                response = BoFactory.ShiftAssignment.HistoryEmployeeShift(request,companyID);
             }
             catch (Exception ex)
             {
@@ -528,6 +750,99 @@ namespace TanTamApi.Controllers
             return Ok(response);
         }
 
+        [ApiAuthorize]
+        [HttpPost]
+        [Route("register-shift-app")]
+        public IHttpActionResult EmployeeRegisterShift([FromBody]  EmployeeRegisterShiftRequest request)
+        {
+            var response = new ApiResult<List<ShiftLite_ForRegisterResponse>>()
+            {
+                Data = new List<ShiftLite_ForRegisterResponse>(),
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
 
+            try
+            {
+                var userId = JwtHelper.GetAccountIdFromToken(Request);
+                var companyID = JwtHelper.GetCompanyIdFromToken(Request);
+                var accountIdMap = JwtHelper.GetAccountMapIDFromToken(Request);
+                var roleid = JwtHelper.GetRoleFromToken(Request);
+                if (roleid == UserRole.SystemAdmin.Value() ) 
+                {
+                    DateTime dateFrom = DateTime.Now.GetBeginOfDay();
+                    if (string.IsNullOrEmpty(request.WorkingDay) == false)
+                    {
+                        dateFrom = DateTime.ParseExact(
+                            request.WorkingDay,
+                            "yyyy-MM-dd HH:mm:ss",
+                            CultureInfo.InvariantCulture
+                        );
+                    }
+                    else
+                    {
+                        response.Code = ResponseResultEnum.InvalidData.Value();
+                        response.Message = "chưa chọn ngày add ca";
+                    }
+                    response = BoFactory.ShiftAssignment.EmployeeRegisterShift(request, companyID, dateFrom);
+                }
+                else
+                {
+                    response.Code = ResponseResultEnum.NoData.Value();
+                    response.Message = "Chỉ có quản lý mới có quyền này";
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("ShiftController.UncheckInOutShift - Error occurred: {0}", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<UncheckInOutShiftResponse>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                    Data = new UncheckInOutShiftResponse()
+                });
+            }
+            return Ok(response);
+        }
+
+        [ApiAuthorize]
+        [HttpPost]
+        [Route("reject-shift-app")]
+        public IHttpActionResult EmployeRrejectShift([FromBody]  EmployeeRejectShiftRequest request)
+        {
+            var response = new ApiResult<int>()
+            {
+                Data = 0,
+                Code = ResponseResultEnum.ServiceUnavailable.Value(),
+                Message = ResponseResultEnum.ServiceUnavailable.Text()
+            };
+
+            try
+            {
+                var userId = JwtHelper.GetAccountIdFromToken(Request);
+                var companyID = JwtHelper.GetCompanyIdFromToken(Request);
+                var roleid = JwtHelper.GetRoleFromToken(Request);
+                if (roleid == UserRole.SystemAdmin.Value() && request.UserId > 0)
+                {
+                    response = BoFactory.ShiftAssignment.EmployeRrejectShift(request.id, request.UserId);
+                }
+                else
+                {
+                    response.Code = ResponseResultEnum.NoData.Value();
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.DefaultLogger.ErrorFormat("ShiftController.UncheckInOutShift - Error occurred: {0}", ex);
+                return Content(HttpStatusCode.InternalServerError, new ApiResult<UncheckInOutShiftResponse>
+                {
+                    Code = ResponseResultEnum.SystemError.Value(),
+                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                    Data = new UncheckInOutShiftResponse()
+                });
+            }
+            return Ok(response);
+        }
+        #endregion 
     }
 }

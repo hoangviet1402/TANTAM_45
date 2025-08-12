@@ -189,6 +189,9 @@ namespace TanTamApi.Models.Response
         [JsonProperty("deadline")]
         public DateTime? Deadline { get; set; }
 
+        [JsonProperty("deadline_date")]
+        public string DeadlineDate { get; set; }
+
         [JsonProperty("start_date")]
         public DateTime? StartDate { get; set; }
 
@@ -206,6 +209,9 @@ namespace TanTamApi.Models.Response
 
         [JsonProperty("is_completed")]
         public bool? IsCompleted { get; set; }
+
+        [JsonProperty("is_looping")]
+        public bool? IsLooping { get; set; }
 
         [JsonProperty("completion_percentage")]
         public int? CompletionPercentage { get; set; }

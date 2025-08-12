@@ -103,10 +103,31 @@ namespace BussinessObject.Models.Shift
     public class WifiUpdateRequest
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string id { get; set; }
+        public int id { get; set; }
 
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string name { get; set; }
+
+        [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
+        public string address { get; set; }
+
+        [JsonProperty("radius", NullValueHandling = NullValueHandling.Ignore)]
+        public int radius { get; set; }
+
+        [JsonProperty("speed", NullValueHandling = NullValueHandling.Ignore)]
+        public int speed { get; set; }
+
+        [JsonProperty("accuracy", NullValueHandling = NullValueHandling.Ignore)]
+        public int accuracy { get; set; }
+
+        [JsonProperty("altitude", NullValueHandling = NullValueHandling.Ignore)]
+        public int altitude { get; set; }
+
+        [JsonProperty("longitude", NullValueHandling = NullValueHandling.Ignore)]
+        public float longitude { get; set; }
+
+        [JsonProperty("latitude", NullValueHandling = NullValueHandling.Ignore)]
+        public float latitude { get; set; }
 
         [JsonProperty("bssid", NullValueHandling = NullValueHandling.Ignore)]
         public string bssid { get; set; }
@@ -124,7 +145,10 @@ namespace BussinessObject.Models.Shift
         public List<string> extra_branch_ids { get; set; }
 
         [JsonProperty("is_both_bssid_ssid", NullValueHandling = NullValueHandling.Ignore)]
-        public int is_both_bssid_ssid { get; set; }
+        public bool is_both_bssid_ssid { get; set; }
+
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string type { get; set; }
     }
 
     public class WifiUpdateResponse
@@ -210,7 +234,7 @@ namespace BussinessObject.Models.Shift
         public float latitude { get; set; }
 
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public int type { get; set; }
+        public string type { get; set; }
     }
 
     /// <summary>
@@ -322,12 +346,18 @@ namespace BussinessObject.Models.Shift
     {
         [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
         public int page { get; set; }
+
+        [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]
+        public int per_page { get; set; }
+
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string type { get; set; }
     }
 
     public class WifiListResponse
     {
-        [JsonProperty("wifi_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<WifiInfo> wifi_list { get; set; }
+        [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
+        public List<WifiInfo> items { get; set; }
     }
 
     public class WifiInfo
@@ -386,7 +416,35 @@ namespace BussinessObject.Models.Shift
     /// </summary>
     public class WifiListAdvancedResponse
     {
-        public List<WifiAdvancedInfo> wifi_list { get; set; }
+        public List<WifiAdvancedInfo> items { get; set; }
+        public PaginationMeta meta { get; set; }
+    }
+
+    public class GPSListAdvancedResponse
+    {
+        public List<GPSAdvancedInfo> items { get; set; }
+        public PaginationMeta meta { get; set; }
+    }
+
+    /// <summary>
+    /// Pagination metadata cho response
+    /// </summary>
+    public class PaginationMeta
+    {
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int total { get; set; }
+
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int count { get; set; }
+
+        [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]
+        public int per_page { get; set; }
+
+        [JsonProperty("current_page", NullValueHandling = NullValueHandling.Ignore)]
+        public int current_page { get; set; }
+
+        [JsonProperty("total_pages", NullValueHandling = NullValueHandling.Ignore)]
+        public int total_pages { get; set; }
     }
 
     /// <summary>
@@ -400,6 +458,29 @@ namespace BussinessObject.Models.Shift
         public WifiBranchObject branch_obj { get; set; }
         public bool is_both_bssid_ssid { get; set; }
         public int branch_id { get; set; }
+        public string created_at { get; set; }
+        public string updated_at { get; set; }
+        public List<WifiDepartmentObject> department_obj { get; set; }
+        public List<WifiBranchObject> extra_branch_obj { get; set; }
+        public string address { get; set; }
+        public int radius { get; set; }
+        public int speed { get; set; }
+        public int accuracy { get; set; }
+        public int altitude { get; set; }
+        public float longitude { get; set; }
+        public float latitude { get; set; }
+        public int type { get; set; }
+    }
+
+    /// <summary>
+    /// Thông tin WiFi trong list advanced
+    /// </summary>
+    public class GPSAdvancedInfo
+    {
+        public Nullable<int> id { get; set; }
+        public string name { get; set; }
+        public int branch_id { get; set; }
+        public WifiBranchObject branch_obj { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }
         public List<WifiDepartmentObject> department_obj { get; set; }

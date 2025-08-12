@@ -86,18 +86,25 @@
     <Compile Include="Bo\Shift\ShiftBo.cs" />
     <Compile Include="Bo\Shift\ShiftSummaryBo.cs" />
     <Compile Include="Bo\Shift\TimekeeperBo.cs" />
+    <Compile Include="Bo\Shift\WifiBo.cs" />
     <Compile Include="Bo\TanTamBo\AuthBo.cs" />
     <Compile Include="Bo\TanTamBo\BranchesBo.cs" />
+    <Compile Include="Bo\TanTamBo\CommentBo.cs" />
     <Compile Include="Bo\TanTamBo\CompanyBo.cs" />
     <Compile Include="Bo\TanTamBo\DepartmentBo.cs" />
     <Compile Include="Bo\TanTamBo\EmployeeBo.cs" />
-    <Compile Include="Bo\TanTamBo\EmployeeBoHelper.cs" />
+    <Compile Include="Bo\TanTamBo\MenuBo.cs" />
     <Compile Include="Bo\TanTamBo\OpenShiftBo.cs" />
+    <Compile Include="Bo\TanTamBo\PermissionBo.cs" />
     <Compile Include="Bo\TanTamBo\PositionBo.cs" />
-    <Compile Include="Bo\TanTamBo\TaskBo.cs" />
+    <Compile Include="Bo\TanTamBo\ReportBo.cs" />
+    <Compile Include="Bo\TanTamBo\RequestBo.cs" />
+    <Compile Include="Bo\TanTamBo\BuildingBo.cs" />
+    <Compile Include="Bo\TanTamBo\TutorialsBo.cs" />
     <Compile Include="Bo\TanTamBo\TanTamBo.cs" />
     <Compile Include="BoFactory.cs" />
     <Compile Include="Bo\BaseBo.cs" />
+    <Compile Include="Bo\TanTamBo\TaskBo.cs" />
     <Compile Include="Bo\TanTamBo\UserBo.cs" />
     <Compile Include="Constants\LanguageResourceBo.cs" />
     <Compile Include="Constants\LanguageResourceCam.cs" />
@@ -116,12 +123,20 @@
     <Compile Include="Enum\Info\RefererIdEnum.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Enum\PermissionTypeEnum.cs" />
     <Compile Include="Enum\ResponseCodeEnum.cs" />
     <Compile Include="Enum\ResponseResultEnum.cs" />
     <Compile Include="Enum\ShittEnum.cs" />
+    <Compile Include="Enum\TaskElementTypeEnum.cs" />
     <Compile Include="Enum\UserRole.cs" />
     <Compile Include="Helper\AESHelper.cs" />
     <Compile Include="Helper\CacheApiHelper.cs" />
+    <Compile Include="Helper\EmployeeBoHelper.cs" />
+    <Compile Include="Helper\FileUploadHelper.cs" />
+    <Compile Include="Helper\PayrollHelper.cs" />
+    <Compile Include="Helper\PropertyHelper.cs" />
+    <Compile Include="Helper\ShiftLabelHelper.cs" />
+    <Compile Include="Helper\ShiftListHelper.cs" />
     <Compile Include="Helper\ShiftTimeConfigHelper.cs" />
     <Compile Include="Models\ApiResponse\ApiBaseResponse.cs" />
     <Compile Include="Models\ApiResponse\ApiResult.cs" />
@@ -133,13 +148,32 @@
     <Compile Include="Models\Auth\OrganizationDto.cs" />
     <Compile Include="Models\Auth\RefeshTokenResponse.cs" />
     <Compile Include="Models\Auth\UpdateFullName.cs" />
+    <Compile Include="Models\Building\BuildingModels.cs" />
+    <Compile Include="Models\Comment\AddCommentRequest.cs" />
+    <Compile Include="Models\Comment\AddCommentResponse.cs" />
+    <Compile Include="Models\Comment\DeleteCommentResponse.cs" />
+    <Compile Include="Models\Comment\ListCommentRequest.cs" />
+    <Compile Include="Models\Comment\ListCommentResponse.cs" />
+    <Compile Include="Models\Comment\TaskCommentResult.cs" />
+    <Compile Include="Models\Comment\UpdateCommentRequest.cs" />
+    <Compile Include="Models\Comment\UpdateCommentResponse.cs" />
     <Compile Include="Models\Company\BranchesDTO.cs" />
     <Compile Include="Models\Company\BusinessDTO.cs" />
     <Compile Include="Models\Company\CompanyDTO.cs" />
+    <Compile Include="Models\Company\DeletePositionRequest.cs" />
     <Compile Include="Models\Company\DepartmentDTO.cs" />
     <Compile Include="Models\Company\PositionDTO.cs" />
     <Compile Include="Models\Company\UpdateInfoWhenSinup.cs" />
+    <Compile Include="Models\Menu\MenuDto.cs" />
     <Compile Include="Models\MyConfigModel.cs" />
+    <Compile Include="Models\Permission\PermissionDto.cs" />
+    <Compile Include="Models\Permission\PermissionGroupDto.cs" />
+    <Compile Include="Models\Permission\RolePermissionDto.cs" />
+    <Compile Include="Models\Permission\UpdateEmployeePermissionsRequest.cs" />
+    <Compile Include="Models\Report\EmployeePayrollReport.cs" />
+    <Compile Include="Models\Report\ReportDto.cs" />
+    <Compile Include="Models\Report\WorkingTotalModels.cs" />
+    <Compile Include="Models\RequestFor\RequestForModels.cs" />
     <Compile Include="Models\ResourceEnum\Model\MyResourceDetailModel.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceAccountManagement.cs" />
     <Compile Include="Models\ResourceEnum\MyResourceCommonManagement.cs" />
@@ -161,9 +195,12 @@
     <Compile Include="Models\Shift\ShiftResponse.cs" />
     <Compile Include="Models\Shift\ShiftUserDTO.cs" />
     <Compile Include="Models\Shift\TimeDTO.cs" />
+    <Compile Include="Models\Shift\WifiDTO.cs" />
     <Compile Include="Models\Task\TaskRequestDto.cs" />
     <Compile Include="Models\User\UserDto.cs" />
     <Compile Include="Models\User\UserRequestDto.cs" />
+    <Compile Include="Permission\PermissionHelper.cs" />
+    <Compile Include="Permission\PermissionKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -201,7 +238,12 @@
       <Name>MyUtility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UserModule\Contract\" />
+    <Folder Include="UserModule\Enums\" />
+    <Folder Include="UserModule\Models\Request\" />
+    <Folder Include="UserModule\Models\Response\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

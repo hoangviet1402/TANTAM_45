@@ -22,7 +22,8 @@ namespace DataAccess.Dao.TanTamDao
         Ins_Employee_GetEmployeeID_Result GetEmployeeDetail(int employeeId);
         
         List<Ins_Employee_GetAll_Result> GetEmployeeList(int companyId, int page, int pageSize, 
-            string fullName = null, bool? isQuit = null, bool? isActive = null, bool isAll = false);
+            string fullName = null, bool? isQuit = null, bool? isActive = null, bool isAll = false,
+            int? regionId = null, int? branchId = null);
         
         int DeleteEmployee(int employeeAccountId);
         
@@ -34,7 +35,7 @@ namespace DataAccess.Dao.TanTamDao
         int UpdateEmployeeDetails_v2(int employeeId, string fullName, DateTime? birthDate, string gender,
             string employeeCode, int? displayOrder, string email, string phone, string phoneCode,
             int? departmentId = null, int? regionId = null, int? branchId = null, int? positionId = null,
-            bool? isQuit = null, bool? isActive = null);
+            bool? isQuit = null, bool? isActive = null, int? role = null);
 
         List<Ins_Employee_GetList_Result> GetEmployeeFilterList(int companyId, int page, int pageSize, 
             DateTime startDate, DateTime endDate, bool isNoNeedTimekeeping, int totalRecords);
@@ -43,7 +44,11 @@ namespace DataAccess.Dao.TanTamDao
         
         List<Ins_Employee_GetEmployeeAccountMap_ByCompanyId_Result> GetEmployeeAccountMapByCompanyId(int companyId);
         
-        // Get employee object data
+        Ins_Employee_CheckDuplicateEmail_Result CheckDuplicateEmail(int companyId, string email, int excludeEmployeeId = 0);
+        Ins_Employee_CheckDuplicatePhone_Result CheckDuplicatePhone(int companyId, string phone, int excludeEmployeeId = 0);
+        
+        bool CheckEmployeeCodeExists(int companyId, string employeeCode, int excludeEmployeeId = 0);
+        
         Ins_Employee_GetObjectData_Result GetEmployeeObjectData(int employeeId);
     }
 
@@ -97,11 +102,12 @@ namespace DataAccess.Dao.TanTamDao
         }
 
         public List<Ins_Employee_GetAll_Result> GetEmployeeList(int companyId, int page, int pageSize,
-            string fullName = null, bool? isQuit = null, bool? isActive = null, bool isAll = false)
+            string fullName = null, bool? isQuit = null, bool? isActive = null, bool isAll = false,
+            int? regionId = null, int? branchId = null)
         {
             using (Uow)
             {
-                var result = Uow.Context.Ins_Employee_GetAll(companyId, page, pageSize, fullName, isQuit, isActive);
+                var result = Uow.Context.Ins_Employee_GetAll(companyId, page, pageSize, fullName, isQuit, isActive, regionId, branchId);
                 return result.ToList();
             }
         }
@@ -138,13 +144,13 @@ namespace DataAccess.Dao.TanTamDao
         public int UpdateEmployeeDetails_v2(int employeeId, string fullName, DateTime? birthDate, string gender,
             string employeeCode, int? displayOrder, string email, string phone, string phoneCode,
             int? departmentId = null, int? regionId = null, int? branchId = null, int? positionId = null,
-            bool? isQuit = null, bool? isActive = null)
+            bool? isQuit = null, bool? isActive = null, int? role = null)
         {
             using (Uow)
             {
                 Uow.Context.Ins_Employee_UpdateDetails_v2(employeeId, fullName, birthDate, gender,
                     employeeCode, displayOrder, email, phone, phoneCode, departmentId, regionId, branchId, positionId,
-                    isQuit, isActive);
+                    isQuit, isActive, role);
                 return 1;
             }
         }
@@ -187,5 +193,32 @@ namespace DataAccess.Dao.TanTamDao
                 return result?.FirstOrDefault();
             }
         }
+        
+        public Ins_Employee_CheckDuplicateEmail_Result CheckDuplicateEmail(int companyId, string email, int excludeEmployeeId = 0)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Employee_CheckDuplicateEmail(companyId, email, excludeEmployeeId);
+                return result?.FirstOrDefault();
+            }
+        }
+        
+        public Ins_Employee_CheckDuplicatePhone_Result CheckDuplicatePhone(int companyId, string phone, int excludeEmployeeId = 0)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Employee_CheckDuplicatePhone(companyId, phone, excludeEmployeeId);
+                return result?.FirstOrDefault();
+            }
+        }
+        
+        public bool CheckEmployeeCodeExists(int companyId, string employeeCode, int excludeEmployeeId = 0)
+        {
+            using (Uow)
+            {
+                var result = Uow.Context.Ins_Employee_CheckEmployeeCodeExists(companyId, employeeCode, excludeEmployeeId);
+                return result?.FirstOrDefault() ?? false;
+            }
+        }
     }
-} 
+}

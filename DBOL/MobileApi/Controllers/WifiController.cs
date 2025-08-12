@@ -17,7 +17,6 @@ namespace TanTamApi.Controllers
     [RoutePrefix("api/wifi")]
     public class WifiController : ApiController
     {
-
         /// <summary>
         /// Tạo WiFi nâng cao với nhiều liên kết
         /// </summary>
@@ -33,12 +32,20 @@ namespace TanTamApi.Controllers
 
                 if (companyId <= 0 || userId <= 0)
                 {
-                    return Content(HttpStatusCode.Unauthorized, new ApiResult<WifiCreateAdvancedResponse>
-                    {
-                        Code = ResponseResultEnum.InvalidToken.Value(),
-                        Message = "Phiên đăng nhập không hợp lệ",
-                        Data = new WifiCreateAdvancedResponse()
-                    });
+                    return Content(
+                        HttpStatusCode.Unauthorized,
+                        new ApiResult<WifiCreateAdvancedResponse>
+                        {
+                            Code = ResponseResultEnum.InvalidToken.Value(),
+                            Message = "Phiên đăng nhập không hợp lệ",
+                            Data = new WifiCreateAdvancedResponse(),
+                        }
+                    );
+                }
+
+                if(request.type == null || request.type == "")
+                {
+                    request.type = "wifi";
                 }
 
                 var result = BoFactory.Wifi.CreateWifiAdvanced(request, companyId);
@@ -46,13 +53,19 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("WifiController.CreateWifiAdvanced - Error occurred: {0}", ex);
-                return Content(HttpStatusCode.InternalServerError, new ApiResult<WifiCreateAdvancedResponse>
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
-                    Data = new WifiCreateAdvancedResponse()
-                });
+                CommonLogger.DefaultLogger.ErrorFormat(
+                    "WifiController.CreateWifiAdvanced - Error occurred: {0}",
+                    ex
+                );
+                return Content(
+                    HttpStatusCode.InternalServerError,
+                    new ApiResult<WifiCreateAdvancedResponse>
+                    {
+                        Code = ResponseResultEnum.SystemError.Value(),
+                        Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                        Data = new WifiCreateAdvancedResponse(),
+                    }
+                );
             }
         }
 
@@ -71,12 +84,19 @@ namespace TanTamApi.Controllers
 
                 if (companyId <= 0 || userId <= 0)
                 {
-                    return Content(HttpStatusCode.Unauthorized, new ApiResult<WifiUpdateResponse>
-                    {
-                        Code = ResponseResultEnum.InvalidToken.Value(),
-                        Message = "Phiên đăng nhập không hợp lệ",
-                        Data = new WifiUpdateResponse()
-                    });
+                    return Content(
+                        HttpStatusCode.Unauthorized,
+                        new ApiResult<WifiUpdateResponse>
+                        {
+                            Code = ResponseResultEnum.InvalidToken.Value(),
+                            Message = "Phiên đăng nhập không hợp lệ",
+                            Data = new WifiUpdateResponse(),
+                        }
+                    );
+                }
+                if (request.type == null || request.type == "")
+                {
+                    request.type = "wifi";
                 }
 
                 var result = BoFactory.Wifi.UpdateWifi(request);
@@ -84,13 +104,19 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("WifiController.UpdateWifi - Error occurred: {0}", ex);
-                return Content(HttpStatusCode.InternalServerError, new ApiResult<WifiUpdateResponse>
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
-                    Data = new WifiUpdateResponse()
-                });
+                CommonLogger.DefaultLogger.ErrorFormat(
+                    "WifiController.UpdateWifi - Error occurred: {0}",
+                    ex
+                );
+                return Content(
+                    HttpStatusCode.InternalServerError,
+                    new ApiResult<WifiUpdateResponse>
+                    {
+                        Code = ResponseResultEnum.SystemError.Value(),
+                        Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                        Data = new WifiUpdateResponse(),
+                    }
+                );
             }
         }
 
@@ -107,28 +133,64 @@ namespace TanTamApi.Controllers
                 var companyId = JwtHelper.GetCompanyIdFromToken(Request);
                 var userId = JwtHelper.GetAccountIdFromToken(Request);
 
-                //if (companyId <= 0 || userId <= 0)
-                //{
-                //    return Content(HttpStatusCode.Unauthorized, new ApiResult<WifiListAdvancedResponse>
-                //    {
-                //        Code = ResponseResultEnum.InvalidToken.Value(),
-                //        Message = "Phiên đăng nhập không hợp lệ",
-                //        Data = new WifiListAdvancedResponse()
-                //    });
-                //}
+                if (companyId <= 0 || userId <= 0)
+                {
+                    return Content(
+                        HttpStatusCode.Unauthorized,
+                        new ApiResult<WifiListAdvancedResponse>
+                        {
+                            Code = ResponseResultEnum.InvalidToken.Value(),
+                            Message = "Phiên đăng nhập không hợp lệ",
+                            Data = new WifiListAdvancedResponse(),
+                        }
+                    );
+                }
+                if (request == null)
+                {
+                    request = new WifiListRequestAdvanced();
+                    request.page = 1;
+                    request.per_page = 15;
+                    request.type = null;
+                }
 
-                var result = BoFactory.Wifi.GetWifiListAdvanced(request?.page ?? 1, 12);
-                return Ok(result);
+                if(request.type == null || request.type == "")
+                {
+                    request.type = "wifi";
+                }
+                
+                // TYPE-SAFE ROUTING - Handle different return types
+                if (request.type == "wifi")
+                {
+                    var wifiResult = BoFactory.Wifi.GetWifiListAdvanced(request, companyId);
+                    return Ok(wifiResult);
+                }
+                else if(request.type == "location")
+                {
+                    var gpsResult = BoFactory.Wifi.GetGPSListAdvanced(request, companyId);
+                    return Ok(gpsResult);
+                }
+                else
+                {
+                    // Default to WiFi list for any other type
+                    var response = new ApiResult<WifiListAdvancedResponse>();
+                    return Ok(response);
+                }
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("WifiController.GetWifiList - Error occurred: {0}", ex);
-                return Content(HttpStatusCode.InternalServerError, new ApiResult<WifiListAdvancedResponse>
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
-                    Data = new WifiListAdvancedResponse()
-                });
+                CommonLogger.DefaultLogger.ErrorFormat(
+                    "WifiController.GetWifiList - Error occurred: {0}",
+                    ex
+                );
+                return Content(
+                    HttpStatusCode.InternalServerError,
+                    new ApiResult<WifiListAdvancedResponse>
+                    {
+                        Code = ResponseResultEnum.SystemError.Value(),
+                        Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                        Data = new WifiListAdvancedResponse(),
+                    }
+                );
             }
         }
 
@@ -147,22 +209,28 @@ namespace TanTamApi.Controllers
 
                 if (companyId <= 0 || userId <= 0)
                 {
-                    return Content(HttpStatusCode.Unauthorized, new ApiResult<string>
-                    {
-                        Code = ResponseResultEnum.InvalidToken.Value(),
-                        Message = "Phiên đăng nhập không hợp lệ",
-                        Data = string.Empty
-                    });
+                    return Content(
+                        HttpStatusCode.Unauthorized,
+                        new ApiResult<string>
+                        {
+                            Code = ResponseResultEnum.InvalidToken.Value(),
+                            Message = "Phiên đăng nhập không hợp lệ",
+                            Data = string.Empty,
+                        }
+                    );
                 }
 
                 if (wifiId <= 0)
                 {
-                    return Content(HttpStatusCode.BadRequest, new ApiResult<string>
-                    {
-                        Code = ResponseResultEnum.InvalidData.Value(),
-                        Message = "WiFi ID không hợp lệ",
-                        Data = string.Empty
-                    });
+                    return Content(
+                        HttpStatusCode.BadRequest,
+                        new ApiResult<string>
+                        {
+                            Code = ResponseResultEnum.InvalidData.Value(),
+                            Message = "WiFi ID không hợp lệ",
+                            Data = string.Empty,
+                        }
+                    );
                 }
 
                 var result = BoFactory.Wifi.DeleteWifi(wifiId);
@@ -170,16 +238,20 @@ namespace TanTamApi.Controllers
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.ErrorFormat("WifiController.DeleteWifi - Error occurred: {0}", ex);
-                return Content(HttpStatusCode.InternalServerError, new ApiResult<string>
-                {
-                    Code = ResponseResultEnum.SystemError.Value(),
-                    Message = "Đã xảy ra lỗi trong quá trình xử lý",
-                    Data = string.Empty
-                });
+                CommonLogger.DefaultLogger.ErrorFormat(
+                    "WifiController.DeleteWifi - Error occurred: {0}",
+                    ex
+                );
+                return Content(
+                    HttpStatusCode.InternalServerError,
+                    new ApiResult<string>
+                    {
+                        Code = ResponseResultEnum.SystemError.Value(),
+                        Message = "Đã xảy ra lỗi trong quá trình xử lý",
+                        Data = string.Empty,
+                    }
+                );
             }
         }
-
-        
     }
-} 
+}

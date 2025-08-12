@@ -53,7 +53,7 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string BankName { get; set; }
         public string BankBranch { get; set; }
         public string TaxIdentification { get; set; }
-        public System.DateTime EmployeesInfoCreatedAt { get; set; }
+        public Nullable<System.DateTime> EmployeesInfoCreatedAt { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public string PhoneCode { get; set; }

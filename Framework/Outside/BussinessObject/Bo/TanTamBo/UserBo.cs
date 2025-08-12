@@ -1,6 +1,7 @@
 using BussinessObject.Enum;
 using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.User;
+using BussinessObject.Permission;
 using DataAccess;
 using EntitiesObject.Entities.TanTamEntities;
 using Logger;
@@ -111,6 +112,9 @@ namespace BussinessObject.Bo.TanTamBo
 
                 if (userFromDb != null)
                 {
+                    var userRole = userFromDb.Role.GetValueOrDefault(UserRole.Employees.Value());
+                    var userPermission = DaoFactory.Permission.GetEmployeePermissions(userFromDb.EmployeeAccountMapId);
+
                     // Map from DB result to DTO
                     response.Data = new UserDetailResponse
                     {
@@ -130,11 +134,27 @@ namespace BussinessObject.Bo.TanTamBo
                         NeedSetPassword = userFromDb.NeedSetPassword,
                         UserCreatedAt = userFromDb.UserCreatedAt,
                         Role = userFromDb.Role,
+                        RoleName = userFromDb.Role.GetValueOrDefault(UserRole.Employees.Value()).ToEnum<UserRole>().Text(),
                         EmployeeInfoId = userFromDb.EmployeeInfoId,
                         EmployeeCode = userFromDb.EmployeeCode,
                         BirthDate = userFromDb.BirthDate,
                         Gender = userFromDb.Gender,
-                        ContactAddress = userFromDb.ContactAddress
+                        ContactAddress = userFromDb.ContactAddress,
+                        IsRoot = userRole == (int)UserRole.SystemAdmin ? 1 : 0,
+                        ViewAllowanceInfo = userPermission.Any(p => p.Key == WebPermissionKeys.EmployeeViewAllowanceInfo),
+                        ViewPromotionHistory = userPermission.Any(p => p.Key == WebPermissionKeys.EmployeeViewPromotionHistory),
+                        CanUpdatePermission = userRole == (int)UserRole.SystemAdmin,
+                        CanUpdateTimeTrackingConfig = userPermission.Any(p => p.Key == WebPermissionKeys.EmployeeUpdateTimeTrackingConfig),
+                        ExportFilePermission = new ExportFilePermission
+                        {
+                            Employee = userPermission.Any(p => p.Key == WebPermissionKeys.EmployeeExportFileEmployee),
+                            EmployeeDayleft = userPermission.Any(p => p.Key == WebPermissionKeys.EmployeeExportDayLeftEmployee),
+                            PromotionHistory = userPermission.Any(p => p.Key == WebPermissionKeys.EmployeeExportPromotionHistory),
+                            ShiftList = userPermission.Any(p => p.Key == WebPermissionKeys.ShiftExportList),
+                            Timesheet = userPermission.Any(p => p.Key == WebPermissionKeys.ShiftAssignExportList),
+                            Task = userPermission.Any(p => p.Key == WebPermissionKeys.TaskExportAssignWork),
+                            RequestApproval = userPermission.Any(p => p.Key == WebPermissionKeys.TaskExportRequestApprovalProcess),
+                        }
                     };
 
                     response.Code = ResponseResultEnum.Success.Value();

@@ -38,6 +38,8 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<System.DateTime> StartCheckOutTime { get; set; }
         public Nullable<int> IsCheckInTimeNextDay { get; set; }
         public Nullable<int> IsCheckOutTimeNextDay { get; set; }
+        public Nullable<bool> CheckInByProxy { get; set; }
+        public Nullable<bool> CheckOutByProxy { get; set; }
         public string Reason { get; set; }
         public Nullable<double> RealWorkingHour { get; set; }
         public Nullable<int> RealWorkingMinute { get; set; }

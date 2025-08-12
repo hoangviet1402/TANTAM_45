@@ -33,5 +33,6 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<System.DateTime> completed_at { get; set; }
         public Nullable<bool> is_completed { get; set; }
         public Nullable<int> completion_percentage { get; set; }
+        public Nullable<int> task_id { get; set; }
     }
 }

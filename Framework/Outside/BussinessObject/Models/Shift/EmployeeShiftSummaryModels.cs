@@ -100,6 +100,12 @@ namespace BussinessObject.Models.Shift
         public decimal real_coefficient { get; set; }
         public ShiftStatus status { get; set; }
         public bool approved { get; set; }
+        public string start_checkin_time { get; set; }
+        public string end_checkin_time { get; set; }
+        public string start_checkout_time { get; set; }
+        public string end_checkout_time { get; set; }
+        public int lately_checkin_time { get; set; }
+        public int early_checkout_time { get; set; }
 
         public ShiftDetailItem()
         {

@@ -35,6 +35,10 @@ namespace BussinessObject.Models.Employee
         public string FullName { get; set; }
         
         public int? IsQuit { get; set; }
+        
+        public int? RegionId { get; set; }
+        
+        public int? BranchId { get; set; }
     }
 
     /// <summary>
@@ -82,6 +86,7 @@ namespace BussinessObject.Models.Employee
         public int? PositionId { get; set; }
         public bool? IsQuit { get; set; }
         public bool? IsActive { get; set; }
+        public int? Role { get; set; }
     }
 
     /// <summary>

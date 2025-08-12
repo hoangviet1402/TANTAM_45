@@ -25,6 +25,7 @@ namespace EntitiesObject.Entities.TanTamEntities
         public string WifiAddress { get; set; }
         public Nullable<int> WifiType { get; set; }
         public string Bssid { get; set; }
+        public Nullable<bool> IsBothBssidSsid { get; set; }
         public Nullable<int> WifiAccountID { get; set; }
         public Nullable<int> AccountMapID { get; set; }
         public Nullable<int> WifiDepartmentID { get; set; }

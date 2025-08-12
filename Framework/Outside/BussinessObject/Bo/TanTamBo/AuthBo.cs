@@ -1,4 +1,5 @@
 ﻿using BussinessObject.Enum;
+using BussinessObject.Helper;
 using BussinessObject.Models.ApiResponse;
 using BussinessObject.Models.Auth;
 using DataAccess;
@@ -10,7 +11,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -411,6 +411,10 @@ namespace BussinessObject.Bo.TanTamBo
                 if (updatedFullNames == null || updatedFullNames.Count() <= 0 || updatedFullNames.FirstOrDefault().AccountID <= 0)
                 {
                     DaoFactory.Auth.RegisterAccount(phoneCode, phone, mail, fullName, imie, out accountId,out companyId,out employeeAccountMapId);
+
+                    //Create employee info
+                    var nextEmployeeCode = EmployeeBoHelper.GenerateNextEmployeeCodeForCompany(companyId);
+                    var updateEmployeeCode = DaoFactory.Auth.UpdateEmployeeCode(employeeAccountMapId, nextEmployeeCode);
                 }
                 else
                 {
@@ -432,7 +436,7 @@ namespace BussinessObject.Bo.TanTamBo
             }
             catch (Exception ex)
             {
-//LoggerHelper.Error($"UpdateFullNameAsync Exception phone {phone} |mail {mail}, fullName {fullName}, isUsePhone {isUsePhone}", ex);
+                //LoggerHelper.Error($"UpdateFullNameAsync Exception phone {phone} |mail {mail}, fullName {fullName}, isUsePhone {isUsePhone}", ex);
                 response.Code = ResponseResultEnum.SystemError.Value();
                 response.Message = ResponseResultEnum.SystemError.Text();
             }

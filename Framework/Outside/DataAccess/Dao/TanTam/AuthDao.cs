@@ -22,6 +22,7 @@ namespace DataAccess.Dao.TanTam
         int UpdateEmployeeJwtID(int employeeId, string jwtID, string ip, string imie);
         Ins_Account_GetTokensByEmployeeID_Result GetTokenInfo(int accountId, int companyId);
         int UpdatePass(int accountId, int companyId, string newPass, string oldPass, int needSetPassword);
+        int UpdateEmployeeCode(int employeeAccountMapId, string employeeCode);
     }
 
     internal class AuthDao : DaoFactories<TanTamEntities, DBNull>, IAuthDao
@@ -46,7 +47,7 @@ namespace DataAccess.Dao.TanTam
 
                 if (out_employeeAccountMapId != null && out_employeeAccountMapId.Value != null)
                     int.TryParse(out_employeeAccountMapId.Value.ToString(), out employeeAccountMapId);
-            }          
+            }
         }
 
         public Ins_Account_Login_Result CheckAccountIDExists(int accountId, int companyId)
@@ -149,6 +150,14 @@ namespace DataAccess.Dao.TanTam
                 return data.ToList();
             }
             
+        }
+
+        public int UpdateEmployeeCode(int employeeAccountMapId, string employeeCode)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_Employee_UpdateEmployeeCode(employeeAccountMapId, employeeCode);
+            }
         }
     }
 }

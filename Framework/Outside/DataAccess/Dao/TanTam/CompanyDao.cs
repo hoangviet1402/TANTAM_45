@@ -11,6 +11,7 @@ namespace DataAccess.Dao.TanTam
     public interface ICompanyDao : IBaseFactories<DBNull>
     {
         int Employee_AddIntoBranch(int accountId, int branchId, bool isPrimary);
+        int Employee_AddIntoRegion(int accountId, int regionId, bool isPrimary);
         Ins_Company_GetInforAccount_Result GetAccountInfo(int accountId, int companyId);
         Ins_Company_GetInfor_Result GetCompanyInfo(int companyId);
         List<Ins_Company_GetSetupStep_Result> GetCompanyGetSetupStep(int companyId, int accountId);        
@@ -22,7 +23,6 @@ namespace DataAccess.Dao.TanTam
         List<Ins_Business_GetList_Result> BusinessGetList();
         void UpdateInfoWhenSinup(int accountId, int companyId, string companyName, string alias, float latitude, float longitude, string companyNumberEmploye
                                       , string companyAddress, string email, string hearAbout, string usePurpose, string businesFieldIds);
-        
     }
 
     internal class CompanyDao : DaoFactories<TanTamEntities, DBNull>, ICompanyDao
@@ -40,6 +40,22 @@ namespace DataAccess.Dao.TanTam
                 return outResult;
             }
         }
+        
+        public int Employee_AddIntoRegion(int accountId, int regionId, bool isPrimary)
+        {
+            using (Uow)
+            {
+                var outResult = 0;
+                var out_OutResult = new ObjectParameter("OutResult", typeof(int));
+                var data = Uow.Context.Ins_Employee_AddIntoRegion(accountId, regionId, isPrimary, out_OutResult);
+
+                if (out_OutResult != null && out_OutResult.Value != null)
+                    int.TryParse(out_OutResult.Value.ToString(), out outResult);
+
+                return outResult;
+            }
+        }
+        
         public Ins_Company_GetInforAccount_Result GetAccountInfo(int accountId, int companyId)
         {
             using (Uow)

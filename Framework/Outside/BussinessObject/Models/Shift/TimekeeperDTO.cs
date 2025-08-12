@@ -14,6 +14,14 @@ namespace BussinessObject.Models.Shift
         [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
         public int page { get; set; }
     }
+    public class ListTimekeeperLogRequestV2
+    {
+        [JsonProperty("employee_shift_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int employee_shift_id { get; set; }
+
+        [JsonProperty("employee_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int employee_id { get; set; }
+    }
     public class StatusClockInOutShiftRequest
     {
         [JsonProperty("timekeeper_device", NullValueHandling = NullValueHandling.Ignore)]

@@ -38,6 +38,18 @@ namespace BussinessObject.Models.Company
         [JsonProperty("business_field_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int> BusinesFieldIds { get; set; }
     }
+
+    public class StepSkipWhenSinupRequest
+    {
+        [JsonProperty("step", NullValueHandling = NullValueHandling.Ignore)]
+        public int step { get; set; }
+    }
+
+    public class TutorialsCompleteRequest
+    {
+        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
+        public string code { get; set; }
+    }
 }
 // {
 //   "shop_name": "Shop thức ăn cho mèo",

@@ -13,7 +13,7 @@ namespace EntitiesObject.Entities.TanTamEntities
     
     public partial class Ins_Task_CreatorInfo_Result
     {
-        public int id { get; set; }
+        public Nullable<int> id { get; set; }
         public Nullable<int> username { get; set; }
         public string name { get; set; }
         public string identification { get; set; }

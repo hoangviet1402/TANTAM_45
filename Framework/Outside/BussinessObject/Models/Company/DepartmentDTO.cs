@@ -18,9 +18,13 @@ namespace BussinessObject.Models.Company
         [JsonProperty("branchid", NullValueHandling = NullValueHandling.Ignore)]
         public int BranchId { get; set; }
 
+        [JsonProperty("branch_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int> BranchIds { get; set; }
+
         [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
         public int IsOnboarding { get; set; }
     }
+
 
     public class CreateDepartmentResponse
     {
@@ -83,5 +87,65 @@ namespace BussinessObject.Models.Company
 
         [JsonProperty("color", NullValueHandling = NullValueHandling.Ignore)]
         public string Color { get; set; }
+    }
+
+    public class DepartmentListDetailResponse
+    {
+        [JsonProperty("meta", NullValueHandling = NullValueHandling.Ignore)]
+        public BranchesMetaReponse Meta { get; set; }
+
+        [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateDepartmentResponse> Items { get; set; }
+    }
+
+    public class UpdateDepartmentRequest
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IsOnboarding { get; set; }
+
+        [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string Alias { get; set; }
+
+        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
+        public string Code { get; set; }
+
+        [JsonProperty("branch_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int> BranchIds { get; set; }
+    }
+
+    public class UpdateDepartmentResponse
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string Alias { get; set; }
+
+        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
+        public string Code { get; set; }
+
+        [JsonProperty("is_onboarding", NullValueHandling = NullValueHandling.Ignore)]
+        public int IsOnboarding { get; set; }
+
+        [JsonProperty("branch_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int> BranchIds { get; set; }
+
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdatedAt { get; set; }
+    }
+
+    public class DeleteDepartmentRequest
+    {
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
     }
 }

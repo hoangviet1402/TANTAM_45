@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -17,7 +17,7 @@ namespace TanTamApi.JWT.Helper
 {
     public class JwtHelper
     {
-        public static string  GenerateAccessToken(int accountId, int accountMapID, int companyId, int role,out string jwtID)
+        public static string GenerateAccessToken(int accountId, int accountMapID, int companyId, int role, out string jwtID, int? expiryInMinutes = null)
         {
             jwtID = GenerateRefreshToken();
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(MyConfiguration.JWT.SecretKey));
@@ -28,21 +28,26 @@ namespace TanTamApi.JWT.Helper
                 new Claim("AccountId", accountId.ToString()),
                 new Claim("AccountMapID", accountMapID.ToString()),
                 new Claim("CompanyId", companyId.ToString()),
-                new Claim(ClaimTypes.Role, role.ToString()),               
+                new Claim(ClaimTypes.Role, role.ToString()),
                 new Claim("JwtID", jwtID),
-                // new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // ID cho token
-                //new Claim(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.().ToString(), ClaimValueTypes.Integer64)
             };
 
+            int expire = expiryInMinutes ?? MyConfiguration.JWT.ExpiryInMinutes;
             var token = new JwtSecurityToken(
                 issuer: MyConfiguration.JWT.Issuer,
                 audience: MyConfiguration.JWT.Audience,
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(MyConfiguration.JWT.ExpiryInMinutes),
+                expires: DateTime.UtcNow.AddMinutes(expire),
                 signingCredentials: creds
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        // Overload cũ để không ảnh hưởng code cũ
+        public static string GenerateAccessToken(int accountId, int accountMapID, int companyId, int role, out string jwtID)
+        {
+            return GenerateAccessToken(accountId, accountMapID, companyId, role, out jwtID, null);
         }
 
         public static string GenerateRefreshToken()
@@ -103,7 +108,7 @@ namespace TanTamApi.JWT.Helper
         }
 
         /// <summary>
-        /// Lấy EmployeeId từ JWT token trong Web API
+        /// Lấy AccountMapID (EmployeeId) từ JWT token trong Web API
         /// </summary>
         public static int GetAccountMapIDFromToken(HttpRequestMessage request)
         {
@@ -116,9 +121,9 @@ namespace TanTamApi.JWT.Helper
                 var handler = new JwtSecurityTokenHandler();
                 var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
                 
-                var employeeIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "AccountMapID");
-                if (employeeIdClaim != null && int.TryParse(employeeIdClaim.Value, out int employeeId))
-                    return employeeId;
+                var accountMapIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "AccountMapID");
+                if (accountMapIdClaim != null && int.TryParse(accountMapIdClaim.Value, out int accountMapId))
+                    return accountMapId;
                 
                 return 0;
             }
@@ -142,7 +147,7 @@ namespace TanTamApi.JWT.Helper
                 var handler = new JwtSecurityTokenHandler();
                 var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
                 
-                var roleClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "role" || c.Type == "Role");
+                var roleClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "role" || c.Type == "Role" || c.Type == ClaimTypes.Role);
                 if (roleClaim != null && int.TryParse(roleClaim.Value, out int role))
                     return role;
                 

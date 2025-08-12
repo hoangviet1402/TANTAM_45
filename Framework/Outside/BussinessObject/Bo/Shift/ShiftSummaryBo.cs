@@ -18,15 +18,26 @@ namespace BussinessObject.Bo.Shift
     /// </summary>
     public class ShiftSummaryBo : BaseBo<DBNull>
     {
+        #region Constants
+        private const int MAX_DATE_RANGE_DAYS = 31;
+        private const int EXPANDED_DATE_RANGE_YEARS = 1;
+        private const string FUTURE_SHIFT_COLOR = "#C4C4C4";
+        private const string ON_TIME_COLOR = "#7ED321";
+        private const string LATE_CHECKIN_COLOR = "#FFCB76";
+        private const string EARLY_CHECKOUT_COLOR = "#FF9500";
+        private const string INCOMPLETE_SHIFT_COLOR = "#FF0000";
+        private const string NO_CHECKIN_COLOR = "#666666";
+        #endregion
+
         public ShiftSummaryBo()
             : base(DaoFactory.Shift)
         {
         }
 
         /// <summary>
-        /// Set shift status based on checkin/checkout information
+        /// Set shift status based on checkin/checkout time comparison with shift start/end times
         /// </summary>
-        private void SetShiftStatus(ShiftDetailItem shiftDetail, dynamic shift)
+        private void SetShiftStatus(ShiftDetailItem shiftDetail, Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result shift)
         {
             var status = new ShiftStatus();
             
@@ -36,64 +47,178 @@ namespace BussinessObject.Bo.Shift
             
             if (shiftDate > currentDate)
             {
-                // Future shift - not available yet
-                status.color = "#C4C4C4";
-                status.status_color = new List<string> { "#838BA3", "#EBEBEB" };
-                status.name = "Chưa đến ca làm";
-                status.not_available = 1;
-                status.detail = new List<string>();
+                SetFutureShiftStatus(status);
             }
             else if (!string.IsNullOrEmpty(shiftDetail.checkin_time) && !string.IsNullOrEmpty(shiftDetail.checkout_time))
             {
-                // Both checkin and checkout available
-                if (shiftDetail.real_working_hour >= shiftDetail.working_hour)
-                {
-                    // On time or overtime
-                    status.color = "#7ED321";
-                    status.status_color = new List<string> { "#1ECC78", "#D2F5E4" };
-                    status.name = "Đúng giờ";
-                    status.detail = new List<string> { $"Thời gian: {shiftDetail.real_working_hour} giờ" };
-                    // ✅ real_coefficient already set from database in constructor
-                }
-                else
-                {
-                    // Late or early leave
-                    status.color = "#FFCB76";
-                    status.status_color = new List<string> { "#FFC888", "#FFF4E7" };
-                    status.name = "Trễ giờ";
-                    
-                    var checkinTime = DateTime.Parse(shiftDetail.checkin_time).ToString("HH:mm");
-                    var checkoutTime = DateTime.Parse(shiftDetail.checkout_time).ToString("HH:mm");
-                    var expectedStart = DateTime.Parse(shiftDetail.start_time).ToString("HH:mm");
-                    var expectedEnd = DateTime.Parse(shiftDetail.end_time).ToString("HH:mm");
-                    
-                    status.detail = new List<string> { 
-                        $"Thời gian: Vào ca/Ra ca lúc: {checkinTime}:{checkoutTime} (HS). Ca làm: {expectedStart}:{expectedEnd}" 
-                    };
-                    // ✅ real_coefficient already set from database in constructor
-                }
+                SetCompletedShiftStatus(shiftDetail, shift, status);
             }
             else if (!string.IsNullOrEmpty(shiftDetail.checkin_time) && string.IsNullOrEmpty(shiftDetail.checkout_time))
             {
-                // Only checkin, no checkout - problematic
-                status.color = "#FF0000";
-                status.status_color = new List<string> { "#FF0E39", "#FFCFD7" };
-                status.name = "";
-                status.detail = new List<string> { "Thời gian: 0 giờ" };
+                SetIncompleteShiftStatus(status);
             }
             else
             {
-                // No checkin/checkout
-                status.color = "#666666";
-                status.status_color = new List<string> { "#838BA3", "#EBEBEB" };
-                status.name = "Chưa vào/ra ca";
-                status.detail = new List<string> { "Thời gian: 0 giờ" };
+                SetNoCheckinStatus(status);
             }
 
             shiftDetail.status = status;
         }
 
-                /// <summary>
+        /// <summary>
+        /// Set status for future shifts
+        /// </summary>
+        private void SetFutureShiftStatus(ShiftStatus status)
+        {
+            status.color = FUTURE_SHIFT_COLOR;
+            status.status_color = new List<string> { "#838BA3", "#EBEBEB" };
+            status.name = "Chưa đến ca làm";
+            status.not_available = 1;
+            status.detail = new List<string>();
+        }
+
+        /// <summary>
+        /// Set status for completed shifts (both checkin and checkout)
+        /// </summary>
+        private void SetCompletedShiftStatus(ShiftDetailItem shiftDetail, Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result shift, ShiftStatus status)
+        {
+            var checkinTime = DateTime.Parse(shiftDetail.checkin_time);
+            var checkoutTime = DateTime.Parse(shiftDetail.checkout_time);
+            var shiftStartTime = DateTime.Parse(shiftDetail.start_time);
+            var shiftEndTime = DateTime.Parse(shiftDetail.end_time);
+            
+            var latelyCheckinMinutes = shift.LatelyCheckIn;
+            var earlyCheckoutMinutes = shift.EarlyCheckOut;
+            
+            var checkinDiff = checkinTime - shiftStartTime;
+            var checkoutDiff = checkoutTime - shiftEndTime;
+            
+            if (checkinDiff.TotalMinutes <= latelyCheckinMinutes && checkoutDiff.TotalMinutes >= -earlyCheckoutMinutes)
+            {
+                SetOnTimeStatus(shiftDetail, status);
+            }
+            else if (checkinDiff.TotalMinutes > latelyCheckinMinutes)
+            {
+                SetLateCheckinStatus(shiftDetail, shift, status);
+            }
+            else if (checkoutDiff.TotalMinutes < -earlyCheckoutMinutes)
+            {
+                SetEarlyCheckoutStatus(shiftDetail, shift, status);
+            }
+            else
+            {
+                SetOtherTimeStatus(shiftDetail, status);
+            }
+        }
+
+        /// <summary>
+        /// Set status for on-time shifts
+        /// </summary>
+        private void SetOnTimeStatus(ShiftDetailItem shiftDetail, ShiftStatus status)
+        {
+            status.color = ON_TIME_COLOR;
+            status.status_color = new List<string> { "#1ECC78", "#D2F5E4" };
+            status.name = "Đúng giờ";
+            status.detail = new List<string> { $"Thời gian: {shiftDetail.real_working_hour} giờ" };
+        }
+
+        /// <summary>
+        /// Set status for late checkin shifts
+        /// </summary>
+        private void SetLateCheckinStatus(ShiftDetailItem shiftDetail, Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result shift, ShiftStatus status)
+        {
+            var checkinTime = DateTime.Parse(shiftDetail.checkin_time);
+            var checkoutTime = DateTime.Parse(shiftDetail.checkout_time);
+            var shiftStartTime = DateTime.Parse(shiftDetail.start_time);
+            var shiftEndTime = DateTime.Parse(shiftDetail.end_time);
+            var latelyCheckinMinutes = shift.LatelyCheckIn;
+            
+            status.color = LATE_CHECKIN_COLOR;
+            status.status_color = new List<string> { "#FFC888", "#FFF4E7" };
+            status.name = "Trễ giờ vào ca";
+            
+            var checkinTimeStr = checkinTime.ToString("HH:mm");
+            var expectedStartStr = shiftStartTime.ToString("HH:mm");
+            var checkoutTimeStr = checkoutTime.ToString("HH:mm");
+            var expectedEndStr = shiftEndTime.ToString("HH:mm");
+            
+            status.detail = new List<string> { 
+                $"Vào ca trễ: {checkinTimeStr} (HS: {expectedStartStr}, cho phép trễ {latelyCheckinMinutes} phút). Ra ca: {checkoutTimeStr} (HS: {expectedEndStr})" 
+            };
+        }
+
+        /// <summary>
+        /// Set status for early checkout shifts
+        /// </summary>
+        private void SetEarlyCheckoutStatus(ShiftDetailItem shiftDetail, Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result shift, ShiftStatus status)
+        {
+            var checkinTime = DateTime.Parse(shiftDetail.checkin_time);
+            var checkoutTime = DateTime.Parse(shiftDetail.checkout_time);
+            var shiftStartTime = DateTime.Parse(shiftDetail.start_time);
+            var shiftEndTime = DateTime.Parse(shiftDetail.end_time);
+            var earlyCheckoutMinutes = shift.EarlyCheckOut;
+            
+            status.color = EARLY_CHECKOUT_COLOR;
+            status.status_color = new List<string> { "#FF9500", "#FFF4E7" };
+            status.name = "Ra ca sớm";
+            
+            var checkinTimeStr = checkinTime.ToString("HH:mm");
+            var expectedStartStr = shiftStartTime.ToString("HH:mm");
+            var checkoutTimeStr = checkoutTime.ToString("HH:mm");
+            var expectedEndStr = shiftEndTime.ToString("HH:mm");
+            
+            status.detail = new List<string> { 
+                $"Vào ca: {checkinTimeStr} (HS: {expectedStartStr}). Ra ca sớm: {checkoutTimeStr} (HS: {expectedEndStr}, cho phép sớm {earlyCheckoutMinutes} phút)" 
+            };
+        }
+
+        /// <summary>
+        /// Set status for other time issues
+        /// </summary>
+        private void SetOtherTimeStatus(ShiftDetailItem shiftDetail, ShiftStatus status)
+        {
+            var checkinTime = DateTime.Parse(shiftDetail.checkin_time);
+            var checkoutTime = DateTime.Parse(shiftDetail.checkout_time);
+            var shiftStartTime = DateTime.Parse(shiftDetail.start_time);
+            var shiftEndTime = DateTime.Parse(shiftDetail.end_time);
+            
+            status.color = LATE_CHECKIN_COLOR; // Default to late checkin color for other issues
+            status.status_color = new List<string> { "#FFC888", "#FFF4E7" };
+            status.name = "Không đúng giờ";
+            
+            var checkinTimeStr = checkinTime.ToString("HH:mm");
+            var expectedStartStr = shiftStartTime.ToString("HH:mm");
+            var checkoutTimeStr = checkoutTime.ToString("HH:mm");
+            var expectedEndStr = shiftEndTime.ToString("HH:mm");
+            
+            status.detail = new List<string> { 
+                $"Vào ca: {checkinTimeStr} (HS: {expectedStartStr}). Ra ca: {checkoutTimeStr} (HS: {expectedEndStr})" 
+            };
+        }
+
+        /// <summary>
+        /// Set status for incomplete shifts (only checkin, no checkout)
+        /// </summary>
+        private void SetIncompleteShiftStatus(ShiftStatus status)
+        {
+            status.color = INCOMPLETE_SHIFT_COLOR;
+            status.status_color = new List<string> { "#FF0E39", "#FFCFD7" };
+            status.name = "Chưa ra ca";
+            status.detail = new List<string> { "Thời gian: 0 giờ" };
+        }
+
+        /// <summary>
+        /// Set status for shifts with no checkin/checkout
+        /// </summary>
+        private void SetNoCheckinStatus(ShiftStatus status)
+        {
+            status.color = NO_CHECKIN_COLOR;
+            status.status_color = new List<string> { "#838BA3", "#EBEBEB" };
+            status.name = "Chưa vào/ra ca";
+            status.detail = new List<string> { "Thời gian: 0 giờ" };
+        }
+
+        /// <summary>
         /// Get day of week assignments for shifts
         /// </summary>
         private Dictionary<int, List<int>> GetShiftDayOfWeekAssignments(List<Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result> shifts)
@@ -103,26 +228,27 @@ namespace BussinessObject.Bo.Shift
             if (!shifts.Any())
                 return shiftAssignments;
             
-            // Get shift IDs
-            var shiftIds = string.Join(",", shifts.Select(s => s.ShiftId).Distinct());
-            
             try
             {
-                // Query Assignment table for DateOfWeek
-                var assignments = DaoFactory.Shift.GetAssignmentDateOfWeekByShiftIds(shiftIds);
-                
-                foreach (var assignment in assignments)
+                // Query Assignment table for DateOfWeek for each shift individually
+                foreach (var shift in shifts)
                 {
-                    if (!shiftAssignments.ContainsKey(assignment.ShiftID ?? 0))
+                    var assignments = DaoFactory.Shift.GetAssignmentDateOfWeekByShiftId(shift.ShiftId);
+                    
+                    if (!shiftAssignments.ContainsKey(shift.ShiftId))
                     {
-                        shiftAssignments[assignment.ShiftID ?? 0] = new List<int>();
+                        shiftAssignments[shift.ShiftId] = new List<int>();
                     }
-                    shiftAssignments[assignment.ShiftID ?? 0].Add(assignment.DateOfWeek ?? 0);
+                    
+                    foreach (var assignment in assignments)
+                    {
+                        shiftAssignments[shift.ShiftId].Add(assignment.DateOfWeek ?? 0);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                CommonLogger.DefaultLogger.Error($"Error getting assignment day of week for shifts: {shiftIds}", ex);
+                CommonLogger.DefaultLogger.Error($"Error getting assignment day of week for shifts", ex);
                 // If error, allow all days (fallback to old behavior)
                 foreach (var shift in shifts)
                 {
@@ -141,57 +267,141 @@ namespace BussinessObject.Bo.Shift
             if (!dayOfWeekAssignments.Any())
                 return true; // If no assignments, create for all days (fallback)
             
-            // .NET DayOfWeek: Sunday=0, Monday=1, Tuesday=2, Wednesday=3, Thursday=4, Friday=5, Saturday=6
+            // DayOfWeek: Sunday=0, Monday=1, Tuesday=2, Wednesday=3, Thursday=4, Friday=5, Saturday=6
             int dayOfWeek = (int)date.DayOfWeek;
             return dayOfWeekAssignments.Contains(dayOfWeek);
         }
 
         /// <summary>
         /// Create working day data in bulk for employees and shifts  
-        /// ✅ UPDATED: Sử dụng Assignment table để chỉ tạo ca cho những ngày được định nghĩa
         /// </summary>
-        private int CreateWorkingDayDataBulk(int companyId, DateTime startDate, DateTime endDate, string employeeIds)
+        private int CreateWorkingDayDataBulk(int companyId, DateTime startDate, DateTime endDate, List<string> employeeIds)
         {
-            var employees = DaoFactory.Shift.GetEmployees(companyId, employeeIds);
+            if (employeeIds == null || !employeeIds.Any())
+            {
+                return CreateWorkingDayDataForAllEmployees(companyId, startDate, endDate);
+            }
+            
+            return CreateWorkingDayDataForSpecificEmployees(companyId, startDate, endDate, employeeIds);
+        }
+
+        /// <summary>
+        /// Create working day data for all employees in company
+        /// </summary>
+        private int CreateWorkingDayDataForAllEmployees(int companyId, DateTime startDate, DateTime endDate)
+        {
+            var employees = DaoFactory.Shift.GetEmployeeSingle(companyId, null);
             var shifts = DaoFactory.Shift.GetShifts(companyId);
             
-            if (!employees.Any())
-            {
-                throw new InvalidOperationException(
-                    string.IsNullOrEmpty(employeeIds) 
-                        ? "Công ty này chưa có nhân viên nào hoạt động." 
-                        : "Không tìm thấy nhân viên nào với ID được chỉ định thuộc công ty này."
-                );
-            }
+            ValidateEmployeesAndShifts(employees, shifts);
             
-            if (!shifts.Any())
-            {
-                throw new InvalidOperationException("Công ty này chưa có ca làm việc nào được kích hoạt.");
-            }
-            
-            // ✅ NEW: Get day of week assignments for each shift
             var shiftDayOfWeekAssignments = GetShiftDayOfWeekAssignments(shifts);
-
-            // ✅ LOGIC ĐÚNG: Chỉ tạo ca cho tháng hiện tại
-            var currentDate = DateTime.Now.Date;
-            var currentMonthStart = new DateTime(currentDate.Year, currentDate.Month, 1);
-            var currentMonthEnd = new DateTime(currentDate.Year, currentDate.Month, DateTime.DaysInMonth(currentDate.Year, currentDate.Month));
+            var dateRange = GetEffectiveDateRange(startDate, endDate);
             
-            // Tính toán phạm vi effective chỉ trong tháng hiện tại
-            var effectiveStartDate = startDate < currentMonthStart ? currentMonthStart : startDate;
-            var effectiveEndDate = endDate > currentMonthEnd ? currentMonthEnd : endDate;
-            
-            // Nếu không có ngày nào trong tháng hiện tại thì không tạo ca
-            if (effectiveStartDate > effectiveEndDate)
+            if (dateRange.StartDate > dateRange.EndDate)
             {
                 return 0;
             }
             
-            int totalRecordsCreated = 0;
+            return CreateWorkingDayRecordsForDateRange(employees, shifts, shiftDayOfWeekAssignments, dateRange.StartDate, dateRange.EndDate);
+        }
+
+        /// <summary>
+        /// Create working day data for specific employees
+        /// </summary>
+        private int CreateWorkingDayDataForSpecificEmployees(int companyId, DateTime startDate, DateTime endDate, List<string> employeeIds)
+        {
+            var totalRecordsCreated = 0;
+            
+            foreach (var empIdStr in employeeIds)
+            {
+                if (string.IsNullOrWhiteSpace(empIdStr)) continue;
+                
+                int empId;
+                if (!int.TryParse(empIdStr, out empId)) continue;
+                
+                var employees = DaoFactory.Shift.GetEmployeeSingle(companyId, empId);
+                var shifts = DaoFactory.Shift.GetShifts(companyId);
+                
+                if (!employees.Any() || !shifts.Any())
+                {
+                    continue; // Skip if no employees or shifts found
+                }
+                
+                var shiftDayOfWeekAssignments = GetShiftDayOfWeekAssignments(shifts);
+                var dateRange = GetEffectiveDateRange(startDate, endDate);
+                
+                if (dateRange.StartDate > dateRange.EndDate)
+                {
+                    continue;
+                }
+                
+                totalRecordsCreated += CreateWorkingDayRecordsForDateRange(employees, shifts, shiftDayOfWeekAssignments, dateRange.StartDate, dateRange.EndDate);
+            }
+            
+            return totalRecordsCreated;
+        }
+
+        /// <summary>
+        /// Validate that employees and shifts exist
+        /// </summary>
+        private void ValidateEmployeesAndShifts(List<Ins_ShiftAssignment_User_WorkingDay_GetEmployee_Single_Result> employees, List<Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result> shifts)
+        {
+            if (!employees.Any())
+            {
+                throw new InvalidOperationException("Công ty này chưa có nhân viên nào hoạt động.");
+            }
+            if (!shifts.Any())
+            {
+                throw new InvalidOperationException("Công ty này chưa có ca làm việc nào được kích hoạt.");
+            }
+        }
+
+        /// <summary>
+        /// Date range helper class
+        /// </summary>
+        private class DateRange
+        {
+            public DateTime StartDate { get; set; }
+            public DateTime EndDate { get; set; }
+        }
+
+        /// <summary>
+        /// Get effective date range within current month
+        /// </summary>
+        private DateRange GetEffectiveDateRange(DateTime startDate, DateTime endDate)
+        {
+            var currentDate = DateTime.Now.Date;
+            var currentMonthStart = new DateTime(currentDate.Year, currentDate.Month, 1);
+            var currentMonthEnd = new DateTime(currentDate.Year, currentDate.Month, DateTime.DaysInMonth(currentDate.Year, currentDate.Month));
+            
+            var effectiveStartDate = startDate < currentMonthStart ? currentMonthStart : startDate;
+            var effectiveEndDate = endDate > currentMonthEnd ? currentMonthEnd : endDate;
+            
+            return new DateRange 
+            { 
+                StartDate = effectiveStartDate, 
+                EndDate = effectiveEndDate 
+            };
+        }
+
+        /// <summary>
+        /// Create working day records for date range
+        /// </summary>
+        private int CreateWorkingDayRecordsForDateRange(
+            List<Ins_ShiftAssignment_User_WorkingDay_GetEmployee_Single_Result> employees,
+            List<Ins_ShiftAssignment_User_WorkingDay_GetShifts_Result> shifts,
+            Dictionary<int, List<int>> shiftDayOfWeekAssignments,
+            DateTime effectiveStartDate,
+            DateTime effectiveEndDate)
+        {
+            var totalRecordsCreated = 0;
+            var currentDate = DateTime.Now.Date;
+            var currentMonthStart = new DateTime(currentDate.Year, currentDate.Month, 1);
+            var currentMonthEnd = new DateTime(currentDate.Year, currentDate.Month, DateTime.DaysInMonth(currentDate.Year, currentDate.Month));
             
             for (DateTime loopDate = effectiveStartDate; loopDate <= effectiveEndDate; loopDate = loopDate.AddDays(1))
             {
-                // ✅ Double-check: Chỉ tạo ca cho ngày thuộc tháng hiện tại
                 if (loopDate < currentMonthStart || loopDate > currentMonthEnd)
                 {
                     continue;
@@ -201,30 +411,27 @@ namespace BussinessObject.Bo.Shift
                 {
                     foreach (var shift in shifts)
                     {
-                        // ✅ NEW: Check if shift should be created for this day of week
-                        var dayOfWeekAssignments = shiftDayOfWeekAssignments.ContainsKey(shift.ShiftId) 
-                            ? shiftDayOfWeekAssignments[shift.ShiftId] 
-                            : new List<int> { 0, 1, 2, 3, 4, 5, 6 }; // Default: all days
+                        var dayOfWeekAssignments = shiftDayOfWeekAssignments.ContainsKey(shift.ShiftId)
+                            ? shiftDayOfWeekAssignments[shift.ShiftId]
+                            : new List<int> { 0, 1, 2, 3, 4, 5, 6 };
                         
                         if (!ShouldCreateShiftForDate(loopDate, dayOfWeekAssignments))
                         {
-                            // Skip this shift for this date - not in Assignment table
                             continue;
                         }
                         
                         try
                         {
                             int recordCreated = DaoFactory.Shift.CreateShiftAssignmentUserWorkingDaySingle(
-                                employee.EmployeeId, 
+                                employee.EmployeeId,
                                 shift.ShiftId,
                                 loopDate,
-                                false  // ✅ CRITICAL: Do NOT reactivate rejected records in Summary API
+                                false
                             );
                             totalRecordsCreated += recordCreated;
                         }
                         catch (Exception ex)
                         {
-                            // Log error but continue with other records
                             CommonLogger.DefaultLogger.Error($"Error creating working day for Employee {employee.EmployeeId}, Shift {shift.ShiftId}, Date {loopDate:yyyy-MM-dd}", ex);
                             continue;
                         }
@@ -236,28 +443,29 @@ namespace BussinessObject.Bo.Shift
         }
 
         /// <summary>
-        /// Parse branches JSON string to list of branch objects
+        /// Get branches for shift assignment from database
         /// </summary>
-        private List<EmployeeBranchObject> ParseBranches(string branchesJson)
+        private List<EmployeeBranchObject> GetBranchesForShiftAssignment(int shiftAssignmentId, int companyId)
         {
             try
             {
-                if (!string.IsNullOrEmpty(branchesJson) && branchesJson != "[]")
+                var branches = DaoFactory.Shift.GetBranchesByShiftAssignmentId(shiftAssignmentId, companyId);
+                
+                if (branches != null && branches.Any())
                 {
-                    // Parse as JSON array
-                    var branches = JsonConvert.DeserializeObject<List<EmployeeBranchObject>>(branchesJson);
-                    
-                    // Return the parsed branches if valid, otherwise null
-                    return (branches != null && branches.Any()) ? branches : null;
+                    return branches.Select(b => new EmployeeBranchObject
+                    {
+                        id = b.value,
+                        name = b.label,
+                        color = "" // Color not available in this result, can be enhanced later
+                    }).ToList();
                 }
-
-                // Return null if no valid branch data
+                
                 return null;
             }
             catch (Exception ex)
             {
-                // Log error and return null instead of default branch
-                CommonLogger.DefaultLogger.Error($"Error parsing branches JSON: {branchesJson}", ex);
+                CommonLogger.DefaultLogger.Error($"Error getting branches for shift assignment {shiftAssignmentId}: {ex.Message}", ex);
                 return null;
             }
         }
@@ -265,7 +473,7 @@ namespace BussinessObject.Bo.Shift
         /// <summary>
         /// Get employee shift summary with filtering options
         /// </summary>
-        public ApiResult<EmployeeShiftSummaryResponse> GetEmployeeShiftSummary(EmployeeShiftSummaryRequest request, int employeeId)
+        public ApiResult<EmployeeShiftSummaryResponse> GetEmployeeShiftSummary(EmployeeShiftSummaryRequest request, int employeeId, int role)
         {
             var response = new ApiResult<EmployeeShiftSummaryResponse>()
             {
@@ -276,236 +484,37 @@ namespace BussinessObject.Bo.Shift
 
             try
             {
-                // Handle both string and integer employee_shift_id formats
-                int? employeeShiftIdInt = null;
-                if (!string.IsNullOrEmpty(request.EmployeeShiftId))
-                {
-                    // Try to parse as integer first (SuwId)
-                    if (int.TryParse(request.EmployeeShiftId, out int parsedId))
-                    {
-                        employeeShiftIdInt = parsedId;
-                    }
-                }
-
-                DateTime? startDate = null;
-                DateTime? endDate = null;
-
-                // When filtering by employee_shift_id, expand date range to find the record
-                if (employeeShiftIdInt.HasValue)
-                {
-                    // Expand date range to 1 year to ensure we find the specific employee_shift_id
-                    var now = DateTime.Now;
-                    startDate = now.AddYears(-1);
-                    endDate = now.AddYears(1);
-                }
-                else
-                {
-                    // Normal date range logic for summary requests
-                    if (!string.IsNullOrEmpty(request.StartDate))
-                    {
-                        if (DateTime.TryParse(request.StartDate, out DateTime parsedStart))
-                            startDate = parsedStart;
-                    }
-
-                    if (!string.IsNullOrEmpty(request.EndDate))
-                    {
-                        if (DateTime.TryParse(request.EndDate, out DateTime parsedEnd))
-                            endDate = parsedEnd;
-                    }
-
-                    if (!startDate.HasValue && request.Month > 0 && request.Year > 0)
-                    {
-                        startDate = new DateTime(request.Year, request.Month, 1);
-                        endDate = startDate.Value.AddMonths(1).AddDays(-1);
-                    }
-
-                    if (!startDate.HasValue)
-                    {
-                        var now = DateTime.Now;
-                        startDate = new DateTime(now.Year, now.Month, 1);
-                        endDate = startDate.Value.AddMonths(1).AddDays(-1);
-                    }
-                }
-
-                string employeeIdsString = null;
-                if (request.EmployeeIds != null && request.EmployeeIds.Any())
-                {
-                    employeeIdsString = string.Join(",", request.EmployeeIds);
-                }
-
-                if (startDate > endDate)
+                var dateRange = ParseAndValidateDateRange(request);
+                if (dateRange == null)
                 {
                     response.Code = ResponseResultEnum.InvalidData.Value();
                     response.Message = "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.";
                     return response;
                 }
+
+                var employeeShiftId = ParseEmployeeShiftId(request);
                 
-                // Skip date range validation when filtering by employee_shift_id
-                if (!employeeShiftIdInt.HasValue && (endDate.Value - startDate.Value).TotalDays > 7)
+                // Create working day data if needed
+                if (request.IsShiftOnly != 1 && employeeShiftId == null)
                 {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = "Khoảng thời gian không được vượt quá 7 ngày (1 tuần) để tránh ảnh hưởng đến hiệu suất hệ thống.";
+                    CreateWorkingDayDataBulk(request.CompanyId, dateRange.StartDate, dateRange.EndDate, request.EmployeeIds);
+                }
+
+                // Get summary data
+                var summaryData = GetSummaryData(request, dateRange, employeeShiftId);
+                if (employeeShiftId.HasValue && !summaryData.Any())
+                {
+                    response.Code = ResponseResultEnum.NotFound.Value();
+                    response.Message = $"Không tìm thấy ca làm việc với ID: {request.EmployeeShiftId}";
                     return response;
                 }
 
-                // Skip bulk creation when filtering specific employee_shift_id or is_shift_only mode
-                var recordsCreated = 0;
-                if (request.IsShiftOnly != 1 && employeeShiftIdInt == null)
-                {
-                    recordsCreated = CreateWorkingDayDataBulk(request.CompanyId, startDate.Value, endDate.Value, employeeIdsString);
-                }
+                // Filter by permissions
+                // summaryData = FilterByPermissions(summaryData, employeeId, role);
 
-                var summaryData = DaoFactory.Shift.GetShiftAssignmentUserWorkingDaySummary(
-                    request.CompanyId,
-                    startDate,
-                    endDate,
-                    employeeIdsString,
-                    request.Month > 0 ? request.Month : (int?)null,
-                    request.Year > 0 ? request.Year : (int?)null
-                );
+                // Build response
+                var items = BuildEmployeeShiftItems(summaryData, request);
                 
-                // Apply employee_shift_id filter if provided (filter by SuwId - user working day ID)
-                if (employeeShiftIdInt.HasValue)
-                {
-                    summaryData = summaryData.Where(x => x.SuwId == employeeShiftIdInt.Value).ToList();
-                    
-                    if (!summaryData.Any())
-                    {
-                        response.Code = ResponseResultEnum.NotFound.Value();
-                        response.Message = $"Không tìm thấy ca làm việc với ID: {request.EmployeeShiftId}";
-                        return response;
-                    }
-                }
-
-                // Group data by employees  
-                var employeeGroups = summaryData
-                    .GroupBy(x => new { x.EmployeeId, x.UserId, x.FullName, x.EmployeeCode, x.Phone })
-                    .ToList();
-
-                var items = new List<EmployeeShiftItem>();
-
-                foreach (var empGroup in employeeGroups)
-                {
-                    var employeeItem = new EmployeeShiftItem
-                    {
-                        user_id = empGroup.Key.UserId.ToString(),
-                        employee_id = empGroup.Key.EmployeeId.ToString(),
-                        phone = empGroup.Key.Phone ?? "",
-                        username = empGroup.Key.Phone ?? "",
-                        name = empGroup.Key.FullName ?? "",
-                        company_id = request.CompanyId.ToString(),
-                        identification = empGroup.Key.EmployeeCode ?? ""
-                     };
-
-                     // Group shifts by date
-                     var shiftsByDate = empGroup
-                         .GroupBy(d => d.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"))
-                         .ToList();
-
-                     foreach (var dateGroup in shiftsByDate)
-                     {
-                         var dateKey = dateGroup.Key;
-                         var shiftsForDate = new List<ShiftDetailItem>();
-
-                         foreach (var shift in dateGroup)
-                         {
-                            // ✅ NEW: Get time configuration using shared helper
-                            //var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shift.ShiftId);
-
-                            var shiftDetail = new ShiftDetailItem
-                            {
-                                id = shift.SuwId.ToString(),
-                                name = shift.ShiftName ?? "",
-                                shift_key = shift.ShiftKey ?? "",
-                                shift_id = shift.ShiftId.ToString() ?? "",  // This is the actual ShiftId from Shift table
-                                // ✅ FIXED: Use time config from shared helper instead of hardcode
-                                start_time = shift.StartTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
-                                end_time = shift.EndTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
-                                working_hour = shift.WorkingHour.GetValueOrDefault(),
-                                working_day = shift.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
-                                week_of_year = shift.WeekOfYear.GetValueOrDefault() > 0 ? shift.WeekOfYear.Value : 1,
-                                company_id = request.CompanyId.ToString(),
-                                // ✅ UPDATED: Format checkin/checkout time properly - combine working day with actual time
-                                checkin_time = shift.StartCheckInTime.HasValue ? shift.StartCheckInTime.Value.ToString(@"yyyy-MM-dd HH\:mm\:ss") : null,
-                                checkout_time = shift.StartCheckOutTime.HasValue ? shift.StartCheckOutTime.Value.ToString(@"yyyy-MM-dd HH\:mm\:ss") : null,
-                                shift_name = shift.ShiftName ?? "",
-                                real_working_hour = (double)(shift.RealWorkingHour ?? 0),
-                                real_working_minute = shift.RealWorkingMinute.GetValueOrDefault(),
-                                // ✅ IMPLEMENTED: Set coefficients from database instead of hardcode
-                                coefficient = shift.Coefficient,
-                                real_coefficient = shift.Coefficient,
-                                meal_coefficient = shift.MealCoefficient
-                            };
-
-                            // Apply with_branch filter - only include branch info if requested
-                            if (request.WithBranch == 1)
-                            {
-                                shiftDetail.branch_obj = ParseBranches(shift.BranchesJson);
-                            }
-                            else
-                            {
-                                shiftDetail.branch_obj = null; // Exclude branch info
-                            }
-
-                            // Set display option based on view_mode
-                            shiftDetail.display_option = new DisplayOption
-                            {
-                                shift_name = shift.ShiftName ?? ""
-                            };
-
-                            // Apply is_shift_only filter - if set, only include basic shift info
-                            if (request.IsShiftOnly != 1)
-                            {
-                                // Set status based on checkin/checkout
-                                SetShiftStatus(shiftDetail, shift);
-
-                                // Set checkin/checkout options if available
-                                if (!string.IsNullOrEmpty(shiftDetail.checkin_time))
-                                {
-                                    shiftDetail.checkin_option = new CheckinOption
-                                    {
-                                        type = "admin",
-                                        name = "Vào ca qua chấm công hộ",
-                                        type_name = "Admin"
-                                    };
-                                }
-
-                                if (!string.IsNullOrEmpty(shiftDetail.checkout_time))
-                                {
-                                    shiftDetail.checkout_option = new CheckoutOption
-                                    {
-                                        type = "admin", 
-                                        name = "Ra ca qua chấm công hộ",
-                                        type_name = "Admin"
-                                    };
-                                }
-                            }
-                            else
-                            {
-                                // For shift-only mode, set minimal status
-                                shiftDetail.status = new ShiftStatus
-                                {
-                                    color = "#C4C4C4",
-                                    status_color = new List<string> { "#838BA3", "#EBEBEB" },
-                                    name = "Ca làm việc",
-                                    detail = new List<string>()
-                                };
-                            }
-
-                            shiftsForDate.Add(shiftDetail);
-                        }
-
-                        employeeItem.shifts[dateKey] = shiftsForDate;
-                    }
-
-                    // Calculate totals
-                    var allShifts = employeeItem.shifts.SelectMany(x => x.Value);
-                    employeeItem.total_working_hour = allShifts.Sum(x => x.working_hour);
-                    employeeItem.real_working_hour = allShifts.Sum(x => x.real_working_hour);
-
-                    items.Add(employeeItem);
-                }
-
                 // Set response data
                 response.Data.items = items;
                 response.Data.meta.total = items.Count;
@@ -520,19 +529,6 @@ namespace BussinessObject.Bo.Shift
                 response.Code = ResponseResultEnum.InvalidData.Value();
                 response.Message = invalidEx.Message;
             }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
-            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("ShiftSummaryBo.GetEmployeeShiftSummary - Error occurred", ex);
@@ -541,6 +537,421 @@ namespace BussinessObject.Bo.Shift
             }
 
             return response;
+        }
+
+        /// <summary>
+        /// Parse and validate date range from request
+        /// </summary>
+        private DateRange ParseAndValidateDateRange(EmployeeShiftSummaryRequest request)
+        {
+            DateTime? startDate = null;
+            DateTime? endDate = null;
+
+            // Handle employee_shift_id filtering
+            if (!string.IsNullOrEmpty(request.EmployeeShiftId) && int.TryParse(request.EmployeeShiftId, out int _))
+            {
+                // Expand date range to 1 year to ensure we find the specific employee_shift_id
+                var now = DateTime.Now;
+                startDate = now.AddYears(-1);
+                endDate = now.AddYears(1);
+            }
+            else
+            {
+                // Normal date range logic for summary requests
+                if (!string.IsNullOrEmpty(request.StartDate))
+                {
+                    if (DateTime.TryParse(request.StartDate, out DateTime parsedStart))
+                        startDate = parsedStart;
+                }
+
+                if (!string.IsNullOrEmpty(request.EndDate))
+                {
+                    if (DateTime.TryParse(request.EndDate, out DateTime parsedEnd))
+                        endDate = parsedEnd;
+                }
+
+                if (!startDate.HasValue && request.Month > 0 && request.Year > 0)
+                {
+                    startDate = new DateTime(request.Year, request.Month, 1);
+                    endDate = startDate.Value.AddMonths(1).AddDays(-1);
+                }
+
+                if (!startDate.HasValue)
+                {
+                    var now = DateTime.Now;
+                    startDate = new DateTime(now.Year, now.Month, 1);
+                    endDate = startDate.Value.AddMonths(1).AddDays(-1);
+                }
+            }
+
+            if (startDate > endDate)
+            {
+                return null;
+            }
+            
+            if (string.IsNullOrEmpty(request.EmployeeShiftId) && (endDate.Value - startDate.Value).TotalDays > MAX_DATE_RANGE_DAYS)
+            {
+                throw new InvalidOperationException($"Khoảng thời gian không được vượt quá {MAX_DATE_RANGE_DAYS} ngày để tránh ảnh hưởng đến hiệu suất hệ thống.");
+            }
+
+            return new DateRange { StartDate = startDate.Value, EndDate = endDate.Value };
+        }
+
+        /// <summary>
+        /// Parse employee shift ID from request
+        /// </summary>
+        private int? ParseEmployeeShiftId(EmployeeShiftSummaryRequest request)
+        {
+            if (!string.IsNullOrEmpty(request.EmployeeShiftId))
+            {
+                if (int.TryParse(request.EmployeeShiftId, out int parsedId))
+                {
+                    return parsedId;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Get summary data from database
+        /// </summary>
+        private List<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result> GetSummaryData(
+            EmployeeShiftSummaryRequest request, 
+            DateRange dateRange, 
+            int? employeeShiftId)
+        {
+            var summaryData = new List<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result>();
+            
+            if (request.EmployeeIds == null || !request.EmployeeIds.Any())
+            {
+                // Get all employees (pass 0)
+                summaryData = DaoFactory.Shift.GetShiftAssignmentUserWorkingDaySummary(
+                    request.CompanyId,
+                    dateRange.StartDate,
+                    dateRange.EndDate,
+                    0,
+                    request.Month > 0 ? request.Month : (int?)null,
+                    request.Year > 0 ? request.Year : (int?)null
+                );
+            }
+            else
+            {
+                // Loop through each employeeId
+                foreach (var empIdStr in request.EmployeeIds)
+                {
+                    if (string.IsNullOrWhiteSpace(empIdStr)) continue;
+                    int empId;
+                    if (!int.TryParse(empIdStr, out empId)) continue;
+                    
+                    var data = DaoFactory.Shift.GetShiftAssignmentUserWorkingDaySummary(
+                        request.CompanyId,
+                        dateRange.StartDate,
+                        dateRange.EndDate,
+                        empId,
+                        request.Month > 0 ? request.Month : (int?)null,
+                        request.Year > 0 ? request.Year : (int?)null
+                    );
+                    if (data != null && data.Any())
+                    {
+                        summaryData.AddRange(data);
+                    }
+                }
+            }
+            
+            if (employeeShiftId.HasValue)
+            {
+                summaryData = summaryData.Where(x => x.SuwId == employeeShiftId.Value).ToList();
+            }
+
+            return summaryData;
+        }
+
+        /// <summary>
+        /// Filter summary data by user permissions
+        /// </summary>
+        private List<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result> FilterByPermissions(
+            List<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result> summaryData,
+            int employeeId,
+            int role)
+        {
+            var myEmployeeData = DaoFactory.Employee.GetEmployeeObjectData(employeeId);
+
+            // Cache employee data to avoid repeated database calls
+            var employeeDataCache = new Dictionary<int, Ins_Employee_GetObjectData_Result>();
+            var uniqueEmployeeIds = summaryData.Select(x => x.EmployeeId).Distinct().ToList();
+            
+            foreach (var empId in uniqueEmployeeIds)
+            {
+                employeeDataCache[empId] = DaoFactory.Employee.GetEmployeeObjectData(empId);
+            }
+
+            return summaryData.Where(x => {
+                var employeeData = employeeDataCache[x.EmployeeId];
+                if (role == (int)UserRole.RegionalManager)
+                {
+                    if (myEmployeeData.RegionObjId > 0)
+                    {
+                        return employeeData.RegionObjId == myEmployeeData.RegionObjId;
+                    }
+                }
+
+                if (role == (int)UserRole.BranchManager)
+                {
+                    if (myEmployeeData.BranchObjId > 0)
+                    {
+                        return employeeData.BranchObjId == myEmployeeData.BranchObjId;
+                    }
+                }
+
+                return true;
+            }).ToList();
+        }
+
+        /// <summary>
+        /// Build employee shift items from summary data
+        /// </summary>
+        private List<EmployeeShiftItem> BuildEmployeeShiftItems(
+            List<Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result> summaryData,
+            EmployeeShiftSummaryRequest request)
+        {
+            var employeeGroups = summaryData
+                .GroupBy(x => new { x.EmployeeId, x.UserId, x.FullName, x.EmployeeCode, x.Phone })
+                .ToList();
+
+            var items = new List<EmployeeShiftItem>();
+
+            foreach (var empGroup in employeeGroups)
+            {
+                var employeeItem = CreateEmployeeShiftItem(empGroup.Key, request.CompanyId);
+                var shiftsByDate = GroupShiftsByDate(empGroup);
+                
+                foreach (var dateGroup in shiftsByDate)
+                {
+                    var dateKey = GetUniqueDateKey(dateGroup.Key, employeeItem.shifts);
+                    var shiftsForDate = CreateShiftsForDate(dateGroup, request);
+                    employeeItem.shifts[dateKey] = shiftsForDate;
+                }
+
+                // Calculate totals
+                var allShifts = employeeItem.shifts.SelectMany(x => x.Value);
+                employeeItem.total_working_hour = Math.Round(allShifts.Sum(x => x.working_hour), 2);
+                employeeItem.real_working_hour = Math.Round(allShifts.Sum(x => x.real_working_hour), 2);
+
+                items.Add(employeeItem);
+            }
+
+            return items;
+        }
+
+        /// <summary>
+        /// Create employee shift item
+        /// </summary>
+        private EmployeeShiftItem CreateEmployeeShiftItem(dynamic empKey, int companyId)
+        {
+            return new EmployeeShiftItem
+            {
+                user_id = empKey.UserId.ToString(),
+                employee_id = empKey.EmployeeId.ToString(),
+                phone = empKey.Phone ?? "",
+                username = empKey.Phone ?? "",
+                name = empKey.FullName ?? "",
+                company_id = companyId.ToString(),
+                identification = empKey.EmployeeCode ?? ""
+            };
+        }
+
+        /// <summary>
+        /// Group shifts by date
+        /// </summary>
+        private List<IGrouping<string, Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result>> GroupShiftsByDate(
+            IGrouping<dynamic, Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result> empGroup)
+        {
+            return empGroup
+                .GroupBy(d => d.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"))
+                .ToList();
+        }
+
+        /// <summary>
+        /// Get unique date key for employee shifts
+        /// </summary>
+        private string GetUniqueDateKey(string originalDateKey, Dictionary<string, List<ShiftDetailItem>> shifts)
+        {
+            var dateKey = originalDateKey;
+            var dateCounter = 0;
+            while (shifts.ContainsKey(dateKey))
+            {
+                dateCounter++;
+                dateKey = $"{originalDateKey}_{dateCounter}";
+            }
+            return dateKey;
+        }
+
+        /// <summary>
+        /// Create shifts for specific date
+        /// </summary>
+        private List<ShiftDetailItem> CreateShiftsForDate(
+            IGrouping<string, Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result> dateGroup,
+            EmployeeShiftSummaryRequest request)
+        {
+            var shiftsForDate = new List<ShiftDetailItem>();
+
+            foreach (var shift in dateGroup)
+            {
+                var originalShiftKey = shift.ShiftKey ?? "";
+                var uniqueShiftKey = GetUniqueShiftKey(originalShiftKey, shiftsForDate);
+                var shiftCounter = GetShiftCounter(originalShiftKey, shiftsForDate);
+
+                var timeConfig = ShiftTimeConfigHelper.GetShiftTimeConfiguration(shift.ShiftId);
+                
+                var shiftDetail = CreateShiftDetailItem(shift, request, timeConfig, shiftCounter);
+
+                // Apply with_branch filter
+                if (request.WithBranch == 1)
+                {
+                    shiftDetail.branch_obj = GetBranchesForShiftAssignment(shift.ShiftAssignmentId, request.CompanyId);
+                }
+                else
+                {
+                    shiftDetail.branch_obj = null;
+                }
+
+                // Set display option
+                shiftDetail.display_option = new DisplayOption
+                {
+                    shift_name = shiftCounter > 0 ? $"{shift.ShiftName}_{shiftCounter}" : shift.ShiftName ?? ""
+                };
+
+                // Apply is_shift_only filter
+                if (request.IsShiftOnly != 1)
+                {
+                    SetShiftStatus(shiftDetail, shift);
+                    SetCheckinCheckoutOptions(shiftDetail);
+                }
+                else
+                {
+                    SetMinimalShiftStatus(shiftDetail);
+                }
+
+                shiftsForDate.Add(shiftDetail);
+            }
+
+            return shiftsForDate;
+        }
+
+        /// <summary>
+        /// Get unique shift key
+        /// </summary>
+        private string GetUniqueShiftKey(string originalShiftKey, List<ShiftDetailItem> shiftsForDate)
+        {
+            var uniqueShiftKey = originalShiftKey;
+            var shiftCounter = 0;
+            
+            while (shiftsForDate.Any(s => s.shift_key == uniqueShiftKey))
+            {
+                shiftCounter++;
+                uniqueShiftKey = $"{originalShiftKey}_{shiftCounter}";
+            }
+            
+            return uniqueShiftKey;
+        }
+
+        /// <summary>
+        /// Get shift counter for naming
+        /// </summary>
+        private int GetShiftCounter(string originalShiftKey, List<ShiftDetailItem> shiftsForDate)
+        {
+            var shiftCounter = 0;
+            var testKey = originalShiftKey;
+            
+            while (shiftsForDate.Any(s => s.shift_key == testKey))
+            {
+                shiftCounter++;
+                testKey = $"{originalShiftKey}_{shiftCounter}";
+            }
+            
+            return shiftCounter;
+        }
+
+        /// <summary>
+        /// Create shift detail item
+        /// </summary>
+        private ShiftDetailItem CreateShiftDetailItem(
+            Ins_ShiftAssignment_User_WorkingDay_GetSummary_Single_Result shift,
+            EmployeeShiftSummaryRequest request,
+            dynamic timeConfig,
+            int shiftCounter)
+        {
+            return new ShiftDetailItem
+            {
+                id = shift.SuwId.ToString(),
+                name = shiftCounter > 0 ? $"{shift.ShiftName}_{shiftCounter}" : shift.ShiftName ?? "",
+                shift_key = GetUniqueShiftKey(shift.ShiftKey ?? "", new List<ShiftDetailItem>()),
+                shift_id = shift.ShiftId.ToString() ?? "",
+                start_time = $"{shift.StartTime.GetValueOrDefault():yyyy-MM-dd} {timeConfig.StartTime}",
+                end_time = $"{shift.EndTime.GetValueOrDefault():yyyy-MM-dd} {timeConfig.EndTime}",
+                working_hour = timeConfig.WorkingHour,
+                working_day = shift.WorkingDay.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss"),
+                week_of_year = shift.WeekOfYear.GetValueOrDefault() > 0 ? shift.WeekOfYear.Value : 1,
+                company_id = request.CompanyId.ToString(),
+                checkin_time = (!request.IsWebView || (shift.CheckInByProxy ?? false)) && shift.StartCheckInTime.HasValue
+                    ? shift.StartCheckInTime.Value.ToString("yyyy-MM-dd HH:mm:ss")
+                    : null,
+                checkout_time = (!request.IsWebView || (shift.CheckOutByProxy ?? false)) && shift.StartCheckOutTime.HasValue
+                    ? shift.StartCheckOutTime.Value.ToString("yyyy-MM-dd HH:mm:ss")
+                    : null,
+                early_checkout_time = shift.EarlyCheckOut,
+                lately_checkin_time = shift.LatelyCheckIn,
+                start_checkin_time = $"{timeConfig.StartCheckin ?? ""}",
+                end_checkin_time = $"{timeConfig.EndCheckin ?? ""}",
+                start_checkout_time = $"{timeConfig.StartCheckout ?? ""}",
+                end_checkout_time = $"{timeConfig.EndCheckout ?? ""}",
+                shift_name = shiftCounter > 0 ? $"{shift.ShiftName}_{shiftCounter}" : shift.ShiftName ?? "",
+                real_working_hour = Math.Round((double)(shift.RealWorkingHour ?? 0), 2),
+                real_working_minute = shift.RealWorkingMinute.GetValueOrDefault(),
+                coefficient = shift.Coefficient,
+                real_coefficient = shift.Coefficient,
+                meal_coefficient = shift.MealCoefficient
+            };
+        }
+
+        /// <summary>
+        /// Set checkin/checkout options
+        /// </summary>
+        private void SetCheckinCheckoutOptions(ShiftDetailItem shiftDetail)
+        {
+            if (!string.IsNullOrEmpty(shiftDetail.checkin_time))
+            {
+                shiftDetail.checkin_option = new CheckinOption
+                {
+                    type = "admin",
+                    name = "Vào ca qua chấm công hộ",
+                    type_name = "Admin"
+                };
+            }
+
+            if (!string.IsNullOrEmpty(shiftDetail.checkout_time))
+            {
+                shiftDetail.checkout_option = new CheckoutOption
+                {
+                    type = "admin", 
+                    name = "Ra ca qua chấm công hộ",
+                    type_name = "Admin"
+                };
+            }
+        }
+
+        /// <summary>
+        /// Set minimal shift status for shift-only mode
+        /// </summary>
+        private void SetMinimalShiftStatus(ShiftDetailItem shiftDetail)
+        {
+            shiftDetail.status = new ShiftStatus
+            {
+                color = FUTURE_SHIFT_COLOR,
+                status_color = new List<string> { "#838BA3", "#EBEBEB" },
+                name = "Ca làm việc",
+                detail = new List<string>()
+            };
         }
     }
 } 

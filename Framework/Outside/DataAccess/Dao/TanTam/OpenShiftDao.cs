@@ -17,17 +17,15 @@ namespace DataAccess.Dao.TanTamDao
     public interface IOpenShiftDao : IBaseFactories<DBNull>
     {
         void CreateOpenShift(string shiftId, int companyId, int totalEmployees, DateTime workingDay, 
-            bool isDraft, int createdBy, string branchIds, string positionIds, out int openShiftId, out bool isReactivated);
-        
+            bool isDraft, int createdBy, out int openShiftId, out bool isReactivated);
+        void AddBranchToOpenShift(int openShiftId, int branchId, int companyId);
         List<Ins_OpenShift_List_Result> GetList(int companyId, DateTime startDate, DateTime endDate);
-        
-        List<Ins_OpenShift_ShiftListByWorkingDay_Result> GetShiftListByWorkingDay(int companyId, int page, int status, DateTime workingDay, int isAll);
-        
         bool DeleteOpenShift(int openShiftId, int companyId, int deletedBy);
-        
-        OpenShiftCompleteDetailResult GetCompleteDetail(int openShiftId, int companyId);
-
-        int PublishOpenShift(string openShiftIds, int companyId, int publishedBy);
+        int PublishOpenShiftSingle(int openShiftId, int companyId, int publishedBy);
+        Ins_OpenShift_GetDetail_Result GetDetail(int openShiftId, int companyId);
+        List<Ins_OpenShift_GetBranches_Result> GetBranches(int openShiftId, int companyId);
+        List<Ins_OpenShift_GetPositions_Result> GetPositions(int openShiftId, int companyId);
+        List<Ins_OpenShift_GetUsers_Result> GetUsers(int openShiftId, int companyId);
     }
 
     /// <summary>
@@ -36,7 +34,7 @@ namespace DataAccess.Dao.TanTamDao
     internal class OpenShiftDao : DaoFactories<TanTamEntities, DBNull>, IOpenShiftDao
     {
         public void CreateOpenShift(string shiftId, int companyId, int totalEmployees, DateTime workingDay, 
-            bool isDraft, int createdBy, string branchIds, string positionIds, out int openShiftId, out bool isReactivated)
+            bool isDraft, int createdBy, out int openShiftId, out bool isReactivated)
         {
             using (Uow)
             {
@@ -46,14 +44,22 @@ namespace DataAccess.Dao.TanTamDao
                 var out_openShiftId = new ObjectParameter("OpenShiftId", typeof(int));
                 var out_isReactivated = new ObjectParameter("IsReactivated", typeof(bool));
 
-                Uow.Context.Ins_OpenShift_Create(shiftId, companyId, totalEmployees, workingDay,
-                    isDraft, createdBy, branchIds, positionIds, out_openShiftId, out_isReactivated);
+                Uow.Context.Ins_OpenShift_Create_V2(shiftId, companyId, totalEmployees, workingDay,
+                    isDraft, createdBy, out_openShiftId, out_isReactivated);
 
                 if (out_openShiftId != null && out_openShiftId.Value != null)
                     int.TryParse(out_openShiftId.Value.ToString(), out openShiftId);
 
                 if (out_isReactivated != null && out_isReactivated.Value != null)
                     bool.TryParse(out_isReactivated.Value.ToString(), out isReactivated);
+            }
+        }
+
+        public void AddBranchToOpenShift(int openShiftId, int branchId, int companyId)
+        {
+            using (Uow)
+            {
+                Uow.Context.Ins_OpenShift_AddBranch(openShiftId, branchId, companyId);
             }
         }
 
@@ -65,133 +71,52 @@ namespace DataAccess.Dao.TanTamDao
             }
         }
 
-        public List<Ins_OpenShift_ShiftListByWorkingDay_Result> GetShiftListByWorkingDay(int companyId, int page, int status, DateTime workingDay, int isAll)
-        {
-            using (Uow)
-            {
-                return Uow.Context.Ins_OpenShift_ShiftListByWorkingDay(companyId, page, status, workingDay, isAll).ToList();
-            }
-        }
-
         public bool DeleteOpenShift(int openShiftId, int companyId, int deletedBy)
         {
             using (Uow)
             {
-                // ✅ CORRECT DAO PATTERN - Let exceptions bubble up for proper SQL error handling
                 var result = Uow.Context.Ins_OpenShift_Delete(openShiftId, companyId, deletedBy);
                 return result != null && result.Any();
             }
         }
 
-        public OpenShiftCompleteDetailResult GetCompleteDetail(int openShiftId, int companyId)
+        public Ins_OpenShift_GetDetail_Result GetDetail(int openShiftId, int companyId)
         {
             using (Uow)
             {
-                var result = new OpenShiftCompleteDetailResult();
-                
-                using (var command = Uow.Context.Database.Connection.CreateCommand())
-                {
-                    command.CommandText = "Ins_OpenShift_GetCompleteDetail";
-                    command.CommandType = CommandType.StoredProcedure;
-                    
-                    var param1 = command.CreateParameter();
-                    param1.ParameterName = "@OpenShiftId";
-                    param1.Value = openShiftId;
-                    command.Parameters.Add(param1);
-                    
-                    var param2 = command.CreateParameter();
-                    param2.ParameterName = "@CompanyId";
-                    param2.Value = companyId;
-                    command.Parameters.Add(param2);
-                    
-                    if (command.Connection.State != ConnectionState.Open)
-                        command.Connection.Open();
-                    
-                    using (var reader = command.ExecuteReader())
-                    {
-                        // ✅ READ RESULT SET 1: Main Detail - Check if has data first
-                        if (reader.HasRows && reader.Read())
-                        {
-                            result.id = Convert.ToInt32(reader["id"]).ToString();
-                            result.shift_name = reader["shift_name"]?.ToString();
-                            result.total_employees = Convert.ToInt32(reader["total_employees"]);
-                            result.shift_id = reader["shift_id"]?.ToString();
-                            result.start_time = reader["start_time"]?.ToString();
-                            result.end_time = reader["end_time"]?.ToString();
-                            result.working_day = reader["working_day"]?.ToString();
-                            result.timezone = reader["timezone"]?.ToString();
-                            result.is_draft = Convert.ToBoolean(reader["is_draft"]);
-                            
-                            // ✅ Map status object
-                            result.status = new OpenShiftStatusModel
-                            {
-                                not_available = Convert.ToInt32(reader["not_available"]),
-                                status_color = new List<string> { "#838BA3", "#EBEBEB" }
-                            };
-                            
-                            // ✅ Only read other result sets if first result set has data
-                            // READ RESULT SET 2: Branches
-                            if (reader.NextResult())
-                            {
-                                while (reader.Read())
-                                {
-                                    result.branches.Add(new OpenShiftBranchResult
-                                    {
-                                        id = Convert.ToInt32(reader["id"]).ToString(),
-                                        name = reader["name"]?.ToString()
-                                    });
-                                }
-                            }
-                            
-                            // READ RESULT SET 3: Positions
-                            if (reader.NextResult())
-                            {
-                                while (reader.Read())
-                                {
-                                    result.positions.Add(new OpenShiftPositionResult
-                                    {
-                                        id = Convert.ToInt32(reader["id"]).ToString(),
-                                        name = reader["name"]?.ToString()
-                                    });
-                                }
-                            }
-                            
-                            // READ RESULT SET 4: Users
-                            if (reader.NextResult())
-                            {
-                                while (reader.Read())
-                                {
-                                    result.users.Add(new OpenShiftUserResult
-                                    {
-                                        id = reader["id"]?.ToString(),
-                                        name = reader["name"]?.ToString(),
-                                        employee_code = reader["employee_code"]?.ToString(),
-                                        position = reader["position"]?.ToString(),
-                                        avatar = reader["avatar"]?.ToString(),
-                                        status = Convert.ToInt32(reader["status"]),
-                                        registered_at = reader["registered_at"]?.ToString()
-                                    });
-                                }
-                            }
-                        }
-                        else
-                        {
-                            // ✅ No data in first result set = OpenShift not found
-                            return null;
-                        }
-                    }
-                }
-                
-                return result;
+                return Uow.Context.Ins_OpenShift_GetDetail(openShiftId, companyId).FirstOrDefault();
             }
         }
 
-        public int PublishOpenShift(string openShiftIds, int companyId, int publishedBy)
+        public List<Ins_OpenShift_GetBranches_Result> GetBranches(int openShiftId, int companyId)
         {
             using (Uow)
             {
-                // ✅ Use Entity Framework context method - CORRECT PATTERN
-                return Uow.Context.Ins_OpenShift_Publish(openShiftIds, companyId, publishedBy);
+                return Uow.Context.Ins_OpenShift_GetBranches(openShiftId, companyId).ToList();
+            }
+        }
+
+        public List<Ins_OpenShift_GetPositions_Result> GetPositions(int openShiftId, int companyId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_OpenShift_GetPositions(openShiftId, companyId).ToList();
+            }
+        }
+
+        public List<Ins_OpenShift_GetUsers_Result> GetUsers(int openShiftId, int companyId)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_OpenShift_GetUsers(openShiftId, companyId).ToList();
+            }
+        }
+
+        public int PublishOpenShiftSingle(int openShiftId, int companyId, int publishedBy)
+        {
+            using (Uow)
+            {
+                return Uow.Context.Ins_OpenShift_PublishSingle(openShiftId, companyId, publishedBy);
             }
         }
     }

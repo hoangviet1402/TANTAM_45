@@ -9,6 +9,7 @@
  *
  *********************************************************************/
 
+using System;
 using System.Globalization;
 
 namespace MyUtility.Extensions
@@ -236,8 +237,8 @@ namespace MyUtility.Extensions
             if (round >= 0)
                 format = "{0:C" + round + "}";
 
-            //return string.Format(CultureInfo.GetCultureInfo("en-us"), format, myCoin).Replace("$", "");
-            return string.Format(CultureInfo.GetCultureInfo("vi-VN"), format, myCoin).Replace("₫", "").Trim();
+            return string.Format(CultureInfo.GetCultureInfo("en-us"), format, myCoin).Replace("$", "");
+            //return string.Format(CultureInfo.GetCultureInfo("vi-VN"), format, myCoin).Replace("₫", "").Trim();
         }
 
         public static string FormatCoinCultureUs(this double myCoin, int round = -1)
@@ -260,6 +261,33 @@ namespace MyUtility.Extensions
 
             //return string.Format(CultureInfo.GetCultureInfo("en-us"), format, myCoin).Replace("$", "");
             return string.Format(CultureInfo.GetCultureInfo("vi-vn"), format, myCoin).Replace("₫", "").Trim();
+        }
+
+        public static string FormatCoinCultureTanTam(this double myCoin)
+        {
+            var culture = CultureInfo.InvariantCulture;
+
+            return myCoin.ToString("N2", culture); // Có 2 chữ số thập phân
+        }
+
+        public static string FormatCoinCultureTanTam(this decimal myCoin)
+        {
+            var culture = CultureInfo.InvariantCulture;
+
+            return myCoin.ToString("N2", culture); // Có 2 chữ số thập phân
+        }
+
+        public static string FormatCoinCultureTanTam(this float myCoin)
+        {
+            var culture = CultureInfo.InvariantCulture;
+
+            return myCoin.ToString("N2", culture); // Có 2 chữ số thập phân
+        }
+
+        public static string FormatCoinCultureTanTam(this int myCoin)
+        {
+            var culture = CultureInfo.InvariantCulture;
+            return myCoin.ToString("N2", culture); // Không có phần thập phân
         }
 
         #endregion

@@ -50,7 +50,13 @@
     public enum Wifi_type_Enum
     {
         wifi = 1,
-        Gps = 2
+        location = 2
     }
 
+    public enum ShiftAssignment_User_type_Enum
+    {
+        all = -1,
+        auto = 1, // tạo mặc định add full ca cho nhân viên
+        manual = 2 // được admin add tay một nhân viên vô 1 ngày nào đó
+    }
 }

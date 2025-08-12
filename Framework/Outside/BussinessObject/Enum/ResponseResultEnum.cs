@@ -32,6 +32,7 @@ namespace BussinessObject.Enum
         LicenseRequired = 33,
         InvalidSession = 34,
         InvalidRole = 35,
+        LoginInAnotherDevice = 36,
 
         // Resource Results
         NotFound = 40,
@@ -101,5 +102,9 @@ namespace BussinessObject.Enum
         AccountNotExist = 400,
         AccountLocked = 401,
         AccountNeedSetPass = 402,
+
+        //Payroll    
+        CheckInOutNotMapLocationOrWifi = 500,
+        PayrollNotEXISTS = 501,
     }
 }

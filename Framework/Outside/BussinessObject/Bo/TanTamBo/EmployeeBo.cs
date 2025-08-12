@@ -10,7 +10,8 @@ using System.Linq;
 using BussinessObject.Helper;
 using MyUtility;
 using System.Collections.Generic;
-using System.Globalization;
+using BussinessObject.Permission;
+using EntitiesObject.Entities.TanTamEntities;
 
 namespace BussinessObject.Bo.TanTamBo
 {
@@ -23,7 +24,7 @@ namespace BussinessObject.Bo.TanTamBo
         /// <summary>
         /// Get employee detail by id
         /// </summary>
-        public ApiResult<EmployeeDetailResponse> GetEmployeeDetailAsync(EmployeeDetailRequest request)
+        public ApiResult<EmployeeDetailResponse> GetEmployeeDetailAsync(EmployeeDetailRequest request, int employeeId, int userRole)
         {
             var response = new ApiResult<EmployeeDetailResponse>
             {
@@ -65,6 +66,7 @@ namespace BussinessObject.Bo.TanTamBo
                     // Map from DB result to DTO
                     // Get object data using common stored procedure
                     var objectData = DaoFactory.Employee.GetEmployeeObjectData(request.EmployeeId);
+                    bool canShowEmailAndPhone = PermissionHelper.HasPermission(employeeId, WebPermissionKeys.EmployeeShowEmailAndPhone, userRole);
                     
                     response.Data = new EmployeeDetailResponse
                     {
@@ -72,6 +74,7 @@ namespace BussinessObject.Bo.TanTamBo
                         companyId = employeeFromDb.CompanyId,
                         employeesInfoId = employeeFromDb.EmployeesInfoId,
                         role = employeeFromDb.Role,
+                        roleName = employeeFromDb.Role.GetValueOrDefault(UserRole.Employees.Value()).ToEnum<UserRole>().Text(),
                         employeeMapIsActive = employeeFromDb.EmployeeMapIsActive,
                         isNewUser = employeeFromDb.IsNewUser,
                         needSetPassword = employeeFromDb.NeedSetPassword,
@@ -108,7 +111,7 @@ namespace BussinessObject.Bo.TanTamBo
                         bankName = employeeFromDb.BankName,
                         bankBranch = employeeFromDb.BankBranch,
                         taxIdentification = employeeFromDb.TaxIdentification,
-                        employeesInfoCreatedAt = employeeFromDb.EmployeesInfoCreatedAt,
+                        employeesInfoCreatedAt = employeeFromDb.EmployeesInfoCreatedAt.GetValueOrDefault(),
                         email = employeeFromDb.Email,
                         phone = employeeFromDb.Phone,
                         phoneCode = employeeFromDb.PhoneCode,
@@ -120,7 +123,10 @@ namespace BussinessObject.Bo.TanTamBo
                         branch_obj = objectData?.BranchObjId.HasValue == true ? new { id = objectData.BranchObjId.Value, name = objectData.BranchObjName } : null,
                         department_obj = objectData?.DepartmentObjId.HasValue == true ? new { id = objectData.DepartmentObjId.Value, name = objectData.DepartmentObjName } : null,
                         position_obj = objectData?.PositionObjId.HasValue == true ? new { id = objectData.PositionObjId.Value, name = objectData.PositionObjName } : null,
-                        region_obj = objectData?.RegionObjId.HasValue == true ? new { id = objectData.RegionObjId.Value, name = objectData.RegionObjName } : null
+                        region_obj = objectData?.RegionObjId.HasValue == true ? new { id = objectData.RegionObjId.Value, name = objectData.RegionObjName } : null,
+
+                        is_root = employeeFromDb.Role == UserRole.SystemAdmin.Value() ? 1 : 0,
+                        is_hide_email_and_phone = !canShowEmailAndPhone,
                     };
 
                     response.Code = ResponseResultEnum.Success.Value();
@@ -130,20 +136,6 @@ namespace BussinessObject.Bo.TanTamBo
                 {
                     response.Code = ResponseResultEnum.NoData.Value();
                     response.Message = "Không tìm thấy thông tin nhân viên";
-                }
-            }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeDetailAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
                 }
             }
             catch (Exception ex)
@@ -159,7 +151,7 @@ namespace BussinessObject.Bo.TanTamBo
         /// <summary>
         /// Get employee list with pagination and filtering
         /// </summary>
-        public ApiResult<EmployeeListResponse> GetEmployeeListAsync(EmployeeListRequest request)
+        public ApiResult<EmployeeListResponse> GetEmployeeListAsync(EmployeeListRequest request, int employeeId, int userRole)
         {
             var response = new ApiResult<EmployeeListResponse>
             {
@@ -222,25 +214,76 @@ namespace BussinessObject.Bo.TanTamBo
                         break;
                 }
 
+                // Validate region_id and branch_id
+                // if (request.BranchId.HasValue && !request.RegionId.HasValue)
+                // {
+                //     response.Code = ResponseResultEnum.InvalidInput.Value();
+                //     response.Message = "Khi truyền branch_id thì phải truyền region_id.";
+                //     return response;
+                // }
+
                 // Gọi DAO với nullable
                 var employeesFromDb = DaoFactory.Employee.GetEmployeeList(
-                    request.CompanyId, page, limit, request.FullName, isQuit, isActive, isAll);
+                    request.CompanyId, page, limit, request.FullName, isQuit, isActive, isAll,
+                    request.RegionId, request.BranchId);
 
                 if (employeesFromDb != null && employeesFromDb.Any())
                 {
+                    var currentUserObjectData = new Ins_Employee_GetObjectData_Result();
+                    
+                    if (!request.RegionId.HasValue && !request.BranchId.HasValue)
+                    {
+                        currentUserObjectData = DaoFactory.Employee.GetEmployeeObjectData(employeeId);
+
+                        if (userRole == UserRole.RegionalManager.Value() && currentUserObjectData.RegionObjId == null)
+                        {
+                            response.Code = ResponseResultEnum.NoData.Value();
+                            response.Message = "Không có quyền xem danh sách nhân viên";
+                            return response;
+                        }
+
+                        if (userRole == UserRole.BranchManager.Value() && currentUserObjectData.BranchObjId == null)
+                        {
+                            response.Code = ResponseResultEnum.NoData.Value();
+                            response.Message = "Không có quyền xem danh sách nhân viên";
+                            return response;
+                        }
+                    }
+
+                    bool canShowEmailAndPhone = PermissionHelper.HasPermission(employeeId, WebPermissionKeys.EmployeeShowEmailAndPhone, userRole);
+
                     // Map from DB result to DTO
                     response.Data.items = employeesFromDb.Select(emp => 
                     {
                         // Get object data for each employee using common stored procedure
-                        var objectData = DaoFactory.Employee.GetEmployeeObjectData(emp.EmployeeId);
-                        
+                        var userObjectData = DaoFactory.Employee.GetEmployeeObjectData(emp.EmployeeId);
+
+                        if (currentUserObjectData.RegionObjId.HasValue && currentUserObjectData.RegionObjId.Value > 0)
+                        {
+                            
+                            if (userRole == UserRole.RegionalManager.Value() && userObjectData.RegionObjId != currentUserObjectData.RegionObjId)
+                            {
+                                return null;
+                            }
+                        }
+
+                        if (currentUserObjectData.BranchObjId.HasValue && currentUserObjectData.BranchObjId.Value > 0)
+                        {
+                            if (userRole == UserRole.BranchManager.Value() && userObjectData.BranchObjId != currentUserObjectData.BranchObjId)
+                            {
+                                return null;
+                            }
+                        }
+
                         return new EmployeeListDto
                         {
                             employeeId = emp.EmployeeId,
                             employeeName = emp.EmployeeName,
                             employeeCode = emp.EmployeeCode,
-                            phone = emp.Phone,
+                            email = canShowEmailAndPhone ? emp.Email : "*********",
+                            phone = canShowEmailAndPhone ? emp.Phone : "*********",
                             userRole = emp.UserRole,
+                            userRoleName = emp.UserRole.GetValueOrDefault(UserRole.Employees.Value()).ToEnum<UserRole>().Text(),
                             branch = emp.Branch,
                             department = emp.Department,
                             title = emp.Title,
@@ -248,14 +291,16 @@ namespace BussinessObject.Bo.TanTamBo
                             accountIsActive = emp.AccountIsActive,
                             isActive = emp.EmployeeAccountMapIsActive,
                             isQuit = emp.IsQuit,
-                            // Map nested objects using common stored procedure
-                            company_obj = objectData?.CompanyObjId.HasValue == true ? new { id = objectData.CompanyObjId.Value, name = objectData.CompanyObjName } : null,
-                            branch_obj = objectData?.BranchObjId.HasValue == true ? new { id = objectData.BranchObjId.Value, name = objectData.BranchObjName } : null,
-                            department_obj = objectData?.DepartmentObjId.HasValue == true ? new { id = objectData.DepartmentObjId.Value, name = objectData.DepartmentObjName } : null,
-                            position_obj = objectData?.PositionObjId.HasValue == true ? new { id = objectData.PositionObjId.Value, name = objectData.PositionObjName } : null,
-                            region_obj = objectData?.RegionObjId.HasValue == true ? new { id = objectData.RegionObjId.Value, name = objectData.RegionObjName } : null
+
+                            company_obj = userObjectData?.CompanyObjId.HasValue == true ? new { id = userObjectData.CompanyObjId.Value, name = userObjectData.CompanyObjName } : null,
+                            branch_obj = userObjectData?.BranchObjId.HasValue == true ? new { id = userObjectData.BranchObjId.Value, name = userObjectData.BranchObjName } : null,
+                            department_obj = userObjectData?.DepartmentObjId.HasValue == true ? new { id = userObjectData.DepartmentObjId.Value, name = userObjectData.DepartmentObjName } : null,
+                            position_obj = userObjectData?.PositionObjId.HasValue == true ? new { id = userObjectData.PositionObjId.Value, name = userObjectData.PositionObjName } : null,
+                            region_obj = userObjectData?.RegionObjId.HasValue == true ? new { id = userObjectData.RegionObjId.Value, name = userObjectData.RegionObjName } : null,
+
+                            is_root = emp.UserRole == UserRole.SystemAdmin.Value() ? 1 : 0,
                         };
-                    }).ToList();
+                    }).Where(item => item != null).ToList();
 
                     response.Data.meta = new MetaResponse
                     {
@@ -275,20 +320,6 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Không có dữ liệu nhân viên";
                 }
             }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeListAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
-            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeListAsync - Error occurred", ex);
@@ -301,8 +332,10 @@ namespace BussinessObject.Bo.TanTamBo
 
         /// <summary>
         /// Create new employee
+        /// Note: Không cho phép tạo user có role = 1 (SystemAdmin). 
+        /// Nếu role = 1 được gửi lên, sẽ tự động chuyển thành role = 10 (Employees)
         /// </summary>
-        public ApiResult<EmployeeCreateResult> CreateEmployeeAsync(CreateEmployeeRequest request)
+        public ApiResult<EmployeeCreateResult> CreateEmployeeAsync(CreateEmployeeRequest request, int role)
         {
             var response = new ApiResult<EmployeeCreateResult>
             {
@@ -321,10 +354,18 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
+                // Validate role
+                if(request.Role <= 0)
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = "Vui lòng cung cấp Role hợp lệ.";
+                    return response;
+                }
+
                 // Validate employee code
                 if (!string.IsNullOrEmpty(request.EmployeeCode))
                 {
-                    var validationResult = EmployeeBoHelper.ValidateEmployeeCodeForCreate(request.CompanyId, request.EmployeeCode);
+                    var validationResult = EmployeeBoHelper.ValidateEmployeeCode(request.CompanyId, request.EmployeeCode, 0);
                     if (!validationResult.IsValid)
                     {
                         if (validationResult.ShouldAutoGenerate)
@@ -362,42 +403,43 @@ namespace BussinessObject.Bo.TanTamBo
                     request.Email = $"{request.Phone}@mail.com";
                 }
 
-                if (request.Role <= 0)
+                // Kiểm tra trùng lặp email và số điện thoại với nhân viên khác
+                if (!string.IsNullOrEmpty(request.Email))
                 {
-                    request.Role = 3; // Default to Employee role
-                }
-
-                // Handle BranchId: if not provided, get the first branch of the company
-                if (request.BranchId <= 0)
-                {
-                    try
+                    var emailCheckResult = DaoFactory.Employee.CheckDuplicateEmail(request.CompanyId, request.Email, 0);
+                    if (emailCheckResult != null && emailCheckResult.IsDuplicate.GetValueOrDefault(false))
                     {
-                        int total = 0;
-                        var branches = DaoFactory.Branches.GetAllBranchs(request.CompanyId, out total);
-                        
-                        if (branches != null && branches.Any())
-                        {
-                            request.BranchId = branches.First().BranchId;
-                        }
-                        else
-                        {
-                            response.Code = ResponseResultEnum.InvalidInput.Value();
-                            response.Message = "Công ty chưa có chi nhánh nào. Vui lòng tạo chi nhánh trước khi thêm nhân viên.";
-                            return response;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        CommonLogger.DefaultLogger.Error("EmployeeBo.CreateEmployeeAsync - Error getting branches", ex);
                         response.Code = ResponseResultEnum.InvalidInput.Value();
-                        response.Message = "Vui lòng cung cấp BranchId hợp lệ.";
+                        response.Message = emailCheckResult.ErrorMessage;
                         return response;
                     }
                 }
 
-                // Hash password if provided
-                string hashedPassword = string.IsNullOrEmpty(request.Password) ? "" : AESHelper.HashPassword(request.Password);
+                if (!string.IsNullOrEmpty(request.Phone))
+                {
+                    request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
+                    var phoneCheckResult = DaoFactory.Employee.CheckDuplicatePhone(request.CompanyId, request.Phone, 0);
+                    if (phoneCheckResult != null && phoneCheckResult.IsDuplicate.GetValueOrDefault(false))
+                    {
+                        response.Code = ResponseResultEnum.InvalidInput.Value();
+                        response.Message = phoneCheckResult.ErrorMessage;
+                        return response;
+                    }
+                }
 
+                if (request.Role == 1 && role != UserRole.SystemAdmin.Value())
+                {
+                    // Nếu role = 1 (SystemAdmin) thì set default thành Employees (role = 10)
+                    request.Role = 10;
+                }
+                else if (request.Role <= 0)
+                {
+                    request.Role = 10; // Default to Employee role
+                }
+
+                // Hash password if provided
+                string hashedPassword = string.IsNullOrEmpty(request.Password) ? "" : SecurityCommon.sha256_hash(request.Password);
+                
                 // Call stored procedure to create employee
                 int employeeAccountId, isNewUser, needSetPassword, needSetCompany;
                 DaoFactory.Employee.CreateEmployee(
@@ -425,6 +467,12 @@ namespace BussinessObject.Bo.TanTamBo
                 response.Data.needSetPassword = needSetPassword;
                 response.Data.needSetCompany = needSetCompany;
 
+                // Add default permissions based on role
+                if (employeeAccountId > 0 && request.Role != UserRole.SystemAdmin.Value())
+                {
+                    DaoFactory.Permission.InsertDefaultPermissionsForEmployee(employeeAccountId, request.Role);
+                }
+
                 var result = DaoFactory.Company.UpdateCompanyStep(request.CompanyId, SetupStepEnum.ONBOARDING_CREATE_EMPLOYEE.Value());
                 if (result > 0)
                 {
@@ -449,20 +497,6 @@ namespace BussinessObject.Bo.TanTamBo
                         break;
                 }
             }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.CreateEmployeeAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
-            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.CreateEmployeeAsync - Error occurred", ex);
@@ -476,7 +510,7 @@ namespace BussinessObject.Bo.TanTamBo
         /// <summary>
         /// Delete employee - simplified version (validation moved to stored procedure)
         /// </summary>
-        public ApiResult<bool> DeleteEmployeeAsync(int employeeId, int companyId)
+        public ApiResult<bool> DeleteEmployeeAsync(int employeeId, int companyId, int myEmployeeId)
         {
             var response = new ApiResult<bool>
             {
@@ -495,26 +529,26 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
+                if (myEmployeeId == employeeId)
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = "Bạn không thể xóa chính mình.";
+                    return response;
+                }
+
+                if (PermissionHelper.IsSystemAdmin(employeeId))
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = "Bạn không thể xóa admin.";
+                    return response;
+                }
+
                 // Call stored procedure - all business validation is done there
                 var result = DaoFactory.Employee.DeleteEmployee(employeeId);
 
                 response.Data = true;
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Xóa nhân viên thành công";
-            }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.Failed.Value();
-                    response.Message = sqlEx.Message; // SQL error message from stored procedure
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.DeleteEmployeeAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
             }
             catch (Exception ex)
             {
@@ -529,7 +563,7 @@ namespace BussinessObject.Bo.TanTamBo
         /// <summary>
         /// Delete multiple employees - simplified version (validation moved to stored procedure)
         /// </summary>
-        public ApiResult<bool> DeleteMultiEmployeeAsync(DeleteMultiEmployeeRequest request)
+        public ApiResult<bool> DeleteMultiEmployeeAsync(DeleteMultiEmployeeRequest request, int myEmployeeId)
         {
             var response = new ApiResult<bool>
             {
@@ -548,6 +582,13 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
+                if (request.EmployeeIds.Contains(myEmployeeId))
+                {
+                    response.Code = ResponseResultEnum.InvalidInput.Value();
+                    response.Message = "Bạn không thể xóa chính mình.";
+                    return response;
+                }
+
                 // Track results
                 int successCount = 0;
                 int failedCount = 0;
@@ -557,39 +598,23 @@ namespace BussinessObject.Bo.TanTamBo
                 // Stored procedure handles all validation
                 foreach (var employeeId in request.EmployeeIds)
                 {
-                    try
-                    {
-                        // Call stored procedure - all validation is done there
-                        var deleteResult = DaoFactory.Employee.DeleteEmployee(employeeId);
-                        if (deleteResult > 0)
-                        {
-                            successCount++;
-                        }
-                        else
-                        {
-                            failedCount++;
-                            errorMessages.Add($"ID {employeeId}: Không thể xóa");
-                        }
-                    }
-                    catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-                    {
-                        if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                        {
-                            failedCount++;
-                            errorMessages.Add($"ID {employeeId}: {sqlEx.Message}");
-                        }
-                        else
-                        {
-                            failedCount++;
-                            errorMessages.Add($"ID {employeeId}: Lỗi hệ thống");
-                            CommonLogger.DefaultLogger.Error($"EmployeeBo.DeleteMultiEmployeeAsync - Entity Exception for ID {employeeId}", entityEx);
-                        }
-                    }
-                    catch (Exception ex)
+                    if (PermissionHelper.IsSystemAdmin(employeeId))
                     {
                         failedCount++;
-                        errorMessages.Add($"ID {employeeId}: {ex.Message}");
-                        CommonLogger.DefaultLogger.Error($"EmployeeBo.DeleteMultiEmployeeAsync - Error for ID {employeeId}", ex);
+                        errorMessages.Add($"ID {employeeId}: Không thể xóa admin.");
+                        continue;
+                    }
+
+                    // Call stored procedure - all validation is done there
+                    var deleteResult = DaoFactory.Employee.DeleteEmployee(employeeId);
+                    if (deleteResult > 0)
+                    {
+                        successCount++;
+                    }
+                    else
+                    {
+                        failedCount++;
+                        errorMessages.Add($"ID {employeeId}: Không thể xóa");
                     }
                 }
 
@@ -688,20 +713,6 @@ namespace BussinessObject.Bo.TanTamBo
                     response.Message = "Không thể đặt lại mật khẩu";
                 }
             }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.ResetEmployeePasswordAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
-            }
             catch (Exception ex)
             {
                 CommonLogger.DefaultLogger.Error("EmployeeBo.ResetEmployeePasswordAsync - Error occurred", ex);
@@ -715,7 +726,7 @@ namespace BussinessObject.Bo.TanTamBo
         /// <summary>
         /// Update employee details
         /// </summary>
-        public ApiResult<bool> UpdateEmployeeDetailsAsync(int employeeId, int companyId, UpdateEmployeeDetailsRequest request)
+        public ApiResult<bool> UpdateEmployeeDetailsAsync(int employeeId, int companyId, UpdateEmployeeDetailsRequest request, int role)
         {
             var response = new ApiResult<bool>
             {
@@ -760,7 +771,7 @@ namespace BussinessObject.Bo.TanTamBo
                 // Validate employee code for update
                 if (!string.IsNullOrEmpty(request.EmployeeCode))
                 {
-                    var validationResult = EmployeeBoHelper.ValidateEmployeeCodeForUpdate(companyId, request.EmployeeCode, employeeId);
+                    var validationResult = EmployeeBoHelper.ValidateEmployeeCode(companyId, request.EmployeeCode, employeeId);
                     if (!validationResult.IsValid)
                     {
                         response.Code = ResponseResultEnum.InvalidInput.Value();
@@ -769,16 +780,49 @@ namespace BussinessObject.Bo.TanTamBo
                     }
                 }
 
-                var all_employee_account_map = EmployeeBoHelper.GetEmployeeAccountMapForValidation(employee.CompanyId);
+                // Validate role if provided
+                if (request.Role.HasValue)
+                {
+                    if (request.Role.Value == UserRole.SystemAdmin.Value() && role != UserRole.SystemAdmin.Value())
+                    {
+                        // Nếu role = SystemAdmin thì set default thành Employees
+                        request.Role = UserRole.Employees.Value();
+                    }
+                    else if (request.Role.Value <= 0)
+                    {
+                        request.Role = UserRole.Employees.Value();
+                    }
+                }
 
                 request.Phone = StringCommon.ExtractCoreNumber(request.Phone);
 
                 // Kiểm tra trùng lặp email và số điện thoại với nhân viên khác
-                string errorMessage;
-                if (EmployeeBoHelper.CheckDuplicateContactInfo(all_employee_account_map, request.Email, request.Phone, employeeId, out errorMessage))
+                if (!string.IsNullOrEmpty(request.Email))
+                {
+                    var emailCheckResult = DaoFactory.Employee.CheckDuplicateEmail(employee.CompanyId, request.Email, employeeId);
+                    if (emailCheckResult != null && emailCheckResult.IsDuplicate.GetValueOrDefault(false))
+                    {
+                        response.Code = ResponseResultEnum.InvalidInput.Value();
+                        response.Message = emailCheckResult.ErrorMessage;
+                        return response;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(request.Phone))
+                {
+                    var phoneCheckResult = DaoFactory.Employee.CheckDuplicatePhone(employee.CompanyId, request.Phone, employeeId);
+                    if (phoneCheckResult != null && phoneCheckResult.IsDuplicate.GetValueOrDefault(false))
+                    {
+                        response.Code = ResponseResultEnum.InvalidInput.Value();
+                        response.Message = phoneCheckResult.ErrorMessage;
+                        return response;
+                    }
+                }
+
+                if (request.BirthDate.HasValue && request.BirthDate.Value > DateTime.Now)
                 {
                     response.Code = ResponseResultEnum.InvalidInput.Value();
-                    response.Message = errorMessage;
+                    response.Message = "Ngày sinh không hợp lệ.";
                     return response;
                 }
 
@@ -798,26 +842,25 @@ namespace BussinessObject.Bo.TanTamBo
                     request.BranchId,
                     request.PositionId,
                     request.IsQuit,
-                    request.IsActive
+                    request.IsActive,
+                    request.Role
                 );
+
+                // Update permissions if role changed
+                if (request.Role.HasValue && request.Role.Value != employee.Role)
+                {
+                    if (request.Role.Value == UserRole.Employees.Value()){
+                        DaoFactory.Permission.DeleteEmployeePermissionsByType(employeeId, PermissionTypeEnum.Web.Value());
+                        DaoFactory.Permission.DeleteEmployeePermissionsByType(employeeId, PermissionTypeEnum.Mobile.Value());
+                    }
+
+                    DaoFactory.Permission.InsertDefaultPermissionsForEmployee(employeeId, request.Role.Value);
+
+                } 
 
                 response.Data = true;
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Cập nhật thông tin nhân viên thành công";
-            }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.UpdateEmployeeDetailsAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
             }
             catch (Exception ex)
             {
@@ -832,7 +875,7 @@ namespace BussinessObject.Bo.TanTamBo
         /// <summary>
         /// Get employee filter list
         /// </summary>
-        public ApiResult<EmployeeFilterListResponse> GetEmployeeFilterListAsync(EmployeeFilterListRequest request)
+        public ApiResult<EmployeeFilterListResponse> GetEmployeeFilterListAsync(EmployeeFilterListRequest request, int employeeId, int userRole)
         {
             var response = new ApiResult<EmployeeFilterListResponse>
             {
@@ -878,6 +921,24 @@ namespace BussinessObject.Bo.TanTamBo
 
                 if (employeesFromDb != null && employeesFromDb.Any())
                 {
+                    var myEmployeeData = DaoFactory.Employee.GetEmployeeObjectData(employeeId);
+
+                    employeesFromDb = employeesFromDb.Where(x => {
+                        // Nếu là Regional Manager (Quản lý vùng)
+                        if (userRole == (int)UserRole.RegionalManager && myEmployeeData.RegionObjId.HasValue && myEmployeeData.RegionObjId.Value > 0)
+                        {
+                            return x.RegionId.ToString() == myEmployeeData.RegionObjId.Value.ToString(); // Chỉ thấy nhân viên cùng vùng
+                        }
+
+                        // Nếu là Branch Manager (Quản lý chi nhánh)  
+                        if (userRole == (int)UserRole.BranchManager && myEmployeeData.BranchObjId.HasValue && myEmployeeData.BranchObjId.Value > 0)
+                        {
+                            return x.BranchId.ToString() == myEmployeeData.BranchObjId.Value.ToString(); // Chỉ thấy nhân viên cùng chi nhánh
+                        }
+                        
+                        return true; // Các role khác thấy tất cả
+                    }).ToList();
+
                     response.Data.items = employeesFromDb.Select(emp => new EmployeeFilterListDto
                     {
                         name = emp.Name,
@@ -900,20 +961,6 @@ namespace BussinessObject.Bo.TanTamBo
                 {
                     response.Code = ResponseResultEnum.NoData.Value();
                     response.Message = "Không có dữ liệu nhân viên";
-                }
-            }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetEmployeeFilterListAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
                 }
             }
             catch (Exception ex)
@@ -948,37 +995,10 @@ namespace BussinessObject.Bo.TanTamBo
                     return response;
                 }
 
-                // Get all employee codes from database
-                var allEmployeeCodes = DaoFactory.Employee.GetAllEmployeeCodes(request.CompanyId);
-                
-                // Find the highest/last employee code using C# logic
-                var lastCode = EmployeeBoHelper.FindHighestEmployeeCode(allEmployeeCodes);
-                
-                if (!string.IsNullOrEmpty(lastCode))
-                {
-                    response.Data.nextCode = EmployeeBoHelper.GenerateNextEmployeeCode(lastCode);
-                }
-                else
-                {
-                    response.Data.nextCode = "0001";
-                }
+                response.Data.nextCode = EmployeeBoHelper.GenerateNextEmployeeCodeForCompany(request.CompanyId);
 
                 response.Code = ResponseResultEnum.Success.Value();
                 response.Message = "Lấy mã nhân viên tiếp theo thành công";
-            }
-            catch (System.Data.Entity.Core.EntityCommandExecutionException entityEx)
-            {
-                if (entityEx.InnerException != null && entityEx.InnerException is System.Data.SqlClient.SqlException sqlEx)
-                {
-                    response.Code = ResponseResultEnum.InvalidData.Value();
-                    response.Message = sqlEx.Message;
-                }
-                else
-                {
-                    CommonLogger.DefaultLogger.Error("EmployeeBo.GetNextEmployeeCodeAsync - Entity Exception", entityEx);
-                    response.Code = ResponseResultEnum.SystemError.Value();
-                    response.Message = "Đã xảy ra lỗi hệ thống.";
-                }
             }
             catch (Exception ex)
             {
@@ -990,4 +1010,4 @@ namespace BussinessObject.Bo.TanTamBo
             return response;
         }
     }
-} 
+}

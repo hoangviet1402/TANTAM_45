@@ -14,8 +14,8 @@ namespace EntitiesObject.Entities.TanTamEntities
     public partial class Ins_CompanyPosition_SelectByBrandid_Result
     {
         public int Id { get; set; }
-        public int BranchId { get; set; }
-        public int CompanyId { get; set; }
+        public Nullable<int> BranchId { get; set; }
+        public Nullable<int> CompanyId { get; set; }
         public string PositionName { get; set; }
         public string Description { get; set; }
         public Nullable<int> SortIndex { get; set; }
@@ -23,5 +23,6 @@ namespace EntitiesObject.Entities.TanTamEntities
         public Nullable<int> ExpYear { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }
         public string Code { get; set; }
+        public Nullable<int> DepartmentID { get; set; }
     }
 }
