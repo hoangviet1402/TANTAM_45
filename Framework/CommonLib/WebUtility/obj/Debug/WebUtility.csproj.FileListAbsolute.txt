@@ -10,3 +10,13 @@ D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.csproj.Cor
 D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.dll
 D:\CRM\TANTAM_SVN\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.pdb
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\bin\Debug\WebUtility.dll.config
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\bin\Debug\WebUtility.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\bin\Debug\WebUtility.pdb
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\bin\Debug\System.Web.Mvc.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\bin\Debug\System.Web.Mvc.xml
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.csproj.AssemblyReference.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.csproj.CoreCompileInputs.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.csproj.Up2Date
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\WebUtility\obj\Debug\WebUtility.pdb

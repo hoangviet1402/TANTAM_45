@@ -1,0 +1,270 @@
+@{
+    ViewBag.Title = "ESP32-CAM Streaming Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+    <!-- SignalR -->
+    <script src="~/Scripts/jquery.signalR-2.2.3.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Khởi tạo SignalR connection
+            var hub = $.connection.esp32StreamingHub;
+            
+            // Event handlers
+            hub.client.onFrameReceived = function (frame) {
+                console.log('Frame received:', frame);
+                updateStreamInfo(frame);
+                displayFrame(frame);
+            };
+            
+            hub.client.onStreamUpdate = function (stream) {
+                console.log('Stream update:', stream);
+                updateStreamStatus(stream);
+            };
+            
+            hub.client.clientJoined = function (clientId, streamId) {
+                console.log('Client joined:', clientId, streamId);
+                updateViewerCount(streamId, 1);
+            };
+            
+            hub.client.clientLeft = function (clientId, streamId) {
+                console.log('Client left:', clientId, streamId);
+                updateViewerCount(streamId, -1);
+            };
+            
+            // Start connection
+            $.connection.hub.start().done(function () {
+                console.log('SignalR connected');
+                loadStreams();
+            }).fail(function (error) {
+                console.error('SignalR connection failed:', error);
+            });
+            
+            // Join stream
+            window.joinStream = function (streamId) {
+                hub.server.joinStream(streamId).done(function () {
+                    console.log('Joined stream:', streamId);
+                    $('#currentStream').text(streamId);
+                }).fail(function (error) {
+                    console.error('Failed to join stream:', error);
+                });
+            };
+            
+            // Leave stream
+            window.leaveStream = function () {
+                var streamId = $('#currentStream').text();
+                if (streamId && streamId !== 'None') {
+                    hub.server.leaveStream(streamId).done(function () {
+                        console.log('Left stream:', streamId);
+                        $('#currentStream').text('None');
+                        $('#streamView').hide();
+                    }).fail(function (error) {
+                        console.error('Failed to leave stream:', error);
+                    });
+                }
+            };
+            
+            // Load active streams
+            function loadStreams() {
+                $.get('/api/esp32/streams')
+                    .done(function (streams) {
+                        var streamList = $('#streamList');
+                        streamList.empty();
+                        
+                        if (streams.length === 0) {
+                            streamList.append('<li class="list-group-item">No active streams</li>');
+                        } else {
+                            streams.forEach(function (stream) {
+                                var item = $('<li class="list-group-item">')
+                                    .append($('<strong>').text(stream.streamId))
+                                    .append(' - ')
+                                    .append($('<span class="badge">').text(stream.viewers + ' viewers'))
+                                    .append($('<button class="btn btn-sm btn-primary pull-right">')
+                                        .text('Join')
+                                        .click(function () { joinStream(stream.streamId); }));
+                                streamList.append(item);
+                            });
+                        }
+                    })
+                    .fail(function (error) {
+                        console.error('Failed to load streams:', error);
+                    });
+            }
+            
+            // Update stream info
+            function updateStreamInfo(frame) {
+                $('#frameInfo').html(`
+                    <strong>Stream:</strong> ${frame.streamId}<br>
+                    <strong>Frame:</strong> ${frame.frameNumber}<br>
+                    <strong>Size:</strong> ${(frame.frameSize / 1024).toFixed(2)} KB<br>
+                    <strong>Time:</strong> ${new Date(frame.timestamp).toLocaleTimeString()}
+                `);
+            }
+            
+            // Display frame
+            function displayFrame(frame) {
+                var img = $('#streamImage');
+                img.attr('src', 'data:image/jpeg;base64,' + frame.frame);
+                img.show();
+                $('#streamView').show();
+            }
+            
+            // Update stream status
+            function updateStreamStatus(stream) {
+                $('#streamStatus').html(`
+                    <strong>Status:</strong> ${stream.status}<br>
+                    <strong>Frames:</strong> ${stream.frameCount}<br>
+                    <strong>Uptime:</strong> ${(stream.uptime / 1000).toFixed(1)}s
+                `);
+            }
+            
+            // Update viewer count
+            function updateViewerCount(streamId, delta) {
+                var item = $('#streamList li').filter(function () {
+                    return $(this).find('strong').text() === streamId;
+                });
+                
+                if (item.length > 0) {
+                    var badge = item.find('.badge');
+                    var currentCount = parseInt(badge.text());
+                    var newCount = Math.max(0, currentCount + delta);
+                    badge.text(newCount + ' viewers');
+                }
+            }
+            
+            // Refresh streams list
+            $('#refreshStreams').click(function () {
+                loadStreams();
+            });
+            
+            // Test ESP32 connection
+            $('#testESP32').click(function () {
+                var testData = new ArrayBuffer(1024); // 1KB test data
+                var view = new Uint8Array(testData);
+                for (var i = 0; i < view.length; i++) {
+                    view[i] = Math.floor(Math.random() * 256);
+                }
+                
+                $.ajax({
+                    url: '/api/esp32/stream',
+                    method: 'POST',
+                    data: view,
+                    headers: {
+                        'X-Stream-Id': 'test_stream',
+                        'Content-Type': 'application/octet-stream'
+                    },
+                    processData: false
+                }).done(function (response) {
+                    console.log('Test successful:', response);
+                    alert('Test connection successful!');
+                }).fail(function (error) {
+                    console.error('Test failed:', error);
+                    alert('Test connection failed!');
+                });
+            });
+        });
+    </script>
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>ESP32-CAM Streaming Test</h2>
+            <hr />
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- Streams List -->
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Active Streams
+                        <button id="refreshStreams" class="btn btn-xs btn-default pull-right">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul id="streamList" class="list-group">
+                        <li class="list-group-item">Loading streams...</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Current Stream</h3>
+                </div>
+                <div class="panel-body">
+                    <p><strong>Stream ID:</strong> <span id="currentStream">None</span></p>
+                    <button class="btn btn-warning btn-sm" onclick="leaveStream()">Leave Stream</button>
+                    <button id="testESP32" class="btn btn-success btn-sm">Test ESP32 Connection</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stream View -->
+        <div class="col-md-8">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Live Stream</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="streamView" style="display: none;">
+                        <img id="streamImage" class="img-responsive" style="max-width: 100%; height: auto;" />
+                        <hr />
+                        <div id="frameInfo" class="well well-sm"></div>
+                    </div>
+                    <div id="noStream" style="text-align: center; padding: 50px;">
+                        <h4>No active stream</h4>
+                        <p>Join a stream from the left panel to view live video.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Stream Status</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="streamStatus">No stream selected</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">API Endpoints</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Streaming</h5>
+                            <ul>
+                                <li><code>POST /api/esp32/stream</code> - Receive frame from ESP32-CAM</li>
+                                <li><code>GET /api/esp32/streams</code> - List active streams</li>
+                                <li><code>GET /api/esp32/stream/{id}/status</code> - Stream status</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Media</h5>
+                            <ul>
+                                <li><code>GET /api/esp32/images</code> - List saved images</li>
+                                <li><code>GET /api/esp32/snapshot/{id}</code> - Latest snapshot</li>
+                                <li><code>GET /api/esp32/health</code> - Health check</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

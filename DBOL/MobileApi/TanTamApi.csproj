@@ -190,6 +190,8 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\WifiController.cs" />
+    <Compile Include="Controllers\ESP32Controller.cs" />
+    <Compile Include="Controllers\ESP32MvcController.cs" />
     <Compile Include="Enum\AccountEnum.cs" />
     <Compile Include="Enum\LanguageResourceCtrl.cs" />
     <Compile Include="Enum\OAuthCode.cs">
@@ -198,6 +200,10 @@
     <Compile Include="Helper\DataRowExtensions.cs" />
     <Compile Include="Helper\StringExtensions.cs" />
     <Compile Include="Helper\ValidationHelper.cs" />
+    <Compile Include="Helper\ESP32StreamingHub_Simple.cs" />
+    <Compile Include="Helper\ESP32StreamingService.cs" />
+    <Compile Include="Helper\ESP32TestBuild.cs" />
+    <Compile Include="Helper\ESP32FrameValidator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,6 +214,7 @@
     <Compile Include="Helper\CaptchaHelper.cs" />
     <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Helper\ServerCode.cs" />
+    <Compile Include="Models\ESP32StreamModel.cs" />
     <Compile Include="JWT\Helper\JwtHelper.cs" />
     <Compile Include="JWT\Helper\JwtTokenHelper.cs" />
     <Compile Include="JWT\Middleware\AuthorizeAttribute.cs" />
@@ -262,6 +269,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ESP32Mvc\Index.cshtml" />
     <None Include="Web References\UploadFileService\FileUploadSvc.disco" />
     <None Include="Web References\UploadFileService\FileUploadSvc.wsdl" />
   </ItemGroup>

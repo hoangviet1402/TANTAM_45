@@ -4,3 +4,9 @@ D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.csprojAssemblyReference.cache
 D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.csproj.CoreCompileInputs.cache
 D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.dll
 D:\CRM\TANTAM_SVN\DBOL\MyConfig\obj\Debug\MyConfig.pdb
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\DBOL\MyConfig\bin\Debug\MyConfig.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\DBOL\MyConfig\bin\Debug\MyConfig.pdb
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\DBOL\MyConfig\obj\Debug\MyConfig.csproj.AssemblyReference.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\DBOL\MyConfig\obj\Debug\MyConfig.csproj.CoreCompileInputs.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\DBOL\MyConfig\obj\Debug\MyConfig.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\DBOL\MyConfig\obj\Debug\MyConfig.pdb

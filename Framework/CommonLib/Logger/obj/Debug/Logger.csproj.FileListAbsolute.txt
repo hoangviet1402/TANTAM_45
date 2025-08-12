@@ -9,3 +9,15 @@ D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CoreCompile
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CopyComplete
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.dll
 D:\CRM\TANTAM_SVN\Framework\CommonLib\Logger\obj\Debug\Logger.pdb
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Logger.dll.config
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Logger.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Logger.pdb
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\log4net.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Newtonsoft.Json.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\log4net.xml
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\bin\Debug\Newtonsoft.Json.xml
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.csproj.Up2Date
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\CommonLib\Logger\obj\Debug\Logger.pdb

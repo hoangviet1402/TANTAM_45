@@ -5,3 +5,10 @@ D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.cspr
 D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.dll
 D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.pdb
 D:\CRM\TANTAM_SVN\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.csprojAssemblyReference.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\Outside\EntitiesObject\bin\Debug\EntitiesObject.dll.config
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\Outside\EntitiesObject\bin\Debug\EntitiesObject.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\Outside\EntitiesObject\bin\Debug\EntitiesObject.pdb
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.csproj.AssemblyReference.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.csproj.CoreCompileInputs.cache
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.dll
+C:\Users\vietn\Documents\PlatformIO\Projects\ESP32_CAM\ESP_CAM\TANTAM_45\Framework\Outside\EntitiesObject\obj\Debug\EntitiesObject.pdb
