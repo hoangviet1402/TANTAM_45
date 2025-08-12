@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.SessionState;
 using Logger;
+// using Microsoft.AspNet.SignalR; // TODO: Uncomment after installing SignalR package
 
 namespace TanTamApi
 {
@@ -12,25 +13,49 @@ namespace TanTamApi
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            try
+            {
+                AreaRegistration.RegisterAllAreas();
+                
+                // Tạm thời comment out FilterConfig để test
+                // FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+                
+                GlobalConfiguration.Configure(WebApiConfig.Register);
+                RouteConfig.RegisterRoutes(RouteTable.Routes);
+                
+                // Cấu hình SignalR
+                // RouteTable.Routes.MapHubs(); // TODO: Uncomment after installing SignalR package
+                
+                System.Diagnostics.Debug.WriteLine("Application_Start completed successfully");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Application_Start error: " + ex.Message);
+                throw;
+            }
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            //HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-
-            var origin = HttpContext.Current.Request.Headers["Origin"];
-            if (!string.IsNullOrEmpty(origin))
+            // CORS Configuration - chỉ set headers nếu chưa có
+            if (HttpContext.Current.Response.Headers["Access-Control-Allow-Origin"] == null)
             {
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", origin);
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization");
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Credentials", "true");
+                var origin = HttpContext.Current.Request.Headers["Origin"];
+                if (!string.IsNullOrEmpty(origin))
+                {
+                    HttpContext.Current.Response.Headers["Access-Control-Allow-Origin"] = origin;
+                }
+                else
+                {
+                    HttpContext.Current.Response.Headers["Access-Control-Allow-Origin"] = "*";
+                }
+                
+                HttpContext.Current.Response.Headers["Access-Control-Allow-Headers"] = "Origin, Content-Type, Accept, Authorization, X-Stream-Id";
+                HttpContext.Current.Response.Headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+                HttpContext.Current.Response.Headers["Access-Control-Allow-Credentials"] = "true";
             }
 
+            // Handle CORS preflight requests
             if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
             {
                 HttpContext.Current.Response.StatusCode = 200;

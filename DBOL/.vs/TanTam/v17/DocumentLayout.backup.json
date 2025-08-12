@@ -1,12 +1,88 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CRM\\TANTAM_SVN\\DBOL\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|c:\\users\\vietn\\documents\\platformio\\projects\\esp32_cam\\esp_cam\\tantam_45\\dbol\\mobileapi\\controllers\\esp32mvccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|solutionrelative:mobileapi\\controllers\\esp32mvccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|c:\\users\\vietn\\documents\\platformio\\projects\\esp32_cam\\esp_cam\\tantam_45\\dbol\\mobileapi\\controllers\\esp32controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|solutionrelative:mobileapi\\controllers\\esp32controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|c:\\users\\vietn\\documents\\platformio\\projects\\esp32_cam\\esp_cam\\tantam_45\\dbol\\mobileapi\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|solutionrelative:mobileapi\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|c:\\users\\vietn\\documents\\platformio\\projects\\esp32_cam\\esp_cam\\tantam_45\\dbol\\mobileapi\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B4F8E41-EC96-417C-A7AC-759369FAA98B}|MobileApi\\TanTamApi.csproj|solutionrelative:mobileapi\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\Global.asax.cs",
+              "RelativeDocumentMoniker": "MobileApi\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\Global.asax.cs",
+              "RelativeToolTip": "MobileApi\\Global.asax.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T17:20:13.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "MobileApi\\App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "MobileApi\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T17:16:17.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ESP32MvcController.cs",
+              "DocumentMoniker": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\Controllers\\ESP32MvcController.cs",
+              "RelativeDocumentMoniker": "MobileApi\\Controllers\\ESP32MvcController.cs",
+              "ToolTip": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\Controllers\\ESP32MvcController.cs",
+              "RelativeToolTip": "MobileApi\\Controllers\\ESP32MvcController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T17:15:49.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ESP32Controller.cs",
+              "DocumentMoniker": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\Controllers\\ESP32Controller.cs",
+              "RelativeDocumentMoniker": "MobileApi\\Controllers\\ESP32Controller.cs",
+              "ToolTip": "C:\\Users\\vietn\\Documents\\PlatformIO\\Projects\\ESP32_CAM\\ESP_CAM\\TANTAM_45\\DBOL\\MobileApi\\Controllers\\ESP32Controller.cs",
+              "RelativeToolTip": "MobileApi\\Controllers\\ESP32Controller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T17:15:30.079Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
